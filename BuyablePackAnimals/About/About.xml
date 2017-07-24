@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>BuyablePackAnimals</name>
+	<author>Oblitus</author>
+	<targetVersion>0.17.1554</targetVersion>
+	<description>Caravans would sell pack animals without a load.</description>
+</ModMetaData>

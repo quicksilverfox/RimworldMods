@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Logistics</name>
+	<author>Oblitus</author>
+	<targetVersion>0.17.1554</targetVersion>
+	<description>Changes world tile movement time to make more sense.</description>
+</ModMetaData>

@@ -54,12 +54,22 @@ namespace AnimalsAreDifferent
         {
             String e = "";
 
+            // M/F
+            if (p.RaceProps.hasGenders)
+            {
+                if (e.Length > 0)
+                    e += ";";
+                e += p.gender.ToString().Substring(0, 1);
+            }
+
             // [B]onded
             for (int i = 0; i < p.relations.DirectRelations.Count; i++)
             {
                 if (p.relations.DirectRelations[i].def == PawnRelationDefOf.Bond && p.relations.DirectRelations[i].otherPawn.Spawned)
                 {
                     //p.relations.DirectRelations[i].otherPawn;
+                    if (e.Length > 0)
+                        e += ";";
                     e += "B";
                     break;
                 }

@@ -2,21 +2,14 @@
 using RimWorld;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using Verse;
 using Verse.AI;
 
-namespace LayEggsInNests
+namespace AnimalsLogic
 {
-    [StaticConstructorOnStartup]
-    class Main
-    {
-        static Main()
-        {
-            var harmony = HarmonyInstance.Create("net.quicksilverfox.rimworld.mod.layeggsinnests");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
-        }
-    }
+    /*
+     * Changes egg laying logic to try find a sleeping spot to lay egg there instead of leaving it who knows where. Prevents forbidding of the egg if spot is not found.
+     */
 
     [HarmonyPatch(typeof(JobGiver_LayEgg), "TryGiveJob", new Type[] { typeof(Pawn) })]
     static class JobGiver_LayEgg_TryGiveJob_Patch
@@ -30,7 +23,7 @@ namespace LayEggsInNests
             }
             IntVec3 c;
             Building_Bed bed = RestUtility.FindBedFor(pawn);
-            if (bed!=null)
+            if (bed != null)
                 c = bed.Position;
             else
                 c = RCellFinder.RandomWanderDestFor(pawn, pawn.Position, 5f, null, Danger.Some);

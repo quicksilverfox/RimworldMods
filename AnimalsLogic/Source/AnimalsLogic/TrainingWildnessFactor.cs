@@ -8,6 +8,7 @@ using Verse.AI;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
+using Harmony.ILCopying;
 
 namespace AnimalsLogic
 {
@@ -18,7 +19,21 @@ namespace AnimalsLogic
         {
             static MethodInfo TargetMethod()
             {
-                return typeof(Toils_Interpersonal).GetNestedType("<TryTrain>c__AnonStorey26F", AccessTools.all).GetMethod("<>m__E1", AccessTools.all);
+                var toils_inner = typeof(Toils_Interpersonal).GetNestedTypes(AccessTools.all);
+                foreach (var inner_class in toils_inner)
+                {
+                    if (!inner_class.Name.Contains("<TryTrain>"))
+                        continue;
+
+                    var methods = inner_class.GetMethods(AccessTools.all);
+                    foreach (var method in methods)
+                    {
+                        if (method.Name.Contains("<>m__"))
+                            return method;
+                    }
+                }
+                Log.Error("Animal Logic is unable to detect TryTrain method.");
+                return null;
             }
 
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

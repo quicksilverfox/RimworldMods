@@ -11,9 +11,9 @@ using Verse;
 namespace Logistics
 {
     [StaticConstructorOnStartup]
-    class Main
+    class Logistics
     {
-        static Main()
+        static Logistics()
         {
             var harmony = HarmonyInstance.Create("net.quicksilverfox.rimworld.mod.logistics");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -23,22 +23,33 @@ namespace Logistics
     [HarmonyPatch(typeof(WorldPathGrid), "CalculatedCostAt", new Type[] { typeof(int), typeof(bool), typeof(float) })]
     static class WorldPathGrid_CalculatedCostAt_Patch
     {
+        // This is a pretty dirty way to go, since it prevents original function from invoking, as well as other mods which can use it. But it has too many inline modifications to use Prefix/Postfix pair or Transpiler.
         static bool Prefix(ref int __result, int tile, bool perceivedStatic, float yearPercent = -1f)
         {
-            Settlement settlement = Find.WorldObjects.SettlementAt(tile);
-            if (settlement != null && Faction.OfPlayerSilentFail != null && (settlement.Faction == Faction.OfPlayerSilentFail || settlement.Visitable))
-            {
-                __result = 0; // Friendly or player-controlled settlements ignore all terrain costs. Home, sweet home!
-                return false;
-            }
-            int num = 0;
             Tile tile2 = Find.WorldGrid[tile];
-            if (tile2.biome.impassable)
+            if (tile2.biome.impassable) // Water or something
             {
                 __result = 1000000;
                 return false;
             }
-            bool current = yearPercent == -1f;
+
+            if (tile2.hilliness == Hilliness.Impassable) // Impassable Map Maker would override this in Postfix, and it won't be affected by this mod.
+            {
+                __result = 1000000;
+                return false;
+            }
+
+            Settlement settlement;
+            Faction playerFaction = Faction.OfPlayerSilentFail;
+            if (playerFaction != null && (settlement = Find.WorldObjects.SettlementAt(tile)) != null && (settlement.Faction == playerFaction || settlement.Visitable))
+            {
+                __result = 0; // Friendly or player-controlled settlements ignore all terrain costs. Home, sweet home!
+                return false;
+            }
+
+            int num = 0;
+
+            bool calculateForCurrentTime = yearPercent == -1f;
             if (yearPercent < 0f)
             {
                 yearPercent = (float)DayOfYearAt0Long / 60f;
@@ -48,17 +59,13 @@ namespace Logistics
             {
                 num2 = (num2 + 0.5f) % 1f;
             }
+
             // If we are calculating path for now, don't apply snow penalty if there are... Well, you know, no snow.
-            if (current && GenTemperature.GetTemperatureAtTile(tile) >= 0)
+            if (calculateForCurrentTime && GenTemperature.GetTemperatureAtTile(tile) >= 0)
             {
                 num2 = 0.33f;
             }
             num += Mathf.RoundToInt(tile2.biome.pathCost.Evaluate(num2) * GetSettlementMoveModifier(tile));
-            if (tile2.hilliness == Hilliness.Impassable)
-            {
-                __result = 1000000;
-                return false;
-            }
             num += Mathf.RoundToInt(CostFromTileHilliness(tile2.hilliness) * GetSettlementMoveModifier(tile));
             __result = num;
             return false;
@@ -68,22 +75,23 @@ namespace Logistics
         private static float GetSettlementMoveModifier(int tile)
         {
             float mod = 1f;
-            if (Find.WorldObjects.AnySettlementAt(tile))
-            {
-                mod = Math.Min(0.3f, mod);
-            }
-            if (Find.WorldObjects.AnyDestroyedFactionBaseAt(tile))
-            {
-                mod = Math.Min(0.4f, mod);
-            }
-            if (Find.WorldObjects.AnySettlementAtOrAdjacent(tile))
-            {
-                mod = Math.Min(0.5f, mod);
-            }
+            // Due to how settlements are handled, this stuff is vey CPU-heavy. Cut out for now.
+            //if (Find.WorldObjects.AnySettlementAt(tile))
+            //{
+            //    mod = Math.Min(0.3f, mod);
+            //}
+            //if (Find.WorldObjects.AnyDestroyedFactionBaseAt(tile))
+            //{
+            //    mod = Math.Min(0.4f, mod);
+            //}
+            //if (Find.WorldObjects.AnySettlementAtOrAdjacent(tile))
+            //{
+            //    mod = Math.Min(0.5f, mod);
+            //}
             return mod;
         }
 
-        // copy/paste from WorldPathGrid due to private
+        // Copy/paste from WorldPathGrid due to private. Easier and faster than messing with reflection, even if not as safe.
         private static int DayOfYearAt0Long
         {
             get
@@ -92,7 +100,7 @@ namespace Logistics
             }
         }
 
-        // copy/paste from WorldPathGrid due to private
+        // Copy/paste from WorldPathGrid due to private. Easier and faster than messing with reflection, even if not as safe.
         private static int CostFromTileHilliness(Hilliness hilliness)
         {
             switch (hilliness)

@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimalsAreDifferent.cs" />
+    <Compile Include="AnimalsFightBack.cs" />
     <Compile Include="AnimalsLogic.cs" />
     <Compile Include="BuyablePackAnimals.cs" />
     <Compile Include="DoNotEatRandomly.cs" />

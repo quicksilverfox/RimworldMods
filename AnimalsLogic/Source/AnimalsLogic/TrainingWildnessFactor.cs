@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Harmony;
 using RimWorld;
 using Verse;
-using Verse.AI;
 using System.Reflection;
 using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
-using Harmony.ILCopying;
 
 namespace AnimalsLogic
 {
+    /*
+     * Ajust training difficulty for wild animals.
+     */
+
     class TrainingWildnessFactor
     {
         [HarmonyPatch]

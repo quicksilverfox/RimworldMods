@@ -3,5 +3,6 @@
 	<name>Logistics</name>
 	<author>Oblitus</author>
 	<targetVersion>0.17.1554</targetVersion>
-	<description>Changes world tile movement time to make more sense.</description>
+	<description>No global map movement penalty for the tile with your base. And tiles with friendly factions as well. No winter movement penalty for the tiles without snow.</description>
+	<url>https://ludeon.com/forums/index.php?topic=34628</url>
 </ModMetaData>

@@ -15,12 +15,14 @@ namespace AnimalsLogic
         [HarmonyPatch(typeof(JobGiver_EatRandom), "TryGiveJob", new Type[] { typeof(Pawn) })]
         static class JobGiver_EatRandom_TryGiveJob_Patch
         {
-            static void Postfix(ref Job __result)
+            static bool Prefix(ref Job __result, Pawn pawn)
             {
-                if (Settings.prevent_eating_stuff)
+                if (pawn.RaceProps.Animal && Settings.prevent_eating_stuff)
                 {
                     __result = null;
+                    return false;
                 }
+                return true;
             }
         }
     }

@@ -3,6 +3,16 @@
 	<name>Animals Logic</name>
 	<author>Oblitus</author>
 	<targetVersion>0.17.1554</targetVersion>
-	<description>Adds several of QoL animal behavior related fixes.</description>
+	<description>Several QoL fixes related to the animal behavior:
+ — In caravan forming and trade interface adds tags to distinguish bonded, trained and pregnant animals.
+ — Changes pack-able animals without a load to be considered a sellable chattel by the caravans.
+ — Unforbids slaughtered animals.
+ — Egg-layers are trying to find a sleeping spot or other animal bed in their allowed area to lay an egg. Unforbids eggs laid outside the home area.
+ — Predators hunting your pawns (human-like or animals) are considered hostile by all your pawns and turrets.
+ — Assign animal beds to specific animals.
+ — Assign medical beds for animals.
+ — (Optional) Prevents animals from eating random stuff.
+ — (Optional) Lessens wildness penalty for training (but not taming) animals.
+ — (Experimental) Animals have greater chance to fight back when attacked in melee.</description>
 	<url>https://ludeon.com/forums/index.php?topic=34628</url>
 </ModMetaData>

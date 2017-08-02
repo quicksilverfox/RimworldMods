@@ -16,7 +16,7 @@ namespace AnimalsLogic
 
             listing_Standard.CheckboxLabeled("Prevent animals from eating random stuff", ref prevent_eating_stuff);
 
-            listing_Standard.Label("Wildeness effect on training. Vanilla — 100%, recommended — 85%, current — " + ((float)Math.Round((1 - training_wildeness_effect_to) / 2 + 0.5, 2)).ToStringPercent() + ".");
+            listing_Standard.Label("Wildness effect on training. Vanilla — 100%, recommended — 85%, current — " + ((float)Math.Round((1 - training_wildeness_effect_to) / 2 + 0.5, 2)).ToStringPercent() + ".");
             training_wildeness_effect_to = 1 - listing_Standard.Slider(1 - training_wildeness_effect_to, 0, 1);
 
             listing_Standard.End();

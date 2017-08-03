@@ -21,7 +21,7 @@ namespace AnimalsLogic
 
         static void Postfix(ref bool __result, ref object[] __state)
         {
-            if (__state == null)
+            if (__state == null || !Settings.hostile_predators)
             {
                 return;
             }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Harmony;
 using RimWorld;
 using Verse;
@@ -15,7 +14,7 @@ namespace AnimalsLogic
     /*
      * Animals needing medical attention would stay in bed even if it is outside their allowed area.
      * 
-     * Also, allowws to assign beds to specific animals. Idea (and even one line of code) shamelessly stolen from The Salad Spinner of Woe!!
+     * Also, allows to assign beds to specific animals. Idea (and even one line of code) shamelessly stolen from The Salad Spinner of Woe!!
      */
 
     class YouSleepHere

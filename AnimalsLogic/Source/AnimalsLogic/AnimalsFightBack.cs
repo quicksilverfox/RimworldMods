@@ -23,6 +23,9 @@ namespace AnimalsLogic
 
             static void Postfix(ref DamageInfo __state, ref Pawn_MindState __instance)
             {
+                if (!Settings.fight_back)
+                    return;
+
                 Pawn defender = __instance.pawn;
                 Pawn attacker = __state.Instigator as Pawn;
 

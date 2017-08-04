@@ -58,6 +58,7 @@
     <Compile Include="BuyablePackAnimals.cs" />
     <Compile Include="DoNotEatRandomly.cs" />
     <Compile Include="DoNotForbidSlaughtered.cs" />
+    <Compile Include="GiveMeName.cs" />
     <Compile Include="HostilePredators.cs" />
     <Compile Include="LayEggsInNests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

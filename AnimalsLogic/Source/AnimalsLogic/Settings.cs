@@ -20,7 +20,7 @@ namespace AnimalsLogic
             listing_Standard.CheckboxLabeled("Prevent animals from eating random stuff", ref prevent_eating_stuff);
             listing_Standard.CheckboxLabeled("Predators hunting your pawns are hostile to all your faction", ref hostile_predators);
             listing_Standard.CheckboxLabeled("Convert eggs ruined by temperature into unfertilized chicken eggs", ref convert_ruined_eggs, "Note, this does not affect already ruined eggs.");
-            listing_Standard.CheckboxLabeled("More fighting back against melee threats", ref fight_back, "Note, this applies to both melee and tamed animals.");
+            listing_Standard.CheckboxLabeled("More fighting back against melee threats", ref fight_back, "Note, this applies to both wild and tamed animals. If you are using a mid which makes your animals hunt for food, you may want to disable it to avoid spending a lot of meds healing minor wounds on your pets.");
 
             listing_Standard.Label("Wildness effect on training. Vanilla — 100%, recommended — 85%, current — " + ((float)Math.Round((1 - training_wildeness_effect_to) / 2 + 0.5, 2)).ToStringPercent() + ".");
             training_wildeness_effect_to = 1 - listing_Standard.Slider(1 - training_wildeness_effect_to, 0, 1);

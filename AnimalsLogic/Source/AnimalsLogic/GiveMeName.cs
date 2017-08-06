@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Harmony;
 using RimWorld;
 using Verse;
@@ -16,26 +13,14 @@ namespace AnimalsLogic
 
     class GiveMeName
     {
-        //  if (!flag && pawn.IsColonist && !pawn.health.Dead)
-        //	{
-        //		Rect rect7 = new Rect(CharacterCardUtility.PawnCardSize.x - 85f, 0f, 30f, 30f);
-        //        TooltipHandler.TipRegion(rect7, new TipSignal("RenameColonist".Translate()));
-        //		if (Widgets.ButtonImage(rect7, TexButton.Rename))
-        //		{
-        //			Find.WindowStack.Add(new Dialog_ChangeNameTriple(pawn));
-        //		}
-        //  }
-
         public static Texture2D Rename = null;
 
-        // RimWorld.MainTabWindow_Inspect
-        // public void DoInspectPaneButtons(Rect rect, ref float lineEndWidth)
         [HarmonyPatch]
         static class MainTabWindow_DoInspectPaneButtons_Patch
         {
             static MethodInfo TargetMethod()
             {
-                return typeof(MainTabWindow_Inspect).GetMethod("DoInspectPaneButtons", new Type[] { typeof(Rect), Type.GetType("System.Single&") });
+                return typeof(MainTabWindow_Inspect).GetMethod("DoInspectPaneButtons", new Type[] { typeof(Rect), Type.GetType("System.Single&") }); // BLAK MAGIK
             }
 
             static bool Prefix(ref Rect __state, Rect rect)
@@ -46,9 +31,10 @@ namespace AnimalsLogic
 
             static void Postfix(ref Rect __state, ref MainTabWindow_Inspect __instance)
             {
-                if (__state == null) return;
-                
-                if (Rename == null)
+                if (__state == null)
+                    return;
+
+                if (Rename == null) // Lazy init
                 {
                     Rename = ContentFinder<Texture2D>.Get("UI/Buttons/Rename", true);
                 }
@@ -58,8 +44,7 @@ namespace AnimalsLogic
                     Thing singleSelectedThing = Find.Selector.SingleSelectedThing;
                     if (singleSelectedThing != null)
                     {
-                        Pawn pawn = singleSelectedThing as Pawn;
-                        if (pawn != null && pawn.RaceProps.Animal && pawn.Faction != null && pawn.Faction.IsPlayer)
+                        if (singleSelectedThing is Pawn pawn && pawn.RaceProps.Animal && pawn.Faction != null && pawn.Faction.IsPlayer)
                         {
                             Rect rect7 = new Rect(__state.width - 78f, 0f, 30f, 30f);
                             TooltipHandler.TipRegion(rect7, new TipSignal("RenameColonist".Translate()));
@@ -136,10 +121,7 @@ namespace AnimalsLogic
                         this.pawn.Name = this.CurPawnName;
 
                     Find.WindowStack.TryRemove(this, true);
-                    Messages.Message("PawnGainsName".Translate(new object[]
-                    {
-                    this.curName
-                    }), this.pawn, MessageSound.Benefit);
+                    Messages.Message("PawnGainsName".Translate(new object[] { this.curName }), this.pawn, MessageSound.Benefit);
                 }
             }
         }

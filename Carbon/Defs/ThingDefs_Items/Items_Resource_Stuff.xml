@@ -21,15 +21,19 @@
       <li>ResourcesRaw</li>
     </thingCategories>
     <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeability>Sellable</tradeability>
     <tradeTags>
       <li>ResourcesRaw</li>
     </tradeTags>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
   </ThingDef>
   
   <ThingDef ParentName="ResourceBase">
     <defName>Graphene</defName>
     <label>graphene</label>
-    <description>A cloth-like material made of pure carbon. Far too thin to insulate or protect from the heavy blow, but almost impossible to cut and nearly indestructible under normal conditions. Being non-flammable can offer some protection from open fire. Unfortunately, taking full advantage of this material requires a seamless technology.</description>
+    <description>A cloth-like material made of pure carbon. Far too thin to insulate or protect from the heavy blow, but almost impossible to cut and nearly indestructible under normal conditions. Being non-flammable and liquidproof can offer some protection from open fire. Unfortunately, taking full advantage of this material requires a seamless technology.</description>
     <graphicData>
       <texPath>Things/Item/Resource/Graphene</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -52,6 +56,7 @@
       	<Cleanliness>0.2</Cleanliness>
       </statOffsets>
       <statFactors>
+        <MaxHitPoints>5.0</MaxHitPoints>
         <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
         <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
         <ArmorRating_Heat>4.0</ArmorRating_Heat>
@@ -62,9 +67,13 @@
       	<DeteriorationRate>0</DeteriorationRate>
       </statFactors>
     </stuffProps>
+    <tradeability>Sellable</tradeability>
     <thingCategories>
       <li>Textiles</li>
     </thingCategories>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
   </ThingDef>
 
   <ThingDef ParentName="ResourceBase">
@@ -88,9 +97,13 @@
       <SharpDamageMultiplier>0.3</SharpDamageMultiplier>
       <BluntDamageMultiplier>0.8</BluntDamageMultiplier>
     </statBases>
+    <tradeability>Sellable</tradeability>
     <thingCategories>
       <li>ResourcesRaw</li>
     </thingCategories>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
     <deepCommonality>0</deepCommonality>
     <stuffProps>
       <categories>
@@ -163,9 +176,13 @@
       </statFactors>
       <smeltable>false</smeltable>
     </stuffProps>
+    <tradeability>Sellable</tradeability>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
 	</ThingDef>
 
 </Defs>

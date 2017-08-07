@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/GenStepDef[defName="PreciousLump"]/genStep/mineables</xpath>
+		<value>
+			<li>MineableUranium</li>
+			<li>MineableSilver</li>
+			<li>MineableComponents</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Buildings/ThingDef[defName="LongRangeMineralScanner"]/comps//li[4]</xpath>
+		<value>
+			<mtbDays>20</mtbDays>
+		</value>
+	</Operation>
+
+</Patch>

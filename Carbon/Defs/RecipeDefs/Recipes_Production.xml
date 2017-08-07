@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecipeDefs>
+
+	<RecipeDef>
+		<!-- Oil and gas are 85% carbon -->
+		<defName>MakeCarbonFromChemfuel</defName>
+		<label>make carbon from chemfuel</label>
+		<description>Make a batch of refined carbon by refining chemfuel.</description>
+		<jobString>Making carbon from chemfuel.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>3000</workAmount>
+		<workSkill>Intellectual</workSkill>
+		<researchPrerequisite>Refining</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Carbon>42</Carbon>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>MakeGraphene</defName>
+		<label>make graphene</label>
+		<description>Make graphene from pure carbon.</description>
+		<jobString>Making graphene.</jobString>
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+		<workAmount>6000</workAmount>
+		<workSkill>Crafting</workSkill>
+		<researchPrerequisite>Refining</researchPrerequisite>
+		<skillRequirements>
+			<li>
+				<skill>Crafting</skill>
+				<minLevel>10</minLevel>
+			</li>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Carbon</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Carbon</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Graphene>50</Graphene>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>MakeCarbonFiber</defName>
+		<label>make carbon composite</label>
+		<description>Make carbon fiber reinforced polymer from pure carbon and chemfuel.</description>
+		<jobString>Making carbon composite.</jobString>
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+		<workAmount>6000</workAmount>
+		<workSkill>Crafting</workSkill>
+		<researchPrerequisite>Refining</researchPrerequisite>
+		<skillRequirements>
+			<li>
+				<skill>Crafting</skill>
+				<minLevel>10</minLevel>
+			</li>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Carbon</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Carbon</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<CarbonFiber>50</CarbonFiber>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>MakeDiamond</defName>
+		<label>make diamond</label>
+		<description>Make diamond from pure carbon.</description>
+		<jobString>Making diamond.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>15000</workAmount>
+		<workSkill>Crafting</workSkill>
+		<researchPrerequisite>Refining</researchPrerequisite>
+		<skillRequirements>
+			<li>
+				<skill>Crafting</skill>
+				<minLevel>10</minLevel>
+			</li>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Carbon</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Carbon</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Diamond>10</Diamond>
+		</products>
+	</RecipeDef>
+
+</RecipeDefs>

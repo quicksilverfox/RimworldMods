@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Carbon</defName>
+    <label>carbon</label>
+		<description>Pure carbon. A truly versatile material, if you have the right technology.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Carbon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>150</stackLimit>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MarketValue>4</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeTags>
+      <li>ResourcesRaw</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>Graphene</defName>
+    <label>graphene</label>
+    <description>A cloth-like material made of pure carbon. Far too thin to insulate or protect from the heavy blow, but almost impossible to cut and nearly indestructible under normal conditions. Being non-flammable can offer some protection from open fire. Unfortunately, taking full advantage of this material requires a seamless technology.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Graphene</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>75</stackLimit>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MarketValue>5</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0.05</commonality>
+      <color>(25,25,25)</color>
+      <statOffsets>
+        <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+        <ArmorRating_Heat>0.1</ArmorRating_Heat>
+      	<Cleanliness>0.2</Cleanliness>
+      </statOffsets>
+      <statFactors>
+        <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+        <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+        <ArmorRating_Heat>4.0</ArmorRating_Heat>
+        <ArmorRating_Electric>0.0</ArmorRating_Electric>
+        <Insulation_Cold>0.1</Insulation_Cold>
+        <Insulation_Heat>0.1</Insulation_Heat>
+        <Flammability>0.0</Flammability>
+      	<DeteriorationRate>0</DeteriorationRate>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>CarbonFiber</defName>
+    <label>carbon fiber</label>
+    <description>Carbon fiber reinforced plastic is quite versatile, being both strong and light. Just don't try to make a sharp edge out of it.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarbonFiber</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MarketValue>5</MarketValue>
+      <Mass>0.25</Mass>
+      <Flammability>0.0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <MeleeWeapon_DamageAmount>8</MeleeWeapon_DamageAmount>
+      <MeleeWeapon_Cooldown>2.2</MeleeWeapon_Cooldown>
+      <SharpDamageMultiplier>0.3</SharpDamageMultiplier>
+      <BluntDamageMultiplier>0.8</BluntDamageMultiplier>
+    </statBases>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <deepCommonality>0</deepCommonality>
+    <stuffProps>
+      <categories>
+        <li>Metallic</li>
+        <li>Woody</li>
+      </categories>
+      <commonality>0.05</commonality>
+      <constructEffect>ConstructMetal</constructEffect>
+      <color>(25,25,25)</color>
+      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statOffsets>
+      	<Cleanliness>0.4</Cleanliness>
+      </statOffsets>
+      <statFactors>
+        <MaxHitPoints>2.0</MaxHitPoints>
+        <Beauty>2</Beauty>
+        <Flammability>0.0</Flammability>
+        <WorkToMake>0.7</WorkToMake>
+				<WorkToBuild>0.7</WorkToBuild>
+        <MeleeWeapon_Cooldown>0.7</MeleeWeapon_Cooldown>
+        <DoorOpenSpeed>1.3</DoorOpenSpeed>
+      <DeteriorationRate>0.25</DeteriorationRate>
+      </statFactors>
+      <smeltable>false</smeltable>
+    </stuffProps>
+  </ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>Diamond</defName>
+		<label>diamond</label>
+		<description>A metastable allotrope of carbon. Synthetic, therefore not valuable, but still somewhat beautiful and immensely durable.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Diamond</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+		<statBases>
+			<MarketValue>25</MarketValue>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.75</BluntDamageMultiplier>
+		</statBases>
+		<stuffProps>
+			<categories>
+				<li>Stony</li>
+			</categories>
+			<commonality>0.05</commonality>
+			<color>(173,240,255)</color>
+			<constructEffect>ConstructMetal</constructEffect>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+      <statOffsets>
+        <Beauty>6</Beauty>
+      	<Cleanliness>0.4</Cleanliness>
+      </statOffsets>
+      <statFactors>
+        <MaxHitPoints>25</MaxHitPoints>
+        <WorkToMake>3.5</WorkToMake>
+				<WorkToBuild>7.0</WorkToBuild>
+				<Beauty>2.5</Beauty>
+        <Flammability>0.0</Flammability>
+        <MeleeWeapon_Cooldown>1.1</MeleeWeapon_Cooldown>
+      	<DeteriorationRate>0</DeteriorationRate>
+      </statFactors>
+      <smeltable>false</smeltable>
+    </stuffProps>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+</Defs>

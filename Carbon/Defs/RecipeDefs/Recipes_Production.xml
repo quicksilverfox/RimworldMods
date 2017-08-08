@@ -9,7 +9,7 @@
 		<jobString>Making carbon from chemfuel.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>3000</workAmount>
+		<workAmount>2500</workAmount>
 		<workSkill>Intellectual</workSkill>
 		<researchPrerequisite>Refining</researchPrerequisite>
 		<ingredients>
@@ -39,13 +39,13 @@
 		<jobString>Making graphene.</jobString>
 		<effectWorking>Tailor</effectWorking>
 		<soundWorking>Recipe_Tailor</soundWorking>
-		<workAmount>6000</workAmount>
+		<workAmount>4200</workAmount>
 		<workSkill>Crafting</workSkill>
 		<researchPrerequisite>Refining</researchPrerequisite>
 		<skillRequirements>
 			<li>
 				<skill>Crafting</skill>
-				<minLevel>10</minLevel>
+				<minLevel>6</minLevel>
 			</li>
 		</skillRequirements>
 		<ingredients>
@@ -75,13 +75,13 @@
 		<jobString>Making carbon composite.</jobString>
 		<effectWorking>Tailor</effectWorking>
 		<soundWorking>Recipe_Tailor</soundWorking>
-		<workAmount>6000</workAmount>
+		<workAmount>4200</workAmount>
 		<workSkill>Crafting</workSkill>
 		<researchPrerequisite>Refining</researchPrerequisite>
 		<skillRequirements>
 			<li>
 				<skill>Crafting</skill>
-				<minLevel>10</minLevel>
+				<minLevel>6</minLevel>
 			</li>
 		</skillRequirements>
 		<ingredients>
@@ -119,7 +119,7 @@
 		<jobString>Making diamond.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>15000</workAmount>
+		<workAmount>7500</workAmount>
 		<workSkill>Crafting</workSkill>
 		<researchPrerequisite>Refining</researchPrerequisite>
 		<skillRequirements>

@@ -20,7 +20,6 @@
     <thingCategories>
       <li>ResourcesRaw</li>
     </thingCategories>
-    <drawGUIOverlay>false</drawGUIOverlay>
     <tradeability>Sellable</tradeability>
     <tradeTags>
       <li>ResourcesRaw</li>

@@ -25,7 +25,7 @@ namespace AnimalsLogic
         {
             static bool Prefix(ref Job __result, Pawn pawn)
             {
-                if (pawn.RaceProps.Animal && pawn.InBed() && pawn.CurrentBed().Medical || HealthAIUtility.ShouldSeekMedicalRestUrgent(pawn) || pawn.health.hediffSet.HasTendedAndHealingInjury())
+                if (pawn.RaceProps.Animal && pawn.InBed() && (pawn.CurrentBed().Medical || HealthAIUtility.ShouldSeekMedicalRestUrgent(pawn) || pawn.health.hediffSet.HasTendedAndHealingInjury()))
                 {
                     __result = null;
                     return false;

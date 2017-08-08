@@ -25,11 +25,13 @@ namespace AnimalsLogic
                 if (Settings.convert_ruined_eggs && !__state && __instance.Ruined) // Thing is ruined after this tick
                 {
                     ThingWithComps thing = __instance.parent;
-                    foreach (var item in thing.def.comps)
+                    foreach (var item in thing.AllComps)
                     {
-                        if (item.GetType() == typeof(CompProperties_Hatcher))
+                        if (item.props.GetType() == typeof(CompProperties_Hatcher))
                         {
                             thing.def = DefDatabase<ThingDef>.GetNamed("EggChickenUnfertilized");
+                            thing.AllComps.Remove(__instance);
+                            thing.AllComps.Remove(item);
                             return;
                         }
                     }

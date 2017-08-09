@@ -30,11 +30,11 @@
   </ThingDef>
   
   <ThingDef ParentName="ResourceBase">
-    <defName>Graphene</defName>
-    <label>graphene</label>
-    <description>A cloth-like material made of pure carbon. Far too thin to insulate or protect from the heavy blow, but almost impossible to cut and nearly indestructible under normal conditions. Being non-flammable and liquidproof can offer some protection from open fire. Unfortunately, taking full advantage of this material requires a seamless technology.</description>
+    <defName>CarbonWeave</defName>
+    <label>carbon weave</label>
+    <description>A cloth-like material made of fine carbon fibers. Offers excellent electrical conductivity, but this is pretty much opposite to what you'd typically want from cloth. Quite tough and chemically inert.</description>
     <graphicData>
-      <texPath>Things/Item/Resource/Graphene</texPath>
+      <texPath>Things/Item/Resource/CarbonWeave</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <stackLimit>75</stackLimit>
@@ -47,21 +47,20 @@
       <categories>
         <li>Fabric</li>
       </categories>
-      <commonality>0.05</commonality>
-      <color>(25,25,25)</color>
+      <commonality>0.15</commonality>
+      <color>(35,35,35)</color>
       <statOffsets>
-        <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
-        <ArmorRating_Heat>0.1</ArmorRating_Heat>
-      	<Cleanliness>0.2</Cleanliness>
+        <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+        <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+        <ArmorRating_Heat>0.03</ArmorRating_Heat>
       </statOffsets>
       <statFactors>
-        <MaxHitPoints>5.0</MaxHitPoints>
-        <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
-        <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+        <MaxHitPoints>2.5</MaxHitPoints>
+        <WorkToMake>1.3</WorkToMake>
+        <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+        <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
         <ArmorRating_Heat>4.0</ArmorRating_Heat>
         <ArmorRating_Electric>0.0</ArmorRating_Electric>
-        <Insulation_Cold>0.1</Insulation_Cold>
-        <Insulation_Heat>0.1</Insulation_Heat>
         <Flammability>0.0</Flammability>
       	<DeteriorationRate>0</DeteriorationRate>
       </statFactors>
@@ -109,9 +108,9 @@
         <li>Metallic</li>
         <li>Woody</li>
       </categories>
-      <commonality>0.05</commonality>
+      <commonality>0.15</commonality>
       <constructEffect>ConstructMetal</constructEffect>
-      <color>(25,25,25)</color>
+      <color>(35,35,35)</color>
       <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
@@ -126,7 +125,7 @@
 				<WorkToBuild>0.7</WorkToBuild>
         <MeleeWeapon_Cooldown>0.7</MeleeWeapon_Cooldown>
         <DoorOpenSpeed>1.3</DoorOpenSpeed>
-      <DeteriorationRate>0.25</DeteriorationRate>
+      	<DeteriorationRate>0.25</DeteriorationRate>
       </statFactors>
       <smeltable>false</smeltable>
     </stuffProps>
@@ -155,7 +154,7 @@
 				<li>Stony</li>
 			</categories>
 			<commonality>0.05</commonality>
-			<color>(173,240,255)</color>
+			<color>(173,210,255)</color>
 			<constructEffect>ConstructMetal</constructEffect>
 			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
 			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>

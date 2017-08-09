@@ -5,7 +5,7 @@
 		<xpath>*/ThingDef[defName="Refinery"]/recipes</xpath>
 		<value>
 			<li>MakeCarbonFromChemfuel</li>
-			<li>MakeGraphene</li>
+			<li>MakeCarbonWeave</li>
 			<li>MakeCarbonFiber</li>
 			<li>MakeDiamond</li>
 		</value>

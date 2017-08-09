@@ -2,8 +2,8 @@
 <Buildings>
 
   <ThingDef ParentName="BuildingBase">
-    <defName>GraphenePowerConduit</defName>
-    <label>graphene power conduit</label>
+    <defName>CarbonPowerConduit</defName>
+    <label>carbon power conduit</label>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -40,7 +40,7 @@
     <description>A set of heavy duty electrical cables for moving power around. Can be placed under walls and other buildings.</description>
     <placingDraggableDimensions>1</placingDraggableDimensions>
     <costList>
-      <Graphene>1</Graphene>
+      <CarbonWeave>1</CarbonWeave>
       <CarbonFiber>1</CarbonFiber>
     </costList>
     <comps>
@@ -60,14 +60,13 @@
 		<designationCategory>Power</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
-      <li>Electricity</li>
-      <li>Refining</li>
+      <li>CarbonResearch</li>
     </researchPrerequisites>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">
-    <defName>GraphenePowerConduitUnderwater</defName>
-    <label>underwater graphene power conduit</label>
+    <defName>CarbonPowerConduitUnderwater</defName>
+    <label>underwater carbon power conduit</label>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -104,7 +103,7 @@
     <description>A set of heavy duty electrical cables for moving power around. Underwater edition.</description>
     <placingDraggableDimensions>1</placingDraggableDimensions>
     <costList>
-      <Graphene>1</Graphene>
+      <CarbonWeave>1</CarbonWeave>
       <CarbonFiber>1</CarbonFiber>
     </costList>
     <comps>
@@ -124,8 +123,7 @@
 		<designationCategory>Power</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
-      <li>Electricity</li>
-      <li>Refining</li>
+      <li>CarbonResearch</li>
     </researchPrerequisites>
   </ThingDef>
   

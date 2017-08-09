@@ -11,7 +11,7 @@
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>2500</workAmount>
 		<workSkill>Intellectual</workSkill>
-		<researchPrerequisite>Refining</researchPrerequisite>
+		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
 			<li>
 				<filter>
@@ -33,15 +33,15 @@
 	</RecipeDef>
 
 	<RecipeDef>
-		<defName>MakeGraphene</defName>
-		<label>make graphene</label>
-		<description>Make graphene from pure carbon.</description>
-		<jobString>Making graphene.</jobString>
+		<defName>MakeCarbonWeave</defName>
+		<label>make carbon weave</label>
+		<description>Make carbon weave from pure carbon.</description>
+		<jobString>Making carbon weave.</jobString>
 		<effectWorking>Tailor</effectWorking>
 		<soundWorking>Recipe_Tailor</soundWorking>
 		<workAmount>4200</workAmount>
 		<workSkill>Crafting</workSkill>
-		<researchPrerequisite>Refining</researchPrerequisite>
+		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
 			<li>
 				<skill>Crafting</skill>
@@ -64,7 +64,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<Graphene>50</Graphene>
+			<CarbonWeave>50</CarbonWeave>
 		</products>
 	</RecipeDef>
 
@@ -77,7 +77,7 @@
 		<soundWorking>Recipe_Tailor</soundWorking>
 		<workAmount>4200</workAmount>
 		<workSkill>Crafting</workSkill>
-		<researchPrerequisite>Refining</researchPrerequisite>
+		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
 			<li>
 				<skill>Crafting</skill>
@@ -121,7 +121,7 @@
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>7500</workAmount>
 		<workSkill>Crafting</workSkill>
-		<researchPrerequisite>Refining</researchPrerequisite>
+		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
 			<li>
 				<skill>Crafting</skill>

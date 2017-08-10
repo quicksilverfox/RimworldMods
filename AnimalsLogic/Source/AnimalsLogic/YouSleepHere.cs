@@ -40,7 +40,7 @@ namespace AnimalsLogic
         {
             static void Postfix(ref IEnumerable<Gizmo> __result, ref Building_Bed __instance)
             {
-                if (__instance.Faction != Faction.OfPlayer || __instance.def.building.bed_humanlike)
+                if (__instance.Faction != Faction.OfPlayer || __instance.def.building.bed_humanlike || __instance.def.building.bed_maxBodySize <= 0.01) // bodysize check is for compatibility with Dubs Hygiene - he made his bathtubs as animal beds.
                     return;
 
                 Building_Bed bed = __instance;
@@ -87,12 +87,13 @@ namespace AnimalsLogic
         {
             static void Postfix(ref IEnumerable<Pawn> __result, ref Building_Bed __instance)
             {
-                if (__instance.def.building.bed_humanlike)
+                if (__instance.def.building.bed_humanlike || __instance.def.building.bed_maxBodySize <= 0.01) // bodysize check is for compatibility with Dubs Hygiene - he made his bathtubs as animal beds.
                     return;
 
                 if (!__instance.Spawned)
                 {
                     __result = Enumerable.Empty<Pawn>();
+                    return;
                 }
 
                 __result = from p in Find.VisibleMap.mapPawns.AllPawns

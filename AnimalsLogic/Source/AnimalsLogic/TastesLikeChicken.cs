@@ -7,6 +7,10 @@ using Verse;
 
 namespace AnimalsLogic
 {
+    /*
+     * Replaces all meat gained from butchery with chicken meat for generic animals, human meat for humanlikes and insect meat for insects.
+     */
+
     class TastesLikeChicken
     {
         // Verse.Pawn
@@ -24,9 +28,9 @@ namespace AnimalsLogic
                 List<Thing> result = new List<Thing>(__result);
                 Thing meat = result.Find(x => x.def.IsIngestible && x.def.ingestible.foodType == FoodTypeFlags.Meat);
 
-                if (meat.def.defName.Contains("StrangeFlesh")) // Cosmic Horrors mod semi-support
+                if (meat.def.defName.Contains("RawCHFood")) // Cosmic Horrors mod semi-support
                 {
-                    // do nothing
+                    return; // do nothing
                 }
                 else if (__instance.RaceProps.Humanlike)
                 {
@@ -36,7 +40,7 @@ namespace AnimalsLogic
                 {
                     meat.def = DefDatabase<ThingDef>.GetNamed("Megaspider_Meat");
                 }
-                else if (__instance.RaceProps.FleshType == FleshTypeDefOf.Insectoid)
+                else
                 {
                     meat.def = DefDatabase<ThingDef>.GetNamed("Chicken_Meat");
                 }

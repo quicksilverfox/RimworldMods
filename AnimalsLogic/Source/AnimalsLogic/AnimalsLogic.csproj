@@ -63,6 +63,7 @@
     <Compile Include="HostilePredators.cs" />
     <Compile Include="HushMyPet.cs" />
     <Compile Include="LayEggsInNests.cs" />
+    <Compile Include="NoMiscarryAfterMissedBreakfast.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuinedEggs.cs" />
     <Compile Include="Settings.cs" />

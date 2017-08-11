@@ -20,13 +20,18 @@ namespace AnimalsLogic
         {
             static void Postfix(ref IEnumerable<Thing> __result, ref Pawn __instance)
             {
-                if (!Settings.tastes_like_chicken)
+                if (!Settings.tastes_like_chicken || __result == null || !__result.Any())
                 {
                     return;
                 }
 
                 List<Thing> result = new List<Thing>(__result);
                 Thing meat = result.Find(x => x.def.IsIngestible && x.def.ingestible.foodType == FoodTypeFlags.Meat);
+
+                if (meat == null)
+                {
+                    return;
+                }
 
                 if (meat.def.defName.Contains("RawCHFood")) // Cosmic Horrors mod semi-support
                 {
@@ -40,7 +45,7 @@ namespace AnimalsLogic
                 {
                     meat.def = DefDatabase<ThingDef>.GetNamed("Megaspider_Meat");
                 }
-                else
+                else if (__instance.RaceProps.FleshType == FleshTypeDefOf.Normal)
                 {
                     meat.def = DefDatabase<ThingDef>.GetNamed("Chicken_Meat");
                 }

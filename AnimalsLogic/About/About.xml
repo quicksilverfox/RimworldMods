@@ -3,19 +3,21 @@
 	<name>Animals Logic</name>
 	<author>Oblitus</author>
 	<targetVersion>0.17.1554</targetVersion>
-	<description>Several QoL fixes related to the animal behavior:
- — Rename button for animals.
- — In caravan forming and trade interface adds tags to distinguish bonded, trained and pregnant animals.
- — Changes pack-able animals without a load to be considered a sellable chattel by the caravans.
- — Unforbids slaughtered animals.
- — Egg-layers are trying to find a sleeping spot or other animal bed in their allowed area to lay an egg. Unforbids eggs laid outside the home area.
- — Assign animal beds to specific animals.
- — Assign medical beds for animals.
- — Pets and bonded animals do not disturb sleep.
- — (Optional) Convert ruined eggs into unfertilized.
- — (Optional) Predators hunting your pawns (human-like or animals) are considered hostile by all your pawns and turrets.
- — (Optional) Prevents animals from eating random stuff.
- — (Optional) Lessens wildness penalty for training (but not taming) animals.
- — (Optional) Animals have greater chance to fight back when attacked in melee.</description>
+	<description>[*] Adds rename button for animals.
+[*] Tags bonded, trained and pregnant animals in caravan and trade interfaces.
+[*] Changes pack-able animals without a load to be considered a sellable chattel by the caravans.
+[*] Unforbids slaughtered animals.
+[*] Egg-layers will try to find a bed (or any other type of animal sleeping spots) in their allowed area to lay an egg. Unforbids eggs laid outside the home area.
+[*] Animals who should follow master when doing fieldwork or drafted are notified to come immediately instead of after the end of the current task.
+[*] When allowed zone is changed animals react immediately instead of after the end of the current task.
+[*] Animals can own beds.
+[*] Animal beds can be medical.
+[*] Pet type animals (all which can be starting pet) and bonded animals do not disturb sleep. Note, that roommates will have their own opinion about bonded pet.
+[*] (Optional) Converts any ruined eggs into unfertilized chicken eggs.
+[*] (Optional, default off) Converts any generic meat into chicken meat upon butchering.
+[*] (Optional) Predators hunting your pawns (human-like or animals) will be considered hostile by all your pawns and turrets.
+[*] (Optional) Prevents animals from eating random stuff.
+[*] (Optional, default off) Mitigates wildness penalty for training (but not taming) animals.
+[*] (Optional) Animals have greater chance to fight back when attacked in melee.</description>
 	<url>https://ludeon.com/forums/index.php?topic=34628</url>
 </ModMetaData>

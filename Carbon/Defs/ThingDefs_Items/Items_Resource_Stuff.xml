@@ -31,7 +31,7 @@
   
   <ThingDef ParentName="ResourceBase">
     <defName>CarbonWeave</defName>
-    <label>carbon weave</label>
+    <label>c-weave</label>
     <description>A cloth-like material made of fine carbon fibers. Offers excellent electrical conductivity, but this is pretty much opposite to what you'd typically want from cloth. Quite tough and chemically inert.</description>
     <graphicData>
       <texPath>Things/Item/Resource/CarbonWeave</texPath>
@@ -76,7 +76,7 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>CarbonFiber</defName>
-    <label>carbon fiber</label>
+    <label>c-fiber</label>
     <description>Carbon fiber reinforced plastic is quite versatile, being both strong and light. Just don't try to make a sharp edge out of it.</description>
     <graphicData>
       <texPath>Things/Item/Resource/CarbonFiber</texPath>

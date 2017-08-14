@@ -12,12 +12,14 @@
 [*] When allowed zone is changed animals react immediately instead of after the end of the current task.
 [*] Animals can own beds.
 [*] Animal beds can be medical.
+[*] Minor starvation (below 60%) can not cause miscarrying.
 [*] Pet type animals (all which can be starting pet) and bonded animals do not disturb sleep. Note, that roommates will have their own opinion about bonded pet.
 [*] (Optional) Converts any ruined eggs into unfertilized chicken eggs.
 [*] (Optional, default off) Converts any generic meat into chicken meat upon butchering.
 [*] (Optional) Predators hunting your pawns (human-like or animals) will be considered hostile by all your pawns and turrets.
 [*] (Optional) Prevents animals from eating random stuff.
 [*] (Optional, default off) Mitigates wildness penalty for training (but not taming) animals.
+[*] (Optional, default off) Master is not assigned automatically after Obedience training.
 [*] (Optional) Animals have greater chance to fight back when attacked in melee.</description>
 	<url>https://ludeon.com/forums/index.php?topic=34628</url>
 </ModMetaData>

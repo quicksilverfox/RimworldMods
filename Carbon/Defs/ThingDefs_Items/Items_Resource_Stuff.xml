@@ -62,7 +62,7 @@
         <ArmorRating_Heat>4.0</ArmorRating_Heat>
         <ArmorRating_Electric>0.0</ArmorRating_Electric>
         <Flammability>0.0</Flammability>
-      	<DeteriorationRate>0</DeteriorationRate>
+      	<DeteriorationRate>0.05</DeteriorationRate>
       </statFactors>
     </stuffProps>
     <tradeability>Sellable</tradeability>
@@ -76,7 +76,7 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>CarbonFiber</defName>
-    <label>c-fiber</label>
+    <label>c-composite</label>
     <description>Carbon fiber reinforced plastic is quite versatile, being both strong and light. Just don't try to make a sharp edge out of it.</description>
     <graphicData>
       <texPath>Things/Item/Resource/CarbonFiber</texPath>
@@ -154,7 +154,7 @@
 				<li>Stony</li>
 			</categories>
 			<commonality>0.05</commonality>
-			<color>(173,210,255)</color>
+			<color>(193,230,255)</color>
 			<constructEffect>ConstructMetal</constructEffect>
 			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
 			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>

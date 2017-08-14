@@ -11,6 +11,7 @@ namespace AnimalsLogic
      * Adds rename button to animals.
      */
 
+    [StaticConstructorOnStartup]
     class GiveMeName
     {
         public static Texture2D Rename = null;

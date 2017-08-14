@@ -11,6 +11,7 @@
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>2500</workAmount>
 		<workSkill>Intellectual</workSkill>
+	<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
 			<li>
@@ -41,6 +42,7 @@
 		<soundWorking>Recipe_Tailor</soundWorking>
 		<workAmount>4200</workAmount>
 		<workSkill>Crafting</workSkill>
+	<workSpeedStat>TailoringSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
 			<li>
@@ -77,6 +79,7 @@
 		<soundWorking>Recipe_Tailor</soundWorking>
 		<workAmount>4200</workAmount>
 		<workSkill>Crafting</workSkill>
+	<workSpeedStat>TailoringSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
 			<li>
@@ -120,7 +123,8 @@
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>7500</workAmount>
-		<workSkill>Crafting</workSkill>
+		<workSkill>Intellectual</workSkill>
+	<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
 			<li>

@@ -8,7 +8,9 @@ namespace AnimalsLogic
     [StaticConstructorOnStartup]
     class AnimalsLogic : Mod
     {
+#pragma warning disable 0649
         public static Settings Settings;
+#pragma warning restore 0649
 
         public AnimalsLogic(ModContentPack content) : base(content)
         {

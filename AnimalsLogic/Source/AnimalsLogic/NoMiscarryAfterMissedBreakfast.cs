@@ -25,6 +25,7 @@ namespace AnimalsLogic
                 //IL_004e: bne.un IL_00c2
 
                 var codes = new List<CodeInstruction>(instructions);
+                // inserting severity check
                 for (int i = 0; i < codes.Count; i++)
                 {
                     if (codes[i].opcode == OpCodes.Bne_Un)
@@ -34,6 +35,18 @@ namespace AnimalsLogic
                         codes.Insert(i + 2, new CodeInstruction(OpCodes.Ldfld, typeof(Hediff).GetField("pawn")));
                         codes.Insert(i + 3, new CodeInstruction(OpCodes.Call, typeof(NoMiscarryAfterMissedBreakfast).GetMethod("IsSeriouslyStarving", new Type[] { typeof(Pawn) })));
                         codes.Insert(i + 4, new CodeInstruction(OpCodes.Brfalse, codes[i].operand));
+                        break;
+                    }
+                }
+
+                // increasing chance to miscarry to balance out
+                for (int i = 0; i < codes.Count; i++)
+                {
+                    // IL_0062: call bool Verse.Rand::MTBEventOccurs(float32, float32, float32)
+                    if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(Rand).GetMethod("MTBEventOccurs"))
+                    {
+                        // 	IL_0053: ldc.r4 0.5
+                        codes[i - 3] = new CodeInstruction(OpCodes.Ldc_R4, 0.25f);
                         break;
                     }
                 }

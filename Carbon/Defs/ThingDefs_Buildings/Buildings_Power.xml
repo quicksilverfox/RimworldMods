@@ -7,7 +7,7 @@
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
-      <texPath>Things/Building/Linked/PowerConduit_Atlas</texPath>
+      <texPath>Things/Building/Linked/CarbonPowerConduit_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <linkType>Transmitter</linkType>
       <linkFlags>
@@ -16,12 +16,12 @@
       <damageData>
         <rect>(0,0.35,1,0.3)</rect>
       </damageData>
-      <color>(50,50,50)</color>
+      <color>(125,125,125)</color>
     </graphicData>
     <blueprintGraphicData>
       <texPath>Things/Building/Linked/PowerConduit_Blueprint_Atlas</texPath>
     </blueprintGraphicData>
-    <uiIconPath>Things/Building/Linked/PowerConduit_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/CarbonPowerConduit_MenuIcon</uiIconPath>
     <building>
 			<ai_chillDestination>false</ai_chillDestination>
 			<isInert>true</isInert>
@@ -70,7 +70,7 @@
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
-      <texPath>Things/Building/Linked/PowerConduit_Atlas</texPath>
+      <texPath>Things/Building/Linked/CarbonPowerConduit_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <linkType>Transmitter</linkType>
       <linkFlags>
@@ -79,12 +79,12 @@
       <damageData>
         <rect>(0,0.35,1,0.3)</rect>
       </damageData>
-      <color>(50,50,50)</color>
+      <color>(125,125,125)</color>
     </graphicData>
     <blueprintGraphicData>
       <texPath>Things/Building/Linked/PowerConduit_Blueprint_Atlas</texPath>
     </blueprintGraphicData>
-    <uiIconPath>Things/Building/Linked/PowerConduit_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/CarbonPowerConduit_MenuIcon</uiIconPath>
     <building>
 			<ai_chillDestination>false</ai_chillDestination>
 			<isInert>true</isInert>

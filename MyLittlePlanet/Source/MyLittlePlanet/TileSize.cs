@@ -13,7 +13,7 @@ namespace WorldGenRules
 {
     class RulesOverrider : GameComponent
     {
-        static int subcount = 10;
+        public static int subcount = 10;
 
         public override void ExposeData()
         {
@@ -33,7 +33,6 @@ namespace WorldGenRules
             static bool Prefix()
             {
                 FieldInfo subdivisionsCount = typeof(PlanetShapeGenerator).GetField("subdivisionsCount", AccessTools.all);
-                //subdivisionsCount.SetValue(null, Settings.subdivisionsCount);
                 subdivisionsCount.SetValue(null, subcount);
                 return true;
             }
@@ -54,18 +53,17 @@ namespace WorldGenRules
             static void Postfix(ref Rect __state, ref Page_CreateWorldParams __instance)
             {
                 GUI.BeginGroup(__state);
-                float num = 260; // magic numba!
+                float num = 280; // magic numba!
                 Widgets.Label(new Rect(0f, num, 200f, 30f), "Planet Size");
                 Rect rect7 = new Rect(200f, num, 200f, 30f);
                 subcount = Mathf.RoundToInt(Widgets.HorizontalSlider(rect7, subcount, 6f, 11f, true, null, "Small", "Large", 1f));
-                //Settings.subdivisionsCount = Mathf.RoundToInt(Widgets.HorizontalSlider(rect7, Settings.subdivisionsCount, 6f, 11f, true, null, "Small", "Large", 1f));
+
                 GUI.EndGroup();
             }
         }
 
         // anti-fluckering stuff - changing world layers distance to not overlap with sphere
-
-
+        #region antiflicker
         [HarmonyPatch]
         static class WorldLayer_Hills_Regenerate_Patch
         {
@@ -179,5 +177,6 @@ namespace WorldGenRules
                 return codes.AsEnumerable();
             }
         }
+        #endregion
     }
 }

@@ -7,8 +7,8 @@
     <ProjectGuid>{674B538C-8A9D-4D0C-BE86-D3F5F79CCDCE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WorldGenRules</RootNamespace>
-    <AssemblyName>WorldGenRules</AssemblyName>
+    <RootNamespace>MyLittlePlanet</RootNamespace>
+    <AssemblyName>MyLittlePlanet</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="Settings.cs" />
     <Compile Include="TileSize.cs" />
-    <Compile Include="WorldGenRules.cs" />
+    <Compile Include="MyLittlePlanet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,13 +12,13 @@ using Verse;
 namespace WorldGenRules
 {
     [StaticConstructorOnStartup]
-    class WorldGenRules : Mod
+    class MyLittlePlanet : Mod
     {
 #pragma warning disable 0649
         //public static Settings Settings;
 #pragma warning restore 0649
 
-        public WorldGenRules(ModContentPack content) : base(content)
+        public MyLittlePlanet(ModContentPack content) : base(content)
         {
             var harmony = HarmonyInstance.Create("net.quicksilverfox.rimworld.mod.worldgenrules");
             harmony.PatchAll(Assembly.GetExecutingAssembly());

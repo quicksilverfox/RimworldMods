@@ -32,12 +32,12 @@ namespace AnimalsLogic
 
                 Pawn p = (Pawn)Pawn_PlayerSettings_pawn.GetValue(__instance);
                 Area a = (Area)Pawn_PlayerSettings_areaAllowedInt.GetValue(__instance);
-                
+
                 if (ForbidUtility.InAllowedArea(p.Position, p))
                 {
                     return;
                 }
-                
+
                 if (p.CurJob != null && !p.CurJob.def.casualInterruptible)
                 {
                     return;
@@ -93,6 +93,11 @@ namespace AnimalsLogic
         {
             static void Postfix(ref Pawn_DraftController __instance)
             {
+                if (__instance == null || __instance.pawn == null || __instance.pawn.Faction != Faction.OfPlayer || Find.VisibleMap == null || Find.VisibleMap.mapPawns == null)
+                {
+                    return;
+                }
+
                 if (Pawn_DraftController_draftedInt == null)
                     Pawn_DraftController_draftedInt = typeof(Pawn_DraftController).GetField("draftedInt", BindingFlags.NonPublic | BindingFlags.Instance);
 

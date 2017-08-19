@@ -1,135 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef ParentName="ResourceBase">
-    <defName>Carbon</defName>
-    <label>carbon</label>
+	<ThingDef ParentName="ResourceBase">
+		<defName>Carbon</defName>
+		<label>carbon</label>
 		<description>Pure carbon. A truly versatile material, if you have the right technology.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/Carbon</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <resourceReadoutPriority>Middle</resourceReadoutPriority>
-    <soundInteract>Metal_Drop</soundInteract>
-    <soundDrop>Metal_Drop</soundDrop>
-    <stackLimit>150</stackLimit>
-    <useHitPoints>false</useHitPoints>
-    <statBases>
-      <MarketValue>4</MarketValue>
-      <Mass>0.05</Mass>
-    </statBases>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-    <tradeability>Sellable</tradeability>
-    <tradeTags>
-      <li>ResourcesRaw</li>
-    </tradeTags>
-		<techHediffsTags>
-			<li>Advanced</li>
-		</techHediffsTags>
-  </ThingDef>
-  
-  <ThingDef ParentName="ResourceBase">
-    <defName>CarbonWeave</defName>
-    <label>c-weave</label>
-    <description>A cloth-like material made of fine carbon fibers. Offers excellent electrical conductivity, but this is pretty much opposite to what you'd typically want from cloth. Quite tough and chemically inert.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/CarbonWeave</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <stackLimit>75</stackLimit>
-    <useHitPoints>false</useHitPoints>
-    <statBases>
-      <MarketValue>5</MarketValue>
-      <Mass>0.05</Mass>
-    </statBases>
-    <stuffProps>
-      <categories>
-        <li>Fabric</li>
-      </categories>
-      <commonality>0.15</commonality>
-      <color>(35,35,35)</color>
-      <statOffsets>
-        <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
-        <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
-        <ArmorRating_Heat>0.03</ArmorRating_Heat>
-      </statOffsets>
-      <statFactors>
-        <MaxHitPoints>2.5</MaxHitPoints>
-        <WorkToMake>1.3</WorkToMake>
-        <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
-        <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
-        <ArmorRating_Heat>4.0</ArmorRating_Heat>
-        <ArmorRating_Electric>0.0</ArmorRating_Electric>
-        <Flammability>0.0</Flammability>
-      	<DeteriorationRate>0.05</DeteriorationRate>
-      </statFactors>
-    </stuffProps>
-    <tradeability>Sellable</tradeability>
-    <thingCategories>
-      <li>Textiles</li>
-    </thingCategories>
-		<techHediffsTags>
-			<li>Advanced</li>
-		</techHediffsTags>
-  </ThingDef>
+		<graphicData>
+			<texPath>Things/Item/Resource/Carbon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>150</stackLimit>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<MarketValue>4</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>ResourcesRaw</li>
+		</tradeTags>
+	</ThingDef>
 
-  <ThingDef ParentName="ResourceBase">
-    <defName>CarbonFiber</defName>
-    <label>c-composite</label>
-    <description>Carbon fiber reinforced plastic is quite versatile, being both strong and light. Just don't try to make a sharp edge out of it.</description>
-    <graphicData>
-      <texPath>Things/Item/Resource/CarbonFiber</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Metal_Drop</soundInteract>
-    <soundDrop>Metal_Drop</soundDrop>
-    <useHitPoints>false</useHitPoints>
-    <statBases>
-      <MarketValue>5</MarketValue>
-      <Mass>0.25</Mass>
-      <Flammability>0.0</Flammability>
-      <DeteriorationRate>0</DeteriorationRate>
-      <MeleeWeapon_DamageAmount>8</MeleeWeapon_DamageAmount>
-      <MeleeWeapon_Cooldown>2.2</MeleeWeapon_Cooldown>
-      <SharpDamageMultiplier>0.3</SharpDamageMultiplier>
-      <BluntDamageMultiplier>0.8</BluntDamageMultiplier>
-    </statBases>
-    <tradeability>Sellable</tradeability>
-    <thingCategories>
-      <li>ResourcesRaw</li>
-    </thingCategories>
-		<techHediffsTags>
-			<li>Advanced</li>
-		</techHediffsTags>
-    <deepCommonality>0</deepCommonality>
-    <stuffProps>
-      <categories>
-        <li>Metallic</li>
-        <li>Woody</li>
-      </categories>
-      <commonality>0.15</commonality>
-      <constructEffect>ConstructMetal</constructEffect>
-      <color>(35,35,35)</color>
-      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-      <statOffsets>
-      	<Cleanliness>0.4</Cleanliness>
-      </statOffsets>
-      <statFactors>
-        <MaxHitPoints>2.0</MaxHitPoints>
-        <Beauty>2</Beauty>
-        <Flammability>0.0</Flammability>
-        <WorkToMake>0.7</WorkToMake>
+	<ThingDef ParentName="ResourceBase">
+		<defName>CarbonWeave</defName>
+		<label>c-weave</label>
+		<description>A cloth-like material made of fine carbon fibers. Offers excellent electrical conductivity, but this is pretty much opposite to what you'd typically want from cloth. Quite tough and chemically inert.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/CarbonWeave</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<MarketValue>5</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<stuffProps>
+			<categories>
+				<li>Fabric</li>
+			</categories>
+			<commonality>0.15</commonality>
+			<color>(35,35,35)</color>
+			<statOffsets>
+				<ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+				<ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+				<ArmorRating_Heat>0.03</ArmorRating_Heat>
+			</statOffsets>
+			<statFactors>
+				<MaxHitPoints>2.5</MaxHitPoints>
+				<WorkToMake>1.3</WorkToMake>
+				<ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+				<ArmorRating_Sharp>1.4</ArmorRating_Sharp>
+				<ArmorRating_Heat>4.0</ArmorRating_Heat>
+				<ArmorRating_Electric>0.0</ArmorRating_Electric>
+				<Flammability>0.0</Flammability>
+				<DeteriorationRate>0.05</DeteriorationRate>
+			</statFactors>
+		</stuffProps>
+		<tradeability>Stockable</tradeability>
+		<thingCategories>
+			<li>Textiles</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>CarbonFiber</defName>
+		<label>c-composite</label>
+		<description>Carbon fiber reinforced plastic is quite versatile, being both strong and light. Just don't try to make a sharp edge out of it.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/CarbonFiber</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<MarketValue>5</MarketValue>
+			<Mass>0.25</Mass>
+			<Flammability>0.0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<MeleeWeapon_DamageAmount>8</MeleeWeapon_DamageAmount>
+			<MeleeWeapon_Cooldown>2.2</MeleeWeapon_Cooldown>
+			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.8</BluntDamageMultiplier>
+		</statBases>
+		<tradeability>Stockable</tradeability>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<deepCommonality>0</deepCommonality>
+		<stuffProps>
+			<categories>
+				<li>Metallic</li>
+				<li>Woody</li>
+			</categories>
+			<commonality>0.15</commonality>
+			<constructEffect>ConstructMetal</constructEffect>
+			<color>(35,35,35)</color>
+			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+			<statOffsets>
+				<Cleanliness>0.4</Cleanliness>
+			</statOffsets>
+			<statFactors>
+				<MaxHitPoints>2.0</MaxHitPoints>
+				<Beauty>2</Beauty>
+				<Flammability>0.0</Flammability>
+				<WorkToMake>0.7</WorkToMake>
 				<WorkToBuild>0.7</WorkToBuild>
-        <MeleeWeapon_Cooldown>0.7</MeleeWeapon_Cooldown>
-        <DoorOpenSpeed>1.3</DoorOpenSpeed>
-      	<DeteriorationRate>0.25</DeteriorationRate>
-      </statFactors>
-      <smeltable>false</smeltable>
-    </stuffProps>
-  </ThingDef>
+				<MeleeWeapon_Cooldown>0.7</MeleeWeapon_Cooldown>
+				<DoorOpenSpeed>1.3</DoorOpenSpeed>
+				<DeteriorationRate>0.25</DeteriorationRate>
+			</statFactors>
+			<smeltable>false</smeltable>
+		</stuffProps>
+	</ThingDef>
 
 	<ThingDef ParentName="ResourceBase">
 		<defName>Diamond</defName>
@@ -141,7 +132,7 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
-    <useHitPoints>false</useHitPoints>
+		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<MarketValue>25</MarketValue>
 			<Mass>0.5</Mass>
@@ -159,28 +150,25 @@
 			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
 			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
 			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-      <statOffsets>
-        <Beauty>6</Beauty>
-      	<Cleanliness>0.4</Cleanliness>
-      </statOffsets>
-      <statFactors>
-        <MaxHitPoints>25</MaxHitPoints>
-        <WorkToMake>3.5</WorkToMake>
+			<statOffsets>
+				<Beauty>6</Beauty>
+				<Cleanliness>0.4</Cleanliness>
+			</statOffsets>
+			<statFactors>
+				<MaxHitPoints>25</MaxHitPoints>
+				<WorkToMake>3.5</WorkToMake>
 				<WorkToBuild>7.0</WorkToBuild>
 				<Beauty>2.5</Beauty>
-        <Flammability>0.0</Flammability>
-        <MeleeWeapon_Cooldown>1.1</MeleeWeapon_Cooldown>
-      	<DeteriorationRate>0</DeteriorationRate>
-      </statFactors>
-      <smeltable>false</smeltable>
-    </stuffProps>
-    <tradeability>Sellable</tradeability>
+				<Flammability>0.0</Flammability>
+				<MeleeWeapon_Cooldown>1.1</MeleeWeapon_Cooldown>
+				<DeteriorationRate>0</DeteriorationRate>
+			</statFactors>
+			<smeltable>false</smeltable>
+		</stuffProps>
+		<tradeability>Stockable</tradeability>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>
-		<techHediffsTags>
-			<li>Advanced</li>
-		</techHediffsTags>
 	</ThingDef>
 
 </Defs>

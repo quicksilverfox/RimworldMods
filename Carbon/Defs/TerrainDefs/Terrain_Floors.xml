@@ -15,9 +15,9 @@
 		<CostList>
 			<CarbonFiber>5</CarbonFiber>
 		</CostList>
-    <researchPrerequisites>
-      <li>CarbonResearch</li>
-    </researchPrerequisites>
+		<researchPrerequisites>
+			<li>CarbonResearch</li>
+		</researchPrerequisites>
 	</TerrainDef>
 
 </TerrainDefs>

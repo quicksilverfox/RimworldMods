@@ -97,6 +97,16 @@ namespace AnimalsLogic
                     e += "P" + hediff_Pregnant.GestationProgress.ToStringPercent();
                 }
             }
+
+            // [W]ool
+            CompShearable wool = p.TryGetComp<CompShearable>();
+            if (wool != null && wool.Fullness > 0.05)
+            {
+                if (e.Length > 0)
+                    e += ";";
+                e += "W" + wool.Fullness.ToStringPercent();
+            }
+
             return e;
         }
     }

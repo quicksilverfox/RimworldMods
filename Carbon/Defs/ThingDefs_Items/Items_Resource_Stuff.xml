@@ -3,7 +3,7 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>Carbon</defName>
 		<label>carbon</label>
-		<description>Pure carbon. A truly versatile material, if you have the right technology.</description>
+		<description>A pure carbon. A truly versatile material, if you have the right technology.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/Carbon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -11,7 +11,6 @@
 		<resourceReadoutPriority>Middle</resourceReadoutPriority>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
-		<stackLimit>150</stackLimit>
 		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<MarketValue>4</MarketValue>
@@ -29,12 +28,11 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>CarbonWeave</defName>
 		<label>c-weave</label>
-		<description>A cloth-like material made of fine carbon fibers. Offers excellent electrical conductivity, but this is pretty much opposite to what you'd typically want from cloth. Quite tough and chemically inert.</description>
+		<description>A cloth-like material made of fine carbon fibers. Offers excellent electrical conductivity, but this is pretty much opposite to what you'd typically want from cloth. Quite tough, liquid-proof and chemically inert.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/CarbonWeave</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<stackLimit>75</stackLimit>
 		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<MarketValue>5</MarketValue>
@@ -49,14 +47,14 @@
 			<statOffsets>
 				<ArmorRating_Blunt>0.03</ArmorRating_Blunt>
 				<ArmorRating_Sharp>0.03</ArmorRating_Sharp>
-				<ArmorRating_Heat>0.03</ArmorRating_Heat>
+				<ArmorRating_Heat>0.1</ArmorRating_Heat>
 			</statOffsets>
 			<statFactors>
 				<MaxHitPoints>2.5</MaxHitPoints>
 				<WorkToMake>1.3</WorkToMake>
-				<ArmorRating_Blunt>1.2</ArmorRating_Blunt>
-				<ArmorRating_Sharp>1.4</ArmorRating_Sharp>
-				<ArmorRating_Heat>4.0</ArmorRating_Heat>
+				<ArmorRating_Blunt>1.1</ArmorRating_Blunt>
+				<ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+				<ArmorRating_Heat>5.0</ArmorRating_Heat>
 				<ArmorRating_Electric>0.0</ArmorRating_Electric>
 				<Flammability>0.0</Flammability>
 				<DeteriorationRate>0.05</DeteriorationRate>
@@ -99,7 +97,7 @@
 				<li>Metallic</li>
 				<li>Woody</li>
 			</categories>
-			<commonality>0.15</commonality>
+			<commonality>0.3</commonality>
 			<constructEffect>ConstructMetal</constructEffect>
 			<color>(35,35,35)</color>
 			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>

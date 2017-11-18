@@ -6,7 +6,7 @@ using Verse;
 namespace AnimalsLogic
 {
     /*
-     * Adds new item in "unfertilized eggs" category: ruined egg. Any fertilized egg which is ruined by temperature becomes one.
+     * Transforms any ruined egg into unfertilized chicken egg.
      */
 
     class RuinedEggs

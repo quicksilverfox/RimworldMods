@@ -122,7 +122,7 @@ namespace AnimalsLogic
                         this.pawn.Name = this.CurPawnName;
 
                     Find.WindowStack.TryRemove(this, true);
-                    Messages.Message("PawnGainsName".Translate(new object[] { this.curName }), this.pawn, MessageSound.Benefit);
+                    Messages.Message("PawnGainsName".Translate(new object[] { this.curName }), this.pawn, MessageTypeDefOf.PositiveEvent);
                 }
             }
         }

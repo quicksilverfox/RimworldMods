@@ -7,6 +7,8 @@ namespace AnimalsLogic
 {
     /*
      * Auto-unforbids animals after they are slaughtered (or euthanazed, since it is the same function).
+     * 
+     * TODO: check if fixed in vanilla
      */
 
     [HarmonyPatch(typeof(ExecutionUtility), "DoExecutionByCut", new Type[] { typeof(Pawn), typeof(Pawn) })]

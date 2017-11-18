@@ -86,42 +86,42 @@ namespace AnimalsLogic
             }
         }
 
-        protected static FieldInfo Pawn_DraftController_draftedInt = null;
+        //protected static FieldInfo Pawn_DraftController_draftedInt = null;
 
-        [HarmonyPatch(typeof(Pawn_DraftController), "set_Drafted", new Type[] { typeof(bool) })]
-        static class Pawn_DraftController_Drafted_Patch
-        {
-            static void Postfix(ref Pawn_DraftController __instance)
-            {
-                if (__instance == null || __instance.pawn == null || __instance.pawn.Faction != Faction.OfPlayer || Find.VisibleMap == null || Find.VisibleMap.mapPawns == null)
-                {
-                    return;
-                }
+        //[HarmonyPatch(typeof(Pawn_DraftController), "set_Drafted", new Type[] { typeof(bool) })]
+        //static class Pawn_DraftController_Drafted_Patch
+        //{
+        //    static void Postfix(ref Pawn_DraftController __instance)
+        //    {
+        //        if (__instance == null || __instance.pawn == null || __instance.pawn.Faction != Faction.OfPlayer || Find.VisibleMap == null || Find.VisibleMap.mapPawns == null)
+        //        {
+        //            return;
+        //        }
 
-                if (Pawn_DraftController_draftedInt == null)
-                    Pawn_DraftController_draftedInt = typeof(Pawn_DraftController).GetField("draftedInt", BindingFlags.NonPublic | BindingFlags.Instance);
+        //        if (Pawn_DraftController_draftedInt == null)
+        //            Pawn_DraftController_draftedInt = typeof(Pawn_DraftController).GetField("draftedInt", BindingFlags.NonPublic | BindingFlags.Instance);
 
-                if (!(bool)Pawn_DraftController_draftedInt.GetValue(__instance))
-                {
-                    return;
-                }
+        //        if (!(bool)Pawn_DraftController_draftedInt.GetValue(__instance))
+        //        {
+        //            return;
+        //        }
 
 
-                Pawn pawn = __instance.pawn;
+        //        Pawn pawn = __instance.pawn;
 
-                IEnumerable<Pawn> animals = from p in Find.VisibleMap.mapPawns.AllPawns
-                                            where p.RaceProps.Animal && p.Faction == Faction.OfPlayer && p.playerSettings != null && p.playerSettings.master == pawn && p.playerSettings.followDrafted
-                                            select p;
+        //        IEnumerable<Pawn> animals = from p in Find.VisibleMap.mapPawns.AllPawns
+        //                                    where p.RaceProps.Animal && p.Faction == Faction.OfPlayer && p.playerSettings != null && p.playerSettings.master == pawn && p.playerSettings.followDrafted
+        //                                    select p;
 
-                foreach (var animal in animals)
-                {
-                    if (animal.CurJob != null && animal.CurJob.def != JobDefOf.WaitCombat && animal.CurJob.def != JobDefOf.Rescue && animal.CurJob.def != JobDefOf.AttackMelee && animal.CurJob.def != JobDefOf.AttackStatic && animal.CurJob.def.casualInterruptible)
-                    {
-                        animal.jobs.StopAll();
-                        animal.jobs.JobTrackerTick();
-                    }
-                }
-            }
-        }
+        //        foreach (var animal in animals)
+        //        {
+        //            if (animal.CurJob != null && animal.CurJob.def != JobDefOf.WaitCombat && animal.CurJob.def != JobDefOf.Rescue && animal.CurJob.def != JobDefOf.AttackMelee && animal.CurJob.def != JobDefOf.AttackStatic && animal.CurJob.def.casualInterruptible)
+        //            {
+        //                animal.jobs.StopAll();
+        //                animal.jobs.JobTrackerTick();
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

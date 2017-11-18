@@ -2,7 +2,7 @@
 <ModMetaData>
 	<name>Animals Logic</name>
 	<author>Oblitus</author>
-	<targetVersion>0.17.1554</targetVersion>
+	<targetVersion>0.18.1722</targetVersion>
 	<description>[*] Adds rename button for animals.
 [*] Tags bonded, trained and pregnant animals in caravan and trade interfaces.
 [*] Changes pack-able animals without a load to be considered a sellable chattel by the caravans.

@@ -8,6 +8,8 @@ namespace AnimalsLogic
 {
     /*
      * Adds more awareness about predators. Predator hunting one of your pawns (humanlike or animal) is considered hostile to whole your faction, like manhunter would be.
+     * 
+     * TODO: check if fixed in vanilla
      */
 
     [HarmonyPatch(typeof(GenHostility), "HostileTo", new Type[] { typeof(Thing), typeof(Thing) })]

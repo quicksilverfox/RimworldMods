@@ -23,7 +23,7 @@ namespace AnimalsLogic
 
             static void Postfix(ref DamageInfo __state, ref Pawn_MindState __instance)
             {
-                if (!Settings.fight_back)
+                if (!Settings.fight_back || !__state.Def.externalViolence)
                     return;
 
                 Pawn defender = __instance.pawn;

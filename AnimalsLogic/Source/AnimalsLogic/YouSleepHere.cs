@@ -232,7 +232,7 @@ namespace AnimalsLogic
                 return codes.AsEnumerable();
             }
         }
-        
+
         /*
          * Patches WorkGiver_TakeToBedToOperate, so it won't stuck when animal is already moving to bed and therefore reserved it.
          */
@@ -251,6 +251,71 @@ namespace AnimalsLogic
                 }
 
                 return true;
+            }
+        }
+
+        /*
+         * Patches JobGiver_RescueNearby, so it won't rescue animals designated for slaughter.
+         */
+
+        // protected override Job TryGiveJob(Pawn pawn)
+        [HarmonyPatch]
+        static class JobGiver_RescueNearby_TryGiveJob_Patch
+        {
+            static MethodInfo TargetMethod()
+            {
+                var toils_inner = typeof(JobGiver_RescueNearby).GetNestedTypes(AccessTools.all);
+                foreach (var inner_class in toils_inner)
+                {
+                    if (!inner_class.Name.Contains("<TryGiveJob>"))
+                        continue;
+
+                    var methods = inner_class.GetMethods(AccessTools.all);
+                    foreach (var method in methods)
+                    {
+                        if (method.Name.Contains("<>m__"))
+                            return method;
+                    }
+                }
+                Log.Error("Animal Logic is unable to detect JobGiver_RescueNearby.TryGiveJob inner method.");
+                return null;
+            }
+
+            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                var codes = new List<CodeInstruction>(instructions);
+                object return_false = null;
+
+
+                for (int i = 0; i < codes.Count; i++)
+                {
+                    // IL_0064: call bool Verse.AI.GenAI::EnemyIsNear(class Verse.Pawn, float32)
+                    if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(GenAI).GetMethod("EnemyIsNear"))
+                    {
+                        // IL_0069: brfalse IL_0070
+                        return_false = codes[i + 1].operand;
+                        break;
+                    }
+                }
+
+                for (int i = 0; i < codes.Count; i++)
+                {
+                    if (codes[i].opcode == OpCodes.Ret)
+                    {
+                        codes.Insert(i + 1, new CodeInstruction(OpCodes.Ldloc_0));
+                        codes.Insert(i + 2, new CodeInstruction(OpCodes.Call, typeof(JobGiver_RescueNearby_TryGiveJob_Patch).GetMethod("IsDesignatedForSlaughter", new Type[] { typeof(Pawn) })));
+                        codes.Insert(i + 3, new CodeInstruction(OpCodes.Brtrue, return_false));
+
+                        break;
+                    }
+                }
+
+                return codes.AsEnumerable();
+            }
+
+            public static bool IsDesignatedForSlaughter(Pawn p)
+            {
+                return p.Map.designationManager.DesignationOn(p, DesignationDefOf.Slaughter) != null;
             }
         }
     }

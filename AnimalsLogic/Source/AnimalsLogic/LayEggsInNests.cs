@@ -40,24 +40,16 @@ namespace AnimalsLogic
             __result = new List<Toil>
             {
                 Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell),
-                new Toil
+                Toils_General.Wait(500),
+                Toils_General.Do(delegate
                 {
-                    defaultCompleteMode = ToilCompleteMode.Delay,
-                    defaultDuration = 500
-                },
-                new Toil
-                {
-                    initAction = delegate
+                    Pawn actor = __instance.pawn;
+                    Thing egg = GenSpawn.Spawn(actor.GetComp<CompEggLayer>().ProduceEgg(), actor.Position, __instance.pawn.Map);
+                    if (actor.Faction == null || actor.Faction != Faction.OfPlayerSilentFail)
                     {
-                        Pawn actor = __instance.pawn;
-                        Thing egg = GenSpawn.Spawn(actor.GetComp<CompEggLayer>().ProduceEgg(), actor.Position, __instance.pawn.Map);
-                        if (actor.Faction == null || actor.Faction != Faction.OfPlayerSilentFail)
-                        {
-                            egg.SetForbiddenIfOutsideHomeArea();
-                        }
-                    },
-                    defaultCompleteMode = ToilCompleteMode.Instant
-                }
+                        egg.SetForbiddenIfOutsideHomeArea();
+                    }
+                }),
             };
             return false;
         }

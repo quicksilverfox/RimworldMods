@@ -82,8 +82,6 @@
 			<Mass>0.25</Mass>
 			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0</DeteriorationRate>
-			<MeleeWeapon_DamageAmount>8</MeleeWeapon_DamageAmount>
-			<MeleeWeapon_Cooldown>2.2</MeleeWeapon_Cooldown>
 			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
 			<BluntDamageMultiplier>0.8</BluntDamageMultiplier>
 		</statBases>
@@ -112,7 +110,7 @@
 				<Flammability>0.0</Flammability>
 				<WorkToMake>0.7</WorkToMake>
 				<WorkToBuild>0.7</WorkToBuild>
-				<MeleeWeapon_Cooldown>0.7</MeleeWeapon_Cooldown>
+				<MeleeWeapon_CooldownMultiplier>0.7</MeleeWeapon_CooldownMultiplier>
 				<DoorOpenSpeed>1.3</DoorOpenSpeed>
 				<DeteriorationRate>0.25</DeteriorationRate>
 			</statFactors>
@@ -135,8 +133,8 @@
 			<MarketValue>25</MarketValue>
 			<Mass>0.5</Mass>
 			<Flammability>0.0</Flammability>
-			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
-			<BluntDamageMultiplier>0.75</BluntDamageMultiplier>
+			  <SharpDamageMultiplier>0.8</SharpDamageMultiplier>
+			  <BluntDamageMultiplier>1.5</BluntDamageMultiplier>
 		</statBases>
 		<stuffProps>
 			<categories>
@@ -158,7 +156,7 @@
 				<WorkToBuild>7.0</WorkToBuild>
 				<Beauty>2.5</Beauty>
 				<Flammability>0.0</Flammability>
-				<MeleeWeapon_Cooldown>1.1</MeleeWeapon_Cooldown>
+				<MeleeWeapon_CooldownMultiplier>1.1</MeleeWeapon_CooldownMultiplier>
 				<DeteriorationRate>0</DeteriorationRate>
 			</statFactors>
 			<smeltable>false</smeltable>

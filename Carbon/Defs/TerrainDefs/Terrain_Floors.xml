@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TerrainDefs>
+<Defs>
 
 	<TerrainDef ParentName="FloorBase">
-		<DefName>CarbonTile</DefName>
+		<defName>CarbonTile</defName>
 		<label>carbon tile</label>
-		<RenderPrecedence>230</RenderPrecedence>
-		<Description>Carbon fiber composite tiles for that stylish urbworld look. Very easy to assemble.</Description>
+		<renderPrecedence>230</renderPrecedence>
+		<description>Carbon fiber composite tiles for that stylish urbworld look. Very easy to assemble.</description>
 		<texturePath>Terrain/Surfaces/CarbonTileFine</texturePath>
 		<statBases>
 			<WorkToBuild>50</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Beauty>2</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<CarbonFiber>5</CarbonFiber>
-		</CostList>
+		</costList>
 		<researchPrerequisites>
 			<li>CarbonResearch</li>
 		</researchPrerequisites>
 	</TerrainDef>
 
-</TerrainDefs>
+</Defs>

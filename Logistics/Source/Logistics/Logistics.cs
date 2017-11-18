@@ -26,17 +26,11 @@ namespace Logistics
         // This is a pretty dirty way to go, since it prevents original function from invoking, as well as other mods which can use it. But it has too many inline modifications to use Prefix/Postfix pair or Transpiler.
         static bool Prefix(ref int __result, int tile, bool perceivedStatic, float yearPercent = -1f)
         {
+            int num = 0;
             Tile tile2 = Find.WorldGrid[tile];
-            if (tile2.biome.impassable) // Water or something
+            if (tile2.biome.impassable || tile2.hilliness == Hilliness.Impassable) // Impassable Map Maker would override this in Postfix, and it won't be affected by this mod.
             {
-                __result = 1000000;
-                return false;
-            }
-
-            if (tile2.hilliness == Hilliness.Impassable) // Impassable Map Maker would override this in Postfix, and it won't be affected by this mod.
-            {
-                __result = 1000000;
-                return false;
+                __result =  1000000;
             }
 
             Settlement settlement;
@@ -46,28 +40,41 @@ namespace Logistics
                 __result = 0; // Friendly or player-controlled settlements ignore all terrain costs. Home, sweet home!
                 return false;
             }
-
-            int num = 0;
-
-            bool calculateForCurrentTime = yearPercent == -1f;
             if (yearPercent < 0f)
             {
                 yearPercent = (float)DayOfYearAt0Long / 60f;
             }
-            float num2 = yearPercent;
-            if (Find.WorldGrid.LongLatOf(tile).y < 0f)
-            {
-                num2 = (num2 + 0.5f) % 1f;
-            }
+            float num2;
+            float num3;
+            float num4;
+            float num5;
+            float num6;
+            float num7;
+            SeasonUtility.GetSeason(yearPercent, Find.WorldGrid.LongLatOf(tile).y, out num2, out num3, out num4, out num5, out num6, out num7);
+            num += Mathf.RoundToInt((float)tile2.biome.pathCost_spring * num2 + (float)tile2.biome.pathCost_summer * num3 + (float)tile2.biome.pathCost_fall * num4 + (float)tile2.biome.pathCost_winter * num5 + (float)tile2.biome.pathCost_summer * num6 + (float)tile2.biome.pathCost_winter * num7);
+            __result = Mathf.RoundToInt((num + CostFromTileHilliness(tile2.hilliness)) * GetSettlementMoveModifier(tile));
+            
+            // Old calculations.
+            //bool calculateForCurrentTime = yearPercent == -1f;
+            //if (yearPercent < 0f)
+            //{
+            //    yearPercent = (float)DayOfYearAt0Long / 60f;
+            //}
+            //float num2 = yearPercent;
+            //if (Find.WorldGrid.LongLatOf(tile).y < 0f)
+            //{
+            //    num2 = (num2 + 0.5f) % 1f;
+            //}
 
-            // If we are calculating path for now, don't apply snow penalty if there are... Well, you know, no snow.
-            if (calculateForCurrentTime && GenTemperature.GetTemperatureAtTile(tile) >= 0)
-            {
-                num2 = 0.33f;
-            }
-            num += Mathf.RoundToInt(tile2.biome.pathCost.Evaluate(num2) * GetSettlementMoveModifier(tile));
-            num += Mathf.RoundToInt(CostFromTileHilliness(tile2.hilliness) * GetSettlementMoveModifier(tile));
-            __result = num;
+            //// If we are calculating path for now, don't apply snow penalty if there are... Well, you know, no snow.
+            //if (calculateForCurrentTime && GenTemperature.GetTemperatureAtTile(tile) >= 0)
+            //{
+            //    num2 = 0.33f;
+            //}
+            //num += Mathf.RoundToInt(tile2.biome.pathCost.Evaluate(num2) * GetSettlementMoveModifier(tile));
+            //num += Mathf.RoundToInt(CostFromTileHilliness(tile2.hilliness) * GetSettlementMoveModifier(tile));
+            //__result = num;
+
             return false;
         }
 

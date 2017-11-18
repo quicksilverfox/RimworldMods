@@ -4,9 +4,8 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>*/GenStepDef[defName="PreciousLump"]/genStep/mineables</xpath>
 		<value>
-			<li>MineableUranium</li>
-			<li>MineableSilver</li>
-			<li>MineableComponents</li>
+			<MineableSilver>1</MineableSilver>
+			<MineableComponents>1</MineableComponents>
 		</value>
 	</Operation>
 

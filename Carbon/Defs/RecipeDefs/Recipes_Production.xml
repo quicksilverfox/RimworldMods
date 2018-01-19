@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+	<!-- Balanced to have the same efficiency as other food. Hay yields 37% more than corn or rice on normal soil and 22% more on rich soil, so it is a bit more profitable to use hay on normal soil but corn gives a bit more on rich. -->
+	<RecipeDef>
+		<defName>MakeChemfuelFromHaygrass</defName>
+		<label>make chemfuel from haygrass</label>
+		<description>Make a batch of chemfuel by extracting biofuel from hay.</description>
+		<jobString>Refining chemfuel from hay.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>2500</workAmount>
+		<workSkill>Intellectual</workSkill>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Hay</li>
+					</thingDefs>
+				</filter>
+				<count>90</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Chemfuel>35</Chemfuel>
+		</products>
+	</RecipeDef>
+
 	<RecipeDef>
 		<!-- Oil and gas are 85% carbon -->
 		<defName>MakeCarbonFromChemfuel</defName>

@@ -102,7 +102,7 @@
 			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
 			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
 			<statOffsets>
-				<Cleanliness>0.4</Cleanliness>
+				<Cleanliness>0.3</Cleanliness>
 			</statOffsets>
 			<statFactors>
 				<MaxHitPoints>2.0</MaxHitPoints>
@@ -130,11 +130,11 @@
 		<soundDrop>Metal_Drop</soundDrop>
 		<useHitPoints>false</useHitPoints>
 		<statBases>
-			<MarketValue>25</MarketValue>
+			<MarketValue>50</MarketValue>
 			<Mass>0.5</Mass>
 			<Flammability>0.0</Flammability>
-			  <SharpDamageMultiplier>0.8</SharpDamageMultiplier>
-			  <BluntDamageMultiplier>1.5</BluntDamageMultiplier>
+			<SharpDamageMultiplier>0.8</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.5</BluntDamageMultiplier>
 		</statBases>
 		<stuffProps>
 			<categories>

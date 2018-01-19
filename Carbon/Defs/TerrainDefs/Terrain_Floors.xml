@@ -5,9 +5,10 @@
 		<defName>CarbonTile</defName>
 		<label>carbon tile</label>
 		<renderPrecedence>230</renderPrecedence>
-		<description>Carbon fiber composite tiles for that stylish urbworld look. Very easy to assemble.</description>
+		<description>Carbon fiber composite tiles for that stylish urbworld look. Very easy to assemble and to keep clean.</description>
 		<texturePath>Terrain/Surfaces/CarbonTileFine</texturePath>
 		<statBases>
+			<Cleanliness>0.3</Cleanliness>
 			<WorkToBuild>50</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Beauty>2</Beauty>

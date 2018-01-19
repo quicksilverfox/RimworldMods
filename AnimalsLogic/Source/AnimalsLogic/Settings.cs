@@ -38,7 +38,7 @@ namespace AnimalsLogic
             Scribe_Values.Look<bool>(ref prevent_eating_stuff, "prevent_eating_stuff", true, false);
             Scribe_Values.Look<bool>(ref hostile_predators, "hostile_predators", true, false);
             Scribe_Values.Look<bool>(ref convert_ruined_eggs, "convert_ruined_eggs", true, false);
-            Scribe_Values.Look<bool>(ref convert_ruined_eggs, "fight_back", true, false);
+            Scribe_Values.Look<bool>(ref fight_back, "fight_back", true, false);
             Scribe_Values.Look<bool>(ref tastes_like_chicken, "tastes_like_chicken", false, false);
             Scribe_Values.Look<bool>(ref auto_assign_master, "auto_assign_master", true, false);
             Scribe_Values.Look<float>(ref training_wildeness_effect_to, "training_wildeness_effect_to", 0, false);

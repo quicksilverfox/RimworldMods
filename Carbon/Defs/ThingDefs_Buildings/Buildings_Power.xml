@@ -64,4 +64,65 @@
 		</researchPrerequisites>
 	</ThingDef>
 
+	<ThingDef ParentName="BuildingBase">
+		<defName>UnderwaterCarbonPowerConduit</defName>
+		<label>underwater carbon power conduit</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Linked/PowerConduit_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Transmitter</linkType>
+			<linkFlags>
+				<li>PowerConduit</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+			<color>(125,125,125)</color>
+		</graphicData>
+		<blueprintGraphicData>
+			<texPath>Things/Building/Linked/PowerConduit_Blueprint_Atlas</texPath>
+		</blueprintGraphicData>
+		<uiIconPath>Things/Building/Linked/CarbonPowerConduit_MenuIcon</uiIconPath>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+		</building>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>0.35</Mass>
+		</statBases>
+		<description>A set of heavy duty electrical cables for moving power around. Those cables can be layered underwater.</description>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<CarbonWeave>1</CarbonWeave>
+			<CarbonFiber>1</CarbonFiber>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_Conduit</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<terrainAffordanceNeeded>Undefined</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>CarbonResearch</li>
+		</researchPrerequisites>
+	</ThingDef>
 </Defs>

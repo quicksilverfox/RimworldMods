@@ -31,6 +31,7 @@ namespace Logistics
             if (tile2.biome.impassable || tile2.hilliness == Hilliness.Impassable) // Impassable Map Maker would override this in Postfix, and it won't be affected by this mod.
             {
                 __result =  1000000;
+                return false;
             }
 
             Settlement settlement;

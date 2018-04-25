@@ -18,7 +18,7 @@ namespace AnimalsLogic
             if (!p.RaceProps.Animal) return;
 
 
-            String e = Util.AnimalImportantInfo(p);
+            String e = AnimalImportantInfoUtil.AnimalImportantInfo(p);
             if (e.Length > 0)
                 __result = "[" + e + "] " + __result;
         }
@@ -34,13 +34,13 @@ namespace AnimalsLogic
             Pawn p = (Pawn)__instance.AnyThing;
             if (!p.RaceProps.Animal) return;
 
-            String e = Util.AnimalImportantInfo(p, true);
+            String e = AnimalImportantInfoUtil.AnimalImportantInfo(p, true);
             if (e.Length > 0)
                 __result = "[" + e + "] " + __result;
         }
     }
 
-    static class Util
+    static class AnimalImportantInfoUtil
     {
         public static string AnimalImportantInfo(Pawn p, bool gender = false)
         {

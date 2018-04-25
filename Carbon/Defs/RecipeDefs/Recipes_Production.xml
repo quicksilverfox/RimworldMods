@@ -40,7 +40,7 @@
 		<jobString>Making carbon from chemfuel.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>2500</workAmount>
+		<workAmount>1250</workAmount>
 		<workSkill>Intellectual</workSkill>
 		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
@@ -69,14 +69,14 @@
 		<label>make carbon weave</label>
 		<description>Make carbon weave from pure carbon.</description>
 		<jobString>Making carbon weave.</jobString>
-		<effectWorking>Tailor</effectWorking>
-		<soundWorking>Recipe_Tailor</soundWorking>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>4200</workAmount>
-		<workSkill>Crafting</workSkill>
-		<workSpeedStat>TailoringSpeed</workSpeedStat>
+		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
-			<Crafting>6</Crafting>
+			<Intellectual>6</Intellectual>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -103,14 +103,14 @@
 		<label>make carbon composite</label>
 		<description>Make carbon fiber reinforced polymer from pure carbon and chemfuel.</description>
 		<jobString>Making carbon composite.</jobString>
-		<effectWorking>Tailor</effectWorking>
-		<soundWorking>Recipe_Tailor</soundWorking>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>4200</workAmount>
-		<workSkill>Crafting</workSkill>
-		<workSpeedStat>TailoringSpeed</workSpeedStat>
+		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
-			<Crafting>6</Crafting>
+			<Intellectual>6</Intellectual>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -119,15 +119,7 @@
 						<li>Carbon</li>
 					</thingDefs>
 				</filter>
-				<count>25</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</filter>
-				<count>25</count>
+				<count>50</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -152,7 +144,7 @@
 		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
-			<Crafting>10</Crafting>
+			<Intellectual>10</Intellectual>
 		</skillRequirements>
 		<ingredients>
 			<li>

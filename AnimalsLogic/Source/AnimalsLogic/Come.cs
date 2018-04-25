@@ -6,6 +6,7 @@ using RimWorld;
 using Verse;
 using System.Reflection;
 using Verse.AI;
+using System.Reflection.Emit;
 
 namespace AnimalsLogic
 {
@@ -18,7 +19,8 @@ namespace AnimalsLogic
         // Try to find allowed area immediately after restrictions are changed
         protected static FieldInfo Pawn_PlayerSettings_pawn = null;
 
-        // Does not work. Setter is inlined by JIT compiler.
+        // Does not work. Setter is inlined by JIT compiler. See workaround below.
+        /*
         [HarmonyPatch(typeof(Pawn_PlayerSettings), "set_AreaRestriction", new Type[] { typeof(Area) })]
         static class Pawn_PlayerSettings_set_AreaRestriction_Patch
         {
@@ -30,6 +32,74 @@ namespace AnimalsLogic
                 ValidateArea((Pawn)Pawn_PlayerSettings_pawn.GetValue(__instance));
             }
         }
+        */
+
+        // Workaround for set_AreaRestriction - patching calling instances. Not the best idea, but probably safe. Probably.
+        #region AreaRestriction
+        // AFAIK Harmony can't patch methods in batch, so have to apply the same patch for each methid.
+        [HarmonyPatch(typeof(AreaAllowedGUI), "DoAreaSelector")]
+        static class AreaAllowedGUI_Patch
+        {
+            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                return RunTranspiler(instructions);
+            }
+        }
+        [HarmonyPatch(typeof(PawnColumnWorker_AllowedArea), "HeaderClicked")]
+        static class PawnColumnWorker_AllowedArea_Patch
+        {
+            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                return RunTranspiler(instructions);
+            }
+        }
+        [HarmonyPatch]
+        static class InspectPaneFiller_Patch
+        {
+            static MethodInfo TargetMethod()
+            {
+                // Inner method of the private method of the internal class. Delightful.
+                MethodInfo method = typeof(Pawn).Assembly.GetType("RimWorld.InspectPaneFiller").GetNestedTypes(AccessTools.all).First(
+                        inner_class => inner_class.Name.Contains("<DrawAreaAllowed>")
+                    ).GetMethods(AccessTools.all).First(
+                        m => m.Name.Contains("<>m__")
+                    );
+
+                if (method == null)
+                    Log.Error("Animal Logic is unable to detect InspectPaneFiller inner method.");
+
+                return method;
+            }
+
+            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                return RunTranspiler(instructions);
+            }
+        }
+
+        // Common tool for patching each one of the methods
+        private static IEnumerable<CodeInstruction> RunTranspiler(IEnumerable<CodeInstruction> instructions)
+        {
+            MethodInfo set_AreaRestriction = typeof(Pawn_PlayerSettings).GetMethod("set_AreaRestriction");
+
+            var codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count; i++)
+            {
+                // find: callvirt instance void RimWorld.Pawn_PlayerSettings::set_AreaRestriction(class Verse.Area)
+                if (codes[i].opcode == OpCodes.Callvirt && (MethodInfo)codes[i].operand == set_AreaRestriction)
+                {
+                    // add after: ValidateArea call
+                    codes.Insert(i + 1, new CodeInstruction(OpCodes.Call, typeof(Come).GetMethod("ValidateArea", new Type[] { typeof(Pawn) })));
+
+                    // add before: duplicate argument to use with ValidateArea
+                    codes.Insert(i - 2, new CodeInstruction(OpCodes.Dup));
+                    break;
+                }
+            }
+
+            return codes.AsEnumerable();
+        }
+        #endregion
 
         public static void ValidateArea(Pawn p)
         {
@@ -45,7 +115,7 @@ namespace AnimalsLogic
 
             p.jobs.EndCurrentJob(JobCondition.InterruptForced, true);
         }
-        
+
         //////////////////////////////////////////////////////////////////
 
         protected static FieldInfo Pawn_JobTracker_pawn = null;

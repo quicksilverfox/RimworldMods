@@ -183,26 +183,21 @@ namespace AnimalsLogic
         {
             static MethodInfo TargetMethod()
             {
-                var toils_inner = typeof(RestUtility).GetNestedTypes(AccessTools.all);
-                foreach (var inner_class in toils_inner)
-                {
-                    if (!inner_class.Name.Contains("<FindPatientBedFor>"))
-                        continue;
+                MethodInfo method = typeof(RestUtility).GetNestedTypes(AccessTools.all).First(
+                        inner_class => inner_class.Name.Contains("<FindPatientBedFor>") && inner_class.GetField("medBedValidator", AccessTools.all) != null // medBedValidator field should be reliable enough signature
+                    ).GetMethods(AccessTools.all).First(
+                        m => m.Name.Contains("<>m__")
+                    );
 
-                    var methods = inner_class.GetMethods(AccessTools.all);
-                    foreach (var method in methods)
-                    {
-                        if (method.Name.Contains("<>m__"))
-                            return method;
-                    }
-                }
-                Log.Error("Animal Logic is unable to detect FindPatientBedFor inner method.");
-                return null;
+                if (method == null)
+                    Log.Error("Animal Logic is unable to detect FindPatientBedFor inner method.");
+
+                return method;
             }
 
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
-                // 		IL_0025: ldfld bool RimWorld.BuildingProperties::bed_humanlike
+                // IL_0025: ldfld bool RimWorld.BuildingProperties::bed_humanlike
                 FieldInfo bed_humanlike = typeof(BuildingProperties).GetField("bed_humanlike");
 
                 var codes = new List<CodeInstruction>(instructions);

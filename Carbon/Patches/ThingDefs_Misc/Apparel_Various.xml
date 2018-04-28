@@ -36,7 +36,6 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>*/ThingDef[@Name="ArmorMakeableBase"]/recipeMaker/defaultIngredientFilter/exceptedThingDefs</xpath>
 		<value>
-			<li>Carbon</li>
 			<li>Diamond</li>
 		</value>
 	</Operation>

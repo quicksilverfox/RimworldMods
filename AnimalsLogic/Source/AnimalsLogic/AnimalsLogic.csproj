@@ -55,6 +55,7 @@
     <Compile Include="AnimalsAreDifferent.cs" />
     <Compile Include="AnimalsFightBack.cs" />
     <Compile Include="AnimalsLogic.cs" />
+    <Compile Include="Bugfixes.cs" />
     <Compile Include="BuyablePackAnimals.cs" />
     <Compile Include="Come.cs" />
     <Compile Include="DoNotEatRandomly.cs" />

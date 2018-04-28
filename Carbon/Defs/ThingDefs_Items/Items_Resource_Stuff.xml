@@ -1,29 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-	<ThingDef ParentName="ResourceBase">
-		<defName>Carbon</defName>
-		<label>carbon</label>
-		<description>A pure carbon. A truly versatile material, if you have a right technology.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/Carbon</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<resourceReadoutPriority>Middle</resourceReadoutPriority>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
-		<useHitPoints>false</useHitPoints>
-		<statBases>
-			<MarketValue>4</MarketValue>
-			<Mass>0.05</Mass>
-		</statBases>
-		<thingCategories>
-			<li>ResourcesRaw</li>
-		</thingCategories>
-		<tradeability>Sellable</tradeability>
-		<tradeTags>
-			<li>ResourcesRaw</li>
-		</tradeTags>
-	</ThingDef>
 
 	<ThingDef ParentName="ResourceBase">
 		<defName>CarbonWeave</defName>
@@ -33,10 +9,12 @@
 			<texPath>Things/Item/Resource/CarbonWeave</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<useHitPoints>false</useHitPoints>
+		<useHitPoints>true</useHitPoints>
 		<statBases>
 			<MarketValue>5</MarketValue>
 			<Mass>0.05</Mass>
+			<Flammability>0.1</Flammability>
+			<DeteriorationRate>0.2</DeteriorationRate>
 		</statBases>
 		<stuffProps>
 			<categories>
@@ -52,12 +30,12 @@
 			<statFactors>
 				<MaxHitPoints>2.5</MaxHitPoints>
 				<WorkToMake>1.3</WorkToMake>
-				<ArmorRating_Blunt>1.1</ArmorRating_Blunt>
-				<ArmorRating_Sharp>1.5</ArmorRating_Sharp>
-				<ArmorRating_Heat>2.5</ArmorRating_Heat>
+				<ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+				<ArmorRating_Sharp>1.8</ArmorRating_Sharp>
+				<ArmorRating_Heat>3.0</ArmorRating_Heat>
 				<ArmorRating_Electric>0.0</ArmorRating_Electric>
-				<Flammability>0.0</Flammability>
-				<DeteriorationRate>0.05</DeteriorationRate>
+				<Flammability>0.1</Flammability>
+				<DeteriorationRate>0.2</DeteriorationRate>
 			</statFactors>
 		</stuffProps>
 		<tradeability>Stockable</tradeability>
@@ -76,12 +54,12 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
-		<useHitPoints>false</useHitPoints>
+		<useHitPoints>true</useHitPoints>
 		<statBases>
 			<MarketValue>5</MarketValue>
 			<Mass>0.25</Mass>
-			<Flammability>0.0</Flammability>
-			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>0.1</Flammability>
+			<DeteriorationRate>0.2</DeteriorationRate>
 			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
 			<BluntDamageMultiplier>0.8</BluntDamageMultiplier>
 		</statBases>
@@ -107,12 +85,12 @@
 			<statFactors>
 				<MaxHitPoints>2.0</MaxHitPoints>
 				<Beauty>2</Beauty>
-				<Flammability>0.0</Flammability>
+				<Flammability>0.1</Flammability>
 				<WorkToMake>0.7</WorkToMake>
 				<WorkToBuild>0.7</WorkToBuild>
 				<MeleeWeapon_CooldownMultiplier>0.7</MeleeWeapon_CooldownMultiplier>
 				<DoorOpenSpeed>1.3</DoorOpenSpeed>
-				<DeteriorationRate>0.25</DeteriorationRate>
+				<DeteriorationRate>0.2</DeteriorationRate>
 			</statFactors>
 			<smeltable>false</smeltable>
 		</stuffProps>
@@ -133,6 +111,7 @@
 			<MarketValue>50</MarketValue>
 			<Mass>0.5</Mass>
 			<Flammability>0.0</Flammability>
+			<DeteriorationRate>0.0</DeteriorationRate>
 			<SharpDamageMultiplier>0.8</SharpDamageMultiplier>
 			<BluntDamageMultiplier>1.5</BluntDamageMultiplier>
 		</statBases>
@@ -151,13 +130,13 @@
 				<Cleanliness>0.4</Cleanliness>
 			</statOffsets>
 			<statFactors>
-				<MaxHitPoints>20</MaxHitPoints>
+				<MaxHitPoints>10</MaxHitPoints>
 				<WorkToMake>3.5</WorkToMake>
 				<WorkToBuild>7.0</WorkToBuild>
 				<Beauty>2.5</Beauty>
 				<Flammability>0.0</Flammability>
 				<MeleeWeapon_CooldownMultiplier>1.1</MeleeWeapon_CooldownMultiplier>
-				<DeteriorationRate>0</DeteriorationRate>
+				<DeteriorationRate>0.0</DeteriorationRate>
 			</statFactors>
 			<smeltable>false</smeltable>
 		</stuffProps>

@@ -33,45 +33,13 @@
 	</RecipeDef>
 
 	<RecipeDef>
-		<!-- Oil and gas are 85% carbon -->
-		<defName>MakeCarbonFromChemfuel</defName>
-		<label>make carbon from chemfuel</label>
-		<description>Make a batch of refined carbon by refining chemfuel.</description>
-		<jobString>Making carbon from chemfuel.</jobString>
-		<effectWorking>Cremate</effectWorking>
-		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>1250</workAmount>
-		<workSkill>Intellectual</workSkill>
-		<workSpeedStat>SmeltingSpeed</workSpeedStat>
-		<researchPrerequisite>CarbonResearch</researchPrerequisite>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</filter>
-				<count>50</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Chemfuel</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<products>
-			<Carbon>42</Carbon>
-		</products>
-	</RecipeDef>
-
-	<RecipeDef>
 		<defName>MakeCarbonWeave</defName>
 		<label>make carbon weave</label>
 		<description>Make carbon weave from pure carbon.</description>
 		<jobString>Making carbon weave.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>4200</workAmount>
+		<workAmount>4500</workAmount>
 		<workSkill>Intellectual</workSkill>
 		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
@@ -82,15 +50,15 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Carbon</li>
+						<li>Chemfuel</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>60</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>Carbon</li>
+				<li>Chemfuel</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
@@ -105,7 +73,7 @@
 		<jobString>Making carbon composite.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>4200</workAmount>
+		<workAmount>4500</workAmount>
 		<workSkill>Intellectual</workSkill>
 		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
@@ -116,15 +84,15 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Carbon</li>
+						<li>Chemfuel</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>60</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>Carbon</li>
+				<li>Chemfuel</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
@@ -150,15 +118,15 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Carbon</li>
+						<li>Chemfuel</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>60</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>Carbon</li>
+				<li>Chemfuel</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>

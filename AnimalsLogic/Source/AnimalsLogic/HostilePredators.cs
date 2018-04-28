@@ -23,7 +23,7 @@ namespace AnimalsLogic
 
         static void Postfix(ref bool __result, ref object[] __state)
         {
-            if (__state == null || !Settings.hostile_predators)
+            if (__state == null)
             {
                 return;
             }
@@ -31,11 +31,44 @@ namespace AnimalsLogic
             Thing a = (Thing)__state[0];
             Thing b = (Thing)__state[1];
 
-            if (CheckHostile(a, b) || CheckHostile(b, a))
+            if (Settings.hostile_predators && (CheckHostile(a, b) || CheckHostile(b, a)))
             {
                 __result = true;
             }
+
+            //if (Settings.hostile_vermins && (CheckVermin(a, b) || CheckVermin(b, a))) __result = true;
         }
+
+        /*
+        private static bool CheckVermin(Thing who, Thing to)
+        {
+            if (!(who is Pawn))
+            {
+                return false;
+            }
+
+            Faction playerFaction = Faction.OfPlayerSilentFail;
+            if (playerFaction == null || !(who.Faction == playerFaction && to.Faction == null || who.Faction == null && to.Faction == playerFaction)) // only works for players, 'cuz why
+                return false;
+
+            Pawn agressor = who as Pawn;
+            if (agressor.CurJob != null && agressor.jobs.curDriver is JobDriver_Ingest)
+            {
+                if (agressor.Map.designationManager.DesignationOn(agressor, DesignationDefOf.Tame) != null)
+                    return false;
+
+                LocalTargetInfo food = agressor.CurJob.targetA;
+                Thing foodThing = food.Thing;
+                if (!(foodThing is Plant) || foodThing.def == null)
+                    return false;
+
+                Zone z = food.Cell.GetZone(agressor.Map);
+                if (z != null && z is Zone_Growing && ((IPlantToGrowSettable)z).GetPlantDefToGrow() == foodThing.def)
+                    return true;
+            }
+            return false;
+        }
+        */
 
         private static bool CheckHostile(Thing who, Thing to)
         {

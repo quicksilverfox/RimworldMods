@@ -89,7 +89,7 @@ namespace AnimalsLogic
                 if (codes[i].opcode == OpCodes.Callvirt && (MethodInfo)codes[i].operand == set_AreaRestriction)
                 {
                     // add after: ValidateArea call
-                    codes.Insert(i + 1, new CodeInstruction(OpCodes.Call, typeof(Come).GetMethod("ValidateArea", new Type[] { typeof(Pawn) })));
+                    codes.Insert(i + 1, new CodeInstruction(OpCodes.Call, typeof(Come).GetMethod(nameof(ValidateArea))));
 
                     // add before: duplicate argument to use with ValidateArea
                     codes.Insert(i - 2, new CodeInstruction(OpCodes.Dup));

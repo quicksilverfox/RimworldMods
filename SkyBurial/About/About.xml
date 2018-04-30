@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Carbon</name>
+	<name>Sky Burial</name>
 	<author>Oblitus</author>
 	<url>https://ludeon.com/forums/index.php?topic=34628.0</url>
 	<targetVersion>0.18.1722</targetVersion>
-	<description>Adds several carbon-based materials.</description>
+	<description>A more dignified way to let dead bodies rot away.</description>
 </ModMetaData>

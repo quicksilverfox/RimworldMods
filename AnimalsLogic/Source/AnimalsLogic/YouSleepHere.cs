@@ -238,7 +238,7 @@ namespace AnimalsLogic
         {
             static bool Prefix(ref bool __result, Pawn pawn, Thing t)
             {
-                Pawn pawn2 = t as Pawn;
+                   Pawn pawn2 = t as Pawn;
                 if (pawn2 != null && pawn2.CurJob != null && pawn2.CurJob.def == JobDefOf.LayDown)
                 {
                     __result = false;
@@ -285,7 +285,7 @@ namespace AnimalsLogic
                 for (int i = 0; i < codes.Count; i++)
                 {
                     // IL_0064: call bool Verse.AI.GenAI::EnemyIsNear(class Verse.Pawn, float32)
-                    if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(GenAI).GetMethod("EnemyIsNear"))
+                    if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(GenAI).GetMethod(nameof(GenAI.EnemyIsNear)))
                     {
                         // IL_0069: brfalse IL_0070
                         return_false = codes[i + 1].operand;
@@ -298,7 +298,7 @@ namespace AnimalsLogic
                     if (codes[i].opcode == OpCodes.Ret)
                     {
                         codes.Insert(i + 1, new CodeInstruction(OpCodes.Ldloc_0));
-                        codes.Insert(i + 2, new CodeInstruction(OpCodes.Call, typeof(JobGiver_RescueNearby_TryGiveJob_Patch).GetMethod("IsDesignatedForSlaughter", new Type[] { typeof(Pawn) })));
+                        codes.Insert(i + 2, new CodeInstruction(OpCodes.Call, typeof(JobGiver_RescueNearby_TryGiveJob_Patch).GetMethod(nameof(IsDesignatedForSlaughter))));
                         codes.Insert(i + 3, new CodeInstruction(OpCodes.Brtrue, return_false));
 
                         break;

@@ -4,7 +4,7 @@
 	<!-- Balanced to have the same efficiency as other food. Hay yields 37% more than corn or rice on normal soil and 22% more on rich soil, so it is a bit more profitable to use hay on normal soil but corn gives a bit more on rich. -->
 	<RecipeDef>
 		<defName>MakeChemfuelFromHaygrass</defName>
-		<label>make chemfuel from haygrass</label>
+		<label>make chemfuel from hay</label>
 		<description>Make a batch of chemfuel by extracting biofuel from hay.</description>
 		<jobString>Refining chemfuel from hay.</jobString>
 		<effectWorking>Cremate</effectWorking>
@@ -24,7 +24,7 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>WoodLog</li>
+				<li>Hay</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
@@ -35,17 +35,13 @@
 	<RecipeDef>
 		<defName>MakeCarbonWeave</defName>
 		<label>make carbon weave</label>
-		<description>Make carbon weave from pure carbon.</description>
+		<description>Make carbon weave from chemfuel.</description>
 		<jobString>Making carbon weave.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>4500</workAmount>
 		<workSkill>Intellectual</workSkill>
-		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
-		<skillRequirements>
-			<Intellectual>6</Intellectual>
-		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -69,17 +65,13 @@
 	<RecipeDef>
 		<defName>MakeCarbonFiber</defName>
 		<label>make carbon composite</label>
-		<description>Make carbon fiber reinforced polymer from pure carbon and chemfuel.</description>
+		<description>Make carbon fiber reinforced polymer from chemfuel.</description>
 		<jobString>Making carbon composite.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>4500</workAmount>
 		<workSkill>Intellectual</workSkill>
-		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
-		<skillRequirements>
-			<Intellectual>6</Intellectual>
-		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -103,13 +95,12 @@
 	<RecipeDef>
 		<defName>MakeDiamond</defName>
 		<label>make diamond</label>
-		<description>Make diamond from pure carbon.</description>
+		<description>Make diamond from chemfuel.</description>
 		<jobString>Making diamond.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>7500</workAmount>
 		<workSkill>Intellectual</workSkill>
-		<workSpeedStat>SmeltingSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>
 			<Intellectual>10</Intellectual>

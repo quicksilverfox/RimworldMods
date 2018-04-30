@@ -13,7 +13,7 @@
 		<statBases>
 			<MarketValue>5</MarketValue>
 			<Mass>0.05</Mass>
-			<Flammability>0.1</Flammability>
+			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0.2</DeteriorationRate>
 		</statBases>
 		<stuffProps>
@@ -34,7 +34,7 @@
 				<ArmorRating_Sharp>1.8</ArmorRating_Sharp>
 				<ArmorRating_Heat>3.0</ArmorRating_Heat>
 				<ArmorRating_Electric>0.0</ArmorRating_Electric>
-				<Flammability>0.1</Flammability>
+				<Flammability>0.0</Flammability>
 				<DeteriorationRate>0.2</DeteriorationRate>
 			</statFactors>
 		</stuffProps>
@@ -58,7 +58,7 @@
 		<statBases>
 			<MarketValue>5</MarketValue>
 			<Mass>0.25</Mass>
-			<Flammability>0.1</Flammability>
+			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0.2</DeteriorationRate>
 			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
 			<BluntDamageMultiplier>0.8</BluntDamageMultiplier>
@@ -80,12 +80,12 @@
 			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
 			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
 			<statOffsets>
-				<Cleanliness>0.3</Cleanliness>
+				<Cleanliness>0.2</Cleanliness>
 			</statOffsets>
 			<statFactors>
 				<MaxHitPoints>2.0</MaxHitPoints>
 				<Beauty>2</Beauty>
-				<Flammability>0.1</Flammability>
+				<Flammability>0.0</Flammability>
 				<WorkToMake>0.7</WorkToMake>
 				<WorkToBuild>0.7</WorkToBuild>
 				<MeleeWeapon_CooldownMultiplier>0.7</MeleeWeapon_CooldownMultiplier>

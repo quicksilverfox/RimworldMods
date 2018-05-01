@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>UseArchive</defName>
+    <driverClass>JobDriver_WatchBuilding</driverClass>
+    <reportString>reading.</reportString>
+    <joyDuration>6000</joyDuration>
+    <joyMaxParticipants>1</joyMaxParticipants>
+    <joySkill>Intellectual</joySkill>
+    <joyXpPerTick>0.004</joyXpPerTick>
+    <joyGainRate>1.5</joyGainRate>
+    <joyKind>Study</joyKind>
+  </JobDef>
+  
+</Defs>

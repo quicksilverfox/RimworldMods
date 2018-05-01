@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>[A18] Leeani Playable Race</name>
+	<author>MikeRobe</author>
+	<url></url>
+	<targetVersion>0.18.0</targetVersion>
+	<description>A nice happy race of people-foxes. Alien Race Framework required, load after it. EPOE patch available.
+	
+	Plenty of things planned in the versions to come, this is the first public release so don't expect too much.
+	
+	Relationships incompatible with Psychology - not my fault, can't fix on my end.
+	
+	Adds Faction, starting Scenario, playable Race, Throne, Quarterstaff and Bycocket (Robin Hood Hats).
+	
+	Plenty of backstories, as well as names. Suggestions? Find @MikeRobe on the Rimworld Discord.
+	
+	</description>
+</ModMetaData>

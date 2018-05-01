@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <AVInspect_BadTempManaged>Bad temperature; Started manual temperature control.</AVInspect_BadTempManaged>
+  <AVInspect_BadTempUnmanaged>Out of safe temperature.</AVInspect_BadTempUnmanaged>
+  <AVInspect_IngredientsLeft>Ingredients left: </AVInspect_IngredientsLeft>  <!--Remember to add space-->
+  <AVInspect_WorkLeft>Work left: {0}</AVInspect_WorkLeft>
+</LanguageData>

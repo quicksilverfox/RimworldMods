@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<ContainsBerries>Contains {0} / {1} berry juice.</ContainsBerries>
+	<ContainsCider>Contains {0} / {1} cider.</ContainsCider>
+	<FermentedCider>Fermented</FermentedCider>
+	<CiderFermentationProgress>Progress: {0} ({1} left)</CiderFermentationProgress>
+	<CiderFermentationBarrelOutOfIdealTemperature>Non-ideal temperature. Fermentation speed: {0}</CiderFermentationBarrelOutOfIdealTemperature>
+	
+	<ContainsGrapeJuice>Contains {0} / {1} grape juice.</ContainsGrapeJuice>
+	<ContainsWine>Contains {0} / {1} wine.</ContainsWine>
+	<FermentedWine>Fermented</FermentedWine>
+	<WineFermentationProgress>Progress: {0} ({1} left)</WineFermentationProgress>
+	<WineFermentationBarrelOutOfIdealTemperature>Non-ideal temperature. Fermentation speed: {0}</WineFermentationBarrelOutOfIdealTemperature>
+</LanguageData>

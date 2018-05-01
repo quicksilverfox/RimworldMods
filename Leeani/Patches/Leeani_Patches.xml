@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName='HiTechResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName='HiTechResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+				<order>Append</order>
+				<value>
+					<li>LeeaniBookshelf</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- Actually, should check if this stuff is not there, but xpatch is breaking my brain, and it would be four conditional patches for each level -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName='SimpleResearchBench']</xpath>
+		<order>Append</order>
+		<value>
+			<comps>
+				<li Class="CompProperties_AffectedByFacilities">
+					<linkableFacilities>
+						<li>LeeaniBookshelf</li>
+					</linkableFacilities>
+				</li>
+			</comps>
+		</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName='SimpleResearchBench']</xpath>
+		<order>Append</order>
+		<value>
+			<placeWorkers>
+				<li>PlaceWorker_ShowFacilitiesConnections</li>
+			</placeWorkers>
+		</value>
+	</Operation>
+
+</Patch>

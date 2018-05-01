@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<TraitDef>
+    <defName>LeeaniPacifist</defName>
+    <commonality>0.01</commonality>
+    <degreeDatas>
+      <li>
+        <label>pacifist</label>
+        <description>NAME is a pacifist - of a sort. HE's far, far less likely to start a social fight, but this doesn't mean HE won't defend his friends from harm. HIS relative pacifism only has a minor effect on HIS combat ability,</description>
+        <socialFightChanceFactor>0.05</socialFightChanceFactor>
+		<skillGains>
+          <li>
+            <key>Melee</key>
+            <value>-1</value>
+          </li>
+          <li>
+            <key>Shooting</key>
+            <value>-1</value>
+          </li>
+        </skillGains>
+      </li>
+    </degreeDatas>
+	
+</TraitDef>
+</Defs>

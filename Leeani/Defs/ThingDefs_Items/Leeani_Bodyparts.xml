@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+
+	<ThingDef ParentName="BodyPartNaturalBase">
+		<defName>LTail</defName>
+		<label>leeani tail</label>
+		<description>A floofy Leeani tail. What did you do??!</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/Organ</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>200</MarketValue>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>LClothTail</defName>
+		<label>cloth leeani tail</label>
+		<description>It's better than nothing, doesn't mean it's actually any good. Give me back the original, please.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/ArtificialOrgan</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>100</MarketValue>
+			<Mass>.3</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Simple</li>
+		</techHediffsTags>
+	</ThingDef>
+
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>LBionicTail</defName>
+		<label>bionic leeani tail</label>
+		<description>Once step closer to furry robots. You do realize what you're doing with this technology, don't you?</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/ArtificialOrgan</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1500</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+	</ThingDef>
+
+</Defs>

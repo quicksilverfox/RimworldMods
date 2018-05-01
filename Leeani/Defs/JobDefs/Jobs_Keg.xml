@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<JobDef>
+		<defName>FillCiderKeg</defName>
+		<driverClass>Leeani.JobDriver_FillFermentingVat</driverClass>
+		<reportString>filling TargetA.</reportString>
+	</JobDef>
+	
+	<JobDef>
+		<defName>EmptyCiderKeg</defName>
+		<driverClass>Leeani.JobDriver_TakeThingOutOfFermentingVat</driverClass>
+		<reportString>taking thing out of TargetA.</reportString>
+	</JobDef>
+	
+	<JobDef>
+		<defName>FillWineKeg</defName>
+		<driverClass>Leeani.JobDriver_FillFermentingVat</driverClass>
+		<reportString>filling TargetA.</reportString>
+	</JobDef>
+	
+	<JobDef>
+		<defName>EmptyWineKeg</defName>
+		<driverClass>Leeani.JobDriver_TakeThingOutOfFermentingVat</driverClass>
+		<reportString>taking thing out of TargetA.</reportString>
+	</JobDef>
+</Defs>

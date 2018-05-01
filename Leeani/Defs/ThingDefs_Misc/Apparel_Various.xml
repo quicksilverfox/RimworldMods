@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="HatMakeableBase">
+		<defName>LeeaniBycocket</defName>
+		<label>Bycocket</label>
+		<description>Commonly associated with...Robin Hood. A truly terrifying hat. Don't laugh at the name.</description>
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Gear/RobinHood</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>250</MarketValue>
+			<WorkToMake>500</WorkToMake>
+			<MaxHitPoints>350</MaxHitPoints>
+			<ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+			<Insulation_Cold>-2</Insulation_Cold>
+			<Insulation_Heat>5</Insulation_Heat>
+		</statBases>
+		<costList>
+			<Cloth>60</Cloth>
+		</costList>
+		<equippedStatOffsets>
+			<ShootingAccuracy>0.15</ShootingAccuracy>
+			<MoveSpeed>0.01</MoveSpeed>
+			<MentalBreakThreshold>-0.05</MentalBreakThreshold>
+			<MeleeHitChance>0.02</MeleeHitChance>
+			<AimingDelayFactor>-0.1</AimingDelayFactor>
+			<RecruitPrisonerChance>0.05</RecruitPrisonerChance>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Gear/RobinHood</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<defaultOutfitTags>
+				<li>Civilian</li>
+			</defaultOutfitTags>
+			<tags>
+				<li>LeeaniMilitary</li>
+				<li>LeeaniCivilian</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+
+</Defs>

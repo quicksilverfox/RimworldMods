@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============================ Leeani Base ========================== -->
+
+	<PawnKindDef Name="LeeaniBase" Abstract="True">
+		<defaultFactionType>LeeaniHold</defaultFactionType>
+		<race>Alien_Leeani</race>
+		<backstoryCategory>LeeaniBackstory</backstoryCategory>
+		<chemicalAddictionChance>0.005</chemicalAddictionChance>
+		<baseRecruitDifficulty>0.75</baseRecruitDifficulty>
+		<apparelAllowHeadwearChance>0.2</apparelAllowHeadwearChance>
+		<apparelTags>
+			<li>Outlander</li>
+		</apparelTags>
+	</PawnKindDef>
+
+	<!-- ============================ Leeani Civilian Base ========================== -->
+
+	<PawnKindDef Name="LeeaniCivBase" ParentName="LeeaniBase" Abstract="True">
+		<combatPower>25</combatPower>
+		<race>Alien_Leeani</race>
+		<itemQuality>Poor</itemQuality>
+		<isFighter>false</isFighter>
+		<backstoryCategory>LeeaniBackstory</backstoryCategory>
+		<gearHealthRange>
+			<min>0.2</min>
+			<max>2.0</max>
+		</gearHealthRange>
+		<apparelMoney>
+			<min>500</min>
+			<max>1000</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>200</min>
+			<max>1300</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>Gun</li>
+			<li>NonNeolithicOnlyMelee</li>
+			<li>NonNeolithicOnlySimpleMelee</li>
+			<li>NeolithicMeleeBasic</li>
+		</weaponTags>
+		<techHediffsMoney>
+			<min>200</min>
+			<max>300</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>Simple</li>
+		</techHediffsTags>
+		<techHediffsChance>0.51</techHediffsChance>
+		<invNutrition>2.55</invNutrition>
+		<inventoryOptions>
+			<skipChance>0.75</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<choiceChance>90</choiceChance>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>25</min>
+						<max>70</max>
+					</countRange>
+				</li>
+				<li>
+					<choiceChance>10</choiceChance>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>700</min>
+						<max>1000</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
+
+	<!-- ============================ Leeani Civilians ========================== -->
+
+	<PawnKindDef ParentName="LeeaniCivBase">
+		<defName>LeeaniPeasant</defName>
+		<label>peasant</label>
+		<backstoryCategory>LeeaniPeasantBackstory</backstoryCategory>
+		<weaponTags>
+			<li>NonNeolithicOnlyMelee</li>
+			<li>NonNeolithicOnlySimpleMelee</li>
+			<li>NeolithicMeleeBasic</li>
+		</weaponTags>
+		<weaponMoney>
+			<min>0</min>
+			<max>100</max>
+		</weaponMoney>
+		<apparelMoney>
+			<min>100</min>
+			<max>200</max>
+		</apparelMoney>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="LeeaniCivBase">
+		<defName>LeeaniNoble</defName>
+		<label>noble</label>
+		<labelPlural>nobles</labelPlural>
+		<backstoryCategory>LeeaniNobleBackstory</backstoryCategory>
+		<minGenerationAge>20</minGenerationAge>
+		<maxGenerationAge>60</maxGenerationAge>
+		<apparelMoney>
+			<min>700</min>
+			<max>800</max>
+		</apparelMoney>
+		<weaponTags>
+			<li>Gun</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="LeeaniCivBase">
+		<defName>LeeaniTrader</defName>
+		<backstoryCategory>LeeaniWorkerBackstory</backstoryCategory>
+		<label>trader</label>
+		<trader>true</trader>
+	</PawnKindDef>  
+
+	<PawnKindDef ParentName="LeeaniCivBase">
+		<defName>LeeaniTradie</defName>
+
+		<label>tradesman</label>
+		<backstoryCategory>LeeaniWorkerBackstory</backstoryCategory>
+		<apparelMoney>
+			<min>100</min>
+			<max>700</max>
+		</apparelMoney>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="LeeaniCivBase">
+		<defName>LeeaniArkhaevest</defName>
+		<label>arkhaevest</label>
+		<backstoryCategory>LeeaniArkhaevestBackstory</backstoryCategory>
+		<apparelMoney>
+			<min>600</min>
+			<max>700</max>
+		</apparelMoney>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="LeeaniCivBase">
+		<defName>LeeaniLoord</defName>
+		<label>loord</label>
+		<backstoryCategory>LeeaniLoordBackstory</backstoryCategory>
+		<apparelMoney>
+			<min>1000</min>
+			<max>1500</max>
+		</apparelMoney>
+		<factionLeader>true</factionLeader>
+		<weaponMoney>
+			<min>1000</min>
+			<max>2000</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>Gun</li>
+		</weaponTags>
+	</PawnKindDef> 
+
+	<!-- ============================ Leeani Military ========================== -->
+
+	<PawnKindDef ParentName="LeeaniCivBase">
+		<defName>LeeaniScout</defName>
+		<label>scout</label>
+		<combatPower>40</combatPower>
+		<maxGenerationAge>30</maxGenerationAge>
+		<backstoryCategory>LeeaniScoutBackstory</backstoryCategory>
+		<gearHealthRange>
+			<min>0.5</min>
+			<max>1.8</max>
+		</gearHealthRange>
+		<apparelMoney>
+			<min>300</min>
+			<max>700</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>1000</min>
+			<max>2000</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>NonNeolithicOnlyMelee</li>
+			<li>NonNeolithicOnlySimpleMelee</li>
+			<li>NeolithicMeleeBasic</li>
+		</weaponTags>
+		<techHediffsMoney>
+			<min>200</min>
+			<max>400</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>Simple</li>
+		</techHediffsTags>
+		<techHediffsChance>0.20</techHediffsChance>
+		<invNutrition>2.55</invNutrition>
+		<inventoryOptions>
+			<skipChance>0.95</skipChance>
+			<thingDef>Silver</thingDef>
+			<countRange>
+				<min>30</min>
+				<max>100</max>
+			</countRange>
+		</inventoryOptions>
+	</PawnKindDef>
+
+	<!-- ============================ Leeani Military Base ========================== -->
+
+	<PawnKindDef Name="LeeaniMilBase" ParentName="LeeaniBase" Abstract="True">
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<isFighter>true</isFighter>
+		<race>Alien_Leeani</race>
+		<invNutrition>2.55</invNutrition>
+		<itemQuality>Normal</itemQuality>
+		<minGenerationAge>20</minGenerationAge>
+		<maxGenerationAge>40</maxGenerationAge>
+		<backstoryCategory>LeeaniSoldierBackstory</backstoryCategory>
+		<gearHealthRange>
+			<min>0.7</min>
+			<max>2.3</max>
+		</gearHealthRange>
+		<apparelTags>
+			<li>Outlander</li>
+			<li>Military</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>1500</min>
+			<max>5800</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>700</min>
+			<max>1500</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>Gun</li>
+			<li>NonNeolithicOnlyMelee</li>
+			<li>NonNeolithicOnlySimpleMelee</li>
+			<li>NeolithicMeleeBasic</li>
+		</weaponTags>
+		<techHediffsMoney>
+			<min>1000</min>
+			<max>5000</max>
+		</techHediffsMoney>
+		<inventoryOptions>
+			<skipChance>0.8</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>50</min>
+						<max>200</max>
+					</countRange>
+				</li>
+				<li>
+					<thingDef>Medicine</thingDef>
+					<countRange>
+						<min>1</min>
+						<max>1</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="LeeaniMilBase">
+		<defName>LeeaniMercenary</defName>
+		<label>mercenary</label>
+		<combatPower>80</combatPower>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="LeeaniMilBase">
+		<defName>LeeaniSoldier</defName>
+		<label>soldier</label>
+		<combatPower>100</combatPower>
+	</PawnKindDef>
+	<PawnKindDef ParentName="LeeaniMilBase">
+		<defName>LeeaniChampion</defName>
+		<label>champion</label>
+		<combatPower>170</combatPower>
+		<apparelMoney>
+			<min>2500</min>
+			<max>30000</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>1000</min>
+			<max>1200</max>
+		</weaponMoney>
+		<backstoryCategory>LeeaniChampionBackstory</backstoryCategory>
+	</PawnKindDef>
+
+
+	<PawnKindDef ParentName="LeeaniMilBase">
+		<defName>LeeaniCaptain</defName>
+		<label>captain of the guard</label>
+		<combatPower>220</combatPower>
+		<minGenerationAge>26</minGenerationAge>
+		<maxGenerationAge>40</maxGenerationAge>
+		<backstoryCategory>LeeaniCaptainBackstory</backstoryCategory>
+		<gearHealthRange>
+			<min>1.0</min>
+			<max>3.5</max>
+		</gearHealthRange>
+		<apparelTags>
+			<li>Military</li>
+			<li>Spacer</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>2500</min>
+			<max>5000</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>1000</min>
+			<max>1300</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>Gun</li>
+			<li>NonNeolithicOnlyMelee</li>
+			<li>NonNeolithicOnlySimpleMelee</li>
+			<li>NeolithicMeleeBasic</li>
+		</weaponTags>
+		<techHediffsMoney>
+			<min>2000</min>
+			<max>8000</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<techHediffsChance>0.80</techHediffsChance>
+		<inventoryOptions>
+			<skipChance>0.8</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>120</min>
+						<max>480</max>
+					</countRange>
+				</li>
+				<li>
+					<thingDef>Medicine</thingDef>
+					<countRange>
+						<min>1</min>
+						<max>2</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
+
+</Defs>

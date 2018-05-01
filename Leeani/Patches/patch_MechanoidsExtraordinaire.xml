@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>Mechanoids Extraordinaire</modName>
+				<yourMod>[A18] Leeani Playable Race</yourMod>
+				<customMessageSuccess>Mechanoids Extraordinaire has been detected, patching Leeani surgery! Mecha-tentacled furries, what can possibly go wrong?</customMessageSuccess>
+			</li>
+
+			<li Class="ModCheck.FindFile">
+				<modName>Mechanoids Extraordinaire</modName>
+			</li>
+
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="ModCheck.FindFile">
+						<file>Recipes_Surgery_NewParts_MechanoidsExtraordinaire.xml</file>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name="SurgeryAdvanced"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[defName="InstallMechaTentacle"]/appliedOnFixedBodyParts</xpath>
+						<value>
+							<li>LTail</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

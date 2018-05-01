@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<!-- surgery works fine, but production of bionic tails apparently can't be done via xpatch -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>Expanded Prosthetics and Organ Engineering</modName>
+				<yourMod>[A18] Leeani Playable Race</yourMod>
+				<customMessageSuccess>EPOE has been detected, enjoy your furry cyborgs with Leeani!</customMessageSuccess>
+			</li>
+
+			<li Class="ModCheck.FindFile">
+				<modName>Expanded Prosthetics and Organ Engineering</modName>
+			</li>
+
+			<!-- EPOE built-in stuff -->
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgeryAdvanced"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgeryBasic"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgeryBionic"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgeryGlitterworld"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgeryMending"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgeryNatural"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgerySimple"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgerySurrogate"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name = "SurgerySynthetic"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+			
+		</operations>
+	</Operation>
+</Patch>

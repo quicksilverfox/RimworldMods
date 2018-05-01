@@ -4,7 +4,7 @@
 
 	<ThingDef ParentName="BodyPartNaturalBase">
 		<defName>LTail</defName>
-		<label>leeani tail</label>
+		<label>Leeani tail</label>
 		<description>A floofy Leeani tail. What did you do??!</description>
 		<graphicData>
 			<texPath>Things/Item/BodyPart/Organ</texPath>
@@ -17,7 +17,7 @@
 
 	<ThingDef ParentName="BodyPartArtificialBase">
 		<defName>LClothTail</defName>
-		<label>cloth leeani tail</label>
+		<label>cloth Leeani tail</label>
 		<description>It's better than nothing, doesn't mean it's actually any good. Give me back the original, please.</description>
 		<graphicData>
 			<texPath>Things/Item/BodyPart/ArtificialOrgan</texPath>
@@ -34,7 +34,7 @@
 
 	<ThingDef ParentName="BodyPartArtificialBase">
 		<defName>LBionicTail</defName>
-		<label>bionic leeani tail</label>
+		<label>bionic Leeani tail</label>
 		<description>Once step closer to furry robots. You do realize what you're doing with this technology, don't you?</description>
 		<graphicData>
 			<texPath>Things/Item/BodyPart/ArtificialOrgan</texPath>

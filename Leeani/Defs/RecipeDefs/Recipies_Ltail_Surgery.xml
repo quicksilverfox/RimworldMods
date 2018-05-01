@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Defs>  
-	<RecipeDef Abstract="True" Name="SurgeryFlesh">
+	<RecipeDef Abstract="True" Name="SurgeryFleshLeeaniTail">
 		<effectWorking>Surgery</effectWorking>
 		<soundWorking>Recipe_Surgery</soundWorking>
 		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
@@ -9,13 +9,7 @@
 		<workSkillLearnFactor>16</workSkillLearnFactor>
 	</RecipeDef>
 
-	<RecipeDef Name="SurgeryXLeeTails" ParentName="SurgeryFlesh" Abstract="True">
-		<recipeUsers>
-			<li>Alien_Leeani</li>
-		</recipeUsers>
-	</RecipeDef>
-
-	<RecipeDef ParentName="SurgeryXLeeTails">
+	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
 		<defName>InstallLeeaniTail</defName>
 		<label>install leeani tail</label>
 		<description>Replace missing or damaged tail.</description>
@@ -51,14 +45,17 @@
 		<appliedOnFixedBodyParts>
 			<li>LTail</li>
 		</appliedOnFixedBodyParts>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
 	</RecipeDef>
 
-	<RecipeDef ParentName="SurgeryXLeeTails">
+	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
 		<defName>InstallClothTail</defName>
-		<label>install cloth leeani tail</label>
+		<label>install cloth tail</label>
 		<description>Installs cloth tail.</description>
 		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
-		<jobString>Installing cloth leeani tail.</jobString>
+		<jobString>Installing cloth tail.</jobString>
 		<workAmount>1200</workAmount>
 		<ingredients>
 			<li>
@@ -90,9 +87,12 @@
 			<li>LTail</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>LClothTail</addsHediff>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
 	</RecipeDef>
 
-	<RecipeDef ParentName="SurgeryXLeeTails">
+	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
 		<defName>InstallBionicLeeaniTail</defName>
 		<label>install bionic leeani tail</label>
 		<description>Installs bionic tail.</description>
@@ -126,9 +126,57 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>Tail</li>
+			<li>LTail</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>LBionicTail</addsHediff>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
+	</RecipeDef>
+
+
+	<!-- EPOE surgery, disabled by default -->
+
+	<RecipeDef Abstract="True">
+		<defName>InstallClothLTail</defName>
+		<label>install cloth tail</label>
+		<description>Installs cloth tail.</description>
+		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+		<jobString>Installing cloth tail.</jobString>
+		<workAmount>1200</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>LClothTail</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+			<thingDefs>
+				<li>LClothTail</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LTail</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>LClothTail</addsHediff>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
 	</RecipeDef>
 
 </Defs> 

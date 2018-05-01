@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>Miscellaneous 'CORE'</modName>
+				<yourMod>[A18] Leeani Playable Race</yourMod>
+				<customMessageSuccess>Miscellaneous 'CORE' has been detected, patching Leeani surgery! AI-assisted furries, what can possibly go wrong?</customMessageSuccess>
+			</li>
+
+			<li Class="ModCheck.FindFile">
+				<modName>Miscellaneous 'CORE'</modName>
+			</li>
+
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="ModCheck.FindFile">
+						<file>BrainPal_Recipes_Surgery.xml</file>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[defName="InstallElectronicTacticalImplant"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[defName="InstallBionicTacticalImplant"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

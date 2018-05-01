@@ -33,3 +33,7 @@ Fixed initial tech level for scenario (was Ultra).
 Reduced apparel budget from 1000-2400 to 500-1000.
 Traditions and cider brewing are unlocked at start for Leeani faction.
 Start with 3 great bows and 2 wooden quarterstaves instead of two bolt-action rifles and one plasteel quarterstaff.
+
+Intermod support:
+Misc. CORE
+Mechanoids Extraordinare

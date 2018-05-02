@@ -16,7 +16,7 @@
     <defaultFactionType>PlayerColony</defaultFactionType>
     <backstoryCategory>LeeaniBackstory</backstoryCategory>
     <apparelTags>
-      <li>Spacer</li>
+      <li>LeeaniPlayer</li>
     </apparelTags>
     <apparelMoney>
       <min>500</min>

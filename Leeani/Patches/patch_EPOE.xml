@@ -118,7 +118,7 @@
 
 			<!-- yes, you can do this! it works this way!-->
 			<li Class="PatchOperationSequence">
-				<success>Normal</success>
+				<success>Always</success>
 				<operations>
 					<li Class="PatchOperationAdd">
 						<xpath>Defs</xpath>

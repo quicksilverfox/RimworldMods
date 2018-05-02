@@ -16,7 +16,7 @@
 		</operations>
 	</Operation>
 
-	<!-- Actually, should check if this stuff is not there, but xpatch is breaking my brain, and it would be four conditional patches for each level -->
+	<!-- Actually, should check if this stuff is not there, but xpatch is breaking my brain, and it would be four conditional patches, one for each level -->
 	<Operation Class="PatchOperationAdd">
 		<xpath>*/ThingDef[defName='SimpleResearchBench']</xpath>
 		<order>Append</order>
@@ -31,7 +31,6 @@
 		</value>
 	</Operation>
 
-
 	<Operation Class="PatchOperationAdd">
 		<xpath>*/ThingDef[defName='SimpleResearchBench']</xpath>
 		<order>Append</order>
@@ -39,6 +38,15 @@
 			<placeWorkers>
 				<li>PlaceWorker_ShowFacilitiesConnections</li>
 			</placeWorkers>
+		</value>
+	</Operation>
+
+	<!-- injecting apparel tags, so they would start with proper equipment -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName='Apparel_Pants' or defName='Apparel_BasicShirt' or defName='Apparel_CollarShirt' or defName='Apparel_Duster' or defName='Apparel_Jacket' or defName='Apparel_CowboyHat' or defName='Apparel_BowlerHat']/apparel/tags</xpath>
+		<order>Append</order>
+		<value>
+			<li>LeeaniPlayer</li>
 		</value>
 	</Operation>
 

@@ -28,14 +28,21 @@ Grapes: value 3.5 -> 3.25, preferability RawBad -> RawTasty
 Grape juice: value 25 -> 7, nutrition 0.5 -> 0.2
 Quarterstaff: commonality of "middle" attack decreased, can Poke
 Fists: power 8 -> 7
+Backstories with violent backgrounds can't be applied to non-violent pawns.
 
 Scenarios:
 Fixed initial tech level for scenario (was Ultra).
 Reduced apparel budget from 1000-2400 to 500-1000.
 Traditions and cider brewing are unlocked at start for Leeani faction.
-Start with 3 great bows and 2 wooden quarterstaves instead of two bolt-action rifles and one plasteel quarterstaff.
+Start with 3 great bows and 2 wooden quarterstaves instead of two bolt-action rifles (kinda outside their tech tree) and one plasteel quarterstaff (it is impossible to even make one).
+Reworked starting apparel to be reasonably medieval. No tribal junk or spacer tech.
 
 Built-in mod support:
 EPOE (except for ribs, I have no idea why they don't work)
 Misc. CORE (BrainPal surgery)
 Mechanoids Extraordinare (mecha-tentacle surgery)
+
+Things to consider:
+
+Trim tech tree (too much small researches) and remove juniper (it is redundant). Would break saves though.
+Make their scenario more medieval. No electricity, but more low tech unlocked.

@@ -27,6 +27,8 @@
 		</hairTags>
 		<apparelStuffFilter>
 			<thingDefs>
+				<li>Cloth</li>
+				<li>WoolMuffalo</li>
 				<li>WoolAlpaca</li>
 			</thingDefs>
 		</apparelStuffFilter>
@@ -56,6 +58,8 @@
 		</hairTags>
 		<apparelStuffFilter>
 			<thingDefs>
+				<li>Cloth</li>
+				<li>WoolMuffalo</li>
 				<li>WoolAlpaca</li>
 			</thingDefs>
 		</apparelStuffFilter>

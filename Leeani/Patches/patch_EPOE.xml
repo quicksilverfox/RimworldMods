@@ -37,6 +37,7 @@
 					</li>
 				</operations>
 			</li>
+			<!-- note: bionic ribs don't work, apparently aliens have different defs for ribs -->
 			<li Class="PatchOperationSequence">
 				<success>Always</success>
 				<operations>
@@ -114,7 +115,55 @@
 					</li>
 				</operations>
 			</li>
-			
+
+			<!-- yes, you can do this! it works this way!-->
+			<li Class="PatchOperationSequence">
+				<success>Normal</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs</xpath>
+						<value>
+							<RecipeDef ParentName="RecipeBionicProsthesis">
+								<defName>CreateLBionicTail</defName>
+								<label>Craft Leeani bionic tail</label>
+								<description>Crafts a bionic tail for a Leeani.</description>
+								<jobString>Crafting bionic part.</jobString>
+								<ingredients>
+									<li>
+										<filter>
+											<thingDefs>
+												<li>Plasteel</li>
+											</thingDefs>
+										</filter>
+										<count>100</count>
+									</li>
+									<li>
+										<filter>
+											<thingDefs>
+												<li>Component</li>
+											</thingDefs>
+										</filter>
+										<count>5</count>
+									</li>
+								</ingredients>
+								<fixedIngredientFilter>
+									<thingDefs>
+										<li>Plasteel</li>
+										<li>Component</li>
+									</thingDefs>
+								</fixedIngredientFilter>
+								<products>
+									<LBionicTail>1</LBionicTail>
+								</products>
+								<recipeUsers>
+									<li>TableBionics</li>
+								</recipeUsers>
+							</RecipeDef>
+						</value>
+					</li>
+				</operations>
+			</li>
+
 		</operations>
 	</Operation>
 </Patch>

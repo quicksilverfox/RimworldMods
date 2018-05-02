@@ -4,6 +4,7 @@ Major fixes:
 Fixed totally broken kegs (was impossible to fill due to a bug in WorkGiver)
 Fixed totally broken brazier (work giver def was missing)
 Fixed totally broken archive (job def and joy giver were missing)
+Fixed broken tail surgery
 Fixed archive interaction with simple research bench
 
 Major tuning:
@@ -34,6 +35,7 @@ Reduced apparel budget from 1000-2400 to 500-1000.
 Traditions and cider brewing are unlocked at start for Leeani faction.
 Start with 3 great bows and 2 wooden quarterstaves instead of two bolt-action rifles and one plasteel quarterstaff.
 
-Intermod support:
-Misc. CORE
-Mechanoids Extraordinare
+Built-in mod support:
+EPOE (except for ribs, I have no idea why they don't work)
+Misc. CORE (BrainPal surgery)
+Mechanoids Extraordinare (mecha-tentacle surgery)

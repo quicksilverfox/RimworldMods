@@ -10,9 +10,6 @@
 		<appliedOnFixedBodyParts>
 			<li>LTail</li>
 		</appliedOnFixedBodyParts>
-		<recipeUsers>
-			<li>Alien_Leeani</li>
-		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
@@ -48,11 +45,14 @@
 				<li>LTail</li>
 			</thingDefs>
 		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
-		<defName>InstallClothTailExisting</defName>
-		<label>install existing cloth tail</label>
+		<defName>InstallClothLTailExisting</defName>
+		<label>install cloth tail</label>
 		<description>Installs cloth tail.</description>
 		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
 		<jobString>Installing cloth tail.</jobString>
@@ -84,11 +84,14 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<addsHediff>LClothTail</addsHediff>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
 		<defName>InstallClothTail</defName>
-		<label>install new cloth tail</label>
+		<label>make and install cloth tail</label>
 		<description>Installs cloth tail.</description>
 		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
 		<jobString>Installing cloth tail.</jobString>
@@ -120,6 +123,9 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<addsHediff>LClothTail</addsHediff>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
@@ -156,6 +162,9 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<addsHediff>LBionicTail</addsHediff>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
 	</RecipeDef>
 
 </Defs> 

@@ -37,6 +37,9 @@
 				<min>0.3</min>
 				<max>1.05</max>
 			</visualSizeRange>
+			<sowResearchPrerequisites>
+				<li>LeeaniJuniper</li>
+			</sowResearchPrerequisites>
 		</plant>
 	</ThingDef>
 
@@ -76,6 +79,9 @@
 				<min>1</min>
 				<max>1</max>
 			</visualSizeRange>
+			<sowResearchPrerequisites>
+				<li>LeeaniVineyards</li>
+			</sowResearchPrerequisites>
 		</plant>
 	</ThingDef>
 

@@ -9,6 +9,15 @@
 				<customMessageSuccess>EPOE has been detected, enjoy your furry cyborgs with Leeani!</customMessageSuccess>
 			</li>
 
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationRemove">
+						<xpath>Defs/RecipeDef[defName="InstallClothTail"]/recipeUsers</xpath>
+					</li>
+				</operations>
+			</li>
+
 			<li Class="ModCheck.FindFile">
 				<modName>Expanded Prosthetics and Organ Engineering</modName>
 			</li>
@@ -122,6 +131,33 @@
 					<li Class="PatchOperationAdd">
 						<xpath>Defs</xpath>
 						<value>
+							<RecipeDef ParentName="RecipeBasicProsthesis">
+								<defName>CreateLClothTail</defName>
+								<label>Craft Leeani cloth tail</label>
+								<description>Crafts a simple cloth tail for Leeani.</description>
+								<jobString>Crafting prosthesis.</jobString>
+								<ingredients>
+									<li>
+										<filter>
+											<thingDefs>
+												<li>Cloth</li>
+											</thingDefs>
+										</filter>
+										<count>25</count>
+									</li>
+								</ingredients>
+								<fixedIngredientFilter>
+									<thingDefs>
+										<li>Cloth</li>
+									</thingDefs>
+								</fixedIngredientFilter>
+								<products>
+									<LClothTail>1</LClothTail>
+								</products>
+								<recipeUsers>
+									<li>TableBasicProsthetic</li>
+								</recipeUsers>
+							</RecipeDef>
 							<RecipeDef ParentName="RecipeBionicProsthesis">
 								<defName>CreateLBionicTail</defName>
 								<label>Craft Leeani bionic tail</label>

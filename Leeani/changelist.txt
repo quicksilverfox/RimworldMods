@@ -46,3 +46,4 @@ Things to consider:
 
 Trim tech tree (too much small researches) and remove juniper (it is redundant). Would break saves though.
 Make their scenario more medieval. No electricity, but more low tech unlocked.
+Rename InstallClothTail recipe to avoid possible overrides by other race mods.

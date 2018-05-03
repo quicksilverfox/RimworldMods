@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
-	<!-- surgery works fine, but production of bionic tails apparently can't be done via xpatch -->
 	<Operation Class="PatchOperationSequence">
 		<success>Always</success>
 		<operations>

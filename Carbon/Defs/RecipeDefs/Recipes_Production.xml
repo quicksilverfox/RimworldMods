@@ -9,9 +9,8 @@
 		<jobString>Refining chemfuel from hay.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>2500</workAmount>
+		<workAmount>2150</workAmount>
 		<workSkill>Intellectual</workSkill>
-		<allowMixingIngredients>true</allowMixingIngredients>
 		<ingredients>
 			<li>
 				<filter>
@@ -19,7 +18,7 @@
 						<li>Hay</li>
 					</thingDefs>
 				</filter>
-				<count>90</count>
+				<count>75</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -28,7 +27,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<Chemfuel>35</Chemfuel>
+			<Chemfuel>30</Chemfuel>
 		</products>
 	</RecipeDef>
 

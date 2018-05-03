@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <PawnKindDef Abstract="True" Name="BaseLeeaniPawnKind">
-    <race>Alien_Leeani</race>
-    <combatPower>20</combatPower>
-    <baseRecruitDifficulty>0.50</baseRecruitDifficulty>
-    <isFighter>false</isFighter>
-    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
-    <forceNormalGearQuality>true</forceNormalGearQuality>
-  </PawnKindDef>
+	<PawnKindDef Abstract="True" Name="BaseLeeaniPawnKind">
+		<race>Alien_Leeani</race>
+		<combatPower>20</combatPower>
+		<baseRecruitDifficulty>0.50</baseRecruitDifficulty>
+		<isFighter>false</isFighter>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<forceNormalGearQuality>true</forceNormalGearQuality>
+	</PawnKindDef>
 
-  <PawnKindDef ParentName="BaseLeeaniPawnKind">
-    <defName>Leeani</defName>
-    <label>colonist</label>
-    <defaultFactionType>PlayerColony</defaultFactionType>
-    <backstoryCategory>LeeaniBackstory</backstoryCategory>
-    <apparelTags>
-      <li>LeeaniPlayer</li>
-    </apparelTags>
-    <apparelMoney>
-      <min>500</min>
-      <max>1000</max>
-    </apparelMoney>
-    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
-  </PawnKindDef>
+	<PawnKindDef ParentName="BaseLeeaniPawnKind">
+		<defName>Leeani</defName>
+		<label>colonist</label>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<backstoryCategory>LeeaniBackstory</backstoryCategory>
+		<apparelTags>
+			<li>LeeaniPlayer</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>500</min>
+			<max>1000</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>0</min>
+			<max>0</max>
+		</weaponMoney>
+		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+	</PawnKindDef>
 
 </Defs>

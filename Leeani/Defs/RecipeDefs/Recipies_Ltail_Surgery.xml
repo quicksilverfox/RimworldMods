@@ -7,6 +7,12 @@
 		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
 		<workSkill>Medicine</workSkill>
 		<workSkillLearnFactor>16</workSkillLearnFactor>
+		<appliedOnFixedBodyParts>
+			<li>LTail</li>
+		</appliedOnFixedBodyParts>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
@@ -42,17 +48,47 @@
 				<li>LTail</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>LTail</li>
-		</appliedOnFixedBodyParts>
-		<recipeUsers>
-			<li>Alien_Leeani</li>
-		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
+		<defName>InstallClothTailExisting</defName>
+		<label>install existing cloth tail</label>
+		<description>Installs cloth tail.</description>
+		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+		<jobString>Installing cloth tail.</jobString>
+		<workAmount>1200</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>LClothTail</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+			<thingDefs>
+				<li>LClothTail</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<addsHediff>LClothTail</addsHediff>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
 		<defName>InstallClothTail</defName>
-		<label>install cloth tail</label>
+		<label>install new cloth tail</label>
 		<description>Installs cloth tail.</description>
 		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
 		<jobString>Installing cloth tail.</jobString>
@@ -72,7 +108,7 @@
 						<li>Cloth</li>
 					</thingDefs>
 				</filter>
-				<count>3</count>
+				<count>25</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -83,13 +119,7 @@
 				<li>Cloth</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>LTail</li>
-		</appliedOnFixedBodyParts>
 		<addsHediff>LClothTail</addsHediff>
-		<recipeUsers>
-			<li>Alien_Leeani</li>
-		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
@@ -125,58 +155,7 @@
 				<li>LBionicTail</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>LTail</li>
-		</appliedOnFixedBodyParts>
 		<addsHediff>LBionicTail</addsHediff>
-		<recipeUsers>
-			<li>Alien_Leeani</li>
-		</recipeUsers>
-	</RecipeDef>
-
-
-	<!-- EPOE surgery, disabled by default -->
-
-	<RecipeDef Abstract="True">
-		<defName>InstallClothLTail</defName>
-		<label>install cloth tail</label>
-		<description>Installs cloth tail.</description>
-		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
-		<jobString>Installing cloth tail.</jobString>
-		<workAmount>1200</workAmount>
-		<ingredients>
-			<li>
-				<filter>
-					<categories>
-						<li>Medicine</li>
-					</categories>
-				</filter>
-				<count>1</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>LClothTail</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-			<thingDefs>
-				<li>LClothTail</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>LTail</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>LClothTail</addsHediff>
-		<recipeUsers>
-			<li>Alien_Leeani</li>
-		</recipeUsers>
 	</RecipeDef>
 
 </Defs> 

@@ -24,7 +24,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
-			<MarketValue>100</MarketValue>
+			<MarketValue>15</MarketValue>
 			<Mass>.3</Mass>
 		</statBases>
 		<techHediffsTags>

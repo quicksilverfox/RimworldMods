@@ -12,6 +12,7 @@
 		<apparelAllowHeadwearChance>0.2</apparelAllowHeadwearChance>
 		<apparelTags>
 			<li>Outlander</li>
+			<li>LeeaniPlayer</li>
 		</apparelTags>
 	</PawnKindDef>
 
@@ -119,7 +120,6 @@
 
 	<PawnKindDef ParentName="LeeaniCivBase">
 		<defName>LeeaniTradie</defName>
-
 		<label>tradesman</label>
 		<backstoryCategory>LeeaniWorkerBackstory</backstoryCategory>
 		<apparelMoney>
@@ -217,6 +217,7 @@
 		</gearHealthRange>
 		<apparelTags>
 			<li>Outlander</li>
+			<li>LeeaniPlayer</li>
 			<li>Military</li>
 		</apparelTags>
 		<apparelMoney>
@@ -297,8 +298,9 @@
 			<max>3.5</max>
 		</gearHealthRange>
 		<apparelTags>
+			<li>Outlander</li>
+			<li>LeeaniPlayer</li>
 			<li>Military</li>
-			<li>Spacer</li>
 		</apparelTags>
 		<apparelMoney>
 			<min>2500</min>

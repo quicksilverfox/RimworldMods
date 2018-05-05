@@ -20,6 +20,7 @@ Banquet chair and throne have reasonable comfort.
 Fixed initial rotation of furniture.
 Reduced cost of most research projects (5200 total cost, and most of them is fluff).
 Marked all researches to be ignored by tech advancing mod.
+Marked all researches as leeani-exclusive in their descriptions.
 Nerfed leeani leather insulation from 2.0 to 1.1
 Organic tail is marked as Leeani tail
 Juniper: MarketValue 1.5 -> 1.2, daysToRotStart 40 -> 60 (basically an option for strawberry which can last without fridge, but is not tasty when raw)
@@ -29,6 +30,7 @@ Grape juice: value 25 -> 7, nutrition 0.5 -> 0.2
 Quarterstaff: commonality of "middle" attack decreased, can Poke
 Fists: power 8 -> 7
 Backstories with violent backgrounds can't be applied to non-violent pawns.
+Bycocket is marked as leeani-exclusive, since its shape does not work with human heads. WorkToMake and MaxHitPoints are set to reasonable values.
 
 Scenarios:
 Fixed initial tech level for scenario (was Ultra).

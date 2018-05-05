@@ -198,6 +198,9 @@
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<raceRestriction>
+				<apparelList>
+					<li>LeeaniBycocket</li>
+				</apparelList>
 				<researchList>
 					<li>
 						<projects>

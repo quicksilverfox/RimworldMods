@@ -20,7 +20,7 @@
 	<ResearchProjectDef>
 		<defName>LeeaniJuniper</defName>
 		<label>Juniper</label>
-		<description>A berry with a tang, it has great power in many alcoholic drinks. Cultivating it would surely be of great benefit.</description>
+		<description>A berry with a tang, it has great power in many alcoholic drinks. Cultivating it would surely be of great benefit.\n\nRequires Leeani researcher.</description>
 		<baseCost>200</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<tags>
@@ -36,7 +36,7 @@
 	<ResearchProjectDef>
 		<defName>LeeaniBrewing</defName>
 		<label>Cider Brewing</label>
-		<description>One of the oldest alcohols of all time. Researching this will unlock the berry press and cider keg.</description>
+		<description>One of the oldest alcohols of all time. Researching this will unlock the wine press and cider keg.\n\nRequires Leeani researcher.</description>
 		<baseCost>300</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<tags>
@@ -55,7 +55,7 @@
 	<ResearchProjectDef>
 		<defName>LeeaniVineyards</defName>
 		<label>Vineyards</label>
-		<description>An efficient way to grow grapes in good quantities, and a step closer to wine production.</description>
+		<description>An efficient way to grow grapes in good quantities, and a step closer to wine production.\n\nRequires Leeani researcher.</description>
 		<baseCost>300</baseCost>
 		<techLevel>Medieval</techLevel>
 		<tags>
@@ -69,7 +69,7 @@
 	<ResearchProjectDef>
 		<defName>LeeaniWineBrewing</defName>
 		<label>Wine Brewing</label>
-		<description>A craft wine, the secrets to a perfect blend lie in this research that only a Leeani could truly understand. Unlocks the wine keg.</description>
+		<description>A craft wine, the secrets to a perfect blend lie in this research that only a Leeani could truly understand. Unlocks the wine keg.\n\nRequires Leeani researcher.</description>
 		<baseCost>500</baseCost>
 		<techLevel>Medieval</techLevel>
 		<tags>
@@ -87,7 +87,7 @@
 	<ResearchProjectDef>
 		<defName>LeeaniAutovats</defName>
 		<label>Autovats</label>
-		<description>True efficiency means automated kegs could take over the careful production of our ciders and wines. Unlocks the wine and cider autovats.</description>
+		<description>True efficiency means automated kegs could take over the careful production of our ciders and wines. Unlocks the wine and cider autovats.\n\nRequires Leeani researcher.</description>
 		<baseCost>1000</baseCost>
 		<techLevel>Industrial</techLevel>
 		<tags>
@@ -105,7 +105,7 @@
 	<ResearchProjectDef>
 		<defName>LeeaniTraditions</defName>
 		<label>Traditions</label>
-		<description>Our feudal heritage cannot be forgotten - we should honour it. Unlocks the throne, banquet table and chair, and brazier.</description>
+		<description>Our feudal heritage cannot be forgotten - we should honour it. Unlocks the throne, banquet table and chair, and brazier.\n\nRequires Leeani researcher.</description>
 		<baseCost>300</baseCost>
 		<techLevel>Medieval</techLevel>
 		<tags>
@@ -120,7 +120,7 @@
 	<ResearchProjectDef>
 		<defName>LeeaniArkhaev</defName>
 		<label>Arkhaevists</label>
-		<description>Without books and knowledge, where would we be now? Unlocks the bookshelf, which provides a boost to research speed when near a research table and can provide some joy to read its contents.</description>
+		<description>Without books and knowledge, where would we be now? Unlocks the bookshelf, which provides a boost to research speed when near a research table and can provide some joy to read its contents.\n\nRequires Leeani researcher.</description>
 		<baseCost>800</baseCost>
 		<techLevel>Medieval</techLevel>
 		<tags>
@@ -137,7 +137,7 @@
 	<ResearchProjectDef>
 		<defName>LeeaniModernisation</defName>
 		<label>Modernisation</label>
-		<description>Electrics is available to us now, and we should focus on making improvements to the quality of life here. Unlocks the electric lamp-post.</description>
+		<description>Electrics is available to us now, and we should focus on making improvements to the quality of life here. Unlocks the electric lamp-post.\n\nRequires Leeani researcher.</description>
 		<baseCost>200</baseCost>
 		<techLevel>Industrial</techLevel>
 		<tags>

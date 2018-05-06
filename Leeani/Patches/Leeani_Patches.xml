@@ -49,5 +49,28 @@
 			<li>LeeaniPlayer</li>
 		</value>
 	</Operation>
+	
+	<!-- Outlander union have a small chance to have a stray Leeani merc on their side -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/FactionDef[defName='Outlander']/pawnGroupMakers/li[kindDef="Normal"]/options</xpath>
+		<order>Append</order>
+		<value>
+			<LeeaniMercenary>5</LeeaniMercenary>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/FactionDef[defName='Outlander']/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
+		<order>Append</order>
+		<value>
+			<LeeaniMercenary>5</LeeaniMercenary>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/FactionDef[defName='Outlander']/pawnGroupMakers/li[kindDef="FactionBase"]/options</xpath>
+		<order>Append</order>
+		<value>
+			<LeeaniMercenary>5</LeeaniMercenary>
+		</value>
+	</Operation>
 
 </Patch>

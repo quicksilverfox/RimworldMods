@@ -31,6 +31,7 @@ Quarterstaff: commonality of "middle" attack decreased, can Poke
 Fists: power 8 -> 7
 Backstories with violent backgrounds can't be applied to non-violent pawns.
 Bycocket is marked as leeani-exclusive, since its shape does not work with human heads. WorkToMake and MaxHitPoints are set to reasonable values.
+Outlander Union has a small chance to have a Leeani mercenary as caravan or base guard.
 
 Scenarios:
 Fixed initial tech level for scenario (was Ultra).

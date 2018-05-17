@@ -51,3 +51,7 @@ Things to consider:
 Trim tech tree (too much small researches) and remove juniper (it is redundant). Would break saves though.
 Make their scenario more medieval. No electricity, but more low tech unlocked.
 Rename InstallClothTail recipe to avoid possible overrides by other race mods.
+
+Known issues:
+Sometimes slaves are generated as humans with leeani backstories and body types.
+EPOE: rib replacements don't work.

@@ -11,7 +11,7 @@
 		</graphicData>
 		<statBases>
 			<DeteriorationRate>5</DeteriorationRate>
-			<MarketValue>7</MarketValue>
+			<MarketValue>10</MarketValue>
 			<WorkToMake>300</WorkToMake>
 		</statBases>
 		<ingestible>
@@ -57,7 +57,7 @@
 		</graphicData>
 		<statBases>
 			<DeteriorationRate>5</DeteriorationRate>
-			<MarketValue>7</MarketValue>
+			<MarketValue>10</MarketValue>
 			<WorkToMake>300</WorkToMake>
 		</statBases>
 		<ingestible>

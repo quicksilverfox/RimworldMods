@@ -2,7 +2,7 @@
 <Defs>
 
 	<!--=============================== Tier L: Leeani ===================================-->
-	
+
 	<!--
 		Actually, that is awful lot of researches.
 		TODO:
@@ -16,12 +16,12 @@
 			Traditions (300 points medieval, since it is almost pure fluff)
 			Arkhaevists (can stay at 800 points medieval, research speed boost is big thing)
 	-->
-	
+
 	<ResearchProjectDef>
 		<defName>LeeaniJuniper</defName>
 		<label>Juniper</label>
 		<description>A berry with a tang, it has great power in many alcoholic drinks. Cultivating it would surely be of great benefit.\n\nRequires Leeani researcher.</description>
-		<baseCost>200</baseCost>
+		<baseCost>300</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<tags>
 			<li>LeeaniStart</li>
@@ -37,7 +37,7 @@
 		<defName>LeeaniBrewing</defName>
 		<label>Cider Brewing</label>
 		<description>One of the oldest alcohols of all time. Researching this will unlock the wine press and cider keg.\n\nRequires Leeani researcher.</description>
-		<baseCost>300</baseCost>
+		<baseCost>400</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<tags>
 			<li>LeeaniStart</li>
@@ -56,7 +56,7 @@
 		<defName>LeeaniVineyards</defName>
 		<label>Vineyards</label>
 		<description>An efficient way to grow grapes in good quantities, and a step closer to wine production.\n\nRequires Leeani researcher.</description>
-		<baseCost>300</baseCost>
+		<baseCost>400</baseCost>
 		<techLevel>Medieval</techLevel>
 		<tags>
 			<li>ta-ignore</li>

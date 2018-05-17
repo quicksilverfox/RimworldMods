@@ -14,13 +14,13 @@
 		<stackLimit>25</stackLimit>
 		<statBases>
 			<DeteriorationRate>0.5</DeteriorationRate>
-			<MarketValue>12</MarketValue>
+			<MarketValue>18</MarketValue>
 			<Mass>0.5</Mass>
 		</statBases>
 		<ingestible>
 			<foodType>Fluid, Processed, Liquor</foodType>
 			<nutrition>0.08</nutrition>
-			<joy>0.35</joy>
+			<joy>0.5</joy>
 			<nurseable>true</nurseable>
 			<drugCategory>Social</drugCategory>
 			<ingestSound>Ingest_Beer</ingestSound>
@@ -103,13 +103,13 @@
 		<stackLimit>25</stackLimit>
 		<statBases>
 			<DeteriorationRate>0.5</DeteriorationRate>
-			<MarketValue>12</MarketValue>
+			<MarketValue>18</MarketValue>
 			<Mass>0.5</Mass>
 		</statBases>
 		<ingestible>
 			<foodType>Fluid, Processed, Liquor</foodType>
 			<nutrition>0.08</nutrition>
-			<joy>0.35</joy>
+			<joy>0.5</joy>
 			<nurseable>true</nurseable>
 			<drugCategory>Social</drugCategory>
 			<ingestSound>Ingest_Beer</ingestSound>

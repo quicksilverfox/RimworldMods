@@ -38,27 +38,41 @@ namespace WorldGenRules
             }
         }
 
-        /// <summary>
-        ///  Should use transpiler, TBH
-        /// </summary>
         [HarmonyPatch(typeof(Page_CreateWorldParams), "DoWindowContents", new Type[] { typeof(Rect) })]
         static class Page_CreateWorldParams_DoWindowContents_Patch
         {
-            static bool Prefix(Rect rect, ref Rect __state)
+            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
-                __state = rect;
-                return true;
+                var codes = new List<CodeInstruction>(instructions);
+                for (int i = 0; i < codes.Count; i++)
+                {
+                    // IL_031f: call void [UnityEngine]UnityEngine.GUI::EndGroup()
+                    //if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(UnityEngine.GUI).GetMethod(nameof(GUI.EndGroup)))
+                    // IL_01f1: ldstr "PlanetCoverageTip"
+                    if (codes[i].opcode == OpCodes.Ldstr && codes[i].operand.Equals("PlanetCoverageTip"))
+                    {
+                        int offset = 4; // instruction used as injection point marker is not exactly in a right place
+                        codes.InsertRange(i + offset, new List<CodeInstruction>(){
+                            // this increments vertical offset variable
+                            new CodeInstruction(OpCodes.Ldloc_0),
+                            new CodeInstruction(OpCodes.Ldc_R4, 40f), // if you use 40 instead of 40f it would push 0 instead...
+                            new CodeInstruction(OpCodes.Add),
+                            new CodeInstruction(OpCodes.Stloc_0),
+                            // loading vertical offset variable and passing it to custom function that draws slider
+                            new CodeInstruction(OpCodes.Ldloc_0),
+                            new CodeInstruction(OpCodes.Call, typeof(Page_CreateWorldParams_DoWindowContents_Patch).GetMethod(nameof(DrawPlanetSizeSlider)))
+                        });
+                        break;
+                    }
+                }
+                return codes.AsEnumerable();
             }
 
-            static void Postfix(ref Rect __state, ref Page_CreateWorldParams __instance)
+            public static void DrawPlanetSizeSlider(float num)
             {
-                GUI.BeginGroup(__state);
-                float num = 280; // magic numba!
-                Widgets.Label(new Rect(0f, num, 200f, 30f), "Planet Size");
-                Rect rect7 = new Rect(200f, num, 200f, 30f);
-                subcount = Mathf.RoundToInt(Widgets.HorizontalSlider(rect7, subcount, 6f, 11f, true, null, "Small", "Large", 1f));
-
-                GUI.EndGroup();
+                Widgets.Label(new Rect(0f, num, 200f, 30f), "MLPWorldPlanetSize".Translate());
+                Rect rect = new Rect(200f, num, 200f, 30f);
+                subcount = Mathf.RoundToInt(Widgets.HorizontalSlider(rect, subcount, 6f, 10f, true, null, "MLPWorldTiny".Translate(), "MLPWorldDefault".Translate(), 1f));
             }
         }
 

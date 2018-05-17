@@ -4,7 +4,7 @@
 	<author>MikeRobe</author>
 	<url></url>
 	<targetVersion>0.18.0</targetVersion>
-	<description>A nice happy race of people-foxes. Alien Race Framework required, load after it. EPOE patch available.
+	<description>A nice happy race of people-foxes. Alien Race Framework required, load after it. Built-in support for EPOE.
 	
 	Plenty of things planned in the versions to come, this is the first public release so don't expect too much.
 	

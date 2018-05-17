@@ -221,7 +221,7 @@
 			<MarketValue>3000</MarketValue>
 			<MoveSpeed>5.65</MoveSpeed>
 			<Flammability>0.2</Flammability>
-			<ComfyTemperatureMin>5</ComfyTemperatureMin>
+			<ComfyTemperatureMin>-7</ComfyTemperatureMin>
 			<ComfyTemperatureMax>27</ComfyTemperatureMax>
 			<LeatherAmount>25</LeatherAmount>
 			<PsychicSensitivity>1.25</PsychicSensitivity>
@@ -288,8 +288,8 @@
 			<body>Leeani</body>
 			<bloodDef>FilthBloodLeeani</bloodDef>	
 			<meatColor>(0, 0, 128)</meatColor>
-			<baseBodySize>1.0</baseBodySize>
-			<baseHealthScale>0.75</baseHealthScale>
+			<baseBodySize>0.9</baseBodySize>
+			<baseHealthScale>0.8</baseHealthScale>
 			<foodType>OmnivoreHuman</foodType>
 			<gestationPeriodDays>25</gestationPeriodDays>
 			<litterSizeCurve>

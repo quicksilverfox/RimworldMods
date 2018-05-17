@@ -6,7 +6,6 @@
 			<li Class="ModCheck.isModLoaded">
 				<modName>Miscellaneous 'CORE'</modName>
 				<yourMod>[A18] Leeani Playable Race</yourMod>
-				<customMessageSuccess>Miscellaneous 'CORE' has been detected, patching Leeani surgery! AI-assisted furries, what can possibly go wrong?</customMessageSuccess>
 			</li>
 
 			<li Class="ModCheck.FindFile">

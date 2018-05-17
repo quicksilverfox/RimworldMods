@@ -1,5 +1,3 @@
-Things done already:
-
 Major fixes:
 Fixed totally broken kegs (was impossible to fill due to a bug in WorkGiver)
 Fixed totally broken brazier (work giver def was missing)
@@ -9,9 +7,7 @@ Fixed archive interaction with simple research bench
 
 Major tuning:
 Move speed reduced from 8.00 to 5.65
-ComfyTemperatureMin increased from -39 to +5
-baseBodySize increased from 0.9 to 1.0
-baseHealthScale reduced from 0.8 to 0.75
+ComfyTemperatureMin increased from -39 to -7
 They are OrganicStandard, not OrganicAgeless
 
 Small tuning:
@@ -47,7 +43,6 @@ Mechanoids Extraordinare (mecha-tentacle surgery)
 [FSF] Efficient Utilities and Efficient Light (Lamp-post efficiency)
 
 Things to consider:
-
 Trim tech tree (too much small researches) and remove juniper (it is redundant). Would break saves though.
 Make their scenario more medieval. No electricity, but more low tech unlocked.
 Rename InstallClothTail recipe to avoid possible overrides by other race mods.

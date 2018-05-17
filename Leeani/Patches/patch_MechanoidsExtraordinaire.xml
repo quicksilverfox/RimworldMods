@@ -6,7 +6,6 @@
 			<li Class="ModCheck.isModLoaded">
 				<modName>Mechanoids Extraordinaire</modName>
 				<yourMod>[A18] Leeani Playable Race</yourMod>
-				<customMessageSuccess>Mechanoids Extraordinaire has been detected, patching Leeani surgery! Mecha-tentacled furries, what can possibly go wrong?</customMessageSuccess>
 			</li>
 
 			<li Class="ModCheck.FindFile">

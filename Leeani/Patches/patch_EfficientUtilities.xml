@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<!-- Electric Lamp-post power consumption correction with mods reducing power consumption for light sources. -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>Efficient Light</modName>
+				<yourMod>[A18] Leeani Playable Race</yourMod>
+			</li>
+
+			<li Class="ModCheck.FindFile">
+				<modName>[A18] Leeani Playable Race</modName>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[@Name = "LeeaniStandingLampBase"]/comps/li[@Class = "CompProperties_Power"]/basePowerConsumption</xpath>
+				<value>
+					<basePowerConsumption>30</basePowerConsumption>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>[FSF] Efficient Utilities</modName>
+				<yourMod>[A18] Leeani Playable Race</yourMod>
+			</li>
+
+			<li Class="ModCheck.FindFile">
+				<modName>[A18] Leeani Playable Race</modName>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[@Name = "LeeaniStandingLampBase"]/comps/li[@Class = "CompProperties_Power"]/basePowerConsumption</xpath>
+				<value>
+					<basePowerConsumption>30</basePowerConsumption>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

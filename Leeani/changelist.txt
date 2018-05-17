@@ -8,7 +8,7 @@ Fixed broken tail surgery
 Fixed archive interaction with simple research bench
 
 Major tuning:
-Move speed reduced from 8.00 to 6.05
+Move speed reduced from 8.00 to 5.65
 ComfyTemperatureMin increased from -39 to +5
 baseBodySize increased from 0.9 to 1.0
 baseHealthScale reduced from 0.8 to 0.75
@@ -44,6 +44,7 @@ Built-in mod support:
 EPOE (except for ribs, I have no idea why they don't work)
 Misc. CORE (BrainPal surgery)
 Mechanoids Extraordinare (mecha-tentacle surgery)
+[FSF] Efficient Utilities and Efficient Light (Lamp-post efficiency)
 
 Things to consider:
 

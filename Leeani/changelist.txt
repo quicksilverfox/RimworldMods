@@ -20,7 +20,7 @@ Marked all researches as leeani-exclusive in their descriptions.
 Nerfed leeani leather insulation from 2.0 to 1.1
 Organic tail is marked as Leeani tail
 Juniper: MarketValue 1.5 -> 1.2, daysToRotStart 40 -> 60
-Berry juice: value 25 -> 10, recipe now requires 30 of any berries instead of fixed berries/juniper ratio
+Berry juice: value 25 -> 10
 Grapes: value 3.5 -> 3.25, preferability RawBad -> RawTasty
 Grape juice: value 25 -> 10, nutrition 0.5 -> 0.2
 Wine and Cider: Value 12 -> 18
@@ -44,7 +44,7 @@ Mechanoids Extraordinare (mecha-tentacle surgery)
 [FSF] Efficient Utilities and Efficient Light (Lamp-post efficiency)
 
 Things to consider:
-Trim tech tree (too much small researches) and remove juniper (it is redundant). Would break saves though.
+Trim tech tree (too much small researches). Would break saves though.
 Make their scenario more medieval. No electricity, but more low tech unlocked.
 Rename InstallClothTail recipe to avoid possible overrides by other race mods.
 

@@ -50,7 +50,7 @@
 	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>GrapeJuice</defName>
 		<label>grape juice</label>
-		<description>A juice made from squished berries - the skins have been discarded and only the juice remains. A good "meal" by itself, or can be made into wine...</description>
+		<description>A juice made from squished berries - the skins have been discarded and only the juice remains. Can be further refined into wine.</description>
 		<graphicData>
 			<texPath>Things/Item/Cider/GrapeJuice</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

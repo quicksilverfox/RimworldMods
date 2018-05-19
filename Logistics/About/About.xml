@@ -3,6 +3,6 @@
 	<name>Logistics</name>
 	<author>Oblitus</author>
 	<targetVersion>0.18.1722</targetVersion>
-	<description>No global map movement penalty for the tile with your base. And tiles with friendly factions as well. No winter movement penalty for the tiles without snow.</description>
+	<description>Configurable world map travel time factors.</description>
 	<url>https://ludeon.com/forums/index.php?topic=34628</url>
 </ModMetaData>

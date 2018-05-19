@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<Logistics>Logistics</Logistics>
+	<SettlementModLabel>Bypass terrain cost on friendly settlements</SettlementModLabel>
+	<SettlementModTooltip>Settlement is considered friendly if you can visit it. Player-controlled settlements are always friendly.</SettlementModTooltip>
+	<WinterModLabel>Suppress winter penaly on tiles without snow</WinterModLabel>
+	<WinterModTooltip>Winter penalty will be applied only for tiles with negative temperature.</WinterModTooltip>
+	<BiomeModLabel>Biome-added movement time factor. Current value: {0}.</BiomeModLabel>
+	<HillnessModLabel>Hillness-added movement time factor. Current value: {0}.</HillnessModLabel>
+
+</LanguageData>

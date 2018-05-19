@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<Logistics>Логистика</Logistics>
+	<SettlementModLabel>Игнорировать штрафы в дружественных поселениях</SettlementModLabel>
+	<SettlementModTooltip>Поселение считается дружественным если его можно посетить. Поселения игрока всегда дружественные.</SettlementModTooltip>
+	<WinterModLabel>Игнорировать штраф за зиму там, где нет снега</WinterModLabel>
+	<WinterModTooltip>Штраф будет применяться только если на клетке отрицательная температура.</WinterModTooltip>
+	<BiomeModLabel>Модификатор штрафа за биом. Текущее значение: {0}.</BiomeModLabel>
+	<HillnessModLabel>Модификатор штрафа за рельеф. Текущее значение: {0}.</HillnessModLabel>
+
+</LanguageData>

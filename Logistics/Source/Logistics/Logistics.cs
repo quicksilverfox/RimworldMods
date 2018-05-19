@@ -32,7 +32,7 @@ namespace Logistics
 
         public override string SettingsCategory()
         {
-            return "Logistics";
+            return "Logistics".Translate();
         }
 
         public override void DoSettingsWindowContents(Rect inRect)
@@ -47,12 +47,12 @@ namespace Logistics
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var codes = new List<CodeInstruction>(instructions);
+            MethodInfo CostFromTileHilliness = typeof(WorldPathGrid).GetMethod("CostFromTileHilliness", AccessTools.all);
 
-            // patching biome cost modifier to ignore snow penalty when temperature is above 0
             for (int i = 0; i < codes.Count; i++)
             {
                 //	IL_00e1: call int32 RimWorld.Planet.WorldPathGrid::CostFromTileHilliness(valuetype RimWorld.Planet.Hilliness)
-                if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(WorldPathGrid).GetMethod("CostFromTileHilliness", AccessTools.all))
+                if (codes[i].opcode == OpCodes.Call && codes[i].operand == CostFromTileHilliness)
                 {
                     codes.RemoveAt(i + 1); // removes [add]
                     codes.InsertRange(i + 1, new List<CodeInstruction>() {
@@ -99,7 +99,7 @@ namespace Logistics
                 return calculatedCost;
 
             if (settlement != null && (settlement.Faction == Faction.OfPlayerSilentFail || settlement.Visitable))
-               return 0; // Friendly or player-controlled settlements ignore all terrain costs. Home, sweet home!
+                return 0; // Friendly or player-controlled settlements ignore all terrain costs. Home, sweet home!
 
             float mod = 1f;
 

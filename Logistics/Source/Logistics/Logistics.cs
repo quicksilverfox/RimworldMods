@@ -47,8 +47,15 @@ namespace Logistics
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var codes = new List<CodeInstruction>(instructions);
-            MethodInfo CostFromTileHilliness = typeof(WorldPathGrid).GetMethod("CostFromTileHilliness", AccessTools.all);
 
+            // injecting some code to store if yearPercent was -1 when passed to function, it is a dirty way to do so, but since game is single-threaded it would work
+            codes.InsertRange(0, new List<CodeInstruction>() {
+                new CodeInstruction(OpCodes.Ldarg_2), // push original value of yearPercent to stack
+                new CodeInstruction(OpCodes.Call, typeof(WorldPathGrid_CalculatedCostAt_Patch).GetMethod(nameof(StoreOriginalYearPercent))),
+            });
+
+            // injecting actual code
+            MethodInfo CostFromTileHilliness = typeof(WorldPathGrid).GetMethod("CostFromTileHilliness", AccessTools.all);
             for (int i = 0; i < codes.Count; i++)
             {
                 //	IL_00e1: call int32 RimWorld.Planet.WorldPathGrid::CostFromTileHilliness(valuetype RimWorld.Planet.Hilliness)
@@ -59,7 +66,6 @@ namespace Logistics
                         // biomeCost already on stack
                         // hillnessCost already on stack
                         new CodeInstruction(OpCodes.Ldarg_0), // push tile id to stack
-                        new CodeInstruction(OpCodes.Ldarg_2), // push original value of yearPercent to stack
                         new CodeInstruction(OpCodes.Call, typeof(WorldPathGrid_CalculatedCostAt_Patch).GetMethod(nameof(CheckSnowAndSettlementMods)))
                         // now corrected value is on stack
                     });
@@ -71,14 +77,17 @@ namespace Logistics
             return codes.AsEnumerable();
         }
 
-        public static int CheckSnowAndSettlementMods(int biomeCost, int hillnessCost, int tile, float yearPercent)
+        private static bool CurrentTime;
+        public static void StoreOriginalYearPercent(float yearPercent)
         {
-            if (yearPercent == -1f) // -1 is used for current time, other values are for abstract calculations. Only flat modifier is applied fot abstracts.
-            {
-                // no snow - no seasonal penalty
-                if (Settings.snow_mod && GenTemperature.GetTemperatureAtTile(tile) > 0)
-                    biomeCost = Find.WorldGrid[tile].biome.pathCost_summer;
-            }
+            CurrentTime = yearPercent == -1f;
+        }
+
+        public static int CheckSnowAndSettlementMods(int biomeCost, int hillnessCost, int tile)
+        {
+            // no snow - no seasonal penalty
+            if (CurrentTime && Settings.snow_mod && GenTemperature.GetTemperatureAtTile(tile) > 0)
+                biomeCost = Find.WorldGrid[tile].biome.pathCost_summer;
 
             biomeCost = (int)(biomeCost * Settings.biome_time_modifier);
             hillnessCost = (int)(hillnessCost * Settings.hillness_time_modifier);

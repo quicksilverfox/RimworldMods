@@ -12,7 +12,7 @@
 		<useHitPoints>true</useHitPoints>
 		<statBases>
 			<MarketValue>5</MarketValue>
-			<Mass>0.05</Mass>
+			<Mass>0.033</Mass>
 			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0.2</DeteriorationRate>
 		</statBases>
@@ -91,6 +91,7 @@
 				<MeleeWeapon_CooldownMultiplier>0.7</MeleeWeapon_CooldownMultiplier>
 				<DoorOpenSpeed>1.3</DoorOpenSpeed>
 				<DeteriorationRate>0.2</DeteriorationRate>
+				<Mass>0.5</Mass>
 			</statFactors>
 			<smeltable>false</smeltable>
 		</stuffProps>

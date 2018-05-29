@@ -26,7 +26,6 @@
 				<amount>5</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>PlantWork</li>
 			<li>Hauling</li>
@@ -35,6 +34,9 @@
 		</workDisables>
 		<requiredWorkTags>
 			<li>Violent</li>
+			<li>Social</li>
+			<li>Caring</li>
+			<li>Intellectual</li>
 		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
@@ -61,8 +63,11 @@
 				<amount>3</amount>
 			</li>
 		</skillGains>
-
-
+		<requiredWorkTags>
+			<li>Social</li>
+			<li>Caring</li>
+			<li>Intellectual</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -92,11 +97,14 @@
 				<amount>-3</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>Hauling</li>
 			<li>Cleaning</li>
 		</workDisables>
+		<requiredWorkTags>
+			<li>Social</li>
+			<li>Intellectual</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -121,10 +129,13 @@
 				<amount>3</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>Intellectual</li>
 		</workDisables>
+		<requiredWorkTags>
+			<li>Social</li>
+			<li>Artistic</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -205,8 +216,13 @@
 				<amount>3</amount>
 			</li>
 		</skillGains>
-
-
+		<requiredWorkTags>
+			<li>Social</li>
+			<li>ManualDumb</li>
+			<li>Cleaning</li>
+			<li>Hauling</li>
+			<li>Caring</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -232,11 +248,14 @@
 				<amount>-2</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>Cleaning</li>
 			<li>Hauling</li>
 		</workDisables>
+		<requiredWorkTags>
+			<li>Social</li>
+			<li>Artistic</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -270,8 +289,13 @@
 				<amount>-2</amount>
 			</li>
 		</skillGains>
-
-
+		<requiredWorkTags>
+			<li>ManualDumb</li>
+			<li>Cleaning</li>
+			<li>Hauling</li>
+			<li>Caring</li>
+			<li>Intellectual</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -306,7 +330,13 @@
 			</li>
 		</skillGains>
 		<requiredWorkTags>
+			<!-- is not very capable, but since they have mining they don't mind manual labor -->
 			<li>Violent</li>
+			<li>Mining</li>
+			<li>ManualDumb</li>
+			<li>Cleaning</li>
+			<li>Hauling</li>
+			<li>ManualSkilled</li>
 		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
@@ -339,6 +369,7 @@
 		</skillGains>
 		<requiredWorkTags>
 			<li>Violent</li>
+			<li>Social</li>
 		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
@@ -369,8 +400,9 @@
 		</forcedTraits>
 		<requiredWorkTags>
 			<li>Violent</li>
+			<li>Caring</li>
+			<li>Cleaning</li>
 		</requiredWorkTags>
-
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -396,10 +428,14 @@
 				<amount>4</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>Artistic</li>
 		</workDisables>
+		<requiredWorkTags>
+			<li>Caring</li>
+			<li>Cleaning</li>
+			<li>Intellectual</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 
@@ -431,6 +467,7 @@
 		</skillGains>
 		<requiredWorkTags>
 			<li>Violent</li>
+			<li>ManualDumb</li>
 		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
@@ -457,6 +494,11 @@
 				<amount>4</amount>
 			</li>
 		</skillGains>
+		<requiredWorkTags>
+			<li>ManualSkilled</li>
+			<li>ManualDumb</li>
+			<li>Intellectual</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -491,12 +533,18 @@
 				<amount>2</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>Intellectual</li>
 			<li>Artistic</li>
-			<li>Crafting</li>
 		</workDisables>
+		<requiredWorkTags>
+			<li>ManualSkilled</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Animals</li>
+			<li>PlantWork</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -522,12 +570,19 @@
 				<amount>6</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>Intellectual</li>
 			<li>Artistic</li>
 			<li>Crafting</li>
 		</workDisables>
+		<requiredWorkTags>
+			<li>ManualSkilled</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Animals</li>
+			<li>PlantWork</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -556,6 +611,9 @@
 		</skillGains>
 		<requiredWorkTags>
 			<li>Violent</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Animals</li>
 		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
@@ -586,8 +644,10 @@
 				<amount>-3</amount>
 			</li>
 		</skillGains>
-
-
+		<requiredWorkTags>
+			<li>Artistic</li>
+			<li>Social</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 
@@ -618,8 +678,14 @@
 				<amount>3</amount>
 			</li>
 		</skillGains>
-
-
+		<requiredWorkTags>
+			<li>Violent</li>
+			<li>ManualSkilled</li>
+			<li>Mining</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -653,7 +719,6 @@
 		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
-
 	<AlienRace.BackstoryDef>
 		<defName>LeeaniTrader</defName>
 		<title>Nomad trader</title>
@@ -681,8 +746,12 @@
 				<amount>-3</amount>
 			</li>
 		</skillGains>
-
-
+		<requiredWorkTags>
+			<li>Violent</li>
+			<li>Social</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -712,8 +781,15 @@
 				<amount>3</amount>
 			</li>
 		</skillGains>
-
-
+		<requiredWorkTags>
+			<li>Social</li>
+			<li>Cooking</li>
+			<li>PlantWork</li>
+			<li>ManualSkilled</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 
@@ -753,8 +829,6 @@
 				<amount>-2</amount>
 			</li>
 		</skillGains>
-
-
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -784,8 +858,6 @@
 				<amount>3</amount>
 			</li>
 		</skillGains>
-
-
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -811,8 +883,6 @@
 				<amount>2</amount>
 			</li>
 		</skillGains>
-
-
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -843,11 +913,6 @@
 				<amount>-2</amount>
 			</li>
 		</skillGains>
-
-		<workDisables>
-
-
-		</workDisables>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -873,10 +938,8 @@
 				<amount>2</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>Firefighting</li>
-
 		</workDisables>
 	</AlienRace.BackstoryDef>
 
@@ -903,8 +966,6 @@
 				<amount>-2</amount>
 			</li>
 		</skillGains>
-
-
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -935,7 +996,6 @@
 				<amount>-4</amount>
 			</li>
 		</skillGains>
-
 		<workDisables>
 			<li>Intellectual</li>
 		</workDisables>
@@ -965,8 +1025,6 @@
 				<amount>2</amount>
 			</li>
 		</skillGains>
-
-
 	</AlienRace.BackstoryDef>
 
 </Defs>

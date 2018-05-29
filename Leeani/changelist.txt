@@ -26,9 +26,9 @@ Grape juice: value 25 -> 10, nutrition 0.5 -> 0.2
 Wine and Cider: Value 12 -> 18
 Quarterstaff: commonality of "middle" attack decreased, can Poke
 Fists: power 8 -> 7
-Backstories with violent backgrounds can't be applied to non-violent pawns.
+Backstories have proper requiredWorkTags.
 Bycocket is marked as leeani-exclusive, since its shape does not work with human heads. WorkToMake and MaxHitPoints are set to reasonable values.
-Outlander Union has a small chance to have a Leeani mercenary as caravan or base guard.
+Outlander Union has a small chance to have a Leeani as caravan or base guard.
 
 Scenarios:
 Fixed initial tech level for scenario (was Ultra).

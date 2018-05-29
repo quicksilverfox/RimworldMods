@@ -141,15 +141,27 @@
 	<PawnKindDef ParentName="LeeaniCivBase">
 		<defName>LeeaniLoord</defName>
 		<label>loord</label>
+		<minGenerationAge>20</minGenerationAge>
 		<backstoryCategory>LeeaniLoordBackstory</backstoryCategory>
+		<gearHealthRange>
+			<min>1.0</min>
+			<max>3.5</max>
+		</gearHealthRange>
 		<apparelMoney>
-			<min>1000</min>
-			<max>1500</max>
+			<min>3000</min>
+			<max>5000</max>
 		</apparelMoney>
+		<techHediffsMoney>
+			<min>3000</min>
+			<max>8000</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
 		<factionLeader>true</factionLeader>
 		<weaponMoney>
-			<min>1000</min>
-			<max>2000</max>
+			<min>2000</min>
+			<max>4000</max>
 		</weaponMoney>
 		<weaponTags>
 			<li>Gun</li>
@@ -221,8 +233,8 @@
 			<li>Military</li>
 		</apparelTags>
 		<apparelMoney>
-			<min>1500</min>
-			<max>5800</max>
+			<min>500</min>
+			<max>1800</max>
 		</apparelMoney>
 		<weaponMoney>
 			<min>700</min>
@@ -270,17 +282,18 @@
 		<label>soldier</label>
 		<combatPower>100</combatPower>
 	</PawnKindDef>
+	
 	<PawnKindDef ParentName="LeeaniMilBase">
 		<defName>LeeaniChampion</defName>
 		<label>champion</label>
 		<combatPower>170</combatPower>
 		<apparelMoney>
-			<min>2500</min>
-			<max>30000</max>
+			<min>1500</min>
+			<max>3500</max>
 		</apparelMoney>
 		<weaponMoney>
 			<min>1000</min>
-			<max>1200</max>
+			<max>2000</max>
 		</weaponMoney>
 		<backstoryCategory>LeeaniChampionBackstory</backstoryCategory>
 	</PawnKindDef>
@@ -303,12 +316,12 @@
 			<li>Military</li>
 		</apparelTags>
 		<apparelMoney>
-			<min>2500</min>
-			<max>5000</max>
+			<min>2000</min>
+			<max>4000</max>
 		</apparelMoney>
 		<weaponMoney>
-			<min>1000</min>
-			<max>1300</max>
+			<min>2000</min>
+			<max>3500</max>
 		</weaponMoney>
 		<weaponTags>
 			<li>Gun</li>

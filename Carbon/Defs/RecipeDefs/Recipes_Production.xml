@@ -38,7 +38,7 @@
 		<jobString>Making carbon weave.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>4500</workAmount>
+		<workAmount>3000</workAmount>
 		<workSkill>Intellectual</workSkill>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
@@ -68,7 +68,7 @@
 		<jobString>Making carbon composite.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>4500</workAmount>
+		<workAmount>3000</workAmount>
 		<workSkill>Intellectual</workSkill>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
@@ -98,7 +98,7 @@
 		<jobString>Making diamond.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>7500</workAmount>
+		<workAmount>5000</workAmount>
 		<workSkill>Intellectual</workSkill>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<skillRequirements>

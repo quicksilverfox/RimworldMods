@@ -42,6 +42,7 @@ EPOE (except for ribs, I have no idea why they don't work)
 Misc. CORE (BrainPal surgery)
 Mechanoids Extraordinare (mecha-tentacle surgery)
 [FSF] Efficient Utilities and Efficient Light (Lamp-post efficiency)
+Vulpine Race Pack (can install vulpine tails, 'cause leeani are vulpines)
 
 Things to consider:
 Trim tech tree (too much small researches). Would break saves though.

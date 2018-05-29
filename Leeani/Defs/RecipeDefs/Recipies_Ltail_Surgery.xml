@@ -9,6 +9,7 @@
 		<workSkillLearnFactor>16</workSkillLearnFactor>
 		<appliedOnFixedBodyParts>
 			<li>LTail</li>
+			<li>Tail</li> <!-- For easier compatibility with Vulpine Race Pack and possibly other mods. -->
 		</appliedOnFixedBodyParts>
 	</RecipeDef>
 
@@ -52,7 +53,7 @@
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
 		<defName>InstallClothLTailExisting</defName>
-		<label>install cloth tail</label>
+		<label>install cloth leeani tail</label>
 		<description>Installs cloth tail.</description>
 		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
 		<jobString>Installing cloth tail.</jobString>

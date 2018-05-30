@@ -43,10 +43,36 @@
 
 	<!-- injecting apparel tags, so they would start with proper equipment -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName='Apparel_Pants' or defName='Apparel_BasicShirt' or defName='Apparel_CollarShirt' or defName='Apparel_Duster' or defName='Apparel_Jacket' or defName='Apparel_CowboyHat' or defName='Apparel_BowlerHat']/apparel/tags</xpath>
+		<xpath>Defs/ThingDef[defName='Apparel_Pants' or defName='Apparel_BasicShirt' or defName='Apparel_CollarShirt' or defName='Apparel_Duster' or defName='Apparel_Jacket' or defName='Apparel_CowboyHat']/apparel/tags</xpath>
 		<order>Append</order>
 		<value>
 			<li>LeeaniPlayer</li>
+		</value>
+	</Operation>
+
+	<!-- Assigning tags to vanilla research so leeani would have some low tech from start without having access to all tribal stuff. -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ResearchProjectDef[defName='Greatbows']/tags</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ResearchProjectDef[defName='Greatbows']</xpath>
+				<order>Append</order>
+				<value>
+					<tags />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<!-- Some of those are actually part of classic start and therefor unlocked anyway. Added here just in case they would be changed to start without classic start stuff to better fit medieval tech level. -->
+		<xpath>Defs/ResearchProjectDef[defName='RecurveBow' or defName='Pemmican' or defName='PassiveCooler' or defName='Bedrolls' or defName='Beds' or defName='Stonecutting' or defName='ComplexClothing' or defName='Greatbows']/tags</xpath>
+		<order>Append</order>
+		<value>
+			<li>LeeaniStart</li>
 		</value>
 	</Operation>
 	

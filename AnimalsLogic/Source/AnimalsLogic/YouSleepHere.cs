@@ -238,8 +238,7 @@ namespace AnimalsLogic
         {
             static bool Prefix(ref bool __result, Pawn pawn, Thing t)
             {
-                   Pawn pawn2 = t as Pawn;
-                if (pawn2 != null && pawn2.CurJob != null && pawn2.CurJob.def == JobDefOf.LayDown)
+                if (t is Pawn pawn2 && pawn2.CurJob != null && pawn2.CurJob.def == JobDefOf.LayDown)
                 {
                     __result = false;
                     return false;

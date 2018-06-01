@@ -76,7 +76,6 @@
 										<Thin>(0,-0.22)</Thin>
 									</bodyTypes>
 								</front>
-
 								<back>
 									<bodyTypes>
 										<Male>(-0.02,-0.22)</Male>
@@ -85,7 +84,6 @@
 										<Thin>(-0.02,-0.22)</Thin>
 									</bodyTypes>
 								</back>
-
 								<side>
 									<bodyTypes>
 										<Male>(0.37,-0.36)</Male>
@@ -97,6 +95,96 @@
 							</offsets>
 							<hediffGraphics>
 							</hediffGraphics>
+						</li>
+						<li>
+							<path>Things/Leeani/Head/EarLeft</path>
+							<bodyPart>LeftEar</bodyPart>
+							<inFrontOfBody>true</inFrontOfBody>
+							<useSkinColor>true</useSkinColor>
+							<offsets>
+								<front>
+									<bodyTypes>
+										<Thin>(-0.42,0.55)</Thin>
+									</bodyTypes>
+									<portraitBodyTypes>
+										<Thin>(-0.42,0.55)</Thin>
+									</portraitBodyTypes>
+									<crownTypes>
+										<Normal_Average>(0,0)</Normal_Average>
+									</crownTypes>
+								</front>
+								<back>
+									<bodyTypes>
+										<Thin>(0.0,0.84)</Thin>
+									</bodyTypes>
+									<portraitBodyTypes>
+										<Thin>(0.0,0.84)</Thin>
+									</portraitBodyTypes>
+									<crownTypes>
+										<Normal_Average>(0,0)</Normal_Average>
+									</crownTypes>
+								</back>
+								<side>
+									<bodyTypes>
+										<Thin>(-0.5,0.55)</Thin>
+									</bodyTypes>
+									<portraitBodyTypes>
+										<Thin>(-0.5,0.55)</Thin>
+									</portraitBodyTypes>
+									<crownTypes>
+										<Normal_Average>(0,0)</Normal_Average>
+									</crownTypes>
+								</side>
+							</offsets>
+							<hiddenUnderApparelFor>
+								<li>UpperHead</li>
+								<li>FullHead</li>
+							</hiddenUnderApparelFor>
+						</li>
+						<li>
+							<path>Things/Leeani/Head/EarRight</path>
+							<bodyPart>RightEar</bodyPart>
+							<inFrontOfBody>true</inFrontOfBody>
+							<useSkinColor>true</useSkinColor>
+							<offsets>
+								<front>
+									<bodyTypes>
+										<Thin>(-0.42,0.55)</Thin>
+									</bodyTypes>
+									<portraitBodyTypes>
+										<Thin>(-0.42,0.55)</Thin>
+									</portraitBodyTypes>
+									<crownTypes>
+										<Normal_Average>(0,0)</Normal_Average>
+									</crownTypes>
+								</front>
+								<back>
+									<bodyTypes>
+										<Thin>(0.0,0.84)</Thin>
+									</bodyTypes>
+									<portraitBodyTypes>
+										<Thin>(0.0,0.84)</Thin>
+									</portraitBodyTypes>
+									<crownTypes>
+										<Normal_Average>(0,0)</Normal_Average>
+									</crownTypes>
+								</back>
+								<side>
+									<bodyTypes>
+										<Thin>(-0.5,0.55)</Thin>
+									</bodyTypes>
+									<portraitBodyTypes>
+										<Thin>(-0.5,0.55)</Thin>
+									</portraitBodyTypes>
+									<crownTypes>
+										<Normal_Average>(0,0)</Normal_Average>
+									</crownTypes>
+								</side>
+							</offsets>
+							<hiddenUnderApparelFor>
+								<li>UpperHead</li>
+								<li>FullHead</li>
+							</hiddenUnderApparelFor>
 						</li>
 					</bodyAddons>
 				</alienPartGenerator>
@@ -218,7 +306,7 @@
 			</raceRestriction>
 		</alienRace>
 		<statBases>
-			<MarketValue>3000</MarketValue>
+			<MarketValue>2000</MarketValue>
 			<MoveSpeed>5.65</MoveSpeed>
 			<Flammability>0.2</Flammability>
 			<ComfyTemperatureMin>-7</ComfyTemperatureMin>

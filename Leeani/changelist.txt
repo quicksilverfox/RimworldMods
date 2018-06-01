@@ -29,10 +29,11 @@ Fists: power 8 -> 7
 Backstories have proper requiredWorkTags.
 Bycocket is marked as leeani-exclusive, since its shape does not work with human heads. WorkToMake and MaxHitPoints are set to reasonable values.
 Outlander Union has a small chance to have a Leeani as caravan or base guard.
+Ears are implemented as body add-ons. Headgear which covers ears hides them. Bycocket does not cover ears.
 
 Scenarios:
 Fixed initial tech level for scenario (was Ultra).
-Reduced apparel budget from 1000-2400 to 500-1000.
+Tuned (mostly reduced) apparel and weapon budget.
 Traditions and cider brewing are unlocked at start for Leeani faction.
 Leeani start with pemmican, passive cooler, smithing, recurve bows and greatbows researched.
 Start with 3 great bows and 2 wooden quarterstaves instead of two bolt-action rifles (kinda outside their tech tree) and one plasteel quarterstaff (it is impossible to even make one).

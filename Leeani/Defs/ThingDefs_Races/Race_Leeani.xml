@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<ThingDef Name="BaseLeePawn" Abstract="True">
-		<thingClass>Pawn</thingClass>
-		<category>Pawn</category>
-		<selectable>true</selectable>
-		<tickerType>Normal</tickerType>
-		<altitudeLayer>Pawn</altitudeLayer>
-		<useHitPoints>false</useHitPoints>
-		<hasTooltip>true</hasTooltip>
-		<soundImpactDefault>BulletImpactFlesh</soundImpactDefault>
-		<inspectorTabs>
-			<li>ITab_Pawn_Health</li>
-			<li>ITab_Pawn_Needs</li>
-			<li>ITab_Pawn_Character</li>
-			<li>ITab_Pawn_Training</li>
-			<li>ITab_Pawn_Gear</li>
-			<li>ITab_Pawn_Guest</li>
-			<li>ITab_Pawn_Prisoner</li>
-			<li>ITab_Pawn_Social</li>
-			<li>ITab_Pawn_Combat</li>
-		</inspectorTabs>
-		<comps>
-			<li>
-				<compClass>CompAttachBase</compClass>
-			</li>
-		</comps>
-		<drawGUIOverlay>true</drawGUIOverlay>
-	</ThingDef>
-
-	<AlienRace.ThingDef_AlienRace ParentName="BaseLeePawn">
+	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
 		<defName>Alien_Leeani</defName>
 		<label>leeani</label>
 		<description>After escaping a military experiment millenia ago, Leeani have made themselves a prominent presence in the galactic stage. Originally mundane foxes, their genetic modifications that have stuck with them have allowed the Leeani many opportunities in a growing universe.</description>

@@ -342,7 +342,8 @@
 			</li>
 		</comps>
 		<researchPrerequisites>
-			<li>LeeaniModernisation</li>
+			<li>LeeaniTraditions</li>
+			<li>Electricity</li>
 		</researchPrerequisites>
 	</ThingDef>
 

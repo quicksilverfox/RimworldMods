@@ -25,58 +25,28 @@
 	</ResearchProjectTagDef>
 
 	<ResearchProjectDef>
-		<defName>LeeaniJuniper</defName>
-		<label>Juniper</label>
-		<description>A berry with a tang, it has great power in many alcoholic drinks. Cultivating it would surely be of great benefit.\n\nRequires Leeani researcher.</description>
-		<baseCost>300</baseCost>
-		<techLevel>Neolithic</techLevel>
-		<tags>
-			<li>LeeaniStart</li>
-			<!-- this tag is for tech advancing mod to ignore this research in regards of faction tech level -->
-			<li>ta-ignore</li>
-		</tags>
-		<tab>LeeaniResearchTab</tab>
-		<researchViewX>0</researchViewX>
-		<researchViewY>3</researchViewY>
-	</ResearchProjectDef>
-
-	<ResearchProjectDef>
 		<defName>LeeaniBrewing</defName>
 		<label>Cider Brewing</label>
-		<description>One of the oldest alcohols of all time. Researching this will unlock the wine press and cider keg.\n\nRequires Leeani researcher.</description>
-		<baseCost>400</baseCost>
+		<description>One of the oldest alcohols of all time. Unlocks juniper cultivation, wine press and cider keg.\n\nRequires Leeani researcher.</description>
+		<baseCost>500</baseCost>
 		<techLevel>Neolithic</techLevel>
 		<tags>
 			<li>LeeaniStart</li>
+			<!-- ta-ignore tag is for tech advancing mod to ignore this research in regards of faction tech level -->
 			<li>ta-ignore</li>
 		</tags>
 		<tab>LeeaniResearchTab</tab>
 		<prerequisites>
-			<li>LeeaniJuniper</li>
 			<li>Brewing</li>
 		</prerequisites>
-		<researchViewX>1</researchViewX>
-		<researchViewY>3</researchViewY>
-	</ResearchProjectDef>
-
-	<ResearchProjectDef>
-		<defName>LeeaniVineyards</defName>
-		<label>Vineyards</label>
-		<description>An efficient way to grow grapes in good quantities, and a step closer to wine production.\n\nRequires Leeani researcher.</description>
-		<baseCost>400</baseCost>
-		<techLevel>Medieval</techLevel>
-		<tags>
-			<li>ta-ignore</li>
-		</tags>
-		<tab>LeeaniResearchTab</tab>
 		<researchViewX>0</researchViewX>
-		<researchViewY>2</researchViewY>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>LeeaniWineBrewing</defName>
 		<label>Wine Brewing</label>
-		<description>A craft wine, the secrets to a perfect blend lie in this research that only a Leeani could truly understand. Unlocks the wine keg.\n\nRequires Leeani researcher.</description>
+		<description>A craft wine, the secrets to a perfect blend lie in this research that only a Leeani could truly understand. Unlocks grapes cultivation and wine keg.\n\nRequires Leeani researcher.</description>
 		<baseCost>500</baseCost>
 		<techLevel>Medieval</techLevel>
 		<tags>
@@ -84,17 +54,16 @@
 		</tags>
 		<tab>LeeaniResearchTab</tab>
 		<prerequisites>
-			<li>LeeaniVineyards</li>
 			<li>LeeaniBrewing</li>
 		</prerequisites>
-		<researchViewX>2</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>LeeaniAutovats</defName>
 		<label>Autovats</label>
-		<description>True efficiency means automated kegs could take over the careful production of our ciders and wines. Unlocks the wine and cider autovats.\n\nRequires Leeani researcher.</description>
+		<description>True efficiency means automated kegs could take over the careful production of our ciders and wines. Unlocks autovats.\n\nRequires Leeani researcher.</description>
 		<baseCost>1000</baseCost>
 		<techLevel>Industrial</techLevel>
 		<tags>
@@ -105,14 +74,14 @@
 			<li>LeeaniWineBrewing</li>
 			<li>MicroelectronicsBasics</li>
 		</prerequisites>
-		<researchViewX>3</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>LeeaniTraditions</defName>
 		<label>Traditions</label>
-		<description>Our feudal heritage cannot be forgotten - we should honour it. Unlocks the throne, banquet table and chair, and brazier.\n\nRequires Leeani researcher.</description>
+		<description>Our feudal heritage cannot be forgotten - we should honour it. Unlocks the throne, banquet table and chair, and brazier. Unlocks the electric lamp-post with electricity.\n\nRequires Leeani researcher.</description>
 		<baseCost>300</baseCost>
 		<techLevel>Medieval</techLevel>
 		<tags>
@@ -121,7 +90,7 @@
 		</tags>
 		<tab>LeeaniResearchTab</tab>
 		<researchViewX>0</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
@@ -138,25 +107,7 @@
 			<li>LeeaniTraditions</li>
 		</prerequisites>
 		<researchViewX>1</researchViewX>
-		<researchViewY>4</researchViewY>
-	</ResearchProjectDef>
-
-	<ResearchProjectDef>
-		<defName>LeeaniModernisation</defName>
-		<label>Modernisation</label>
-		<description>Electrics is available to us now, and we should focus on making improvements to the quality of life here. Unlocks the electric lamp-post.\n\nRequires Leeani researcher.</description>
-		<baseCost>200</baseCost>
-		<techLevel>Industrial</techLevel>
-		<tags>
-			<li>ta-ignore</li>
-		</tags>
-		<tab>LeeaniResearchTab</tab>
-		<prerequisites>
-			<li>LeeaniTraditions</li>
-			<li>Electricity</li>
-		</prerequisites>
-		<researchViewX>1</researchViewX>
-		<researchViewY>5</researchViewY>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 
 </Defs>

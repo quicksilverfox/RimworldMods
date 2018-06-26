@@ -35,7 +35,7 @@
 				<max>1.05</max>
 			</visualSizeRange>
 			<sowResearchPrerequisites>
-				<li>LeeaniJuniper</li>
+				<li>LeeaniBrewing</li>
 			</sowResearchPrerequisites>
 			<wildOrder>2</wildOrder>
 			<purpose>Food</purpose>
@@ -80,7 +80,7 @@
 				<max>1</max>
 			</visualSizeRange>
 			<sowResearchPrerequisites>
-				<li>LeeaniVineyards</li>
+				<li>LeeaniWineBrewing</li>
 			</sowResearchPrerequisites>
 			<wildOrder>2</wildOrder>
 			<purpose>Food</purpose>

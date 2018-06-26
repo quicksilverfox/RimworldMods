@@ -15,7 +15,7 @@ Small tuning:
 Cider and wine are social drugs, not medical.
 Banquet chair and throne have reasonable comfort.
 Fixed initial rotation of furniture.
-Reduced cost of most research projects (5200 total cost, and most of them is fluff).
+Reduced cost of most research projects (5200 total cost, and most of them is fluff). Merged some researches.
 Marked all researches to be ignored by tech advancing mod.
 Marked all researches as leeani-exclusive in their descriptions.
 Nerfed leeani leather insulation from 2.0 to 1.1
@@ -47,7 +47,6 @@ Mechanoids Extraordinare (mecha-tentacle surgery)
 Vulpine Race Pack (can install vulpine tails, 'cause leeani are vulpines)
 
 Things to consider:
-Trim tech tree (too much small researches). Would break saves though.
 Make their scenario more medieval. No electricity, but more low tech unlocked.
 Rename InstallClothTail recipe to avoid possible overrides by other race mods.
 

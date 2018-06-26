@@ -39,15 +39,15 @@ namespace AnimalsLogic
                 }
                 else if (__instance.RaceProps.Humanlike)
                 {
-                    meat.def = DefDatabase<ThingDef>.GetNamed("Human_Meat");
+                    meat.def = DefDatabase<ThingDef>.GetNamed("Meat_Human");
                 }
                 else if (__instance.RaceProps.FleshType == FleshTypeDefOf.Insectoid)
                 {
-                    meat.def = DefDatabase<ThingDef>.GetNamed("Megaspider_Meat");
+                    meat.def = DefDatabase<ThingDef>.GetNamed("Meat_Megaspider");
                 }
                 else if (__instance.RaceProps.FleshType == FleshTypeDefOf.Normal)
                 {
-                    meat.def = DefDatabase<ThingDef>.GetNamed("Chicken_Meat");
+                    meat.def = DefDatabase<ThingDef>.GetNamed("Meat_Chicken");
                 }
 
                 __result = result.AsEnumerable();

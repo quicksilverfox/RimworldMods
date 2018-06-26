@@ -5,7 +5,7 @@
 		<operations>
 			<li Class="ModCheck.isModLoaded">
 				<modName>Miscellaneous 'CORE'</modName>
-				<yourMod>[A18] Leeani Playable Race</yourMod>
+				<yourMod>Leeani Playable Race</yourMod>
 			</li>
 
 			<li Class="ModCheck.FindFile">

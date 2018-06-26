@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <JoyKindDef>
+    <defName>Reading_Archive</defName>
+    <label>books study</label>
+  </JoyKindDef>
+  
   <JobDef>
-    <defName>UseArchive</defName>
+    <defName>UseArchiveJob</defName>
     <driverClass>JobDriver_WatchBuilding</driverClass>
     <reportString>reading.</reportString>
     <joyDuration>6000</joyDuration>
@@ -10,7 +15,7 @@
     <joySkill>Intellectual</joySkill>
     <joyXpPerTick>0.004</joyXpPerTick>
     <joyGainRate>1.5</joyGainRate>
-    <joyKind>Study</joyKind>
+    <joyKind>Reading_Archive</joyKind>
   </JobDef>
   
 </Defs>

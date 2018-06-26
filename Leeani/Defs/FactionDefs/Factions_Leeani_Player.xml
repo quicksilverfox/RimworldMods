@@ -11,9 +11,9 @@
 		<isPlayer>true</isPlayer>
 		<basicMemberKind>Leeani</basicMemberKind>
 		<pawnsPlural>colonists</pawnsPlural>
-		<baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-		<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-		<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Medieval</techLevel>
 		<backstoryCategory>LeeaniBackstory</backstoryCategory>
 		<homeIconPath>World/LeeaniBaseIcon</homeIconPath>
@@ -42,9 +42,9 @@
 		<isPlayer>true</isPlayer>
 		<basicMemberKind>Leeani</basicMemberKind>
 		<pawnsPlural>colonists</pawnsPlural>
-		<baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-		<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-		<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Medieval</techLevel>
 		<backstoryCategory>LeeaniBackstory</backstoryCategory>
 		<homeIconPath>World/LeeaniBaseIcon</homeIconPath>

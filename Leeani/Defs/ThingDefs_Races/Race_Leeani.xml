@@ -70,7 +70,7 @@
 						</li>
 						<li>
 							<path>Things/Leeani/Head/EarLeft</path>
-							<bodyPart>LeftEar</bodyPart>
+							<bodyPart>Ear</bodyPart>
 							<inFrontOfBody>true</inFrontOfBody>
 							<useSkinColor>true</useSkinColor>
 							<offsets>
@@ -115,7 +115,7 @@
 						</li>
 						<li>
 							<path>Things/Leeani/Head/EarRight</path>
-							<bodyPart>RightEar</bodyPart>
+							<bodyPart>Ear</bodyPart>
 							<inFrontOfBody>true</inFrontOfBody>
 							<useSkinColor>true</useSkinColor>
 							<offsets>
@@ -167,6 +167,7 @@
 				<li>
 					<head>Things/Leeani/Head/</head>
 					<body>Things/Leeani/Body/</body>
+					<skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
 				</li>
 			</graphicPaths>
 			<hairSettings>
@@ -283,7 +284,7 @@
 			<Flammability>0.2</Flammability>
 			<ComfyTemperatureMin>-7</ComfyTemperatureMin>
 			<ComfyTemperatureMax>27</ComfyTemperatureMax>
-			<LeatherAmount>25</LeatherAmount>
+			<LeatherAmount>50</LeatherAmount>
 			<PsychicSensitivity>1.25</PsychicSensitivity>
 			<MiningSpeed>0.8</MiningSpeed>
 			<TrapSpringChance>0.02</TrapSpringChance>
@@ -340,10 +341,7 @@
 			<intelligence>Humanlike</intelligence>
 			<makesFootprints>true</makesFootprints>
 			<lifeExpectancy>60</lifeExpectancy>
-			<leatherColor>(230, 0, 0)</leatherColor>
-			<leatherCommonalityFactor>0.001</leatherCommonalityFactor>
-			<leatherInsulation>1.10</leatherInsulation>
-			<leatherMarketValueFactor>3</leatherMarketValueFactor>
+			<leatherDef>Leather_Leeani</leatherDef>
 			<nameGenerator>NamerPersonLeeani</nameGenerator>
 			<body>Leeani</body>
 			<bloodDef>FilthBloodLeeani</bloodDef>	
@@ -363,24 +361,24 @@
 			</litterSizeCurve>
 			<lifeStageAges>
 				<li>
-					<def>BabyStageLeeani</def>
+					<def>HumanlikeBaby</def>
 					<minAge>0</minAge>
 				</li>
 				<li>
-					<def>ChildStageLeeani</def>
-					<minAge>4</minAge>
+					<def>HumanlikeToddler</def>
+					<minAge>0.8</minAge>
 				</li>
 				<li>
-					<def>TeenageStageLeeani</def>
-					<minAge>11</minAge>
+					<def>HumanlikeChild</def>
+					<minAge>3</minAge>
 				</li>
 				<li>
-					<def>AdultStageLeeani</def>
-					<minAge>16</minAge>
+					<def>HumanlikeTeenager</def>
+					<minAge>10</minAge>
 				</li>
 				<li>
-					<def>ElderStageLeeani</def>
-					<minAge>40</minAge>
+					<def>HumanlikeAdult</def>
+					<minAge>15</minAge>
 				</li>
 			</lifeStageAges>
 			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
@@ -406,14 +404,23 @@
 			</hediffGiverSets>
 		</race>
 		<recipes>
+			<li>InstallArchotechEye</li>
+			<li>InstallArchotechArm</li>
+			<li>InstallArchotechLeg</li>
 			<li>InstallPowerClaw</li>
-			<li>InstallScytherBlade</li>
 			<li>InstallBionicEye</li>
 			<li>InstallBionicArm</li>
 			<li>InstallBionicLeg</li>
+			<li>InstallBionicSpine</li>
+			<li>InstallBionicHeart</li>
+			<li>InstallBionicStomach</li>
+			<li>InstallBionicEar</li>
 			<li>InstallSimpleProstheticArm</li>
 			<li>InstallSimpleProstheticLeg</li>
+			<li>InstallSimpleProstheticHeart</li>
+			<li>InstallCochlearImplant</li>
 			<li>InstallPegLeg</li>
+			<li>InstallWoodenFoot</li>
 			<li>InstallDenture</li>
 			<li>InstallJoywire</li>
 			<li>InstallPainstopper</li>
@@ -422,8 +429,10 @@
 			<li>InstallNaturalKidney</li>
 			<li>InstallNaturalLiver</li>
 			<li>ExciseCarcinoma</li>
+			<li>AdministerMechSerumHealer</li>
 			<li>RemoveBodyPart</li>
 			<li>Euthanize</li>
+			<li>Anesthetize</li>
 		</recipes>
 	</AlienRace.ThingDef_AlienRace>
 

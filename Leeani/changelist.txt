@@ -1,4 +1,5 @@
 Major fixes:
+Updated for 1.0
 Fixed totally broken kegs (was impossible to fill due to a bug in WorkGiver)
 Fixed totally broken brazier (work giver def was missing)
 Fixed totally broken archive (job def and joy giver were missing)
@@ -43,7 +44,6 @@ Built-in mod support:
 EPOE (except for ribs, I have no idea why they don't work)
 Misc. CORE (BrainPal surgery)
 Mechanoids Extraordinare (mecha-tentacle surgery)
-[FSF] Efficient Utilities and Efficient Light (Lamp-post efficiency)
 Vulpine Race Pack (can install vulpine tails, 'cause leeani are vulpines)
 
 Things to consider:

@@ -74,7 +74,7 @@
 				<rect>(0.05,0.1,0.9,0.9)</rect>
 			</damageData>
 		</graphicData>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<minifiedDef>MinifiedThing</minifiedDef>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.50</fillPercent>
@@ -104,6 +104,9 @@
 		<tickerType>Rare</tickerType>
 		<rotatable>false</rotatable>
 		<designationCategory>Production</designationCategory>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
 		<constructEffect>ConstructWood</constructEffect>
 		<researchPrerequisites>
 			<li>LeeaniBrewing</li>
@@ -135,7 +138,7 @@
 				<rect>(0.05,0.1,0.9,0.9)</rect>
 			</damageData>
 		</graphicData>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<minifiedDef>MinifiedThing</minifiedDef>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.50</fillPercent>
@@ -165,6 +168,9 @@
 		<tickerType>Rare</tickerType>
 		<rotatable>false</rotatable>
 		<designationCategory>Production</designationCategory>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
 		<constructEffect>ConstructWood</constructEffect>
 		<researchPrerequisites>
 			<li>LeeaniWineBrewing</li>

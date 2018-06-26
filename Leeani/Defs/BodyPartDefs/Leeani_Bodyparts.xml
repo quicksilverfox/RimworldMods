@@ -5,10 +5,11 @@
 		<defName>LTail</defName>
 		<label>leeani tail</label>
 		<hitPoints>15</hitPoints>
-		<frostbiteVulnerability>8</frostbiteVulnerability>
-		<oldInjuryBaseChance>0.08</oldInjuryBaseChance>
-		<spawnThingOnRemoved>LTail</spawnThingOnRemoved>
+		<frostbiteVulnerability>4</frostbiteVulnerability>
+		<pawnGeneratorCanAmputate>true</pawnGeneratorCanAmputate>
 		<skinCovered>true</skinCovered>
+		<bleedRate>0.1</bleedRate>
+		<spawnThingOnRemoved>LTail</spawnThingOnRemoved>
 		<beautyRelated>true</beautyRelated>
 	</BodyPartDef>
 

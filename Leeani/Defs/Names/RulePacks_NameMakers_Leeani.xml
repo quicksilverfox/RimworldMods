@@ -25,13 +25,11 @@
 			  <keyword>femalefirst</keyword>
 			  <path>Leeani_Names/femalefirst</path>
 			</li>
-			<li Class="Rule_PersonName">
-				<selectionWeight>25</selectionWeight>
+			<li Class="Rule_NamePerson">
 				<gender>Male</gender>
 				<keyword>malefirst</keyword>
 			</li>
-			<li Class="Rule_PersonName">
-				<selectionWeight>25</selectionWeight>
+			<li Class="Rule_NamePerson">
 				<gender>Female</gender>
 				<keyword>femalefirst</keyword>
 			</li>

@@ -9,9 +9,10 @@
 		<backstoryCategory>LeeaniBackstory</backstoryCategory>
 		<chemicalAddictionChance>0.005</chemicalAddictionChance>
 		<baseRecruitDifficulty>0.75</baseRecruitDifficulty>
-		<apparelAllowHeadwearChance>0.2</apparelAllowHeadwearChance>
+		<apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
 		<apparelTags>
-			<li>Outlander</li>
+			<li>IndustrialBasic</li>
+			<li>IndustrialAdvanced</li>
 			<li>LeeaniPlayer</li>
 		</apparelTags>
 	</PawnKindDef>
@@ -86,7 +87,7 @@
 			<li>NeolithicMeleeBasic</li>
 		</weaponTags>
 		<weaponMoney>
-			<min>0</min>
+			<min>50</min>
 			<max>100</max>
 		</weaponMoney>
 		<apparelMoney>
@@ -261,10 +262,10 @@
 					</countRange>
 				</li>
 				<li>
-					<thingDef>Medicine</thingDef>
+					<thingDef>MedicineHerbal</thingDef>
 					<countRange>
 						<min>1</min>
-						<max>1</max>
+						<max>2</max>
 					</countRange>
 				</li>
 			</subOptionsChooseOne>
@@ -282,7 +283,7 @@
 		<label>soldier</label>
 		<combatPower>100</combatPower>
 	</PawnKindDef>
-	
+
 	<PawnKindDef ParentName="LeeaniMilBase">
 		<defName>LeeaniChampion</defName>
 		<label>champion</label>
@@ -311,9 +312,11 @@
 			<max>3.5</max>
 		</gearHealthRange>
 		<apparelTags>
-			<li>Outlander</li>
+			<li>IndustrialBasic</li>
+			<li>IndustrialAdvanced</li>
+			<li>IndustrialMilitaryBasic</li>
+			<li>IndustrialMilitaryAdvanced</li>
 			<li>LeeaniPlayer</li>
-			<li>Military</li>
 		</apparelTags>
 		<apparelMoney>
 			<min>2000</min>
@@ -348,7 +351,7 @@
 					</countRange>
 				</li>
 				<li>
-					<thingDef>Medicine</thingDef>
+					<thingDef>MedicineIndustrial</thingDef>
 					<countRange>
 						<min>1</min>
 						<max>2</max>

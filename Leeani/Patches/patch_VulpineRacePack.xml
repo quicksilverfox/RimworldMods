@@ -5,7 +5,7 @@
 		<operations>
 			<li Class="ModCheck.isModLoaded">
 				<modName>EPOE Vulpine Race Pack Patch</modName>
-				<yourMod>[A18] Leeani Playable Race</yourMod>
+				<yourMod>Leeani Playable Race</yourMod>
 			</li>
 
 			<li Class="PatchOperationSequence">

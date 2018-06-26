@@ -28,7 +28,7 @@
 		</graphicData>
 		<hasInteractionCell>true</hasInteractionCell>
 		<interactionCellOffset>(0,0,2)</interactionCellOffset>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<minifiedDef>MinifiedThing</minifiedDef>
 		<altitudeLayer>Building</altitudeLayer>
 		<defaultPlacingRot>South</defaultPlacingRot>
 		<passability>Impassable</passability>
@@ -48,6 +48,9 @@
 		<stuffCategories>
 			<li>Woody</li>
 		</stuffCategories>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
 		<costStuffCount>200</costStuffCount>
 		<comps>
 			<li Class="CompProperties_TemperatureRuinable">
@@ -58,7 +61,6 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>50</basePowerConsumption>
-				<startElectricalFires>false</startElectricalFires>
 			</li>
 		</comps>
 		<building>
@@ -115,7 +117,7 @@
 		</graphicData>
 		<hasInteractionCell>true</hasInteractionCell>
 		<interactionCellOffset>(0,0,2)</interactionCellOffset>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<minifiedDef>MinifiedThing</minifiedDef>
 		<altitudeLayer>Building</altitudeLayer>
 		<defaultPlacingRot>South</defaultPlacingRot>
 		<passability>Impassable</passability>
@@ -135,6 +137,9 @@
 		<stuffCategories>
 			<li>Woody</li>
 		</stuffCategories>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
 		<costStuffCount>200</costStuffCount>
 		<comps>
 			<li Class="CompProperties_TemperatureRuinable">
@@ -145,7 +150,6 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>50</basePowerConsumption>
-				<startElectricalFires>false</startElectricalFires>
 			</li>
 		</comps>
 		<building>

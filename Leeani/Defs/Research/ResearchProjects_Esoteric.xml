@@ -17,6 +17,13 @@
 			Arkhaevists (can stay at 800 points medieval, research speed boost is big thing)
 	-->
 
+	<ResearchProjectTagDef>
+		<defName>LeeaniStart</defName>
+	</ResearchProjectTagDef>
+	<ResearchProjectTagDef>
+		<defName>ta-ignore</defName>
+	</ResearchProjectTagDef>
+
 	<ResearchProjectDef>
 		<defName>LeeaniJuniper</defName>
 		<label>Juniper</label>

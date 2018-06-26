@@ -13,11 +13,11 @@
 			<DeteriorationRate>5</DeteriorationRate>
 			<MarketValue>10</MarketValue>
 			<WorkToMake>300</WorkToMake>
+			<Nutrition>0.2</Nutrition>
 		</statBases>
 		<ingestible>
 			<foodType>Fluid, Processed</foodType>
 			<preferability>MealSimple</preferability>
-			<nutrition>0.2</nutrition>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Ingest_Beer</ingestSound>
 			<ingestHoldOffsetStanding>
@@ -59,11 +59,11 @@
 			<DeteriorationRate>5</DeteriorationRate>
 			<MarketValue>10</MarketValue>
 			<WorkToMake>300</WorkToMake>
+			<Nutrition>0.2</Nutrition>
 		</statBases>
 		<ingestible>
 			<foodType>Fluid, Processed</foodType>
 			<preferability>MealSimple</preferability>
-			<nutrition>0.2</nutrition>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Ingest_Beer</ingestSound>
 			<ingestHoldOffsetStanding>

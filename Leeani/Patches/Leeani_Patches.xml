@@ -78,33 +78,43 @@
 	
 	<!-- Outlander union have a small chance to have a stray Leeani on their side. Piracy is not their style, so not adding them to pirate bands. -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/FactionDef[defName='Outlander']/pawnGroupMakers/li[kindDef="Normal"]/options</xpath>
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Combat"]/options</xpath>
 		<order>Append</order>
 		<value>
-			<LeeaniTradie>3</LeeaniTradie>
-			<LeeaniSoldier>2</LeeaniSoldier>
-			<LeeaniScout>1</LeeaniScout>
-			<LeeaniMercenary>5</LeeaniMercenary>
-			<LeeaniCaptain>1</LeeaniCaptain>
+			<LeeaniSoldier>0.66</LeeaniSoldier>
+			<LeeaniScout>0.33</LeeaniScout>
+			<LeeaniMercenary>1.66</LeeaniMercenary>
+			<LeeaniCaptain>0.33</LeeaniCaptain>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/FactionDef[defName='Outlander']/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Peaceful"]/options</xpath>
 		<order>Append</order>
 		<value>
-			<LeeaniMercenary>5</LeeaniMercenary>
-			<LeeaniSoldier>2</LeeaniSoldier>
+			<LeeaniTradie>1</LeeaniTradie>
+			<LeeaniSoldier>0.66</LeeaniSoldier>
+			<LeeaniScout>0.33</LeeaniScout>
+			<LeeaniMercenary>1.66</LeeaniMercenary>
+			<LeeaniCaptain>0.33</LeeaniCaptain>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/FactionDef[defName='Outlander']/pawnGroupMakers/li[kindDef="FactionBase"]/options</xpath>
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
 		<order>Append</order>
 		<value>
-			<LeeaniTradie>3</LeeaniTradie>
-			<LeeaniSoldier>2</LeeaniSoldier>
-			<LeeaniScout>2</LeeaniScout>
-			<LeeaniMercenary>5</LeeaniMercenary>
-			<LeeaniCaptain>1</LeeaniCaptain>
+			<LeeaniMercenary>1.66</LeeaniMercenary>
+			<LeeaniSoldier>0.66</LeeaniSoldier>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="FactionBase"]/options</xpath>
+		<order>Append</order>
+		<value>
+			<LeeaniTradie>1</LeeaniTradie>
+			<LeeaniSoldier>0.66</LeeaniSoldier>
+			<LeeaniScout>0.66</LeeaniScout>
+			<LeeaniMercenary>1.66</LeeaniMercenary>
+			<LeeaniCaptain>0.33</LeeaniCaptain>
 		</value>
 	</Operation>
 

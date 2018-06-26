@@ -4,13 +4,17 @@
 	<ThingDef Name="LeeaniBuildingBase" Abstract="True">
 		<category>Building</category>
 		<thingClass>Building</thingClass>
+		<minifiedDef>MinifiedThing</minifiedDef>
 		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
 		<selectable>true</selectable>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<repairEffect>Repair</repairEffect>
 		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-		<filthLeaving>BuildingRubble</filthLeaving>
+		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
 	</ThingDef>
 
 	<!-- MAIN DEFS -->
@@ -157,11 +161,14 @@
 				<compClass>CompQuality</compClass>
 			</li>
 			<li Class="CompProperties_Art">
-				<nameMaker>ArtName_Sculpture</nameMaker>
-				<descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
-				<canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+				<nameMaker>NamerArtFurniture</nameMaker>
+				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
 			</li>
 		</comps>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
 		<researchPrerequisites>
 			<li>LeeaniTraditions</li>
 		</researchPrerequisites>
@@ -194,6 +201,7 @@
 			<MaxHitPoints>100</MaxHitPoints>
 			<WorkToBuild>300</WorkToBuild>
 			<Flammability>0</Flammability>
+			<Mass>5</Mass>
 		</statBases>
 		<selectable>true</selectable>
 		<costList>
@@ -204,7 +212,7 @@
 			<li>Stony</li>
 		</stuffCategories>
 		<costStuffCount>30</costStuffCount>
-		<soundImpactDefault>BulletImpactGround</soundImpactDefault>
+		<soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
 		<placeWorkers>
@@ -244,7 +252,7 @@
 		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<recipes>
 			<li>CookMealSimpleCampfire</li>
-			<li>MakePemmicanCampfire</li>
+			<li>Make_PemmicanCampfire</li>
 			<li>BurnApparelCampfire</li>
 			<li>BurnDrugs</li>
 		</recipes>
@@ -264,14 +272,13 @@
 	<ThingDef Abstract="True" Name="LeeaniLampBase" ParentName="LeeaniBuildingBase">
 		<thingClass>Building</thingClass>
 		<category>Building</category>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<selectable>true</selectable>
 		<fillPercent>0.20</fillPercent>
 		<pathCost>8</pathCost>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<designationCategory>Furniture</designationCategory>
 		<rotatable>false</rotatable>
 		<graphicData>
@@ -316,7 +323,7 @@
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>85</basePowerConsumption>
+				<basePowerConsumption>35</basePowerConsumption>
 				<shortCircuitInRain>false</shortCircuitInRain>
 			</li>
 		</comps>
@@ -365,16 +372,16 @@
 		<fillPercent>0.80</fillPercent>
 		<hasInteractionCell>true</hasInteractionCell>
 		<interactionCellOffset>(0,0,1)</interactionCellOffset>
-		<building>
-			<isJoySource>true</isJoySource>
-		</building>
+		<thingCategories>
+			<li>BuildingsJoy</li>
+		</thingCategories>
 		<statBases>
 			<MaxHitPoints>100</MaxHitPoints>
 			<WorkToBuild>10000</WorkToBuild>
 			<Mass>15</Mass>
 			<Flammability>1.0</Flammability>
 			<Beauty>9</Beauty>
-			<EntertainmentStrengthFactor>1</EntertainmentStrengthFactor>
+			<JoyGainFactor>1</JoyGainFactor>
 		</statBases>
 		<stuffCategories>
 			<li>Metallic</li>

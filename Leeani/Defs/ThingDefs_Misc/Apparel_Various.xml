@@ -18,6 +18,7 @@
 			<ArmorRating_Sharp>0.10</ArmorRating_Sharp>
 			<Insulation_Cold>-2</Insulation_Cold>
 			<Insulation_Heat>5</Insulation_Heat>
+			<Mass>0.10</Mass>
 		</statBases>
 		<costList>
 			<Cloth>60</Cloth>

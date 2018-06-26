@@ -40,12 +40,12 @@
 				</li>
 				<li Class="ScenPart_StartingThing_Defined">
 					<def>StartingThing_Defined</def>
-					<thingDef>Medicine</thingDef>
-					<count>20</count>
+					<thingDef>MedicineHerbal</thingDef>
+					<count>35</count>
 				</li>
 				<li Class="ScenPart_StartingThing_Defined">
 					<def>StartingThing_Defined</def>
-					<thingDef>Component</thingDef>
+					<thingDef>ComponentIndustrial</thingDef>
 					<count>30</count>
 				</li>
 				<li Class="ScenPart_StartingThing_Defined">

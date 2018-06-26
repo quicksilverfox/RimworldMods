@@ -2,14 +2,14 @@
 <Defs>
 
 	<JoyGiverDef>
-		<defName>UseArchive</defName>
+		<defName>UseArchiveJoy</defName>
 		<giverClass>JoyGiver_InteractBuildingInteractionCell</giverClass>
 		<baseChance>1.8</baseChance>
 		<thingDefs>
 			<li>LeeaniBookshelf</li>
 		</thingDefs>
-		<jobDef>UseArchive</jobDef>
-		<joyKind>Study</joyKind>
+		<jobDef>UseArchiveJob</jobDef>
+		<joyKind>Reading_Archive</joyKind>
 		<unroofedOnly>false</unroofedOnly>
 		<requiredCapacities>
 			<li>Sight</li>

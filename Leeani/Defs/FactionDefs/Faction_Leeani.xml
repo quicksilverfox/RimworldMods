@@ -6,7 +6,7 @@
 		<label>Leeani hold</label>
 		<description>A hold of the mysterious Leeani race.</description>
 		<pawnsPlural>Leeani</pawnsPlural>
-		<baseSelectionWeight>.55</baseSelectionWeight>
+		<settlementGenerationWeight>0.55</settlementGenerationWeight>
 		<requiredCountAtGameStart>1</requiredCountAtGameStart>
 		<canMakeRandomly>true</canMakeRandomly>
 		<canSiege>true</canSiege>
@@ -17,7 +17,7 @@
 			<max>40</max>
 		</startingGoodwill>
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
-		<baseNameMaker>NamerFactionBaseOutlander</baseNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Medieval</techLevel>
 		<backstoryCategory>LeeaniBackstory</backstoryCategory>
 		<hairTags>
@@ -28,7 +28,7 @@
 			<max>20</max>
 		</naturalColonyGoodwill>
 		<visitorTraderKinds>
-			<li>Visitor_Leeani_Standard</li>
+			<li>Visitor_Outlander_Standard</li>
 		</visitorTraderKinds>
 		<caravanTraderKinds>
 			<li>Caravan_Outlander_BulkGoods</li>
@@ -42,9 +42,18 @@
 			<min>-30</min>
 			<max>27</max>
 		</allowedArrivalTemperatureRange>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0,35)</li>
+				<li>(70, 50)</li>
+				<li>(700, 100)</li>
+				<li>(1300, 150)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
 		<pawnGroupMakers>
 			<li>
-				<kindDef>Normal</kindDef>
+				<kindDef>Combat</kindDef>
 				<options>
 					<LeeaniTradie>50</LeeaniTradie>
 					<LeeaniSoldier>250</LeeaniSoldier>
@@ -53,6 +62,17 @@
 					<LeeaniCaptain>130</LeeaniCaptain>
 					<LeeaniChampion>130</LeeaniChampion>
 					<LeeaniLoord>300</LeeaniLoord>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<LeeaniTradie>20</LeeaniTradie>
+					<LeeaniSoldier>7</LeeaniSoldier>
+					<LeeaniScout>1</LeeaniScout>
+					<LeeaniCaptain>1</LeeaniCaptain>
+					<LeeaniChampion>1</LeeaniChampion>
+					<LeeaniLoord>10</LeeaniLoord>
 				</options>
 			</li>
 			<li>

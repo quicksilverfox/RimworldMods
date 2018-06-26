@@ -244,7 +244,7 @@
 				<amount>5</amount>
 			</li>
 			<li>
-				<defName>Growing</defName>
+				<defName>Plants</defName>
 				<amount>-2</amount>
 			</li>
 		</skillGains>
@@ -277,7 +277,7 @@
 				<amount>9</amount>
 			</li>
 			<li>
-				<defName>Growing</defName>
+				<defName>Plants</defName>
 				<amount>-2</amount>
 			</li>
 			<li>
@@ -525,7 +525,7 @@
 				<amount>2</amount>
 			</li>
 			<li>
-				<defName>Growing</defName>
+				<defName>Plants</defName>
 				<amount>2</amount>
 			</li>
 			<li>
@@ -562,7 +562,7 @@
 		</spawnCategories>
 		<skillGains>
 			<li>
-				<defName>Growing</defName>
+				<defName>Plants</defName>
 				<amount>4</amount>
 			</li>
 			<li>
@@ -769,7 +769,7 @@
 		</spawnCategories>
 		<skillGains>
 			<li>
-				<defName>Growing</defName>
+				<defName>Plants</defName>
 				<amount>4</amount>
 			</li>
 			<li>
@@ -854,7 +854,7 @@
 				<amount>3</amount>
 			</li>
 			<li>
-				<defName>Growing</defName>
+				<defName>Plants</defName>
 				<amount>3</amount>
 			</li>
 		</skillGains>
@@ -984,7 +984,7 @@
 		</spawnCategories>
 		<skillGains>
 			<li>
-				<defName>Growing</defName>
+				<defName>Plants</defName>
 				<amount>5</amount>
 			</li>
 			<li>

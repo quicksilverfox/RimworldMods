@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>LBionicTail</defName>
-    <label>bionic Leeani tail</label>
-    <spawnThingOnRemoved>LBionicTail</spawnThingOnRemoved>
-    <addedPartProps>
-      <isBionic>true</isBionic>
-      <isSolid>true</isSolid>
-      <partEfficiency>1.2</partEfficiency>
-    </addedPartProps>
-    <stages>
-      <li>
-		  <capMods>
-			 <li>
-               <capacity>Moving</capacity>
-               <offset>0.2</offset>
-            </li>
-          </capMods>
-      </li>
-    </stages>
-  </HediffDef>
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>LBionicTail</defName>
+		<label>bionic Leeani tail</label>
+		<spawnThingOnRemoved>LBionicTail</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.2</partEfficiency>
+		</addedPartProps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.2</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
 
-    <HediffDef ParentName="AddedBodyPartBase">
-    <defName>LClothTail</defName>
-	<spawnThingOnRemoved>LClothTail</spawnThingOnRemoved>
-    <label>leeani cloth tail</label>
-    <addedPartProps>
-      <isSolid>true</isSolid>
-      <partEfficiency>0.6</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>LClothTail</defName>
+		<spawnThingOnRemoved>LClothTail</spawnThingOnRemoved>
+		<label>leeani cloth tail</label>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>0.6</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
 
-  
+
 </Defs>

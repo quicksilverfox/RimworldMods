@@ -5,7 +5,7 @@
 		<operations>
 			<li Class="ModCheck.isModLoaded">
 				<modName>Expanded Prosthetics and Organ Engineering</modName>
-				<yourMod>[A18] Leeani Playable Race</yourMod>
+				<yourMod>Leeani Playable Race</yourMod>
 			</li>
 
 			<li Class="PatchOperationSequence">

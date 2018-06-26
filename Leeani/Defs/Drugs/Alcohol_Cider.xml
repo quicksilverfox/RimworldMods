@@ -16,10 +16,10 @@
 			<DeteriorationRate>0.5</DeteriorationRate>
 			<MarketValue>18</MarketValue>
 			<Mass>0.5</Mass>
+			<Nutrition>0.08</Nutrition>
 		</statBases>
 		<ingestible>
 			<foodType>Fluid, Processed, Liquor</foodType>
-			<nutrition>0.08</nutrition>
 			<joy>0.5</joy>
 			<nurseable>true</nurseable>
 			<drugCategory>Social</drugCategory>
@@ -105,10 +105,10 @@
 			<DeteriorationRate>0.5</DeteriorationRate>
 			<MarketValue>18</MarketValue>
 			<Mass>0.5</Mass>
+			<Nutrition>0.08</Nutrition>
 		</statBases>
 		<ingestible>
 			<foodType>Fluid, Processed, Liquor</foodType>
-			<nutrition>0.08</nutrition>
 			<joy>0.5</joy>
 			<nurseable>true</nurseable>
 			<drugCategory>Social</drugCategory>

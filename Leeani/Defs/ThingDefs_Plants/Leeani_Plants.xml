@@ -6,8 +6,9 @@
 	<ThingDef ParentName="PlantBase">
 		<defName>PlantLeeaniJuniper</defName>
 		<label>juniper plant</label>
-		<description>A bitter and tart berry, commonly added to wine, Defs and cider,</description>
+		<description>A bitter and tart berry, commonly added to beverages.</description>
 		<statBases>
+			<Nutrition>0.20</Nutrition>
 			<MaxHitPoints>85</MaxHitPoints>
 		</statBases>
 		<graphicData>
@@ -16,14 +17,10 @@
 		</graphicData>
 		<selectable>true</selectable>
 		<pathCost>10</pathCost>
-		<ingestible>
-			<nutrition>0.20</nutrition>
-		</ingestible>
 		<plant>
 			<fertilitySensitivity>0.6</fertilitySensitivity>
 			<growDays>4.4</growDays>
 			<dieIfLeafless>true</dieIfLeafless>
-			<reproduces>false</reproduces>
 			<harvestTag>Standard</harvestTag>
 			<harvestedThingDef>RawJuniper</harvestedThingDef>
 			<harvestYield>10</harvestYield>
@@ -40,14 +37,17 @@
 			<sowResearchPrerequisites>
 				<li>LeeaniJuniper</li>
 			</sowResearchPrerequisites>
+			<wildOrder>2</wildOrder>
+			<purpose>Food</purpose>
 		</plant>
 	</ThingDef>
 
 	<ThingDef ParentName="PlantBase">
 		<defName>PlantLeeaniGrape</defName>
 		<label>grape vine</label>
-		<description>You heard it here. A plump berry most often used to make wine. Tastes pretty good by itself, though.</description>
+		<description>You heard it here. A plump berry most often used to make juice and wine. Tastes pretty good by itself, though.</description>
 		<statBases>
+			<Nutrition>0.35</Nutrition>
 			<MaxHitPoints>85</MaxHitPoints>
 		</statBases>
 		<graphicData>
@@ -58,13 +58,13 @@
 		<selectable>true</selectable>
 		<pathCost>10</pathCost>
 		<ingestible>
-			<nutrition>0.20</nutrition>
+		  <foodType>Tree</foodType>
+		  <preferability>RawBad</preferability>
 		</ingestible>
 		<plant>
 			<fertilitySensitivity>0.6</fertilitySensitivity>
 			<growDays>10.0</growDays>
 			<dieIfLeafless>true</dieIfLeafless>
-			<reproduces>false</reproduces>
 			<harvestTag>Standard</harvestTag>
 			<harvestedThingDef>RawGrapes</harvestedThingDef>
 			<harvestYield>10</harvestYield>
@@ -82,26 +82,30 @@
 			<sowResearchPrerequisites>
 				<li>LeeaniVineyards</li>
 			</sowResearchPrerequisites>
+			<wildOrder>2</wildOrder>
+			<purpose>Food</purpose>
 		</plant>
 	</ThingDef>
 
 	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>RawJuniper</defName>
 		<label>juniper</label>
-		<description>Juniper berries. Not very tasty when eaten raw, but take a long time to spoil.</description>
+		<description>Juniper berries. Not edible when raw.</description>
 		<graphicData>
 			<texPath>Things/Item/RawFood/RawJuniper</texPath>
 		</graphicData>
 		<statBases>
 			<MarketValue>1.2</MarketValue>
 			<Mass>0.027</Mass>
+			<FoodPoisonChanceFixedHuman>1.0</FoodPoisonChanceFixedHuman>
 		</statBases>
 		<ingestible>
+			<preferability>NeverForNutrition</preferability>
 			<foodType>VegetableOrFruit</foodType>
 		</ingestible>
 		<comps>
 			<li Class="CompProperties_Rottable">
-				<daysToRotStart>60</daysToRotStart>
+				<daysToRotStart>40</daysToRotStart>
 				<rotDestroys>true</rotDestroys>
 			</li>
 		</comps>

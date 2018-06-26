@@ -7,7 +7,7 @@
 		<defName>LeeaniHoldLoord</defName>
 		<title>Hold-Loord</title>
 		<titleShort>Loord</titleShort>
-		<baseDescription>NAME inherited the throne of HIS father, leading a hold of thirteen towns. HECAP was a strong and courageous leader, but did not deal with peasant work.</baseDescription>
+		<baseDescription>[PAWN_nameDef] inherited the throne of [PAWN_possessive] father, leading a hold of thirteen towns. [PAWN_pronoun] was a strong and courageous leader, but did not deal with peasant work.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -44,7 +44,7 @@
 		<defName>LeeaniTownLoord</defName>
 		<title>Town-Loord</title>
 		<titleShort>Loord</titleShort>
-		<baseDescription>NAME inherited the throne of HIS father, looking after a single town. HECAP was known as a kind and generous leader who would frequently help the townspeople.</baseDescription>
+		<baseDescription>[PAWN_nameDef] inherited the throne of [PAWN_possessive] father, looking after a single town. [PAWN_pronoun] was known as a kind and generous leader who would frequently help the townspeople.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -74,7 +74,7 @@
 		<defName>LeeaniCourtScribe</defName>
 		<title>Court scribe</title>
 		<titleShort>Scribe</titleShort>
-		<baseDescription>NAME worked as a scribe for the town Loord, writing addresses and keeping stock of the town's trade and diplomacy. This meant HE had little time for actual warfare.</baseDescription>
+		<baseDescription>[PAWN_nameDef] worked as a scribe for the town Loord, writing addresses and keeping stock of the town's trade and diplomacy. This meant [PAWN_pronoun] had little time for actual warfare.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -111,7 +111,7 @@
 		<defName>LeeaniCourtFool</defName>
 		<title>Court fool</title>
 		<titleShort>Fool</titleShort>
-		<baseDescription>NAME was a fool in the Loord's Court, entertaining the nobles with HIS silly tricks, zany jokes and inane pranks. HE was never a very smart Leeani.</baseDescription>
+		<baseDescription>[PAWN_nameDef] was a fool in the Loord's Court, entertaining the nobles with [PAWN_possessive] silly tricks, zany jokes and inane pranks. [PAWN_pronoun] was never a very smart Leeani.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
@@ -142,7 +142,7 @@
 		<defName>LeeaniCourtGuard</defName>
 		<title>Court guard</title>
 		<titleShort>Guard</titleShort>
-		<baseDescription>NAME was a guard in the Loord's Court, protecting the Loord from (admittedly few) attacks.</baseDescription>
+		<baseDescription>[PAWN_nameDef] was a guard in the Loord's Court, protecting the Loord from (admittedly few) attacks.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
@@ -169,7 +169,7 @@
 		<defName>LeeaniCourtArcher</defName>
 		<title>Court archer</title>
 		<titleShort>Archer</titleShort>
-		<baseDescription>NAME was an archer in the tower above the Loord's Court, protecting the Loord from (admittedly few) distant attacks.</baseDescription>
+		<baseDescription>[PAWN_nameDef] was an archer in the tower above the Loord's Court, protecting the Loord from (admittedly few) distant attacks.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -197,7 +197,7 @@
 		<defName>LeeaniCourtSteward</defName>
 		<title>Court steward</title>
 		<titleShort>Steward</titleShort>
-		<baseDescription>NAME worked as a steward in the court of HIS Loord. HECAP cooked and cleaned, and attended to visitors.</baseDescription>
+		<baseDescription>[PAWN_nameDef] worked as a steward in the court of [PAWN_possessive] Loord. [PAWN_pronoun] cooked and cleaned, and attended to visitors.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -229,7 +229,7 @@
 		<defName>LeeaniNoble</defName>
 		<title>Noble</title>
 		<titleShort>Noble</titleShort>
-		<baseDescription>NAME had an esteemed position in HIS town's community. Peasant work was below HIM, and HE took to the fine arts instead.</baseDescription>
+		<baseDescription>[PAWN_nameDef] had an esteemed position in [PAWN_possessive] town's community. Peasant work was below [PAWN_objective], and [PAWN_pronoun] took to the fine arts instead.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -262,7 +262,7 @@
 		<defName>LeeaniArkhaevest</defName>
 		<title>Arkhaevest</title>
 		<titleShort>Arkhaevest</titleShort>
-		<baseDescription>The Arkhaev is a sacred place of knowledge for Leeani, a store of books and relics of ages past. NAME tended to the collection, taking in knowledge and preserving it for future generations, at the expense of other skills.</baseDescription>
+		<baseDescription>The Arkhaev is a sacred place of knowledge for Leeani, a store of books and relics of ages past. [PAWN_nameDef] tended to the collection, taking in knowledge and preserving it for future generations, at the expense of other skills.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -302,7 +302,7 @@
 		<defName>LeeaniChampion</defName>
 		<title>Leeani champion</title>
 		<titleShort>Champion</titleShort>
-		<baseDescription>NAME is a championed Leeani warrior, excelling in the physical realm. Unfortunately, HECAP is not the most creative person and prefers other Leeani to make HIS weapons.</baseDescription>
+		<baseDescription>[PAWN_nameDef] is a championed Leeani warrior, excelling in the physical realm. Unfortunately, [PAWN_pronoun] is not the most creative person and prefers other Leeani to make [PAWN_possessive] weapons.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -344,7 +344,7 @@
 		<defName>LeeaniCaptain</defName>
 		<title>Captain of the guard</title>
 		<titleShort>Captain</titleShort>
-		<baseDescription>NAME is captain of the guard. HE orders and protects the soldiers underneath HIM, but will not back away from a fight.</baseDescription>
+		<baseDescription>[PAWN_nameDef] is captain of the guard. [PAWN_pronoun] orders and protects the soldiers underneath [PAWN_objective], but will not back away from a fight.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -377,7 +377,7 @@
 		<defName>LeeaniMadSurgeon</defName>
 		<title>Mad surgeon</title>
 		<titleShort>Surgeon</titleShort>
-		<baseDescription>NAME likes cutting limbs off. HECAP really likes it. But HE makes a good doctor. Let NAME in.</baseDescription>
+		<baseDescription>[PAWN_nameDef] likes cutting limbs off. [PAWN_pronoun] really likes it. But [PAWN_pronoun] makes a good doctor. Let [PAWN_nameDef] in.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -409,7 +409,7 @@
 		<defName>LeeaniDoctor</defName>
 		<title>Town doctor</title>
 		<titleShort>Doctor</titleShort>
-		<baseDescription>NAME was a talented surgeon and doctor in HIS town. NAME's profession didn't leave much room for the arts, though, and HE found HIMself without a creative bone in HIS body.</baseDescription>
+		<baseDescription>[PAWN_nameDef] was a talented surgeon and doctor in [PAWN_possessive] town. [PAWN_nameDef]'s profession didn't leave much room for the arts, though, and [PAWN_pronoun] found HIMself without a creative bone in [PAWN_possessive] body.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -443,7 +443,7 @@
 		<defName>LeeaniScout</defName>
 		<title>Scout</title>
 		<titleShort>Scout</titleShort>
-		<baseDescription>NAME became an explorer, destined to find new and faster ways to get form place to place - and to seek out and tag enemies before the garrison's main forced arrived. This lifestyle left HIM somewhat isolated, however.</baseDescription>
+		<baseDescription>[PAWN_nameDef] became an explorer, destined to find new and faster ways to get form place to place - and to seek out and tag enemies before the garrison's main forced arrived. This lifestyle left [PAWN_objective] somewhat isolated, however.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
@@ -475,7 +475,7 @@
 		<defName>LeeaniEngineer</defName>
 		<title>Town engineer</title>
 		<titleShort>Engineer</titleShort>
-		<baseDescription>Planning the expansion of Leeani Holds was a foremost task for NAME, and HE was very good at it.</baseDescription>
+		<baseDescription>Planning the expansion of Leeani Holds was a foremost task for [PAWN_nameDef], and [PAWN_pronoun] was very good at it.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -505,7 +505,7 @@
 		<defName>LeeaniPeasant</defName>
 		<title>Peasant</title>
 		<titleShort>Peasant</titleShort>
-		<baseDescription>NAME spent most of HIS adult life in the gutters and farms. HECAP never learned the fine arts or even how to write, but HE can at least be useful in menial tasks.</baseDescription>
+		<baseDescription>[PAWN_nameDef] spent most of [PAWN_possessive] adult life in the gutters and farms. [PAWN_pronoun] never learned the fine arts or even how to write, but [PAWN_pronoun] can at least be useful in menial tasks.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -551,7 +551,7 @@
 		<defName>LeeaniHerder</defName>
 		<title>Herder</title>
 		<titleShort>Herder</titleShort>
-		<baseDescription>NAME worked with all manner of farm animals, ensuring they were well-fed. HE always kept the runts as HIS own pet, but this didn't leave HIM with an education.</baseDescription>
+		<baseDescription>[PAWN_nameDef] worked with all manner of farm animals, ensuring they were well-fed. [PAWN_pronoun] always kept the runts as [PAWN_possessive] own pet, but this didn't leave [PAWN_objective] with an education.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -589,7 +589,7 @@
 		<defName>LeeaniHunter</defName>
 		<title>Hunter</title>
 		<titleShort>Hunter</titleShort>
-		<baseDescription>NAME supplied the holdspeople with a great bounty of meat from the large herds of deer that roamed nearby.</baseDescription>
+		<baseDescription>[PAWN_nameDef] supplied the holdspeople with a great bounty of meat from the large herds of deer that roamed nearby.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -621,7 +621,7 @@
 		<defName>LeeaniArtist</defName>
 		<title>Market artist</title>
 		<titleShort>Artist</titleShort>
-		<baseDescription>NAME sat in the hold square, drawing the people and places HE saw. He became very good at what HE did, but never really developed a liking for menial tasks.</baseDescription>
+		<baseDescription>[PAWN_nameDef] sat in the hold square, drawing the people and places [PAWN_pronoun] saw. He became very good at what [PAWN_pronoun] did, but never really developed a liking for menial tasks.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -655,7 +655,7 @@
 		<defName>LeeaniSettler</defName>
 		<title>Hold settler</title>
 		<titleShort>Settler</titleShort>
-		<baseDescription>NAME worked to build new towns and settlements. HE didn't really live at any of them and instead was a contract settler.</baseDescription>
+		<baseDescription>[PAWN_nameDef] worked to build new towns and settlements. [PAWN_pronoun] didn't really live at any of them and instead was a contract settler.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -692,7 +692,7 @@
 		<defName>LeeaniMercenary</defName>
 		<title>Hold mercenary</title>
 		<titleShort>Mercenary</titleShort>
-		<baseDescription>NAME was a gun-for-hire, keeping communities safe and fighting rival factions for a good price.</baseDescription>
+		<baseDescription>[PAWN_nameDef] was a gun-for-hire, keeping communities safe and fighting rival factions for a good price.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -723,7 +723,7 @@
 		<defName>LeeaniTrader</defName>
 		<title>Nomad trader</title>
 		<titleShort>Trader</titleShort>
-		<baseDescription>NAME roamed from town to town, looking to make profits off the items HE carted around, and often had to defend himself from bandits on the road. However, an education eluded him where a silver tongue did not.</baseDescription>
+		<baseDescription>[PAWN_nameDef] roamed from town to town, looking to make profits off the items [PAWN_pronoun] carted around, and often had to defend himself from bandits on the road. However, an education eluded him where a silver tongue did not.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -758,7 +758,7 @@
 		<defName>LeeaniBaker</defName>
 		<title>Self-made baker</title>
 		<titleShort>Baker</titleShort>
-		<baseDescription>NAME baked all kinds of delicious pastries and pies, and HE even built his own shop from the ground up.</baseDescription>
+		<baseDescription>[PAWN_nameDef] baked all kinds of delicious pastries and pies, and [PAWN_pronoun] even built his own shop from the ground up.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -799,7 +799,7 @@
 		<defName>LeeaniChildEir</defName>
 		<title>Loord-eir</title>
 		<titleShort>Eir</titleShort>
-		<baseDescription>NAME was the heir (or Eir) to the throne of HIS father's hold. This mean HE learned all manner of high arts, a decent education and social connections, but lacked practical ability.</baseDescription>
+		<baseDescription>[PAWN_nameDef] was the heir (or Eir) to the throne of [PAWN_possessive] father's hold. This mean [PAWN_pronoun] learned all manner of high arts, a decent education and social connections, but lacked practical ability.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeMale>Male</bodyTypeMale>
@@ -835,7 +835,7 @@
 		<defName>LeeaniChildScout</defName>
 		<title>Pathfinder</title>
 		<titleShort>Pathfinder</titleShort>
-		<baseDescription>NAME spent HIS youth exploring the regions around HIS town, venturing into caves and climbing trees. HE became very competent as surviving on his own from HIS frequent camping trips.</baseDescription>
+		<baseDescription>[PAWN_nameDef] spent [PAWN_possessive] youth exploring the regions around [PAWN_possessive] town, venturing into caves and climbing trees. [PAWN_pronoun] became very competent as surviving on his own from [PAWN_possessive] frequent camping trips.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
@@ -864,7 +864,7 @@
 		<defName>LeeaniChildScullery</defName>
 		<title>Scullery maid</title>
 		<titleShort>Maid</titleShort>
-		<baseDescription>NAME grew up as a maid in the Loord's Court, washing dishes and setting tables. HE quickly learned recipes and good social conduct.</baseDescription>
+		<baseDescription>[PAWN_nameDef] grew up as a maid in the Loord's Court, washing dishes and setting tables. [PAWN_pronoun] quickly learned recipes and good social conduct.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
@@ -889,7 +889,7 @@
 		<defName>LeeaniChildApprentice</defName>
 		<title>Carpenter's apprentice</title>
 		<titleShort>Apprentice</titleShort>
-		<baseDescription>Working with lumber and tools was easy for NAME, and HE quickly grew an appreciation for construction and work. However, HE always found HE lacked the dexterity to make more intricate pieces.</baseDescription>
+		<baseDescription>Working with lumber and tools was easy for [PAWN_nameDef], and [PAWN_pronoun] quickly grew an appreciation for construction and work. However, [PAWN_pronoun] always found [PAWN_pronoun] lacked the dexterity to make more intricate pieces.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
@@ -919,7 +919,7 @@
 		<defName>LeeaniChildSmith</defName>
 		<title>Smithy's apprentice</title>
 		<titleShort>Apprentice</titleShort>
-		<baseDescription>Carting hot metal around the smith was NAME's daily job, and was often asked to fetch ores from the mines. All was going well until HE spilled molten steel and started a fire that burned the smith down.</baseDescription>
+		<baseDescription>Carting hot metal around the smith was [PAWN_nameDef]'s daily job, and was often asked to fetch ores from the mines. All was going well until [PAWN_pronoun] spilled molten steel and started a fire that burned the smith down.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
@@ -947,7 +947,7 @@
 		<defName>LeeaniChildHammerHand</defName>
 		<title>Builder's hand</title>
 		<titleShort>Hammer hand</titleShort>
-		<baseDescription>NAME liked helping HIS father build houses for other Leeani, and HE found he had a passion for construction. HE didn't have much time to talk to others, though.</baseDescription>
+		<baseDescription>[PAWN_nameDef] liked helping [PAWN_possessive] father build houses for other Leeani, and [PAWN_pronoun] found he had a passion for construction. [PAWN_pronoun] didn't have much time to talk to others, though.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
@@ -972,7 +972,7 @@
 		<defName>LeeaniChildPeasant</defName>
 		<title>Farmkit</title>
 		<titleShort>Farmkit</titleShort>
-		<baseDescription>NAME worked on HIS parent's farm, tending to crops and chickens alike. As such HE never recieved a proper education that left HIM with a lack of appreciation for art and knowledge.</baseDescription>
+		<baseDescription>[PAWN_nameDef] worked on [PAWN_possessive] parent's farm, tending to crops and chickens alike. As such [PAWN_pronoun] never recieved a proper education that left [PAWN_objective] with a lack of appreciation for art and knowledge.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
@@ -1005,7 +1005,7 @@
 		<defName>LeeaniChildLibrarian</defName>
 		<title>Arkhaevkit</title>
 		<titleShort>Arkhaevkit</titleShort>
-		<baseDescription>NAME assisted HIS elders in keeping the local Arkhaev in order, dusting the books and polishing the artefacts. Often HE'd find a way to repair a defunct treasure, which made HIM very popular.</baseDescription>
+		<baseDescription>[PAWN_nameDef] assisted [PAWN_possessive] elders in keeping the local Arkhaev in order, dusting the books and polishing the artefacts. Often [PAWN_pronoun]'d find a way to repair a defunct treasure, which made [PAWN_objective] very popular.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>

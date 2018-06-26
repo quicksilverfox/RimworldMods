@@ -2,7 +2,7 @@
 <Patch>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName="Refinery"]/recipes</xpath>
+		<xpath>Defs/ThingDef[defName="BiofuelRefinery"]/recipes</xpath>
 		<value>
 			<li>MakeChemfuelFromHaygrass</li>
 			<li>MakeCarbonWeave</li>

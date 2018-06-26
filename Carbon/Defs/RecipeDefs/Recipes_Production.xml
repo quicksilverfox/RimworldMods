@@ -10,7 +10,7 @@
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>2150</workAmount>
-		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<ingredients>
 			<li>
 				<filter>
@@ -39,7 +39,7 @@
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>3000</workAmount>
-		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
 			<li>
@@ -69,7 +69,7 @@
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>3000</workAmount>
-		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
 			<li>
@@ -99,11 +99,8 @@
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>5000</workAmount>
-		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
-		<skillRequirements>
-			<Intellectual>10</Intellectual>
-		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>

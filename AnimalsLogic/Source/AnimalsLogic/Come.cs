@@ -134,13 +134,13 @@ namespace AnimalsLogic
 
                 Pawn pawn = (Pawn)Pawn_JobTracker_pawn.GetValue(__instance);
 
-                IEnumerable<Pawn> animals = from p in Find.VisibleMap.mapPawns.AllPawns
-                                            where p.RaceProps.Animal && p.Faction == Faction.OfPlayer && p.playerSettings != null && p.playerSettings.master == pawn && p.playerSettings.followFieldwork
+                IEnumerable<Pawn> animals = from p in Find.CurrentMap.mapPawns.AllPawns
+                                            where p.RaceProps.Animal && p.Faction == Faction.OfPlayer && p.playerSettings != null && p.playerSettings.Master == pawn && p.playerSettings.followFieldwork
                                             select p;
 
                 foreach (var animal in animals)
                 {
-                    if (animal.CurJob != null && animal.CurJob.def != JobDefOf.WaitCombat && animal.CurJob.def != JobDefOf.Rescue && animal.CurJob.def != JobDefOf.AttackMelee && animal.CurJob.def != JobDefOf.AttackStatic && animal.CurJob.def.casualInterruptible)
+                    if (animal.CurJob != null && animal.CurJob.def != JobDefOf.Wait_Combat && animal.CurJob.def != JobDefOf.Rescue && animal.CurJob.def != JobDefOf.AttackMelee && animal.CurJob.def != JobDefOf.AttackStatic && animal.CurJob.def.casualInterruptible)
                     {
                         animal.jobs.EndCurrentJob(JobCondition.InterruptForced, true);
                     }

@@ -59,17 +59,12 @@
     <Compile Include="Come.cs" />
     <Compile Include="DoNotEatRandomly.cs" />
     <Compile Include="DoNotForbidSlaughtered.cs" />
-    <Compile Include="GiveMeName.cs" />
     <Compile Include="HostilePredators.cs" />
-    <Compile Include="HushMyPet.cs" />
     <Compile Include="LayEggsInNests.cs" />
-    <Compile Include="NoAutoMasterAssignment.cs" />
-    <Compile Include="NoMiscarryAfterMissedBreakfast.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuinedEggs.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TastesLikeChicken.cs" />
-    <Compile Include="TrainingWildnessFactor.cs" />
     <Compile Include="YouSleepHere.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

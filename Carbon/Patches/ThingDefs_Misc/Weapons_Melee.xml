@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[@Name="BaseMeleeWeapon_Sharp"]/recipeMaker/defaultIngredientFilter/exceptedThingDefs</xpath>
+		<xpath>Defs/ThingDef[@Name="BaseMeleeWeapon_Sharp"]/recipeMaker/defaultIngredientFilter/disallowedThingDefs</xpath>
 		<value>
 			<li>CarbonFiber</li>
 			<li>Diamond</li>

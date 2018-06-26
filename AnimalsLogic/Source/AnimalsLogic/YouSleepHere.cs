@@ -96,7 +96,7 @@ namespace AnimalsLogic
                     return;
                 }
 
-                __result = from p in Find.VisibleMap.mapPawns.AllPawns
+                __result = from p in Find.CurrentMap.mapPawns.AllPawns
                            where p.RaceProps.Animal && p.Faction == Faction.OfPlayer
                            select p;
             }
@@ -110,6 +110,18 @@ namespace AnimalsLogic
             {
                 if (owner.ownership == null)
                     owner.ownership = new Pawn_Ownership(owner);
+                return true;
+            }
+        }
+
+        // patches AssignedAnything to accept animals
+        [HarmonyPatch(typeof(Building_Bed), "AssignedAnything", new Type[] { typeof(Pawn) })]
+        static class Building_Bed_AssignedAnything_Patch
+        {
+            static bool Prefix(Pawn pawn)
+            {
+                if (pawn.ownership == null)
+                    pawn.ownership = new Pawn_Ownership(pawn);
                 return true;
             }
         }

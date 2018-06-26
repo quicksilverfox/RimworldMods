@@ -54,26 +54,13 @@ namespace AnimalsLogic
                 e += p.gender.ToString().Substring(0, 1);
             }
 
-            // [B]onded
-            for (int i = 0; i < p.relations.DirectRelations.Count; i++)
-            {
-                if (p.relations.DirectRelations[i].def == PawnRelationDefOf.Bond && p.relations.DirectRelations[i].otherPawn.Spawned)
-                {
-                    //p.relations.DirectRelations[i].otherPawn;
-                    if (e.Length > 0)
-                        e += ";";
-                    e += "B";
-                    break;
-                }
-            }
-
             // [T]rained
             if (p.training != null)
             {
                 int trained = 0;
                 foreach (TrainableDef current2 in DefDatabase<TrainableDef>.AllDefs)
                 {
-                    if (p.training.IsCompleted(current2))
+                    if (p.training.HasLearned(current2))
                     {
                         trained++;
                     }

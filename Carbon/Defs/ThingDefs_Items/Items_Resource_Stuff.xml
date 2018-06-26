@@ -11,6 +11,12 @@
 		</graphicData>
 		<useHitPoints>true</useHitPoints>
 		<statBases>
+			<StuffPower_Armor_Sharp>0.8</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.2</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Heat>2.0</StuffPower_Armor_Heat>
+			<StuffPower_Insulation_Cold>22</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
+			<MaxHitPoints>80</MaxHitPoints>
 			<MarketValue>5</MarketValue>
 			<Mass>0.033</Mass>
 			<Flammability>0.0</Flammability>
@@ -33,12 +39,11 @@
 				<ArmorRating_Blunt>1.2</ArmorRating_Blunt>
 				<ArmorRating_Sharp>1.8</ArmorRating_Sharp>
 				<ArmorRating_Heat>3.0</ArmorRating_Heat>
-				<ArmorRating_Electric>0.0</ArmorRating_Electric>
 				<Flammability>0.0</Flammability>
 				<DeteriorationRate>0.2</DeteriorationRate>
 			</statFactors>
 		</stuffProps>
-		<tradeability>Stockable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
 			<li>Textiles</li>
 		</thingCategories>
@@ -52,33 +57,40 @@
 			<texPath>Things/Item/Resource/CarbonFiber</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
+		<soundInteract>Wood_Drop</soundInteract>
+		<soundDrop>Wood_Drop</soundDrop>
 		<useHitPoints>true</useHitPoints>
 		<statBases>
 			<MarketValue>5</MarketValue>
+			<MaxHitPoints>250</MaxHitPoints>
 			<Mass>0.25</Mass>
 			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0.2</DeteriorationRate>
-			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
-			<BluntDamageMultiplier>0.8</BluntDamageMultiplier>
+			<StuffPower_Armor_Sharp>0.8</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.8</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Heat>1.2</StuffPower_Armor_Heat>
+			<StuffPower_Insulation_Cold>8</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>5</StuffPower_Insulation_Heat>
+			<SharpDamageMultiplier>0.4</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.9</BluntDamageMultiplier>
 		</statBases>
-		<tradeability>Stockable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>
 		<deepCommonality>0</deepCommonality>
 		<stuffProps>
+			<stuffAdjective>composite</stuffAdjective>
 			<categories>
 				<li>Metallic</li>
 				<li>Woody</li>
 			</categories>
 			<commonality>0.3</commonality>
-			<constructEffect>ConstructMetal</constructEffect>
+			<constructEffect>ConstructWood</constructEffect>
 			<color>(35,35,35)</color>
-			<soundImpactStuff>BulletImpactMetal</soundImpactStuff>
-			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+			<soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
 			<statOffsets>
 				<Cleanliness>0.2</Cleanliness>
 			</statOffsets>
@@ -105,16 +117,21 @@
 			<texPath>Things/Item/Resource/Diamond</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
+		<soundInteract>ChunkRock_Drop</soundInteract>
+		<soundDrop>ChunkRock_Drop</soundDrop>
 		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<MarketValue>50</MarketValue>
 			<Mass>0.5</Mass>
 			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0.0</DeteriorationRate>
-			<SharpDamageMultiplier>0.8</SharpDamageMultiplier>
-			<BluntDamageMultiplier>1.5</BluntDamageMultiplier>
+			<StuffPower_Armor_Sharp>0.9</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.45</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Heat>0.54</StuffPower_Armor_Heat>
+			<StuffPower_Insulation_Cold>3</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>0</StuffPower_Insulation_Heat>
+			<SharpDamageMultiplier>0.9</SharpDamageMultiplier>
+			<BluntDamageMultiplier>1.2</BluntDamageMultiplier>
 		</statBases>
 		<stuffProps>
 			<categories>
@@ -127,8 +144,8 @@
 			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
 			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
 			<statOffsets>
-				<Beauty>6</Beauty>
-				<Cleanliness>0.4</Cleanliness>
+				<Beauty>10</Beauty>
+				<Cleanliness>0.2</Cleanliness>
 			</statOffsets>
 			<statFactors>
 				<MaxHitPoints>10</MaxHitPoints>
@@ -141,7 +158,7 @@
 			</statFactors>
 			<smeltable>false</smeltable>
 		</stuffProps>
-		<tradeability>Stockable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>

@@ -32,6 +32,7 @@
 		<passability>Standable</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellIcon />
 		<interactionCellOffset>(0,0,0)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<recipes>

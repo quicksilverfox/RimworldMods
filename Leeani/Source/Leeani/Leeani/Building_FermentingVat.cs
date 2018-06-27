@@ -221,6 +221,10 @@ namespace Leeani
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append(base.GetInspectString());
+            if (stringBuilder.Length != 0)
+            {
+                stringBuilder.AppendLine();
+            }
             CompTemperatureRuinable comp = base.GetComp<CompTemperatureRuinable>();
             if (!this.Empty && !comp.Ruined)
             {
@@ -274,13 +278,13 @@ namespace Leeani
                         stringBuilder.AppendLine(extra_def.vatProperties.fermentationProgressTranslation.Translate(new object[]
                         {
                             this.Progress.ToStringPercent(),
-                            this.EstimatedTicksLeft.ToStringTicksToPeriod(true)
+                            this.EstimatedTicksLeft.ToStringTicksToPeriod()
                         }));
                     else
                         stringBuilder.AppendLine("FermentationProgress".Translate(new object[]
                             {
                             this.Progress.ToStringPercent(),
-                            this.EstimatedTicksLeft.ToStringTicksToPeriod(true)
+                            this.EstimatedTicksLeft.ToStringTicksToPeriod()
                             }));
                     if (this.CurrentTempProgressSpeedFactor != 1f)
                     {
@@ -297,10 +301,7 @@ namespace Leeani
                     }
                 }
             }
-            if (base.MapHeld != null)
-            {
-                stringBuilder.AppendLine("Temperature".Translate() + ": " + this.Temperature.ToStringTemperature("F0"));
-            }
+            stringBuilder.AppendLine("Temperature".Translate() + ": " + base.AmbientTemperature.ToStringTemperature("F0"));
             stringBuilder.AppendLine(string.Concat(new string[]
             {
                 "IdealFermentingTemperature".Translate(),
@@ -309,7 +310,6 @@ namespace Leeani
                 " ~ ",
                 comp.Props.maxSafeTemperature.ToStringTemperature("F0")
             }));
-
             return stringBuilder.ToString().TrimEndNewlines();
         }
 

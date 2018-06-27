@@ -56,10 +56,10 @@
 		<operations>
 			<li Class="PatchOperationTest">
 				<success>Invert</success>
-				<xpath>Defs/ResearchProjectDef[defName='Greatbows']/tags</xpath>
+				<xpath>Defs/ResearchProjectDef[defName='Greatbow' or defName='Smithing']/tags</xpath>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ResearchProjectDef[defName='Greatbows']</xpath>
+				<xpath>Defs/ResearchProjectDef[defName='Greatbow' or defName='Smithing']</xpath>
 				<order>Append</order>
 				<value>
 					<tags />
@@ -69,7 +69,7 @@
 	</Operation>
 	<Operation Class="PatchOperationAdd">
 		<!-- Some of those are actually part of classic start and therefor unlocked anyway. Added here just in case they would be changed to start without classic start stuff to better fit medieval tech level. -->
-		<xpath>Defs/ResearchProjectDef[defName='RecurveBow' or defName='Pemmican' or defName='PassiveCooler' or defName='Bedrolls' or defName='Beds' or defName='Stonecutting' or defName='ComplexClothing' or defName='Smithing' or defName='Greatbow' or defName='TreeSowing']/tags</xpath>
+		<xpath>Defs/ResearchProjectDef[defName='RecurveBow' or defName='Pemmican' or defName='PassiveCooler' or defName='Bedrolls' or defName='ComplexFurniture' or defName='Stonecutting' or defName='ComplexClothing' or defName='Smithing' or defName='Greatbow' or defName='TreeSowing']/tags</xpath>
 		<order>Append</order>
 		<value>
 			<li>LeeaniStart</li>

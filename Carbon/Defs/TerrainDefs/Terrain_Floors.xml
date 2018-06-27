@@ -14,7 +14,7 @@
 			<Beauty>3</Beauty>
 		</statBases>
 		<costList>
-			<CarbonFiber>5</CarbonFiber>
+			<CarbonFiber>3</CarbonFiber>
 		</costList>
 		<researchPrerequisites>
 			<li>CarbonResearch</li>

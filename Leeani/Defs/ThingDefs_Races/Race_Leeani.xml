@@ -73,6 +73,8 @@
 							<bodyPart>Ear</bodyPart>
 							<inFrontOfBody>true</inFrontOfBody>
 							<useSkinColor>true</useSkinColor>
+							<drawnOnGround>true</drawnOnGround>
+							<drawnInBed>true</drawnInBed>
 							<offsets>
 								<front>
 									<bodyTypes>
@@ -118,6 +120,8 @@
 							<bodyPart>Ear</bodyPart>
 							<inFrontOfBody>true</inFrontOfBody>
 							<useSkinColor>true</useSkinColor>
+							<drawnOnGround>true</drawnOnGround>
+							<drawnInBed>true</drawnInBed>
 							<offsets>
 								<front>
 									<bodyTypes>

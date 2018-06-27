@@ -22,6 +22,7 @@
 			<li>ClassicStart</li>
 			<li>LeeaniStart</li>
 		</startingResearchTags>
+		<forageabilityFactor>1.5</forageabilityFactor>
 		<hairTags>
 			<li>LeeaniHair</li>
 		</hairTags>
@@ -53,6 +54,7 @@
 			<li>TribalStart</li>
 			<li>LeeaniStart</li>
 		</startingResearchTags>
+		<forageabilityFactor>2.0</forageabilityFactor>
 		<hairTags>
 			<li>LeeaniHair</li>
 		</hairTags>

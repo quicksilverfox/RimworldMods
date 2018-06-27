@@ -21,6 +21,7 @@
 		<ingestible>
 			<foodType>Fluid, Processed, Liquor</foodType>
 			<joy>0.5</joy>
+			<joyKind>Chemical</joyKind>
 			<nurseable>true</nurseable>
 			<drugCategory>Social</drugCategory>
 			<ingestSound>Ingest_Beer</ingestSound>
@@ -110,6 +111,7 @@
 		<ingestible>
 			<foodType>Fluid, Processed, Liquor</foodType>
 			<joy>0.5</joy>
+			<joyKind>Chemical</joyKind>
 			<nurseable>true</nurseable>
 			<drugCategory>Social</drugCategory>
 			<ingestSound>Ingest_Beer</ingestSound>

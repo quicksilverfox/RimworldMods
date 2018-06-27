@@ -15,6 +15,7 @@
 		<label>colonist</label>
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<backstoryCategory>LeeaniBackstory</backstoryCategory>
+		<backstoryCryptosleepCommonality>0.01</backstoryCryptosleepCommonality>
 		<apparelTags>
 			<li>LeeaniPlayer</li>
 		</apparelTags>
@@ -26,7 +27,6 @@
 			<min>0</min>
 			<max>0</max>
 		</weaponMoney>
-		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
 	</PawnKindDef>
 
 </Defs>

@@ -79,7 +79,7 @@
 										<Thin>(-0.42,0.54)</Thin>
 									</bodyTypes>
 									<portraitBodyTypes>
-										<Thin>(-0.42,0.57)</Thin>
+										<Thin>(-0.42,0.55)</Thin>
 									</portraitBodyTypes>
 									<crownTypes>
 										<Normal_Average>(0,0)</Normal_Average>
@@ -124,7 +124,7 @@
 										<Thin>(-0.42,0.54)</Thin>
 									</bodyTypes>
 									<portraitBodyTypes>
-										<Thin>(-0.42,0.57)</Thin>
+										<Thin>(-0.42,0.55)</Thin>
 									</portraitBodyTypes>
 									<crownTypes>
 										<Normal_Average>(0,0)</Normal_Average>
@@ -177,6 +177,7 @@
 				<alienslavekinds>
 					<li>
 						<kindDefs>
+							<li>LeeaniSpaceRefugee</li>
 							<li>LeeaniPeasant</li>
 							<li>LeeaniWorker</li>
 						</kindDefs>
@@ -186,16 +187,9 @@
 				<alienrefugeekinds>
 					<li>
 						<kindDefs>
-							<li>LeeaniScout</li>
-							<li>LeeaniSoldier</li>
-							<li>LeeaniNoble</li>
-							<li>LeeaniWorker</li>
-							<li>LeeaniPeasant</li>
-							<li>LeeaniArkhaevest</li>
-							<li>LeeaniMercenary</li>
-							<li>LeeaniChampion</li>
+							<li>LeeaniSpaceRefugee</li>
 						</kindDefs>
-						<chance>30.0</chance>
+						<chance>80.0</chance>
 					</li>
 				</alienrefugeekinds>
 				<startingColonists>
@@ -203,6 +197,7 @@
 						<pawnKindEntries>
 							<li>
 								<kindDefs>
+									<li>LeeaniSpaceRefugee</li>
 									<li>LeeaniScout</li>
 									<li>LeeaniSoldier</li>
 									<li>LeeaniWorker</li>
@@ -224,6 +219,7 @@
 						<pawnKindEntries>
 							<li>
 								<kindDefs>
+									<li>LeeaniSpaceRefugee</li>
 									<li>LeeaniScout</li>
 									<li>LeeaniSoldier</li>
 									<li>LeeaniNoble</li>
@@ -233,7 +229,7 @@
 									<li>LeeaniMercenary</li>
 									<li>LeeaniChampion</li>
 								</kindDefs>
-								<chance>20.0</chance>
+								<chance>30.0</chance>
 							</li>
 						</pawnKindEntries>
 						<factionDefs>

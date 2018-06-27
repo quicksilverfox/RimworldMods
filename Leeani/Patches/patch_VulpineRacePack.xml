@@ -20,7 +20,7 @@
 					<li Class="PatchOperationAdd">
 						<xpath>Defs/RecipeDef[defName='InstallVulpTail' or defName='InstallFBionicTail']/appliedOnFixedBodyParts</xpath>
 						<value>
-							<li>LTail</li>
+							<li>LeeaniTail</li>
 						</value>
 					</li>
 				</operations>

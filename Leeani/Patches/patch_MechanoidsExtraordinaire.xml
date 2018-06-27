@@ -27,7 +27,7 @@
 					<li Class="PatchOperationAdd">
 						<xpath>Defs/RecipeDef[defName="InstallMechaTentacle"]/appliedOnFixedBodyParts</xpath>
 						<value>
-							<li>LTail</li>
+							<li>LeeaniTail</li>
 						</value>
 					</li>
 				</operations>

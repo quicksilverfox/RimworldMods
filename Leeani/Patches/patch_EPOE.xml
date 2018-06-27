@@ -12,7 +12,7 @@
 				<success>Always</success>
 				<operations>
 					<li Class="PatchOperationRemove">
-						<xpath>Defs/RecipeDef[defName="InstallClothTail"]/recipeUsers</xpath>
+						<xpath>Defs/RecipeDef[defName="InstallClothLeeaniTail"]/recipeUsers</xpath>
 					</li>
 				</operations>
 			</li>
@@ -29,81 +29,6 @@
 						<xpath>Defs/RecipeDef[@ParentName="SurgeryFlesh"]/recipeUsers</xpath>
 						<value>
 							<li>Alien_Leeani</li>
-						</value>
-					</li>
-				</operations>
-			</li>
-
-			<!-- yes, you can do this! it works this way!-->
-			<li Class="PatchOperationSequence">
-				<success>Always</success>
-				<operations>
-					<li Class="PatchOperationAdd">
-						<xpath>Defs</xpath>
-						<value>
-							<RecipeDef ParentName="RecipeBasicProsthesis">
-								<defName>CreateLClothTail</defName>
-								<label>Craft Leeani cloth tail</label>
-								<description>Crafts a simple cloth tail for Leeani.</description>
-								<jobString>Crafting prosthesis.</jobString>
-								<ingredients>
-									<li>
-										<filter>
-											<thingDefs>
-												<li>Cloth</li>
-											</thingDefs>
-										</filter>
-										<count>25</count>
-									</li>
-								</ingredients>
-								<fixedIngredientFilter>
-									<thingDefs>
-										<li>Cloth</li>
-									</thingDefs>
-								</fixedIngredientFilter>
-								<products>
-									<LClothTail>1</LClothTail>
-								</products>
-								<recipeUsers>
-									<li>TableBasicProsthetic</li>
-								</recipeUsers>
-							</RecipeDef>
-							<RecipeDef ParentName="RecipeBionicProsthesis">
-								<defName>CreateLBionicTail</defName>
-								<label>Craft Leeani bionic tail</label>
-								<description>Crafts a bionic tail for a Leeani.</description>
-								<jobString>Crafting bionic part.</jobString>
-								<ingredients>
-									<li>
-										<filter>
-											<thingDefs>
-												<li>Plasteel</li>
-											</thingDefs>
-										</filter>
-										<count>100</count>
-									</li>
-									<li>
-										<filter>
-											<thingDefs>
-												<li>Component</li>
-											</thingDefs>
-										</filter>
-										<count>5</count>
-									</li>
-								</ingredients>
-								<fixedIngredientFilter>
-									<thingDefs>
-										<li>Plasteel</li>
-										<li>Component</li>
-									</thingDefs>
-								</fixedIngredientFilter>
-								<products>
-									<LBionicTail>1</LBionicTail>
-								</products>
-								<recipeUsers>
-									<li>TableBionics</li>
-								</recipeUsers>
-							</RecipeDef>
 						</value>
 					</li>
 				</operations>

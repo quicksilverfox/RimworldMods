@@ -3,9 +3,9 @@
 <Defs>
 
 	<ThingDef ParentName="BodyPartNaturalBase">
-		<defName>LTail</defName>
-		<label>Leeani tail</label>
-		<description>A floofy Leeani tail. What did you do??!</description>
+		<defName>LeeaniTail</defName>
+		<label>leeani tail</label>
+		<description>A floofy leeani tail. What did you do??!</description>
 		<graphicData>
 			<texPath>Things/Item/Health/HealthItemNatural</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -16,32 +16,17 @@
 		</statBases>
 	</ThingDef>
 
-	<ThingDef ParentName="BodyPartArtificialBase">
-		<defName>LClothTail</defName>
-		<label>cloth Leeani tail</label>
-		<description>It's better than nothing, doesn't mean it's actually any good. Give me back the original, please.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItemProsthetic</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<statBases>
-			<MarketValue>15</MarketValue>
-			<Mass>.3</Mass>
-		</statBases>
-		<techHediffsTags>
-			<li>Simple</li>
-		</techHediffsTags>
-	</ThingDef>
-
-	<ThingDef ParentName="BodyPartArtificialBase">
-		<defName>LBionicTail</defName>
-		<label>bionic Leeani tail</label>
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>LeeaniBionicTail</defName>
+		<label>bionic leeani tail</label>
 		<description>Once step closer to furry robots. You do realize what you're doing with this technology, don't you?</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItemBionic</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
+		<techLevel>Spacer</techLevel>
+		<costList>
+			<Plasteel>5</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
 		<statBases>
+			<WorkToMake>12000</WorkToMake>
 			<MarketValue>1500</MarketValue>
 			<Mass>1</Mass>
 		</statBases>

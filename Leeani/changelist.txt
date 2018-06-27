@@ -48,7 +48,6 @@ Vulpine Race Pack (can install vulpine tails, 'cause leeani are vulpines)
 
 Things to consider:
 Make their scenario more medieval. No electricity, but more low tech unlocked.
-Rename InstallClothTail recipe to avoid possible overrides by other race mods.
 
 Known issues:
 Sometimes slaves are generated as humans with leeani backstories and body types.

@@ -2,14 +2,14 @@
 <Defs>  
 
 	<BodyPartDef>
-		<defName>LTail</defName>
+		<defName>LeeaniTail</defName>
 		<label>leeani tail</label>
 		<hitPoints>15</hitPoints>
 		<frostbiteVulnerability>4</frostbiteVulnerability>
 		<pawnGeneratorCanAmputate>true</pawnGeneratorCanAmputate>
 		<skinCovered>true</skinCovered>
 		<bleedRate>0.1</bleedRate>
-		<spawnThingOnRemoved>LTail</spawnThingOnRemoved>
+		<spawnThingOnRemoved>LeeaniTail</spawnThingOnRemoved>
 		<beautyRelated>true</beautyRelated>
 	</BodyPartDef>
 

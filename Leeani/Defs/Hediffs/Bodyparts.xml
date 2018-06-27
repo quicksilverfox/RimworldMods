@@ -2,9 +2,9 @@
 <Defs>
 
 	<HediffDef ParentName="AddedBodyPartBase">
-		<defName>LBionicTail</defName>
+		<defName>LeeaniBionicTail</defName>
 		<label>bionic Leeani tail</label>
-		<spawnThingOnRemoved>LBionicTail</spawnThingOnRemoved>
+		<spawnThingOnRemoved>LeeaniBionicTail</spawnThingOnRemoved>
 		<addedPartProps>
 			<solid>true</solid>
 			<partEfficiency>1.2</partEfficiency>
@@ -22,8 +22,7 @@
 	</HediffDef>
 
 	<HediffDef ParentName="AddedBodyPartBase">
-		<defName>LClothTail</defName>
-		<spawnThingOnRemoved>LClothTail</spawnThingOnRemoved>
+		<defName>LeeaniClothTail</defName>
 		<label>leeani cloth tail</label>
 		<addedPartProps>
 			<solid>true</solid>

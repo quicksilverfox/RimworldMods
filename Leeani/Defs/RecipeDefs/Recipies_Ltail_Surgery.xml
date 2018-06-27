@@ -8,8 +8,7 @@
 		<workSkill>Medicine</workSkill>
 		<workSkillLearnFactor>16</workSkillLearnFactor>
 		<appliedOnFixedBodyParts>
-			<li>LTail</li>
-			<li>Tail</li> <!-- For easier compatibility with Vulpine Race Pack and possibly other mods. -->
+			<li>LeeaniTail</li>
 		</appliedOnFixedBodyParts>
 	</RecipeDef>
 
@@ -32,7 +31,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>LTail</li>
+						<li>LeeaniTail</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -43,7 +42,7 @@
 				<li>Medicine</li>
 			</categories>
 			<thingDefs>
-				<li>LTail</li>
+				<li>LeeaniTail</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<recipeUsers>
@@ -52,51 +51,16 @@
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
-		<defName>InstallClothLTailExisting</defName>
-		<label>install cloth leeani tail</label>
+		<defName>InstallClothLeeaniTail</defName>
+		<label>install cloth tail</label>
 		<description>Installs cloth tail.</description>
 		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
 		<jobString>Installing cloth tail.</jobString>
 		<workAmount>1200</workAmount>
-		<ingredients>
-			<li>
-				<filter>
-					<categories>
-						<li>Medicine</li>
-					</categories>
-				</filter>
-				<count>1</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>LClothTail</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-			<thingDefs>
-				<li>LClothTail</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<addsHediff>LClothTail</addsHediff>
-		<recipeUsers>
-			<li>Alien_Leeani</li>
-		</recipeUsers>
-	</RecipeDef>
-
-	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
-		<defName>InstallClothTail</defName>
-		<label>make and install cloth tail</label>
-		<description>Installs cloth tail.</description>
-		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
-		<jobString>Installing cloth tail.</jobString>
-		<workAmount>1200</workAmount>
+		<surgerySuccessChanceFactor>2.0</surgerySuccessChanceFactor>
+		<skillRequirements>
+			<Medicine>3</Medicine>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -112,7 +76,7 @@
 						<li>Cloth</li>
 					</thingDefs>
 				</filter>
-				<count>25</count>
+				<count>5</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -123,7 +87,7 @@
 				<li>Cloth</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<addsHediff>LClothTail</addsHediff>
+		<addsHediff>LeeaniClothTail</addsHediff>
 		<recipeUsers>
 			<li>Alien_Leeani</li>
 		</recipeUsers>
@@ -148,7 +112,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>LBionicTail</li>
+						<li>LeeaniBionicTail</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -159,10 +123,10 @@
 				<li>Medicine</li>
 			</categories>
 			<thingDefs>
-				<li>LBionicTail</li>
+				<li>LeeaniBionicTail</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<addsHediff>LBionicTail</addsHediff>
+		<addsHediff>LeeaniBionicTail</addsHediff>
 		<recipeUsers>
 			<li>Alien_Leeani</li>
 		</recipeUsers>

@@ -202,6 +202,7 @@
 			<WorkToBuild>300</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Mass>5</Mass>
+			<WorkTableWorkSpeedFactor>0.8</WorkTableWorkSpeedFactor>
 		</statBases>
 		<selectable>true</selectable>
 		<costList>
@@ -231,6 +232,7 @@
 				</fuelFilter>
 				<destroyOnNoFuel>false</destroyOnNoFuel>
 				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>1</initialFuelPercent>
 			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>15</glowRadius>
@@ -251,9 +253,9 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<recipes>
-			<li>CookMealSimpleCampfire</li>
-			<li>Make_PemmicanCampfire</li>
-			<li>BurnApparelCampfire</li>
+			<li>CookMealSimple</li>
+			<li>Make_Pemmican</li>
+			<li>BurnApparel</li>
 			<li>BurnDrugs</li>
 		</recipes>
 		<inspectorTabs>

@@ -107,7 +107,7 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="FactionBase"]/options</xpath>
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Settlement"]/options</xpath>
 		<order>Append</order>
 		<value>
 			<LeeaniTradie>1</LeeaniTradie>

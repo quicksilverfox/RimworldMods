@@ -2,7 +2,7 @@
 <Patch>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[@Name="ArmorMakeableBase"]/recipeMaker/defaultIngredientFilter/disallowedThingDefs</xpath>
+		<xpath>Defs/ThingDef[@Name="ApparelMakeableBase" or @Name="ArmorSmithableBase" or @Name="ArmorMachineableBase"]/recipeMaker/defaultIngredientFilter/disallowedThingDefs</xpath>
 		<value>
 			<li>Diamond</li>
 		</value>

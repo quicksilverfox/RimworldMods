@@ -93,7 +93,7 @@
 				</guards>
 			</li>
 			<li>
-				<kindDef>FactionBase</kindDef>
+				<kindDef>Settlement</kindDef>
 				<options>
 					<LeeaniTradie>50</LeeaniTradie>
 					<LeeaniSoldier>250</LeeaniSoldier>

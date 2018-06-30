@@ -36,7 +36,7 @@
 			<li>Caravan_Outlander_Exotic</li>
 		</caravanTraderKinds>
 		<baseTraderKinds>
-			<li>Base_Outlander_Standard</li>
+			<li>Base_Leeani_Standard</li>
 		</baseTraderKinds>
 		<allowedArrivalTemperatureRange>
 			<min>-30</min>

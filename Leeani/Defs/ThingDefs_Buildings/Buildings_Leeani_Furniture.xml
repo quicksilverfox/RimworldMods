@@ -63,6 +63,9 @@
 		<researchPrerequisites>
 			<li>LeeaniTraditions</li>
 		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
 	</ThingDef>
 
 	<ThingDef ParentName="ArtableFurnitureBase">
@@ -105,6 +108,9 @@
 		<researchPrerequisites>
 			<li>LeeaniTraditions</li>
 		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
 	</ThingDef>
 
 	<ThingDef Abstract="True" ParentName="ArtableFurnitureBase" Name="LArtTableBase">
@@ -172,6 +178,9 @@
 		<researchPrerequisites>
 			<li>LeeaniTraditions</li>
 		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
 	</ThingDef>
 
 	<ThingDef ParentName="LeeaniBuildingBase">
@@ -269,6 +278,9 @@
 		<researchPrerequisites>
 			<li>LeeaniTraditions</li>
 		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
 	</ThingDef>
 
 	<ThingDef Abstract="True" Name="LeeaniLampBase" ParentName="LeeaniBuildingBase">
@@ -347,6 +359,9 @@
 			<li>LeeaniTraditions</li>
 			<li>Electricity</li>
 		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
 	</ThingDef>
 
 	<ThingDef ParentName="FurnitureBase">
@@ -413,6 +428,9 @@
 		<researchPrerequisites>
 			<li>LeeaniArkhaev</li>
 		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
 	</ThingDef>
 
 </Defs>

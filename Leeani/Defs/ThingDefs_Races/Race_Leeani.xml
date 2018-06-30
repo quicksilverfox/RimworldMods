@@ -256,6 +256,8 @@
 				<cannotReceiveThoughts>
 					<li>AteRawFood</li>
 					<li>SleptOnGround</li>
+					<li>SleptOutside</li>
+					<li>EnvironmentDark</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<raceRestriction>
@@ -265,14 +267,11 @@
 				<researchList>
 					<li>
 						<projects>
-							<li>LeeaniJuniper</li>
-							<li>LeeaniVineyards</li>
 							<li>LeeaniBrewing</li>
 							<li>LeeaniWineBrewing</li>
 							<li>LeeaniAutovats</li>
 							<li>LeeaniTraditions</li>
 							<li>LeeaniArkhaev</li>
-							<li>LeeaniModernisation</li>
 						</projects>
 					</li>
 				</researchList>

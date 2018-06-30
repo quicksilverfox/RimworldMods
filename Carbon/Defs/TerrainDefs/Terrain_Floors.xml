@@ -8,7 +8,7 @@
 		<texturePath>Terrain/Surfaces/CarbonTileGrained</texturePath>
 		<renderPrecedence>230</renderPrecedence>
 		<statBases>
-			<Cleanliness>0.3</Cleanliness>
+			<Cleanliness>0.2</Cleanliness>
 			<WorkToBuild>50</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Beauty>3</Beauty>

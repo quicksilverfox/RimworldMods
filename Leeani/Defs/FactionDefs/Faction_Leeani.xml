@@ -19,28 +19,28 @@
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Medieval</techLevel>
-		<backstoryCategory>LeeaniBackstory</backstoryCategory>
+		<backstoryCategory>Civil</backstoryCategory>
 		<hairTags>
 			<li>LeeaniHair</li>
 		</hairTags>
 		<naturalColonyGoodwill>
-			<min>-60</min>
-			<max>20</max>
+			<min>-50</min>
+			<max>50</max>
 		</naturalColonyGoodwill>
 		<visitorTraderKinds>
 			<li>Visitor_Outlander_Standard</li>
 		</visitorTraderKinds>
 		<caravanTraderKinds>
-			<li>Caravan_Outlander_BulkGoods</li>
-			<li>Caravan_Outlander_CombatSupplier</li>
-			<li>Caravan_Outlander_Exotic</li>
+			<li>Caravan_Leeani_BulkGoods</li>
+			<li>Caravan_Leeani_CombatSupplier</li>
+			<li>Caravan_Leeani_Exotic</li>
 		</caravanTraderKinds>
 		<baseTraderKinds>
 			<li>Base_Leeani_Standard</li>
 		</baseTraderKinds>
 		<allowedArrivalTemperatureRange>
-			<min>-30</min>
-			<max>27</max>
+			<min>-50</min>
+			<max>40</max>
 		</allowedArrivalTemperatureRange>
 		<maxPawnCostPerTotalPointsCurve>
 			<points>

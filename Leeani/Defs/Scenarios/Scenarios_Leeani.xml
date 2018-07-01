@@ -60,11 +60,6 @@
 					<stuff>WoodLog</stuff>
 					<count>2</count>
 				</li>
-				<li Class="ScenPart_StartingAnimal">
-					<def>StartingAnimal</def>
-					<count>1</count>
-					<bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
-				</li>
 
 				<!-- Scatter some things near player start -->
 				<li Class="ScenPart_ScatterThingsNearPlayerStart">

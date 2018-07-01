@@ -33,7 +33,7 @@
 		</equippedStatOffsets>
 		<apparel>
 			<bodyPartGroups>
-				<li>HeadAttackTool</li>
+				<li>UpperHead</li>
 			</bodyPartGroups>
 			<wornGraphicPath>Gear/RobinHood</wornGraphicPath>
 			<layers>

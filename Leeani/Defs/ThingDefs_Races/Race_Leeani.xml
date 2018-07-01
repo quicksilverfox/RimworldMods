@@ -68,100 +68,6 @@
 							<hediffGraphics>
 							</hediffGraphics>
 						</li>
-						<li>
-							<path>Things/Leeani/Head/EarLeft</path>
-							<bodyPart>Ear</bodyPart>
-							<inFrontOfBody>true</inFrontOfBody>
-							<useSkinColor>true</useSkinColor>
-							<drawnOnGround>true</drawnOnGround>
-							<drawnInBed>true</drawnInBed>
-							<offsets>
-								<front>
-									<bodyTypes>
-										<Thin>(-0.42,0.54)</Thin>
-									</bodyTypes>
-									<portraitBodyTypes>
-										<Thin>(-0.42,0.55)</Thin>
-									</portraitBodyTypes>
-									<crownTypes>
-										<Normal_Average>(0,0)</Normal_Average>
-									</crownTypes>
-								</front>
-								<back>
-									<bodyTypes>
-										<Thin>(0.0,0.84)</Thin>
-									</bodyTypes>
-									<portraitBodyTypes>
-										<Thin>(0.0,0.84)</Thin>
-									</portraitBodyTypes>
-									<crownTypes>
-										<Normal_Average>(0,0)</Normal_Average>
-									</crownTypes>
-								</back>
-								<side>
-									<bodyTypes>
-										<Thin>(-0.5,0.55)</Thin>
-									</bodyTypes>
-									<portraitBodyTypes>
-										<Thin>(-0.5,0.55)</Thin>
-									</portraitBodyTypes>
-									<crownTypes>
-										<Normal_Average>(0,0)</Normal_Average>
-									</crownTypes>
-								</side>
-							</offsets>
-							<hiddenUnderApparelFor>
-								<li>UpperHead</li>
-								<li>FullHead</li>
-							</hiddenUnderApparelFor>
-						</li>
-						<li>
-							<path>Things/Leeani/Head/EarRight</path>
-							<bodyPart>Ear</bodyPart>
-							<inFrontOfBody>true</inFrontOfBody>
-							<useSkinColor>true</useSkinColor>
-							<drawnOnGround>true</drawnOnGround>
-							<drawnInBed>true</drawnInBed>
-							<offsets>
-								<front>
-									<bodyTypes>
-										<Thin>(-0.42,0.54)</Thin>
-									</bodyTypes>
-									<portraitBodyTypes>
-										<Thin>(-0.42,0.55)</Thin>
-									</portraitBodyTypes>
-									<crownTypes>
-										<Normal_Average>(0,0)</Normal_Average>
-									</crownTypes>
-								</front>
-								<back>
-									<bodyTypes>
-										<Thin>(0.0,0.84)</Thin>
-									</bodyTypes>
-									<portraitBodyTypes>
-										<Thin>(0.0,0.84)</Thin>
-									</portraitBodyTypes>
-									<crownTypes>
-										<Normal_Average>(0,0)</Normal_Average>
-									</crownTypes>
-								</back>
-								<side>
-									<bodyTypes>
-										<Thin>(-0.5,0.55)</Thin>
-									</bodyTypes>
-									<portraitBodyTypes>
-										<Thin>(-0.5,0.55)</Thin>
-									</portraitBodyTypes>
-									<crownTypes>
-										<Normal_Average>(0,0)</Normal_Average>
-									</crownTypes>
-								</side>
-							</offsets>
-							<hiddenUnderApparelFor>
-								<li>UpperHead</li>
-								<li>FullHead</li>
-							</hiddenUnderApparelFor>
-						</li>
 					</bodyAddons>
 				</alienPartGenerator>
 				<chemicalSettings>	
@@ -183,7 +89,7 @@
 						<kindDefs>
 							<li>LeeaniSpaceRefugee</li>
 							<li>LeeaniPeasant</li>
-							<li>LeeaniWorker</li>
+							<li>LeeaniTradie</li>
 						</kindDefs>
 						<chance>20.0</chance>
 					</li>
@@ -204,7 +110,7 @@
 									<li>LeeaniSpaceRefugee</li>
 									<li>LeeaniScout</li>
 									<li>LeeaniSoldier</li>
-									<li>LeeaniWorker</li>
+									<li>LeeaniTradie</li>
 									<li>LeeaniPeasant</li>
 									<li>LeeaniArkhaevest</li>
 									<li>LeeaniMercenary</li>
@@ -227,7 +133,7 @@
 									<li>LeeaniScout</li>
 									<li>LeeaniSoldier</li>
 									<li>LeeaniNoble</li>
-									<li>LeeaniWorker</li>
+									<li>LeeaniTradie</li>
 									<li>LeeaniPeasant</li>
 									<li>LeeaniArkhaevest</li>
 									<li>LeeaniMercenary</li>

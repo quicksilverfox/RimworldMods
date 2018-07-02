@@ -9,7 +9,7 @@
 		<jobString>Refining chemfuel from hay.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>2150</workAmount>
+		<workAmount>2000</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<ingredients>
 			<li>
@@ -38,7 +38,7 @@
 		<jobString>Making carbon weave.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>3000</workAmount>
+		<workAmount>2000</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
@@ -48,7 +48,7 @@
 						<li>Chemfuel</li>
 					</thingDefs>
 				</filter>
-				<count>60</count>
+				<count>50</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -68,7 +68,7 @@
 		<jobString>Making carbon composite.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>3000</workAmount>
+		<workAmount>2000</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
@@ -78,7 +78,7 @@
 						<li>Chemfuel</li>
 					</thingDefs>
 				</filter>
-				<count>60</count>
+				<count>50</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -98,7 +98,7 @@
 		<jobString>Making diamond.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
-		<workAmount>5000</workAmount>
+		<workAmount>3500</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<researchPrerequisite>CarbonResearch</researchPrerequisite>
 		<ingredients>
@@ -108,7 +108,7 @@
 						<li>Chemfuel</li>
 					</thingDefs>
 				</filter>
-				<count>60</count>
+				<count>50</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>

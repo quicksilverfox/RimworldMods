@@ -28,7 +28,16 @@
 						<defName>LeeaniPacifist</defName>
 						<chance>70</chance>
 					</li>
+					<li>
+						<!-- being poorly engineered race, they tend to like the idea of improving their bodies -->
+						<defName>Transhumanist</defName>
+						<chance>10</chance>
+					</li>
 				</forcedRaceTraitEntries>
+				<disallowedTraits>
+					<!-- being engineered race, they aren't exactly natural to begin with -->
+					<li>BodyPurist</li>
+				</disallowedTraits>
 				<alienPartGenerator>
 					<alienbodytypes>
 						<li>Thin</li>
@@ -107,15 +116,9 @@
 						<pawnKindEntries>
 							<li>
 								<kindDefs>
-									<li>LeeaniSpaceRefugee</li>
-									<li>LeeaniScout</li>
-									<li>LeeaniSoldier</li>
-									<li>LeeaniTradie</li>
-									<li>LeeaniPeasant</li>
-									<li>LeeaniArkhaevest</li>
-									<li>LeeaniMercenary</li>
+									<li>LeeaniColonist</li>
 								</kindDefs>
-								<chance>10.0</chance>
+								<chance>25.0</chance>
 							</li>
 						</pawnKindEntries>
 						<factionDefs>
@@ -130,6 +133,7 @@
 							<li>
 								<kindDefs>
 									<li>LeeaniSpaceRefugee</li>
+									<li>LeeaniColonist</li>
 									<li>LeeaniScout</li>
 									<li>LeeaniSoldier</li>
 									<li>LeeaniNoble</li>
@@ -163,7 +167,10 @@
 					<li>AteRawFood</li>
 					<li>SleptOnGround</li>
 					<li>SleptOutside</li>
+					<!-- foxes are semi-nocturnal animals who rely more on nose and ears, so they are okay with being in darkness -->
 					<li>EnvironmentDark</li>
+					<!-- being somewhat poorly engineered race, they won't mind improving their bodies -->
+					<li>NonProsthophileHasAddedBodyParts</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<raceRestriction>

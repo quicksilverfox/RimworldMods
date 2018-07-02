@@ -73,18 +73,6 @@ namespace AnimalsLogic
                 }
             }
 
-            // [P]regnant
-            if (p.health.hediffSet.HasHediff(HediffDefOf.Pregnant))
-            {
-                Hediff_Pregnant hediff_Pregnant = (Hediff_Pregnant)p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Pregnant);
-                if (hediff_Pregnant.Visible)
-                {
-                    if (e.Length > 0)
-                        e += ";";
-                    e += "P" + hediff_Pregnant.GestationProgress.ToStringPercent();
-                }
-            }
-
             // [W]ool
             CompShearable wool = p.TryGetComp<CompShearable>();
             if (wool != null && wool.Fullness > 0.05)

@@ -3,13 +3,14 @@
 
 	<PawnKindDef Abstract="True" Name="BaseLeeaniPawnKind">
 		<race>Alien_Leeani</race>
-		<combatPower>20</combatPower>
+		<combatPower>30</combatPower>
 		<baseRecruitDifficulty>0.50</baseRecruitDifficulty>
 		<isFighter>false</isFighter>
 		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
 		<forceNormalGearQuality>true</forceNormalGearQuality>
 	</PawnKindDef>
 
+	<!-- For Leeani Loords scenario -->
 	<PawnKindDef ParentName="BaseLeeaniPawnKind">
 		<defName>Leeani</defName>
 		<label>colonist</label>
@@ -27,6 +28,34 @@
 			<min>0</min>
 			<max>0</max>
 		</weaponMoney>
+	</PawnKindDef>
+
+	<!-- For Crashlanded scenario -->
+	<PawnKindDef ParentName="BaseLeeaniPawnKind">
+		<defName>LeeaniColonist</defName>
+		<label>colonist</label>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<backstoryCategory>Civil</backstoryCategory>
+		<chemicalAddictionChance>0.06</chemicalAddictionChance>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>LeeaniPlayer</li>
+		</apparelTags>
+		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+		<apparelMoney>
+			<min>350</min>
+			<max>600</max>
+		</apparelMoney>
+		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+		<techHediffsChance>0.03</techHediffsChance>
+		<techHediffsMoney>
+			<min>50</min>
+			<max>800</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>Poor</li>
+			<li>Simple</li>
+		</techHediffsTags>
 	</PawnKindDef>
 
 </Defs>

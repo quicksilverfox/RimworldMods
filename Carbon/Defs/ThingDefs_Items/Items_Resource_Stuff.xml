@@ -12,8 +12,8 @@
 		</graphicData>
 		<useHitPoints>true</useHitPoints>
 		<statBases>
-			<StuffPower_Armor_Sharp>1.5</StuffPower_Armor_Sharp>
-			<StuffPower_Armor_Blunt>0.4</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Sharp>1.4</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.35</StuffPower_Armor_Blunt>
 			<StuffPower_Armor_Heat>3.0</StuffPower_Armor_Heat>
 			<StuffPower_Insulation_Cold>22</StuffPower_Insulation_Cold>
 			<StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>

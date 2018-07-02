@@ -23,7 +23,7 @@
 		<techLevel>Spacer</techLevel>
 		<costList>
 			<Plasteel>5</Plasteel>
-			<ComponentSpacer>4</ComponentSpacer>
+			<ComponentSpacer>3</ComponentSpacer>
 		</costList>
 		<statBases>
 			<WorkToMake>12000</WorkToMake>

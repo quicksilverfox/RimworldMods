@@ -28,11 +28,20 @@
 			<min>0</min>
 			<max>0</max>
 		</weaponMoney>
+		<techHediffsChance>0.05</techHediffsChance>
+		<techHediffsMoney>
+			<min>50</min>
+			<max>800</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>Poor</li>
+			<li>Simple</li>
+		</techHediffsTags>
 	</PawnKindDef>
 
 	<!-- For Crashlanded scenario -->
 	<PawnKindDef ParentName="BaseLeeaniPawnKind">
-		<defName>LeeaniColonist</defName>
+		<defName>LeeaniSpacerColonist</defName>
 		<label>colonist</label>
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<backstoryCategory>Civil</backstoryCategory>
@@ -47,7 +56,7 @@
 			<max>600</max>
 		</apparelMoney>
 		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
-		<techHediffsChance>0.03</techHediffsChance>
+		<techHediffsChance>0.05</techHediffsChance>
 		<techHediffsMoney>
 			<min>50</min>
 			<max>800</max>

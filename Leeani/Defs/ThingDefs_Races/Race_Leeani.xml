@@ -45,7 +45,7 @@
 					<bodyAddons>
 						<li>
 							<path>Things/Leeani/Tails/TailL</path>
-							<bodyPart>Tail</bodyPart>
+							<bodyPart>leeani tail</bodyPart>
 							<useSkinColor>true</useSkinColor>
 							<inFrontOfBody>false</inFrontOfBody>
 							<offsets>

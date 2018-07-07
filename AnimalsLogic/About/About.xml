@@ -11,6 +11,9 @@
 [*] When allowed zone is changed animals react immediately instead of after the end of the current task.
 [*] Animals can own beds.
 [*] Animal beds can be medical.
+[*] (Optional) Configurable animal hauling efficiency.
+[*] (Optional) Configurable tameness decay threshold.
+[*] (Optional) Configurable training decay speed.
 [*] (Optional) Converts any ruined eggs into unfertilized chicken eggs.
 [*] (Optional, default off) Converts any generic meat into chicken meat upon butchering.
 [*] (Optional) Predators hunting your pawns (human-like or animals) will be considered hostile by all your pawns and turrets.

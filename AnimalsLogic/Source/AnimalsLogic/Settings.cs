@@ -13,6 +13,10 @@ namespace AnimalsLogic
         public static bool convert_ruined_eggs = true;
         public static bool tastes_like_chicken = false;
 
+        public static float wildness_threshold_for_tameness_decay = 0.101f;
+        public static float training_decay_factor = 1.0f;
+        public static float haul_mtb = 1.5f;
+
         public static void DoSettingsWindowContents(Rect inRect)
         {
             Listing_Standard listing_Standard = new Listing_Standard();
@@ -24,6 +28,15 @@ namespace AnimalsLogic
             listing_Standard.CheckboxLabeled("Convert eggs ruined by temperature into unfertilized chicken eggs", ref convert_ruined_eggs, "Note, this does not affect already ruined eggs.");
             listing_Standard.CheckboxLabeled("Convert any generic animal meat into chicken meat upon butchering", ref tastes_like_chicken, "Note, this does not affect already butchered meat.");
             listing_Standard.CheckboxLabeled("More fighting back against melee threats", ref fight_back, "Note, this applies to both wild and tamed animals. If you are using a mod which makes your animals hunt for food, you may want to disable this to avoid spending a lot of meds healing minor wounds on your pets.");
+
+            listing_Standard.Label("Wildness threshold for tameness decay " + ((float)Math.Round(wildness_threshold_for_tameness_decay, 3) * 100).ToString() + "%. Vanilla: 10.1%.", -1, "Set to 100% to prevent losing tameness for all animals.");
+            wildness_threshold_for_tameness_decay = listing_Standard.Slider(wildness_threshold_for_tameness_decay, 0f, 1f);
+
+            listing_Standard.Label("Training decay speed " + ((float)Math.Round(training_decay_factor, 3)).ToStringPercent() + ". Vanilla: 100%.", -1, "Set to 1% to make it as slow as possible.");
+            training_decay_factor = listing_Standard.Slider(training_decay_factor, 0.01f, 2f);
+            
+            listing_Standard.Label("Hauling MTB " + ((float)Math.Round(haul_mtb, 1)) + "h. Vanilla: 1.5h.", -1, "'MTB' stands for 'Mean Time Between'");
+            haul_mtb = listing_Standard.Slider(haul_mtb, 0.0f, 3f);
 
             listing_Standard.End();
         }
@@ -37,6 +50,9 @@ namespace AnimalsLogic
             Scribe_Values.Look<bool>(ref convert_ruined_eggs, "convert_ruined_eggs", true, false);
             Scribe_Values.Look<bool>(ref fight_back, "fight_back", true, false);
             Scribe_Values.Look<bool>(ref tastes_like_chicken, "tastes_like_chicken", false, false);
+            Scribe_Values.Look<float>(ref wildness_threshold_for_tameness_decay, "wildness_threshold_for_tameness_decay", 0.101f, false);
+            Scribe_Values.Look<float>(ref training_decay_factor, "training_decay_factor", 1.0f, false);
+            Scribe_Values.Look<float>(ref haul_mtb, "haul_mtb", 1.5f, false);
         }
     }
 }

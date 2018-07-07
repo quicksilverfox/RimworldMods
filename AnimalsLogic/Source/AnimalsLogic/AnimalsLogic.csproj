@@ -57,6 +57,8 @@
     <Compile Include="Come.cs" />
     <Compile Include="DoNotEatRandomly.cs" />
     <Compile Include="DoNotForbidSlaughtered.cs" />
+    <Compile Include="FetchIt.cs" />
+    <Compile Include="ForgetMeNot.cs" />
     <Compile Include="HostilePredators.cs" />
     <Compile Include="LayEggsInNests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

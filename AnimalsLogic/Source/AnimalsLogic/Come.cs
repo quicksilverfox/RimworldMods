@@ -11,16 +11,15 @@ using System.Reflection.Emit;
 namespace AnimalsLogic
 {
     /*
-     * Animals react to zone restriction changes and master draft/fieldwork instantly.
+     * Pawns react to zone restriction changes and master draft/fieldwork instantly.
      */
 
     class Come
     {
+        /* Does not work. Setter is inlined by JIT compiler. See workaround below.
         // Try to find allowed area immediately after restrictions are changed
         protected static FieldInfo Pawn_PlayerSettings_pawn = null;
 
-        // Does not work. Setter is inlined by JIT compiler. See workaround below.
-        /*
         [HarmonyPatch(typeof(Pawn_PlayerSettings), "set_AreaRestriction", new Type[] { typeof(Area) })]
         static class Pawn_PlayerSettings_set_AreaRestriction_Patch
         {
@@ -103,17 +102,19 @@ namespace AnimalsLogic
 
         public static void ValidateArea(Pawn p)
         {
-            if (ForbidUtility.InAllowedArea(p.Position, p))
-            {
+            if (p.jobs == null) // just in case, should not happen
                 return;
-            }
 
-            if (p.CurJob != null && !p.CurJob.def.casualInterruptible)
-            {
-                return;
-            }
+            bool needsInterruption = false;
 
-            p.jobs.EndCurrentJob(JobCondition.InterruptForced, true);
+            if (!ForbidUtility.InAllowedArea(p.Position, p))
+                needsInterruption = true;
+
+            if (p.CurJob != null && p.CurJob.targetA != null && p.CurJob.targetA.Cell != null && !ForbidUtility.InAllowedArea(p.CurJob.targetA.Cell, p))
+                needsInterruption = true;
+
+            if (needsInterruption && (p.CurJob == null || p.CurJob.def.casualInterruptible))
+                p.jobs.EndCurrentJob(JobCondition.InterruptForced, true); // yes, even if p.CurJob is null
         }
 
         //////////////////////////////////////////////////////////////////
@@ -147,43 +148,5 @@ namespace AnimalsLogic
                 }
             }
         }
-
-        //protected static FieldInfo Pawn_DraftController_draftedInt = null;
-
-        //[HarmonyPatch(typeof(Pawn_DraftController), "set_Drafted", new Type[] { typeof(bool) })]
-        //static class Pawn_DraftController_Drafted_Patch
-        //{
-        //    static void Postfix(ref Pawn_DraftController __instance)
-        //    {
-        //        if (__instance == null || __instance.pawn == null || __instance.pawn.Faction != Faction.OfPlayer || Find.VisibleMap == null || Find.VisibleMap.mapPawns == null)
-        //        {
-        //            return;
-        //        }
-
-        //        if (Pawn_DraftController_draftedInt == null)
-        //            Pawn_DraftController_draftedInt = typeof(Pawn_DraftController).GetField("draftedInt", BindingFlags.NonPublic | BindingFlags.Instance);
-
-        //        if (!(bool)Pawn_DraftController_draftedInt.GetValue(__instance))
-        //        {
-        //            return;
-        //        }
-
-
-        //        Pawn pawn = __instance.pawn;
-
-        //        IEnumerable<Pawn> animals = from p in Find.VisibleMap.mapPawns.AllPawns
-        //                                    where p.RaceProps.Animal && p.Faction == Faction.OfPlayer && p.playerSettings != null && p.playerSettings.master == pawn && p.playerSettings.followDrafted
-        //                                    select p;
-
-        //        foreach (var animal in animals)
-        //        {
-        //            if (animal.CurJob != null && animal.CurJob.def != JobDefOf.WaitCombat && animal.CurJob.def != JobDefOf.Rescue && animal.CurJob.def != JobDefOf.AttackMelee && animal.CurJob.def != JobDefOf.AttackStatic && animal.CurJob.def.casualInterruptible)
-        //            {
-        //                animal.jobs.StopAll();
-        //                animal.jobs.JobTrackerTick();
-        //            }
-        //        }
-        //    }
-        //}
     }
 }

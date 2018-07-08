@@ -43,7 +43,7 @@ namespace AnimalsLogic
                     {
                         codes.InsertRange(i,
                             new List<CodeInstruction>() {
-                                new CodeInstruction(OpCodes.Ldsfld, typeof(Settings).GetField(nameof(Settings.wildness_threshold_for_tameness_decay))),
+                                new CodeInstruction(OpCodes.Ldsfld, typeof(Settings).GetField(nameof(Settings.training_decay_factor))),
                                 new CodeInstruction(OpCodes.Div)
                             });
                         break;

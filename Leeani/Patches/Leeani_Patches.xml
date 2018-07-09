@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+	<!-- injecting bookshelves as facilities for research benches -->
 	<Operation Class="PatchOperationSequence">
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>*/ThingDef[defName='HiTechResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+				<xpath>Defs/ThingDef[defName='HiTechResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef[defName='HiTechResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+				<xpath>Defs/ThingDef[defName='HiTechResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
 				<order>Append</order>
 				<value>
 					<li>LeeaniBookshelf</li>
@@ -15,10 +16,8 @@
 			</li>
 		</operations>
 	</Operation>
-
-	<!-- Actually, should check if this stuff is not there, but xpatch is breaking my brain, and it would be four conditional patches, one for each level -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName='SimpleResearchBench']</xpath>
+		<xpath>Defs/ThingDef[defName='SimpleResearchBench']</xpath>
 		<order>Append</order>
 		<value>
 			<comps>
@@ -30,9 +29,8 @@
 			</comps>
 		</value>
 	</Operation>
-
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[defName='SimpleResearchBench']</xpath>
+		<xpath>Defs/ThingDef[defName='SimpleResearchBench']</xpath>
 		<order>Append</order>
 		<value>
 			<placeWorkers>
@@ -50,32 +48,6 @@
 		</value>
 	</Operation>
 
-	<!-- Assigning tags to vanilla research so leeani would have some low tech from start without having access to all tribal stuff. -->
-	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
-		<operations>
-			<li Class="PatchOperationTest">
-				<success>Invert</success>
-				<xpath>Defs/ResearchProjectDef[defName='Greatbow' or defName='Smithing']/tags</xpath>
-			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ResearchProjectDef[defName='Greatbow' or defName='Smithing']</xpath>
-				<order>Append</order>
-				<value>
-					<tags />
-				</value>
-			</li>
-		</operations>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<!-- Some of those are actually part of classic start and therefor unlocked anyway. Added here just in case they would be changed to start without classic start stuff to better fit medieval tech level. -->
-		<xpath>Defs/ResearchProjectDef[defName='RecurveBow' or defName='Pemmican' or defName='PassiveCooler' or defName='Bedrolls' or defName='ComplexFurniture' or defName='Stonecutting' or defName='ComplexClothing' or defName='Smithing' or defName='Greatbow' or defName='TreeSowing']/tags</xpath>
-		<order>Append</order>
-		<value>
-			<li>LeeaniStart</li>
-		</value>
-	</Operation>
-	
 	<!-- Outlander union have a small chance to have a stray Leeani on their side. Piracy is not their style, so not adding them to pirate bands. -->
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Combat"]/options</xpath>

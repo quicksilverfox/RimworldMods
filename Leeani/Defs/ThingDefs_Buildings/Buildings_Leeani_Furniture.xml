@@ -289,7 +289,7 @@
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<selectable>true</selectable>
-		<fillPercent>0.20</fillPercent>
+		<fillPercent>0.25</fillPercent>
 		<pathCost>8</pathCost>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
@@ -309,8 +309,8 @@
 			<li Class="CompProperties_Flickable"/>
 		</comps>
 		<statBases>
-			<MaxHitPoints>50</MaxHitPoints>
-			<WorkToBuild>170</WorkToBuild>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>600</WorkToBuild>
 			<Flammability>1.0</Flammability>
 		</statBases>
 		<researchPrerequisites>

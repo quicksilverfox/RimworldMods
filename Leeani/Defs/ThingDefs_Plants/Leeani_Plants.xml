@@ -114,7 +114,7 @@
 	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>RawGrapes</defName>
 		<label>grapes</label>
-		<description>Grapes just ripe for red wine.</description>
+		<description>Grapes just ripe for red wine. Nice to eat, even when raw.</description>
 		<graphicData>
 			<texPath>Things/Item/RawFood/RawGrapes</texPath>
 		</graphicData>

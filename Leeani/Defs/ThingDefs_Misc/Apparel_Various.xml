@@ -24,7 +24,7 @@
 			<Cloth>60</Cloth>
 		</costList>
 		<equippedStatOffsets>
-			<ShootingAccuracy>2.0</ShootingAccuracy>
+			<ShootingAccuracyPawn>2.0</ShootingAccuracyPawn>
 			<AimingDelayFactor>-0.1</AimingDelayFactor>
 			<MentalBreakThreshold>-0.05</MentalBreakThreshold>
 			<SocialImpact>0.10</SocialImpact>

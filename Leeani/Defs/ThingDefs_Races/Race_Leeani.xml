@@ -206,14 +206,14 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>6</power>
-				<cooldownTime>1.4</cooldownTime>
+				<power>6.15</power>
+				<cooldownTime>1.5</cooldownTime>
 				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
 							<def>Stun</def>
-							<amount>22</amount>
+							<amount>14</amount>
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
@@ -223,17 +223,34 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>6</power>
-				<cooldownTime>1.4</cooldownTime>
+				<power>6.15</power>
+				<cooldownTime>1.5</cooldownTime>
 				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
 							<def>Stun</def>
-							<amount>22</amount>
+							<amount>14</amount>
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
+			</li>
+			<li>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>10.0</power>
+				<cooldownTime>2.0</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+				<commonality>0.2</commonality>
 			</li>
 			<li>
 				<label>head</label>
@@ -241,9 +258,10 @@
 					<li>Blunt</li>
 				</capacities>
 				<power>5</power>
-				<cooldownTime>1.8</cooldownTime>
+				<cooldownTime>2.0</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-				<commonality>0.2</commonality>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<commonality>0.07</commonality>
 			</li>
 		</tools>
 		<race>
@@ -258,7 +276,7 @@
 			<bloodDef>FilthBloodLeeani</bloodDef>	
 			<meatColor>(0, 0, 128)</meatColor>
 			<baseBodySize>0.9</baseBodySize>
-			<baseHealthScale>0.8</baseHealthScale>
+			<baseHealthScale>0.95</baseHealthScale>
 			<foodType>OmnivoreHuman</foodType>
 			<gestationPeriodDays>25</gestationPeriodDays>
 			<litterSizeCurve>

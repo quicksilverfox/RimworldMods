@@ -18,7 +18,7 @@
 			<StuffPower_Insulation_Cold>22</StuffPower_Insulation_Cold>
 			<StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
 			<MaxHitPoints>200</MaxHitPoints>
-			<MarketValue>5</MarketValue>
+			<MarketValue>4</MarketValue>
 			<Mass>0.033</Mass>
 			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0.2</DeteriorationRate>
@@ -54,7 +54,7 @@
 		<soundDrop>Wood_Drop</soundDrop>
 		<useHitPoints>true</useHitPoints>
 		<statBases>
-			<MarketValue>5</MarketValue>
+			<MarketValue>4</MarketValue>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Mass>0.25</Mass>
 			<Flammability>0.0</Flammability>
@@ -114,7 +114,7 @@
 		<soundDrop>ChunkRock_Drop</soundDrop>
 		<useHitPoints>false</useHitPoints>
 		<statBases>
-			<MarketValue>50</MarketValue>
+			<MarketValue>40</MarketValue>
 			<Mass>0.5</Mass>
 			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0.0</DeteriorationRate>

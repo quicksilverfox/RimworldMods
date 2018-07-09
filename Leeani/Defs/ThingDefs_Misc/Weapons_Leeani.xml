@@ -40,8 +40,8 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>8</power>
-				<cooldownTime>2.0</cooldownTime>
+				<power>7</power>
+				<cooldownTime>1.5</cooldownTime>
 				<commonality>0.33</commonality>
 			</li>
 			<li>
@@ -51,8 +51,8 @@
 					<li>Blunt</li>
 					<li>Poke</li>
 				</capacities>
-				<power>14.3</power>
-				<cooldownTime>2.0</cooldownTime>
+				<power>12.3</power>
+				<cooldownTime>1.5</cooldownTime>
 			</li>
 		</tools>
 	</ThingDef>

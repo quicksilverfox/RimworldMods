@@ -13,8 +13,8 @@
 		<canStageAttacks>true</canStageAttacks>
 		<leaderTitle>Loord</leaderTitle>
 		<startingGoodwill>
-			<min>10</min>
-			<max>40</max>
+			<min>20</min>
+			<max>20</max>
 		</startingGoodwill>
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
@@ -24,8 +24,8 @@
 			<li>Tribal</li>
 		</hairTags>
 		<naturalColonyGoodwill>
-			<min>-50</min>
-			<max>50</max>
+			<min>-70</min>
+			<max>70</max>
 		</naturalColonyGoodwill>
 		<visitorTraderKinds>
 			<li>Visitor_Outlander_Standard</li>

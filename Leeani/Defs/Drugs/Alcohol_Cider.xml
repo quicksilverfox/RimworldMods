@@ -74,6 +74,7 @@
 		</comps>
 		<tools>
 			<li>
+				<label>bottle</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
@@ -164,6 +165,7 @@
 		</comps>
 		<tools>
 			<li>
+				<label>bottle</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>

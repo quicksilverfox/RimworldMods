@@ -21,7 +21,6 @@
 			<WorkToMake>600</WorkToMake>
 			<Mass>1</Mass>
 			<DeteriorationRate>0.4</DeteriorationRate>
-			<Weapon_Bulk>0.5</Weapon_Bulk>
 		</statBases>
 		<equippedAngleOffset>-65</equippedAngleOffset>
 		<stuffCategories>

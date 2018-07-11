@@ -49,30 +49,38 @@
 							<useSkinColor>true</useSkinColor>
 							<inFrontOfBody>false</inFrontOfBody>
 							<offsets>
-								<front>
+								<south>
 									<bodyTypes>
 										<Male>(0,-0.22)</Male>
 										<Female>(0,-0.22)</Female>
 										<Fat>(0,-0.22)</Fat>
 										<Thin>(0,-0.22)</Thin>
 									</bodyTypes>
-								</front>
-								<back>
+								</south>
+								<north>
 									<bodyTypes>
 										<Male>(-0.02,-0.22)</Male>
 										<Female>(-0.02,-0.22)</Female>
 										<Fat>(-0.02,-0.22)</Fat>
 										<Thin>(-0.02,-0.22)</Thin>
 									</bodyTypes>
-								</back>
-								<side>
+								</north>
+								<east>
 									<bodyTypes>
 										<Male>(0.37,-0.36)</Male>
 										<Female>(0.37,-0.3)</Female>
 										<Fat>(0.39,-0.3)</Fat>
 										<Thin>(0.35,-0.35)</Thin>
 									</bodyTypes>
-								</side>
+								</east>
+								<west>
+									<bodyTypes>
+										<Male>(0.37,-0.36)</Male>
+										<Female>(0.37,-0.3)</Female>
+										<Fat>(0.39,-0.3)</Fat>
+										<Thin>(0.35,-0.35)</Thin>
+									</bodyTypes>
+								</west>
 							</offsets>
 							<hediffGraphics>
 							</hediffGraphics>

@@ -120,6 +120,7 @@
 		</graphicData>
 		<statBases>
 			<MarketValue>3.25</MarketValue>
+			<FoodPoisonChanceFixedHuman>0.0</FoodPoisonChanceFixedHuman>
 		</statBases>
 		<ingestible>
 			<preferability>RawTasty</preferability>

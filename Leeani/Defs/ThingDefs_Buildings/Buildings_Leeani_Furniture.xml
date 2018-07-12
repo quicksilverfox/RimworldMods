@@ -22,7 +22,7 @@
 
 	<ThingDef ParentName="ArtableFurnitureBase">
 		<defName>LoordThrone</defName>
-		<label>Throne</label>
+		<label>throne</label>
 		<graphicData>
 			<texPath>Things/Building/Furniture/LoordThrone</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -70,7 +70,7 @@
 
 	<ThingDef ParentName="ArtableFurnitureBase">
 		<defName>BanquetChair</defName>
-		<label>Banquet Chair</label>
+		<label>banquet chair</label>
 		<graphicData>
 			<texPath>Things/Building/Furniture/BanquetChair</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -346,7 +346,7 @@
 
 	<ThingDef ParentName="LeeaniStandingLampBase" >
 		<defName>LeeaniLampPost</defName>
-		<label>Electric Lamp-post</label>
+		<label>electric Lamp-post</label>
 		<description>Tall lamp that lights a big ol' area. Good for towns.</description>
 		<designationHotKey>Misc11</designationHotKey>
 		<comps>
@@ -366,7 +366,7 @@
 
 	<ThingDef ParentName="FurnitureBase">
 		<defName>LeeaniBookshelf</defName>
-		<label>Archive</label>
+		<label>archive</label>
 		<description>A reputable repository of rather relatable reading reams. In other words, a bookshelf. Boosts research when placed close to a research bench and can provide some joy to read its contents.</description>
 		<graphicData>
 			<texPath>Things/Building/Furniture/LeeaniBookshelf</texPath>

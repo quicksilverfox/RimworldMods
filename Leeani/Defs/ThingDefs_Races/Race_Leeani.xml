@@ -48,6 +48,8 @@
 							<bodyPart>leeani tail</bodyPart>
 							<useSkinColor>true</useSkinColor>
 							<inFrontOfBody>false</inFrontOfBody>
+							<drawnInBed>false</drawnInBed>
+							<drawnOnGround>true</drawnOnGround>
 							<offsets>
 								<south>
 									<bodyTypes>

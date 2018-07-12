@@ -2,8 +2,8 @@
 <Defs>
 
 	<ThingDef ParentName="BenchBase">
-		<defName>Press</defName>
-		<label>Wine press</label>
+		<defName>LeeaniWinePress</defName>
+		<label>wine press</label>
 		<thingClass>Building_WorkTable</thingClass>
 		<description>A manual foot-press to squash berries and fruit into a juice, ready for fermenting.</description>
 		<graphicData>
@@ -51,7 +51,7 @@
 	</ThingDef>
 
 	<Leeani.ExtraThingDef ParentName="BuildingBase">
-		<defName>CiderKeg</defName>
+		<defName>LeeaniCiderKeg</defName>
 		<label>cider keg</label>
 		<thingClass>Leeani.Building_FermentingVat</thingClass>
 		<vatProperties>
@@ -115,7 +115,7 @@
 	</Leeani.ExtraThingDef>
 
 	<Leeani.ExtraThingDef ParentName="BuildingBase">
-		<defName>WineKeg</defName>
+		<defName>LeeaniWineKeg</defName>
 		<label>wine keg</label>
 		<thingClass>Leeani.Building_FermentingVat</thingClass>
 		<vatProperties>

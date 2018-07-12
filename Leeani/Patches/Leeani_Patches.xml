@@ -47,6 +47,24 @@
 			<li>LeeaniPlayer</li>
 		</value>
 	</Operation>
+	
+	<!-- Adds wine press to brewery work giver to reduce work tab clutter -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/WorkGiverDef[defName='DoBillsBrew']/fixedBillGiverDefs</xpath>
+		<order>Append</order>
+		<value>
+			<li>LeeaniWinePress</li>
+		</value>
+	</Operation>
+	
+	<!-- Adds brazier to campfire work givers to reduce work tab clutter -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/WorkGiverDef[defName='DoBillsHaulCampfire' or defName='DoBillsCookCampfire']/fixedBillGiverDefs</xpath>
+		<order>Append</order>
+		<value>
+			<li>LeeaniStoneBrazier</li>
+		</value>
+	</Operation>
 
 	<!-- Outlander union have a small chance to have a stray Leeani on their side. Piracy is not their style, so not adding them to pirate bands. -->
 	<Operation Class="PatchOperationAdd">

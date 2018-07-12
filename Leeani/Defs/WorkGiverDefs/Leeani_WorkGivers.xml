@@ -1,80 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
-	<WorkGiverDef>
-		<defName>DoBillsCookBrazier</defName>
-		<label>cook meals at campfire</label>
-		<giverClass>WorkGiver_DoBill</giverClass>
-		<workType>Cooking</workType>
-		<priorityInType>97</priorityInType>
-		<fixedBillGiverDefs>
-			<li>LeeaniStoneBrazier</li>
-		</fixedBillGiverDefs>
-		<verb>cook</verb>
-		<gerund>cooking at</gerund>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
-		<prioritizeSustains>true</prioritizeSustains>
-	</WorkGiverDef>
-
-	<WorkGiverDef>
-		<defName>DoBillsHaulBrazier</defName>
-		<label>do bills at brazier</label>
-		<giverClass>WorkGiver_DoBill</giverClass>
-		<workType>Hauling</workType>
-		<priorityInType>30</priorityInType>
-		<fixedBillGiverDefs>
-			<li>LeeaniStoneBrazier</li>
-		</fixedBillGiverDefs>
-		<verb>work at</verb>
-		<gerund>working at</gerund>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
-		<prioritizeSustains>true</prioritizeSustains>
-	</WorkGiverDef>
-
-	<WorkGiverDef>
-		<defName>DoBillsPressBerries</defName>
-		<label>press berries</label>
-		<giverClass>WorkGiver_DoBill</giverClass>
-		<workType>Cooking</workType>
-		<priorityInType>30</priorityInType>
-		<fixedBillGiverDefs>
-			<li>Press</li>
-		</fixedBillGiverDefs>
-		<verb>press</verb>
-		<gerund>pressing</gerund>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
-		<prioritizeSustains>true</prioritizeSustains>
-	</WorkGiverDef>
-
-	<WorkGiverDef>
-		<defName>DoBillsPressGrapes</defName>
-		<label>press grapes</label>
-		<giverClass>WorkGiver_DoBill</giverClass>
-		<workType>Cooking</workType>
-		<priorityInType>30</priorityInType>
-		<fixedBillGiverDefs>
-			<li>Press</li>
-		</fixedBillGiverDefs>
-		<verb>press</verb>
-		<gerund>pressing</gerund>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
-		<prioritizeSustains>true</prioritizeSustains>
-	</WorkGiverDef>
-
 	<Leeani.WorkGiverDynamicDef>
 		<defName>FillCiderKeg</defName>
 		<label>fill cider keg</label>
 		<giverClass>Leeani.WorkGiver_FillFermentingVat</giverClass>
-		<inputThingDef>CiderKeg</inputThingDef>
+		<inputThingDef>LeeaniCiderKeg</inputThingDef>
 		<jobDef>FillCiderKeg</jobDef>
 		<workType>Hauling</workType>
 		<verb>fill</verb>
@@ -89,7 +20,7 @@
 		<defName>EmptyCiderKeg</defName>
 		<label>take cider out of keg</label>
 		<giverClass>Leeani.WorkGiver_TakeThingOutOfFermenter</giverClass>
-		<outputThingDef>CiderKeg</outputThingDef>
+		<outputThingDef>LeeaniCiderKeg</outputThingDef>
 		<jobDef>EmptyCiderKeg</jobDef>
 		<workType>Hauling</workType>
 		<verb>take cider</verb>
@@ -104,7 +35,7 @@
 		<defName>FillWineKeg</defName>
 		<label>fill wine keg</label>
 		<giverClass>Leeani.WorkGiver_FillFermentingVat</giverClass>
-		<inputThingDef>WineKeg</inputThingDef>
+		<inputThingDef>LeeaniWineKeg</inputThingDef>
 		<jobDef>FillWineKeg</jobDef>
 		<workType>Hauling</workType>
 		<verb>fill</verb>
@@ -119,7 +50,7 @@
 		<defName>EmptyWineKeg</defName>
 		<label>take wine out of keg</label>
 		<giverClass>Leeani.WorkGiver_TakeThingOutOfFermenter</giverClass>
-		<outputThingDef>WineKeg</outputThingDef>
+		<outputThingDef>LeeaniWineKeg</outputThingDef>
 		<jobDef>EmptyWineKeg</jobDef>
 		<workType>Hauling</workType>
 		<verb>take wine</verb>

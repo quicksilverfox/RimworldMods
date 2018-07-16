@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>CarbonWeave</defName>
 		<label>c-weave</label>
-		<description>A cloth-like material made of fine carbon fibers. Quite sturdy, liquid-proof and chemically inert. Offers excellent electrical conductivity, but this is pretty much opposite to what you'd typically want from cloth.</description>
+		<description>A cloth-like material made of fine carbon fibers. Quite sturdy, liquid-proof and chemically inert.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/Cloth</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -45,7 +45,7 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>CarbonFiber</defName>
 		<label>c-composite</label>
-		<description>Carbon fiber reinforced plastic is quite versatile, being both durable and light. Just don't try to make a sharp edge out of it.</description>
+		<description>Carbon fiber reinforced plastic is quite versatile, being both durable and light. Can dampen blunt strikes, but not that good against cutting and piercing.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/CarbonFiber</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -59,8 +59,8 @@
 			<Mass>0.25</Mass>
 			<Flammability>0.0</Flammability>
 			<DeteriorationRate>0.2</DeteriorationRate>
-			<StuffPower_Armor_Sharp>0.8</StuffPower_Armor_Sharp>
-			<StuffPower_Armor_Blunt>0.8</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Sharp>0.79</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>1.04</StuffPower_Armor_Blunt>
 			<StuffPower_Armor_Heat>1.2</StuffPower_Armor_Heat>
 			<StuffPower_Insulation_Cold>8</StuffPower_Insulation_Cold>
 			<StuffPower_Insulation_Heat>5</StuffPower_Insulation_Heat>

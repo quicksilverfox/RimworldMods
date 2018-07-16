@@ -2,11 +2,11 @@
 <Defs>
 
 	<ThingDef ParentName="DrugBase">
-		<defName>LeeaniCider</defName>
-		<label>craft cider</label>
-		<description>A delightful Leeani-style beverage made from berries and a subtle blend of herbs. Excessive consumption can lead to alcohol addiction.</description>
+		<defName>LeeaniWine</defName>
+		<label>craft wine</label>
+		<description>A delightful wine made from foot(paw?)-pressed grapes. Excessive consumption can lead to alcohol addiction.</description>
 		<graphicData>
-			<texPath>Things/Item/Cider</texPath>
+			<texPath>Things/Item/Wine</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<equippedAngleOffset>-150</equippedAngleOffset>

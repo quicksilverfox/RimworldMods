@@ -110,7 +110,7 @@
 							<li>LeeaniPeasant</li>
 							<li>LeeaniTradie</li>
 						</kindDefs>
-						<chance>20.0</chance>
+						<chance>50.0</chance>
 					</li>
 				</alienslavekinds>
 				<alienrefugeekinds>
@@ -128,7 +128,7 @@
 								<kindDefs>
 									<li>LeeaniSpacerColonist</li>
 								</kindDefs>
-								<chance>25.0</chance>
+								<chance>40.0</chance>
 							</li>
 						</pawnKindEntries>
 						<factionDefs>
@@ -261,7 +261,7 @@
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
-				<commonality>0.2</commonality>
+				<chanceFactor>0.2</chanceFactor>
 			</li>
 			<li>
 				<label>head</label>
@@ -272,7 +272,7 @@
 				<cooldownTime>2.0</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-				<commonality>0.07</commonality>
+				<chanceFactor>0.07</chanceFactor>
 			</li>
 		</tools>
 		<race>

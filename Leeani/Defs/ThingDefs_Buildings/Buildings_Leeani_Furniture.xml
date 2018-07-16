@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef Name="LeeaniBuildingBase" Abstract="True">
-		<category>Building</category>
-		<thingClass>Building</thingClass>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
-		<selectable>true</selectable>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<repairEffect>Repair</repairEffect>
-		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
-		<thingCategories>
-			<li>BuildingsFurniture</li>
-		</thingCategories>
-	</ThingDef>
-
-	<!-- MAIN DEFS -->
-
-
 	<ThingDef ParentName="ArtableFurnitureBase">
 		<defName>LoordThrone</defName>
 		<label>throne</label>
@@ -183,7 +164,7 @@
 		</tradeTags>
 	</ThingDef>
 
-	<ThingDef ParentName="LeeaniBuildingBase">
+	<ThingDef ParentName="FurnitureBase">
 		<defName>LeeaniStoneBrazier</defName>
 		<label>brazier</label>
 		<thingClass>Building_WorkTable</thingClass>
@@ -283,7 +264,7 @@
 		</tradeTags>
 	</ThingDef>
 
-	<ThingDef Abstract="True" Name="LeeaniLampBase" ParentName="LeeaniBuildingBase">
+	<ThingDef Abstract="True" Name="LeeaniLampBase" ParentName="FurnitureBase">
 		<thingClass>Building</thingClass>
 		<category>Building</category>
 		<altitudeLayer>Building</altitudeLayer>
@@ -364,7 +345,7 @@
 		</tradeTags>
 	</ThingDef>
 
-	<ThingDef ParentName="FurnitureBase">
+	<ThingDef ParentName="ArtableFurnitureBase">
 		<defName>LeeaniBookshelf</defName>
 		<label>archive</label>
 		<description>A reputable repository of rather relatable reading reams. In other words, a bookshelf. Boosts research when placed close to a research bench and can provide some joy to read its contents.</description>

@@ -41,7 +41,6 @@
 				</capacities>
 				<power>7</power>
 				<cooldownTime>1.5</cooldownTime>
-				<commonality>0.33</commonality>
 			</li>
 			<li>
 				<label>head</label>

@@ -11,114 +11,11 @@ using System.Reflection.Emit;
 namespace AnimalsLogic
 {
     /*
-     * Pawns react to zone restriction changes and master draft/fieldwork instantly.
+     * Pawns react to master fieldwork instantly.
      */
 
     class Come
     {
-        /* Does not work. Setter is inlined by JIT compiler. See workaround below.
-        // Try to find allowed area immediately after restrictions are changed
-        protected static FieldInfo Pawn_PlayerSettings_pawn = null;
-
-        [HarmonyPatch(typeof(Pawn_PlayerSettings), "set_AreaRestriction", new Type[] { typeof(Area) })]
-        static class Pawn_PlayerSettings_set_AreaRestriction_Patch
-        {
-            static void Postfix(Pawn_PlayerSettings __instance, Area value)
-            {
-                if (Pawn_PlayerSettings_pawn == null)
-                    Pawn_PlayerSettings_pawn = typeof(Pawn_PlayerSettings).GetField("pawn", BindingFlags.NonPublic | BindingFlags.Instance);
-
-                ValidateArea((Pawn)Pawn_PlayerSettings_pawn.GetValue(__instance));
-            }
-        }
-        */
-
-        // Workaround for set_AreaRestriction - patching calling instances. Not the best idea, but probably safe. Probably.
-        #region AreaRestriction
-        // AFAIK Harmony can't patch methods in batch, so have to apply the same patch for each methid.
-        [HarmonyPatch(typeof(AreaAllowedGUI), "DoAreaSelector")]
-        static class AreaAllowedGUI_Patch
-        {
-            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-            {
-                return RunTranspiler(instructions);
-            }
-        }
-        [HarmonyPatch(typeof(PawnColumnWorker_AllowedArea), "HeaderClicked")]
-        static class PawnColumnWorker_AllowedArea_Patch
-        {
-            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-            {
-                return RunTranspiler(instructions);
-            }
-        }
-        [HarmonyPatch]
-        static class InspectPaneFiller_Patch
-        {
-            static MethodInfo TargetMethod()
-            {
-                // Inner method of the private method of the internal class. Delightful.
-                MethodInfo method = typeof(Pawn).Assembly.GetType("RimWorld.InspectPaneFiller").GetNestedTypes(AccessTools.all).First(
-                        inner_class => inner_class.Name.Contains("<DrawAreaAllowed>")
-                    ).GetMethods(AccessTools.all).First(
-                        m => m.Name.Contains("<>m__")
-                    );
-
-                if (method == null)
-                    Log.Error("Animal Logic is unable to detect InspectPaneFiller inner method.");
-
-                return method;
-            }
-
-            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-            {
-                return RunTranspiler(instructions);
-            }
-        }
-
-        // Common tool for patching each one of the methods
-        private static IEnumerable<CodeInstruction> RunTranspiler(IEnumerable<CodeInstruction> instructions)
-        {
-            MethodInfo set_AreaRestriction = typeof(Pawn_PlayerSettings).GetMethod("set_AreaRestriction");
-
-            var codes = new List<CodeInstruction>(instructions);
-            for (int i = 0; i < codes.Count; i++)
-            {
-                // find: callvirt instance void RimWorld.Pawn_PlayerSettings::set_AreaRestriction(class Verse.Area)
-                if (codes[i].opcode == OpCodes.Callvirt && (MethodInfo)codes[i].operand == set_AreaRestriction)
-                {
-                    // add after: ValidateArea call
-                    codes.Insert(i + 1, new CodeInstruction(OpCodes.Call, typeof(Come).GetMethod(nameof(ValidateArea))));
-
-                    // add before: duplicate argument to use with ValidateArea
-                    codes.Insert(i - 2, new CodeInstruction(OpCodes.Dup));
-                    break;
-                }
-            }
-
-            return codes.AsEnumerable();
-        }
-        #endregion
-
-        public static void ValidateArea(Pawn p)
-        {
-            if (p.jobs == null) // just in case, should not happen
-                return;
-
-            bool needsInterruption = false;
-
-            if (!ForbidUtility.InAllowedArea(p.Position, p))
-                needsInterruption = true;
-
-            if (p.CurJob != null && p.CurJob.targetA != null && p.CurJob.targetA.Cell != null && !ForbidUtility.InAllowedArea(p.CurJob.targetA.Cell, p))
-                needsInterruption = true;
-
-            if (needsInterruption && (p.CurJob == null || p.CurJob.def.casualInterruptible))
-                p.jobs.EndCurrentJob(JobCondition.InterruptForced, true); // yes, even if p.CurJob is null
-        }
-
-        //////////////////////////////////////////////////////////////////
-
         protected static FieldInfo Pawn_JobTracker_pawn = null;
 
         // public void StartJob(Job newJob, JobCondition lastJobEndCondition = JobCondition.None, ThinkNode jobGiver = null, bool resumeCurJobAfterwards = false, bool cancelBusyStances = true, ThinkTreeDef thinkTree = null, JobTag? tag = default(JobTag?));

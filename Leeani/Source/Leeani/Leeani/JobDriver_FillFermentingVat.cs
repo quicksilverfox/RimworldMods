@@ -32,11 +32,24 @@ namespace Leeani
             }
         }
 
-
-
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return this.pawn.Reserve(this.Vat, this.job, 1, -1, null) && this.pawn.Reserve(this.InputThing, this.job, 1, -1, null);
+            Pawn pawn = this.pawn;
+            LocalTargetInfo target = this.Vat;
+            Job job = this.job;
+            bool arg_59_0;
+            if (pawn.Reserve(target, job, 1, -1, null, errorOnFailed))
+            {
+                pawn = this.pawn;
+                target = this.InputThing;
+                job = this.job;
+                arg_59_0 = pawn.Reserve(target, job, 1, -1, null, errorOnFailed);
+            }
+            else
+            {
+                arg_59_0 = false;
+            }
+            return arg_59_0;
         }
 
 

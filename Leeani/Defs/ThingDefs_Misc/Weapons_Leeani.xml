@@ -35,14 +35,6 @@
 		</recipeMaker>
 		<tools>
 			<li>
-				<label>middle</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>7</power>
-				<cooldownTime>1.5</cooldownTime>
-			</li>
-			<li>
 				<label>head</label>
 				<labelUsedInLogging>false</labelUsedInLogging>
 				<capacities>

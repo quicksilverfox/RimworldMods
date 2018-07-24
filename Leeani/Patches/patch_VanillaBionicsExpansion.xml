@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>[FSF] Vanilla Bionics Expansion</modName>
+				<yourMod>Leeani Playable Race</yourMod>
+			</li>
+
+			<li Class="ModCheck.FindFile">
+				<modName>[FSF] Vanilla Bionics Expansion</modName>
+			</li>
+
+			<!-- EPOE built-in stuff. Since this part is gated behind ModCheck.FindFile, this should only affect EPOE surgery. -->
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/RecipeDef[@Name="FSFBionicSurgery"]/recipeUsers</xpath>
+						<value>
+							<li>Alien_Leeani</li>
+						</value>
+					</li>
+				</operations>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

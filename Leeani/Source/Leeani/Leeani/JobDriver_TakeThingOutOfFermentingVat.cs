@@ -34,9 +34,12 @@ namespace Leeani
             }
         }
 
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return this.pawn.Reserve(this.Vat, this.job, 1, -1, null);
+            Pawn pawn = this.pawn;
+            LocalTargetInfo target = this.Vat;
+            Job job = this.job;
+            return pawn.Reserve(target, job, 1, -1, null, errorOnFailed);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()

@@ -40,7 +40,7 @@
 		</statBases>
 		<terrainAffordanceNeeded>ShallowWater</terrainAffordanceNeeded>
 		<researchPrerequisites>
-			<li>Waterproofing</li>
+			<li>CarbonResearch</li>
 		</researchPrerequisites>
 		<costList>
 			<CarbonFiber>2</CarbonFiber>

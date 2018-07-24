@@ -102,65 +102,6 @@
 			<hairSettings>
 				<hasHair>false</hasHair>
 			</hairSettings>
-			<pawnKindSettings>
-				<alienslavekinds>
-					<li>
-						<kindDefs>
-							<li>LeeaniSpaceRefugee</li>
-							<li>LeeaniPeasant</li>
-							<li>LeeaniTradie</li>
-						</kindDefs>
-						<chance>50.0</chance>
-					</li>
-				</alienslavekinds>
-				<alienrefugeekinds>
-					<li>
-						<kindDefs>
-							<li>LeeaniSpaceRefugee</li>
-						</kindDefs>
-						<chance>80.0</chance>
-					</li>
-				</alienrefugeekinds>
-				<startingColonists>
-					<li>
-						<pawnKindEntries>
-							<li>
-								<kindDefs>
-									<li>LeeaniSpacerColonist</li>
-								</kindDefs>
-								<chance>40.0</chance>
-							</li>
-						</pawnKindEntries>
-						<factionDefs>
-							<li>LeeaniPlayerColony</li> 
-							<li>PlayerColony</li> 
-						</factionDefs>
-					</li>
-				</startingColonists>
-				<alienwandererkinds>
-					<li>
-						<pawnKindEntries>
-							<li>
-								<kindDefs>
-									<li>LeeaniSpaceRefugee</li>
-									<li>LeeaniScout</li>
-									<li>LeeaniSoldier</li>
-									<li>LeeaniNoble</li>
-									<li>LeeaniTradie</li>
-									<li>LeeaniPeasant</li>
-									<li>LeeaniArkhaevest</li>
-									<li>LeeaniMercenary</li>
-									<li>LeeaniChampion</li>
-								</kindDefs>
-								<chance>30.0</chance>
-							</li>
-						</pawnKindEntries>
-						<factionDefs>
-							<li>PlayerColony</li> 
-						</factionDefs>
-					</li>
-				</alienwandererkinds>
-			</pawnKindSettings>
 			<relationSettings>
 				<relationChanceModifierChild>1.1</relationChanceModifierChild>
 				<relationChanceModifierExLover>0.2</relationChanceModifierExLover>
@@ -287,7 +228,7 @@
 			<bloodDef>FilthBloodLeeani</bloodDef>	
 			<meatColor>(0, 0, 128)</meatColor>
 			<baseBodySize>0.9</baseBodySize>
-			<baseHealthScale>0.95</baseHealthScale>
+			<baseHealthScale>0.9</baseHealthScale>
 			<foodType>OmnivoreHuman</foodType>
 			<gestationPeriodDays>25</gestationPeriodDays>
 			<litterSizeCurve>

@@ -80,7 +80,7 @@
 			</categories>
 			<commonality>0.3</commonality>
 			<constructEffect>ConstructWood</constructEffect>
-			<color>(35,35,35)</color>
+			<color>(75,75,75)</color>
 			<soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
 			<soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
 			<soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>

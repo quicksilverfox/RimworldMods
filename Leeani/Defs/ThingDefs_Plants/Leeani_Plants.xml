@@ -57,10 +57,6 @@
 		</graphicData>
 		<selectable>true</selectable>
 		<pathCost>10</pathCost>
-		<ingestible>
-		  <foodType>Tree</foodType>
-		  <preferability>RawBad</preferability>
-		</ingestible>
 		<plant>
 			<fertilitySensitivity>0.6</fertilitySensitivity>
 			<growDays>10.0</growDays>
@@ -74,7 +70,6 @@
 				<li>Hydroponic</li>
 			</sowTags>
 			<topWindExposure>0.1</topWindExposure>
-			<immatureGraphicPath>Things/Plant/GrapeVineImmature</immatureGraphicPath>
 			<visualSizeRange>
 				<min>1</min>
 				<max>1</max>

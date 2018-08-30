@@ -7,7 +7,7 @@
 		<description>A cloth-like material made of fine carbon fibers. Quite sturdy, liquid-proof and chemically inert.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/Cloth</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_StackCount</graphicClass>
 			<color>(35,35,35)</color>
 		</graphicData>
 		<useHitPoints>true</useHitPoints>

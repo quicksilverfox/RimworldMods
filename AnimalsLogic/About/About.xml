@@ -2,7 +2,7 @@
 <ModMetaData>
 	<name>Animals Logic</name>
 	<author>Oblitus</author>
-	<targetVersion>1.0.0</targetVersion>
+	<targetVersion>0.19.0</targetVersion>
 	<description>[*] Tags trained and pregnant animals in caravan and trade interfaces.
 [*] Changes pack-able animals without a load to be considered a sellable chattel by the caravans.
 [*] Unforbids slaughtered animals.

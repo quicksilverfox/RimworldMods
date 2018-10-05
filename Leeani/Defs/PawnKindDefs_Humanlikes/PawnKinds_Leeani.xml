@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	
+
 	<!-- ============================ Leeani Spacer Base ========================== -->
-	
+
 	<PawnKindDef>
 		<!-- Not all leeani are Luddites living in medieval colonies amongst their kind, you can meet them in space too -->
 		<defName>LeeaniSpaceRefugee</defName>
@@ -10,7 +10,9 @@
 		<race>Alien_Leeani</race>
 		<combatPower>30</combatPower>
 		<baseRecruitDifficulty>0.30</baseRecruitDifficulty>
-		<backstoryCategory>Civil</backstoryCategory>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
 		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
 		<forceNormalGearQuality>true</forceNormalGearQuality>
 		<isFighter>false</isFighter>
@@ -45,7 +47,6 @@
 	<PawnKindDef Name="LeeaniBase" Abstract="True">
 		<defaultFactionType>LeeaniHold</defaultFactionType>
 		<race>Alien_Leeani</race>
-		<backstoryCategory>LeeaniBackstory</backstoryCategory>
 		<chemicalAddictionChance>0.005</chemicalAddictionChance>
 		<baseRecruitDifficulty>0.75</baseRecruitDifficulty>
 		<apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
@@ -64,7 +65,6 @@
 		<race>Alien_Leeani</race>
 		<itemQuality>Poor</itemQuality>
 		<isFighter>false</isFighter>
-		<backstoryCategory>LeeaniBackstory</backstoryCategory>
 		<gearHealthRange>
 			<min>0.2</min>
 			<max>2.0</max>
@@ -120,7 +120,9 @@
 	<PawnKindDef ParentName="LeeaniCivBase">
 		<defName>LeeaniPeasant</defName>
 		<label>peasant</label>
-		<backstoryCategory>LeeaniPeasantBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
 		<weaponTags>
 			<li>NonNeolithicOnlyMelee</li>
 			<li>NonNeolithicOnlySimpleMelee</li>
@@ -140,7 +142,9 @@
 		<defName>LeeaniNoble</defName>
 		<label>noble</label>
 		<labelPlural>nobles</labelPlural>
-		<backstoryCategory>LeeaniNobleBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
 		<minGenerationAge>20</minGenerationAge>
 		<maxGenerationAge>60</maxGenerationAge>
 		<apparelMoney>
@@ -154,7 +158,9 @@
 
 	<PawnKindDef ParentName="LeeaniCivBase">
 		<defName>LeeaniTrader</defName>
-		<backstoryCategory>LeeaniWorkerBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
 		<label>trader</label>
 		<trader>true</trader>
 	</PawnKindDef>  
@@ -162,7 +168,9 @@
 	<PawnKindDef ParentName="LeeaniCivBase">
 		<defName>LeeaniTradie</defName>
 		<label>tradesman</label>
-		<backstoryCategory>LeeaniWorkerBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
 		<apparelMoney>
 			<min>100</min>
 			<max>700</max>
@@ -172,7 +180,9 @@
 	<PawnKindDef ParentName="LeeaniCivBase">
 		<defName>LeeaniArkhaevest</defName>
 		<label>arkhaevest</label>
-		<backstoryCategory>LeeaniArkhaevestBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniArkhaevestBackstory</li>
+		</backstoryCategories>
 		<apparelMoney>
 			<min>600</min>
 			<max>700</max>
@@ -183,7 +193,9 @@
 		<defName>LeeaniLoord</defName>
 		<label>loord</label>
 		<minGenerationAge>20</minGenerationAge>
-		<backstoryCategory>LeeaniLoordBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniLoordBackstory</li>
+		</backstoryCategories>
 		<gearHealthRange>
 			<min>1.0</min>
 			<max>3.5</max>
@@ -216,7 +228,9 @@
 		<label>scout</label>
 		<combatPower>40</combatPower>
 		<maxGenerationAge>30</maxGenerationAge>
-		<backstoryCategory>LeeaniScoutBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniScoutBackstory</li>
+		</backstoryCategories>
 		<gearHealthRange>
 			<min>0.5</min>
 			<max>1.8</max>
@@ -263,7 +277,6 @@
 		<itemQuality>Normal</itemQuality>
 		<minGenerationAge>20</minGenerationAge>
 		<maxGenerationAge>40</maxGenerationAge>
-		<backstoryCategory>LeeaniSoldierBackstory</backstoryCategory>
 		<gearHealthRange>
 			<min>0.7</min>
 			<max>2.3</max>
@@ -316,12 +329,18 @@
 		<defName>LeeaniMercenary</defName>
 		<label>mercenary</label>
 		<combatPower>80</combatPower>
+		<backstoryCategories>
+			<li>LeeaniSoldierBackstory</li>
+		</backstoryCategories>
 	</PawnKindDef>
 
 	<PawnKindDef ParentName="LeeaniMilBase">
 		<defName>LeeaniSoldier</defName>
 		<label>soldier</label>
 		<combatPower>100</combatPower>
+		<backstoryCategories>
+			<li>LeeaniSoldierBackstory</li>
+		</backstoryCategories>
 	</PawnKindDef>
 
 	<PawnKindDef ParentName="LeeaniMilBase">
@@ -336,7 +355,9 @@
 			<min>1000</min>
 			<max>2000</max>
 		</weaponMoney>
-		<backstoryCategory>LeeaniChampionBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniChampionBackstory</li>
+		</backstoryCategories>
 	</PawnKindDef>
 
 
@@ -346,7 +367,9 @@
 		<combatPower>220</combatPower>
 		<minGenerationAge>26</minGenerationAge>
 		<maxGenerationAge>40</maxGenerationAge>
-		<backstoryCategory>LeeaniCaptainBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniCaptainBackstory</li>
+		</backstoryCategories>
 		<gearHealthRange>
 			<min>1.0</min>
 			<max>3.5</max>

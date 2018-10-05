@@ -15,7 +15,9 @@
 		<defName>Leeani</defName>
 		<label>colonist</label>
 		<defaultFactionType>PlayerColony</defaultFactionType>
-		<backstoryCategory>LeeaniBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
 		<backstoryCryptosleepCommonality>0.01</backstoryCryptosleepCommonality>
 		<apparelTags>
 			<li>LeeaniPlayer</li>
@@ -44,7 +46,9 @@
 		<defName>LeeaniSpacerColonist</defName>
 		<label>colonist</label>
 		<defaultFactionType>PlayerColony</defaultFactionType>
-		<backstoryCategory>Civil</backstoryCategory>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
 		<chemicalAddictionChance>0.06</chemicalAddictionChance>
 		<apparelTags>
 			<li>IndustrialBasic</li>

@@ -3,7 +3,7 @@
 	<name>Leeani Playable Race</name>
 	<author>MikeRobe</author>
 	<url></url>
-	<targetVersion>1.0.0</targetVersion>
+	<targetVersion>0.19.0</targetVersion>
 	<description>A nice happy race of people-foxes. Alien Race Framework required, load after it. Built-in support for EPOE.
 	
 	Plenty of things planned in the versions to come, this is the first public release so don't expect too much.

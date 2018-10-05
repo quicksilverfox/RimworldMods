@@ -19,7 +19,9 @@
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Medieval</techLevel>
-		<backstoryCategory>Civil</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
 		<hairTags>
 			<li>Tribal</li>
 		</hairTags>

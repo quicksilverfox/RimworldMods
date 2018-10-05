@@ -15,7 +15,9 @@
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Medieval</techLevel>
-		<backstoryCategory>LeeaniBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
 		<homeIconPath>World/LeeaniBaseIcon</homeIconPath>
 		<expandingIconTexture>World/LeeaniBaseIcon</expandingIconTexture>
 		<startingResearchTags>
@@ -47,7 +49,9 @@
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Medieval</techLevel>
-		<backstoryCategory>LeeaniBackstory</backstoryCategory>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
 		<homeIconPath>World/LeeaniBaseIcon</homeIconPath>
 		<expandingIconTexture>World/LeeaniBaseIcon</expandingIconTexture>
 		<startingResearchTags>

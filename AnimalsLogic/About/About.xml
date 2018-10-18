@@ -3,12 +3,9 @@
 	<name>Animals Logic</name>
 	<author>Oblitus</author>
 	<targetVersion>1.0.0</targetVersion>
-	<description>[*] Tags trained and pregnant animals in caravan and trade interfaces.
-[*] Changes pack-able animals without a load to be considered a sellable chattel by the caravans.
-[*] Unforbids slaughtered animals.
+	<description>[*] Tags trained animals in caravan and trade interfaces.
 [*] Egg-layers will try to find a bed (or any other type of animal sleeping spots) in their allowed area to lay an egg. Unforbids eggs laid outside the home area.
-[*] Animals who should follow master when doing fieldwork or drafted are notified to come immediately instead of after the end of the current task.
-[*] When allowed zone is changed animals react immediately instead of after the end of the current task.
+[*] Improved zone and task change responsiveness for animals.
 [*] Animals can own beds.
 [*] Animal beds can be medical.
 [*] (Optional) Configurable animal hauling efficiency.
@@ -17,7 +14,6 @@
 [*] (Optional) Converts any ruined eggs into unfertilized chicken eggs.
 [*] (Optional, default off) Converts any generic meat into chicken meat upon butchering.
 [*] (Optional) Predators hunting your pawns (human-like or animals) will be considered hostile by all your pawns and turrets.
-[*] (Optional) Prevents animals from eating random stuff.
-[*] (Optional) Animals have greater chance to fight back when attacked in melee.</description>
+[*] (Optional) Prevents animals from eating random stuff.</description>
 	<url>https://ludeon.com/forums/index.php?topic=34628</url>
 </ModMetaData>

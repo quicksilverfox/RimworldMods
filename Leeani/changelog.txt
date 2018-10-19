@@ -1,0 +1,46 @@
+Major fixes:
+Updated for 1.0
+Fixed totally broken kegs (was impossible to fill due to a bug in WorkGiver)
+Fixed totally broken brazier (work giver def was missing)
+Fixed totally broken archive (job def and joy giver were missing)
+Fixed broken tail surgery
+Fixed archive interaction with simple research bench
+
+Major tuning:
+Move speed reduced from 8.00 to 5.65
+ComfyTemperatureMin increased from -39 to -7
+They are OrganicStandard, not OrganicAgeless
+
+Small tuning:
+Cider and wine are social drugs, not medical.
+Banquet chair and throne have reasonable comfort. Ajusted furniture HP and fill percent.
+Fixed initial rotation of furniture.
+Reduced cost of most research projects (5200 total cost, and most of them is fluff). Merged some researches.
+Marked all researches to be ignored by tech advancing mod.
+Marked all researches as leeani-exclusive in their descriptions.
+Nerfed leeani leather insulation from 2.0 to 1.1
+Organic tail is marked as Leeani tail
+Juniper: MarketValue 1.5 -> 1.2, daysToRotStart 40 -> 60
+Berry juice: value 25 -> 10
+Grapes: value 3.5 -> 3.25, preferability RawBad -> RawTasty, raw grapes can't cause food poisoning. Grapes are not trees (was causing compatibility issues).
+Grape juice: value 25 -> 10, nutrition 0.5 -> 0.2
+Wine and Cider: Value 12 -> 18
+Quarterstaff: removed "middle" attack, can Poke. Ajusted stats to better match with 0.19 changes.
+Fists: power 8 -> 7
+Backstories have proper requiredWorkTags.
+Bycocket is marked as leeani-exclusive, since its shape does not work with human heads. WorkToMake and MaxHitPoints are set to reasonable values. Tuned other stats for the new armor system.
+Outlander Union has a small chance to have a Leeani as caravan or base guard.
+Ajusted melee stats to better work with 0.19 changes. Raised hp multiplier from 0.8 to 0.9 since their speed is not that OP of a bonus with massively nerfed ranged weapons.
+Forced beauty trait is not always of maximal level.
+
+Scenarios:
+Fixed initial tech level for scenario (was Ultra).
+Tuned (mostly reduced) apparel and weapon budget.
+Traditions and cider brewing are unlocked at start for Leeani faction.
+Leeani start with pemmican, passive cooler, smithing, recurve bows and greatbows researched.
+Start with 3 great bows and 2 wooden quarterstaves instead of two bolt-action rifles (kinda outside their tech tree) and one plasteel quarterstaff (it is impossible to even make one).
+Reworked starting apparel to be reasonably medieval. No tribal junk or spacer tech.
+
+Built-in mod support:
+Vulpine Race Pack (can install vulpine tails, 'cause leeani are vulpines)
+Manifest for Fluffy's Mod Manager.

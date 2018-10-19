@@ -25,7 +25,12 @@
 					<li>
 						<defName>Beauty</defName>
 						<degree>2</degree>
-						<chance>50</chance>
+						<chance>25</chance>
+					</li>
+					<li>
+						<defName>Beauty</defName>
+						<degree>1</degree>
+						<chance>25</chance>
 					</li>
 					<li>
 						<defName>Kind</defName>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>A Dog Said...</modName>
+				<yourMod>HousekeeperAssistanceCat</yourMod>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<success>Always</success>
+				<xpath>Defs/RecipeDef[@ParentName="SurgeryFleshAnimal"]/recipeUsers</xpath>
+				<value>
+					<li>HousekeeperCat</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+
+</Patch>

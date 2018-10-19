@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HousekeeperCat.label>housekeeper cat</HousekeeperCat.label>
+  <HousekeeperCat.description>Highly intelligent cat-like creature, engineered to provide some help with housekeeping.</HousekeeperCat.description>
+  <HousekeeperCat_Leather.label>housekeepse cat fur</HousekeeperCat_Leather.label>
+  <HousekeeperCat_Leather.description>housekeepse cat fur</HousekeeperCat_Leather.description>
+  <HousekeeperCat_Leather.stuffProps.stuffAdjective>housekeepse cat fur</HousekeeperCat_Leather.stuffProps.stuffAdjective>
+  <HousekeeperCat_Meat.label>housekeeper cat meat</HousekeeperCat_Meat.label>
+  <HousekeeperCat_Meat.description>housekeeper cat meat..</HousekeeperCat_Meat.description>
+  <HousekeeperCat_Corpse.label>housekeeper cat corpse</HousekeeperCat_Corpse.label>
+  <HousekeeperCat_Corpse.description>housekeeper cat corpse</HousekeeperCat_Corpse.description>
+</LanguageData>

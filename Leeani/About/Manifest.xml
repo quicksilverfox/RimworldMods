@@ -15,6 +15,6 @@
 	</loadBefore>
 	<loadAfter>
 	</loadAfter>
-	<manifestUri>https://github.com/quicksilverfox/RimworldMods/tree/master/Leeani/About/Manifest.xml</manifestUri>
+	<manifestUri>https://raw.githubusercontent.com/quicksilverfox/RimworldMods/master/Leeani/About/Manifest.xml</manifestUri>
 	<downloadUri>https://github.com/quicksilverfox/RimworldMods/releases/latest</downloadUri>
 </Manifest>

@@ -16,26 +16,93 @@
 			</li>
 		</operations>
 	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName='SimpleResearchBench']</xpath>
-		<order>Append</order>
-		<value>
-			<comps>
-				<li Class="CompProperties_AffectedByFacilities">
-					<linkableFacilities>
-						<li>LeeaniBookshelf</li>
-					</linkableFacilities>
-				</li>
-			</comps>
-		</value>
+	<!-- to ensure proper compatibility with other furniture mods have to check every step here -->
+	<!-- adding linkables for simple research bench and adding bookshelves to them -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']</xpath>
+				<order>Append</order>
+				<value>
+					<comps />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps</xpath>
+				<order>Append</order>
+				<value>
+					<li Class='CompProperties_AffectedByFacilities' />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']</xpath>
+				<order>Append</order>
+				<value>
+					<linkableFacilities />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+				<order>Append</order>
+				<value>
+					<li>LeeaniBookshelf</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- making linkables visible when placing them -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/placeWorkers</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']</xpath>
+				<order>Append</order>
+				<value>
+					<placeWorkers />
+				</value>
+			</li>
+		</operations>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName='SimpleResearchBench']</xpath>
+		<xpath>Defs/ThingDef[defName='SimpleResearchBench']/placeWorkers</xpath>
 		<order>Append</order>
 		<value>
-			<placeWorkers>
-				<li>PlaceWorker_ShowFacilitiesConnections</li>
-			</placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
 		</value>
 	</Operation>
 

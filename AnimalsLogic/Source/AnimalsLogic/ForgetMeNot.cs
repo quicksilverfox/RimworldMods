@@ -10,6 +10,7 @@ namespace AnimalsLogic
 {
     class ForgetMeNot
     {
+        // This function is actually inlined and this patch is not working
         [HarmonyPatch(typeof(TrainableUtility), "TamenessCanDecay", new Type[] { typeof(ThingDef) })]
         static class TrainableUtility_TamenessCanDecay_Patch
         {
@@ -28,6 +29,45 @@ namespace AnimalsLogic
 
                 return codes.AsEnumerable();
             }
+        }
+
+        // this is workaround
+        [HarmonyPatch(typeof(Pawn_TrainingTracker), "TrainingTrackerTickRare")]
+        static class Pawn_TrainingTracker_TrainingTrackerTickRare_Patch
+        {
+            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                return PatchTamenessDecay(instructions);
+            }
+        }
+        [HarmonyPatch(typeof(TrainableUtility), "GetWildnessExplanation")]
+        static class TrainableUtility_GetWildnessExplanation_Patch
+        {
+            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                return PatchTamenessDecay(instructions);
+            }
+        }
+
+        static IEnumerable<CodeInstruction> PatchTamenessDecay(IEnumerable<CodeInstruction> instructions)
+        {
+            var codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count; i++)
+            {
+                //ldc.r4 0.101
+                if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(TrainableUtility).GetMethod(nameof(TrainableUtility.TamenessCanDecay)))
+                {
+                    codes[i].operand = typeof(ForgetMeNot).GetMethod(nameof(TamenessCanDecay));
+                    break;
+                }
+            }
+
+            return codes.AsEnumerable();
+        }
+
+        public static bool TamenessCanDecay(ThingDef def)
+        {
+            return def.race.wildness > Settings.wildness_threshold_for_tameness_decay;
         }
 
         [HarmonyPatch(typeof(TrainableUtility), "DegradationPeriodTicks", new Type[] { typeof(ThingDef) })]

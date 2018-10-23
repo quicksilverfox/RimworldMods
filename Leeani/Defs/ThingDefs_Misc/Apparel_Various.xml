@@ -21,7 +21,7 @@
 			<EquipDelay>0.8</EquipDelay>
 		</statBases>
 		<costList>
-			<Cloth>60</Cloth>
+			<Cloth>30</Cloth>
 		</costList>
 		<equippedStatOffsets>
 			<ShootingAccuracyPawn>2.0</ShootingAccuracyPawn>

@@ -98,15 +98,18 @@
 			<trainability>Advanced</trainability>
 			<wildness>0.1</wildness>
 			<wildBiomes>
-				<SeaIce>0.01</SeaIce>
-				<IceSheet>0.05</IceSheet>
-				<Tundra>0.05</Tundra>
-				<BorealForest>0.1</BorealForest>
-				<TemperateForest>0.05</TemperateForest>
-				<TropicalRainforest>0.05</TropicalRainforest>
-				<AridShrubland>0.05</AridShrubland>
-				<Desert>0.05</Desert>
-				<ExtremeDesert>0.01</ExtremeDesert>
+				<SeaIce>0.0075</SeaIce>
+				<IceSheet>0.033</IceSheet>
+				<Tundra>0.033</Tundra>
+				<BorealForest>0.075</BorealForest>
+				<ColdBog>0.075</ColdBog>
+				<TemperateForest>0.033</TemperateForest>
+				<TemperateSwamp>0.033</TemperateSwamp>
+				<TropicalRainforest>0.033</TropicalRainforest>
+				<TropicalSwamp>0.033</TropicalSwamp>
+				<AridShrubland>0.033</AridShrubland>
+				<Desert>0.033</Desert>
+				<ExtremeDesert>0.0075</ExtremeDesert>
 			</wildBiomes>
 			<nuzzleMtbHours>80</nuzzleMtbHours>
 			<manhunterOnDamageChance>0.1</manhunterOnDamageChance>
@@ -153,7 +156,7 @@
 			</ageGenerationCurve>
 		</race>
 		<tradeTags>
-			<li>StandardAnimal</li>
+			<li>AnimalUncommon</li>
 		</tradeTags>
 		<recipes>
 			<li>ExciseCarcinoma</li>
@@ -168,6 +171,7 @@
 		<label>Housekeeper Cat</label>
 		<labelPlural>Housekeeper Cats</labelPlural>
 		<combatPower>250</combatPower>
+		<ecoSystemWeight>1.0</ecoSystemWeight>
 		<canArriveManhunter>false</canArriveManhunter>
 		<race>HousekeeperCat</race>
 		<lifeStages>

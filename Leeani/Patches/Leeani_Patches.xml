@@ -92,7 +92,7 @@
 		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
 		<order>Append</order>
 		<value>
-			<LeeaniMercenary>1.66</LeeaniMercenary>
+			<LeeaniMercenary>1.5</LeeaniMercenary>
 			<LeeaniSoldier>0.66</LeeaniSoldier>
 		</value>
 	</Operation>

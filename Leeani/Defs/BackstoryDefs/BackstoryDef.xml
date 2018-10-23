@@ -841,6 +841,7 @@
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
+			<li>LeeaniSoldierBackstory</li>
 			<li>LeeaniScoutBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
@@ -870,6 +871,7 @@
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
+			<li>LeeaniSoldierBackstory</li>
 			<li>LeeaniScoutBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
@@ -895,8 +897,9 @@
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
-			<li>LeeaniWorkerBackstory</li>
+			<li>LeeaniSoldierBackstory</li>
 			<li>LeeaniScoutBackstory</li>
+			<li>LeeaniWorkerBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
 		<skillGains>
@@ -925,6 +928,8 @@
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
+			<li>LeeaniSoldierBackstory</li>
+			<li>LeeaniScoutBackstory</li>
 			<li>LeeaniWorkerBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
@@ -953,6 +958,8 @@
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
+			<li>LeeaniSoldierBackstory</li>
+			<li>LeeaniScoutBackstory</li>
 			<li>LeeaniWorkerBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
@@ -978,6 +985,8 @@
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
+			<li>LeeaniSoldierBackstory</li>
+			<li>LeeaniScoutBackstory</li>
 			<li>LeeaniPeasantBackstory</li>
 			<li>LeeaniWorkerBackstory</li>
 			<li>LeeaniBackstory</li>

@@ -1,16 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HousekeeperCat.label>助手貓</HousekeeperCat.label>
-  <HousekeeperCat.description>
-這個看起來跟貓很像的生物，在很長一段時間裏幫助人類幹活。
-它們擁有很高的智能，不僅能搬運或者清潔，甚至能協助戰鬥。
-並且還能從助手貓身上收集到很有用的貓毛。。</HousekeeperCat.description>
+  <HousekeeperCat.description>這個看起來跟貓很像的生物，在很長一段時間裏幫助人類幹活。 它們擁有很高的智能，不僅能搬運或者清潔，甚至能協助戰鬥。 並且還能從助手貓身上收集到很有用的貓毛。。</HousekeeperCat.description>
   <HousekeeperCat_Leather.label>助手貓的毛皮</HousekeeperCat_Leather.label>
   <HousekeeperCat_Leather.description>助手貓的毛皮。</HousekeeperCat_Leather.description>
   <HousekeeperCat_Leather.stuffProps.stuffAdjective>助手貓的毛皮</HousekeeperCat_Leather.stuffProps.stuffAdjective>
   <HousekeeperCat_Meat.label>助手貓的肉</HousekeeperCat_Meat.label>
   <HousekeeperCat_Meat.description>助手貓的肉。</HousekeeperCat_Meat.description>
   <HousekeeperCat_Corpse.label>助手貓的屍體</HousekeeperCat_Corpse.label>
-  <HousekeeperCat_Corpse.description>助手貓的屍體。能分解成肉跟皮。
-  </HousekeeperCat_Corpse.description>
+  <HousekeeperCat_Corpse.description>助手貓的屍體。能分解成肉跟皮。</HousekeeperCat_Corpse.description>
 </LanguageData>

@@ -1,18 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <HousekeeperCat.label>アシストネコ</HousekeeperCat.label>
-  <HousekeeperCat.description>
-この猫に似た丈夫な生き物は、長い間人間にネコの手を貸してきました。
-彼らは高い知性を持っています。
-彼らは運搬や清掃ができ、戦闘ができます。
-また、便利なウールを集めることもできます。</HousekeeperCat.description>
+  <HousekeeperCat.description>この猫に似た丈夫な生き物は、長い間人間にネコの手を貸してきました。 彼らは高い知性を持っています。 彼らは運搬や清掃ができ、戦闘ができます。 また、便利なウールを集めることもできます。</HousekeeperCat.description>
   <HousekeeperCat_Leather.label>アシストネコの毛皮</HousekeeperCat_Leather.label>
   <HousekeeperCat_Leather.description>アシストネコの毛皮です。</HousekeeperCat_Leather.description>
   <HousekeeperCat_Leather.stuffProps.stuffAdjective>アシストネコの毛皮</HousekeeperCat_Leather.stuffProps.stuffAdjective>
   <HousekeeperCat_Meat.label>アシストネコの肉</HousekeeperCat_Meat.label>
   <HousekeeperCat_Meat.description>アシストネコの肉です。</HousekeeperCat_Meat.description>
   <HousekeeperCat_Corpse.label>アシストネコの死骸</HousekeeperCat_Corpse.label>
-  <HousekeeperCat_Corpse.description>アシストネコの死骸です。分解して肉と皮を得ることができます
-  。
-  </HousekeeperCat_Corpse.description>
+  <HousekeeperCat_Corpse.description>アシストネコの死骸です。分解して肉と皮を得ることができます</HousekeeperCat_Corpse.description>
 </LanguageData>

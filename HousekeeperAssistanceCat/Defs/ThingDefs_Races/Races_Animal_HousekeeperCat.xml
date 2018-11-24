@@ -158,13 +158,6 @@
 		<tradeTags>
 			<li>AnimalUncommon</li>
 		</tradeTags>
-		<recipes>
-			<li>ExciseCarcinoma</li>
-			<li>AdministerMechSerumHealer</li>
-			<li>RemoveBodyPart</li>
-			<li>Euthanize</li>
-			<li>Anesthetize</li>
-		</recipes>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
 		<defName>HousekeeperCat</defName>

@@ -49,6 +49,7 @@ namespace AnimalsLogic
             //Scribe_Values.Look<bool>(ref hostile_vermins, "hostile_vermins", false, false);
             Scribe_Values.Look<bool>(ref convert_ruined_eggs, "convert_ruined_eggs", true, false);
             Scribe_Values.Look<bool>(ref tastes_like_chicken, "tastes_like_chicken", false, false);
+            Scribe_Values.Look<bool>(ref medical_alerts, "medical_alerts", true, false);
             Scribe_Values.Look<float>(ref wildness_threshold_for_tameness_decay, "wildness_threshold_for_tameness_decay", 0.101f, false);
             Scribe_Values.Look<float>(ref training_decay_factor, "training_decay_factor", 1.0f, false);
             Scribe_Values.Look<float>(ref haul_mtb, "haul_mtb", 1.5f, false);

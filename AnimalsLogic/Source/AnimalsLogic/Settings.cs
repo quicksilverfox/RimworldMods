@@ -11,6 +11,7 @@ namespace AnimalsLogic
         public static bool hostile_vermins = true;
         public static bool convert_ruined_eggs = true;
         public static bool tastes_like_chicken = false;
+        public static bool medical_alerts = true;
 
         public static float wildness_threshold_for_tameness_decay = 0.101f;
         public static float training_decay_factor = 1.0f;
@@ -26,6 +27,7 @@ namespace AnimalsLogic
             //listing_Standard.CheckboxLabeled("Wild animals eating your crops are hostile to all your faction", ref hostile_vermins, "Note, this does not change threat response of your pawns, it only makes them recognize a threat. Targets designated for taming are ignored!");
             listing_Standard.CheckboxLabeled("Convert eggs ruined by temperature into unfertilized chicken eggs", ref convert_ruined_eggs, "Note, this does not affect already ruined eggs.");
             listing_Standard.CheckboxLabeled("Convert any generic animal meat into chicken meat upon butchering", ref tastes_like_chicken, "Note, this does not affect already butchered meat.");
+            listing_Standard.CheckboxLabeled("Medical alerts for animals", ref medical_alerts, "Note, shows right-hand alerts for when colony animals are injured, need rescuing or in critical medical condition.");
 
             listing_Standard.Label("Wildness threshold for tameness decay " + ((float)Math.Round(wildness_threshold_for_tameness_decay, 3) * 100).ToString() + "%. Vanilla: 10.1%.", -1, "Set to 100% to prevent losing tameness for all animals.");
             wildness_threshold_for_tameness_decay = listing_Standard.Slider(wildness_threshold_for_tameness_decay, 0f, 1f);

@@ -58,6 +58,9 @@
     <Compile Include="ForgetMeNot.cs" />
     <Compile Include="HostilePredators.cs" />
     <Compile Include="LayEggsInNests.cs" />
+    <Compile Include="MedicalAlerts\Alert_AnimalNeedsRescuing.cs" />
+    <Compile Include="MedicalAlerts\Alert_LifeThreateningHediffAnimal.cs" />
+    <Compile Include="MedicalAlerts\AnimalAlertsUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuinedEggs.cs" />
     <Compile Include="Settings.cs" />

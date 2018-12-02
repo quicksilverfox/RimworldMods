@@ -22,12 +22,12 @@ namespace AnimalsLogic
             Listing_Standard listing_Standard = new Listing_Standard();
             listing_Standard.Begin(inRect);
 
-            listing_Standard.CheckboxLabeled("Prevent animals from eating random stuff", ref prevent_eating_stuff, "Note, it mostly prevents your animals from eating drugs without a nutrition and stuff outside their allowed zones. They would still eat your food if it is in their allowed zone.");
-            listing_Standard.CheckboxLabeled("Predators hunting your pawns are hostile to all your faction", ref hostile_predators, "Note, this does not change threat response of your pawns, it only makes them recognize a threat.");
-            //listing_Standard.CheckboxLabeled("Wild animals eating your crops are hostile to all your faction", ref hostile_vermins, "Note, this does not change threat response of your pawns, it only makes them recognize a threat. Targets designated for taming are ignored!");
-            listing_Standard.CheckboxLabeled("Convert eggs ruined by temperature into unfertilized chicken eggs", ref convert_ruined_eggs, "Note, this does not affect already ruined eggs.");
-            listing_Standard.CheckboxLabeled("Convert any generic animal meat into chicken meat upon butchering", ref tastes_like_chicken, "Note, this does not affect already butchered meat.");
-            listing_Standard.CheckboxLabeled("Medical alerts for animals", ref medical_alerts, "Note, shows right-hand alerts for when colony animals are injured, need rescuing or in critical medical condition.");
+            listing_Standard.CheckboxLabeled("Prevent animals from eating random stuff", ref prevent_eating_stuff, "It mostly prevents your animals from eating drugs without a nutrition and stuff outside their allowed zones. They would still eat your food if it is in their allowed zone.");
+            listing_Standard.CheckboxLabeled("Predators hunting your pawns are hostile to all your faction", ref hostile_predators, "This does not change threat response of your pawns, it only makes them recognize a threat.");
+            //listing_Standard.CheckboxLabeled("Wild animals eating your crops are hostile to all your faction", ref hostile_vermins, "This does not change threat response of your pawns, it only makes them recognize a threat. Targets designated for taming are ignored!");
+            listing_Standard.CheckboxLabeled("Convert eggs ruined by temperature into unfertilized chicken eggs", ref convert_ruined_eggs, "This does not affect already ruined eggs.");
+            listing_Standard.CheckboxLabeled("Convert any generic animal meat into chicken meat upon butchering", ref tastes_like_chicken, "This does not affect already butchered meat.");
+            listing_Standard.CheckboxLabeled("Medical alerts for animals", ref medical_alerts, "Shows right-hand alerts for when colony animals are injured, need rescuing or in critical medical condition.");
 
             listing_Standard.Label("Wildness threshold for tameness decay " + ((float)Math.Round(wildness_threshold_for_tameness_decay, 3) * 100).ToString() + "%. Vanilla: 10.1%.", -1, "Set to 100% to prevent losing tameness for all animals.");
             wildness_threshold_for_tameness_decay = listing_Standard.Slider(wildness_threshold_for_tameness_decay, 0f, 1f);

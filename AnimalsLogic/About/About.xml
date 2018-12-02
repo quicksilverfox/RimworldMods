@@ -5,9 +5,10 @@
 	<targetVersion>1.0.0</targetVersion>
 	<description>[*] Tags trained animals in caravan and trade interfaces.
 [*] Egg-layers will try to find a bed (or any other type of animal sleeping spots) in their allowed area to lay an egg. Unforbids eggs laid outside the home area.
-[*] Improved zone and task change responsiveness for animals.
+[*] Improved task change responsiveness for animals.
 [*] Animals can own beds.
 [*] Animal beds can be medical.
+[*] (Optional) Medical emergency alerts for animals.
 [*] (Optional) Configurable animal hauling efficiency.
 [*] (Optional) Configurable tameness decay threshold.
 [*] (Optional) Configurable training decay speed.

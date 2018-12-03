@@ -1,0 +1,16 @@
+<LanguageData>
+
+	<!-- Medical Alerts for Animals -->
+    <AnimalNeedsTreatment>Un animal necesita tratamiento</AnimalNeedsTreatment>
+    <AnimalsNeedTreatment>Varios animales necesitan tratamiento</AnimalsNeedTreatment>
+    <AnimalNeedsTreatmentDesc>Hay animales que requieren atención médica. Sin ella, pueden morir por sus heridas o éstas podrían llegar a ser permanentes.\n\n{0}</AnimalNeedsTreatmentDesc>
+
+    <AnimalNeedsRescue>Un animal necesita ser rescatado</AnimalNeedsRescue>
+    <AnimalsNeedRescue>Varios animales necesitan ser rescatados</AnimalsNeedRescue>
+    <AnimalsNeedRescueDesc>Estos animales están incapacitados en el suelo:\n\n{0}\nSe puede enviar a un colono para rescatarlos y llevarlos a una cama.\n\n(Para rescatar, seleccionar un colono, hacer clic con el botón derecho del ratón sobre la víctima y seleccionar "Rescatar")</AnimalsNeedRescueDesc>
+
+    <AnimalsWithLifeThreateningDisease>Emergencia médica (animales)</AnimalsWithLifeThreateningDisease>	
+    <AnimalsWithLifeThreateningDiseaseAmputationDesc>Estos animales corren el riesgo de morir a causa de una enfermedad grave:\n\n{0}\nConsidere la posibilidad de amputar o reemplazar las extremidades infectadas para mantenerlos vivos.</AnimalsWithLifeThreateningDiseaseAmputationDesc>
+    <AnimalsWithLifeThreateningDiseaseDesc>Estos animales corren el riesgo de morir a causa de una enfermedad grave:\n\n{0}\nAsegúrese de que reciban la mejor atención médica posible.</AnimalsWithLifeThreateningDiseaseDesc>
+	
+</LanguageData>

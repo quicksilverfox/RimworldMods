@@ -38,7 +38,7 @@
 	<ThingDef ParentName="LeatherBase">
 		<defName>Leather_Leeani</defName>
 		<label>leeani fur</label>
-		<description>Tanned leeani pelt obtains distinctive and very beautiful red hue. Most people find the idea of wearing it horrifying. Some find it fascinating. It insulates well and is quite luxurious.</description>
+		<description>Tanned leeani pelt obtains distinctive and very beautiful scarlet hue. Most people find the idea of wearing it horrifying. Some find it fascinating. It insulates well and is quite luxurious.</description>
 		<graphicData>
 			<color>(230, 0, 0)</color>
 			<colorTwo>(230, 0, 0)</colorTwo>

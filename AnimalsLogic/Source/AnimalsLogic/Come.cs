@@ -8,13 +8,17 @@ using System.Reflection;
 using Verse.AI;
 using System.Reflection.Emit;
 
+/**
+ * TODO: wake up when master is drafted or on fieldwork.
+ */
 namespace AnimalsLogic
 {
     /*
      * Pawns react to master fieldwork instantly.
+     * 
      */
 
-    class Come
+class Come
     {
         protected static FieldInfo Pawn_JobTracker_pawn = null;
 

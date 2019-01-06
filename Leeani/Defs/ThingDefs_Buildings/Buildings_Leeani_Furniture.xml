@@ -229,6 +229,7 @@
 				<glowColor>(252,187,113,0)</glowColor>
 			</li>
 			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
 				<heatPerSecond>21</heatPerSecond>
 				<heatPushMaxTemperature>28</heatPushMaxTemperature>
 			</li>

@@ -8,16 +8,9 @@
 				<yourMod>Leeani Playable Race</yourMod>
 			</li>
 
-			<li Class="ModCheck.FindFile">
-				<modName>Mechanoids Extraordinaire</modName>
-			</li>
-
 			<li Class="PatchOperationSequence">
 				<success>Always</success>
 				<operations>
-					<li Class="ModCheck.FindFile">
-						<file>Recipes_Surgery_NewParts_MechanoidsExtraordinaire.xml</file>
-					</li>
 					<li Class="PatchOperationAdd">
 						<xpath>Defs/RecipeDef[@Name="SurgeryAdvanced"]/recipeUsers</xpath>
 						<value>
@@ -25,7 +18,7 @@
 						</value>
 					</li>
 					<li Class="PatchOperationAdd">
-						<xpath>Defs/RecipeDef[defName="InstallMechaTentacle"]/appliedOnFixedBodyParts</xpath>
+						<xpath>Defs/RecipeDef[defName="InstallMechaTentacleME"]/appliedOnFixedBodyParts</xpath>
 						<value>
 							<li>LeeaniTail</li>
 						</value>

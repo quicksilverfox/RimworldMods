@@ -3,6 +3,9 @@
 	<name>Carbon</name>
 	<author>Oblitus</author>
 	<url>https://ludeon.com/forums/index.php?topic=34628.0</url>
-	<targetVersion>1.0.0</targetVersion>
+	<supportedVersions>
+		<li>0.19</li>
+		<li>1.0</li>
+	</supportedVersions>
 	<description>Adds several carbon-based materials.</description>
 </ModMetaData>

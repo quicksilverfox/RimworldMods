@@ -2,7 +2,10 @@
 <ModMetaData>
 	<name>Animals Logic</name>
 	<author>Oblitus</author>
-	<targetVersion>1.0.0</targetVersion>
+	<supportedVersions>
+		<li>0.19</li>
+		<li>1.0</li>
+	</supportedVersions>
 	<description>[*] Tags trained animals in caravan and trade interfaces.
 [*] Egg-layers will try to find a bed (or any other type of animal sleeping spots) in their allowed area to lay an egg. Unforbids eggs laid outside the home area.
 [*] Improved task change responsiveness for animals.

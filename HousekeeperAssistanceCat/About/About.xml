@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>HousekeeperAssistanceCat</name>
-  <author>Edge Crescent</author>
-  <targetVersion>1.0.0</targetVersion>
-  <description>
+	<name>HousekeeperAssistanceCat</name>
+	<author>Edge Crescent</author>
+	<supportedVersions>
+		<li>0.19</li>
+		<li>1.0</li>
+	</supportedVersions>
+	<description>
 Add new animal [Housekeeper Cat] for game.
 
 Durable creatures resembling this cat lend a CAT'S HAND instead of receiving food and house from human beings for a long time.
@@ -34,5 +37,5 @@ A great thanks to the author Walking Problem!
 
 このMODは[RimWorld Minions V 5.0]のコードを参照して作成されています。
 MOD作者のWalking Problem氏に多大な感謝を！
-  </description>
+	</description>
 </ModMetaData>

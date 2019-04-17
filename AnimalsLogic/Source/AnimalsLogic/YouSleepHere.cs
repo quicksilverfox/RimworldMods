@@ -40,11 +40,17 @@ namespace AnimalsLogic
         {
             static void Postfix(ref IEnumerable<Gizmo> __result, ref Building_Bed __instance)
             {
-                if (__instance.Faction != Faction.OfPlayer || __instance.def.building.bed_humanlike || __instance.def.building.bed_maxBodySize <= 0.01 || __instance.def.designationCategory.defName == "WTH_Hacking") // bodysize check is for compatibility with Dubs Hygiene - he made his bathtubs as animal beds.
+                if (__instance.Faction != Faction.OfPlayer || __instance.def.building.bed_humanlike)
                     return;
 
+                if (__instance.def.building.bed_maxBodySize <= 0.01)
+                    return; // bodysize check is for compatibility with Dubs Hygiene - he made his bathtubs as animal beds.
 
                 Building_Bed bed = __instance;
+
+                if (bed.GetType().Name == "Building_MechanoidPlatform" || bed.GetType().Name == "Building_PortableChargingPlatform" || bed.def.designationCategory.defName == "WTH_Hacking")
+                    return; // for some other mods
+
                 var gizmos = new List<Gizmo>(__result)
                 {
                     new Command_Toggle
@@ -88,8 +94,14 @@ namespace AnimalsLogic
         {
             static void Postfix(ref IEnumerable<Pawn> __result, ref Building_Bed __instance)
             {
-                if (__instance.def.building.bed_humanlike || __instance.def.building.bed_maxBodySize <= 0.01 ||  __instance.def.designationCategory.defName == "WTH_Hacking") // bodysize check is for compatibility with Dubs Hygiene - he made his bathtubs as animal beds.
+                if (__instance.Faction != Faction.OfPlayer || __instance.def.building.bed_humanlike)
                     return;
+
+                if (__instance.def.building.bed_maxBodySize <= 0.01)
+                    return; // bodysize check is for compatibility with Dubs Hygiene - he made his bathtubs as animal beds.
+
+                if (__instance.GetType().Name == "Building_MechanoidPlatform" || __instance.GetType().Name == "Building_PortableChargingPlatform" || __instance.def.designationCategory.defName == "WTH_Hacking")
+                    return; // for some other mods
 
                 if (!__instance.Spawned)
                 {

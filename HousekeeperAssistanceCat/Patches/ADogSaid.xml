@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>A Dog Said... Animal Prosthetics</li>
+		</mods>
 
-	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
-		<operations>
-			<li Class="ModCheck.isModLoaded">
-				<modName>A Dog Said... Animal Prosthetics</modName>
-				<yourMod>HousekeeperAssistanceCat</yourMod>
-			</li>
-
-			<li Class="PatchOperationAdd">
-				<success>Always</success>
-				<xpath>Defs/RecipeDef[defName="InstallSimpleProstheticTailAnimal" or defName="InstallPegLegAnimal" or defName="InstallSimpleProstheticLegAnimal" or defName="InstallSimpleProstheticArmAnimal" or defName="InstallNoseAnimalSimple" or defName="InstallBionicEyeAnimal" or defName="InstallEarAnimalSimple" or defName="InstallJawAnimalSimple" or defName="InstallSpineAnimalSimple" or defName="InstallAnimalBrainStimulator" or defName="InstallBionicAnimalHeart" or defName="InstallBionicAnimalLung" or defName="InstallBionicAnimalLiver" or defName="InstallBionicAnimalKidney" or defName="InstallBionicAnimalStomach" or @Name="OldWoundsAnimal"]/recipeUsers</xpath>
-				<value>
-					<li>HousekeeperCat</li>
-				</value>
-			</li>
-
-		</operations>
+		<match Class="PatchOperationAdd">
+			<success>Always</success>
+			<xpath>Defs/RecipeDef[defName="InstallSimpleProstheticTailAnimal" or defName="InstallPegLegAnimal" or defName="InstallSimpleProstheticLegAnimal" or defName="InstallSimpleProstheticArmAnimal" or defName="InstallNoseAnimalSimple" or defName="InstallBionicEyeAnimal" or defName="InstallEarAnimalSimple" or defName="InstallJawAnimalSimple" or defName="InstallSpineAnimalSimple" or defName="InstallAnimalBrainStimulator" or defName="InstallBionicAnimalHeart" or defName="InstallBionicAnimalLung" or defName="InstallBionicAnimalLiver" or defName="InstallBionicAnimalKidney" or defName="InstallBionicAnimalStomach" or @Name="OldWoundsAnimal"]/recipeUsers</xpath>
+			<value>
+				<li>HousekeeperCat</li>
+			</value>
+		</match>
 	</Operation>
-
 </Patch>

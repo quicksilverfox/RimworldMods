@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
-	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
-		<operations>
-			<li Class="ModCheck.isModLoaded">
-				<modName>Expanded Prosthetics and Organ Engineering</modName>
-				<yourMod>Leeani Playable Race</yourMod>
-			</li>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Expanded Prosthetics and Organ Engineering</li>
+		</mods>
 
-			<li Class="PatchOperationSequence">
-				<success>Always</success>
-				<operations>
-					<li Class="PatchOperationRemove">
-						<xpath>Defs/RecipeDef[defName="InstallClothLeeaniTail"]/recipeUsers</xpath>
-					</li>
-				</operations>
-			</li>
-
-		</operations>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/RecipeDef[defName="InstallClothLeeaniTail"]/recipeUsers</xpath>
+				</li>
+			</operations>
+		</match>
 	</Operation>
 </Patch>

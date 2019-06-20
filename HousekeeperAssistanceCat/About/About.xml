@@ -7,35 +7,8 @@
 		<li>1.0</li>
 	</supportedVersions>
 	<description>
-Add new animal [Housekeeper Cat] for game.
+Unofficial update for HousekeeperAssistanceCat mod by Edge Crescent. While using the same assets, background logic for cleaning tasks is fully reworked. Their ability to reproduce is disabled, so you can only tame or buy them (you can edit the mod's LifeStages.xml to re-enable it).
 
-Durable creatures resembling this cat lend a CAT'S HAND instead of receiving food and house from human beings for a long time.
-They have high intelligence, they can haul, clean, and tiny combat.
-Also, you can collect useful a little wool.
-
-In order to let them cleaning, it is necessary to train 'Obedience'.
-Training of haul is an ordinary.
-They sometimes idle but please forgive. Because they a cat.
-
-Redistribution of this mod is prohibited.
-
-This MOD is created with reference to the code of [RimWorld Minions V 5.0].
-A great thanks to the author Walking Problem!
-----
-
-新しい動物「アシストネコ」を追加します。
-
-このネコに似た丈夫な生物は、昔から人間から食料と寝床を得る代わりに、「猫の手」を貸していました。
-彼らは高い知性を持ち、運搬と掃除、そして少しだけ戦闘ができます。
-また、少しの便利な毛を採取できます。
-
-彼らに清掃をさせるためには、「服従」まで訓練する必要があります。
-運搬のトレーニングは通常通りです。
-※彼らは時々なまけますが、あきらめてください。猫なので。
-
-このMODの再配布を禁止します。
-
-このMODは[RimWorld Minions V 5.0]のコードを参照して作成されています。
-MOD作者のWalking Problem氏に多大な感謝を！
+This mod adds a new kind of animal - Housekeeper Cat. When Obedience is trained, they are able to do cleaning tasks. They are also eligible for hauling training. As a bonus, they can produce small amounts of quality wool.
 	</description>
 </ModMetaData>

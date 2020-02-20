@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>Carbon</name>
+	<packageId>Oblitus.Carbon</packageId>
 	<author>Oblitus</author>
 	<url>https://ludeon.com/forums/index.php?topic=34628.0</url>
 	<supportedVersions>
 		<li>0.19</li>
 		<li>1.0</li>
+		<li>1.1</li>
 	</supportedVersions>
 	<description>Adds several carbon-based materials.</description>
 </ModMetaData>

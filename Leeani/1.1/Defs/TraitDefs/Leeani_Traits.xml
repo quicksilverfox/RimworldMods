@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<TraitDef>
+    <defName>LeeaniPacifist</defName>
+    <commonality>0.01</commonality>
+    <degreeDatas>
+      <li>
+        <label>pacifist</label>
+        <description>[PAWN_nameDef] is a pacifist - of a sort. [PAWN_pronoun]'s far, far less likely to start a social fight, but this doesn't mean [PAWN_pronoun] won't defend his friends from harm. [PAWN_possessive] relative pacifism only has a minor effect on [PAWN_possessive] combat ability,</description>
+        <socialFightChanceFactor>0.05</socialFightChanceFactor>
+		<skillGains>
+          <li>
+            <key>Melee</key>
+            <value>-1</value>
+          </li>
+          <li>
+            <key>Shooting</key>
+            <value>-1</value>
+          </li>
+        </skillGains>
+      </li>
+    </degreeDatas>
+	
+</TraitDef>
+</Defs>

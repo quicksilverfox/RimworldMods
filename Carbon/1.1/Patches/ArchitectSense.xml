@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<!-- Adds Carbon Tile to High Tech category. Not exactly fitting, but here is no default category for stuff-specific floors. -->
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+		<xpath>*/ArchitectSense.DesignationSubCategoryDef[defName="SubCategory_HighTechFloors"]/defNames</xpath>
+		<value>
+			<li>CarbonTile</li>
+		</value>
+	</Operation>
+
+</Patch>

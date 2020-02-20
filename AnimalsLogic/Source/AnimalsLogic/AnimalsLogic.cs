@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using System.Reflection;
 using Verse;
 using UnityEngine;
@@ -14,7 +14,7 @@ namespace AnimalsLogic
 
         public AnimalsLogic(ModContentPack content) : base(content)
         {
-            var harmony = HarmonyInstance.Create("net.quicksilverfox.rimworld.mod.animalslogic");
+            var harmony = new Harmony("net.quicksilverfox.rimworld.mod.animalslogic");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             base.GetSettings<Settings>();
         }

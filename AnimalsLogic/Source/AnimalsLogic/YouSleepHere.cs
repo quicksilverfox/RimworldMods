@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Harmony;
+using HarmonyLib;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -77,7 +77,7 @@ namespace AnimalsLogic
                             defaultDesc = "CommandBedSetOwnerDesc".Translate(),
                             action = delegate
                             {
-                                Find.WindowStack.Add(new Dialog_AssignBuildingOwner(bed));
+                                Find.WindowStack.Add(new Dialog_AssignBuildingOwner(bed.CompAssignableToPawn));
                             },
                             hotKey = KeyBindingDefOf.Misc3
                         }
@@ -89,21 +89,26 @@ namespace AnimalsLogic
         }
 
         // patches get_AssigningCandidates to display list of animals
-        [HarmonyPatch(typeof(Building_Bed), "get_AssigningCandidates", new Type[0])]
-        static class Building_Bed_get_AssigningCandidates_Patch
+        [HarmonyPatch(typeof(CompAssignableToPawn), "get_AssigningCandidates")]
+        static class CompAssignableToPawn_get_AssigningCandidates_Patch
         {
-            static void Postfix(ref IEnumerable<Pawn> __result, ref Building_Bed __instance)
+            static void Postfix(ref IEnumerable<Pawn> __result, ref CompAssignableToPawn __instance)
             {
-                if (__instance.Faction != Faction.OfPlayer || __instance.def.building.bed_humanlike)
+                if (__instance.parent == null || !(__instance.parent is Building_Bed))
                     return;
 
-                if (__instance.def.building.bed_maxBodySize <= 0.01)
+                Building_Bed bed = (Building_Bed)__instance.parent;
+
+                if (bed.Faction != Faction.OfPlayer || bed.def.building.bed_humanlike)
+                    return;
+
+                if (bed.def.building.bed_maxBodySize <= 0.01)
                     return; // bodysize check is for compatibility with Dubs Hygiene - he made his bathtubs as animal beds.
 
-                if (__instance.GetType().Name == "Building_MechanoidPlatform" || __instance.GetType().Name == "Building_PortableChargingPlatform" || __instance.def.designationCategory.defName == "WTH_Hacking")
+                if (bed.GetType().Name == "Building_MechanoidPlatform" || bed.GetType().Name == "Building_PortableChargingPlatform" || bed.def.designationCategory.defName == "WTH_Hacking")
                     return; // for some other mods
 
-                if (!__instance.Spawned)
+                if (!bed.Spawned)
                 {
                     __result = Enumerable.Empty<Pawn>();
                     return;
@@ -116,20 +121,20 @@ namespace AnimalsLogic
         }
 
         // patches TryAssignPawn to accept animals
-        [HarmonyPatch(typeof(Building_Bed), "TryAssignPawn", new Type[] { typeof(Pawn) })]
-        static class Building_Bed_TryAssignPawn_Patch
+        [HarmonyPatch(typeof(CompAssignableToPawn_Bed), "TryAssignPawn", new Type[] { typeof(Pawn) })]
+        static class CompAssignableToPawn_Bed_TryAssignPawn_Patch
         {
-            static bool Prefix(Pawn owner)
+            static bool Prefix(Pawn pawn)
             {
-                if (owner.ownership == null)
-                    owner.ownership = new Pawn_Ownership(owner);
+                if (pawn.ownership == null)
+                    pawn.ownership = new Pawn_Ownership(pawn);
                 return true;
             }
         }
 
         // patches AssignedAnything to accept animals
-        [HarmonyPatch(typeof(Building_Bed), "AssignedAnything", new Type[] { typeof(Pawn) })]
-        static class Building_Bed_AssignedAnything_Patch
+        [HarmonyPatch(typeof(CompAssignableToPawn_Bed), "AssignedAnything", new Type[] { typeof(Pawn) })]
+        static class CompAssignableToPawn_Bed_AssignedAnything_Patch
         {
             static bool Prefix(Pawn pawn)
             {
@@ -209,9 +214,9 @@ namespace AnimalsLogic
             static MethodInfo TargetMethod()
             {
                 MethodInfo method = typeof(RestUtility).GetNestedTypes(AccessTools.all).First(
-                        inner_class => inner_class.Name.Contains("<FindPatientBedFor>") && inner_class.GetField("medBedValidator", AccessTools.all) != null // medBedValidator field should be reliable enough signature
+                        inner_class => inner_class.GetField("medBedValidator", AccessTools.all) != null // medBedValidator field should be reliable enough signature
                     ).GetMethods(AccessTools.all).First(
-                        m => m.Name.Contains("<>m__")
+                        m => m.Name.Contains("<FindPatientBedFor>")
                     );
 
                 if (method == null)
@@ -286,13 +291,10 @@ namespace AnimalsLogic
                 var toils_inner = typeof(JobGiver_RescueNearby).GetNestedTypes(AccessTools.all);
                 foreach (var inner_class in toils_inner)
                 {
-                    if (!inner_class.Name.Contains("<TryGiveJob>"))
-                        continue;
-
                     var methods = inner_class.GetMethods(AccessTools.all);
                     foreach (var method in methods)
                     {
-                        if (method.Name.Contains("<>m__"))
+                        if (method.Name.Contains("<TryGiveJob>"))
                             return method;
                     }
                 }
@@ -305,7 +307,7 @@ namespace AnimalsLogic
                 var codes = new List<CodeInstruction>(instructions);
                 object return_false = null;
 
-
+                // Trying to find address for false return bracnch for later use
                 for (int i = 0; i < codes.Count; i++)
                 {
                     // IL_0064: call bool Verse.AI.GenAI::EnemyIsNear(class Verse.Pawn, float32)
@@ -317,13 +319,19 @@ namespace AnimalsLogic
                     }
                 }
 
+                if (return_false == null)
+                    Log.Error("Animal Logic is unable to find injection point for JobGiver_RescueNearby.TryGiveJob.");
+
                 for (int i = 0; i < codes.Count; i++)
                 {
                     if (codes[i].opcode == OpCodes.Ret)
                     {
-                        codes.Insert(i + 1, new CodeInstruction(OpCodes.Ldloc_0));
-                        codes.Insert(i + 2, new CodeInstruction(OpCodes.Call, typeof(JobGiver_RescueNearby_TryGiveJob_Patch).GetMethod(nameof(IsDesignatedForSlaughter))));
-                        codes.Insert(i + 3, new CodeInstruction(OpCodes.Brtrue, return_false));
+                        codes.InsertRange(i + 1,
+                            new List<CodeInstruction>() {
+                                new CodeInstruction(OpCodes.Ldloc_0),
+                                new CodeInstruction(OpCodes.Call, typeof(JobGiver_RescueNearby_TryGiveJob_Patch).GetMethod(nameof(IsDesignatedForSlaughter))),
+                                new CodeInstruction(OpCodes.Brtrue, return_false)
+                            });
 
                         break;
                     }

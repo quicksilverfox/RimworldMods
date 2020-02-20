@@ -1,12 +1,5 @@
-﻿using Harmony;
-using RimWorld;
-using RimWorld.Planet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using HarmonyLib;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using UnityEngine;
 using Verse;
 
 namespace WorldGenRules
@@ -20,7 +13,7 @@ namespace WorldGenRules
 
         public MyLittlePlanet(ModContentPack content) : base(content)
         {
-            var harmony = HarmonyInstance.Create("net.quicksilverfox.rimworld.mod.worldgenrules");
+            var harmony = new Harmony("net.quicksilverfox.rimworld.mod.worldgenrules");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             //base.GetSettings<Settings>();
         }

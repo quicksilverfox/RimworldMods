@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--=============================== Tier L: Leeani ===================================-->
+
+	<!--
+		Actually, that is awful lot of researches.
+		TODO:
+			remove juniper altogether
+			merge cider, wine and vineyards
+			merge traditions and modernization (make lamp post available with traditions and electricity)
+		
+		There should be only 4 researches:
+			Basic alcohol stuff (500 points medieval, since it is a fluffier beer)
+			Autovats (can stay 1000 points industrial)
+			Traditions (300 points medieval, since it is almost pure fluff)
+			Arkhaevists (can stay at 800 points medieval, research speed boost is big thing)
+	-->
+
+	<ResearchProjectTagDef>
+		<defName>LeeaniStart</defName>
+	</ResearchProjectTagDef>
+	<ResearchProjectTagDef>
+		<defName>ta-ignore</defName>
+	</ResearchProjectTagDef>
+
+	<ResearchProjectDef>
+		<defName>LeeaniBrewing</defName>
+		<label>Cider Brewing</label>
+		<description>One of the oldest alcohols of all time. Unlocks juniper cultivation, wine press and cider keg.\n\nRequires Leeani researcher.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<tags>
+			<li>LeeaniStart</li>
+			<!-- ta-ignore tag is for tech advancing mod to ignore this research in regards of faction tech level -->
+			<li>ta-ignore</li>
+		</tags>
+		<tab>LeeaniResearchTab</tab>
+		<prerequisites>
+			<li>Brewing</li>
+		</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>LeeaniWineBrewing</defName>
+		<label>Wine Brewing</label>
+		<description>A craft wine, the secrets to a perfect blend lie in this research that only a Leeani could truly understand. Unlocks grapes cultivation and wine keg.\n\nRequires Leeani researcher.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tags>
+			<li>ta-ignore</li>
+		</tags>
+		<tab>LeeaniResearchTab</tab>
+		<prerequisites>
+			<li>LeeaniBrewing</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>LeeaniAutovats</defName>
+		<label>Autovats</label>
+		<description>True efficiency means automated kegs could take over the careful production of our ciders and wines. Unlocks autovats.\n\nRequires Leeani researcher.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tags>
+			<li>ta-ignore</li>
+		</tags>
+		<tab>LeeaniResearchTab</tab>
+		<prerequisites>
+			<li>LeeaniWineBrewing</li>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>LeeaniTraditions</defName>
+		<label>Traditions</label>
+		<description>Our feudal heritage cannot be forgotten - we should honour it. Unlocks the throne, banquet table and chair, and brazier. Unlocks the electric lamp-post with electricity.\n\nRequires Leeani researcher.</description>
+		<baseCost>300</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tags>
+			<li>LeeaniStart</li>
+			<li>ta-ignore</li>
+		</tags>
+		<tab>LeeaniResearchTab</tab>
+		<researchViewX>0</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>LeeaniArkhaev</defName>
+		<label>Arkhaevists</label>
+		<description>Without books and knowledge, where would we be now? Unlocks the bookshelf, which provides a boost to research speed when near a research table and can provide some joy to read its contents.\n\nRequires Leeani researcher.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tags>
+			<li>ta-ignore</li>
+		</tags>
+		<tab>LeeaniResearchTab</tab>
+		<prerequisites>
+			<li>LeeaniTraditions</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

@@ -11,9 +11,9 @@ namespace AnimalsLogic
     public static class AnimalAlertsUtility
     {
 
-        public static List<Pawn> SortedAnimalList(IEnumerable<Pawn> pawnEnumerable)
+        public static List<Pawn> SortedAnimalList(IEnumerable<Thing> pawnEnumerable)
         {
-            List<Pawn> pawnList = pawnEnumerable.ToList();
+            List<Pawn> pawnList = pawnEnumerable.Cast<Pawn>().ToList();
             pawnList.SortBy(p => !p.HasBondRelation(), p => p.LabelShort);
             return pawnList;
         }

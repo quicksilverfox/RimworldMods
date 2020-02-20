@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>Leeani Playable Race</name>
+	<packageId>MikeRobe.LeeaniPlayableRace</packageId>
 	<author>MikeRobe</author>
-	<url/>
+	<url>https://github.com/quicksilverfox/RimworldMods/releases/latest</url>
 	<supportedVersions>
 		<li>0.19</li>
 		<li>1.0</li>
+		<li>1.1</li>
 	</supportedVersions>
 	<description>A nice happy race of people-foxes. Alien Race Framework required, load after it. Built-in support for EPOE.
 

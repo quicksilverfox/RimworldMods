@@ -17,7 +17,7 @@ namespace AnimalsLogic
             defaultPriority = AlertPriority.High;
         }
 
-        private IEnumerable<Pawn> NeedingAnimals
+        private IEnumerable<Thing> NeedingAnimals
         {
             get
             {
@@ -39,19 +39,19 @@ namespace AnimalsLogic
             return "AnimalsNeedTreatment".Translate();
         }
 
-        public override string GetExplanation()
+        public override TaggedString GetExplanation()
         {
             StringBuilder stringBuilder = new StringBuilder();
             foreach (Pawn pawn in AnimalAlertsUtility.SortedAnimalList(NeedingAnimals))
             {
-                stringBuilder.AppendLine($"    {pawn.LabelShort} {((pawn.Name != null && !pawn.Name.Numerical) ? "(" + pawn.KindLabel + ")" : "")} {(pawn.HasBondRelation() ? "BondBrackets".Translate() : "")}");
+                stringBuilder.AppendLine($"    {pawn.LabelShort} {((pawn.Name != null && !pawn.Name.Numerical) ? "(" + pawn.KindLabel + ")" : "")} {(pawn.HasBondRelation() ? "BondBrackets".Translate().ToString() : "")}");
             }
             return string.Format("AnimalNeedsTreatmentDesc".Translate(), stringBuilder.ToString());
         }
 
         public override AlertReport GetReport()
         {
-            return (Settings.medical_alerts) ? AlertReport.CulpritsAre(NeedingAnimals) : false;
+            return (Settings.medical_alerts) ? AlertReport.CulpritsAre(NeedingAnimals.ToList()) : false;
         }
 
     }

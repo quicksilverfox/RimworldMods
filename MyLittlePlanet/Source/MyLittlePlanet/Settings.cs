@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Verse;
-using System;
 
 namespace WorldGenRules
 {

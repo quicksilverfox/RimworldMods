@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+	<defName>NamerPersonLeeani</defName>
+    <rulePack>
+		<rulesStrings>
+			<li>name->[malefirst] [town][last]</li>
+			<li>name->[femalefirst] [town][last]</li>
+		</rulesStrings>
+		<rulesRaw>
+			<li Class="Rule_File">
+				<keyword>last</keyword>
+				<path>Leeani_Names/Leeanilast</path>
+			</li>
+			<li Class="Rule_File">
+			  <keyword>town</keyword>
+			  <path>Leeani_Names/Leeanitown</path>
+			</li>
+			<li Class="Rule_File">
+				<keyword>malefirst</keyword>
+				<path>Leeani_Names/malefirst</path>
+			</li>
+			<li Class="Rule_File">
+			  <keyword>femalefirst</keyword>
+			  <path>Leeani_Names/femalefirst</path>
+			</li>
+			<li Class="Rule_NamePerson">
+				<gender>Male</gender>
+				<keyword>malefirst</keyword>
+			</li>
+			<li Class="Rule_NamePerson">
+				<gender>Female</gender>
+				<keyword>femalefirst</keyword>
+			</li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

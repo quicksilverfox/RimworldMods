@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef>
+		<defName>MakeBerryJuice</defName>
+		<label>make berry juice</label>
+		<description>Make berry juice from, well, berries.</description>
+		<jobString>Making berry juice.</jobString>
+		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RawBerries</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RawJuniper</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RawBerries</li>
+				<li>RawJuniper</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<BerryJuice>5</BerryJuice>
+		</products>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>MakeGrapeJuice</defName>
+		<label>make grape juice</label>
+		<description>Make grape juice from, well, grapes.</description>
+		<jobString>Making grape juice.</jobString>
+		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>
+							<li>RawGrapes</li>
+						</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RawGrapes</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<GrapeJuice>5</GrapeJuice>
+		</products>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+</Defs>

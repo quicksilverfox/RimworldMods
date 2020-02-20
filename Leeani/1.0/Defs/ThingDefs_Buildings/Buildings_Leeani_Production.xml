@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BenchBase">
+		<defName>LeeaniWinePress</defName>
+		<label>wine press</label>
+		<thingClass>Building_WorkTable</thingClass>
+		<description>A manual foot-press to squash berries and fruit into a juice, ready for fermenting.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/CiderPress</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1.2,2.4)</drawSize>
+			<damageData>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+			</damageData>
+		</graphicData>
+		<costList>
+			<WoodLog>50</WoodLog>
+			<Steel>30</Steel>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(1,2)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>Standable</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellIcon />
+		<interactionCellOffset>(0,0,0)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<recipes>
+			<li>MakeBerryJuice</li>
+			<li>MakeGrapeJuice</li>
+		</recipes>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<researchPrerequisites>
+			<li>LeeaniBrewing</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<Leeani.ExtraThingDef ParentName="BuildingBase">
+		<defName>LeeaniCiderKeg</defName>
+		<label>cider keg</label>
+		<thingClass>Leeani.Building_FermentingVat</thingClass>
+		<vatProperties>
+			<inputThingDef>BerryJuice</inputThingDef>
+			<outputThingDef>LeeaniCider</outputThingDef>
+			<maxCapacity>25</maxCapacity>
+			<fermentationModifier>1</fermentationModifier>
+			<inputToOutputRatio>1</inputToOutputRatio>
+			<!-- Translations, point to custom translation lines. -->
+			<containsInputTranslation>ContainsBerries</containsInputTranslation>
+			<containsOutputTranslation>ContainsCider</containsOutputTranslation>
+			<fermentedTranslation>FermentedCider</fermentedTranslation>
+			<fermentationProgressTranslation>CiderFermentationProgress</fermentationProgressTranslation>
+			<fermentationNonIdealTranslation>CiderFermentationBarrelOutOfIdealTemperature</fermentationNonIdealTranslation>
+		</vatProperties>
+		<graphicData>
+			<texPath>Things/Building/Production/CiderKeg</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.2,1.2)</drawSize>
+			<damageData>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.50</fillPercent>
+		<pathCost>60</pathCost>
+		<building>
+			<isMealSource>true</isMealSource>
+		</building>
+		<statBases>
+			<WorkToBuild>600</WorkToBuild>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A specially-made keg for brewing cider from berries.</description>
+		<costList>
+			<Steel>10</Steel>
+			<WoodLog>30</WoodLog>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_TemperatureRuinable">
+				<progressPerDegreePerTick>0.00002</progressPerDegreePerTick>
+				<minSafeTemperature>-5</minSafeTemperature>
+				<maxSafeTemperature>30</maxSafeTemperature>
+			</li>
+		</comps>
+		<tickerType>Rare</tickerType>
+		<rotatable>false</rotatable>
+		<designationCategory>Production</designationCategory>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<constructEffect>ConstructWood</constructEffect>
+		<researchPrerequisites>
+			<li>LeeaniBrewing</li>
+		</researchPrerequisites>
+	</Leeani.ExtraThingDef>
+
+	<Leeani.ExtraThingDef ParentName="BuildingBase">
+		<defName>LeeaniWineKeg</defName>
+		<label>wine keg</label>
+		<thingClass>Leeani.Building_FermentingVat</thingClass>
+		<vatProperties>
+			<inputThingDef>GrapeJuice</inputThingDef>
+			<outputThingDef>LeeaniWine</outputThingDef>
+			<maxCapacity>25</maxCapacity>
+			<fermentationModifier>1</fermentationModifier>
+			<inputToOutputRatio>1</inputToOutputRatio>
+			<!-- Translations, point to custom translation lines. -->
+			<containsInputTranslation>ContainsGrapeJuice</containsInputTranslation>
+			<containsOutputTranslation>ContainsWine</containsOutputTranslation>
+			<fermentedTranslation>FermentedWine</fermentedTranslation>
+			<fermentationProgressTranslation>WineFermentationProgress</fermentationProgressTranslation>
+			<fermentationNonIdealTranslation>WineFermentationBarrelOutOfIdealTemperature</fermentationNonIdealTranslation>
+		</vatProperties>
+		<graphicData>
+			<texPath>Things/Building/Production/WineKeg</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.2,1.2)</drawSize>
+			<damageData>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.50</fillPercent>
+		<pathCost>60</pathCost>
+		<building>
+			<isMealSource>true</isMealSource>
+		</building>
+		<statBases>
+			<WorkToBuild>600</WorkToBuild>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A specially-made keg for brewing wine from grape juice.</description>
+		<costList>
+			<Steel>10</Steel>
+			<WoodLog>30</WoodLog>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_TemperatureRuinable">
+				<progressPerDegreePerTick>0.00002</progressPerDegreePerTick>
+				<minSafeTemperature>-5</minSafeTemperature>
+				<maxSafeTemperature>30</maxSafeTemperature>
+			</li>
+		</comps>
+		<tickerType>Rare</tickerType>
+		<rotatable>false</rotatable>
+		<designationCategory>Production</designationCategory>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<constructEffect>ConstructWood</constructEffect>
+		<researchPrerequisites>
+			<li>LeeaniWineBrewing</li>
+		</researchPrerequisites>
+	</Leeani.ExtraThingDef>
+
+</Defs>

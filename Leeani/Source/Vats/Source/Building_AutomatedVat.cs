@@ -271,7 +271,7 @@ namespace AutomatedVat
 					compIngredients.ingredients.AddRange(from ThingDefCountClass i in this.Extension.ingredients
 					select i.thingDef);
 				}
-				GenPlace.TryPlaceThing(thing, this.InteractionCell, base.Map, ThingPlaceMode.Near, null);
+				GenPlace.TryPlaceThing(thing, this.InteractionCell, base.Map, ThingPlaceMode.Near);
 			}
 		}
 

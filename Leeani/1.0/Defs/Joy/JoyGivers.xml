@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JoyGiverDef>
+		<defName>UseArchiveJoy</defName>
+		<giverClass>JoyGiver_InteractBuildingInteractionCell</giverClass>
+		<baseChance>1.8</baseChance>
+		<thingDefs>
+			<li>LeeaniBookshelf</li>
+		</thingDefs>
+		<jobDef>UseArchiveJob</jobDef>
+		<joyKind>Reading_Archive</joyKind>
+		<unroofedOnly>false</unroofedOnly>
+		<requiredCapacities>
+			<li>Sight</li>
+		</requiredCapacities>
+	</JoyGiverDef>
+
+</Defs>

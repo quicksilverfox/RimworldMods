@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>EPOE Vulpine Race Pack Patch</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[@Name='SurgeryFleshVulpTail']/recipeUsers</xpath>
+					<value>
+						<li>Alien_Leeani</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName='InstallVulpTail' or defName='InstallFBionicTail']/appliedOnFixedBodyParts</xpath>
+					<value>
+						<li>LeeaniTail</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName='InstallLeeaniTail' or defName='InstallBionicLeeaniTail']/recipeUsers</xpath>
+					<value>
+						<li>Alien_Fennex</li>
+						<li>Alien_Frijjid</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

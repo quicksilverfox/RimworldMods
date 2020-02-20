@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<FactionDef>
+		<defName>LeeaniHold</defName>
+		<label>Leeani hold</label>
+		<description>A hold of the mysterious Leeani race.</description>
+		<pawnsPlural>Leeani</pawnsPlural>
+		<settlementGenerationWeight>0.55</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<canMakeRandomly>true</canMakeRandomly>
+		<canSiege>true</canSiege>
+		<canStageAttacks>true</canStageAttacks>
+		<leaderTitle>Loord</leaderTitle>
+		<startingGoodwill>
+			<min>20</min>
+			<max>20</max>
+		</startingGoodwill>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<techLevel>Medieval</techLevel>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
+		<hairTags>
+			<li>Tribal</li>
+		</hairTags>
+		<naturalColonyGoodwill>
+			<min>-70</min>
+			<max>70</max>
+		</naturalColonyGoodwill>
+		<visitorTraderKinds>
+			<li>Visitor_Outlander_Standard</li>
+		</visitorTraderKinds>
+		<caravanTraderKinds>
+			<li>Caravan_Leeani_BulkGoods</li>
+			<li>Caravan_Leeani_CombatSupplier</li>
+			<li>Caravan_Leeani_Exotic</li>
+		</caravanTraderKinds>
+		<baseTraderKinds>
+			<li>Base_Leeani_Standard</li>
+		</baseTraderKinds>
+		<allowedArrivalTemperatureRange>
+			<min>-50</min>
+			<max>40</max>
+		</allowedArrivalTemperatureRange>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0,35)</li>
+				<li>(70, 50)</li>
+				<li>(700, 100)</li>
+				<li>(1300, 150)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<pawnGroupMakers>
+			<li>
+				<kindDef>Combat</kindDef>
+				<options>
+					<LeeaniTradie>50</LeeaniTradie>
+					<LeeaniSoldier>250</LeeaniSoldier>
+					<LeeaniScout>90</LeeaniScout>
+					<LeeaniMercenary>100</LeeaniMercenary>
+					<LeeaniCaptain>130</LeeaniCaptain>
+					<LeeaniChampion>130</LeeaniChampion>
+					<LeeaniLoord>300</LeeaniLoord>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<LeeaniTradie>20</LeeaniTradie>
+					<LeeaniSoldier>7</LeeaniSoldier>
+					<LeeaniScout>1</LeeaniScout>
+					<LeeaniCaptain>1</LeeaniCaptain>
+					<LeeaniChampion>1</LeeaniChampion>
+					<LeeaniLoord>10</LeeaniLoord>
+				</options>
+			</li>
+			<li>
+				<kindDef>Trader</kindDef>
+				<traders>
+					<LeeaniTrader>1</LeeaniTrader>
+				</traders>
+				<carriers>
+					<Muffalo>2</Muffalo>
+					<Dromedary>2</Dromedary>
+				</carriers>
+				<guards>
+					<LeeaniSoldier>90</LeeaniSoldier>
+					<LeeaniScout>100</LeeaniScout>
+					<LeeaniCaptain>130</LeeaniCaptain>
+					<LeeaniChampion>130</LeeaniChampion>
+					<LeeaniLoord>300</LeeaniLoord>
+				</guards>
+			</li>
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<LeeaniTradie>50</LeeaniTradie>
+					<LeeaniSoldier>250</LeeaniSoldier>
+					<LeeaniScout>90</LeeaniScout>
+					<LeeaniMercenary>100</LeeaniMercenary>
+					<LeeaniCaptain>130</LeeaniCaptain>
+					<LeeaniChampion>130</LeeaniChampion>
+					<LeeaniLoord>150</LeeaniLoord>	
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<homeIconPath>World/LeeaniBaseIcon</homeIconPath>
+		<expandingIconTexture>World/LeeaniBaseIcon</expandingIconTexture>
+	</FactionDef>
+
+</Defs>

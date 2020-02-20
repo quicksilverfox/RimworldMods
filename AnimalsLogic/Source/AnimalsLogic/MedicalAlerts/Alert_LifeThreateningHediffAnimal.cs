@@ -11,7 +11,7 @@ namespace AnimalsLogic
     public class Alert_LifeThreateningHediffAnimal : Alert_Critical
     {
 
-        private IEnumerable<Pawn> SickAnimals
+        private IEnumerable<Thing> SickAnimals
         {
             get
             {
@@ -33,13 +33,13 @@ namespace AnimalsLogic
             return "AnimalsWithLifeThreateningDisease".Translate();
         }
 
-        public override string GetExplanation()
+        public override TaggedString GetExplanation()
         {
             StringBuilder stringBuilder = new StringBuilder();
             bool amputatable = false;
             foreach (Pawn pawn in AnimalAlertsUtility.SortedAnimalList(SickAnimals))
             {
-                stringBuilder.AppendLine($"    {pawn.LabelShort} {((pawn.Name != null && !pawn.Name.Numerical) ? "(" + pawn.KindLabel + ")" : "")} {(pawn.HasBondRelation() ? "BondBrackets".Translate() : "")}");
+                stringBuilder.AppendLine($"    {pawn.LabelShort} {((pawn.Name != null && !pawn.Name.Numerical) ? "(" + pawn.KindLabel + ")" : "")} {(pawn.HasBondRelation() ? "BondBrackets".Translate().ToString() : "")}");
                 foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                 {
                     if (hediff.CurStage != null && hediff.CurStage.lifeThreatening && hediff.Part != null && hediff.Part != pawn.RaceProps.body.corePart)
@@ -56,7 +56,7 @@ namespace AnimalsLogic
 
         public override AlertReport GetReport()
         {
-            return (Settings.medical_alerts) ? AlertReport.CulpritsAre(SickAnimals) : false;
+            return (Settings.medical_alerts) ? AlertReport.CulpritsAre(SickAnimals.ToList<Thing>()) : false;
         }
 
     }

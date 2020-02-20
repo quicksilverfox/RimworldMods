@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+
+	<BodyPartDef>
+		<defName>LeeaniTail</defName>
+		<label>leeani tail</label>
+		<hitPoints>15</hitPoints>
+		<frostbiteVulnerability>0.5</frostbiteVulnerability>
+		<pawnGeneratorCanAmputate>true</pawnGeneratorCanAmputate>
+		<skinCovered>true</skinCovered>
+		<bleedRate>0.1</bleedRate>
+		<spawnThingOnRemoved>LeeaniTail</spawnThingOnRemoved>
+		<beautyRelated>true</beautyRelated>
+	</BodyPartDef>
+
+</Defs>

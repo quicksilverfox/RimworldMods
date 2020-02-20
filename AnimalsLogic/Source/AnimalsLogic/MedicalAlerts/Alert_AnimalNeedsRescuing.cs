@@ -11,7 +11,7 @@ namespace AnimalsLogic
     public class Alert_AnimalNeedsRescuing : Alert_Critical
     {
 
-        private IEnumerable<Pawn> AnimalsNeedingRescue
+        private IEnumerable<Thing> AnimalsNeedingRescue
         {
             get
             {
@@ -28,19 +28,19 @@ namespace AnimalsLogic
             return "AnimalsNeedRescue".Translate();
         }
 
-        public override string GetExplanation()
+        public override TaggedString GetExplanation()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            foreach (Pawn pawn in AnimalAlertsUtility.SortedAnimalList(AnimalsNeedingRescue))
+            foreach (Pawn pawn in AnimalAlertsUtility.SortedAnimalList(AnimalsNeedingRescue).Cast<Pawn>())
             {
-                stringBuilder.AppendLine($"    {pawn.LabelShort} {((pawn.Name != null && !pawn.Name.Numerical) ? "(" + pawn.KindLabel + ")" : "")} {(pawn.HasBondRelation() ? "BondBrackets".Translate() : "")}");
+                stringBuilder.AppendLine($"    {pawn.LabelShort} {((pawn.Name != null && !pawn.Name.Numerical) ? "(" + pawn.KindLabel + ")" : "")} {(pawn.HasBondRelation() ? "BondBrackets".Translate().ToString() : "")}");
             }
             return string.Format("AnimalsNeedRescueDesc".Translate(), stringBuilder.ToString());
         }
 
         public override AlertReport GetReport()
         {
-            return (Settings.medical_alerts) ? AlertReport.CulpritsAre(AnimalsNeedingRescue) : false;
+            return (Settings.medical_alerts) ? AlertReport.CulpritsAre(AnimalsNeedingRescue.ToList<Thing>()) : false;
         }
 
     }

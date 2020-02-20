@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HairDef>
+    <defName>Lee_Hair_Blank</defName>
+    <label>lno hair</label>
+    <hairGender>Any</hairGender>
+    <texPath>Things/Pawn/Humanlike/Hairs/HairBlank</texPath>
+		<hairTags>
+			<li>LeeaniHair</li>
+		</hairTags>
+  </HairDef>
+ 
+</Defs>

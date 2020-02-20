@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>CarbonResearch</defName>
+		<label>carbon</label>
+		<description>Learn basics of producing and processing carbon, a material of many, many uses.</description>
+		<baseCost>600</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>BiofuelRefining</li>
+		</prerequisites>
+		<researchViewX>7</researchViewX>
+		<researchViewY>2.0</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

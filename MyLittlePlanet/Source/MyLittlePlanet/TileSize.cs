@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using System;
@@ -51,7 +51,7 @@ namespace WorldGenRules
                     // IL_01f1: ldstr "PlanetCoverageTip"
                     if (codes[i].opcode == OpCodes.Ldstr && codes[i].operand.Equals("PlanetCoverageTip"))
                     {
-                        int offset = 4; // instruction used as injection point marker is not exactly in a right place
+                        int offset = 2; // instruction used as injection point marker is not exactly in a right place
                         codes.InsertRange(i + offset, new List<CodeInstruction>(){
                             // this increments vertical offset variable
                             new CodeInstruction(OpCodes.Ldloc_0),

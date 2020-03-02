@@ -311,7 +311,9 @@ namespace AnimalsLogic
                 for (int i = 0; i < codes.Count; i++)
                 {
                     // IL_0064: call bool Verse.AI.GenAI::EnemyIsNear(class Verse.Pawn, float32)
+#pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
                     if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(GenAI).GetMethod(nameof(GenAI.EnemyIsNear)))
+#pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
                     {
                         // IL_0069: brfalse IL_0070
                         return_false = codes[i + 1].operand;

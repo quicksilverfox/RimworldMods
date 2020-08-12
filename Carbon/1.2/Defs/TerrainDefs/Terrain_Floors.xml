@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<TerrainDef ParentName="FloorBase">
+		<defName>CarbonTile</defName>
+		<label>carbon tile</label>
+		<description>Carbon fiber composite tiles for that stylish urbworld look. Very easy to assemble and to keep clean.</description>
+		<texturePath>Terrain/Surfaces/CarbonTileGrained</texturePath>
+		<renderPrecedence>230</renderPrecedence>
+		<statBases>
+			<Cleanliness>0.2</Cleanliness>
+			<WorkToBuild>50</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>3</Beauty>
+		</statBases>
+		<costList>
+			<CarbonFiber>3</CarbonFiber>
+		</costList>
+		<researchPrerequisites>
+			<li>CarbonResearch</li>
+		</researchPrerequisites>
+		<constructEffect>ConstructWood</constructEffect>
+	</TerrainDef>
+
+</Defs>

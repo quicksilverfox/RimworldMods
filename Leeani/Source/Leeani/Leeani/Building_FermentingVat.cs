@@ -48,7 +48,7 @@ namespace Leeani
         public void SetupValues()
         {
             ExtraThingDef extra_def = def as ExtraThingDef;
-            if(extra_def != null && extra_def.vatProperties != null)
+            if (extra_def != null && extra_def.vatProperties != null)
             {
                 MaxCapacity = extra_def.vatProperties.maxCapacity;
                 FermentationModifier = extra_def.vatProperties.fermentationModifier;
@@ -232,33 +232,17 @@ namespace Leeani
                 {
                     ExtraThingDef extra_def = def as ExtraThingDef;
                     if (extra_def != null && extra_def.vatProperties != null)
-                        stringBuilder.AppendLine(extra_def.vatProperties.containsOutputTranslation.Translate(new object[]
-                        {
-                            this.thingCount,
-                            MaxCapacity
-                        }));
+                        stringBuilder.AppendLine(extra_def.vatProperties.containsOutputTranslation.Translate(this.thingCount, MaxCapacity));
                     else
-                        stringBuilder.AppendLine("ContainsBerries".Translate(new object[]
-                        {
-                            this.thingCount,
-                            MaxCapacity
-                        }));
+                        stringBuilder.AppendLine("ContainsBerries".Translate(this.thingCount, MaxCapacity));
                 }
                 else
                 {
                     ExtraThingDef extra_def = def as ExtraThingDef;
                     if (extra_def != null && extra_def.vatProperties != null)
-                        stringBuilder.AppendLine(extra_def.vatProperties.containsInputTranslation.Translate(new object[]
-                        {
-                            this.thingCount,
-                            MaxCapacity
-                        }));
+                        stringBuilder.AppendLine(extra_def.vatProperties.containsInputTranslation.Translate(this.thingCount, MaxCapacity));
                     else
-                        stringBuilder.AppendLine("ContainsCider".Translate(new object[]
-                        {
-                            this.thingCount,
-                            MaxCapacity
-                        }));
+                        stringBuilder.AppendLine("ContainsCider".Translate(this.thingCount, MaxCapacity));
                 }
             }
             if (!this.Empty)
@@ -275,29 +259,15 @@ namespace Leeani
                 {
                     ExtraThingDef extra_def = def as ExtraThingDef;
                     if (extra_def != null && extra_def.vatProperties != null)
-                        stringBuilder.AppendLine(extra_def.vatProperties.fermentationProgressTranslation.Translate(new object[]
-                        {
-                            this.Progress.ToStringPercent(),
-                            this.EstimatedTicksLeft.ToStringTicksToPeriod()
-                        }));
+                        stringBuilder.AppendLine(extra_def.vatProperties.fermentationProgressTranslation.Translate(this.Progress.ToStringPercent(), this.EstimatedTicksLeft.ToStringTicksToPeriod()));
                     else
-                        stringBuilder.AppendLine("FermentationProgress".Translate(new object[]
-                            {
-                            this.Progress.ToStringPercent(),
-                            this.EstimatedTicksLeft.ToStringTicksToPeriod()
-                            }));
+                        stringBuilder.AppendLine("FermentationProgress".Translate(this.Progress.ToStringPercent(), this.EstimatedTicksLeft.ToStringTicksToPeriod()));
                     if (this.CurrentTempProgressSpeedFactor != 1f)
                     {
                         if (extra_def != null && extra_def.vatProperties != null)
-                            stringBuilder.AppendLine(extra_def.vatProperties.fermentationNonIdealTranslation.Translate(new object[]
-                            {
-                                this.CurrentTempProgressSpeedFactor.ToStringPercent()
-                            }));
+                            stringBuilder.AppendLine(extra_def.vatProperties.fermentationNonIdealTranslation.Translate(this.CurrentTempProgressSpeedFactor.ToStringPercent()));
                         else
-                            stringBuilder.AppendLine("FermentationBarrelOutOfIdealTemperature".Translate(new object[]
-                            {
-                                this.CurrentTempProgressSpeedFactor.ToStringPercent()
-                            }));
+                            stringBuilder.AppendLine("FermentationBarrelOutOfIdealTemperature".Translate(this.CurrentTempProgressSpeedFactor.ToStringPercent()));
                     }
                 }
             }
@@ -330,7 +300,7 @@ namespace Leeani
             {
                 thing = ThingMaker.MakeThing(extra_def.vatProperties.outputThingDef, null);
                 stack_count_modifier = extra_def.vatProperties.inputToOutputRatio;
-            }         
+            }
             thing.stackCount = this.thingCount / stack_count_modifier;
             this.Reset();
             return thing;
@@ -361,7 +331,7 @@ namespace Leeani
         {
             List<Gizmo> gizmos = new List<Gizmo>(base.GetGizmos());
 
-            if(DebugSettings.godMode)
+            if (DebugSettings.godMode)
             {
                 {
                     Command_Action debug_action = new Command_Action();

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<Leeani.WorkGiverDynamicDef>
+		<defName>FillCiderKeg</defName>
+		<label>fill cider keg</label>
+		<giverClass>Leeani.WorkGiver_FillFermentingVat</giverClass>
+		<inputThingDef>LeeaniCiderKeg</inputThingDef>
+		<jobDef>FillCiderKeg</jobDef>
+		<workType>Hauling</workType>
+		<verb>fill</verb>
+		<gerund>filling</gerund>
+		<priorityInType>19</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</Leeani.WorkGiverDynamicDef>
+
+	<Leeani.WorkGiverDynamicDef>
+		<defName>EmptyCiderKeg</defName>
+		<label>take cider out of keg</label>
+		<giverClass>Leeani.WorkGiver_TakeThingOutOfFermenter</giverClass>
+		<outputThingDef>LeeaniCiderKeg</outputThingDef>
+		<jobDef>EmptyCiderKeg</jobDef>
+		<workType>Hauling</workType>
+		<verb>take cider</verb>
+		<gerund>taking cider from</gerund>
+		<priorityInType>20</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</Leeani.WorkGiverDynamicDef>
+
+	<Leeani.WorkGiverDynamicDef>
+		<defName>FillWineKeg</defName>
+		<label>fill wine keg</label>
+		<giverClass>Leeani.WorkGiver_FillFermentingVat</giverClass>
+		<inputThingDef>LeeaniWineKeg</inputThingDef>
+		<jobDef>FillWineKeg</jobDef>
+		<workType>Hauling</workType>
+		<verb>fill</verb>
+		<gerund>filling</gerund>
+		<priorityInType>19</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</Leeani.WorkGiverDynamicDef>
+
+	<Leeani.WorkGiverDynamicDef>
+		<defName>EmptyWineKeg</defName>
+		<label>take wine out of keg</label>
+		<giverClass>Leeani.WorkGiver_TakeThingOutOfFermenter</giverClass>
+		<outputThingDef>LeeaniWineKeg</outputThingDef>
+		<jobDef>EmptyWineKeg</jobDef>
+		<workType>Hauling</workType>
+		<verb>take wine</verb>
+		<gerund>taking wine from</gerund>
+		<priorityInType>20</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</Leeani.WorkGiverDynamicDef>
+
+</Defs>

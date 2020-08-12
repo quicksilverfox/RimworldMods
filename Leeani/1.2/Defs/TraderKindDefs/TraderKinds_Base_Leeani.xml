@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- lot of raw materials, agrarian products and drugs, but little tech -->
+	<TraderKindDef>
+		<defName>Base_Leeani_Standard</defName>
+		<stockGenerators>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Silver</thingDef>
+				<countRange>
+					<min>1600</min>
+					<max>5000</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>ComponentIndustrial</thingDef>
+				<countRange>
+					<min>20</min>
+					<max>70</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>ComponentSpacer</thingDef>
+				<countRange>
+					<min>-20</min>
+					<max>2</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Steel</thingDef>
+				<countRange>
+					<min>600</min>
+					<max>1000</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>WoodLog</thingDef>
+				<countRange>
+					<min>600</min>
+					<max>1000</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Plasteel</thingDef>
+				<countRange>
+					<min>100</min>
+					<max>200</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Uranium</thingDef>
+				<countRange>
+					<min>20</min>
+					<max>100</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Cloth</thingDef>
+				<countRange>
+					<min>600</min>
+					<max>1000</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Gold</thingDef>
+				<countRange>
+					<min>150</min>
+					<max>300</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Neutroamine</thingDef>
+				<countRange>
+					<min>25</min>
+					<max>100</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Chemfuel</thingDef>
+				<countRange>
+					<min>400</min>
+					<max>800</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Chocolate</thingDef>
+				<countRange>
+					<min>30</min>
+					<max>100</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Beer</thingDef>
+				<countRange>
+					<min>40</min>
+					<max>150</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>LeeaniCider</thingDef>
+				<countRange>
+					<min>100</min>
+					<max>500</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>LeeaniWine</thingDef>
+				<countRange>
+					<min>100</min>
+					<max>500</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>MedicineHerbal</thingDef>
+				<countRange>
+					<min>20</min>
+					<max>40</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>MedicineIndustrial</thingDef>
+				<countRange>
+					<min>10</min>
+					<max>20</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Textiles</categoryDef>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>600</min>
+					<max>1000</max>
+				</totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>ResourcesRaw</categoryDef>
+				<thingDefCountRange>
+					<min>2</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>600</min>
+					<max>1000</max>
+				</totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>FoodRaw</categoryDef>
+				<excludedCategories>
+					<li>EggsFertilized</li>
+				</excludedCategories>
+				<thingDefCountRange>
+					<min>2</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>600</min>
+					<max>1000</max>
+				</totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>FoodMeals</categoryDef>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>18</min>
+					<max>80</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>BuildingsFurniture</categoryDef>
+				<thingDefCountRange>
+					<min>3</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>2</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Animals">
+				<tradeTagsSell>
+					<li>AnimalFarm</li>
+					<li>AnimalPet</li>
+				</tradeTagsSell>
+				<tradeTagsBuy>
+					<li>AnimalUncommon</li>
+					<li>AnimalExotic</li>
+				</tradeTagsBuy>
+				<kindCountRange>
+					<min>2</min>
+					<max>4</max>
+				</kindCountRange>
+				<countRange>
+					<min>4</min>
+					<max>10</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Clothes">
+				<countRange>
+					<min>10</min>
+					<max>16</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Drugs</categoryDef>
+				<thingDefCountRange>
+					<min>3</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>1000</min>
+					<max>2500</max>
+				</totalPriceRange>
+			</li>
+			<li Class="StockGenerator_WeaponsRanged">
+				<countRange>
+					<min>2</min>
+					<max>4</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>WeaponsMelee</categoryDef>
+				<thingDefCountRange>
+					<min>3</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>2</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Armor">
+				<countRange>
+					<min>2</min>
+					<max>4</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>TechHediff</tradeTag>
+				<thingDefCountRange>
+					<min>3</min>
+					<max>6</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>1</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>ExoticMisc</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>2</max>
+				</countRange>
+				<excludedThingDefs>
+					<li>Luciferium</li>
+					<!-- already handled by drugs -->
+					<li>ComponentSpacer</li>
+					<!-- already handled by single def -->
+				</excludedThingDefs>
+				<customCountRanges>
+					<MedicineUltratech>1~5</MedicineUltratech>
+				</customCountRanges>
+			</li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Artifact</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>1</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>Apparel</categoryDef>
+				<thingDefCountRange>
+					<min>3</min>
+					<max>6</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>10</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Art">
+				<countRange>
+					<min>5</min>
+					<max>10</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Television</tradeTag>
+				<thingDefCountRange>
+					<min>0</min>
+					<max>1</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>1</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Telescope</thingDef>
+				<countRange>
+					<min>0</min>
+					<max>1</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>LeeaniFurniture</tradeTag>
+				<thingDefCountRange>
+					<min>2</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>1</min>
+					<max>2</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_Slaves">
+				<respectPopulationIntent>true</respectPopulationIntent>
+				<countRange>
+					<min>-1</min>
+					<max>2</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_MultiDef">
+				<thingDefs>
+					<li>Kibble</li>
+					<li>Pemmican</li>
+				</thingDefs>
+			</li>
+
+      <!-- Techprints -->
+      <li Class="StockGenerator_Techprints">
+        <countChances>
+          <li>
+            <count>2</count>
+            <chance>0.5</chance>
+          </li>
+          <li>
+            <count>3</count>
+            <chance>0.5</chance>
+          </li>
+        </countChances>
+      </li>
+			
+			<!-- Buying -->
+			<li Class="StockGenerator_BuyExpensiveSimple" />
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>Art</tag>
+			</li>
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>ImplantEmpireCommon</tag>
+			</li>
+			<li Class="StockGenerator_BuyTradeTag">
+				<tag>ImplantEmpireRoyal</tag>
+			</li>
+		</stockGenerators>
+	</TraderKindDef>
+
+</Defs>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="PowerConduit">
+		<defName>CarbonPowerConduit</defName>
+		<label>carbon conduit</label>
+		<description>A set of heavy duty electrical cables for moving power around. Can be placed under walls and other buildings.</description>
+		<graphicData>
+			<texPath>Things/Building/Linked/CarbonPowerConduit_Atlas</texPath>
+		</graphicData>
+		<uiIconColor>(75,75,75)</uiIconColor>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>70</WorkToBuild>
+			<Flammability>0.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<researchPrerequisites>
+			<li>CarbonResearch</li>
+		</researchPrerequisites>
+		<costList>
+			<CarbonFiber>1</CarbonFiber>
+		</costList>
+	</ThingDef>
+
+	<ThingDef ParentName="PowerConduit">
+		<defName>UnderwaterCarbonPowerConduit</defName>
+		<label>waterproof carbon conduit</label>
+		<description>A set of heavy duty electrical cables for moving power around. Insulated for transmitting power under shallow water.</description>
+		<graphicData>
+			<texPath>Things/Building/Linked/CarbonPowerConduitUnderwater_Atlas</texPath>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/WaterproofConduit_MenuIcon</uiIconPath>
+		<uiIconColor>(75,75,100)</uiIconColor>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>70</WorkToBuild>
+			<Flammability>0.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<terrainAffordanceNeeded>ShallowWater</terrainAffordanceNeeded>
+		<researchPrerequisites>
+			<li>CarbonResearch</li>
+		</researchPrerequisites>
+		<costList>
+			<CarbonFiber>2</CarbonFiber>
+		</costList>
+	</ThingDef>
+</Defs>

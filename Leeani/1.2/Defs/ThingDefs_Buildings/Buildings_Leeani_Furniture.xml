@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="ArtableFurnitureBase">
+		<defName>LoordThrone</defName>
+		<label>throne</label>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LoordThrone</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+			</shadowData>
+			<damageData>
+				<rectN>(0.25,0.234375,0.5,0.28125)</rectN>
+				<rectS>(0.25,0.234375,0.5,0.28125)</rectS>
+				<rectE>(0.28125,0.25,0.453125,0.25)</rectE>
+				<rectW>(0.28125,0.25,0.453125,0.25)</rectW>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>10000</WorkToBuild>
+			<Mass>10</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>20</Beauty>
+			<Comfort>1.00</Comfort>
+		</statBases>
+		<description>A throne for the laurels of a king or queen to rest upon!</description>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<costList>
+			<Cloth>100</Cloth>
+			<WoodLog>10</WoodLog>
+			<Gold>25</Gold>
+		</costList>
+		<pathCost>30</pathCost>
+		<designationHotKey>Misc7</designationHotKey>
+		<fillPercent>0.35</fillPercent>
+		<building>
+			<isSittable>true</isSittable>
+		</building>
+		<researchPrerequisites>
+			<li>LeeaniTraditions</li>
+		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ArtableFurnitureBase">
+		<defName>BanquetChair</defName>
+		<label>banquet chair</label>
+		<graphicData>
+			<texPath>Things/Building/Furniture/BanquetChair</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(0.3, 0.3, 0.3)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>1500</WorkToBuild>
+			<Mass>10</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>12</Beauty>
+			<Comfort>0.75</Comfort>
+		</statBases>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>40</costStuffCount>
+		<description>An esteemed chair, decorated and made for a noble or court guest!</description>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<pathCost>30</pathCost>
+		<designationHotKey>Misc7</designationHotKey>
+		<fillPercent>0.35</fillPercent>
+		<size>(1,1)</size>
+		<building>
+			<isSittable>true</isSittable>
+		</building>
+		<researchPrerequisites>
+			<li>LeeaniTraditions</li>
+		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef Abstract="True" ParentName="ArtableFurnitureBase" Name="LArtTableBase">
+		<thingClass>Building</thingClass>
+		<altitudeLayer>Building</altitudeLayer>
+		<description>People eat off tables when chairs are placed facing them.</description>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<pathCost>60</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<surfaceType>Eat</surfaceType>
+		<comps>
+			<li>
+				<compClass>CompGatherSpot</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="LArtTableBase">
+		<defName>BanquetTable</defName>
+		<label>banquet table</label>
+		<graphicData>
+			<texPath>Things/Building/Furniture/BanquetTable</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.8,1.8)</drawSize>
+			<damageData>
+				<rect>(0.05,0.27,1.9,1.73)</rect>
+			</damageData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>2500</WorkToBuild>
+			<Mass>10</Mass>
+			<Flammability>0.0</Flammability>
+			<Beauty>15</Beauty>
+		</statBases>
+		<size>(3,1)</size>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<rotatable>true</rotatable>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtFurniture</nameMaker>
+				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+		<researchPrerequisites>
+			<li>LeeaniTraditions</li>
+		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="FurnitureBase">
+		<defName>LeeaniStoneBrazier</defName>
+		<label>brazier</label>
+		<thingClass>Building_WorkTable</thingClass>
+		<description>A decent heat source, can also provide the functions of a campfire, but does not destroy itself when out of fuel.</description>    
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Furniture/Brazier</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawRotated>false</drawRotated>
+			<allowFlip>false</allowFlip>
+			<damageData>
+				<rect>(0.2,0,0.6,0.1)</rect>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<useHitPoints>True</useHitPoints>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<tickerType>Normal</tickerType>
+		<surfaceType>Item</surfaceType>
+		<drawerType>RealtimeOnly</drawerType>
+		<fillPercent>0.25</fillPercent>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>300</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>5</Mass>
+			<WorkTableWorkSpeedFactor>0.8</WorkTableWorkSpeedFactor>
+		</statBases>
+		<selectable>true</selectable>
+		<costList>
+			<WoodLog>20</WoodLog>
+			<!-- just the intial wood -->
+		</costList>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>30</costStuffCount>
+		<soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+			<li>PlaceWorker_Heater</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>10.0</fuelConsumptionRate>
+				<fuelCapacity>20.0</fuelCapacity>
+				<fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<destroyOnNoFuel>false</destroyOnNoFuel>
+				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+				<initialFuelPercent>1</initialFuelPercent>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>15</glowRadius>
+				<glowColor>(252,187,113,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>21</heatPerSecond>
+				<heatPushMaxTemperature>28</heatPushMaxTemperature>
+			</li>
+			<li Class="CompProperties_FireOverlay">
+				<fireSize>0.4</fireSize>
+			</li>
+			<li>
+				<compClass>CompGatherSpot</compClass>
+			</li>
+		</comps>
+		<designationCategory>Temperature</designationCategory>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<recipes>
+			<li>CookMealSimple</li>
+			<li>Make_Pemmican</li>
+			<li>BurnApparel</li>
+			<li>BurnDrugs</li>
+		</recipes>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<isMealSource>true</isMealSource>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<rotatable>true</rotatable>
+		<researchPrerequisites>
+			<li>LeeaniTraditions</li>
+		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef Abstract="True" Name="LeeaniLampBase" ParentName="FurnitureBase">
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<selectable>true</selectable>
+		<fillPercent>0.25</fillPercent>
+		<pathCost>8</pathCost>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<designationCategory>Furniture</designationCategory>
+		<rotatable>false</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>600</WorkToBuild>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<researchPrerequisites>
+			<li>Electricity</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef Abstract="True" Name="LeeaniStandingLampBase" ParentName="LeeaniLampBase">
+		<graphicData>
+			<texPath>Things/Building/Furniture/LampPost</texPath>
+			<drawSize>(1.8,3.8)</drawSize>
+		</graphicData>
+		<costList>
+			<WoodLog>5</WoodLog>
+			<Steel>5</Steel>
+		</costList>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>5</costStuffCount>
+		<statBases>
+			<Mass>15</Mass>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>35</basePowerConsumption>
+				<shortCircuitInRain>false</shortCircuitInRain>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+	</ThingDef>
+
+	<ThingDef ParentName="LeeaniStandingLampBase" >
+		<defName>LeeaniLampPost</defName>
+		<label>electric Lamp-post</label>
+		<description>Tall lamp that lights a big ol' area. Good for towns.</description>
+		<designationHotKey>Misc11</designationHotKey>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>15</glowRadius>
+				<glowColor>(255,214,170,0)</glowColor>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>LeeaniTraditions</li>
+			<li>Electricity</li>
+		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ArtableFurnitureBase">
+		<defName>LeeaniBookshelf</defName>
+		<label>archive</label>
+		<description>A reputable repository of rather relatable reading reams. In other words, a bookshelf. Boosts research when placed close to a research bench and can provide some joy to read its contents.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LeeaniBookshelf</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.09375,0.296875,0.796875,0.703125)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<rotatable>true</rotatable>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<fillPercent>0.80</fillPercent>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<thingCategories>
+			<li>BuildingsJoy</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>10000</WorkToBuild>
+			<Mass>15</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>9</Beauty>
+			<JoyGainFactor>1</JoyGainFactor>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>70</costStuffCount>
+		<pathCost>70</pathCost>
+		<passability>PassThroughOnly</passability>
+		<designationCategory>Joy</designationCategory>
+		<designationHotKey>Misc2</designationHotKey>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<ResearchSpeedFactor>0.1</ResearchSpeedFactor>
+				</statOffsets>
+				<maxSimultaneous>2</maxSimultaneous>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>LeeaniArkhaev</li>
+		</researchPrerequisites>
+		<tradeTags>
+			<li>LeeaniFurniture</li>
+		</tradeTags>
+	</ThingDef>
+
+</Defs>

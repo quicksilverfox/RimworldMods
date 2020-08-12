@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="LeatherBase">
+		<defName>Leather_HKCat</defName>
+		<label>housekeeper cat fur</label>
+		<description>Tanned housekeeper cat pelt offers exceptional insulation.</description>
+		<graphicData>
+			<color>(100, 100, 100)</color>
+			<colorTwo>(100, 100, 100)</colorTwo>
+		</graphicData>
+		<statBases>
+			<MarketValue>14</MarketValue>
+			<StuffPower_Armor_Sharp>0.98</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.28</StuffPower_Armor_Blunt>
+			<StuffPower_Insulation_Cold>35</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>25</StuffPower_Insulation_Heat>
+		</statBases>
+		<stuffProps>
+			<color>(211,194,143)</color>
+			<commonality>0.0025</commonality>
+		</stuffProps>
+	</ThingDef>
+
+	<ThingDef ParentName="WoolBase">
+		<defName>Wool_HKCat</defName>
+		<label>housekeeper cat wool</label>
+		<description>Wool from housekeeper cat offers exceptional insulation.</description>
+		<graphicData>
+			<color>(80,80,80)</color>
+		</graphicData>
+		<statBases>
+			<MarketValue>7</MarketValue>
+			<DeteriorationRate>2.6</DeteriorationRate>
+			<StuffPower_Insulation_Cold>30</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>30</StuffPower_Insulation_Heat>
+		</statBases>
+		<stuffProps>
+			<commonality>0.03</commonality>
+			<color>(80,80,80)</color>
+		</stuffProps>
+	</ThingDef>
+</Defs>

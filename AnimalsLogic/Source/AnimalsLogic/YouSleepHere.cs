@@ -72,7 +72,7 @@ namespace AnimalsLogic
                     gizmos.Add(
                         new Command_Action
                         {
-                            defaultLabel = "CommandBedSetOwnerLabel".Translate(),
+                            defaultLabel = "CommandThingSetOwnerLabel".Translate(),
                             icon = ContentFinder<Texture2D>.Get("UI/Commands/AssignOwner", true),
                             defaultDesc = "CommandBedSetOwnerDesc".Translate(),
                             action = delegate

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Blunt">
+		<defName>MeleeWeapon_Quarterstaff</defName>
+		<label>quarterstaff</label>
+		<description>A long, shaped stick suitable for beating an enemy with quick, fast strikes. A dangerous weapon in the hands of someone capable.</description>
+		<graphicData>
+			<texPath>Gear/Quarterstaff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Neolithic</techLevel>
+		<weaponTags>
+			<li>NonNeolithicOnlyMelee</li>
+			<li>NonNeolithicOnlySimpleMelee</li>
+			<li>NeolithicMeleeBasic</li>
+		</weaponTags>
+		<tradeability>Sellable</tradeability>
+		<costStuffCount>70</costStuffCount>
+		<statBases>
+			<WorkToMake>600</WorkToMake>
+			<Mass>1</Mass>
+			<DeteriorationRate>0.4</DeteriorationRate>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+		</recipeMaker>
+		<tools>
+			<li>
+				<label>head</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>12.3</power>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+</Defs>

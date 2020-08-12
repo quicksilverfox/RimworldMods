@@ -90,7 +90,7 @@ namespace AutomatedVat
 				bool flag2 = num > 0f;
 				if (flag2)
 				{
-					stringBuilder.AppendLine("(" + GenText.ToStringPercent(num) + ") " + (this.Extension.temperatureManagement.hasTemperatureManagement ? "AVInspect_BadTempManaged".AdvancedTranslate(this.Extension, new object[0]) : "AVInspect_BadTempUnmanaged".AdvancedTranslate(this.Extension, new object[0])));
+					stringBuilder.AppendLine("(" + GenText.ToStringPercent(num) + ") " + (this.Extension.temperatureManagement.hasTemperatureManagement ? "AVInspect_BadTempManaged".AdvancedTranslate(this.Extension) : "AVInspect_BadTempUnmanaged".AdvancedTranslate(this.Extension)));
 				}
 			}
 			stringBuilder.AppendLine(this.GetStringIngredients());
@@ -106,7 +106,7 @@ namespace AutomatedVat
 		public virtual string GetStringIngredients()
 		{
 			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.Append("AVInspect_IngredientsLeft".AdvancedTranslate(this.Extension, new object[0]));
+			stringBuilder.Append("AVInspect_IngredientsLeft".AdvancedTranslate(this.Extension));
 			foreach (Building_AutomatedVat._ThingCountClass thingCountClass in this.localRecord)
 			{
 				stringBuilder.Append(thingCountClass.ToString());
@@ -117,10 +117,7 @@ namespace AutomatedVat
 		// Token: 0x06000009 RID: 9 RVA: 0x000022DC File Offset: 0x000004DC
 		public virtual string GetStringWorking()
 		{
-			return "AVInspect_WorkLeft".AdvancedTranslate(this.Extension, new object[]
-			{
-				GenText.ToStringWorkAmount((float)this.workLeft)
-			});
+			return "AVInspect_WorkLeft".AdvancedTranslate(this.Extension, GenText.ToStringWorkAmount((float)this.workLeft));
 		}
 
 		// Token: 0x0600000A RID: 10 RVA: 0x00002313 File Offset: 0x00000513

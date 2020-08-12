@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- injecting bookshelves as facilities for research benches -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/ThingDef[defName='HiTechResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='HiTechResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+				<order>Append</order>
+				<value>
+					<li>LeeaniBookshelf</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- to ensure proper compatibility with other furniture mods have to check every step here -->
+	<!-- adding linkables for simple research bench and adding bookshelves to them -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']</xpath>
+				<order>Append</order>
+				<value>
+					<comps />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps</xpath>
+				<order>Append</order>
+				<value>
+					<li Class='CompProperties_AffectedByFacilities' />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']</xpath>
+				<order>Append</order>
+				<value>
+					<linkableFacilities />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+				<order>Append</order>
+				<value>
+					<li>LeeaniBookshelf</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- making linkables visible when placing them -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<success>Invert</success>
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']/placeWorkers</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName='SimpleResearchBench']</xpath>
+				<order>Append</order>
+				<value>
+					<placeWorkers />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName='SimpleResearchBench']/placeWorkers</xpath>
+		<order>Append</order>
+		<value>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</value>
+	</Operation>
+
+	<!-- injecting apparel tags, so they would start with proper equipment -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName='Apparel_Pants' or defName='Apparel_BasicShirt' or defName='Apparel_CollarShirt' or defName='Apparel_Duster' or defName='Apparel_Jacket' or defName='Apparel_CowboyHat']/apparel/tags</xpath>
+		<order>Append</order>
+		<value>
+			<li>LeeaniPlayer</li>
+		</value>
+	</Operation>
+	
+	<!-- Adds wine press to brewery work giver to reduce work tab clutter -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/WorkGiverDef[defName='DoBillsBrew']/fixedBillGiverDefs</xpath>
+		<order>Append</order>
+		<value>
+			<li>LeeaniWinePress</li>
+		</value>
+	</Operation>
+	
+	<!-- Adds brazier to campfire work givers to reduce work tab clutter -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/WorkGiverDef[defName='DoBillsHaulCampfire' or defName='DoBillsCookCampfire']/fixedBillGiverDefs</xpath>
+		<order>Append</order>
+		<value>
+			<li>LeeaniStoneBrazier</li>
+		</value>
+	</Operation>
+
+	<!-- Outlander union have a small chance to have a stray Leeani on their side. Piracy is not their style, so not adding them to pirate bands. -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Combat"]/options</xpath>
+		<order>Append</order>
+		<value>
+			<LeeaniSoldier>0.66</LeeaniSoldier>
+			<LeeaniScout>0.33</LeeaniScout>
+			<LeeaniMercenary>1.66</LeeaniMercenary>
+			<LeeaniCaptain>0.33</LeeaniCaptain>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Peaceful"]/options</xpath>
+		<order>Append</order>
+		<value>
+			<LeeaniTradie>1</LeeaniTradie>
+			<LeeaniSoldier>0.66</LeeaniSoldier>
+			<LeeaniScout>0.33</LeeaniScout>
+			<LeeaniMercenary>1.66</LeeaniMercenary>
+			<LeeaniCaptain>0.33</LeeaniCaptain>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
+		<order>Append</order>
+		<value>
+			<LeeaniMercenary>1.5</LeeaniMercenary>
+			<LeeaniSoldier>0.66</LeeaniSoldier>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/FactionDef[@Name='OutlanderFactionBase']/pawnGroupMakers/li[kindDef="Settlement"]/options</xpath>
+		<order>Append</order>
+		<value>
+			<LeeaniTradie>1</LeeaniTradie>
+			<LeeaniSoldier>0.66</LeeaniSoldier>
+			<LeeaniScout>0.66</LeeaniScout>
+			<LeeaniMercenary>1.66</LeeaniMercenary>
+			<LeeaniCaptain>0.33</LeeaniCaptain>
+		</value>
+	</Operation>
+
+</Patch>

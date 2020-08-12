@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Defs def: 
+	  1. Don't forget to set the thingClass to the value shown below!
+	  2. The interaction cell is the output cell.
+	  3. Don't forget to set tickerType to Normal.
+	  4. VERY IMPORTANT: MOD EXTENSION - USED TO DEFINE VALUES
+		* Insert ingredients, prducts and work amount (in ticks, 60 ticks is 1 work).
+		* tickRateDivisor: Describes how often the machine ticks (1 in x times). Has no effect on work speed. Recommended number is 35 to be in line with Industrial Rollers
+		* workSpeedMultiplier: How fast the machine works. Has no effect on tick speed.
+		* temperatureManagement: Fields about temperature.
+		** hasTemperatureManagement: If this is set to false, the building is at the mercy of the environment.
+		** temperatureManagementStrength: How much juice the temperature regulator has got against the elements. 50 means it can survive temperature ranges from (minimum - 50) to (maximum + 50).
+		** powerConsumptionExtra: The amount of power the temperature regulator takes.
+	-->
+	<ThingDef ParentName="BuildingBase">
+		<defName>IndustrialCiderKeg</defName>
+		<label>industrial cider keg</label>
+		<thingClass>AutomatedVat.Building_AutomatedVat</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Production/AutoKeg</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<rect>(0.15,0.3,2.7,2.7)</rect>
+			</damageData>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,2)</interactionCellOffset>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<passability>Impassable</passability>
+		<fillPercent>0.45</fillPercent>
+		<pathCost>60</pathCost>
+		<size>(3,3)</size>
+		<statBases>
+			<WorkToBuild>5000</WorkToBuild>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A barrel for fermenting even more berries into famed Leeani cider.</description>
+		<costList>
+			<Steel>50</Steel>
+		</costList>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costStuffCount>200</costStuffCount>
+		<comps>
+			<li Class="CompProperties_TemperatureRuinable">
+				<minSafeTemperature>-1</minSafeTemperature>
+				<maxSafeTemperature>32</maxSafeTemperature>
+				<progressPerDegreePerTick>0.00001</progressPerDegreePerTick>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>50</basePowerConsumption>
+			</li>
+		</comps>
+		<building>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+		</building>
+		<tickerType>Normal</tickerType>
+		<rotatable>true</rotatable>
+		<designationCategory>Production</designationCategory>
+		<researchPrerequisites>
+			<li>LeeaniAutovats</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="AutomatedVat.ModExtension_AutomatedVat">
+				<workAmount>1000</workAmount>
+				<ingredients>
+					<BerryJuice>50</BerryJuice>
+				</ingredients>
+				<products>
+					<LeeaniCider>50</LeeaniCider>
+				</products>
+				<tickRateDivisor>35</tickRateDivisor>
+				<workSpeedMultiplier>0.1</workSpeedMultiplier>
+				<temperatureManagement>
+					<hasTemperatureManagement>true</hasTemperatureManagement>
+					<temperatureManagementStrength>50</temperatureManagementStrength>
+					<powerConsumptionExtra>250</powerConsumptionExtra>
+				</temperatureManagement>
+				<!-- Short Defsnstration on how to override these translation strings:
+				Translation strings can be found in the Keyed section of the English translation folder.
+				First, you will have to have an overrides tag:
+				<overrides>
+				Then, you simply state the original and modified strings like so:
+				  <li>
+					<original>AVInspect_BadTempManaged</original> The translation string I want to replace
+					<modified>AVInspect_IngredientsLeft</modified> The translation string I replace with
+				  </li>
+				  You can add more li tags if you want.
+				</overrides>
+				-->
+			</li>
+		</modExtensions>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>IndustrialWineVat</defName>
+		<label>industrial wine vat</label>
+		<thingClass>AutomatedVat.Building_AutomatedVat</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Production/AutoKeg</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<rect>(0.15,0.3,2.7,2.7)</rect>
+			</damageData>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,2)</interactionCellOffset>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<passability>Impassable</passability>
+		<fillPercent>0.45</fillPercent>
+		<pathCost>60</pathCost>
+		<size>(3,3)</size>
+		<statBases>
+			<WorkToBuild>1000</WorkToBuild>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A barrel for fermenting even more grapes into Leeani wine.</description>
+		<costList>
+			<Steel>50</Steel>
+		</costList>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costStuffCount>200</costStuffCount>
+		<comps>
+			<li Class="CompProperties_TemperatureRuinable">
+				<minSafeTemperature>-1</minSafeTemperature>
+				<maxSafeTemperature>32</maxSafeTemperature>
+				<progressPerDegreePerTick>0.00001</progressPerDegreePerTick>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>50</basePowerConsumption>
+			</li>
+		</comps>
+		<building>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+		</building>
+		<tickerType>Normal</tickerType>
+		<rotatable>true</rotatable>
+		<designationCategory>Production</designationCategory>
+		<researchPrerequisites>
+			<li>LeeaniAutovats</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="AutomatedVat.ModExtension_AutomatedVat">
+				<workAmount>5000</workAmount>
+				<ingredients>
+					<GrapeJuice>50</GrapeJuice>
+				</ingredients>
+				<products>
+					<LeeaniWine>50</LeeaniWine>
+				</products>
+				<tickRateDivisor>35</tickRateDivisor>
+				<workSpeedMultiplier>0.1</workSpeedMultiplier>
+				<temperatureManagement>
+					<hasTemperatureManagement>true</hasTemperatureManagement>
+					<temperatureManagementStrength>50</temperatureManagementStrength>
+					<powerConsumptionExtra>250</powerConsumptionExtra>
+				</temperatureManagement>
+				<!-- Short Defsnstration on how to override these translation strings:
+				Translation strings can be found in the Keyed section of the English translation folder.
+				First, you will have to have an overrides tag:
+				<overrides>
+				Then, you simply state the original and modified strings like so:
+				  <li>
+					<original>AVInspect_BadTempManaged</original> The translation string I want to replace
+					<modified>AVInspect_IngredientsLeft</modified> The translation string I replace with
+				  </li>
+				  You can add more li tags if you want.
+				</overrides>
+				-->
+			</li>
+		</modExtensions>
+	</ThingDef>
+</Defs>

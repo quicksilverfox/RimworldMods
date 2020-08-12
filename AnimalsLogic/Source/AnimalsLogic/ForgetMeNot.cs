@@ -55,7 +55,9 @@ namespace AnimalsLogic
             for (int i = 0; i < codes.Count; i++)
             {
                 //ldc.r4 0.101
+#pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
                 if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(TrainableUtility).GetMethod(nameof(TrainableUtility.TamenessCanDecay)))
+#pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
                 {
                     codes[i].operand = typeof(ForgetMeNot).GetMethod(nameof(TamenessCanDecay));
                     break;

@@ -10,3 +10,6 @@ HousekeeperAssistanceCat - a new animal that can be trained to do hauling and si
 Leeani - alien race of fox people
 
 MyLittlePlanet - allows making smaller worlds
+
+Also available on Steam:
+https://steamcommunity.com/profiles/76561198024949177/myworkshopfiles/?appid=294100

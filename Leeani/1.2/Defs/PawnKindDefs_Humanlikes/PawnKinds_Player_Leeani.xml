@@ -4,6 +4,7 @@
 	<PawnKindDef Abstract="True" Name="BaseLeeaniPawnKind">
 		<race>Alien_Leeani</race>
 		<combatPower>30</combatPower>
+		<maxGenerationAge>55</maxGenerationAge>
 		<baseRecruitDifficulty>0.50</baseRecruitDifficulty>
 		<isFighter>false</isFighter>
 		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
@@ -12,62 +13,45 @@
 
 	<!-- For Leeani Loords scenario -->
 	<PawnKindDef ParentName="BaseLeeaniPawnKind">
-		<defName>Leeani</defName>
+		<defName>LeeaniColonist</defName>
 		<label>colonist</label>
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<backstoryCategories>
 			<li>LeeaniBackstory</li>
 		</backstoryCategories>
-		<backstoryCryptosleepCommonality>0.01</backstoryCryptosleepCommonality>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
 		<apparelTags>
 			<li>LeeaniPlayer</li>
 		</apparelTags>
-		<apparelMoney>
-			<min>500</min>
-			<max>1000</max>
-		</apparelMoney>
-		<weaponMoney>
-			<min>0</min>
-			<max>0</max>
-		</weaponMoney>
+		<apparelMoney>350~600</apparelMoney>
+		<weaponMoney>0~0</weaponMoney>
 		<techHediffsChance>0.05</techHediffsChance>
-		<techHediffsMoney>
-			<min>50</min>
-			<max>800</max>
-		</techHediffsMoney>
+		<techHediffsMoney>50~800</techHediffsMoney>
 		<techHediffsTags>
 			<li>Poor</li>
 			<li>Simple</li>
 		</techHediffsTags>
 	</PawnKindDef>
-
+	
 	<!-- For Crashlanded scenario -->
 	<PawnKindDef ParentName="BaseLeeaniPawnKind">
 		<defName>LeeaniSpacerColonist</defName>
 		<label>colonist</label>
 		<defaultFactionType>PlayerColony</defaultFactionType>
-		<backstoryCategories>
-			<li>Civil</li>
-		</backstoryCategories>
 		<chemicalAddictionChance>0.06</chemicalAddictionChance>
 		<apparelTags>
 			<li>IndustrialBasic</li>
 			<li>LeeaniPlayer</li>
 		</apparelTags>
 		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
-		<apparelMoney>
-			<min>350</min>
-			<max>600</max>
-		</apparelMoney>
+		<apparelMoney>350~600</apparelMoney>
 		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
-		<techHediffsChance>0.05</techHediffsChance>
-		<techHediffsMoney>
-			<min>50</min>
-			<max>800</max>
-		</techHediffsMoney>
+		<techHediffsChance>0.1</techHediffsChance>
+		<techHediffsMoney>50~1200</techHediffsMoney>
 		<techHediffsTags>
-			<li>Poor</li>
-			<li>Simple</li>
+		  <li>Poor</li>
+		  <li>Simple</li>
+		  <li>ImplantEmpireCommon</li>
 		</techHediffsTags>
 	</PawnKindDef>
 

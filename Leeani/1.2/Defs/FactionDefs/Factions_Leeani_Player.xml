@@ -9,7 +9,7 @@
 		<label>Leeani Hold</label>
 		<description>Your own community.</description>
 		<isPlayer>true</isPlayer>
-		<basicMemberKind>Leeani</basicMemberKind>
+		<basicMemberKind>LeeaniColonist</basicMemberKind>
 		<pawnsPlural>colonists</pawnsPlural>
 		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
@@ -36,39 +36,6 @@
 			</thingDefs>
 		</apparelStuffFilter>
 
-	</FactionDef>
-
-	<FactionDef Parent="LeeaniFactionBase">
-		<defName>LeeaniPlayerColonyTribal</defName>
-		<label>Leeani Hold (No Research)</label>
-		<description>Leeani semi-tribal start. Only tribal researches done, but medieval tech level.</description>
-		<isPlayer>true</isPlayer>
-		<basicMemberKind>Leeani</basicMemberKind>
-		<pawnsPlural>colonists</pawnsPlural>
-		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
-		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
-		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
-		<techLevel>Medieval</techLevel>
-		<backstoryCategories>
-			<li>LeeaniBackstory</li>
-		</backstoryCategories>
-		<settlementTexturePath>World/LeeaniBaseIcon</settlementTexturePath>
-		<factionIconPath>World/LeeaniBaseIcon</factionIconPath>
-		<startingResearchTags>
-			<li>TribalStart</li>
-			<li>LeeaniStart</li>
-		</startingResearchTags>
-		<forageabilityFactor>2.0</forageabilityFactor>
-		<hairTags>
-			<li>Urban</li>
-		</hairTags>
-		<apparelStuffFilter>
-			<thingDefs>
-				<li>Cloth</li>
-				<li>WoolMuffalo</li>
-				<li>WoolAlpaca</li>
-			</thingDefs>
-		</apparelStuffFilter>
 	</FactionDef>
 
 </Defs>

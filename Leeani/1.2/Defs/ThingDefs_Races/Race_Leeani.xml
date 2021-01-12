@@ -8,13 +8,12 @@
 			<generalSettings>
 				<humanRecipeImport>true</humanRecipeImport>
 				<maleGenderProbability>0.5</maleGenderProbability>
-				<allowHumanBios>false</allowHumanBios>
+				<allowHumanBios>true</allowHumanBios>
 				<immuneToAge>false</immuneToAge>
 				<maxDamageForSocialfight>10</maxDamageForSocialfight>
+				<minAgeForAdulthood>15</minAgeForAdulthood>
 				<notXenophobistTowards>
-					<li>AFerian</li>
-					<li>Alien_Fennex</li>
-					<li>Alien_Frijjid</li>
+					<!-- Added with patches -->
 				</notXenophobistTowards>
 				<forcedRaceTraitEntries>
 					<li>
@@ -37,19 +36,72 @@
 						<chance>50</chance>
 					</li>
 					<li>
+						<!-- makes them worse at combat without blocking it altogether -->
 						<defName>LeeaniPacifist</defName>
 						<chance>70</chance>
 					</li>
 					<li>
 						<!-- being poorly engineered race, they tend to like the idea of improving their bodies -->
 						<defName>Transhumanist</defName>
+						<chance>25</chance>
+					</li>
+					<li>
+						<defName>Bisexual</defName>
+						<chance>35</chance>
+					</li>
+					<li>
+						<defName>Gay</defName>
 						<chance>10</chance>
+					</li>
+					<li>
+						<defName>Nimble</defName>
+						<chance>20</chance>
+					</li>
+					<li>
+						<!-- predatory heritage makes them more likely to be comfortable with violence -->
+						<defName>Bloodlust</defName>
+						<chance>20</chance>
+					</li>
+					<li>
+						<!-- tend to be too delicate -->
+						<defName>Wimp</defName>
+						<chance>10</chance>
+					</li>
+					<li>
+						<!-- foxes may be pretty, but their voices are often not -->
+						<defName>AnnoyingVoice</defName>
+						<chance>15</chance>
+					</li>
+					<li>
+						<!-- tend to be nocturnal -->
+						<defName>NightOwl</defName>
+						<chance>30</chance>
+					</li>
+					<li>
+						<!-- rather inclined to dislike clothes -->
+						<defName>Nudist</defName>
+						<chance>15</chance>
 					</li>
 				</forcedRaceTraitEntries>
 				<disallowedTraits>
-					<!-- being engineered race, they aren't exactly natural to begin with -->
 					<li>
-						<defName>BodyPurist</defName>
+						<defName>BodyPurist</defName> <!-- being engineered race, they aren't exactly natural to begin with -->
+						<chance>99</chance>
+					</li>
+					<li>
+						<defName>Asexual</defName>
+						<chance>75</chance>
+					</li>
+					<li>
+						<defName>CreepyBreathing</defName> <!-- offset by higher chance of annoying voice -->
+					</li>
+					<li>
+						<defName>Tough</defName> <!-- Delicate build comes with drawbacks -->
+						<chance>75</chance>
+					</li>
+					<li>
+						<defName>Brawler</defName>
+						<chance>75</chance>
 					</li>
 				</disallowedTraits>
 				<alienPartGenerator>
@@ -131,10 +183,9 @@
 					<li>AteRawFood</li>
 					<li>SleptOnGround</li>
 					<li>SleptOutside</li>
-					<!-- foxes are semi-nocturnal animals who rely more on nose and ears, so they are okay with being in darkness -->
-					<li>EnvironmentDark</li>
-					<!-- being somewhat poorly engineered race, they won't mind improving their bodies -->
-					<li>NonProsthophileHasAddedBodyParts</li>
+					<li>EnvironmentDark</li> <!-- foxes are semi-nocturnal animals who rely more on nose and ears, so they are okay with being in darkness -->
+					<li>ProsthophobeUnhappy</li> <!-- being somewhat poorly engineered race, they won't mind improving their bodies -->
+					<li>Naked</li> <!-- they are mostly indifferent to own nudity, unless they are nudists -->
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<raceRestriction>

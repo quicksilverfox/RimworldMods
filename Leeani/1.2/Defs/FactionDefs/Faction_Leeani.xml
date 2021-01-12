@@ -4,7 +4,7 @@
 	<FactionDef>
 		<defName>LeeaniHold</defName>
 		<label>Leeani hold</label>
-		<description>A hold of the mysterious Leeani race.</description>
+		<description>A hold of the Leeani race.</description>
 		<pawnsPlural>Leeani</pawnsPlural>
 		<settlementGenerationWeight>0.55</settlementGenerationWeight>
 		<requiredCountAtGameStart>1</requiredCountAtGameStart>

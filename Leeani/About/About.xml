@@ -10,13 +10,28 @@
 		<li>1.1</li>
 		<li>1.2</li>
 	</supportedVersions>
+	<modDependenciesByVersion>
+		<v1.1>
+			<li>
+				<packageId>erdelf.HumanoidAlienRaces</packageId>
+				<displayName>Humanoid Alien Races 2.0</displayName>
+				<steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
+			</li>
+		</v1.1>
+		<v1.2>
+			<li>
+				<packageId>erdelf.HumanoidAlienRaces</packageId>
+				<displayName>Humanoid Alien Races 2.0</displayName>
+				<steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
+			</li>
+		</v1.2>
+	</modDependenciesByVersion>
+    <loadAfter>
+        <li>erdelf.HumanoidAlienRaces</li>
+    </loadAfter>
 	<description>A nice happy race of people-foxes. Alien Race Framework required, load after it. Built-in support for EPOE.
 
-	Plenty of things planned in the versions to come, this is the first public release so don't expect too much.
-
-	Relationships incompatible with Psychology - not my fault, can't fix on my end.
-
-	Adds Faction, starting Scenario, playable Race, Throne, Quarterstaff and Bycocket (Robin Hood Hats).
+	Adds Faction, starting Scenario, playable Race, and some signature stuff.
 
 	Plenty of backstories, as well as names. Suggestions? Find @MikeRobe on the Rimworld Discord.
 

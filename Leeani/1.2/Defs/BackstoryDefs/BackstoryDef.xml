@@ -9,12 +9,9 @@
 		<titleShort>Loord</titleShort>
 		<baseDescription>[PAWN_nameDef] inherited the throne of [PAWN_possessive] father, leading a hold of thirteen towns. [PAWN_pronoun] was a strong and courageous leader, but did not deal with peasant work.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
-			<li>LeeaniLoordBackstory</li>
-			<li>LeeaniBackstory</li>
+			<li>LeeaniLoordBackstory</li> <!-- this story is unique so only faction loord can have it -->
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -25,12 +22,11 @@
 				<defName>Melee</defName>
 				<amount>5</amount>
 			</li>
+			<li>
+				<defName>Plants</defName>
+				<amount>-5</amount>
+			</li>
 		</skillGains>
-		<workDisables>
-			<li>PlantWork</li>
-			<li>Hauling</li>
-			<li>Cleaning</li>
-		</workDisables>
 		<requiredWorkTags>
 			<li>Violent</li>
 			<li>Social</li>
@@ -45,12 +41,9 @@
 		<titleShort>Loord</titleShort>
 		<baseDescription>[PAWN_nameDef] inherited the throne of [PAWN_possessive] father, looking after a single town. [PAWN_pronoun] was known as a kind and generous leader who would frequently help the townspeople.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
-			<li>LeeaniLoordBackstory</li>
-			<li>LeeaniBackstory</li>
+			<li>LeeaniLoordBackstory</li> <!-- this story is unique so only faction loord can have it -->
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -70,13 +63,38 @@
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
+		<defName>LeeaniNoble</defName>
+		<title>Noble</title>
+		<titleShort>Noble</titleShort>
+		<baseDescription>[PAWN_nameDef] had an esteemed position in [PAWN_possessive] town's community. Peasant work was below [PAWN_objective], and [PAWN_pronoun] took to the fine arts instead.</baseDescription>
+		<slot>Adulthood</slot>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<spawnCategories>
+			<li>LeeaniNobleBackstory</li>
+			<li>LeeaniBackstory</li>
+		</spawnCategories>
+		<skillGains>
+			<li>
+				<defName>Artistic</defName>
+				<amount>5</amount>
+			</li>
+			<li>
+				<defName>Plants</defName>
+				<amount>-2</amount>
+			</li>
+		</skillGains>
+		<requiredWorkTags>
+			<li>Social</li>
+			<li>Artistic</li>
+		</requiredWorkTags>
+	</AlienRace.BackstoryDef>
+
+	<AlienRace.BackstoryDef>
 		<defName>LeeaniCourtScribe</defName>
 		<title>Court scribe</title>
 		<titleShort>Scribe</titleShort>
 		<baseDescription>[PAWN_nameDef] worked as a scribe for the town Loord, writing addresses and keeping stock of the town's trade and diplomacy. This meant [PAWN_pronoun] had little time for actual warfare.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniNobleBackstory</li>
@@ -96,10 +114,6 @@
 				<amount>-3</amount>
 			</li>
 		</skillGains>
-		<workDisables>
-			<li>Hauling</li>
-			<li>Cleaning</li>
-		</workDisables>
 		<requiredWorkTags>
 			<li>Social</li>
 			<li>Intellectual</li>
@@ -118,6 +132,19 @@
 			<li>LeeaniNobleBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
+		<forcedTraits>
+			<li>
+				<defName>SlowLearner</defName>
+			</li>
+		</forcedTraits>
+		<disallowedTraits>
+			<li>
+				<defName>AnnoyingVoice</defName>
+			</li>
+			<li>
+				<defName>CreepyBreathing</defName>
+			</li>
+		</disallowedTraits>
 		<skillGains>
 			<li>
 				<defName>Social</defName>
@@ -127,10 +154,11 @@
 				<defName>Artistic</defName>
 				<amount>3</amount>
 			</li>
+			<li>
+				<defName>Intellectual</defName>
+				<amount>-5</amount>
+			</li>
 		</skillGains>
-		<workDisables>
-			<li>Intellectual</li>
-		</workDisables>
 		<requiredWorkTags>
 			<li>Social</li>
 			<li>Artistic</li>
@@ -170,8 +198,6 @@
 		<titleShort>Archer</titleShort>
 		<baseDescription>[PAWN_nameDef] was an archer in the tower above the Loord's Court, protecting the Loord from (admittedly few) distant attacks.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniSoldierBackstory</li>
@@ -198,8 +224,6 @@
 		<titleShort>Steward</titleShort>
 		<baseDescription>[PAWN_nameDef] worked as a steward in the court of [PAWN_possessive] Loord. [PAWN_pronoun] cooked and cleaned, and attended to visitors.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniNobleBackstory</li>
@@ -225,46 +249,11 @@
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
-		<defName>LeeaniNoble</defName>
-		<title>Noble</title>
-		<titleShort>Noble</titleShort>
-		<baseDescription>[PAWN_nameDef] had an esteemed position in [PAWN_possessive] town's community. Peasant work was below [PAWN_objective], and [PAWN_pronoun] took to the fine arts instead.</baseDescription>
-		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<bodyTypeGlobal>Thin</bodyTypeGlobal>
-		<spawnCategories>
-			<li>LeeaniNobleBackstory</li>
-			<li>LeeaniBackstory</li>
-		</spawnCategories>
-		<skillGains>
-			<li>
-				<defName>Artistic</defName>
-				<amount>5</amount>
-			</li>
-			<li>
-				<defName>Plants</defName>
-				<amount>-2</amount>
-			</li>
-		</skillGains>
-		<workDisables>
-			<li>Cleaning</li>
-			<li>Hauling</li>
-		</workDisables>
-		<requiredWorkTags>
-			<li>Social</li>
-			<li>Artistic</li>
-		</requiredWorkTags>
-	</AlienRace.BackstoryDef>
-
-	<AlienRace.BackstoryDef>
 		<defName>LeeaniArkhaevest</defName>
 		<title>Arkhaevest</title>
 		<titleShort>Arkhaevest</titleShort>
 		<baseDescription>The Arkhaev is a sacred place of knowledge for Leeani, a store of books and relics of ages past. [PAWN_nameDef] tended to the collection, taking in knowledge and preserving it for future generations, at the expense of other skills.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniArkhaevestBackstory</li>
@@ -303,11 +292,10 @@
 		<titleShort>Champion</titleShort>
 		<baseDescription>[PAWN_nameDef] is a championed Leeani warrior, excelling in the physical realm. Unfortunately, [PAWN_pronoun] is not the most creative person and prefers other Leeani to make [PAWN_possessive] weapons.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniChampionBackstory</li>
+			<li>LeeaniSoldierBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
 		<skillGains>
@@ -345,11 +333,10 @@
 		<titleShort>Captain</titleShort>
 		<baseDescription>[PAWN_nameDef] is captain of the guard. [PAWN_pronoun] orders and protects the soldiers underneath [PAWN_objective], but will not back away from a fight.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniCaptainBackstory</li>
+			<li>LeeaniSoldierBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
 		<skillGains>
@@ -378,8 +365,6 @@
 		<titleShort>Surgeon</titleShort>
 		<baseDescription>[PAWN_nameDef] likes cutting limbs off. [PAWN_pronoun] really likes it. But [PAWN_pronoun] makes a good doctor. Let [PAWN_nameDef] in.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniWorkerBackstory</li>
@@ -410,8 +395,6 @@
 		<titleShort>Doctor</titleShort>
 		<baseDescription>[PAWN_nameDef] was a talented surgeon and doctor in [PAWN_possessive] town. [PAWN_nameDef]'s profession didn't leave much room for the arts, though, and [PAWN_pronoun] found HIMself without a creative bone in [PAWN_possessive] body.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniWorkerBackstory</li>
@@ -426,10 +409,11 @@
 				<defName>Intellectual</defName>
 				<amount>4</amount>
 			</li>
+			<li>
+				<defName>Artistic</defName>
+				<amount>-4</amount>
+			</li>
 		</skillGains>
-		<workDisables>
-			<li>Artistic</li>
-		</workDisables>
 		<requiredWorkTags>
 			<li>Caring</li>
 			<li>Cleaning</li>
@@ -443,11 +427,12 @@
 		<title>Scout</title>
 		<titleShort>Scout</titleShort>
 		<baseDescription>[PAWN_nameDef] became an explorer, destined to find new and faster ways to get form place to place - and to seek out and tag enemies before the garrison's main forced arrived. This lifestyle left [PAWN_objective] somewhat isolated, however.</baseDescription>
-		<slot>Childhood</slot>
+		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniScoutBackstory</li>
+			<li>LeeaniSoldierBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
 		<skillGains>
@@ -476,8 +461,6 @@
 		<titleShort>Engineer</titleShort>
 		<baseDescription>Planning the expansion of Leeani Holds was a foremost task for [PAWN_nameDef], and [PAWN_pronoun] was very good at it.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniWorkerBackstory</li>
@@ -506,11 +489,10 @@
 		<titleShort>Peasant</titleShort>
 		<baseDescription>[PAWN_nameDef] spent most of [PAWN_possessive] adult life in the gutters and farms. [PAWN_pronoun] never learned the fine arts or even how to write, but [PAWN_pronoun] can at least be useful in menial tasks.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniPeasantBackstory</li>
+			<li>LeeaniWorkerBackstory</li>
 			<li>LeeaniScoutBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
@@ -531,11 +513,15 @@
 				<defName>Animals</defName>
 				<amount>2</amount>
 			</li>
+			<li>
+				<defName>Intellectual</defName>
+				<amount>-6</amount>
+			</li>
+			<li>
+				<defName>Artistic</defName>
+				<amount>-4</amount>
+			</li>
 		</skillGains>
-		<workDisables>
-			<li>Intellectual</li>
-			<li>Artistic</li>
-		</workDisables>
 		<requiredWorkTags>
 			<li>ManualSkilled</li>
 			<li>ManualDumb</li>
@@ -552,11 +538,10 @@
 		<titleShort>Herder</titleShort>
 		<baseDescription>[PAWN_nameDef] worked with all manner of farm animals, ensuring they were well-fed. [PAWN_pronoun] always kept the runts as [PAWN_possessive] own pet, but this didn't leave [PAWN_objective] with an education.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniPeasantBackstory</li>
+			<li>LeeaniWorkerBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
 		<skillGains>
@@ -568,12 +553,11 @@
 				<defName>Animals</defName>
 				<amount>6</amount>
 			</li>
+			<li>
+				<defName>Intellectual</defName>
+				<amount>-6</amount>
+			</li>
 		</skillGains>
-		<workDisables>
-			<li>Intellectual</li>
-			<li>Artistic</li>
-			<li>Crafting</li>
-		</workDisables>
 		<requiredWorkTags>
 			<li>ManualSkilled</li>
 			<li>ManualDumb</li>
@@ -590,8 +574,6 @@
 		<titleShort>Hunter</titleShort>
 		<baseDescription>[PAWN_nameDef] supplied the holdspeople with a great bounty of meat from the large herds of deer that roamed nearby.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniPeasantBackstory</li>
@@ -622,8 +604,6 @@
 		<titleShort>Artist</titleShort>
 		<baseDescription>[PAWN_nameDef] sat in the hold square, drawing the people and places [PAWN_pronoun] saw. He became very good at what [PAWN_pronoun] did, but never really developed a liking for menial tasks.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniWorkerBackstory</li>
@@ -656,8 +636,6 @@
 		<titleShort>Settler</titleShort>
 		<baseDescription>[PAWN_nameDef] worked to build new towns and settlements. [PAWN_pronoun] didn't really live at any of them and instead was a contract settler.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniWorkerBackstory</li>
@@ -693,8 +671,6 @@
 		<titleShort>Mercenary</titleShort>
 		<baseDescription>[PAWN_nameDef] was a gun-for-hire, keeping communities safe and fighting rival factions for a good price.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniBackstory</li>
@@ -724,8 +700,6 @@
 		<titleShort>Trader</titleShort>
 		<baseDescription>[PAWN_nameDef] roamed from town to town, looking to make profits off the items [PAWN_pronoun] carted around, and often had to defend himself from bandits on the road. However, an education eluded him where a silver tongue did not.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniBackstory</li>
@@ -759,11 +733,10 @@
 		<titleShort>Baker</titleShort>
 		<baseDescription>[PAWN_nameDef] baked all kinds of delicious pastries and pies, and [PAWN_pronoun] even built his own shop from the ground up.</baseDescription>
 		<slot>Adulthood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
 			<li>LeeaniPeasantBackstory</li>
+			<li>LeeaniWorkerBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
 		<skillGains>
@@ -800,11 +773,9 @@
 		<titleShort>Eir</titleShort>
 		<baseDescription>[PAWN_nameDef] was the heir (or Eir) to the throne of [PAWN_possessive] father's hold. This mean [PAWN_pronoun] learned all manner of high arts, a decent education and social connections, but lacked practical ability.</baseDescription>
 		<slot>Childhood</slot>
-		<bodyTypeFemale>Female</bodyTypeFemale>
-		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>
 		<spawnCategories>
-			<li>LeeaniLoordBackstory</li>
+			<li>LeeaniLoordBackstory</li> <!-- this story is unique so only faction loord can have it -->
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -828,6 +799,74 @@
 				<amount>-2</amount>
 			</li>
 		</skillGains>
+		<requiredWorkTags>
+			<li>Violent</li>
+			<li>Hunting</li>
+			<li>Caring</li>
+			<li>Social</li>
+			<li>Animals</li>
+			<li>Intellectual</li>
+		</requiredWorkTags>
+	</AlienRace.BackstoryDef>
+
+	<AlienRace.BackstoryDef>
+		<defName>LeeaniChildNoble</defName>
+		<title>Noble</title>
+		<titleShort>Noble</titleShort>
+		<baseDescription>[PAWN_nameDef] was an offspring of a noble family, and as one got a well-rounded education.</baseDescription>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<spawnCategories>
+			<li>LeeaniLoordBackstory</li>
+			<li>LeeaniNobleBackstory</li>
+			<li>LeeaniChampionBackstory</li>
+			<li>LeeaniCaptainBackstory</li>
+			<li>LeeaniBackstory</li>
+		</spawnCategories>
+		<skillGains>
+			<li>
+				<defName>Shooting</defName>
+				<amount>2</amount>
+			</li>
+			<li>
+				<defName>Melee</defName>
+				<amount>2</amount>
+			</li>
+			<li>
+				<defName>Artistic</defName>
+				<amount>2</amount>
+			</li>
+			<li>
+				<defName>Social</defName>
+				<amount>2</amount>
+			</li>
+			<li>
+				<defName>Intellectual</defName>
+				<amount>2</amount>
+			</li>
+			<li>
+				<defName>Medicine</defName>
+				<amount>1</amount>
+			</li>
+			<li>
+				<defName>Cooking</defName>
+				<amount>-2</amount>
+			</li>
+			<li>
+				<defName>Plants</defName>
+				<amount>-2</amount>
+			</li>
+		</skillGains>
+		<requiredWorkTags>
+			<li>Violent</li>
+			<li>Hunting</li>
+			<li>Caring</li>
+			<li>Social</li>
+			<li>Animals</li>
+			<li>Intellectual</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -842,6 +881,7 @@
 		<spawnCategories>
 			<li>LeeaniSoldierBackstory</li>
 			<li>LeeaniScoutBackstory</li>
+			<li>LeeaniChampionBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
 		<skillGains>
@@ -857,14 +897,63 @@
 				<defName>Plants</defName>
 				<amount>3</amount>
 			</li>
+			<li>
+				<defName>Animals</defName>
+				<amount>1</amount>
+			</li>
 		</skillGains>
+		<requiredWorkTags>
+			<li>Violent</li>
+			<li>Hunting</li>
+			<li>ManualDumb</li>
+			<li>ManualSkilled</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Animals</li>
+			<li>PlantWork</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
-		<defName>LeeaniChildScullery</defName>
-		<title>Scullery maid</title>
-		<titleShort>Maid</titleShort>
-		<baseDescription>[PAWN_nameDef] grew up as a maid in the Loord's Court, washing dishes and setting tables. [PAWN_pronoun] quickly learned recipes and good social conduct.</baseDescription>
+		<defName>LeeaniChildSquire</defName>
+		<title>Page</title>
+		<titleShort>Page</titleShort>
+		<baseDescription>[PAWN_nameDef] was trained as a future elite soldier from [PAWN_possessive] very youth.</baseDescription>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<spawnCategories>
+			<li>LeeaniChampionBackstory</li>
+			<li>LeeaniCaptainBackstory</li>
+			<li>LeeaniNobleBackstory</li>
+			<li>LeeaniBackstory</li>
+		</spawnCategories>
+		<skillGains>
+			<li>
+				<defName>Shooting</defName>
+				<amount>4</amount>
+			</li>
+			<li>
+				<defName>Melee</defName>
+				<amount>4</amount>
+			</li>
+		</skillGains>
+		<requiredWorkTags>
+			<li>Violent</li>
+			<li>Hunting</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Social</li>
+		</requiredWorkTags>
+	</AlienRace.BackstoryDef>
+
+	<AlienRace.BackstoryDef>
+		<defName>LeeaniChildHunter</defName>
+		<title>Hunter's apprentice</title>
+		<titleShort>Hunter</titleShort>
+		<baseDescription>[PAWN_nameDef] spent early years learhing how to survive in wilderness and deal with wild animals.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
@@ -872,6 +961,55 @@
 		<spawnCategories>
 			<li>LeeaniSoldierBackstory</li>
 			<li>LeeaniScoutBackstory</li>
+			<li>LeeaniChampionBackstory</li>
+			<li>LeeaniWorkerBackstory</li>
+			<li>LeeaniPeasantBackstory</li>
+			<li>LeeaniBackstory</li>
+		</spawnCategories>
+		<skillGains>
+			<li>
+				<defName>Shooting</defName>
+				<amount>5</amount>
+			</li>
+			<li>
+				<defName>Animals</defName>
+				<amount>5</amount>
+			</li>
+			<li>
+				<defName>Plants</defName>
+				<amount>3</amount>
+			</li>
+			<li>
+				<defName>Cooking</defName>
+				<amount>2</amount>
+			</li>
+		</skillGains>
+		<workDisables>
+			<li>Artistic</li>
+			<li>Intellectual</li>
+		</workDisables>
+		<requiredWorkTags>
+			<li>Violent</li>
+			<li>Hunting</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Animals</li>
+		</requiredWorkTags>
+	</AlienRace.BackstoryDef>
+
+	<AlienRace.BackstoryDef>
+		<defName>LeeaniChildScullery</defName>
+		<title>Servant</title>
+		<titleShort>Servant</titleShort>
+		<baseDescription>[PAWN_nameDef] grew up as a servant in the Loord's Court. [PAWN_pronoun] quickly learned recipes and good social conduct, as well as other odd skills that can be of use.</baseDescription>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<spawnCategories>
+			<li>LeeaniSoldierBackstory</li>
+			<li>LeeaniScoutBackstory</li>
+			<li>LeeaniWorkerBackstory</li>
 			<li>LeeaniBackstory</li>
 		</spawnCategories>
 		<skillGains>
@@ -883,12 +1021,27 @@
 				<defName>Social</defName>
 				<amount>2</amount>
 			</li>
+			<li>
+				<defName>Plants</defName>
+				<amount>2</amount>
+			</li>
+			<li>
+				<defName>Animals</defName>
+				<amount>2</amount>
+			</li>
 		</skillGains>
+		<requiredWorkTags>
+			<li>Commoner</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Cooking</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
 		<defName>LeeaniChildApprentice</defName>
-		<title>Carpenter's apprentice</title>
+		<title>Craftsman's apprentice</title>
 		<titleShort>Apprentice</titleShort>
 		<baseDescription>Working with lumber and tools was easy for [PAWN_nameDef], and [PAWN_pronoun] quickly grew an appreciation for construction and work. However, [PAWN_pronoun] always found [PAWN_pronoun] lacked the dexterity to make more intricate pieces.</baseDescription>
 		<slot>Childhood</slot>
@@ -915,13 +1068,23 @@
 				<amount>-2</amount>
 			</li>
 		</skillGains>
+		<requiredWorkTags>
+			<li>Commoner</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Mining</li>
+			<li>Cooking</li>
+			<li>Crafting</li>
+			<li>ManualSkilled</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
 		<defName>LeeaniChildSmith</defName>
 		<title>Smithy's apprentice</title>
 		<titleShort>Apprentice</titleShort>
-		<baseDescription>Carting hot metal around the smith was [PAWN_nameDef]'s daily job, and was often asked to fetch ores from the mines. All was going well until [PAWN_pronoun] spilled molten steel and started a fire that burned the smith down.</baseDescription>
+		<baseDescription>Carting hot metal around the smith was [PAWN_nameDef]'s daily job, and was often asked to fetch ores from the mines.</baseDescription>
 		<slot>Childhood</slot>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
@@ -942,6 +1105,16 @@
 				<amount>2</amount>
 			</li>
 		</skillGains>
+		<requiredWorkTags>
+			<li>Commoner</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Mining</li>
+			<li>Cooking</li>
+			<li>Crafting</li>
+			<li>ManualSkilled</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -969,6 +1142,16 @@
 				<amount>-2</amount>
 			</li>
 		</skillGains>
+		<requiredWorkTags>
+			<li>Commoner</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Mining</li>
+			<li>Cooking</li>
+			<li>Crafting</li>
+			<li>ManualSkilled</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -996,15 +1179,20 @@
 				<defName>Animals</defName>
 				<amount>3</amount>
 			</li>
-			<li>
-				<defName>Artistic</defName>
-				<amount>-4</amount>
-			</li>
-			<li>
-				<defName>Intellectual</defName>
-				<amount>-5</amount>
-			</li>
 		</skillGains>
+		<workDisables>
+			<li>Artistic</li>
+			<li>Intellectual</li>
+		</workDisables>
+		<requiredWorkTags>
+			<li>Commoner</li>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Animals</li>
+			<li>PlantWork</li>
+			<li>Cooking</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
@@ -1031,6 +1219,15 @@
 				<amount>2</amount>
 			</li>
 		</skillGains>
+		<requiredWorkTags>
+			<li>Commoner</li>
+			<li>ManualDumb</li>
+			<li>ManualSkilled</li>
+			<li>Hauling</li>
+			<li>Cleaning</li>
+			<li>Intellectual</li>
+			<li>Crafting</li>
+		</requiredWorkTags>
 	</AlienRace.BackstoryDef>
 
 </Defs>

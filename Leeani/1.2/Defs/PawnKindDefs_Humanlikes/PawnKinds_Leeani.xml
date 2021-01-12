@@ -10,36 +10,24 @@
 		<race>Alien_Leeani</race>
 		<combatPower>30</combatPower>
 		<baseRecruitDifficulty>0.30</baseRecruitDifficulty>
-		<backstoryCategories>
-			<li>Civil</li>
-		</backstoryCategories>
 		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
 		<forceNormalGearQuality>true</forceNormalGearQuality>
 		<isFighter>false</isFighter>
-		<chemicalAddictionChance>0.08</chemicalAddictionChance>
-		<gearHealthRange>
-			<min>0.4</min>
-			<max>1.4</max>
-		</gearHealthRange>
-		<apparelMoney>
-			<min>0</min>
-			<max>1000</max>
-		</apparelMoney>
+		<chemicalAddictionChance>0.10</chemicalAddictionChance>
 		<apparelTags>
 			<li>IndustrialBasic</li>
 		</apparelTags>
 		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
 		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
-		<techHediffsMoney>
-			<min>50</min>
-			<max>1500</max>
-		</techHediffsMoney>
+		<apparelMoney>200~1000</apparelMoney>
+		<gearHealthRange>1~1</gearHealthRange>
+		<techHediffsMoney>50~1200</techHediffsMoney>
 		<techHediffsTags>
 			<li>Poor</li>
 			<li>Simple</li>
 			<li>Advanced</li>
 		</techHediffsTags>
-		<techHediffsChance>0.08</techHediffsChance>
+		<techHediffsChance>0.12</techHediffsChance>
 	</PawnKindDef>
 
 	<!-- ============================ Leeani Base ========================== -->
@@ -51,6 +39,7 @@
 		<baseRecruitDifficulty>0.75</baseRecruitDifficulty>
 		<apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
 		<backstoryCryptosleepCommonality>0.01</backstoryCryptosleepCommonality>
+		<maxGenerationAge>55</maxGenerationAge>
 		<apparelTags>
 			<li>IndustrialBasic</li>
 			<li>IndustrialAdvanced</li>
@@ -331,6 +320,7 @@
 		<combatPower>80</combatPower>
 		<backstoryCategories>
 			<li>LeeaniSoldierBackstory</li>
+			<li>LeeaniMercenaryBackstory</li>
 		</backstoryCategories>
 	</PawnKindDef>
 

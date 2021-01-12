@@ -58,26 +58,6 @@
 						<chance>20</chance>
 					</li>
 					<li>
-						<!-- predatory heritage makes them more likely to be comfortable with violence -->
-						<defName>Bloodlust</defName>
-						<chance>20</chance>
-					</li>
-					<li>
-						<!-- tend to be too delicate -->
-						<defName>Wimp</defName>
-						<chance>10</chance>
-					</li>
-					<li>
-						<!-- foxes may be pretty, but their voices are often not -->
-						<defName>AnnoyingVoice</defName>
-						<chance>15</chance>
-					</li>
-					<li>
-						<!-- tend to be nocturnal -->
-						<defName>NightOwl</defName>
-						<chance>30</chance>
-					</li>
-					<li>
 						<!-- rather inclined to dislike clothes -->
 						<defName>Nudist</defName>
 						<chance>15</chance>

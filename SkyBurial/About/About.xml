@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Sky Burial</name>
+	<packageId>Oblitus.SkyBurial</packageId>
+	<author>Oblitus</author>
+	<supportedVersions>
+		<li>1.2</li>
+	</supportedVersions>
+	<description>A more dignified way to let dead bodies rot away.</description>
+</ModMetaData>

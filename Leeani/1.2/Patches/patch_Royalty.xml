@@ -15,7 +15,14 @@
 						<li>LeeaniPlayerColony</li>
 					</value>
 				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RoyalTitleDef/throneRoomRequirements/li[@Class='RoomRequirement_HasAssignedThroneAnyOf']/things</xpath>
+					<value>
+						<li>LoordThrone</li>
+					</value>
+				</li>
 			</operations>
 		</match>
+		
 	</Operation>
 </Patch>

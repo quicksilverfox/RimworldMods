@@ -17,7 +17,8 @@ namespace AnimalsLogic
     {
         static bool Prefix(ref object[] __state, Thing a, Thing b)
         {
-            __state = new object[] { a, b };
+            if(Settings.hostile_predators)
+                __state = new object[] { a, b };
             return true;
         }
 

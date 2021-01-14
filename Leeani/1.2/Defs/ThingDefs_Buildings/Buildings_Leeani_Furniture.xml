@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef ParentName="ArtableFurnitureBase">
+	<ThingDef ParentName="FurnitureWithQualityBase">
 		<defName>LoordThrone</defName>
-		<label>throne</label>
+		<label>loord throne</label>
 		<graphicData>
 			<texPath>Things/Building/Furniture/LoordThrone</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -19,25 +19,34 @@
 			</damageData>
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
+		<category>Building</category>
 		<defaultPlacingRot>South</defaultPlacingRot>
+		<thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+		<hasInteractionCell>true</hasInteractionCell>
 		<statBases>
-			<MaxHitPoints>250</MaxHitPoints>
-			<WorkToBuild>10000</WorkToBuild>
-			<Mass>10</Mass>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToBuild>40000</WorkToBuild>
+			<Mass>100</Mass>
 			<Flammability>1.0</Flammability>
-			<Beauty>20</Beauty>
-			<Comfort>1.00</Comfort>
+			<Beauty>6</Beauty>
+			<Comfort>0.9</Comfort>
+			<MeditationFocusStrength>0.15</MeditationFocusStrength>
 		</statBases>
-		<description>A throne for the laurels of a king or queen to rest upon!</description>
+		<thingClass>Building_Throne</thingClass>
+		<description>A throne for the laurels of a king or queen to rest upon! Also works well for a dignity-focused psycaster to sit and meditate. For dignity psycasters, more impressive meditation thrones and thronerooms increase the rate of psyfocus gain.</description>
 		<socialPropernessMatters>true</socialPropernessMatters>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>150</costStuffCount>
 		<costList>
+			<Gold>75</Gold>
 			<Cloth>100</Cloth>
-			<WoodLog>10</WoodLog>
-			<Gold>25</Gold>
 		</costList>
 		<pathCost>30</pathCost>
-		<designationHotKey>Misc7</designationHotKey>
-		<fillPercent>0.35</fillPercent>
+		<fillPercent>0.4</fillPercent>
 		<building>
 			<isSittable>true</isSittable>
 		</building>
@@ -47,6 +56,34 @@
 		<tradeTags>
 			<li>LeeaniFurniture</li>
 		</tradeTags>
+		<comps>
+			<li Class="CompProperties_AssignableToPawn">
+				<drawAssignmentOverlay>true</drawAssignmentOverlay>
+				<compClass>CompAssignableToPawn_Throne</compClass>
+			</li>
+			<li Class="CompProperties_MeditationFocus">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes>
+					<li>Dignified</li>
+				</focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_ThroneSatisfiesRequirements">
+						<offset>0.08</offset>
+					</li>
+					<li Class="FocusStrengthOffset_RoomImpressiveness">
+						<curve>
+							<points>
+								<li>(0,   -0.05)</li>
+								<li>(30,   0.00)</li>
+								<li>(60,   0.04)</li>
+								<li>(100,  0.08)</li>
+								<li>(170,  0.10)</li>
+							</points>
+						</curve>
+					</li>
+				</offsets>
+			</li>
+		</comps>
 	</ThingDef>
 
 	<ThingDef ParentName="ArtableFurnitureBase">
@@ -165,7 +202,7 @@
 		<defName>LeeaniStoneBrazier</defName>
 		<label>brazier</label>
 		<thingClass>Building_WorkTable</thingClass>
-		<description>A decent heat source, can also provide the functions of a campfire, but does not destroy itself when out of fuel.</description>    
+		<description>A decent heat source, can also provide the functions of a campfire, but does not destroy itself when out of fuel. Not fancy enough to fulfill throne room requirement.</description>    
 		<category>Building</category>
 		<graphicData>
 			<texPath>Things/Building/Furniture/Brazier</texPath>
@@ -235,6 +272,28 @@
 			</li>
 			<li>
 				<compClass>CompGatherSpot</compClass>
+			</li>
+			<li Class="CompProperties_MeditationFocus">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes><li>Flame</li></focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_Lit">
+						<offset>0.12</offset>
+					</li>
+					<li Class="FocusStrengthOffset_BuildingDefsLit">
+						<defs>
+							<li>Campfire</li>
+							<li>TorchLamp</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">Brazier</li>
+							<li>LeeaniStoneBrazier</li>
+						</defs>
+						<offsetPerBuilding>0.02</offsetPerBuilding>
+						<radius>9.9</radius>
+						<maxBuildings>8</maxBuildings>
+						<explanationKey>MeditationFocusPerFlame</explanationKey>
+						<explanationKeyAbstract>MeditationFocusPerFlameAbstract</explanationKeyAbstract>
+					</li>
+				</offsets>
 			</li>
 		</comps>
 		<designationCategory>Temperature</designationCategory>

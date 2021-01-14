@@ -14,13 +14,16 @@
 	<ALConfigMeatConversionTooltip>Dies betrifft nicht bereits geschlachtetes Fleisch.</ALConfigMeatConversionTooltip>
 	
 	<ALConfigMedicalAlertsLabel>Medizinische Warnungen für Tiere</ALConfigMedicalAlertsLabel>
-	<ALConfigMedicalAlertsTolltip>Zeigt rechtsseitige Warnungen an, wenn Kolonietiere verletzt sind, gerettet werden müssen oder sich in einem kritischen medizinischen Zustand befinden.</ALConfigMedicalAlertsTolltip>
+	<ALConfigMedicalAlertsTooltip>Zeigt rechtsseitige Warnungen an, wenn Kolonietiere verletzt sind, gerettet werden müssen oder sich in einem kritischen medizinischen Zustand befinden.</ALConfigMedicalAlertsTooltip>
 	
 	<ALConfigTamenessDecayThresholdLabel>Wildheitsschwelle für Zahmheit {0}%. Vanilla: 10.1%.</ALConfigTamenessDecayThresholdLabel>
 	<ALConfigTamenessDecayThresholdTooltip>Wenn dieser Wert auf 100% gesetzt wird, kann kein Tier gezähmt werden.</ALConfigTamenessDecayThresholdTooltip>
 	
 	<ALConfigTrainingDecaySpeedFactorLabel>Trainingsverfallsgeschwindigkeit {0}. Vanilla: 100%.</ALConfigTrainingDecaySpeedFactorLabel><!-- No % after wildcard is intentional. -->
 	<ALConfigTrainingDecaySpeedFactorTooltip>Stelle diesen Wert auf 1% ein, um die Verfallsgeschwindigkeit so niedrig wie möglich zu halten.</ALConfigTrainingDecaySpeedFactorTooltip>
+	
+	<ALConfigTradeHintsLabel>Tags for animals in trade and caravan interfaces</ALConfigTradeHintsLabel>
+	<ALConfigTradeHintsTooltip>Shows animal's sex, training and wool growth.</ALConfigTradeHintsTooltip>
 	
 	<ALConfigHaulingMTBLabel>Trage MTB {0}h. Vanilla: 1.5h.</ALConfigHaulingMTBLabel>
 	<ALConfigHaulingMTBTooltip>'MTB' steht für 'Mean Time Between'. Die Einstellung auf 0 zu setzen erhöht die Produktivität drastisch, kann jedoch die Leistung bei einer großen Anzahl trainierter Tiere beeinträchtigen.</ALConfigHaulingMTBTooltip>

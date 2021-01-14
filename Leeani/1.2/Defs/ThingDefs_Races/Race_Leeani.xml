@@ -58,6 +58,11 @@
 						<chance>20</chance>
 					</li>
 					<li>
+						<!-- tend to be nocturnal -->
+						<defName>NightOwl</defName>
+						<chance>30</chance>
+					</li>
+					<li>
 						<!-- rather inclined to dislike clothes -->
 						<defName>Nudist</defName>
 						<chance>15</chance>

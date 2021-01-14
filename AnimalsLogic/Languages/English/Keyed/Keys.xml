@@ -14,13 +14,16 @@
 	<ALConfigMeatConversionTooltip>This does not affect already butchered meat.</ALConfigMeatConversionTooltip>
 	
 	<ALConfigMedicalAlertsLabel>Medical alerts for animals</ALConfigMedicalAlertsLabel>
-	<ALConfigMedicalAlertsTolltip>Shows right-hand alerts for when colony animals are injured, need rescuing or in critical medical condition.</ALConfigMedicalAlertsTolltip>
+	<ALConfigMedicalAlertsTooltip>Shows right-hand alerts for when colony animals are injured, need rescuing or in critical medical condition.</ALConfigMedicalAlertsTooltip>
 	
 	<ALConfigTamenessDecayThresholdLabel>Wildness threshold for tameness decay {0}%. Vanilla: 10.1%.</ALConfigTamenessDecayThresholdLabel>
 	<ALConfigTamenessDecayThresholdTooltip>Set to 100% to prevent losing tameness for all animals.</ALConfigTamenessDecayThresholdTooltip>
 	
 	<ALConfigTrainingDecaySpeedFactorLabel>Training decay speed {0}. Vanilla: 100%.</ALConfigTrainingDecaySpeedFactorLabel><!-- No % after wildcard is intentional. -->
 	<ALConfigTrainingDecaySpeedFactorTooltip>Set to 1% to make it as slow as possible.</ALConfigTrainingDecaySpeedFactorTooltip>
+	
+	<ALConfigTradeHintsLabel>Tags for animals in trade and caravan interfaces</ALConfigTradeHintsLabel>
+	<ALConfigTradeHintsTooltip>Shows animal's sex, training and wool growth.</ALConfigTradeHintsTooltip>
 	
 	<ALConfigHaulingMTBLabel>Hauling MTB {0}h. Vanilla: 1.5h.</ALConfigHaulingMTBLabel>
 	<ALConfigHaulingMTBTooltip>'MTB' stands for 'Mean Time Between'. Setting to 0 drastically increases productiveness, but can affect performance with large amount of trained animals.</ALConfigHaulingMTBTooltip>

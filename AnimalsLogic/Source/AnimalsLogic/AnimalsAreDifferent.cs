@@ -14,6 +14,9 @@ namespace AnimalsLogic
     {
         static void Postfix(ref String __result, Tradeable_Pawn __instance)
         {
+            if (!Settings.trade_tags)
+                return;
+
             Pawn p = (Pawn)__instance.AnyThing;
             if (!p.RaceProps.Animal) return;
 
@@ -29,6 +32,9 @@ namespace AnimalsLogic
     {
         static void Postfix(ref String __result, TransferableOneWay __instance)
         {
+            if (!Settings.trade_tags)
+                return;
+
             if (__instance.AnyThing == null || !(__instance.AnyThing is Pawn)) return;
 
             Pawn p = (Pawn)__instance.AnyThing;
@@ -45,6 +51,9 @@ namespace AnimalsLogic
         public static string AnimalImportantInfo(Pawn p, bool gender = false)
         {
             String e = "";
+
+            if (!Settings.trade_tags)
+                return e;
 
             // M/F
             if (gender && p.RaceProps.hasGenders)

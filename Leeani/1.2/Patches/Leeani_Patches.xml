@@ -132,6 +132,13 @@
 			<li>LeeaniStoneBrazier</li>
 		</value>
 	</Operation>
+	<!-- Adds brazier to fire-type meditation focus objects -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef/comps/li[@Class='CompProperties_MeditationFocus']/offsets/li[@Class='FocusStrengthOffset_BuildingDefsLit']/defs</xpath>
+		<value>
+			<li>LeeaniStoneBrazier</li>
+		</value>
+	</Operation>
 
 	<!-- Outlander union have a small chance to have a stray Leeani on their side. Piracy is not their style, so not adding them to pirate bands. -->
 	<Operation Class="PatchOperationAdd">

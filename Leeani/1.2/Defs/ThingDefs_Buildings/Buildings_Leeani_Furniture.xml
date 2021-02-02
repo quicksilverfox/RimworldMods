@@ -200,7 +200,7 @@
 
 	<ThingDef ParentName="FurnitureBase">
 		<defName>LeeaniStoneBrazier</defName>
-		<label>brazier</label>
+		<label>leeani brazier</label>
 		<thingClass>Building_WorkTable</thingClass>
 		<description>A decent heat source, can also provide the functions of a campfire, but does not destroy itself when out of fuel. Not fancy enough to fulfill throne room requirement.</description>    
 		<category>Building</category>
@@ -389,8 +389,8 @@
 		<designationHotKey>Misc11</designationHotKey>
 		<comps>
 			<li Class="CompProperties_Glower">
-				<glowRadius>15</glowRadius>
-				<glowColor>(255,214,170,0)</glowColor>
+				<glowRadius>20</glowRadius>
+				<glowColor>(319,266,213,0)</glowColor>
 			</li>
 		</comps>
 		<researchPrerequisites>

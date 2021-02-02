@@ -426,7 +426,7 @@
 		<defName>LeeaniScout</defName>
 		<title>Scout</title>
 		<titleShort>Scout</titleShort>
-		<baseDescription>[PAWN_nameDef] became an explorer, destined to find new and faster ways to get form place to place - and to seek out and tag enemies before the garrison's main forced arrived. This lifestyle left [PAWN_objective] somewhat isolated, however.</baseDescription>
+		<baseDescription>[PAWN_nameDef] became an explorer, destined to find new and faster ways to get form place to place - and to seek out and tag enemies before the garrison's main forces arrive. This lifestyle left [PAWN_objective] somewhat isolated, however.</baseDescription>
 		<slot>Adulthood</slot>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<bodyTypeGlobal>Thin</bodyTypeGlobal>

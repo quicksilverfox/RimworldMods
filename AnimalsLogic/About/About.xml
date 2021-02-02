@@ -38,6 +38,7 @@
 [*] (Optional) Configurable training decay speed.
 [*] (Optional) Converts any ruined eggs into unfertilized chicken eggs.
 [*] (Optional, default off) Converts any generic meat into chicken meat upon butchering.
+[*] (Optional) Allows animals to use food paste dispensers.
 [*] (Optional) Predators hunting your pawns (human-like or animals) will be considered hostile by all your pawns and turrets.
 [*] (Optional) Prevents animals from eating random stuff.</description>
 	<url>https://ludeon.com/forums/index.php?topic=34628</url>

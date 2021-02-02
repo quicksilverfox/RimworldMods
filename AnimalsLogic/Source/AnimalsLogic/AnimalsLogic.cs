@@ -11,11 +11,15 @@ namespace AnimalsLogic
 #pragma warning disable 0649
         public static Settings Settings;
 #pragma warning restore 0649
+        public static Harmony harmony;
 
         public AnimalsLogic(ModContentPack content) : base(content)
         {
-            var harmony = new Harmony("net.quicksilverfox.rimworld.mod.animalslogic");
+            harmony = new Harmony("net.quicksilverfox.rimworld.mod.animalslogic");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+            AnimalsUseDispenser.Patch();
+
             base.GetSettings<Settings>();
         }
 

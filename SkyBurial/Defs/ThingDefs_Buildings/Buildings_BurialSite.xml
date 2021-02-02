@@ -5,7 +5,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>SkyBurialSite</defName>
 		<label>sky burial site</label>
-		<description>A place where dead bodies can be left for nature to reclaim. One can meditate here about how fleeting the life is... or how it is a part of the ethernal circle. Raiders would typically leave those alone.</description>
+		<description>A place where dead bodies can be left for nature to reclaim. One can meditate here about how fleeting the life is... or how it is a part of the ethernal circle. Raiders would usually leave those alone.</description>
 		<thingClass>Building_Storage</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Furniture/SkyBurialSite</texPath>
@@ -21,13 +21,13 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<designationCategory>Misc</designationCategory>
 		<rotatable>false</rotatable>
-		<neverMultiSelect>true</neverMultiSelect>
+		<neverMultiSelect>false</neverMultiSelect>
 		<stuffCategories>
 			<li>Metallic</li>
 			<li>Woody</li>
 			<li>Stony</li>
 		</stuffCategories>
-		<costStuffCount>30</costStuffCount>
+		<costStuffCount>15</costStuffCount>
 		<statBases>
 			<MaxHitPoints>100</MaxHitPoints>
 			<Mass>8</Mass>
@@ -39,6 +39,8 @@
 			<preventDeteriorationOnTop>false</preventDeteriorationOnTop>
 			<preventDeteriorationInside>false</preventDeteriorationInside>
 			<ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+			<ai_neverTrashThis>true</ai_neverTrashThis>
 			<isInert>true</isInert>
 			<fixedStorageSettings>
 				<filter>

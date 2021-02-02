@@ -3,12 +3,12 @@
 	<ThingDef ParentName="AnimalThingBase">
 		<defName>HousekeeperCat</defName>
 		<label>housekeeper cat</label>
-		<description>Highly intelligent cat-like creature, engineered to provide some help with housekeeping.</description>
+		<description>A highly intelligent creature, engineered to be a perfect house pet. It looks somewhat like a hybrid of cat and monkey and can be trained to provide some help with housekeeping.</description>
 		<statBases>
-			<MoveSpeed>7.00</MoveSpeed>
-			<ComfyTemperatureMin>-65</ComfyTemperatureMin>
-			<ComfyTemperatureMax>70</ComfyTemperatureMax>
-			<MarketValue>1000</MarketValue>
+			<MoveSpeed>6.00</MoveSpeed>
+			<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+			<ComfyTemperatureMax>60</ComfyTemperatureMax>
+			<MarketValue>1500</MarketValue>
 			<MeatAmount>50</MeatAmount>
 		</statBases>
 		<tools>
@@ -90,13 +90,13 @@
 			<petness>1</petness>
 			<baseBodySize>0.7</baseBodySize>
 			<baseHungerRate>0.1</baseHungerRate>
-			<baseHealthScale>5</baseHealthScale>
+			<baseHealthScale>2.5</baseHealthScale>
 			<foodType>OmnivoreAnimal, OvivoreAnimal, VegetarianRoughAnimal</foodType>
 			<leatherDef>Leather_HKCat</leatherDef>
-			<gestationPeriodDays>50</gestationPeriodDays>
+			<gestationPeriodDays>90</gestationPeriodDays>
 			<nameOnTameChance>1</nameOnTameChance>
 			<trainability>Advanced</trainability>
-			<wildness>0.1</wildness>
+			<wildness>0</wildness>
 			<wildBiomes>
 				<SeaIce>0.1</SeaIce>
 				<IceSheet>0.1</IceSheet>
@@ -111,19 +111,11 @@
 				<Desert>0.1</Desert>
 				<ExtremeDesert>0.1</ExtremeDesert>
 			</wildBiomes>
-			<nuzzleMtbHours>80</nuzzleMtbHours>
-			<manhunterOnDamageChance>0.1</manhunterOnDamageChance>
-			<manhunterOnTameFailChance>0.003</manhunterOnTameFailChance>
-			<litterSizeCurve>
-				<points>
-					<li>(0.5, 0)</li>
-					<li>(1, 1)</li>
-					<li>(2, 1.7)</li>
-					<li>(3, 0.7)</li>
-					<li>(3.5, 0)</li>
-				</points>
-			</litterSizeCurve>
+			<nuzzleMtbHours>12</nuzzleMtbHours>
+			<manhunterOnDamageChance>0.35</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
 			<lifeExpectancy>80</lifeExpectancy>
+			<useMeatFrom>Cat</useMeatFrom>
 			<lifeStageAges>
 				<li>
 					<def>AnimalBaby</def>
@@ -134,7 +126,7 @@
 					<minAge>0.5</minAge>
 				</li>
 				<li>
-					<def>HousekeeperCatAdult</def>
+					<def>AnimalAdult</def>
 					<minAge>6</minAge>
 					<soundWounded>Pawn_Cat_Injured</soundWounded>
 					<soundDeath>Pawn_Cat_Death</soundDeath>
@@ -157,6 +149,7 @@
 		</race>
 		<tradeTags>
 			<li>AnimalUncommon</li>
+			<li>AnimalPet</li>
 		</tradeTags>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">

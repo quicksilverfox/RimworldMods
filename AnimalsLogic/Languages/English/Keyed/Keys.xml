@@ -25,6 +25,9 @@
 	<ALConfigTradeHintsLabel>Tags for animals in trade and caravan interfaces</ALConfigTradeHintsLabel>
 	<ALConfigTradeHintsTooltip>Shows animal's sex, training and wool growth.</ALConfigTradeHintsTooltip>
 	
+	<ALConfigAnimalsCanUseFoodDispenserLabel>Allow animals to use nutrient paste dispenser</ALConfigAnimalsCanUseFoodDispenserLabel>
+	<ALConfigAnimalsCanUseFoodDispenserTooltip>Animals would be capable of pressing that button.</ALConfigAnimalsCanUseFoodDispenserTooltip>
+	
 	<ALConfigHaulingMTBLabel>Hauling MTB {0}h. Vanilla: 1.5h.</ALConfigHaulingMTBLabel>
 	<ALConfigHaulingMTBTooltip>'MTB' stands for 'Mean Time Between'. Setting to 0 drastically increases productiveness, but can affect performance with large amount of trained animals.</ALConfigHaulingMTBTooltip>
 

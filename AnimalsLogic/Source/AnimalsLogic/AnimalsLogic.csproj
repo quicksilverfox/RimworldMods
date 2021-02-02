@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="AnimalsAreDifferent.cs" />
     <Compile Include="AnimalsLogic.cs" />
+    <Compile Include="AnimalsUseDispenser.cs" />
     <Compile Include="Come.cs" />
     <Compile Include="DoNotEatRandomly.cs" />
     <Compile Include="FetchIt.cs" />

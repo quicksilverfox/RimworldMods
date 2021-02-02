@@ -13,6 +13,7 @@ namespace AnimalsLogic
         public static bool tastes_like_chicken = false;
         public static bool medical_alerts = true;
         public static bool trade_tags = true;
+        public static bool use_dispenser = true;
 
         public static float wildness_threshold_for_tameness_decay = 0.101f;
         public static float training_decay_factor = 1.0f;
@@ -30,6 +31,7 @@ namespace AnimalsLogic
             listing_Standard.CheckboxLabeled("ALConfigMeatConversionLabel".Translate(), ref tastes_like_chicken, "ALConfigMeatConversionTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigMedicalAlertsLabel".Translate(), ref medical_alerts, "ALConfigMedicalAlertsTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigTradeHintsLabel".Translate(), ref trade_tags, "ALConfigTradeHintsTooltip".Translate());
+            listing_Standard.CheckboxLabeled("ALConfigAnimalsCanUseFoodDispenserLabel".Translate(), ref use_dispenser, "ALConfigAnimalsCanUseFoodDispenserTooltip".Translate());
 
             listing_Standard.Label("ALConfigTamenessDecayThresholdLabel".Translate(((float)Math.Round(wildness_threshold_for_tameness_decay, 3) * 100).ToString()), -1, "ALConfigTamenessDecayThresholdTooltip".Translate());
             wildness_threshold_for_tameness_decay = listing_Standard.Slider(wildness_threshold_for_tameness_decay, 0f, 1f);
@@ -53,6 +55,7 @@ namespace AnimalsLogic
             Scribe_Values.Look<bool>(ref tastes_like_chicken, "tastes_like_chicken", false, false);
             Scribe_Values.Look<bool>(ref medical_alerts, "medical_alerts", true, false);
             Scribe_Values.Look<bool>(ref trade_tags, "trade_tags", true, false);
+            Scribe_Values.Look<bool>(ref use_dispenser, "use_dispenser", true, false);
             Scribe_Values.Look<float>(ref wildness_threshold_for_tameness_decay, "wildness_threshold_for_tameness_decay", 0.101f, false);
             Scribe_Values.Look<float>(ref training_decay_factor, "training_decay_factor", 1.0f, false);
             Scribe_Values.Look<float>(ref haul_mtb, "haul_mtb", 1.5f, false);

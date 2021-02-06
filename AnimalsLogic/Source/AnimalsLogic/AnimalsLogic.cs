@@ -19,6 +19,7 @@ namespace AnimalsLogic
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             AnimalsUseDispenser.Patch();
+            NoBoomSlaughter.Patch();
 
             base.GetSettings<Settings>();
         }

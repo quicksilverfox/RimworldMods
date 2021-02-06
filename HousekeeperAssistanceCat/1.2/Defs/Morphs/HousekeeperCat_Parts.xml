@@ -1,0 +1,249 @@
+<Defs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Schemas/MutationDef.xsd">
+	<Pawnmorph.Hediffs.MutationDef Name="HousekeeperCatPart" ParentName="PawnmorphPart" Abstract="true">
+		<classInfluence>HousekeeperCatMorph</classInfluence>
+	</Pawnmorph.Hediffs.MutationDef>
+	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
+		<defName>EtherHousekeeperCatMuzzle</defName>
+		<label>feline muzzle</label>
+		<description>The neat and tidy bewhiskered muzzle of a cat.</description>
+		<parts>
+			<li>Jaw</li>
+		</parts>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>-0.5</minSeverity>
+				<label>bestial</label>
+				<description>[PAWN_nameDef]'s face has become a ragged feline snout. [PAWN_possessive] teeth are pointed to suit; speaking is much more difficult, but eating is easier.</description>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<offset>-0.60</offset>
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<offset>0.50</offset>
+					</li>
+				</capMods>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<labelOverride>pressing out</labelOverride>
+				<description>[PAWN_nameDef]'s face seems to be swelling, the nose and jaw pressing out and looking decidedly more like an animal's.</description>
+				<minSeverity>0</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>0.5</minSeverity>
+				<description>A sleek muzzle graces [PAWN_nameDef]'s face, like that of a feline. [PAWN_possessive] teeth are pointed to suit; speaking is more difficult, but eating is easier.</description>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<offset>-0.50</offset>
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<offset>0.50</offset>
+					</li>
+				</capMods>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>1</minSeverity>
+				<description>A sleek muzzle graces [PAWN_nameDef]'s face, like that of a feline. [PAWN_possessive] teeth are pointed to suit; speaking is more difficult, but eating is easier. Adaptation has removed some of the difficulty with speaking.</description>
+				<label>adapted</label>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<offset>-0.10</offset>
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<offset>0.50</offset>
+					</li>
+				</capMods>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>1.5</minSeverity>
+				<label>paragon</label>
+				<description>[PAWN_nameDef]'s face has become a cute feline snout. [PAWN_possessive] teeth are pointed to suit, and this makes eating easier. Many people find [PAWN_possessive] new face adorable.</description>
+				<statOffsets>
+					<SocialImpact>0.1</SocialImpact>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Eating</capacity>
+						<offset>0.50</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>teeth</label>
+						<labelUsedInLogging>False</labelUsedInLogging>
+						<capacities>
+							<li>Bite</li>
+						</capacities>
+						<power>10.0</power>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+				</tools>
+			</li>
+			<li Class="Pawnmorph.Hediffs.CompProperties_MutationSeverityAdjust">
+				<severityPerDay>0.25</severityPerDay>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
+		<defName>EtherHousekeeperCatEar</defName>
+		<label>feline</label>
+		<description>Triangular fuzzy ears grace [PAWN_nameDef]'s head. They coil back when [PAWN_pronoun] is getting ready to pounce.</description>
+		<parts>
+			<li>Ear</li>
+		</parts>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<partEfficiencyOffset>0.2</partEfficiencyOffset>
+			</li>
+		</stages>
+	</Pawnmorph.Hediffs.MutationDef>
+	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
+		<defName>EtherHousekeeperCatTail</defName>
+		<label>cat tail</label>
+		<description>A long, catlike tail. It flicks back and forth whenever [PAWN_nameDef] is displeased with something.</description>
+		<parts>
+			<li>Tail</li>
+			<li>MorphTail</li>
+		</parts>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.01</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</Pawnmorph.Hediffs.MutationDef>
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
+		<defName>EtherHousekeeperCatEye</defName>
+		<label>feline eye</label>
+		<description>Slitted, yellow eyes are now [PAWN_nameDef]'s to keep. They are keener and rather enticing to look at.</description>
+		<parts>
+			<li>Eye</li>
+		</parts>
+		<classInfluence>Feline</classInfluence>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<statOffsets>
+					<SocialImpact>+0.05</SocialImpact>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>0.2</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</Pawnmorph.Hediffs.MutationDef>
+	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
+		<defName>EtherHousekeeperCatHand</defName>
+		<label>feline</label>
+		<description>[PAWN_nameDef]'s hands have reshaped to become like paws, complete with retractable claws. This gives [PAWN_objective] a combat advantage. Thankfully, this more manipulative paw allows [PAWN_nameDef] to keep [PAWN_possessive] thumbs.</description>
+		<parts>
+			<li>Hand</li>
+		</parts>
+		<mutationTale>HandsBecomeCatPaws</mutationTale>
+		<mutationMemory>CanidPawHandMemory</mutationMemory>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>-1</minSeverity>
+				<labelOverride>warped</labelOverride>
+				<description>Whatever mutations the mechanites in [PAWN_nameDef]'s blood were trying to invoke have gone horribly awry, leaving [PAWN_possessive] hands weak and inflexible.</description>
+				<partEfficiencyOffset>-0.9</partEfficiencyOffset>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>0</minSeverity>
+				<label>long nails</label>
+				<description>[PAWN_nameDef]'s fingernails are growing at an alarming rate.</description>
+				<stopChance>0.3</stopChance>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>0.2</minSeverity>
+				<partEfficiencyOffset>0</partEfficiencyOffset>
+				<label>clawed</label>
+				<description>[PAWN_nameDef]'s fingernails have become long, curved and pointed, like that of a feline.</description>
+				<stopChance>0.3</stopChance>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>0.4</minSeverity>
+				<label>padded</label>
+				<description>Fleshy pads have appeared on [PAWN_nameDef]'s palm and fingers, giving the clawed hand a more catlike appearance. Thankfully [PAWN_objective] thumb is still functional.</description>
+				<partEfficiencyOffset>0</partEfficiencyOffset>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>0.6</minSeverity>
+				<label>contorted</label>
+				<description>The first joint of each of [PAWN_nameDef]'s fingers have shortend and reversed directions. The joint unfurls when [PAWN_pronoun] unclenches [PAWN_possessive] hands, bringing [PAWN_possessive] new claws to bear.</description>
+				<partEfficiencyOffset>-0.15</partEfficiencyOffset>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>0.8</minSeverity>
+				<label>unfamiliar</label>
+				<description>The mechanites have finished their work on [PAWN_nameDef]'s new cat-like paws, yet they still remain foreign and unfamiliar to [PAWN_objective] and will take some to get used to.</description>
+				<partEfficiencyOffset>-0.20</partEfficiencyOffset>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>0.99</minSeverity>
+				<label>adapted</label>
+				<description>[PAWN_nameDef]'s hands have reshaped to become like paws, complete with retractable claws. This gives [PAWN_objective] a combat advantage. Thankfully, this more manipulative paw allows [PAWN_nameDef] to keep [PAWN_possessive] thumbs.</description>
+				<partEfficiencyOffset>0.15</partEfficiencyOffset>
+			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>1.5</minSeverity>
+				<label>paragon</label>
+				<partEfficiencyOffset>0.35</partEfficiencyOffset>
+				<description>[PAWN_nameDef]'s hands have become quite catlike, granting [PAWN_objective] both vicious claws to rend [PAWN_possessive] foes with and suprising grace and dexterity when working on mundane tasks.</description>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>claws</label>
+						<labelUsedInLogging>False</labelUsedInLogging>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>11.0</power>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<surpriseAttack>
+							<extraMeleeDamages>
+								<li>
+									<def>Stun</def>
+									<amount>14</amount>
+								</li>
+							</extraMeleeDamages>
+						</surpriseAttack>
+					</li>
+				</tools>
+			</li>
+			<li Class="Pawnmorph.Hediffs.CompProperties_MutationSeverityAdjust">
+				<severityPerDay>0.20</severityPerDay>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+</Defs>

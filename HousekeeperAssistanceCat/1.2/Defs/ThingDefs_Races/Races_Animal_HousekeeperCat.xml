@@ -3,7 +3,7 @@
 	<ThingDef ParentName="AnimalThingBase">
 		<defName>HousekeeperCat</defName>
 		<label>housekeeper cat</label>
-		<description>A highly intelligent creature, engineered to be a perfect house pet. It looks somewhat like a hybrid of cat and monkey and can be trained to provide some help with housekeeping.</description>
+		<description>A highly intelligent creature, engineered to be a perfect house pet. It has very dextrous, hand-like paws and can be trained to provide some help with housekeeping.</description>
 		<statBases>
 			<MoveSpeed>6.00</MoveSpeed>
 			<ComfyTemperatureMin>-50</ComfyTemperatureMin>
@@ -90,7 +90,7 @@
 			<petness>1</petness>
 			<baseBodySize>0.7</baseBodySize>
 			<baseHungerRate>0.1</baseHungerRate>
-			<baseHealthScale>2.5</baseHealthScale>
+			<baseHealthScale>2</baseHealthScale>
 			<foodType>OmnivoreAnimal, OvivoreAnimal, VegetarianRoughAnimal</foodType>
 			<leatherDef>Leather_HKCat</leatherDef>
 			<gestationPeriodDays>90</gestationPeriodDays>

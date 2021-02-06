@@ -1,0 +1,30 @@
+<Defs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Schemas/MorphDef.xsd">
+	<!--
+		Basically it is a cat transformation, but with better pawhands and high health.
+	-->
+	<Pawnmorph.MorphDef ParentName="SensitiveFoodMorph">
+		<defName>HousekeeperCatMorph</defName>
+		<label>catmorph</label>
+		<description>Tidy and helpful, housekeeper cat morphs are good to have around.</description>
+		<race>HousekeeperCat</race>
+		<classification>Feline</classification>
+		<categories>
+			<li>Social</li>
+			<li>Crafter</li>
+			<li>Pet</li>
+			<li>Feline</li>
+		</categories>
+		<fullTransformation>PawnmorphHousekeeperCatTF</fullTransformation>
+		<partialTransformation>PawnmorphHousekeeperCatTFPartial</partialTransformation>
+		<raceSettings>
+			<graphicsSettings>
+				<skinColorOverride>(80,80,80)</skinColorOverride>
+				<femaleSkinColorOverride>(255,255,255)</femaleSkinColorOverride>
+			</graphicsSettings>
+		</raceSettings>
+		<transformSettings>
+			<transformationMemory>HousekeeperCatTransformationMemory</transformationMemory>
+			<revertedMemory>HousekeeperCatRevertedMemory</revertedMemory>
+		</transformSettings>
+	</Pawnmorph.MorphDef>
+</Defs>

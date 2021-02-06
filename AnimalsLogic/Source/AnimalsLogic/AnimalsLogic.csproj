@@ -80,6 +80,7 @@
     <Compile Include="MedicalAlerts\Alert_AnimalNeedsTend.cs" />
     <Compile Include="MedicalAlerts\Alert_LifeThreateningHediffAnimal.cs" />
     <Compile Include="MedicalAlerts\AnimalAlertsUtility.cs" />
+    <Compile Include="NoBoomSlaughter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuinedEggs.cs" />
     <Compile Include="Settings.cs" />

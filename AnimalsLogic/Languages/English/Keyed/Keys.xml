@@ -26,7 +26,7 @@
 	<ALConfigTradeHintsTooltip>Shows animal's sex, training and wool growth.</ALConfigTradeHintsTooltip>
 	
 	<ALConfigAnimalsCanUseFoodDispenserLabel>Allow animals to use nutrient paste dispenser</ALConfigAnimalsCanUseFoodDispenserLabel>
-	<ALConfigAnimalsCanUseFoodDispenserTooltip>Animals would be capable of pressing that button.</ALConfigAnimalsCanUseFoodDispenserTooltip>
+	<ALConfigAnimalsCanUseFoodDispenserTooltip>Animals would be capable of pressing that button. Warining: contains a minor detour (extremely unlikely chance to have a conflict). If animals still don't use the dispenser, check if the building iself is in the allowed area.</ALConfigAnimalsCanUseFoodDispenserTooltip>
 	
 	<ALConfigHaulingMTBLabel>Hauling MTB {0}h. Vanilla: 1.5h.</ALConfigHaulingMTBLabel>
 	<ALConfigHaulingMTBTooltip>'MTB' stands for 'Mean Time Between'. Setting to 0 drastically increases productiveness, but can affect performance with large amount of trained animals.</ALConfigHaulingMTBTooltip>

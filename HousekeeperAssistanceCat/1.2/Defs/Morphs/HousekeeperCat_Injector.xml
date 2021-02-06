@@ -1,0 +1,23 @@
+<Defs>
+	<ThingDef ParentName="InjectorBase">
+		<defName>HousekeeperCatTransformer</defName>
+		<label>mutasyringe, housekeeper cat</label>
+		<description>A mutagenic injector filled with mechanites and housekeeper cat DNA. Use with caution, as leaving the mechanites unchecked may transform the user.</description>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="Pawnmorph.IngestionOutcomeDoer_GiveHediffRandom">
+					<hediffDefs>
+						<li>PawnmorphHousekeeperCatTF</li>
+					</hediffDefs>
+					<severity>1.00</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>	
+		<statBases>
+			<MarketValue>1000</MarketValue>
+		</statBases>
+		<costList>
+			<MechaniteSlurry>6</MechaniteSlurry>
+		</costList>
+	</ThingDef>
+</Defs>

@@ -50,7 +50,7 @@
 	<ThingDef ParentName="PowerConduit">
 		<defName>CarbonPowerConduitUnderground</defName>
 		<label>underground carbon conduit</label>
-		<description>A set of heavy duty electrical cables for moving power around. Extra heavy duty - and buried for extra measure.</description>
+		<description>A set of electrical cables for moving power around. Extra heavy duty - and buried for extra measure.</description>
 		<graphicData>
 			<texPath>Things/Building/Linked/CarbonPowerConduit_Atlas</texPath>
 		</graphicData>

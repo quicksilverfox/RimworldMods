@@ -4,14 +4,19 @@
 	<FactionDef>
 		<defName>LeeaniHold</defName>
 		<label>Leeani hold</label>
-		<description>A hold of the Leeani race.</description>
+		<description>A hold of the Leeani race traditionalists. They live a simple life without relying on the technology too much.</description>
 		<pawnsPlural>Leeani</pawnsPlural>
-		<settlementGenerationWeight>0.55</settlementGenerationWeight>
+		<settlementGenerationWeight>0.8</settlementGenerationWeight>
 		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<maxCountAtGameStart>1</maxCountAtGameStart>
 		<canMakeRandomly>true</canMakeRandomly>
 		<canSiege>true</canSiege>
 		<canStageAttacks>true</canStageAttacks>
 		<leaderTitle>Loord</leaderTitle>
+		<leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
+		<fixedLeaderKinds>
+		  <li>LeeaniLoord</li>
+		</fixedLeaderKinds>
 		<startingGoodwill>
 			<min>20</min>
 			<max>20</max>
@@ -24,6 +29,8 @@
 		</backstoryCategories>
 		<hairTags>
 			<li>Tribal</li>
+			<li>Urban</li>
+			<li>Rural</li>
 		</hairTags>
 		<naturalColonyGoodwill>
 			<min>-70</min>
@@ -111,4 +118,132 @@
 		<settlementTexturePath>World/LeeaniBaseIcon</settlementTexturePath>
 	</FactionDef>
 
+	<!--
+	<FactionDef>
+		<defName>LeeaniStarwalkers</defName>
+		<label>Leeani starwalkers</label>
+		<description>A base of the Leeani race ascendants. Unlike their traditionalist kin, they found their way of life in pushing the limits of tehcnology. They are usually few in nimbers, but superior equipment makes them a force to be reckoned with.</description>
+		<pawnsPlural>Leeani</pawnsPlural>
+		<settlementGenerationWeight>0.2</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<maxCountAtGameStart>1</maxCountAtGameStart>
+		<canMakeRandomly>true</canMakeRandomly>
+		<canSiege>true</canSiege>
+		<canStageAttacks>true</canStageAttacks>
+		<leaderTitle>Coordinator</leaderTitle>
+		<leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
+		<startingGoodwill>
+			<min>20</min>
+			<max>20</max>
+		</startingGoodwill>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<techLevel>Ultra</techLevel>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
+		<hairTags>
+			<li>Tribal</li>
+			<li>Urban</li>
+			<li>Rural</li>
+		</hairTags>
+		<apparelStuffFilter>
+		  <stuffCategoriesToAllow>
+			<li>Metallic</li>
+			<li>Fabric</li>
+		  </stuffCategoriesToAllow>
+		  <disallowedThingDefs>
+			<li>Synththread</li>
+			<li>Hyperweave</li>
+		  </disallowedThingDefs>
+		</apparelStuffFilter>
+		<naturalColonyGoodwill>
+			<min>-70</min>
+			<max>70</max>
+		</naturalColonyGoodwill>
+		<visitorTraderKinds>
+			<li>Visitor_Outlander_Standard</li>
+		</visitorTraderKinds>
+		<caravanTraderKinds>
+			<!- no caravans ->
+		</caravanTraderKinds>
+		<baseTraderKinds>
+			<li>Base_Leeani_Standard</li>
+		</baseTraderKinds>
+		<allowedArrivalTemperatureRange>
+			<min>-90</min>
+			<max>60</max>
+		</allowedArrivalTemperatureRange>
+		<raidCommonalityFromPointsCurve>
+		  <points>
+			<li>(0, 1)</li> <!-Constant 1 at all points levels->
+		  </points>
+		</raidCommonalityFromPointsCurve>
+		<raidLootMaker>EmpireRaidLootMaker</raidLootMaker>
+		<maxPawnCostPerTotalPointsCurve>
+		  <points>
+			<li>(500, 100)</li> <!- Can always use relatively strong pawns, because empire doesn't really have weak ones ->
+			<li>(1000, 150)</li>
+			<li>(2000, 250)</li>
+			<li>(2001, 10000)</li>
+		  </points>
+		</maxPawnCostPerTotalPointsCurve>
+		<pawnGroupMakers>
+			<li>
+				<kindDef>Combat</kindDef>
+				<options>
+					<LeeaniTradie>50</LeeaniTradie>
+					<LeeaniSoldier>250</LeeaniSoldier>
+					<LeeaniScout>90</LeeaniScout>
+					<LeeaniMercenary>100</LeeaniMercenary>
+					<LeeaniCaptain>130</LeeaniCaptain>
+					<LeeaniChampion>130</LeeaniChampion>
+					<LeeaniLoord>300</LeeaniLoord>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<LeeaniTradie>20</LeeaniTradie>
+					<LeeaniSoldier>7</LeeaniSoldier>
+					<LeeaniScout>1</LeeaniScout>
+					<LeeaniCaptain>1</LeeaniCaptain>
+					<LeeaniChampion>1</LeeaniChampion>
+					<LeeaniLoord>10</LeeaniLoord>
+				</options>
+			</li>
+			<li>
+				<kindDef>Trader</kindDef>
+				<traders>
+					<LeeaniTrader>1</LeeaniTrader>
+				</traders>
+				<carriers>
+					<Muffalo>2</Muffalo>
+					<Dromedary>2</Dromedary>
+				</carriers>
+				<guards>
+					<LeeaniSoldier>90</LeeaniSoldier>
+					<LeeaniScout>100</LeeaniScout>
+					<LeeaniCaptain>130</LeeaniCaptain>
+					<LeeaniChampion>130</LeeaniChampion>
+					<LeeaniLoord>300</LeeaniLoord>
+				</guards>
+			</li>
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<LeeaniTradie>50</LeeaniTradie>
+					<LeeaniSoldier>250</LeeaniSoldier>
+					<LeeaniScout>90</LeeaniScout>
+					<LeeaniMercenary>100</LeeaniMercenary>
+					<LeeaniCaptain>130</LeeaniCaptain>
+					<LeeaniChampion>130</LeeaniChampion>
+					<LeeaniLoord>150</LeeaniLoord>	
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<factionIconPath>World/LeeaniBaseIcon</factionIconPath>
+		<settlementTexturePath>World/LeeaniBaseIcon</settlementTexturePath>
+	</FactionDef>
+	-->
 </Defs>

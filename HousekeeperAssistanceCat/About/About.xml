@@ -14,4 +14,9 @@ Unofficial update for HousekeeperAssistanceCat mod by Edge Crescent. While using
 
 This mod adds a new kind of animal - Housekeeper Cat. When Obedience is trained, they are able to do cleaning tasks. They are also eligible for hauling training. As a bonus, they can produce small amounts of quality wool.
 	</description>
+    <loadAfter>
+        <li>erdelf.HumanoidAlienRaces</li>
+        <li>PeteTimesSix.CompactHediffs</li>
+        <li>tachyonite.pawnmorpherpublic</li>
+    </loadAfter>
 </ModMetaData>

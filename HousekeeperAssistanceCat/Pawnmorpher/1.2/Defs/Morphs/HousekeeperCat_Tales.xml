@@ -1,5 +1,4 @@
 <Defs>
-
 	<TaleDef ParentName="MutationTaleBase">
 		<defName>EyesBecomeHousekeeperFeline</defName>
 		<label>eyes become feline</label>

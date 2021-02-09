@@ -53,8 +53,10 @@
 		<description>A set of electrical cables for moving power around. Extra heavy duty - and buried for extra measure.</description>
 		<graphicData>
 			<texPath>Things/Building/Linked/CarbonPowerConduit_Atlas</texPath>
+			<color>(0,0,0,0)</color>
 		</graphicData>
-		<uiIconColor>(75,75,75)</uiIconColor>
+		<uiIconPath>Things/Building/Linked/WaterproofConduit_MenuIcon</uiIconPath>
+		<uiIconColor>(75,75,100,100)</uiIconColor>
 		<building>
 			<ai_chillDestination>false</ai_chillDestination>
 			<isInert>true</isInert>
@@ -74,8 +76,7 @@
 			<li>CarbonResearch</li>
 		</researchPrerequisites>
 		<costList>
-			<CarbonFiber>2</CarbonFiber>
-			<Steel>1</Steel>
+			<CarbonFiber>4</CarbonFiber>
 		</costList>
 	</ThingDef>
 	

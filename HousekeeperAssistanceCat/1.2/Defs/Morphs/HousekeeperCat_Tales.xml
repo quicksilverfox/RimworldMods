@@ -1,0 +1,31 @@
+<Defs>
+
+	<TaleDef ParentName="MutationTaleBase">
+		<defName>EyesBecomeHousekeeperFeline</defName>
+		<label>eyes become feline</label>
+		<rulePack>
+			<rulesStrings>
+				<li>tale_noun->[PAWN_nameDef]'s eyes become feline</li>
+				<li>image->[PAWN_nameFull] pupils shift to feline slits [circumstance_group]</li>
+				<li>image->[PAWN_nameFull]'s eyes begin to change into ones that look like they belong on a cat [circumstance_group]</li>
+			</rulesStrings>
+		</rulePack>
+	</TaleDef>
+
+	<TaleDef ParentName="HandMutationBase">
+		<defName>HandsBecomeHousekeeperCatPaws</defName>
+		<label>hands become cat paws</label>
+		<rulePack>
+			<rulesStrings>
+				<li>tale_noun->[PAWN_nameDef]'s hands becoming cat paws</li>
+				<li>tale_noun->[PAWN_nameDef]'s growing feline claws</li>
+				<li>image->[PAWN_nameFull]'s nails begin to lengthen into long, sharp claws [circumstance_group]</li>
+				<li>image->[PAWN_nameFull]'s palms turn into soft pads [circumstance_group]</li>
+				<li>image->[PAWN_nameFull]'s hands start to turn into feline paws, with sharp retractable claws [circumstance_group]</li>
+				<li>desc_sentence->[PAWN_pronoun] seems pleased with [PAWN_possessive] new paws</li>
+				<li>desc_sentence->[PAWN_pronoun] sharpens [PAWN_possessive] new claws</li>
+				<li>desc_sentence->[PAWN_pronoun] takes a swipe at someone nearby</li>
+			</rulesStrings>
+		</rulePack>
+	</TaleDef>
+</Defs>

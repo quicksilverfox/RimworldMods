@@ -21,6 +21,8 @@ namespace AnimalsLogic
             AnimalsUseDispenser.Patch();
             NoBoomSlaughter.Patch();
 
+            AnimalProductionInfo.Patch();
+
             base.GetSettings<Settings>();
         }
 

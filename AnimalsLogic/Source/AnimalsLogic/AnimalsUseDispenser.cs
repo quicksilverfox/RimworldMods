@@ -76,7 +76,7 @@ namespace AnimalsLogic
         }
 
         /**
-         * I have no idea why I have to wrap it in a method like this to work, but creating a list with those toils causes problems
+         * Damn enumerators
          */
         static private IEnumerable<Toil> PrepareToIngestToils_DispenserOverride(Pawn pawn)
         {

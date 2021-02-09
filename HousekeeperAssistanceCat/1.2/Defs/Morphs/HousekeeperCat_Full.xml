@@ -17,7 +17,7 @@
 				<pawnkinds>
 					<li>HousekeeperCat</li>
 				</pawnkinds>
-				<transformationTale>TransformationMisc</transformationTale>
+				<transformationTale>TransformationCanid</transformationTale>
 			</li>
 			<li Class="Pawnmorph.Hediffs.TransformationStage">
 				<label>transforming</label>

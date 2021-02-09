@@ -88,7 +88,7 @@
 			<predator>false</predator>
 			<packAnimal>true</packAnimal>
 			<petness>1</petness>
-			<baseBodySize>0.7</baseBodySize>
+			<baseBodySize>0.8</baseBodySize>
 			<baseHungerRate>0.1</baseHungerRate>
 			<baseHealthScale>2</baseHealthScale>
 			<foodType>OmnivoreAnimal, OvivoreAnimal, VegetarianRoughAnimal</foodType>

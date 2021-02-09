@@ -1,0 +1,36 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Pawnmorpher</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="Jaw"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatMuzzle>
+							<path>Parts/catface/catface</path>
+							<severity>
+								<a0.5>Parts/catface/catface</a0.5>
+								<a0.3>Parts/Partials/PartialMuzzle/PartialMuzzle</a0.3>
+								<a0.1>Parts/Partials/PartialMuzzle/TinyMuzzle</a0.1>
+							</severity>
+						</EtherHousekeeperCatMuzzle>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="Ear"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatEar>Parts/catface/catears</EtherHousekeeperCatEar>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="tail" and inFrontOfBody="true"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatTail>Parts/catface/cattail</EtherHousekeeperCatTail>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

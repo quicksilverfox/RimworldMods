@@ -126,14 +126,7 @@
 			<li>MorphTail</li>
 		</parts>
 		<stages>
-			<li Class="Pawnmorph.Hediffs.MutationStage">
-				<capMods>
-					<li>
-						<capacity>Moving</capacity>
-						<offset>0.01</offset>
-					</li>
-				</capMods>
-			</li>
+			<li Class="Pawnmorph.Hediffs.MutationStage" />
 		</stages>
 	</Pawnmorph.Hediffs.MutationDef>
 	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
@@ -143,7 +136,8 @@
 		<parts>
 			<li>Eye</li>
 		</parts>
-		<classInfluence>Feline</classInfluence>
+		<mutationTale>EyesBecomeHousekeeperFeline</mutationTale>
+		<classInfluence>HousekeeperCatMorph</classInfluence>
 		<stages>
 			<li Class="Pawnmorph.Hediffs.MutationStage">
 				<statOffsets>
@@ -165,7 +159,7 @@
 		<parts>
 			<li>Hand</li>
 		</parts>
-		<mutationTale>HandsBecomeCatPaws</mutationTale>
+		<mutationTale>HandsBecomeHousekeeperCatPaws</mutationTale>
 		<mutationMemory>CanidPawHandMemory</mutationMemory>
 		<stages>
 			<li Class="Pawnmorph.Hediffs.MutationStage">
@@ -209,12 +203,12 @@
 				<minSeverity>0.99</minSeverity>
 				<label>adapted</label>
 				<description>[PAWN_nameDef]'s hands have reshaped to become like paws, complete with retractable claws. This gives [PAWN_objective] a combat advantage. Thankfully, this more manipulative paw allows [PAWN_nameDef] to keep [PAWN_possessive] thumbs.</description>
-				<partEfficiencyOffset>0.15</partEfficiencyOffset>
+				<partEfficiencyOffset>0.05</partEfficiencyOffset>
 			</li>
 			<li Class="Pawnmorph.Hediffs.MutationStage">
 				<minSeverity>1.5</minSeverity>
 				<label>paragon</label>
-				<partEfficiencyOffset>0.35</partEfficiencyOffset>
+				<partEfficiencyOffset>0.30</partEfficiencyOffset>
 				<description>[PAWN_nameDef]'s hands have become quite catlike, granting [PAWN_objective] both vicious claws to rend [PAWN_possessive] foes with and suprising grace and dexterity when working on mundane tasks.</description>
 			</li>
 		</stages>

@@ -102,6 +102,7 @@
 				<DeteriorationRate>0.2</DeteriorationRate>
 				<Mass>0.5</Mass>
 			</statFactors>
+			<!--<appearance>CarbonChequered</appearance>-->
 		</stuffProps>
 	</ThingDef>
 

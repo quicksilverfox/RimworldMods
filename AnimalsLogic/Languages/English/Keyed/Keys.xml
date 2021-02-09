@@ -30,6 +30,42 @@
 	
 	<ALConfigHaulingMTBLabel>Hauling MTB {0}h. Vanilla: 1.5h.</ALConfigHaulingMTBLabel>
 	<ALConfigHaulingMTBTooltip>'MTB' stands for 'Mean Time Between'. Setting to 0 drastically increases productiveness, but can affect performance with large amount of trained animals.</ALConfigHaulingMTBTooltip>
+	
+	<ALConfigShowExtraDisplayStatsLabel>Show extra stats for pawns</ALConfigShowExtraDisplayStatsLabel>
+	<ALConfigShowExtraDisplayStatsTooltip>Shows some stats that vanilla misses, like resource production.</ALConfigShowExtraDisplayStatsTooltip>
+
+	<!-- Extra stats -->
+	
+	<WoolType>Wool type</WoolType>
+	<Stat_Race_WoolType_Desc>The type of wool this creature will yield when sheared.</Stat_Race_WoolType_Desc>
+	<WoolAmount>Wool amount</WoolAmount>
+	<Stat_Race_WoolAmount_Desc>The amount of wool yielded when shearing this creature and time it takes to grow wool.</Stat_Race_WoolAmount_Desc>
+	
+	<MilkType>Milk type</MilkType>
+	<Stat_Race_MilkType_Desc>The type of milk this creature will yield when milked.</Stat_Race_MilkType_Desc>
+	<MilkAmount>Milk amount</MilkAmount>
+	<Stat_Race_MilkAmount_Desc>The amount of milk yielded when milking this creature and time it takes to produce milk.</Stat_Race_MilkAmount_Desc>
+	<MilkFemale>Milk female only</MilkFemale>
+	<MilkFemaleExplanation>Some species may produce milk regardless of sex, but for most only females can be milked.</MilkFemaleExplanation>
+	
+	<EggType>Eggs type</EggType>
+	<Stat_Race_EggType_Desc>The type of eggs this creature will lay.</Stat_Race_EggType_Desc>
+	<EggAmount>Eggs amount</EggAmount>
+	<Stat_Race_EggAmount_Desc>The amount of eggs in a clutch and how long it takes to produce them.</Stat_Race_EggAmount_Desc>
+	<EggFemale>Eggs female only</EggFemale>
+	<EggFemaleExplanation>Some species may produce eggs regardless of sex, but for most only females can do that.</EggFemaleExplanation>
+	<EggNeedFertilization>Eggs must be fertilized</EggNeedFertilization>
+	<EggNeedFertilizationExplanation>Some species may produce unfertilized eggs, but many others would not.</EggNeedFertilizationExplanation>
+	<EggIncubation>Egg incubation</EggIncubation>
+	<EggIncubationExplanation>How much times it takes for an egg to hatch.</EggIncubationExplanation>
+	
+	<TimeToMature>Mature age</TimeToMature>
+	<TimeToMatureExplanation>How much times it takes to reach reproductive age, age when it can produce milk/wool, or last defined life stage for species that can't reproduce. They are the same age for most species.</TimeToMatureExplanation>
+	
+	<GestationPeriod>Gestation period</GestationPeriod>
+	<GestationPeriodExplanation>How much times it takes to produce a new offspring.</GestationPeriodExplanation>	
+	<LitterSize>Litter size</LitterSize>
+	<LitterSizeExplanation>How many offsprings can be produced at once.</LitterSizeExplanation>
 
     <!-- Medical Alerts for Animals -->
     <AnimalNeedsTreatment>Animal needs treatment</AnimalNeedsTreatment>

@@ -56,7 +56,7 @@
 	<EggFemaleExplanation>Some species may produce eggs regardless of sex, but for most only females can do that.</EggFemaleExplanation>
 	<EggNeedFertilization>Eggs must be fertilized</EggNeedFertilization>
 	<EggNeedFertilizationExplanation>Some species may produce unfertilized eggs, but many others would not.</EggNeedFertilizationExplanation>
-	<EggIncubation>Egg incubation</EggIncubation>
+	<EggIncubation>Eggs incubation</EggIncubation>
 	<EggIncubationExplanation>How much times it takes for an egg to hatch.</EggIncubationExplanation>
 	
 	<TimeToMature>Mature age</TimeToMature>

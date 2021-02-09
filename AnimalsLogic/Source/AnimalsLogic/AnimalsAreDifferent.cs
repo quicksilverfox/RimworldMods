@@ -210,22 +210,42 @@ namespace AnimalsLogic
 
                     if (days > 1)
                     {
+                        if (years > 0)
+                        {
+                            matureAgeString += " ";
+                            matureAgeStringShort += " ";
+                        }
                         matureAgeString += "PeriodDays".Translate(days);
                         matureAgeStringShort += days + "LetterDay".Translate();
                     }
                     if (days == 1)
                     {
+                        if (years > 0)
+                        {
+                            matureAgeString += " ";
+                            matureAgeStringShort += " ";
+                        }
                         matureAgeString += "Period1Day".Translate();
                         matureAgeStringShort += 1 + "LetterDay".Translate();
                     }
 
                     if (hours > 1)
                     {
+                        if (years + hours > 0)
+                        {
+                            matureAgeString += " ";
+                            matureAgeStringShort += " ";
+                        }
                         matureAgeString += "PeriodHours".Translate(hours);
                         matureAgeStringShort += hours + "LetterHour".Translate();
                     }
                     if (hours == 1)
                     {
+                        if (years + hours > 0)
+                        {
+                            matureAgeString += " ";
+                            matureAgeStringShort += " ";
+                        }
                         matureAgeString += "Period1Hour".Translate();
                         matureAgeStringShort += 1 + "LetterHour".Translate();
                     }
@@ -239,7 +259,7 @@ namespace AnimalsLogic
 
                 if (__instance.hasGenders && reproductiveAge != null && !parentDef.HasComp(typeof(CompEggLayer)))
                 {
-                    NewList.Add(new StatDrawEntry(StatCategory, "GestationPeriod".Translate(), String.Format("{0:0.#}", __instance.gestationPeriodDays), "GestationPeriodExplanation".Translate(), startOrder--));
+                    NewList.Add(new StatDrawEntry(StatCategory, "GestationPeriod".Translate(), String.Format("{0:0.#}", __instance.gestationPeriodDays) + "LetterDay".Translate(), "GestationPeriodExplanation".Translate(), startOrder--));
 
                     float litterAvg = 1f;
                     String litterSize = "1";

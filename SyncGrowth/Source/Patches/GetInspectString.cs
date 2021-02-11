@@ -13,7 +13,7 @@ namespace SyncGrowth.Patches
 	[HarmonyPriority(Priority.VeryLow)]
 	static class Plant_GetInspectString_Patch
 	{
-		static void Postfix(ref string __result, Plant __instance)
+		public static void Postfix(ref string __result, Plant __instance)
         {
             if (!Settings.mod_enabled)
                 return;

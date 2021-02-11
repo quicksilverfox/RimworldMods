@@ -9,7 +9,7 @@ namespace SyncGrowth
 {
     public class MapCompGrowthSync : MapComponent
     {
-        readonly List<Group> groups = new List<Group>();
+        public readonly List<Group> groups = new List<Group>();
         public readonly List<Plant> allPlantsInGroup = new List<Plant>();
 
         public int Count
@@ -53,7 +53,7 @@ namespace SyncGrowth
 
             if (Settings.zone_mode)
             {
-                ZoneMode();
+                GroupMaker.ZoneMode(this);
                 return;
             }
 
@@ -75,59 +75,6 @@ namespace SyncGrowth
 #endif
                 }
             }
-        }
-
-        private void ZoneMode()
-        {
-            foreach (Zone zone in map.zoneManager.AllZones)
-            {
-                if (zone is Zone_Growing zoneGrowing)
-                {
-                    ThingDef plantDef = zoneGrowing.GetPlantDefToGrow();
-
-                    IEnumerable<Thing> allContainedThings = zoneGrowing.AllContainedThings;
-                    List<Plant> plantList = new List<Plant>();
-
-                    float max_grown = 0;
-                    foreach (Thing thing in allContainedThings)
-                    {
-                        if (thing is Plant plant)
-                        {
-                            if (/*plant.IsCrop && */plant.def == plantDef && plant.LifeStage == PlantLifeStage.Growing)
-                            {
-                                plantList.Add(plant);
-                                max_grown = Math.Max(plant.Growth, max_grown);
-                            }
-                        }
-                    }
-#if DEBUG
-                    Log.Message("Zone report: ");
-                    Log.Message("plantDef " + plantDef);
-                    Log.Message("Count " + plantList.Count);
-                    Log.Message("max_grown " + max_grown);
-#endif
-                    if (plantList.NullOrEmpty())
-                        break;
-
-                    if (Settings.max_gap < 1)
-                        plantList.RemoveAll(p => p.Growth < max_grown - Settings.max_gap);
-#if DEBUG
-                    Log.Message("Filtered " + plantList.Count);
-#endif
-                    allPlantsInGroup.AddRange(plantList);
-                    var group = new Group(plantList);
-#if DEBUG
-                    Log.Message("Group " + group.Count);
-                    plantList.SortBy(p => p.Growth);
-                    Log.Message("Max mult " + group.GetGrowthMultiplierFor(plantList.First()));
-                    Log.Message("Group valid " + GroupsUtils.HasGroup(plantList.First()));
-#endif
-
-                    groups.Add(group);
-                }
-            }
-
-            // todo: find all plantable edifices and run old handler on them
         }
     }
 }

@@ -16,9 +16,12 @@
 			</li>
 		</v1.2>
 	</modDependenciesByVersion>
-	<description>Equalizes plants growth, ensuring that they would be ready for harvest together. Works by actually adjusting grow rate. In case of this mod not working for some kinds of plants, move it lower in load order.
+	<description>Equalizes plants growth, ensuring that they would be ready for harvest together. Works by actually adjusting grow rate.
 	</description>
 	<incompatibleWith>
 		<li>neceros.plantgrowthsync</li>
 	</incompatibleWith>
+    <loadAfter>
+        <li>dianawinters.Orassans</li>
+    </loadAfter>
 </ModMetaData>

@@ -97,11 +97,13 @@
     <Compile Include="ModController.cs" />
     <Compile Include="GroupsUtils.cs" />
     <Compile Include="Group.cs" />
+    <Compile Include="Patches\Compatibility.cs" />
     <Compile Include="Patches\GrowthRate.cs" />
     <Compile Include="Patches\GetInspectString.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="MapCompGrowthSync.cs" />
     <Compile Include="GroupMaker.cs" />
+    <Compile Include="Patches\Root.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

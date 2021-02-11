@@ -7,8 +7,8 @@
 	<SyncGrowthZoneModeTooltip>By default, mod uses an euristic method to group plants together - but it may cause issues with performance and won't work with plants whicn require spacing (mainly trees). Zone mode is much faster, using growing zones instead of analyzing all plants on map, but it can't have several groups in a single zone and can't work with hydroponics or other plantable furniture.</SyncGrowthZoneModeTooltip>
 	
 	<SyncGrowthDrawOverlayLabel>Draw overlay</SyncGrowthDrawOverlayLabel>
-	<SyncGrowthDrawOverlayTooltip>Only works with zone mode off. Draws zone outline for plants which are considered a group and are being synced.</SyncGrowthDrawOverlayTooltip>
+	<SyncGrowthDrawOverlayTooltip>Draws zone outline for plants which are considered a group and are being synced.\n\nOnly works with zone mode off.</SyncGrowthDrawOverlayTooltip>
 	
-	<SyncGrowthMaxGapLabel>Max gap: {0}% Default: 8%</SyncGrowthMaxGapLabel>
+	<SyncGrowthMaxGapLabel>Max gap: {0} Default: 8%</SyncGrowthMaxGapLabel>
 	<SyncGrowthMaxGapTooltip>To avoid too drastic changes, plants with major difference in growth are not synchronized. This option allows setting threshold for this.</SyncGrowthMaxGapTooltip>
 </LanguageData>

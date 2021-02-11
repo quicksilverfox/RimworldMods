@@ -6,7 +6,11 @@ using HarmonyLib;
 
 namespace SyncGrowth.Patches
 {
+	/**
+	 * Patch that allows inspection of growth modifier.
+	 */
 	[HarmonyPatch(typeof(Plant), "GetInspectString")]
+	[HarmonyPriority(Priority.VeryLow)]
 	static class Plant_GetInspectString_Patch
 	{
 		static void Postfix(ref string __result, Plant __instance)

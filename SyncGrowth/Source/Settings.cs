@@ -20,7 +20,7 @@ namespace SyncGrowth
             listing_Standard.CheckboxLabeled("SyncGrowthZoneModeLabel".Translate(), ref zone_mode, "SyncGrowthZoneModeTooltip".Translate());
             listing_Standard.CheckboxLabeled("SyncGrowthDrawOverlayLabel".Translate(), ref draw_overlay, "SyncGrowthDrawOverlayTooltip".Translate());
 
-            listing_Standard.Label("SyncGrowthMaxGapLabel".Translate(((int)Math.Round(max_gap, 3) * 100).ToString()), -1, "SyncGrowthMaxGapTooltip".Translate());
+            listing_Standard.Label("SyncGrowthMaxGapLabel".Translate(((float)Math.Round(max_gap, 3)).ToStringPercent()), -1, "SyncGrowthMaxGapTooltip".Translate());
             max_gap = listing_Standard.Slider(max_gap, 0.01f, 1f);
 
             listing_Standard.End();

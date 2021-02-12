@@ -15,7 +15,7 @@ namespace SyncGrowth.Patches
 	{
 		static void Postfix()
 		{
-			if (!Settings.mod_enabled || Settings.zone_mode || !Settings.draw_overlay)
+			if (!Settings.mod_enabled || Settings.zone_mode || !Settings.draw_overlay || Find.CurrentMap == null)
 				return;
 
 			try
@@ -43,8 +43,6 @@ namespace SyncGrowth.Patches
 			}
 			catch (Exception ex)
 			{
-				//screw that bug, I can't fix it and it seems harmless.
-				//if (!(ex is InvalidCastException))
 				throw ex;
 			}
 		}

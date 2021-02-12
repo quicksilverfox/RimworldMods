@@ -22,6 +22,7 @@ namespace AnimalsLogic
             NoBoomSlaughter.Patch();
 
             AnimalProductionInfo.Patch();
+            ShowAnimalRelations.Patch();
 
             base.GetSettings<Settings>();
         }

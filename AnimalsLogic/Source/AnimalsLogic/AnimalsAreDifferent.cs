@@ -281,4 +281,28 @@ namespace AnimalsLogic
             __result = output;
         }
     }
+
+    public static class ShowAnimalRelations
+    {
+        public static void Patch()
+        {
+            AnimalsLogic.harmony.Patch(
+                AccessTools.Method(typeof(SocialCardUtility), "ShouldShowPawnRelations"), 
+                postfix: new HarmonyMethod(typeof(ShowAnimalRelations).GetMethod(nameof(ShouldShowPawnRelations_Postfix)))
+                );
+        }
+
+        [HarmonyPostfix]
+        public static void ShouldShowPawnRelations_Postfix(ref bool __result, Pawn pawn, Pawn selPawnForSocialInfo)
+        {
+
+            if (__result || !Settings.always_show_relations)
+                return;
+
+            if (pawn.relations.everSeenByPlayer && pawn.RaceProps.Animal && (pawn.Name == null || pawn.Name.Numerical))
+                __result = true;
+
+            return;
+        }
+    }
 }

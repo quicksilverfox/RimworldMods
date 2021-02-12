@@ -33,6 +33,9 @@
 	
 	<ALConfigShowExtraDisplayStatsLabel>Show extra stats for pawns</ALConfigShowExtraDisplayStatsLabel>
 	<ALConfigShowExtraDisplayStatsTooltip>Shows some stats that vanilla misses, like resource production.</ALConfigShowExtraDisplayStatsTooltip>
+	
+	<ALConfigAlwaysShowRelationsLabel>Always show animal relations</ALConfigAlwaysShowRelationsLabel>
+	<ALConfigAlwaysShowRelationsTooltip>By default, only relations with named animals are displayed. This allows to see all of them.</ALConfigAlwaysShowRelationsTooltip>
 
 	<!-- Extra stats -->
 	

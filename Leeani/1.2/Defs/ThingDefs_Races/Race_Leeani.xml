@@ -196,6 +196,7 @@
 			<PsychicSensitivity>1.25</PsychicSensitivity>
 			<MiningSpeed>0.8</MiningSpeed>
 			<TrapSpringChance>0.02</TrapSpringChance>
+			<RoyalFavorValue>4</RoyalFavorValue>
 		</statBases>
 		<tools>
 			<li>

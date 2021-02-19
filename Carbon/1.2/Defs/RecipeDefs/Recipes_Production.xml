@@ -93,9 +93,9 @@
 
 	<RecipeDef>
 		<defName>MakeDiamond</defName>
-		<label>make diamond</label>
-		<description>Make diamond from chemfuel.</description>
-		<jobString>Making diamond.</jobString>
+		<label>make synthdiamond</label>
+		<description>Make synthdiamond from chemfuel.</description>
+		<jobString>Making synthdiamond.</jobString>
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>3500</workAmount>
@@ -117,7 +117,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<Diamond>10</Diamond>
+			<CarbonDiamond>10</CarbonDiamond>
 		</products>
 	</RecipeDef>
 

@@ -2,7 +2,7 @@
 	<ThingDef ParentName="InjectorBase">
 		<defName>HousekeeperCatTransformer</defName>
 		<label>mutasyringe, housekeeper cat</label>
-		<description>A mutagenic injector filled with mechanites and housekeeper cat DNA. Use with caution, as leaving the mechanites unchecked may transform the user.</description>
+		<description>A mutagenic injector filled with mechanites and housekeeper cat DNA. Use with caution, as leaving the mechanites unchecked may transform the user. Housekeeper cat morphs combine wild feline grace and superior resilience of a well-designed artificial lifeform.</description>
 		<ingestible>
 			<outcomeDoers>
 				<li Class="Pawnmorph.IngestionOutcomeDoer_GiveHediffRandom">

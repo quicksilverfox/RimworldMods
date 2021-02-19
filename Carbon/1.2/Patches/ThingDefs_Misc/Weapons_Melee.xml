@@ -4,7 +4,7 @@
 		<xpath>Defs/ThingDef[@Name="BaseMeleeWeapon_Sharp"]/recipeMaker/defaultIngredientFilter/disallowedThingDefs</xpath>
 		<value>
 			<li>CarbonFiber</li>
-			<li>Diamond</li>
+			<li>CarbonDiamond</li>
 		</value>
 	</Operation>
 </Patch>

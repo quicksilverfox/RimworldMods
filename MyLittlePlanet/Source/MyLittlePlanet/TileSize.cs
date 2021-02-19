@@ -27,6 +27,25 @@ namespace WorldGenRules
         public RulesOverrider(Game game)
         { }
 
+        [HarmonyPatch(typeof(StorytellerUI), "DrawStorytellerSelectionInterface_NewTemp")]
+        static class StorytellerUI_DrawStorytellerSelectionInterface_NewTemp_Patch
+        {
+            static bool Prefix(Rect rect, ref StorytellerDef chosenStoryteller, ref DifficultyDef difficulty, ref Difficulty difficultyValues, Listing_Standard infoListing)
+            {
+                if (Find.GameInitData.permadeathChosen == false)
+                {
+                    Find.GameInitData.permadeathChosen = true;
+                    Find.GameInitData.permadeath = false;
+                }
+                if (difficulty == null)
+                {
+                    difficulty = DifficultyDefOf.Rough;
+                    difficultyValues = new Difficulty(difficulty);
+                }
+                return true;
+            }
+        }
+
         [HarmonyPatch(typeof(PlanetShapeGenerator), "DoGenerate", new Type[] { })]
         static class PlanetShapeGenerator_DoGenerate_Patch
         {

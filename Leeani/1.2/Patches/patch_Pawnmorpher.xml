@@ -1,0 +1,45 @@
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Pawnmorpher</li>
+        </mods>
+		
+		<!-- Makes them fox-morphs by default -->
+        <match Class="PatchOperationAddModExtension">
+            <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Leeani"]</xpath>
+            <value>
+                <li Class="Pawnmorph.RaceMutationSettingsExtension">
+                    <mutationRetrievers>
+                        <!-- set this to true to disable mutations on this race  
+                        <immuneToAll>true</immuneToAll>
+                        -->
+                        <!-- this node lets you add all mutations from a specific morph onto the race -->
+                        <li Class="Pawnmorph.Hediffs.MutationRetrievers.AnimalClassRetriever">
+                            <animalClass>FoxMorph</animalClass>
+                        </li>
+                        <!--
+                            use this node to select specific mutations to add to the race 
+                        <li Class="Pawnmorph.Hediffs.MutationRetrievers.Mutations">
+                            <mutations>
+                                <li>EtherThrumboHorn</li>
+                            </mutations>
+                        </li>
+                        -->
+                    </mutationRetrievers>
+                </li>
+            </value>
+        </match>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Leeani"]/statBases/MoveSpeed</xpath>
+					<value>
+						<MoveSpeed>5.85</MoveSpeed> <!-- They don't need to be much faster than humans, but since they are born with paws they still have small advantage -->
+					</value>
+				</li>
+			</operations>
+		</match>
+    </Operation>
+</Patch>

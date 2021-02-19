@@ -4,7 +4,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[@Name="ApparelMakeableBase" or @Name="ArmorSmithableBase" or @Name="ArmorMachineableBase"]/recipeMaker/defaultIngredientFilter/disallowedThingDefs</xpath>
 		<value>
-			<li>Diamond</li>
+			<li>CarbonDiamond</li>
 		</value>
 	</Operation>
 

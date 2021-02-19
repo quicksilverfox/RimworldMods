@@ -4,7 +4,7 @@
 	<FactionDef>
 		<defName>LeeaniHold</defName>
 		<label>Leeani hold</label>
-		<description>A hold of the Leeani race traditionalists. They live a simple life without relying on the technology too much.</description>
+		<description>A hold of the Leeani race traditionalists. They live a relatively simple life without relying on the technology too much.</description>
 		<pawnsPlural>Leeani</pawnsPlural>
 		<settlementGenerationWeight>0.8</settlementGenerationWeight>
 		<requiredCountAtGameStart>1</requiredCountAtGameStart>
@@ -23,7 +23,7 @@
 		</startingGoodwill>
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
-		<techLevel>Medieval</techLevel>
+		<techLevel>Industrial</techLevel>
 		<backstoryCategories>
 			<li>LeeaniBackstory</li>
 		</backstoryCategories>
@@ -140,7 +140,7 @@
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Ultra</techLevel>
 		<backstoryCategories>
-			<li>LeeaniBackstory</li>
+			<li>LeeaniStarwalkerBackstory</li>
 		</backstoryCategories>
 		<hairTags>
 			<li>Tribal</li>
@@ -152,10 +152,6 @@
 			<li>Metallic</li>
 			<li>Fabric</li>
 		  </stuffCategoriesToAllow>
-		  <disallowedThingDefs>
-			<li>Synththread</li>
-			<li>Hyperweave</li>
-		  </disallowedThingDefs>
 		</apparelStuffFilter>
 		<naturalColonyGoodwill>
 			<min>-70</min>

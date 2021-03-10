@@ -17,8 +17,7 @@ namespace AnimalsLogic
     {
         static bool Prefix(ref object[] __state, Thing a, Thing b)
         {
-            if(Settings.hostile_predators)
-                __state = new object[] { a, b };
+            __state = new object[] { a, b };
             return true;
         }
 
@@ -29,12 +28,17 @@ namespace AnimalsLogic
                 return;
             }
 
-            Thing a = (Thing)__state[0];
-            Thing b = (Thing)__state[1];
-
-            if (Settings.hostile_predators && (CheckHostile(a, b) || CheckHostile(b, a)))
+            if (__result == false)
             {
-                __result = true;
+                if (Settings.hostile_predators)
+                {
+                    Thing a = (Thing)__state[0];
+                    Thing b = (Thing)__state[1];
+                    if (CheckHostile(a, b) || CheckHostile(b, a))
+                    {
+                        __result = true;
+                    }
+                }
             }
 
             //if (Settings.hostile_vermins && (CheckVermin(a, b) || CheckVermin(b, a))) __result = true;

@@ -15,25 +15,12 @@ namespace AnimalsLogic
     [HarmonyPatch(typeof(GenHostility), "HostileTo", new Type[] { typeof(Thing), typeof(Thing) })]
     static class GenHostility_IsPredatorHostileTo_Patch
     {
-        static bool Prefix(ref object[] __state, Thing a, Thing b)
+        static void Postfix(ref bool __result, Thing a, Thing b)
         {
-            __state = new object[] { a, b };
-            return true;
-        }
-
-        static void Postfix(ref bool __result, ref object[] __state)
-        {
-            if (__state == null)
-            {
-                return;
-            }
-
             if (__result == false)
             {
                 if (Settings.hostile_predators)
                 {
-                    Thing a = (Thing)__state[0];
-                    Thing b = (Thing)__state[1];
                     if (CheckHostile(a, b) || CheckHostile(b, a))
                     {
                         __result = true;

@@ -29,6 +29,7 @@
 		<description>A set of heavy duty electrical cables for moving power around. Insulated for transmitting power under shallow water.</description>
 		<graphicData>
 			<texPath>Things/Building/Linked/CarbonPowerConduitUnderwater_Atlas</texPath>
+			<color>(75,75,100,10)</color>
 		</graphicData>
 		<uiIconPath>Things/Building/Linked/WaterproofConduit_MenuIcon</uiIconPath>
 		<uiIconColor>(75,75,100)</uiIconColor>

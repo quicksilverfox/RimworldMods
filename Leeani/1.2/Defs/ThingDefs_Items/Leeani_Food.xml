@@ -16,8 +16,8 @@
 			<Nutrition>0.2</Nutrition>
 		</statBases>
 		<ingestible>
-			<foodType>Fluid, Processed</foodType>
-			<preferability>MealSimple</preferability>
+			<foodType>Fluid, Processed, VegetableOrFruit</foodType>
+			<preferability>RawTasty</preferability>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Ingest_Beer</ingestSound>
 			<ingestHoldOffsetStanding>
@@ -46,6 +46,38 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<RecipeDef>
+		<defName>MakeBerryJuice</defName>
+		<label>make berry juice</label>
+		<description>Make berry juice from, well, berries.</description>
+		<jobString>Making berry juice.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RawBerries</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RawBerries</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<BerryJuice>5</BerryJuice>
+		</products>
+	</RecipeDef>
 
 	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>GrapeJuice</defName>
@@ -62,8 +94,8 @@
 			<Nutrition>0.2</Nutrition>
 		</statBases>
 		<ingestible>
-			<foodType>Fluid, Processed</foodType>
-			<preferability>MealSimple</preferability>
+			<foodType>Fluid, Processed, VegetableOrFruit</foodType>
+			<preferability>RawTasty</preferability>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Ingest_Beer</ingestSound>
 			<ingestHoldOffsetStanding>
@@ -92,5 +124,39 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<RecipeDef>
+		<defName>MakeGrapeJuice</defName>
+		<label>make grape juice</label>
+		<description>Make grape juice from, well, grapes.</description>
+		<jobString>Making grape juice.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>1000</workAmount>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>
+							<li>RawGrapes</li>
+						</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RawGrapes</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<GrapeJuice>5</GrapeJuice>
+		</products>
+	</RecipeDef>
 
 </Defs>

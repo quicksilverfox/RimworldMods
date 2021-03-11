@@ -189,7 +189,7 @@ namespace AnimalsLogic
                 {
                     float age = matureAge.minAge; // contains number of years as float
                     int years = (int)age;
-                    age = age % 1.0f; // now contains number of years that is less than 1
+                    age %= 1.0f; // now contains number of years that is less than 1
                     int days = (int)(age * 60);
                     age = (age * 60) % 1.0f; // now contains number of days that is less than 1
                     int hours = (int)age * 24;

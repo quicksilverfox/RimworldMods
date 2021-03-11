@@ -4,7 +4,7 @@
 	<ThingDef ParentName="DrugBase">
 		<defName>LeeaniWine</defName>
 		<label>craft wine</label>
-		<description>A delightful wine made from foot(paw?)-pressed grapes. Excessive consumption can lead to alcohol addiction.</description>
+		<description>A delightful Leeani-style wine made from grapes. Excessive consumption can lead to alcohol addiction.</description>
 		<graphicData>
 			<texPath>Things/Item/Wine</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>

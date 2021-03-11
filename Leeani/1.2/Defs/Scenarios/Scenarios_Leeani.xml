@@ -4,7 +4,7 @@
 	<ScenarioDef>
 		<defName>Leeani Loords</defName>
 		<label>Leeani Loords</label>
-		<description>Five Leeani escaped the Mechanoid inquisition, because out of their Hold they were the only ones expecting it. Now they must rebuild a glorious town for all Leeani to thrive in, and protect it from those who seek to destroy.\n\nLeeani have a medieval technology level. They start with basic electricity knowledge, but research advances slowly.\n\nBoreal Start recommended.</description>
+		<description>Five Leeani escaped the Mechanoid inquisition, because out of their Hold they were the only ones expecting it. Now they must rebuild a glorious town for all Leeani to thrive in, and protect it from those who seek to destroy.\n\nAlas, with precious archives left behind, you'll only have a medieval technology level with only basic electricity knowledge.\n\nBoreal Start recommended.</description>
 
 		<scenario>
 			<summary>Five concerned Leeani, a new lease on life.</summary>
@@ -59,6 +59,13 @@
 					<thingDef>MeleeWeapon_Quarterstaff</thingDef>
 					<stuff>WoodLog</stuff>
 					<count>2</count>
+				</li>
+				
+				<li Class="ScenPart_StartingAnimal">
+					<def>StartingAnimal</def>
+					<animalKind>Alpaca</animalKind>
+					<count>2</count>
+					<bondToRandomPlayerPawnChance>0.1</bondToRandomPlayerPawnChance>
 				</li>
 
 				<!-- Scatter some things near player start -->

@@ -115,12 +115,11 @@
 		</value>
 	</Operation>
 	
-	<!-- Adds wine press to brewery work giver to reduce work tab clutter -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/WorkGiverDef[defName='DoBillsBrew']/fixedBillGiverDefs</xpath>
-		<order>Append</order>
+		<xpath>Defs/ThingDef[defName="Brewery"]/recipes</xpath>
 		<value>
-			<li>LeeaniWinePress</li>
+			<li>MakeBerryJuice</li>
+			<li>MakeGrapeJuice</li>
 		</value>
 	</Operation>
 	

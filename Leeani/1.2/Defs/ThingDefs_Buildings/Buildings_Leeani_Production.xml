@@ -1,55 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef ParentName="BenchBase">
-		<defName>LeeaniWinePress</defName>
-		<label>wine press</label>
-		<thingClass>Building_WorkTable</thingClass>
-		<description>A manual foot-press to squash berries and fruit into a juice, ready for fermenting.</description>
-		<graphicData>
-			<texPath>Things/Building/Production/CiderPress</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(1.2,2.4)</drawSize>
-			<damageData>
-				<rect>(0.05,0.1,0.9,0.9)</rect>
-			</damageData>
-		</graphicData>
-		<costList>
-			<WoodLog>50</WoodLog>
-			<Steel>30</Steel>
-		</costList>
-		<altitudeLayer>Building</altitudeLayer>
-		<defaultPlacingRot>South</defaultPlacingRot>
-		<fillPercent>0.5</fillPercent>
-		<useHitPoints>True</useHitPoints>
-		<statBases>
-			<WorkToBuild>2000</WorkToBuild>
-			<MaxHitPoints>180</MaxHitPoints>
-			<Flammability>1.0</Flammability>
-		</statBases>
-		<size>(1,2)</size>
-		<designationCategory>Production</designationCategory>
-		<passability>Standable</passability>
-		<pathCost>70</pathCost>
-		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellIcon />
-		<interactionCellOffset>(0,0,0)</interactionCellOffset>
-		<surfaceType>Item</surfaceType>
-		<recipes>
-			<li>MakeBerryJuice</li>
-			<li>MakeGrapeJuice</li>
-		</recipes>
-		<inspectorTabs>
-			<li>ITab_Bills</li>
-		</inspectorTabs>
-		<building>
-			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
-		</building>
-		<researchPrerequisites>
-			<li>LeeaniBrewing</li>
-		</researchPrerequisites>
-	</ThingDef>
-
 	<Leeani.ExtraThingDef ParentName="BuildingBase">
 		<defName>LeeaniCiderKeg</defName>
 		<label>cider keg</label>

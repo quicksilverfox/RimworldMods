@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -67,7 +68,7 @@ namespace AnimalsLogic
         [HarmonyPrefix]
         public static bool PrepareToIngestToils_DispenserPrefix(ref JobDriver_Ingest __instance, ref IEnumerable<Toil> __result)
         {
-            if (!__instance.pawn.RaceProps.ToolUser)
+            if (WildManUtility.AnimalOrWildMan(__instance.pawn)) // AnimalOrWildMan used to support Pawnmorpher sentient former humans
             {
                 __result = PrepareToIngestToils_DispenserOverride(__instance.pawn);
                 return false;
@@ -82,8 +83,40 @@ namespace AnimalsLogic
         {
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell).FailOnDespawnedNullOrForbidden(TargetIndex.A);
             yield return Toils_Ingest.TakeMealFromDispenser(TargetIndex.A, pawn);
-            //yield return Toils_Ingest.CarryIngestibleToChewSpot(pawn, TargetIndex.A).FailOnDestroyedNullOrForbidden(TargetIndex.A);
+            yield return /*Toils_Ingest.*/CarryIngestibleToChewSpot(pawn, TargetIndex.A).FailOnDestroyedNullOrForbidden(TargetIndex.A);
             //yield return Toils_Ingest.FindAdjacentEatSurface(TargetIndex.B, TargetIndex.A);
+        }
+
+        /**
+         * Move few stepf srom dispenser to avoid clustering in a single cell
+         */
+        public static Toil CarryIngestibleToChewSpot(Pawn pawn, TargetIndex ingestibleInd)
+        {
+            Toil toil = new Toil();
+            toil.initAction = delegate
+            {
+                Pawn actor = toil.actor;
+                IntVec3 intVec = IntVec3.Invalid;
+                Thing thing = null;
+                Thing thing2 = actor.CurJob.GetTarget(ingestibleInd).Thing;
+
+                intVec = RCellFinder.SpotToChewStandingNear(actor, actor.CurJob.GetTarget(ingestibleInd).Thing);
+                Danger chewSpotDanger = intVec.GetDangerFor(pawn, actor.Map);
+                if (chewSpotDanger != Danger.None)
+                {
+                    thing = GenClosest.ClosestThingReachable(actor.Position, actor.Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.OnCell, TraverseParms.For(actor), thing2.def.ingestible.chairSearchRadius, (Thing t) => (int)t.Position.GetDangerFor(pawn, t.Map) <= (int)chewSpotDanger);
+                }
+                if (thing != null)
+                {
+                    intVec = thing.Position;
+                    actor.Reserve(thing, actor.CurJob);
+                }
+
+                actor.Map.pawnDestinationReservationManager.Reserve(actor, actor.CurJob, intVec);
+                actor.pather.StartPath(intVec, PathEndMode.OnCell);
+            };
+            toil.defaultCompleteMode = ToilCompleteMode.PatherArrival;
+            return toil;
         }
     }
 }

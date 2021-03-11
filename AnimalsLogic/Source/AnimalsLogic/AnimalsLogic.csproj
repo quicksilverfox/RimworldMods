@@ -74,6 +74,7 @@
     <Compile Include="DoNotEatRandomly.cs" />
     <Compile Include="FetchIt.cs" />
     <Compile Include="ForgetMeNot.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HostilePredators.cs" />
     <Compile Include="LayEggsInNests.cs" />
     <Compile Include="MedicalAlerts\Alert_AnimalNeedsRescuing.cs" />

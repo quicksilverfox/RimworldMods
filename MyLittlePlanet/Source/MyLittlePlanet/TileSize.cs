@@ -32,7 +32,7 @@ namespace WorldGenRules
         {
             static bool Prefix(Rect rect, ref StorytellerDef chosenStoryteller, ref DifficultyDef difficulty, ref Difficulty difficultyValues, Listing_Standard infoListing)
             {
-                if (Find.GameInitData.permadeathChosen == false)
+                if (Find.GameInitData?.permadeathChosen == false)
                 {
                     Find.GameInitData.permadeathChosen = true;
                     Find.GameInitData.permadeath = false;

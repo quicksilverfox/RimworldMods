@@ -10,7 +10,7 @@
 						<li>LeeaniPeasant</li>
 						<li>LeeaniTradie</li>
 					</kindDefs>
-					<chance>25.0</chance>
+					<chance>20.0</chance>
 				</li>
 			</alienslavekinds>
 			<alienrefugeekinds>
@@ -18,7 +18,7 @@
 					<kindDefs>
 						<li>LeeaniSpaceRefugee</li>
 					</kindDefs>
-					<chance>25.0</chance>
+					<chance>20.0</chance>
 				</li>
 			</alienrefugeekinds>
 			<startingColonists>
@@ -28,7 +28,7 @@
 							<kindDefs>
 								<li>LeeaniSpacerColonist</li>
 							</kindDefs>
-							<chance>25.0</chance>
+							<chance>20.0</chance>
 						</li>
 					</pawnKindEntries>
 					<factionDefs>
@@ -52,7 +52,7 @@
 								<li>LeeaniMercenary</li>
 								<li>LeeaniChampion</li>
 							</kindDefs>
-							<chance>25.0</chance>
+							<chance>20.0</chance>
 						</li>
 					</pawnKindEntries>
 					<factionDefs>

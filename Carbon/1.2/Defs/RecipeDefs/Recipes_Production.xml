@@ -3,7 +3,7 @@
 
 	<!-- Balanced to have the same efficiency as other food. Hay yields 37% more than corn or rice on normal soil and 22% more on rich soil, so it is a bit more profitable to use hay on normal soil but corn gives a bit more on rich. -->
 	<RecipeDef>
-		<defName>MakeChemfuelFromHaygrass</defName>
+		<defName>Carbon_MakeChemfuelFromHaygrass</defName>
 		<label>make chemfuel from hay</label>
 		<description>Make a batch of chemfuel by extracting biofuel from hay.</description>
 		<jobString>Refining chemfuel from hay.</jobString>
@@ -32,7 +32,7 @@
 	</RecipeDef>
 
 	<RecipeDef>
-		<defName>MakeCarbonWeave</defName>
+		<defName>Carbon_MakeCarbonWeave</defName>
 		<label>make carbon weave</label>
 		<description>Make carbon weave from chemfuel.</description>
 		<jobString>Making carbon weave.</jobString>
@@ -62,7 +62,7 @@
 	</RecipeDef>
 
 	<RecipeDef>
-		<defName>MakeCarbonFiber</defName>
+		<defName>Carbon_MakeCarbonFiber</defName>
 		<label>make carbon composite</label>
 		<description>Make carbon fiber reinforced polymer from chemfuel.</description>
 		<jobString>Making carbon composite.</jobString>
@@ -92,7 +92,7 @@
 	</RecipeDef>
 
 	<RecipeDef>
-		<defName>MakeDiamond</defName>
+		<defName>Carbon_MakeDiamond</defName>
 		<label>make synthdiamond</label>
 		<description>Make synthdiamond from chemfuel.</description>
 		<jobString>Making synthdiamond.</jobString>

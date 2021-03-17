@@ -4,10 +4,10 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="BiofuelRefinery"]/recipes</xpath>
 		<value>
-			<li>MakeChemfuelFromHaygrass</li>
-			<li>MakeCarbonWeave</li>
-			<li>MakeCarbonFiber</li>
-			<li>MakeDiamond</li>
+			<li>Carbon_MakeChemfuelFromHaygrass</li>
+			<li>Carbon_MakeCarbonWeave</li>
+			<li>Carbon_MakeCarbonFiber</li>
+			<li>Carbon_MakeDiamond</li>
 		</value>
 	</Operation>
 

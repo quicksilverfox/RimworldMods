@@ -7,10 +7,7 @@ namespace SyncGrowth
 	{
 		public static float GetGrowthMultiplierFor(Plant plant)
 		{
-			var comp = plant.Map.GetComponent<MapCompGrowthSync>();
-			var result = comp.GetGrowthMultiplierFor(plant);
-
-			return result;
+			return plant.GetGrowthMultiplier();
 		}
 
 		public static Group GroupOf(Plant plant)

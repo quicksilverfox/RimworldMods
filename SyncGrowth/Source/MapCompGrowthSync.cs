@@ -26,12 +26,13 @@ namespace SyncGrowth
 
         public float GetGrowthMultiplierFor(Plant plant)
         {
-            var group = GroupOf(plant);
+            return plant.GetGrowthMultiplier();
+/*            var group = GroupOf(plant);
 
             if (group == null)
                 return (1f);
 
-            return group.GetGrowthMultiplierFor(plant);
+            return group.GetGrowthMultiplierFor(plant);*/
         }
 
         public Group GroupOf(Plant plant)

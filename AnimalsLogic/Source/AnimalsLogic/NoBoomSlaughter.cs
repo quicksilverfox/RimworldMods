@@ -11,15 +11,19 @@ namespace AnimalsLogic
     {
         public static void Patch()
         {
-            AnimalsLogic.harmony.Patch(
-                typeof(DeathActionWorker_BigExplosion).GetMethod("PawnDied"),
-                prefix: new HarmonyMethod(typeof(NoBoomSlaughter).GetMethod(nameof(Explosion_Prefix)))
-                );
+            ApplyPatch(typeof(DeathActionWorker_BigExplosion));
+            ApplyPatch(typeof(DeathActionWorker_SmallExplosion));
 
-            AnimalsLogic.harmony.Patch(
-                typeof(DeathActionWorker_SmallExplosion).GetMethod("PawnDied"),
-                prefix: new HarmonyMethod(typeof(NoBoomSlaughter).GetMethod(nameof(Explosion_Prefix)))
-                );
+            ApplyPatch(AccessTools.TypeByName("RimWorld.DeathActionWorker_AntigrainExplosion")); // SoS2 Archolope
+        }
+
+        static void ApplyPatch(System.Type type)
+        {
+            if (type != null)
+                AnimalsLogic.harmony.Patch(
+                    type.GetMethod("PawnDied"),
+                    prefix: new HarmonyMethod(typeof(NoBoomSlaughter).GetMethod(nameof(Explosion_Prefix)))
+                    );
         }
 
         [HarmonyPrefix]

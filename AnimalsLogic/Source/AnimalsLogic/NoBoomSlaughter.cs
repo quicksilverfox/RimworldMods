@@ -11,10 +11,21 @@ namespace AnimalsLogic
     {
         public static void Patch()
         {
-            ApplyPatch(typeof(DeathActionWorker_BigExplosion));
-            ApplyPatch(typeof(DeathActionWorker_SmallExplosion));
+            ApplyPatch(typeof(DeathActionWorker_BigExplosion)); // vanilla boomalope
+            ApplyPatch(typeof(DeathActionWorker_SmallExplosion)); // vanilla boombat
 
             ApplyPatch(AccessTools.TypeByName("RimWorld.DeathActionWorker_AntigrainExplosion")); // SoS2 Archolope
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_BiggerExplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_EMPExplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_Eggxplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_FrostExplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_GargantuanExplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_HairballExplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_PsionicExplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_SmallBomb"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_SmallHairballExplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_StunningExplosion"));
+            ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_ToxicExplosion"));
         }
 
         static void ApplyPatch(System.Type type)

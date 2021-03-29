@@ -24,6 +24,8 @@ namespace AnimalsLogic
             AnimalProductionInfo.Patch();
             ShowAnimalRelations.Patch();
 
+            NoToxicRot.Patch();
+
             base.GetSettings<Settings>();
         }
 

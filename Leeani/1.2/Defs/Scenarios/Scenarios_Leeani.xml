@@ -2,9 +2,9 @@
 <Defs>
 
 	<ScenarioDef>
-		<defName>Leeani Loords</defName>
+		<defName>LeeaniLoords</defName>
 		<label>Leeani Loords</label>
-		<description>Five Leeani escaped the Mechanoid inquisition, because out of their Hold they were the only ones expecting it. Now they must rebuild a glorious town for all Leeani to thrive in, and protect it from those who seek to destroy.\n\nAlas, with precious archives left behind, you'll only have a medieval technology level with only basic electricity knowledge.\n\nBoreal Start recommended.</description>
+		<description>Five Leeani escaped the Mechanoid inquisition, because out of their Hold they were the only ones expecting it. Now they must rebuild a glorious town for all Leeani to thrive in, and protect it from those who seek to destroy.\n\nAlas, with precious archives left behind, you'll only have a medieval technology level with only basic electricity knowledge.\n\nBoreal Start recommended.\n\nIf Tech Advancing is installed, starrting tech level would be Neolithic, giving you a task to rebuild lost knowledge!</description>
 
 		<scenario>
 			<summary>Five concerned Leeani, a new lease on life.</summary>

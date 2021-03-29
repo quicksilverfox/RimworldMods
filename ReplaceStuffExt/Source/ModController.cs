@@ -41,21 +41,20 @@ namespace ReplaceStuffExt
             };
 
 
-            AddReplacement(d => typeof(Building_Battery).IsAssignableFrom(d.thingClass));
-            AddReplacement(d => d.defName.Contains("lamp") && d.HasComp(typeof(CompGlower)));
+            AddReplacement(d => d.GetCompProperties<CompProperties_Glower>()?.glowRadius >= 10); // loose way to replace lamps
+            AddReplacement(d => d.GetCompProperties<CompProperties_Glower>()?.overlightRadius > 0); // any sun lamp on any sun lamp
 
-
-            Type Building_SunLamp = AccessTools.TypeByName("RimWorld.Building_SunLamp");
-            AddReplacement(d => Building_SunLamp.IsAssignableFrom(d.thingClass));
-
-            Type Building_DoorExpanded = AccessTools.TypeByName("DoorsExpanded.Building_DoorExpanded");
+            Type Building_DoorExpanded = AccessTools.TypeByName("DoorsExpanded.Building_DoorExpanded"); // DoorsExpanded patch
             if (Building_DoorExpanded != null) AddReplacement(d => IsWall(d) || typeof(Building_Door).IsAssignableFrom(d.thingClass) || Building_DoorExpanded.IsAssignableFrom(d.thingClass));
 
-            AddReplacement(d => d.Equals(ThingDefOf.NutrientPasteDispenser), d => IsWall(d));
+            AddReplacement(d => d.Equals(ThingDefOf.NutrientPasteDispenser), d => IsWall(d)); // nutrient paste dispenser can replace walls
 
-            AddReplacement(d => d.PlaceWorkers?.Any(p => p.GetType() == typeof(PlaceWorker_OnSteamGeyser)) ?? true);
-            AddReplacement(d => d.PlaceWorkers?.Any(p => p.GetType() == typeof(PlaceWorker_WatermillGenerator)) ?? true);
-            AddReplacement(d => d.PlaceWorkers?.Any(p => p.GetType() == typeof(PlaceWorker_WindTurbine)) ?? true);
+            // power production
+            AddReplacement(d => d.PlaceWorkers?.Any(p => p.GetType() == typeof(PlaceWorker_OnSteamGeyser)) ?? false); // any steam on any steam
+            AddReplacement(d => d.PlaceWorkers?.Any(p => p.GetType() == typeof(PlaceWorker_WatermillGenerator)) ?? false); // any watermill on any watermill
+            AddReplacement(d => d.PlaceWorkers?.Any(p => p.GetType() == typeof(PlaceWorker_WindTurbine)) ?? false); // any wind on any wind
+            AddReplacement(d => d.HasComp(typeof(CompPowerPlantSolar))); // any  solar on any solar
+            AddReplacement(d => d.HasComp(typeof(CompProperties_Battery))); // any batteries on any batteries
 
             // VFE benches
             AddReplacement(d => d.defName.Equals("VFE_TableButcherElectric"), d => d.defName.Equals("TableButcher"), transferBills);

@@ -9,7 +9,7 @@ namespace SyncGrowth
         public static bool mod_enabled = true;
         public static bool draw_overlay = true;
         public static bool zone_mode = false;
-        public static float max_gap = 0.08f;
+        public static float max_gap = 0.20f;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -32,7 +32,7 @@ namespace SyncGrowth
             Scribe_Values.Look<bool>(ref mod_enabled, "mod_enabled", true, false);
             Scribe_Values.Look<bool>(ref draw_overlay, "draw_overlay", true, false);
             Scribe_Values.Look<bool>(ref zone_mode, "zone_mode", false, false);
-            Scribe_Values.Look<float>(ref max_gap, "max_gap", 0.08f, false);
+            Scribe_Values.Look<float>(ref max_gap, "max_gap", 0.20f, false);
         }
     }
 }

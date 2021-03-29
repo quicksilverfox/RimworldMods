@@ -25,6 +25,9 @@ namespace SyncGrowth.Patches
                 "VanillaPlantsExpanded.Plant_StopsGrowingInToxins",
                 "VanillaPlantsExpanded.Plant_WinterBlooming", // does not actually have any overrides to patch but whatever
                 "VanillaPlantsExpanded.Plant_WinterResistant",
+
+                // Mushrooms
+                "Caveworld_Flora_Unleashed.FruitingBody", // it won't show inspect string for them but should work
             };
 
             // Applying patches to get_GrowthRate and/or GetInspectString

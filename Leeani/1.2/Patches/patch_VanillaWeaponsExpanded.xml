@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Weapons Expanded</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ScenarioDef[defName="LeeaniLoords"]/scenario/parts/li[thingDef="Bow_Great"]/thingDef</xpath>
+					<value>
+						<thingDef>VWE_Bow_Compound</thingDef>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

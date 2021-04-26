@@ -15,6 +15,7 @@ namespace AnimalsLogic
             ApplyPatch(typeof(DeathActionWorker_SmallExplosion)); // vanilla boombat
 
             ApplyPatch(AccessTools.TypeByName("RimWorld.DeathActionWorker_AntigrainExplosion")); // SoS2 Archolope
+
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_BiggerExplosion"));
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_EMPExplosion"));
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_Eggxplosion"));
@@ -26,6 +27,8 @@ namespace AnimalsLogic
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_SmallHairballExplosion"));
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_StunningExplosion"));
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_ToxicExplosion"));
+
+            ApplyPatch(AccessTools.TypeByName("MorrowRim.DeathActionWorker_RetchingNetch"));
         }
 
         static void ApplyPatch(System.Type type)

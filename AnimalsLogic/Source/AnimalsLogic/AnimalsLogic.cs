@@ -26,6 +26,8 @@ namespace AnimalsLogic
 
             NoToxicRot.Patch();
 
+            LayEggsInNests.Patch();
+
             base.GetSettings<Settings>();
         }
 

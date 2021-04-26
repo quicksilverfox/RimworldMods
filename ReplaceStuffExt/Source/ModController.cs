@@ -69,6 +69,9 @@ namespace ReplaceStuffExt
             AddReplacement(d => d.defName.Equals("VFE_TableTailorLarge"), d => d.defName.Equals("ElectricTailoringBench") || d.defName.Equals("HandTailoringBench"), transferBills);
 
             AddReplacement(d => d.defName.Equals("VBE_TypewritersTable"), d => d.defName.Equals("VBE_WritersTable"), transferBills);
+
+            // SoS2 structurals (technically vanilla too but who cares about vanilla ship)
+            AddReplacement(d => (d.building?.shipPart ?? false) && (d.holdsRoof || d.passability == Traversability.Impassable));
         }
 
         public void AddReplacement(String oldDefName, String newDefName)

@@ -4,7 +4,7 @@
 	</Pawnmorph.Hediffs.MutationDef>
 	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
 		<defName>EtherHousekeeperCatMuzzle</defName>
-		<label>feline muzzle</label>
+		<label>nekomata muzzle</label>
 		<description>The neat and tidy bewhiskered muzzle of a cat.</description>
 		<parts>
 			<li>Jaw</li>
@@ -106,7 +106,7 @@
 	</Pawnmorph.Hediffs.MutationDef>
 	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
 		<defName>EtherHousekeeperCatEar</defName>
-		<label>feline</label>
+		<label>nekomata</label>
 		<description>Triangular fuzzy ears grace [PAWN_nameDef]'s head. They coil back when [PAWN_pronoun] is getting ready to pounce.</description>
 		<parts>
 			<li>Ear</li>
@@ -119,8 +119,9 @@
 	</Pawnmorph.Hediffs.MutationDef>
 	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
 		<defName>EtherHousekeeperCatTail</defName>
-		<label>cat tail</label>
-		<description>A long, catlike tail. It flicks back and forth whenever [PAWN_nameDef] is displeased with something.</description>
+		<label>nekomata tail</label>
+		<description>A long, catlike tail, forking into two near its base. It flicks back and forth whenever [PAWN_nameDef] is displeased with something.</description>
+		<mutationTale>GrewTail</mutationTale>
 		<parts>
 			<li>Tail</li>
 			<li>MorphTail</li>
@@ -131,7 +132,7 @@
 	</Pawnmorph.Hediffs.MutationDef>
 	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
 		<defName>EtherHousekeeperCatEye</defName>
-		<label>feline eye</label>
+		<label>nekomata eye</label>
 		<description>Slitted, yellow eyes are now [PAWN_nameDef]'s to keep. They are keener and rather enticing to look at.</description>
 		<parts>
 			<li>Eye</li>
@@ -154,7 +155,7 @@
 	</Pawnmorph.Hediffs.MutationDef>
 	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
 		<defName>EtherHousekeeperCatHand</defName>
-		<label>feline</label>
+		<label>nekomata</label>
 		<description>[PAWN_nameDef]'s hands have reshaped to become like paws, complete with retractable claws. This gives [PAWN_objective] a combat advantage. Thankfully, this more manipulative paw allows [PAWN_nameDef] to keep [PAWN_possessive] thumbs.</description>
 		<parts>
 			<li>Hand</li>

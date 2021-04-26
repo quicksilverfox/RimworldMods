@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<!-- 
+		Adds Leeani wine and cider to automated fermenting tank
+	-->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Project RimFactory Revived</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAdd">
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+						  <!--================ Cider x10 =====================-->
+						  <RecipeDef>
+							<defName>BrewLeeaniCiderSmallPack</defName>
+							<label>Brew cider x10</label>
+							<description>Brew cider x10</description>
+							<jobString>Brewing Leeani Cider</jobString>
+							<effectWorking>Cook</effectWorking>
+							<workSkill>Cooking</workSkill>
+							<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+							<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+							<workAmount>180000</workAmount>
+							<researchPrerequisite>LeeaniBrewing</researchPrerequisite>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>BerryJuice</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>BerryJuice</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <LeeaniCider>10</LeeaniCider>
+							</products>
+						  </RecipeDef>
+
+						  <!--================ Cider x25 =====================-->
+						  <RecipeDef>
+							<defName>BrewLeeaniCiderMediumPack</defName>
+							<label>Brew cider x25</label>
+							<description>Brew cider x25</description>
+							<jobString>Brewing Leeani Cider</jobString>
+							<effectWorking>Cook</effectWorking>
+							<workSkill>Cooking</workSkill>
+							<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+							<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+							<workAmount>180000</workAmount>
+							<researchPrerequisite>LeeaniBrewing</researchPrerequisite>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>BerryJuice</li>
+								  </thingDefs>
+								</filter>
+								<count>25</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>BerryJuice</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <LeeaniCider>25</LeeaniCider>
+							</products>
+						  </RecipeDef>
+
+
+						  <!--================ Cider x75 =====================-->
+						  <RecipeDef>
+							<defName>BrewLeeaniCiderLargePack</defName>
+							<label>Brew cider x75</label>
+							<description>Brew cider x75</description>
+							<jobString>Brewing Leeani Cider</jobString>
+							<effectWorking>Cook</effectWorking>
+							<workSkill>Cooking</workSkill>
+							<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+							<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+							<workAmount>180000</workAmount>
+							<researchPrerequisite>LeeaniBrewing</researchPrerequisite>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>BerryJuice</li>
+								  </thingDefs>
+								</filter>
+								<count>75</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>BerryJuice</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <LeeaniCider>75</LeeaniCider>
+							</products>
+						  </RecipeDef>
+						  
+						  <!--================ Wine x10 =====================-->
+						  <RecipeDef>
+							<defName>BrewLeeaniWineSmallPack</defName>
+							<label>Brew wine x10</label>
+							<description>Brew wine x10</description>
+							<jobString>Brewing Leeani Wine</jobString>
+							<effectWorking>Cook</effectWorking>
+							<workSkill>Cooking</workSkill>
+							<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+							<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+							<workAmount>180000</workAmount>
+							<researchPrerequisite>LeeaniWineBrewing</researchPrerequisite>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>GrapeJuice</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>GrapeJuice</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <LeeaniWine>10</LeeaniWine>
+							</products>
+						  </RecipeDef>
+
+						  <!--================ Wine x25 =====================-->
+						  <RecipeDef>
+							<defName>BrewLeeaniWineMediumPack</defName>
+							<label>Brew wine x25</label>
+							<description>Brew wine x25</description>
+							<jobString>Brewing Leeani Wine</jobString>
+							<effectWorking>Cook</effectWorking>
+							<workSkill>Cooking</workSkill>
+							<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+							<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+							<workAmount>180000</workAmount>
+							<researchPrerequisite>LeeaniWineBrewing</researchPrerequisite>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>GrapeJuice</li>
+								  </thingDefs>
+								</filter>
+								<count>25</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>GrapeJuice</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <LeeaniWine>25</LeeaniWine>
+							</products>
+						  </RecipeDef>
+
+
+						  <!--================ Wine x75 =====================-->
+						  <RecipeDef>
+							<defName>BrewLeeaniWineLargePack</defName>
+							<label>Brew wine x75</label>
+							<description>Brew wine x75</description>
+							<jobString>Brewing Leeani Wine</jobString>
+							<effectWorking>Cook</effectWorking>
+							<workSkill>Cooking</workSkill>
+							<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+							<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+							<workAmount>180000</workAmount>
+							<researchPrerequisite>LeeaniWineBrewing</researchPrerequisite>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>GrapeJuice</li>
+								  </thingDefs>
+								</filter>
+								<count>75</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>GrapeJuice</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <LeeaniWine>75</LeeaniWine>
+							</products>
+						  </RecipeDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="PRF_FermentingBarrel"]/recipes</xpath>
+					<value>
+						<li>BrewLeeaniCiderSmallPack</li>
+						<li>BrewLeeaniCiderMediumPack</li>
+						<li>BrewLeeaniCiderLargePack</li>
+						<li>BrewLeeaniWineSmallPack</li>
+						<li>BrewLeeaniWineMediumPack</li>
+						<li>BrewLeeaniWineLargePack</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

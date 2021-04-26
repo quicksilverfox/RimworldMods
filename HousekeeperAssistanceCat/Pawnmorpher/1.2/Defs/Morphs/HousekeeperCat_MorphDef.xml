@@ -4,8 +4,8 @@
 	-->
 	<Pawnmorph.MorphDef ParentName="SensitiveFoodMorph">
 		<defName>HousekeeperCatMorph</defName>
-		<label>catmorph</label>
-		<description>Tidy and helpful, housekeeper cat morphs are good to have around.</description>
+		<label>nekomata</label>
+		<description>Housekeeper cats are designed species, and morphs based on them inherit a lot of their traits. Their resilience is almost unnatural, being able to rival much bigger morphs in toughness, and their hands are fully capable of fine manipulation. As an added bonus, they also gain optimized metabolism, needing little sustenance. No one knows why they have two tails, but this trait gave them their nickname.</description>
 		<race>HousekeeperCat</race>
 		<classification>Feline</classification>
 		<categories>

@@ -89,7 +89,7 @@
 			<packAnimal>true</packAnimal>
 			<petness>1</petness>
 			<baseBodySize>0.8</baseBodySize>
-			<baseHungerRate>0.1</baseHungerRate>
+			<baseHungerRate>0.20</baseHungerRate>
 			<baseHealthScale>2</baseHealthScale>
 			<foodType>OmnivoreAnimal, OvivoreAnimal, VegetarianRoughAnimal</foodType>
 			<leatherDef>Leather_HKCat</leatherDef>
@@ -98,18 +98,18 @@
 			<trainability>Advanced</trainability>
 			<wildness>0</wildness>
 			<wildBiomes>
-				<SeaIce>0.1</SeaIce>
-				<IceSheet>0.1</IceSheet>
-				<Tundra>0.05</Tundra>
-				<BorealForest>0.1</BorealForest>
+				<SeaIce>0.2</SeaIce>
+				<IceSheet>0.2</IceSheet>
+				<Tundra>0.1</Tundra>
+				<BorealForest>0.05</BorealForest>
 				<ColdBog>0.1</ColdBog>
 				<TemperateForest>0.05</TemperateForest>
-				<TemperateSwamp>0.075</TemperateSwamp>
+				<TemperateSwamp>0.1</TemperateSwamp>
 				<TropicalRainforest>0.05</TropicalRainforest>
-				<TropicalSwamp>0.05</TropicalSwamp>
+				<TropicalSwamp>0.1</TropicalSwamp>
 				<AridShrubland>0.075</AridShrubland>
-				<Desert>0.1</Desert>
-				<ExtremeDesert>0.1</ExtremeDesert>
+				<Desert>0.15</Desert>
+				<ExtremeDesert>0.25</ExtremeDesert>
 			</wildBiomes>
 			<nuzzleMtbHours>12</nuzzleMtbHours>
 			<manhunterOnDamageChance>0.35</manhunterOnDamageChance>

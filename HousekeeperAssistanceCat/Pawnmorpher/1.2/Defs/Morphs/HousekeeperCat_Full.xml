@@ -1,7 +1,7 @@
 <Defs>
 	<HediffDef ParentName="NewAspectedMorphParent">
 		<defName>PawnmorphHousekeeperCatTF</defName>
-		<label>catmorph</label>
+		<label>nekomata</label>
 		<description>This person has mechanites in their blood that are slowly mutating them into a catmorph. Keep an eye on them, as leaving the mechanites unattended could lead to them becoming far more feline than human.</description>
 		<stages>
 			<li Class="Pawnmorph.Hediffs.FullTransformationStage">

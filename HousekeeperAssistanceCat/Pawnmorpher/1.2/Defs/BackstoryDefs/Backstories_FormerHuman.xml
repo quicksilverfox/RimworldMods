@@ -5,7 +5,7 @@
         <defName>PM_HousekeeperCatBackstory</defName>
         <title>former human</title>
         <titleShort>former human</titleShort>
-        <baseDescription>A colony turned [PAWN_nameDef] into an animal, using mutagenic mechanites. (Un?)fortunately, [PAWN_pronoun] retains [PAWN_possessive] human mind...but for how long? In this state, [PAWN_nameDef] have limited social interactions, but, thanks to [PAWN_pronoun] body having all necessary capabilities, is able to perform any tasks. [PAWN_nameDef] will need to be kept happy to resist instinct creeping in.</baseDescription>
+        <baseDescription>Someone turned [PAWN_nameDef] into an animal, using mutagenic mechanites. (Un?)fortunately, [PAWN_pronoun] retains [PAWN_possessive] human mind...but for how long? In this state, [PAWN_nameDef] have limited social interactions, but, thanks to [PAWN_pronoun] body having all necessary capabilities, is able to perform any tasks. [PAWN_nameDef] will need to be kept happy to resist instinct creeping in.</baseDescription>
         <workAllows>
             <li>ManualSkilled</li>
             <li>Crafting</li>

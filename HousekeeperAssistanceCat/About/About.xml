@@ -10,9 +10,11 @@
 		<li>1.2</li>
 	</supportedVersions>
 	<description>
-Unofficial update for HousekeeperAssistanceCat mod by Edge Crescent. While using the same assets, background logic for cleaning tasks is fully reworked. Their ability to reproduce is disabled, so you can only tame or buy them (you can edit the mod's LifeStages.xml to re-enable it).
+Unofficial update for HousekeeperAssistanceCat mod by Edge Crescent. While using the same assets, background logic for cleaning tasks is fully reworked.
 
 This mod adds a new kind of animal - Housekeeper Cat. When Obedience is trained, they are able to do cleaning tasks. They are also eligible for hauling training. As a bonus, they can produce small amounts of quality wool.
+
+Supports Pawnmorpher partial morphs!
 	</description>
     <loadAfter>
         <li>erdelf.HumanoidAlienRaces</li>

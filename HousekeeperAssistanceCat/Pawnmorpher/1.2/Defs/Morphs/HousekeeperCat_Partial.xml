@@ -1,7 +1,7 @@
 <Defs>
 	<HediffDef ParentName="NewPartialAspectedMorphParent">
 		<defName>PawnmorphHousekeeperCatTFPartial</defName>
-		<label>catmorph partial</label>
+		<label>nekomata partial</label>
 		<description>This person has mechanites in their blood that are providing them with cat-esque mutations.</description>
 		<stages>
 			<li Class="Pawnmorph.Hediffs.MorphTransformationStage">

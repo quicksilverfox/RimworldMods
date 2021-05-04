@@ -98,18 +98,19 @@
 			<trainability>Advanced</trainability>
 			<wildness>0</wildness>
 			<wildBiomes>
-				<SeaIce>0.2</SeaIce>
-				<IceSheet>0.2</IceSheet>
-				<Tundra>0.1</Tundra>
-				<BorealForest>0.05</BorealForest>
-				<ColdBog>0.1</ColdBog>
-				<TemperateForest>0.05</TemperateForest>
-				<TemperateSwamp>0.1</TemperateSwamp>
-				<TropicalRainforest>0.05</TropicalRainforest>
-				<TropicalSwamp>0.1</TropicalSwamp>
-				<AridShrubland>0.075</AridShrubland>
-				<Desert>0.15</Desert>
-				<ExtremeDesert>0.25</ExtremeDesert>
+				<!-- they are rather indiscriminate in where to live so they are more or less evenly distributed between biomes; so it is normalized with biome animal density in mind to be 0.05 at 1 density -->
+				<BorealForest>0.0125</BorealForest><!-- animalDensity 2.8 rel 0.035-->
+				<Tundra>0.032</Tundra><!-- animalDensity 1.1 rel 0.035-->
+				<ColdBog>0.01</ColdBog><!-- animalDensity 3.3 rel 0.035-->
+				<IceSheet>0.25</IceSheet><!-- animalDensity 0.2 rel 0.05-->
+				<SeaIce>0.5</SeaIce><!-- animalDensity 0.1 rel 0.05-->
+				<TemperateForest>0.0095</TemperateForest><!-- animalDensity 3.7 rel 0.035-->
+				<TemperateSwamp>0.008</TemperateSwamp><!-- animalDensity 4.3 rel 0.035-->
+				<TropicalRainforest>0.009</TropicalRainforest><!-- animalDensity 5.4 rel 0.05-->
+				<TropicalSwamp>0.008</TropicalSwamp><!-- animalDensity 6.5 rel 0.05-->
+				<AridShrubland>0.042</AridShrubland><!-- animalDensity 1.8 rel 0.075-->
+				<Desert>0.088</Desert><!-- animalDensity 0.4 rel 0.035-->
+				<ExtremeDesert>0.5</ExtremeDesert> <!-- animalDensity 0.1 rel 0.05-->
 			</wildBiomes>
 			<nuzzleMtbHours>12</nuzzleMtbHours>
 			<manhunterOnDamageChance>0.35</manhunterOnDamageChance>

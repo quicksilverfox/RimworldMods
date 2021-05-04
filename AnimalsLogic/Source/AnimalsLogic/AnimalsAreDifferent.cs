@@ -124,8 +124,16 @@ namespace AnimalsLogic
             int startOrder = 2150;
             StatCategoryDef StatCategory = StatCategoryDefOf.PawnMisc;
 
-            foreach (CompProperties c in parentDef.comps)
+            Pawn pawn = null;
+            if (req.HasThing && req.Thing is Pawn)
+                pawn = (req.Thing as Pawn);
+
+            if (pawn == null)
+                return;
+
+            foreach (ThingComp comp in pawn.AllComps)
             {
+                CompProperties c = comp.props;
                 if (c is CompProperties_Shearable shearable)
                 {
                     NewList.Add(new StatDrawEntry(StatCategory, "WoolType".Translate(), shearable.woolDef.LabelCap, "Stat_Race_WoolType_Desc".Translate(), startOrder--, null, new Dialog_InfoCard.Hyperlink[1]
@@ -137,8 +145,7 @@ namespace AnimalsLogic
                         woolStat += " (" + string.Format("{0:0.#}", shearable.woolAmount / shearable.shearIntervalDays) + "/" + "LetterDay".Translate() + ")";
                     NewList.Add(new StatDrawEntry(StatCategory, "WoolAmount".Translate(), woolStat, "Stat_Race_WoolAmount_Desc".Translate(), startOrder--));
                 }
-
-                if (c is CompProperties_Milkable milkable)
+                else if (c is CompProperties_Milkable milkable)
                 {
                     NewList.Add(new StatDrawEntry(StatCategory, "MilkType".Translate(), milkable.milkDef.LabelCap, "Stat_Race_MilkType_Desc".Translate(), startOrder--, null, new Dialog_InfoCard.Hyperlink[1]
                     {
@@ -149,6 +156,29 @@ namespace AnimalsLogic
                         milkStat += " (" + string.Format("{0:0.#}", milkable.milkAmount / milkable.milkIntervalDays) + "/" + "LetterDay".Translate() + ")";
                     NewList.Add(new StatDrawEntry(StatCategory, "MilkAmount".Translate(), milkStat, "Stat_Race_MilkAmount_Desc".Translate(), startOrder--));
                     NewList.Add(new StatDrawEntry(StatCategory, "MilkFemale".Translate(), milkable.milkFemaleOnly ? "Yes".Translate() : "No".Translate(), "MilkFemaleExplanation".Translate(), startOrder--));
+                }
+                // catch all for custom comps based on CompHasGatherableBodyResource abstract
+                else if (comp is CompHasGatherableBodyResource resource)
+                {
+                    ThingDef ResourceDef = (ThingDef)AccessTools.Method(comp.GetType(), "get_ResourceDef").Invoke(resource, null);
+                    Log.Warning("AL: resource " + ResourceDef);
+                    if (ResourceDef == null)
+                    {
+                        Log.Warning("Animals Logic: " + parentDef.defName + " has a custom comp for body resources but no resource def.");
+                        continue;
+                    }
+                    NewList.Add(new StatDrawEntry(StatCategory, "AL_ResourceType".Translate(), ResourceDef.LabelCap, "AL_ResourceType_Desc".Translate(), startOrder--, null, new Dialog_InfoCard.Hyperlink[1]
+                    {
+                        new Dialog_InfoCard.Hyperlink(ResourceDef)
+                    }));
+
+                    int ResourceAmount = (int)AccessTools.Method(comp.GetType(), "get_ResourceAmount").Invoke(resource, null);
+                    int GatherResourcesIntervalDays = (int)AccessTools.Method(comp.GetType(), "get_GatherResourcesIntervalDays").Invoke(resource, null);
+
+                    String resourceStat = ResourceAmount + " / " + string.Format("{0:0.#}", GatherResourcesIntervalDays) + "LetterDay".Translate();
+                    if (GatherResourcesIntervalDays != 1)
+                        resourceStat += " (" + string.Format("{0:0.#}", ResourceAmount / GatherResourcesIntervalDays) + "/" + "LetterDay".Translate() + ")";
+                    NewList.Add(new StatDrawEntry(StatCategory, "AL_ResourceAmount".Translate(), resourceStat, "AL_ResourceAmount_Desc".Translate(), startOrder--));
                 }
 
                 if (c is CompProperties_EggLayer layer)

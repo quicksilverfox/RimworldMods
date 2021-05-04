@@ -14,8 +14,10 @@ namespace AnimalsLogic
             ApplyPatch(typeof(DeathActionWorker_BigExplosion)); // vanilla boomalope
             ApplyPatch(typeof(DeathActionWorker_SmallExplosion)); // vanilla boombat
 
-            ApplyPatch(AccessTools.TypeByName("RimWorld.DeathActionWorker_AntigrainExplosion")); // SoS2 Archolope
+            // Save Our Ship 2
+            ApplyPatch(AccessTools.TypeByName("RimWorld.DeathActionWorker_AntigrainExplosion")); // Archolope
 
+            // GeneticRim
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_BiggerExplosion"));
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_EMPExplosion"));
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_Eggxplosion"));
@@ -28,7 +30,18 @@ namespace AnimalsLogic
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_StunningExplosion"));
             ApplyPatch(AccessTools.TypeByName("GeneticRim.DeathActionWorker_ToxicExplosion"));
 
+            // MorrowRim
             ApplyPatch(AccessTools.TypeByName("MorrowRim.DeathActionWorker_RetchingNetch"));
+
+            // Alpha Animals
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_AcidExplosion"));
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_ExplodeAndSpawnEggs"));
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_GargantuanExplosion"));
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_LuciferiumExplosion"));
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_MouseFission"));
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_RedAcidExplosion"));
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_SmallRedAcidExplosion"));
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_SummonFlashstorm"));
         }
 
         static void ApplyPatch(System.Type type)

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>  
+	<RecipeDef Abstract="True" Name="SurgeryFleshLeeaniTail">
+		<effectWorking>Surgery</effectWorking>
+		<soundWorking>Recipe_Surgery</soundWorking>
+		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+		<workSkill>Medicine</workSkill>
+		<workSkillLearnFactor>16</workSkillLearnFactor>
+		<appliedOnFixedBodyParts>
+			<li>LeeaniTail</li>
+		</appliedOnFixedBodyParts>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
+		<defName>InstallLeeaniTail</defName>
+		<label>install leeani tail</label>
+		<description>Replace missing or damaged tail.</description>
+		<workerClass>Recipe_InstallNaturalBodyPart</workerClass>
+		<jobString>Installing floofy leeani tail.</jobString>
+		<workAmount>1200</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>LeeaniTail</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+			<thingDefs>
+				<li>LeeaniTail</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
+		<defName>InstallClothLeeaniTail</defName>
+		<label>install cloth tail</label>
+		<description>Installs cloth tail.</description>
+		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+		<jobString>Installing cloth tail.</jobString>
+		<workAmount>1200</workAmount>
+		<surgerySuccessChanceFactor>2.0</surgerySuccessChanceFactor>
+		<skillRequirements>
+			<Medicine>3</Medicine>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+			<thingDefs>
+				<li>Cloth</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<addsHediff>LeeaniClothTail</addsHediff>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryFleshLeeaniTail">
+		<defName>InstallBionicLeeaniTail</defName>
+		<label>install bionic leeani tail</label>
+		<description>Installs bionic tail.</description>
+		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+		<jobString>Installing bionic tail.</jobString>
+		<workAmount>1200</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>LeeaniBionicTail</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+			<thingDefs>
+				<li>LeeaniBionicTail</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<addsHediff>LeeaniBionicTail</addsHediff>
+		<recipeUsers>
+			<li>Alien_Leeani</li>
+		</recipeUsers>
+	</RecipeDef>
+
+</Defs> 

@@ -9,6 +9,7 @@
 		<li>1.0</li>
 		<li>1.1</li>
 		<li>1.2</li>
+		<li>1.3</li>
 	</supportedVersions>
 	<modDependenciesByVersion>
 		<v1.1>
@@ -25,6 +26,13 @@
 				<steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
 			</li>
 		</v1.2>
+		<v1.3>
+			<li>
+				<packageId>erdelf.HumanoidAlienRaces</packageId>
+				<displayName>Humanoid Alien Races 2.0</displayName>
+				<steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
+			</li>
+		</v1.3>
 	</modDependenciesByVersion>
     <loadAfter>
         <li>erdelf.HumanoidAlienRaces</li>

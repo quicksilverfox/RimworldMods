@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Ferian Race</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName='Alien_Leeani']/alienRace/generalSettings/notXenophobistTowards</xpath>
+					<value>
+						<li>AFerian</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

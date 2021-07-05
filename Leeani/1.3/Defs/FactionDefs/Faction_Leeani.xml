@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<FactionDef>
+	<FactionDef ParentName="FactionBase">
 		<defName>LeeaniHold</defName>
 		<label>Leeani hold</label>
 		<description>A hold of the Leeani race traditionalists. They live a relatively simple life without relying on the technology too much.</description>
@@ -17,25 +17,13 @@
 		<fixedLeaderKinds>
 		  <li>LeeaniLoord</li>
 		</fixedLeaderKinds>
-		<startingGoodwill>
-			<min>20</min>
-			<max>20</max>
-		</startingGoodwill>
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<allowedCultures><li>LeeaniCulture</li></allowedCultures>
 		<techLevel>Industrial</techLevel>
 		<backstoryCategories>
 			<li>LeeaniBackstory</li>
 		</backstoryCategories>
-		<hairTags>
-			<li>Tribal</li>
-			<li>Urban</li>
-			<li>Rural</li>
-		</hairTags>
-		<naturalColonyGoodwill>
-			<min>-70</min>
-			<max>70</max>
-		</naturalColonyGoodwill>
 		<visitorTraderKinds>
 			<li>Visitor_Outlander_Standard</li>
 		</visitorTraderKinds>

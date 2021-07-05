@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+
+	<ThingDef ParentName="BodyPartNaturalBase">
+		<defName>LeeaniTail</defName>
+		<label>leeani tail</label>
+		<description>A floofy leeani tail. What did you do??!</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>200</MarketValue>
+			<Mass>0.65</Mass>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>LeeaniBionicTail</defName>
+		<label>bionic leeani tail</label>
+		<description>Once step closer to furry robots. You do realize what you're doing with this technology, don't you?</description>
+		<techLevel>Spacer</techLevel>
+		<costList>
+			<Plasteel>5</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>1</Mass>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="LeatherBase">
+		<defName>Leather_Leeani</defName>
+		<label>leeani fur</label>
+		<description>Tanned leeani pelt obtains distinctive and very beautiful scarlet hue. Most people find the idea of wearing it horrifying. Some find it fascinating. It insulates well and is quite luxurious.</description>
+		<graphicData>
+			<color>(230, 0, 0)</color>
+			<colorTwo>(230, 0, 0)</colorTwo>
+		</graphicData>
+		<statBases>
+			<MarketValue>14</MarketValue>
+			<StuffPower_Armor_Sharp>0.54</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.14</StuffPower_Armor_Blunt>
+			<StuffPower_Insulation_Cold>30</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>14</StuffPower_Insulation_Heat>
+		</statBases>
+		<stuffProps>
+			<color>(211,194,143)</color>
+			<commonality>0.0025</commonality>
+		</stuffProps>
+	</ThingDef>
+
+</Defs>

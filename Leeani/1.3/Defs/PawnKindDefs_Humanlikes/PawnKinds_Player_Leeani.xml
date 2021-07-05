@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<PawnKindDef Abstract="True" Name="BaseLeeaniPawnKind">
+		<race>Alien_Leeani</race>
+		<combatPower>30</combatPower>
+		<maxGenerationAge>55</maxGenerationAge>
+		<baseRecruitDifficulty>0.50</baseRecruitDifficulty>
+		<isFighter>false</isFighter>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<forceNormalGearQuality>true</forceNormalGearQuality>
+		<initialWillRange>0~0</initialWillRange>
+		<initialResistanceRange>13~21</initialResistanceRange>
+	</PawnKindDef>
+
+	<!-- For Leeani Loords scenario -->
+	<PawnKindDef ParentName="BaseLeeaniPawnKind">
+		<defName>LeeaniColonist</defName>
+		<label>colonist</label>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+		<apparelTags>
+			<li>LeeaniPlayer</li>
+		</apparelTags>
+		<apparelMoney>350~600</apparelMoney>
+		<weaponMoney>0~0</weaponMoney>
+		<techHediffsChance>0.05</techHediffsChance>
+		<techHediffsMoney>50~800</techHediffsMoney>
+		<techHediffsTags>
+			<li>Poor</li>
+			<li>Simple</li>
+		</techHediffsTags>
+	</PawnKindDef>
+	
+	<!-- For Crashlanded scenario -->
+	<PawnKindDef ParentName="BaseLeeaniPawnKind">
+		<defName>LeeaniSpacerColonist</defName>
+		<label>colonist</label>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<chemicalAddictionChance>0.06</chemicalAddictionChance>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>LeeaniPlayer</li>
+		</apparelTags>
+		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+		<apparelMoney>350~600</apparelMoney>
+		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+		<techHediffsChance>0.1</techHediffsChance>
+		<techHediffsMoney>50~1200</techHediffsMoney>
+		<techHediffsTags>
+		  <li>Poor</li>
+		  <li>Simple</li>
+		  <li>ImplantEmpireCommon</li>
+		</techHediffsTags>
+	</PawnKindDef>
+
+</Defs>

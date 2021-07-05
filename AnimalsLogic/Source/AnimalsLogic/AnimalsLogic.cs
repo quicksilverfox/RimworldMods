@@ -2,6 +2,7 @@
 using System.Reflection;
 using Verse;
 using UnityEngine;
+using AnimalsLogic.Patches;
 
 namespace AnimalsLogic
 {
@@ -26,7 +27,7 @@ namespace AnimalsLogic
 
             NoToxicRot.Patch();
 
-            LayEggsInNests.Patch();
+            GetThemYoung.Patch();
 
             base.GetSettings<Settings>();
         }

@@ -36,6 +36,9 @@
 	
 	<ALConfigAlwaysShowRelationsLabel>Always show animal relations</ALConfigAlwaysShowRelationsLabel>
 	<ALConfigAlwaysShowRelationsTooltip>By default, only relations with named animals are displayed. This allows to see all of them.</ALConfigAlwaysShowRelationsTooltip>
+	
+	<ALConfigToxicBuildupRotLabel>Toxic buildup rot chance modifier</ALConfigToxicBuildupRotLabel>
+	<ALConfigToxicBuildupRotTooltip>By default, animals killed while having major toxic buildup have a chance to rot immediately. It is intended to make toxic fallout more difficult, but has a side effect of cobras being unable to eat their prey, so they tend to kill every small animal on map and die from starvation. Set to 0 to entirely remove rot chance.</ALConfigToxicBuildupRotTooltip>
 
 	<!-- Extra stats -->
 	

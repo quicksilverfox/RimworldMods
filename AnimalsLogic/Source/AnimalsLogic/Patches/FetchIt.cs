@@ -11,7 +11,7 @@ namespace AnimalsLogic
         {
             float num = this.MtbHours(pawn);
             if (num <= 0f) // This is why I had to detour whole method. Vanilla ThinkNode_ChancePerHour is hardcoded to return NoJob if MtbHours = 0 while I need it to always return job instead. Also, this is faster since it avoids saving ticks if not necessary. Also, vanilla has hardcoded one hour min delay.
-            {
+            { // it is not actually too bad though - while it can interfere with other mods, this method is unlikely to be required for anything else and it is runtime only, so no changes in saves
                 return base.TryIssueJobPackage(pawn, jobParams);
             }
 

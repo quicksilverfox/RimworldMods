@@ -46,7 +46,7 @@ namespace AnimalsLogic
             listing_Standard.Label("ALConfigHaulingMTBLabel".Translate(((float)Math.Round(Math.Round(haul_mtb * 4) / 4f, 2))), tooltip: "ALConfigHaulingMTBTooltip".Translate());
             haul_mtb = listing_Standard.Slider(haul_mtb, 0.0f, 3f);
 
-            listing_Standard.Label("ALToxicBuildupRotLabel".Translate(((float)Math.Round(toxic_buildup_rot, 3)).ToStringPercent()), tooltip: "ALToxicBuildupRotTooltip".Translate());
+            listing_Standard.Label("ALConfigToxicBuildupRotLabel".Translate(((float)Math.Round(toxic_buildup_rot, 3)).ToStringPercent()), tooltip: "ALConfigToxicBuildupRotTooltip".Translate());
             toxic_buildup_rot = listing_Standard.Slider(toxic_buildup_rot, 0.00f, 1f);
             
             listing_Standard.End();

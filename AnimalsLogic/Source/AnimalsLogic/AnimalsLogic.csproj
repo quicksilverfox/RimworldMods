@@ -17,7 +17,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.2\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.3\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Lib.Harmony.2.0.4\lib\net35\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -46,9 +47,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="Unity.Abstractions, Version=5.11.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.11.10\lib\net40\Unity.Abstractions.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Container, Version=5.11.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.11.10\lib\net40\Unity.Container.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
@@ -64,26 +67,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimalsAreDifferent.cs" />
+    <Compile Include="Patches\AnimalsAreDifferent.cs" />
     <Compile Include="AnimalsLogic.cs" />
-    <Compile Include="AnimalsUseDispenser.cs" />
-    <Compile Include="Come.cs" />
-    <Compile Include="DoNotEatRandomly.cs" />
-    <Compile Include="FetchIt.cs" />
-    <Compile Include="ForgetMeNot.cs" />
+    <Compile Include="Patches\AnimalsUseDispenser.cs" />
+    <Compile Include="Patches\DoNotEatRandomly.cs" />
+    <Compile Include="Patches\FetchIt.cs" />
+    <Compile Include="Patches\ForgetMeNot.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="HostilePredators.cs" />
-    <Compile Include="LayEggsInNests.cs" />
+    <Compile Include="Patches\GetThemYoung.cs" />
+    <Compile Include="Patches\HostilePredators.cs" />
     <Compile Include="MedicalAlerts\Alert_AnimalNeedsRescuing.cs" />
     <Compile Include="MedicalAlerts\Alert_AnimalNeedsTend.cs" />
     <Compile Include="MedicalAlerts\Alert_LifeThreateningHediffAnimal.cs" />
     <Compile Include="MedicalAlerts\AnimalAlertsUtility.cs" />
-    <Compile Include="NoBoomSlaughter.cs" />
+    <Compile Include="Patches\NoBoomSlaughter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RuinedEggs.cs" />
+    <Compile Include="Patches\RuinedEggs.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="TastesLikeChicken.cs" />
-    <Compile Include="YouSleepHere.cs" />
+    <Compile Include="Patches\TastesLikeChicken.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>More Vanilla Biomes</li>
+		</mods> 
+				
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs/ThingDef[defName="HousekeeperCat"]/race/wildBiomes</xpath>
+					<value>
+						<!-- they are rather indiscriminate in where to live so they are more or less evenly distributed between biomes; so it is normalized with biome animal density in mind to be 0.05 at 1 density -->
+						<ZBiome_AlpineMeadow>0.024</ZBiome_AlpineMeadow> <!-- animalDensity 2.5 rel 0.06 -->
+						<ZBiome_CloudForest>0.019</ZBiome_CloudForest> <!-- animalDensity 4.0 rel 0.075 -->
+						<ZBiome_CoastalDunes>0.03</ZBiome_CoastalDunes> <!-- animalDensity 2.5 rel 0.075 -->
+						<ZBiome_DesertOasis>0.023</ZBiome_DesertOasis> <!-- animalDensity 1.5 rel 0.035 -->
+						<ZBiome_Grasslands>0.012</ZBiome_Grasslands> <!-- animalDensity 3.0 rel 0.035 -->
+						<ZBiome_Iceberg_NoBeach>0.5</ZBiome_Iceberg_NoBeach> <!-- animalDensity 0.1 rel 0.05 -->
+						<ZBiome_Marsh>0.01</ZBiome_Marsh> <!-- animalDensity 3.5 rel 0.035 -->
+						<ZBiome_Sandbar_NoBeach>0.175</ZBiome_Sandbar_NoBeach> <!-- animalDensity 0.2 rel 0.035 -->
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+	
+</Patch>
+

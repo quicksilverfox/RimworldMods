@@ -1,23 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="AnimalThingBase">
-		<defName>HousekeeperCat</defName>
-		<label>housekeeper cat</label>
-		<description>A highly intelligent creature, engineered to be a perfect house pet. It has very dextrous, hand-like paws and can be trained to provide some help with housekeeping.</description>
+		<defName>HousekeeperArchoCat</defName>
+		<label>housekeeper archocat</label>
+		<description>An archotech did a refactory over this housekeeper cat, pushing its design beyound its limits.\n\nLike all archolife, its cells power themselves vanometrically and it absorbs atoms directly from the air, so it does not need to eat. Archolife can survive vacuum exposure, has no known maximum age, and regenerates scarred or missing body parts. It can even generate a shield in combat.</description>
 		<statBases>
-			<MoveSpeed>6.00</MoveSpeed>
-			<ComfyTemperatureMin>-50</ComfyTemperatureMin>
-			<ComfyTemperatureMax>60</ComfyTemperatureMax>
-			<MarketValue>1500</MarketValue>
+			<MoveSpeed>8.00</MoveSpeed>
+			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMax>100</ComfyTemperatureMax>
+			<MarketValue>3000</MarketValue>
 			<MeatAmount>50</MeatAmount>
+			<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.4</ArmorRating_Sharp>
 		</statBases>
+		<comps>
+		  <li Class="CompProperties_Archolife">
+			<shield>2</shield>
+			<purr>true</purr>
+		  </li>
+		</comps>
 		<tools>
 			<li>
 				<label>left claw</label>
 				<capacities>
 					<li>Scratch</li>
 				</capacities>
-				<power>7</power>
+				<power>9</power>
 				<cooldownTime>1.5</cooldownTime>
 				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
 				<surpriseAttack>
@@ -34,7 +42,7 @@
 				<capacities>
 					<li>Scratch</li>
 				</capacities>
-				<power>7</power>
+				<power>9</power>
 				<cooldownTime>1.5</cooldownTime>
 				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
 				<surpriseAttack>
@@ -51,7 +59,7 @@
 				<capacities>
 					<li>Bite</li>
 				</capacities>
-				<power>10</power>
+				<power>14</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
 				<surpriseAttack>
@@ -75,49 +83,25 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
-		<comps>
-			<li Class="CompProperties_Shearable">
-				<woolDef>Wool_HKCat</woolDef>
-				<shearIntervalDays>30</shearIntervalDays>
-				<woolAmount>20</woolAmount>
-			</li>
-		</comps>
 		<race>
 			<thinkTreeMain>Animal</thinkTreeMain>
 			<body>Monkey</body>
-			<predator>true</predator>
-			<maxPreyBodySize>0.5</maxPreyBodySize>
+			<predator>false</predator>
 			<packAnimal>true</packAnimal>
-			<herdAnimal>true</herdAnimal>
 			<petness>1</petness>
 			<baseBodySize>0.8</baseBodySize>
-			<baseHungerRate>0.20</baseHungerRate>
-			<baseHealthScale>2</baseHealthScale>
+			<baseHungerRate>0.01</baseHungerRate>
+			<baseHealthScale>4</baseHealthScale>
 			<foodType>OmnivoreAnimal, OvivoreAnimal, VegetarianRoughAnimal</foodType>
 			<leatherDef>Leather_HKCat</leatherDef>
 			<gestationPeriodDays>90</gestationPeriodDays>
 			<nameOnTameChance>1</nameOnTameChance>
 			<trainability>Advanced</trainability>
 			<wildness>0</wildness>
-			<wildBiomes>
-				<!-- they are rather indiscriminate in where to live so they are more or less evenly distributed between biomes; so it is normalized with biome animal density in mind to be 0.05 at 1 density -->
-				<BorealForest>0.0125</BorealForest><!-- animalDensity 2.8 rel 0.035-->
-				<Tundra>0.032</Tundra><!-- animalDensity 1.1 rel 0.035-->
-				<ColdBog>0.01</ColdBog><!-- animalDensity 3.3 rel 0.035-->
-				<IceSheet>0.25</IceSheet><!-- animalDensity 0.2 rel 0.05-->
-				<SeaIce>0.5</SeaIce><!-- animalDensity 0.1 rel 0.05-->
-				<TemperateForest>0.0095</TemperateForest><!-- animalDensity 3.7 rel 0.035-->
-				<TemperateSwamp>0.008</TemperateSwamp><!-- animalDensity 4.3 rel 0.035-->
-				<TropicalRainforest>0.009</TropicalRainforest><!-- animalDensity 5.4 rel 0.05-->
-				<TropicalSwamp>0.008</TropicalSwamp><!-- animalDensity 6.5 rel 0.05-->
-				<AridShrubland>0.042</AridShrubland><!-- animalDensity 1.8 rel 0.075-->
-				<Desert>0.088</Desert><!-- animalDensity 0.4 rel 0.035-->
-				<ExtremeDesert>0.5</ExtremeDesert> <!-- animalDensity 0.1 rel 0.05-->
-			</wildBiomes>
-			<nuzzleMtbHours>12</nuzzleMtbHours>
+			<nuzzleMtbHours>8</nuzzleMtbHours>
 			<manhunterOnDamageChance>0.35</manhunterOnDamageChance>
 			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
-			<lifeExpectancy>80</lifeExpectancy>
+			<lifeExpectancy>5000</lifeExpectancy>
 			<useMeatFrom>Cat</useMeatFrom>
 			<lifeStageAges>
 				<li>
@@ -140,6 +124,7 @@
 			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+			<herdMigrationAllowed>false</herdMigrationAllowed>
 			<ageGenerationCurve>
 				<points>
 					<li>(1,0)</li>
@@ -151,22 +136,22 @@
 			</ageGenerationCurve>
 		</race>
 		<tradeTags>
-			<li>AnimalUncommon</li>
-			<li>AnimalPet</li>
+			<li>AnimalInsectSpace</li>
 		</tradeTags>
 	</ThingDef>
+	
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>HousekeeperCat</defName>
-		<label>Housekeeper Cat</label>
-		<labelPlural>Housekeeper Cats</labelPlural>
+		<defName>HousekeeperArchoCat</defName>
+		<label>Housekeeper Archocat</label>
+		<labelPlural>Housekeeper Archocats</labelPlural>
 		<combatPower>250</combatPower>
 		<ecoSystemWeight>1.0</ecoSystemWeight>
 		<canArriveManhunter>false</canArriveManhunter>
 		<race>HousekeeperCat</race>
 		<lifeStages>
 			<li>
-				<label>housekeeper kitten</label>
-				<labelPlural>housekeeper kittens</labelPlural>
+				<label>housekeeper archokitten</label>
+				<labelPlural>housekeeper archokittens</labelPlural>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/housekeepercat</texPath>
 					<drawSize>0.6</drawSize>
@@ -229,4 +214,5 @@
 			</li>
 		</lifeStages>
 	</PawnKindDef>
+  
 </Defs>

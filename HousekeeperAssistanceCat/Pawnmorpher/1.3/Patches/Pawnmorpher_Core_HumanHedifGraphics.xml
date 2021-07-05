@@ -1,0 +1,68 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Pawnmorpher</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="Jaw"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatMuzzle>
+							<path>Parts/Cougar/Cougar_Jaw</path>
+							<severity>
+								<a0.5>Parts/Cougar/Cougar_Jaw</a0.5>
+								<a0.3>Parts/Partials/PartialMuzzle/PartialMuzzle</a0.3>
+								<a0.1>Parts/Partials/PartialMuzzle/TinyMuzzle</a0.1>
+							</severity>
+						</EtherHousekeeperCatMuzzle>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="left ear" and inFrontOfBody="true"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatEar>Parts/Cat/Cat_Ear_Left</EtherHousekeeperCatEar>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="left ear" and inFrontOfBody="false"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatEar>Parts/Cat/Cat_Ear_Left_Behind</EtherHousekeeperCatEar>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="right ear" and inFrontOfBody="true"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatEar>Parts/Cat/Cat_Ear_Right</EtherHousekeeperCatEar>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="right ear" and inFrontOfBody="false"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatEar>Parts/Cat/Cat_Ear_Right_Behind</EtherHousekeeperCatEar>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="tail" and inFrontOfBody="true"]/hediffGraphics</xpath>
+					<value>
+						<EtherHousekeeperCatTail>Parts/Panther/Panther_Tail</EtherHousekeeperCatTail>
+					</value>
+				</li>
+				
+				<!-- Makes them able to do stuff when full animals -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThingDef[defName="HousekeeperCat"]</xpath>
+					<value>
+						<li Class="Pawnmorph.DefExtensions.FormerHumanSettings">
+							<backstory>PM_HousekeeperCatBackstory</backstory>
+							<!-- change to PM_HousekeeperCatBackstory to enable everything -->
+							<!-- change to PM_FormerHumanSkilled to use most allowing original backstory -->
+						</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

@@ -1,0 +1,28 @@
+<Defs>
+	<HediffDef ParentName="NewPartialAspectedMorphParent">
+		<defName>PawnmorphHousekeeperCatTFPartial</defName>
+		<label>nekomata partial</label>
+		<description>This person has mechanites in their blood that are providing them with cat-esque mutations.</description>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MorphTransformationStage">
+				<painOffset>0.1</painOffset>
+				<vomitMtbDays>1</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+				<morph>HousekeeperCatMorph</morph>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

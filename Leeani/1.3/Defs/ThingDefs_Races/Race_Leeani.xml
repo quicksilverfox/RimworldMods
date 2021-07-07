@@ -85,6 +85,7 @@
 						<chance>75</chance>
 					</li>
 				</disallowedTraits>
+				<additionalTraits>1~2</additionalTraits>
 				<alienPartGenerator>
 					<alienbodytypes>
 						<li>Thin</li>
@@ -92,18 +93,16 @@
 					<bodyAddons>
 						<li>
 							<path>Things/Leeani/Tails/TailL</path>
-							<bodyPart>leeani tail</bodyPart>
-							<colorChannel>skin</colorChannel>
+							<bodyPart>Torso</bodyPart>
 							<inFrontOfBody>false</inFrontOfBody>
 							<drawnInBed>false</drawnInBed>
-							<drawnOnGround>true</drawnOnGround>
 							<offsets>
 								<south>
 									<bodyTypes>
 										<Male>(0,-0.22)</Male>
 										<Female>(0,-0.22)</Female>
 										<Fat>(0,-0.22)</Fat>
-										<Thin>(0,-0.22)</Thin>
+										<Thin>(0,-0.65)</Thin>
 									</bodyTypes>
 								</south>
 								<north>
@@ -111,7 +110,7 @@
 										<Male>(-0.02,-0.22)</Male>
 										<Female>(-0.02,-0.22)</Female>
 										<Fat>(-0.02,-0.22)</Fat>
-										<Thin>(-0.02,-0.22)</Thin>
+										<Thin>(-0.02,-0.65)</Thin>
 									</bodyTypes>
 								</north>
 								<east>
@@ -119,20 +118,10 @@
 										<Male>(0.37,-0.36)</Male>
 										<Female>(0.37,-0.3)</Female>
 										<Fat>(0.39,-0.3)</Fat>
-										<Thin>(0.35,-0.35)</Thin>
+										<Thin>(0.65,-0.45)</Thin>
 									</bodyTypes>
 								</east>
-								<west>
-									<bodyTypes>
-										<Male>(0.37,-0.36)</Male>
-										<Female>(0.37,-0.3)</Female>
-										<Fat>(0.39,-0.3)</Fat>
-										<Thin>(0.35,-0.35)</Thin>
-									</bodyTypes>
-								</west>
 							</offsets>
-							<hediffGraphics>
-							</hediffGraphics>
 						</li>
 					</bodyAddons>
 				</alienPartGenerator>

@@ -135,9 +135,32 @@
 					<skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
 				</li>
 			</graphicPaths>
-			<hairSettings>
-				<hasHair>false</hasHair>
-			</hairSettings>
+            <styleSettings>
+                <li>
+                    <key>HairDef</key>
+                    <value>
+                        <hasStyle>true</hasStyle>
+                        <styleTags>
+                        </styleTags>
+                    </value>
+                </li>
+				                <li>
+                    <key>TattooDef</key>
+                    <value>
+                        <hasStyle>true</hasStyle>
+                        <styleTags>
+                        </styleTags>
+                    </value>
+                </li>
+				<li>
+                    <key>BeardDef</key>
+                    <value>
+                        <hasStyle>true</hasStyle>
+                        <styleTags>
+                        </styleTags>
+                    </value>
+                </li>
+            </styleSettings>
 			<relationSettings>
 				<relationChanceModifierChild>1.1</relationChanceModifierChild>
 				<relationChanceModifierExLover>0.2</relationChanceModifierExLover>

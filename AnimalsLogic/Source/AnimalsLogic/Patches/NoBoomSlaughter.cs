@@ -41,16 +41,24 @@ namespace AnimalsLogic
             ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_MouseFission"));
             ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_RedAcidExplosion"));
             ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_SmallRedAcidExplosion"));
+            ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_SummonEclipse"));
             ApplyPatch(AccessTools.TypeByName("AlphaBehavioursAndEvents.DeathActionWorker_SummonFlashstorm"));
         }
 
         static void ApplyPatch(System.Type type)
         {
             if (type != null)
+            {
+                if (!typeof(DeathActionWorker).IsAssignableFrom(type))
+                {
+                    Log.Error("Animal Logic: " + type + " is not DeathActionWorker.");
+                    return;
+                }
                 AnimalsLogic.harmony.Patch(
-                    type.GetMethod("PawnDied"),
-                    prefix: new HarmonyMethod(typeof(NoBoomSlaughter).GetMethod(nameof(Explosion_Prefix)))
+                        type.GetMethod("PawnDied"),
+                        prefix: new HarmonyMethod(typeof(NoBoomSlaughter).GetMethod(nameof(Explosion_Prefix)))
                     );
+            }
         }
 
         [HarmonyPrefix]

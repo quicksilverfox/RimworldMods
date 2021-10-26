@@ -101,18 +101,18 @@
 			<wildness>0</wildness>
 			<wildBiomes>
 				<!-- they are rather indiscriminate in where to live so they are more or less evenly distributed between biomes; so it is normalized with biome animal density in mind to be 0.05 at 1 density -->
-				<BorealForest>0.0125</BorealForest><!-- animalDensity 2.8 rel 0.035-->
-				<Tundra>0.032</Tundra><!-- animalDensity 1.1 rel 0.035-->
-				<ColdBog>0.01</ColdBog><!-- animalDensity 3.3 rel 0.035-->
-				<IceSheet>0.25</IceSheet><!-- animalDensity 0.2 rel 0.05-->
-				<SeaIce>0.5</SeaIce><!-- animalDensity 0.1 rel 0.05-->
-				<TemperateForest>0.0095</TemperateForest><!-- animalDensity 3.7 rel 0.035-->
-				<TemperateSwamp>0.008</TemperateSwamp><!-- animalDensity 4.3 rel 0.035-->
-				<TropicalRainforest>0.009</TropicalRainforest><!-- animalDensity 5.4 rel 0.05-->
-				<TropicalSwamp>0.008</TropicalSwamp><!-- animalDensity 6.5 rel 0.05-->
-				<AridShrubland>0.042</AridShrubland><!-- animalDensity 1.8 rel 0.075-->
-				<Desert>0.088</Desert><!-- animalDensity 0.4 rel 0.035-->
-				<ExtremeDesert>0.5</ExtremeDesert> <!-- animalDensity 0.1 rel 0.05-->
+				<BorealForest>0.025</BorealForest><!-- animalDensity 2.8 rel 0.035-->
+				<Tundra>0.064</Tundra><!-- animalDensity 1.1 rel 0.035-->
+				<ColdBog>0.02</ColdBog><!-- animalDensity 3.3 rel 0.035-->
+				<IceSheet>0.5</IceSheet><!-- animalDensity 0.2 rel 0.05-->
+				<SeaIce>1.0</SeaIce><!-- animalDensity 0.1 rel 0.05-->
+				<TemperateForest>0.018</TemperateForest><!-- animalDensity 3.7 rel 0.035-->
+				<TemperateSwamp>0.016</TemperateSwamp><!-- animalDensity 4.3 rel 0.035-->
+				<TropicalRainforest>0.018</TropicalRainforest><!-- animalDensity 5.4 rel 0.05-->
+				<TropicalSwamp>0.016</TropicalSwamp><!-- animalDensity 6.5 rel 0.05-->
+				<AridShrubland>0.084</AridShrubland><!-- animalDensity 1.8 rel 0.075-->
+				<Desert>0.176</Desert><!-- animalDensity 0.4 rel 0.035-->
+				<ExtremeDesert>1.0</ExtremeDesert> <!-- animalDensity 0.1 rel 0.05-->
 			</wildBiomes>
 			<nuzzleMtbHours>12</nuzzleMtbHours>
 			<manhunterOnDamageChance>0.35</manhunterOnDamageChance>

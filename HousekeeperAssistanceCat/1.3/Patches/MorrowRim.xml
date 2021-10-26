@@ -22,8 +22,8 @@
 					<xpath>/Defs/ThingDef[defName="HousekeeperCat"]/race/wildBiomes</xpath>
 					<value>
 						<!-- they are rather indiscriminate in where to live so they are more or less evenly distributed between biomes; so it is normalized with biome animal density -->
-						<MorrowRim_Ashlands>0.01</MorrowRim_Ashlands><!-- animalDensity 2.4 rel 0.025-->
-						<MorrowRim_BlightedAshlands>0.031</MorrowRim_BlightedAshlands><!-- animalDensity 0.8 rel 0.025-->
+						<MorrowRim_Ashlands>0.02</MorrowRim_Ashlands><!-- animalDensity 2.4 rel 0.025-->
+						<MorrowRim_BlightedAshlands>0.062</MorrowRim_BlightedAshlands><!-- animalDensity 0.8 rel 0.025-->
 					</value>
 				</li>
 				

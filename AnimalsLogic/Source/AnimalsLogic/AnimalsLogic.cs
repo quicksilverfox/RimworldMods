@@ -27,6 +27,7 @@ namespace AnimalsLogic
 
             NoToxicRot.Patch();
 
+            //HostilePredators.Patch();
             GetThemYoung.Patch();
 
             base.GetSettings<Settings>();

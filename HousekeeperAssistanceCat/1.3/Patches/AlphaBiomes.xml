@@ -12,16 +12,16 @@
 				<li Class="PatchOperationAdd"> 
 					<xpath>/Defs/ThingDef[defName="HousekeeperCat"]/race/wildBiomes</xpath>
 					<value>
-						<AB_FeraliskInfestedJungle>0.0046</AB_FeraliskInfestedJungle> <!-- animalDensity 5.4 rel 0.025 -->
-						<AB_GallatrossGraveyard>0.042</AB_GallatrossGraveyard> <!-- animalDensity 1.8 rel 0.075 -->
-						<AB_GelatinousSuperorganism>0.0375</AB_GelatinousSuperorganism> <!-- animalDensity 2.0 rel 0.075 -->
-						<AB_MechanoidIntrusion>0.75</AB_MechanoidIntrusion> <!-- animalDensity 0.1 rel 0.075 -->
-						<AB_MycoticJungle>0.018</AB_MycoticJungle> <!-- animalDensity 1.9 rel 0.035 -->
-						<AB_OcularForest>0.025</AB_OcularForest> <!-- animalDensity 3.0 rel 0.075 -->
-						<AB_PropaneLakes>0.1</AB_PropaneLakes> <!-- animalDensity 0.5 rel 0.05 -->
-						<AB_PyroclasticConflagration>0.0625</AB_PyroclasticConflagration> <!-- animalDensity 1.2 rel 0.075 -->
-						<AB_RockyCrags>0.042</AB_RockyCrags> <!-- animalDensity 1.8 rel 0.075 -->
-						<AB_TarPits>0.021</AB_TarPits> <!-- animalDensity 3.5 rel 0.075 -->
+						<AB_FeraliskInfestedJungle>0.0092</AB_FeraliskInfestedJungle> <!-- animalDensity 5.4 rel 0.025 -->
+						<AB_GallatrossGraveyard>0.084</AB_GallatrossGraveyard> <!-- animalDensity 1.8 rel 0.075 -->
+						<AB_GelatinousSuperorganism>0.075</AB_GelatinousSuperorganism> <!-- animalDensity 2.0 rel 0.075 -->
+						<AB_MechanoidIntrusion>1.5</AB_MechanoidIntrusion> <!-- animalDensity 0.1 rel 0.075 -->
+						<AB_MycoticJungle>0.036</AB_MycoticJungle> <!-- animalDensity 1.9 rel 0.035 -->
+						<AB_OcularForest>0.05</AB_OcularForest> <!-- animalDensity 3.0 rel 0.075 -->
+						<AB_PropaneLakes>0.2</AB_PropaneLakes> <!-- animalDensity 0.5 rel 0.05 -->
+						<AB_PyroclasticConflagration>0.125</AB_PyroclasticConflagration> <!-- animalDensity 1.2 rel 0.075 -->
+						<AB_RockyCrags>0.084</AB_RockyCrags> <!-- animalDensity 1.8 rel 0.075 -->
+						<AB_TarPits>0.042</AB_TarPits> <!-- animalDensity 3.5 rel 0.075 -->
 					</value>
 				</li>
 				

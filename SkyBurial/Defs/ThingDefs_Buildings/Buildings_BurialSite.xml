@@ -36,6 +36,8 @@
 		</statBases>
 		<size>(1,1)</size> <!-- Originally intended 1x2 but found no way to align corpse with it -->
 		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<expandHomeArea>false</expandHomeArea>
 			<preventDeteriorationOnTop>false</preventDeteriorationOnTop>
 			<preventDeteriorationInside>false</preventDeteriorationInside>
 			<ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>

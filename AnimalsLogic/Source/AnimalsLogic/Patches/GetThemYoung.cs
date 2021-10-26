@@ -42,7 +42,7 @@ namespace AnimalsLogic.Patches
                 {
                     codes.InsertRange(i + 1,
                         new List<CodeInstruction>() {
-                                new CodeInstruction(OpCodes.Ldarg_1), // put recipient Pawn on stack
+                                new CodeInstruction(OpCodes.Ldarg_2), // put recipient Pawn on stack
                                 new CodeInstruction(OpCodes.Call, typeof(GetThemYoung).GetMethod(nameof(WildnessFactor)))
                         });
                     break;
@@ -54,6 +54,9 @@ namespace AnimalsLogic.Patches
 
         public static float WildnessFactor(float wildness, Pawn recipient)
         {
+            if (!Settings.taming_age_factor)
+                return wildness;
+
             LifeStageAge matureAge = recipient?.def?.race?.lifeStageAges?.FirstOrFallback(
                     p => p.def.reproductive || p.def.milkable || p.def.shearable,
                     recipient.def.race.lifeStageAges.Last()
@@ -62,7 +65,9 @@ namespace AnimalsLogic.Patches
             if (matureAge == null)
                 return wildness;
 
-            return wildness * Math.Min(recipient.ageTracker.AgeBiologicalYearsFloat / matureAge.minAge, 1);
+            float ageFactor = Math.Min(recipient.ageTracker.AgeBiologicalYearsFloat / matureAge.minAge, 1);
+            ageFactor *= (float) Math.Pow(ageFactor, 0.33f);
+            return wildness * ageFactor;
         }
     }
 }

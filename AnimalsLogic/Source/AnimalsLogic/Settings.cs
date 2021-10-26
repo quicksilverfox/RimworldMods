@@ -16,6 +16,7 @@ namespace AnimalsLogic
         public static bool use_dispenser = true;
         public static bool extra_display_stats = true;
         public static bool always_show_relations = false;
+        public static bool taming_age_factor = true;
 
         public static float wildness_threshold_for_tameness_decay = 0.101f;
         public static float training_decay_factor = 1.0f;
@@ -36,6 +37,7 @@ namespace AnimalsLogic
             listing_Standard.CheckboxLabeled("ALConfigAnimalsCanUseFoodDispenserLabel".Translate(), ref use_dispenser, "ALConfigAnimalsCanUseFoodDispenserTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigShowExtraDisplayStatsLabel".Translate(), ref extra_display_stats, "ALConfigShowExtraDisplayStatsTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigAlwaysShowRelationsLabel".Translate(), ref always_show_relations, "ALConfigAlwaysShowRelationsTooltip".Translate());
+            listing_Standard.CheckboxLabeled("ALConfigTamingAgeFactor".Translate(), ref taming_age_factor, "ALConfigTamingAgeFactorTooltip".Translate());
 
             listing_Standard.Label("ALConfigTamenessDecayThresholdLabel".Translate(((float)Math.Round(wildness_threshold_for_tameness_decay, 3) * 100).ToString()), tooltip: "ALConfigTamenessDecayThresholdTooltip".Translate());
             wildness_threshold_for_tameness_decay = listing_Standard.Slider(wildness_threshold_for_tameness_decay, 0f, 1f);
@@ -48,7 +50,7 @@ namespace AnimalsLogic
 
             listing_Standard.Label("ALConfigToxicBuildupRotLabel".Translate(((float)Math.Round(toxic_buildup_rot, 3)).ToStringPercent()), tooltip: "ALConfigToxicBuildupRotTooltip".Translate());
             toxic_buildup_rot = listing_Standard.Slider(toxic_buildup_rot, 0.00f, 1f);
-            
+
             listing_Standard.End();
         }
 
@@ -64,6 +66,8 @@ namespace AnimalsLogic
             Scribe_Values.Look<bool>(ref use_dispenser, "use_dispenser", true, false);
             Scribe_Values.Look<bool>(ref extra_display_stats, "extra_display_stats", true, false);
             Scribe_Values.Look<bool>(ref always_show_relations, "always_show_relations", false, false);
+            Scribe_Values.Look<bool>(ref taming_age_factor, "taming_age_factor", true, false);
+
             Scribe_Values.Look<float>(ref wildness_threshold_for_tameness_decay, "wildness_threshold_for_tameness_decay", 0.101f, false);
             Scribe_Values.Look<float>(ref training_decay_factor, "training_decay_factor", 1.0f, false);
             Scribe_Values.Look<float>(ref haul_mtb, "haul_mtb", 1.5f, false);

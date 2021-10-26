@@ -6,7 +6,6 @@
 	<!--
 		Actually, that is awful lot of researches.
 		TODO:
-			remove juniper altogether
 			merge cider and wine
 			overhaul autovats to be refuelable facility
 		
@@ -15,6 +14,8 @@
 			Autovats (can stay 1000 points industrial, maybe merge with wine brewing and make it unlock with some industrial research)
 			Traditions (200 points medieval, since it is almost pure fluff)
 			Arkhaevists (can stay at 800 points medieval, research speed boost is big thing)
+			
+		Todo: consider removing researches altogether and just make those available when having leeani pawn.
 	-->
 
 	<ResearchProjectTagDef>
@@ -80,7 +81,7 @@
 
 	<ResearchProjectDef>
 		<defName>LeeaniTraditions</defName>
-		<label>Traditions</label>
+		<label>Leeani Traditions</label>
 		<description>Our feudal heritage cannot be forgotten - we should honour it. Unlocks the throne, banquet table and chair, and brazier. Unlocks the electric lamp-post with electricity.\n\nRequires Leeani researcher.</description>
 		<baseCost>200</baseCost>
 		<techLevel>Medieval</techLevel>

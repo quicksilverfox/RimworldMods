@@ -18,10 +18,10 @@ namespace AnimalsLogic
                 transpiler: new HarmonyMethod(typeof(AnimalsUseDispenser).GetMethod(nameof(BestFoodSourcePatch)))
                 );
 
-            AnimalsLogic.harmony.Patch(
-                typeof(FoodUtility).GetMethod("TryFindBestFoodSourceFor_NewTemp"),
-                transpiler: new HarmonyMethod(typeof(AnimalsUseDispenser).GetMethod(nameof(BestFoodSourcePatch)))
-                );
+            //AnimalsLogic.harmony.Patch(
+            //    typeof(FoodUtility).GetMethod("TryFindBestFoodSourceFor_NewTemp"),
+            //    transpiler: new HarmonyMethod(typeof(AnimalsUseDispenser).GetMethod(nameof(BestFoodSourcePatch)))
+            //    );
 
             AnimalsLogic.harmony.Patch(
                 System.Array.Find(

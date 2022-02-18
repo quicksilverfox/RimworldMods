@@ -69,6 +69,10 @@ namespace AnimalsLogic
 
         public static bool TamenessCanDecay(ThingDef def)
         {
+            if (def.race.FenceBlocked)
+            {
+                return false;
+            }
             return def.race.wildness > Settings.wildness_threshold_for_tameness_decay;
         }
 

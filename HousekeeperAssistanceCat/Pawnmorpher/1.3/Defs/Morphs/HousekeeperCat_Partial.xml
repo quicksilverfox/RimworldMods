@@ -4,7 +4,7 @@
 		<label>nekomata partial</label>
 		<description>This person has mechanites in their blood that are providing them with cat-esque mutations.</description>
 		<stages>
-			<li Class="Pawnmorph.Hediffs.MorphTransformationStage">
+			<li Class="Pawnmorph.Hediffs.HediffStage_Mutation">
 				<painOffset>0.1</painOffset>
 				<vomitMtbDays>1</vomitMtbDays>
 				<capMods>
@@ -21,7 +21,13 @@
 						<offset>-0.05</offset>
 					</li>
 				</capMods>
-				<morph>HousekeeperCatMorph</morph>
+				<mutationTypes Class="Pawnmorph.Hediffs.Composable.MutTypes_Morph">
+					<morphDef>HousekeeperCatMorph</morphDef>
+				</mutationTypes>
+				<mutationRate Class="Pawnmorph.Hediffs.Composable.MutRate_MutationsPerDay">
+					<meanMutationsPerDay>7.7</meanMutationsPerDay>
+				</mutationRate>
+				<spreadOrder Class="Pawnmorph.Hediffs.Composable.MutSpreadOrder_RandomSpread" />
 			</li>
 		</stages>
 	</HediffDef>

@@ -2,17 +2,16 @@
 	<!--
 		Basically it is a cat transformation, but with better pawhands and high health.
 	-->
-	<Pawnmorph.MorphDef ParentName="SensitiveFoodMorph">
+	<Pawnmorph.MorphDef ParentName="CatMorph">
 		<defName>HousekeeperCatMorph</defName>
 		<label>nekomata</label>
-		<description>Housekeeper cats are designed species, and morphs based on them inherit a lot of their traits. Their resilience is almost unnatural, being able to rival much bigger morphs in toughness (although lacking any kind of natural armor), and their hands are fully capable of fine manipulation. As an added bonus, they also gain optimized metabolism, needing much less sustenance. No one knows why they have two tails, but this trait gave them their nickname.</description>
+		<description>Housekeeper cats are designed species, and morphs based on them inherit a lot of their traits. Their resilience is almost unnatural, being able to rival much bigger morphs in toughness (although lacking any kind of natural armor), and their hands are fully capable of fine manipulation. No one knows why they have two tails, but this trait gave them their nickname.</description>
 		<race>HousekeeperCat</race>
 		<classification>Feline</classification>
 		<categories>
 			<li>Social</li>
 			<li>Crafter</li>
-			<li>Pet</li>
-			<li>Feline</li>
+			<li>Domestic</li>
 		</categories>
 		<fullTransformation>PawnmorphHousekeeperCatTF</fullTransformation>
 		<partialTransformation>PawnmorphHousekeeperCatTFPartial</partialTransformation>

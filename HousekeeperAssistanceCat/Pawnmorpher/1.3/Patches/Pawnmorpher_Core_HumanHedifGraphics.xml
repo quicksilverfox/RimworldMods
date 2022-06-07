@@ -9,9 +9,9 @@
 					<xpath>Defs/ThingDef[defName="Human"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[bodyPart="Jaw"]/hediffGraphics</xpath>
 					<value>
 						<EtherHousekeeperCatMuzzle>
-							<path>Parts/Cougar/Cougar_Jaw</path>
+							<path>Parts/Cat/Cat_Muzzle</path>
 							<severity>
-								<a0.5>Parts/Cougar/Cougar_Jaw</a0.5>
+								<a0.5>Parts/Cat/Cat_Muzzle</a0.5>
 								<a0.3>Parts/Partials/PartialMuzzle/PartialMuzzle</a0.3>
 								<a0.1>Parts/Partials/PartialMuzzle/TinyMuzzle</a0.1>
 							</severity>

@@ -30,7 +30,7 @@
 		<stages>
 			<li>
 				<label>reverted</label>
-				<description>I'm back to my normal self again!</description>
+				<description>I'm back to my normal, human self again! No more fur or claws.</description>
 				<baseMoodEffect>3</baseMoodEffect>
 			</li>
 			<li>
@@ -50,4 +50,30 @@
 			</li>
 		</stages>
     </ThoughtDef>
+
+	<ThoughtDef ParentName="OutlookMemoryBase">
+		<durationDays>1</durationDays>
+		<defName>EtherHousekeeperCatMuzzle</defName>
+		<stages>
+			<li>
+				<label>Cat face</label>
+				<description>My jaw doesn't feel right...</description>
+				<visible>true</visible>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+			<li>
+				<label>Cat face</label>
+				<description>I have whiskers now!? Nyan!</description>
+				<visible>true</visible>
+				<baseMoodEffect>2</baseMoodEffect>
+			</li>
+			<li>
+				<label>Cat face</label>
+				<description>Great, a face not even a mother could love.</description>
+				<visible>true</visible>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
 </Defs>

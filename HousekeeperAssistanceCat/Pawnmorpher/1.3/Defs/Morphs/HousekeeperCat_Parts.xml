@@ -2,134 +2,45 @@
 	<Pawnmorph.Hediffs.MutationDef Name="HousekeeperCatPart" ParentName="PawnmorphPart" Abstract="true">
 		<classInfluence>HousekeeperCatMorph</classInfluence>
 	</Pawnmorph.Hediffs.MutationDef>
-	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="FelisJawPart">
+		<classInfluence>HousekeeperCatMorph</classInfluence>
 		<defName>EtherHousekeeperCatMuzzle</defName>
 		<label>nekomata muzzle</label>
-		<description>The neat and tidy bewhiskered muzzle of a cat.</description>
-		<parts>
-			<li>Jaw</li>
-		</parts>
-		<stages>
-			<li Class="Pawnmorph.Hediffs.MutationStage">
-				<minSeverity>-0.5</minSeverity>
-				<label>bestial</label>
-				<description>[PAWN_nameDef]'s face has become a ragged feline snout. [PAWN_possessive] teeth are pointed to suit; speaking is much more difficult, but eating is easier.</description>
-				<capMods>
-					<li>
-						<capacity>Talking</capacity>
-						<offset>-0.60</offset>
-					</li>
-					<li>
-						<capacity>Eating</capacity>
-						<offset>0.50</offset>
-					</li>
-				</capMods>
-			</li>
-			<li Class="Pawnmorph.Hediffs.MutationStage">
-				<labelOverride>pressing out</labelOverride>
-				<description>[PAWN_nameDef]'s face seems to be swelling, the nose and jaw pressing out and looking decidedly more like an animal's.</description>
-				<minSeverity>0</minSeverity>
-				<capMods>
-					<li>
-						<capacity>Talking</capacity>
-						<offset>-0.1</offset>
-					</li>
-					<li>
-						<capacity>Eating</capacity>
-						<offset>0.1</offset>
-					</li>
-				</capMods>
-			</li>
-			<li Class="Pawnmorph.Hediffs.MutationStage">
-				<minSeverity>0.5</minSeverity>
-				<description>A sleek muzzle graces [PAWN_nameDef]'s face, like that of a feline. [PAWN_possessive] teeth are pointed to suit; speaking is more difficult, but eating is easier.</description>
-				<capMods>
-					<li>
-						<capacity>Talking</capacity>
-						<offset>-0.50</offset>
-					</li>
-					<li>
-						<capacity>Eating</capacity>
-						<offset>0.50</offset>
-					</li>
-				</capMods>
-			</li>
-			<li Class="Pawnmorph.Hediffs.MutationStage">
-				<minSeverity>1</minSeverity>
-				<description>A sleek muzzle graces [PAWN_nameDef]'s face, like that of a feline. [PAWN_possessive] teeth are pointed to suit; speaking is more difficult, but eating is easier. Adaptation has removed some of the difficulty with speaking.</description>
-				<label>adapted</label>
-				<capMods>
-					<li>
-						<capacity>Talking</capacity>
-						<offset>-0.10</offset>
-					</li>
-					<li>
-						<capacity>Eating</capacity>
-						<offset>0.50</offset>
-					</li>
-				</capMods>
-			</li>
-			<li Class="Pawnmorph.Hediffs.MutationStage">
-				<minSeverity>1.5</minSeverity>
-				<label>paragon</label>
-				<description>[PAWN_nameDef]'s face has become a cute feline snout. [PAWN_possessive] teeth are pointed to suit, and this makes eating easier. Many people find [PAWN_possessive] new face adorable.</description>
-				<statOffsets>
-					<SocialImpact>0.1</SocialImpact>
-				</statOffsets>
-				<capMods>
-					<li>
-						<capacity>Eating</capacity>
-						<offset>0.50</offset>
-					</li>
-				</capMods>
-			</li>
-		</stages>
-		<comps>
-			<li Class="HediffCompProperties_VerbGiver">
-				<tools>
-					<li>
-						<label>teeth</label>
-						<labelUsedInLogging>False</labelUsedInLogging>
-						<capacities>
-							<li>Bite</li>
-						</capacities>
-						<power>10.0</power>
-						<cooldownTime>1.5</cooldownTime>
-						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
-					</li>
-				</tools>
-			</li>
-			<li Class="Pawnmorph.Hediffs.CompProperties_MutationSeverityAdjust">
-				<severityPerDay>0.25</severityPerDay>
-			</li>
-		</comps>
+		<graphics>
+			<Muzzle>Parts/Cat/Cat_Muzzle</Muzzle>
+		</graphics>
 	</Pawnmorph.Hediffs.MutationDef>
-	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="FelisEarPart">
+		<classInfluence>HousekeeperCatMorph</classInfluence>
 		<defName>EtherHousekeeperCatEar</defName>
-		<label>nekomata</label>
-		<description>Triangular fuzzy ears grace [PAWN_nameDef]'s head. They coil back when [PAWN_pronoun] is getting ready to pounce.</description>
-		<parts>
-			<li>Ear</li>
-		</parts>
-		<stages>
-			<li Class="Pawnmorph.Hediffs.MutationStage">
-				<partEfficiencyOffset>0.2</partEfficiencyOffset>
-			</li>
-		</stages>
+		<label>nekomata ear</label>
+		<graphics>
+			<LeftEar>Parts/Cat/Cat_Ear_Left</LeftEar>
+			<LeftEarBehind>Parts/Cat/Cat_Ear_Left_Behind</LeftEarBehind>
+			<RightEar>Parts/Cat/Cat_Ear_Right</RightEar>
+			<RightEarBehindHead>Parts/Cat/Cat_Ear_Right_Behind</RightEarBehindHead>
+		</graphics>
 	</Pawnmorph.Hediffs.MutationDef>
-	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="FelisTailPart">
+		<classInfluence>HousekeeperCatMorph</classInfluence>
 		<defName>EtherHousekeeperCatTail</defName>
 		<label>nekomata tail</label>
-		<description>A long, catlike tail, forking into two near its base. It flicks back and forth whenever [PAWN_nameDef] is displeased with something.</description>
-		<mutationTale>GrewTail</mutationTale>
-		<parts>
-			<li>Tail</li>
-			<li>MorphTail</li>
-		</parts>
-		<stages>
-			<li Class="Pawnmorph.Hediffs.MutationStage" />
-		</stages>
+		<graphics>
+			<Tail>Parts/Panther/Panther_Tail</Tail>
+		</graphics>
+		<stagePatches>
+			<li function="modify">
+				<stageKey>grown</stageKey>
+				<values>
+					<description>A long, catlike tail, forking into two near its base. It flicks back and forth whenever [PAWN_nameDef] is displeased with something.</description>
+				</values>
+			</li>
+		</stagePatches>
 	</Pawnmorph.Hediffs.MutationDef>
+	
 	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
 		<defName>EtherHousekeeperCatEye</defName>
 		<label>nekomata eye</label>
@@ -153,6 +64,7 @@
 			</li>
 		</stages>
 	</Pawnmorph.Hediffs.MutationDef>
+	
 	<Pawnmorph.Hediffs.MutationDef ParentName="HousekeeperCatPart">
 		<defName>EtherHousekeeperCatHand</defName>
 		<label>nekomata</label>

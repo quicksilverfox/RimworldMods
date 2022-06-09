@@ -37,7 +37,7 @@ namespace AnimalsLogic
             listing_Standard.CheckboxLabeled("ALConfigAnimalsCanUseFoodDispenserLabel".Translate(), ref use_dispenser, "ALConfigAnimalsCanUseFoodDispenserTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigShowExtraDisplayStatsLabel".Translate(), ref extra_display_stats, "ALConfigShowExtraDisplayStatsTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigAlwaysShowRelationsLabel".Translate(), ref always_show_relations, "ALConfigAlwaysShowRelationsTooltip".Translate());
-            listing_Standard.CheckboxLabeled("ALConfigTamingAgeFactor".Translate(), ref taming_age_factor, "ALConfigTamingAgeFactorTooltip".Translate());
+            listing_Standard.CheckboxLabeled("ALConfigTamingAgeFactorLabel".Translate(), ref taming_age_factor, "ALConfigTamingAgeFactorTooltip".Translate());
 
             listing_Standard.Label("ALConfigTamenessDecayThresholdLabel".Translate(((float)Math.Round(wildness_threshold_for_tameness_decay, 3) * 100).ToString()), tooltip: "ALConfigTamenessDecayThresholdTooltip".Translate());
             wildness_threshold_for_tameness_decay = listing_Standard.Slider(wildness_threshold_for_tameness_decay, 0f, 1f);

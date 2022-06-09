@@ -39,6 +39,9 @@
 	
 	<ALConfigToxicBuildupRotLabel>Toxic buildup rot chance modifier</ALConfigToxicBuildupRotLabel>
 	<ALConfigToxicBuildupRotTooltip>By default, animals killed while having major toxic buildup have a chance to rot immediately. It is intended to make toxic fallout more difficult, but has a side effect of cobras being unable to eat their prey, so they tend to kill every small animal on map and die from starvation. Set to 0 to entirely remove rot chance.</ALConfigToxicBuildupRotTooltip>
+	
+	<ALConfigTamingAgeFactorLabel>Young animals are easier to handle</ALConfigTamingAgeFactorLabel>
+	<ALConfigTamingAgeFactorTooltip>Makes non-adult animals easier to tame and train, effectively reducing their wildness. Proportinal to their relative age - newborn are much easier, while almost adult are barely efected.</ALConfigTamingAgeFactorTooltip>
 
 	<!-- Extra stats -->
 	

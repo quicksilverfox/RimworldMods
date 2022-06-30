@@ -17,7 +17,7 @@
 								<li Class="ThinkNode_Tagger">
 									<tagToGive>TrainedAnimalBehavior</tagToGive>
 									<subNodes>
-										<li Class="Housekeep_JobGiver_Cleaning" />
+										<li Class="JobGiver_HousekeeperCat" />
 									</subNodes>
 								</li>
 							</subNodes>

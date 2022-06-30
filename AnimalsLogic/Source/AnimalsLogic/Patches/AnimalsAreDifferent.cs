@@ -98,6 +98,63 @@ namespace AnimalsLogic
         }
     }
 
+    /*
+    public class AnimalProductionInfo : StatWorker
+    {
+        public override bool ShouldShowFor(StatRequest req)
+        {
+            if (!Settings.extra_display_stats)
+                return false;
+
+            ThingDef thingDef = GetThingDef(req);
+            if (thingDef == null)
+            {
+                return false;
+            }
+            return thingDef.race?.Animal == true;
+        }
+
+        public override bool IsDisabledFor(Thing thing)
+        {
+            if (thing == null || !Settings.extra_display_stats)
+            {
+                return true;
+            }
+            return thing.def?.race?.Animal != true;
+        }
+
+        public override string GetStatDrawEntryLabel(StatDef stat, float value, ToStringNumberSense numberSense, StatRequest optionalReq, bool finalized = true)
+        {
+            return "AL_PRD_LABEL".Translate();
+        }
+
+        public override string GetExplanationUnfinalized(StatRequest req, ToStringNumberSense numberSense)
+        {
+            return "";
+        }
+
+        public override string GetExplanationFinalizePart(StatRequest req, ToStringNumberSense numberSense, float finalVal)
+        {
+            return "";
+        }
+
+        private ThingDef GetThingDef(StatRequest req)
+        {
+            object obj = req.Def as ThingDef;
+            if (obj == null)
+            {
+                Pawn pawn = req.Pawn;
+                if (pawn == null)
+                {
+                    return null;
+                }
+                obj = pawn.def;
+            }
+            return (ThingDef)obj;
+        }
+    }
+    */
+
     public static class AnimalProductionInfo
     {
         public static void Patch()
@@ -111,7 +168,8 @@ namespace AnimalsLogic
         [HarmonyPostfix]
         public static void ProductionInfo(ref IEnumerable<StatDrawEntry> __result, RaceProperties __instance, ThingDef parentDef, StatRequest req)
         {
-            // TODO: move all of those and relevant vanilla to a separate category?
+            if (!Settings.extra_display_stats)
+                return;
 
             // Create a modifyable list
             List<StatDrawEntry> NewList = new List<StatDrawEntry>();
@@ -317,7 +375,7 @@ namespace AnimalsLogic
         public static void Patch()
         {
             AnimalsLogic.harmony.Patch(
-                AccessTools.Method(typeof(SocialCardUtility), "ShouldShowPawnRelations"), 
+                AccessTools.Method(typeof(SocialCardUtility), "ShouldShowPawnRelations"),
                 postfix: new HarmonyMethod(typeof(ShowAnimalRelations).GetMethod(nameof(ShouldShowPawnRelations_Postfix)))
                 );
         }

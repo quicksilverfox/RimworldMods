@@ -7,7 +7,7 @@
     <ProjectGuid>{773AAF55-67BD-44DB-9B75-BB095688C2BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>RimWorld</RootNamespace>
-    <AssemblyName>HouseCatCleaningJob</AssemblyName>
+    <AssemblyName>HousekeeperCat</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.2.1\lib\net35\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -60,7 +64,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Housekeep_JobGiver_Cleaning.cs" />
+    <Compile Include="JobGiver_HousekeeperCat.cs" />
+    <Compile Include="Patch.cs" />
+    <Compile Include="Pawn_HousekeeperCat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

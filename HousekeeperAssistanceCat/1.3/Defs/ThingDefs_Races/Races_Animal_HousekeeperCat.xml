@@ -4,6 +4,7 @@
 		<defName>HousekeeperCat</defName>
 		<label>housekeeper cat</label>
 		<description>A highly intelligent creature, engineered to be a perfect house pet. It has very dextrous, hand-like paws and can be trained to provide some help with housekeeping.</description>
+		<thingClass>HousekeeperCat.Pawn_HousekeeperCat</thingClass>
 		<statBases>
 			<MoveSpeed>6.00</MoveSpeed>
 			<ComfyTemperatureMin>-50</ComfyTemperatureMin>

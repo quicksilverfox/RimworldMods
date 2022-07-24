@@ -49,7 +49,7 @@
 		<defName>EtherHousekeeperCatTail</defName>
 		<label>nekomata tail</label>
 		<graphics>
-			<Tail>Parts/Panther/Panther_Tail</Tail>
+			<Tail>Parts/Nekomata/Nekomata_Tail</Tail>
 		</graphics>
 		<stagePatches>
 			<li function="modify">
@@ -217,7 +217,7 @@
 				<values>
 					<description>[PAWN_nameDef]'s body is significately smaller than before, but [PAWN_possessive] bones and muscles are unnaturaly dense.</description>
 					<globalHealthMultiplier>1.5</globalHealthMultiplier>
-					<hungerRateFactorOffset>-0.25</hungerRateFactorOffset>
+					<hungerRateFactor>0.75</hungerRateFactor>
 					<statOffsets>
 						<PM_BodySize>-0.33</PM_BodySize>
 						<CarryingCapacity>25</CarryingCapacity>

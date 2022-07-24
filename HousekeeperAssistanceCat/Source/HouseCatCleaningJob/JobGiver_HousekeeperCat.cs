@@ -187,9 +187,9 @@ namespace RimWorld
 
         private bool PawnCanUseWorkGiver(Pawn pawn, WorkGiver giver)
         {
-            if (!giver.def.nonColonistsCanDo)
+            if (!(giver.def.nonColonistsCanDo || (bool)pawn.Faction?.IsPlayer))
             {
-                return (bool)(pawn.Faction?.IsPlayer);
+                return false;
             }
             if (pawn.WorkTagIsDisabled(giver.def.workTags))
             {

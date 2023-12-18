@@ -16,6 +16,7 @@ namespace AnimalsLogic
 
         public AnimalsLogic(ModContentPack content) : base(content)
         {
+            //Log.Message("Animal Logic is trying to apply patches.");
             harmony = new Harmony("net.quicksilverfox.rimworld.mod.animalslogic");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
@@ -31,6 +32,7 @@ namespace AnimalsLogic
             GetThemYoung.Patch();
 
             base.GetSettings<Settings>();
+            //Log.Message("Animal Logic is loaded.");
         }
 
         public void Save()

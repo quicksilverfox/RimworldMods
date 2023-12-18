@@ -13,80 +13,19 @@ namespace HousekeeperCat
      */
     public class Pawn_HousekeeperCat : Pawn
     {
-        private static WorkTypeDef Cleaning, Hauling, BasicWorker;
-        private static TrainableDef Obedience, Release, Haul;
+
+        //public new bool IsColonyMech => base.Faction == Faction.OfPlayer && MentalStateDef == null;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-        }
-
-        public override void TickRare() // not the best place for it tbh, but makes thigns much easier
-        {
-            base.TickRare();
-            UpdateWork();
-        }
-
-        /**
-         * Checks that only allowed works are enabled
-         */
-        public void UpdateWork()
-        {
-            if (IsFormerHuman())
-                return;
-
-            // just to be sure
-            InitWork();
-
-            // wild or other factions
-            if (training == null || Faction == null || !Faction.IsPlayer)
-                return;
-
-            // stuff like being a patient is handled by basic animal AI, no need to enable it as a work - they only work when animal AI gives no other job
-            workSettings.SetPriority(BasicWorker, training.HasLearned(Obedience) ? 3 : 0);
-
-            // both genders can do both cleaning and hauling, but males prefer hauling and females prefer cleaning
-            workSettings.SetPriority(Cleaning, training.HasLearned(Obedience) ? (gender == Gender.Male ? 4 : 3) : 0);
-            workSettings.SetPriority(Hauling, training.HasLearned(Haul) ? (gender == Gender.Male ? 3 : 4) : 0);
-        }
-
-        /**
-         * Upon changing faction work settings are reset and need reassigning
-         */
-        public override void SetFaction(Faction newFaction, Pawn recruiter = null)
-        {
-            base.SetFaction(newFaction, recruiter);
 
             if (IsFormerHuman())
-                return;
-
-            InitWork();
-            workSettings.DisableAll();
-            UpdateWork();
-        }
-
-        private void InitWork()
-        {
-            // Caching stuff
-            if (Obedience == null)
-                Obedience = DefDatabase<TrainableDef>.GetNamed("Obedience");
-            if (Release == null)
-                Release = DefDatabase<TrainableDef>.GetNamed("Release");
-            if (Haul == null)
-                Haul = DefDatabase<TrainableDef>.GetNamed("Haul");
-
-            if (BasicWorker == null)
-                BasicWorker = DefDatabase<WorkTypeDef>.GetNamed("BasicWorker");
-            if (Cleaning == null)
-                Cleaning = DefDatabase<WorkTypeDef>.GetNamed("Cleaning");
-            if (Hauling == null)
-                Hauling = DefDatabase<WorkTypeDef>.GetNamed("Hauling");
-
-            if (IsFormerHuman())
-                return;
+                return; // former humans have their own logic, ignore them
 
             if (skills == null)
             {
+                // Can avoid this by making them using mech code, but it may require way more work so this hack would do
                 skills = new Pawn_SkillTracker(this);
                 foreach (SkillRecord skill in skills.skills) // to make skills neutral for price factor
                 {
@@ -96,20 +35,84 @@ namespace HousekeeperCat
 
             if (story == null)
             {
+                // FIXME: is this still necessary?
                 story = new Pawn_StoryTracker(this) // necessary for job giver to work properly, but adds a bunch of problems since only humanlikes are supposed to have it
                 {
                     bodyType = BodyTypeDefOf.Thin,
-                    crownType = CrownType.Average,
+                    //crownType = CrownType.Average,
                     //childhood = xxx,
                     //adulthood = xxx
                 };
             }
 
-            if (workSettings == null)
+            if (workSettings == null) // only used for WorkGiversInOrderNormal / WorkGiversInOrderEmergency
             {
                 workSettings = new Pawn_WorkSettings(this);
                 workSettings.EnableAndInitialize();
-                workSettings.DisableAll();
+
+                // both genders can do both cleaning and hauling, but males prefer hauling and females prefer cleaning so they divide jobs and don't neglect one or another too much
+                if (gender == Gender.Female)
+                    workSettings.SetPriority(WorkTypeDefOf.Hauling, 4);
+            }
+
+            GetDisabledWorkTypes(); // init stuff
+            workSettings.Notify_DisabledWorkTypesChanged();
+        }
+
+        /**
+         * Not actually changed
+         */
+        public new bool WorkTagIsDisabled(WorkTags w)
+        {
+            return (CombinedDisabledWorkTags & w) != 0;
+        }
+
+        /**
+         * Not actually changed
+         */
+        public new bool WorkTypeIsDisabled(WorkTypeDef w)
+        {
+            return GetDisabledWorkTypes().Contains(w);
+        }
+
+        private List<WorkTypeDef> cachedDisabledWorkTypes;
+        private List<WorkTypeDef> cachedDisabledWorkTypesPermanent;
+        /**
+         * Stripped to bare bones. Uses mechanoid tags for available job tags.
+         */
+        public new List<WorkTypeDef> GetDisabledWorkTypes(bool permanentOnly = false)
+        {
+            if (IsFormerHuman())
+                    return base.GetDisabledWorkTypes(permanentOnly);
+
+            if (permanentOnly)
+            {
+                if (cachedDisabledWorkTypesPermanent == null)
+                {
+                    cachedDisabledWorkTypesPermanent = new List<WorkTypeDef>();
+                }
+
+                FillList(cachedDisabledWorkTypesPermanent);
+                return cachedDisabledWorkTypesPermanent;
+            }
+
+            if (cachedDisabledWorkTypes == null)
+            {
+                cachedDisabledWorkTypes = new List<WorkTypeDef>();
+            }
+
+            FillList(cachedDisabledWorkTypes);
+            return cachedDisabledWorkTypes;
+            void FillList(List<WorkTypeDef> list)
+            {
+                List<WorkTypeDef> allDefsListForReading = DefDatabase<WorkTypeDef>.AllDefsListForReading;
+                for (int j = 0; j < allDefsListForReading.Count; j++)
+                {
+                    if (!RaceProps.mechEnabledWorkTypes.Contains(allDefsListForReading[j]) && !list.Contains(allDefsListForReading[j]))
+                    {
+                        list.Add(allDefsListForReading[j]);
+                    }
+                }
             }
         }
 
@@ -118,7 +121,7 @@ namespace HousekeeperCat
          */
         public bool IsFormerHuman()
         {
-            return story != null && (story.childhood != null || story.adulthood != null);
+            return story != null && (story.Childhood != null || story.Adulthood != null);
         }
     }
 }

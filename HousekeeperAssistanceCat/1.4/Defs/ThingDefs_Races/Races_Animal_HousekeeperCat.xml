@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>HousekeeperCat</defName>
+		<label>housekeeper cat</label>
+		<description>A highly intelligent creature, engineered to be a perfect house pet. It has very dextrous, hand-like paws and with minimal training can provide some help with housekeeping.</description>
+		<thingClass>HousekeeperCat.Pawn_HousekeeperCat</thingClass>
+		<statBases>
+			<MoveSpeed>6.00</MoveSpeed>
+			<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+			<ComfyTemperatureMax>60</ComfyTemperatureMax>
+			<MarketValue>1500</MarketValue>
+			<MeatAmount>50</MeatAmount>
+			<ToxicResistance>0.8</ToxicResistance>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.8</ToxicEnvironmentResistance>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>right claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>teeth</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Shearable">
+				<woolDef>Wool_HKCat</woolDef>
+				<shearIntervalDays>30</shearIntervalDays>
+				<woolAmount>20</woolAmount>
+			</li>
+		</comps>
+		<race>
+			<mechEnabledWorkTypes>
+				<li>Hauling</li>
+				<li>Cleaning</li>
+				<li>Firefighter</li>
+				<li>PlantCutting</li>
+			</mechEnabledWorkTypes>
+			<thinkTreeMain>Animal</thinkTreeMain>
+			<intelligence>Animal</intelligence> <!-- ToolUse would be more correct but it breaks Pick Up And Haul-->
+			<body>Monkey</body>
+			<predator>true</predator>
+			<maxPreyBodySize>0.5</maxPreyBodySize>
+			<packAnimal>true</packAnimal>
+			<herdAnimal>true</herdAnimal>
+			<petness>1</petness>
+			<baseBodySize>0.8</baseBodySize>
+			<baseHungerRate>0.20</baseHungerRate>
+			<baseHealthScale>2</baseHealthScale>
+			<foodType>OmnivoreAnimal, OvivoreAnimal, VegetarianRoughAnimal</foodType>
+			<leatherDef>Leather_HKCat</leatherDef>
+			<gestationPeriodDays>90</gestationPeriodDays>
+			<nameOnTameChance>1</nameOnTameChance>
+			<trainability>Advanced</trainability>
+			<wildness>0</wildness>
+			<wildBiomes>
+				<!-- they are rather indiscriminate in where to live so they are more or less evenly distributed between biomes; so it is normalized with biome animal density in mind to be 0.05 at 1 density -->
+				<!-- Maybe should just make them event-based -->
+				<BorealForest>0.025</BorealForest><!-- animalDensity 2.8 rel 0.035-->
+				<Tundra>0.064</Tundra><!-- animalDensity 1.1 rel 0.035-->
+				<ColdBog>0.02</ColdBog><!-- animalDensity 3.3 rel 0.035-->
+				<IceSheet>0.5</IceSheet><!-- animalDensity 0.2 rel 0.05-->
+				<SeaIce>1.0</SeaIce><!-- animalDensity 0.1 rel 0.05-->
+				<TemperateForest>0.018</TemperateForest><!-- animalDensity 3.7 rel 0.035-->
+				<TemperateSwamp>0.016</TemperateSwamp><!-- animalDensity 4.3 rel 0.035-->
+				<TropicalRainforest>0.018</TropicalRainforest><!-- animalDensity 5.4 rel 0.05-->
+				<TropicalSwamp>0.016</TropicalSwamp><!-- animalDensity 6.5 rel 0.05-->
+				<AridShrubland>0.084</AridShrubland><!-- animalDensity 1.8 rel 0.075-->
+				<Desert>0.176</Desert><!-- animalDensity 0.4 rel 0.035-->
+				<ExtremeDesert>1.0</ExtremeDesert> <!-- animalDensity 0.1 rel 0.05-->
+			</wildBiomes>
+			<nuzzleMtbHours>12</nuzzleMtbHours>
+			<manhunterOnDamageChance>0.35</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+			<lifeExpectancy>80</lifeExpectancy>
+			<useMeatFrom>Cat</useMeatFrom>
+			<lifeStageAges>
+				<li>
+					<def>AnimalBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>AnimalJuvenile</def>
+					<minAge>0.5</minAge>
+				</li>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>6</minAge>
+					<soundWounded>Pawn_Cat_Injured</soundWounded>
+					<soundDeath>Pawn_Cat_Death</soundDeath>
+					<soundCall>Pawn_Cat_Call</soundCall>
+					<soundAngry>Pawn_Cat_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+			<ageGenerationCurve>
+				<points>
+					<li>(1,0)</li>
+					<li>(7,20)</li>
+					<li>(15,60)</li>
+					<li>(20,20)</li>
+					<li>(25,0)</li>
+				</points>
+			</ageGenerationCurve>
+		</race>
+		<tradeTags>
+			<li>AnimalUncommon</li>
+			<li>AnimalPet</li>
+		</tradeTags>
+	</ThingDef>
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>HousekeeperCat</defName>
+		<label>Housekeeper Cat</label>
+		<labelPlural>Housekeeper Cats</labelPlural>
+		<combatPower>250</combatPower>
+		<ecoSystemWeight>1.0</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<race>HousekeeperCat</race>
+		<lifeStages>
+			<li>
+				<label>housekeeper kitten</label>
+				<labelPlural>housekeeper kittens</labelPlural>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/housekeepercat</texPath>
+					<drawSize>0.6</drawSize>
+					<color>(80,80,80)</color>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Animal/housekeepercat</texPath>
+					<drawSize>0.6</drawSize>
+				</femaleGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Monkey/Dessicated_Monkey</texPath>
+					<drawSize>0.6</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/housekeepercat</texPath>
+					<drawSize>1.0</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+					<color>(80,80,80)</color>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Animal/housekeepercat</texPath>
+					<drawSize>1.0</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</femaleGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Monkey/Dessicated_Monkey</texPath>
+					<drawSize>1.0</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/housekeepercat</texPath>
+					<drawSize>1.5</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+					<color>(80,80,80)</color>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Animal/housekeepercat</texPath>
+					<drawSize>1.5</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</femaleGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Monkey/Dessicated_Monkey</texPath>
+					<drawSize>1.5</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+</Defs>

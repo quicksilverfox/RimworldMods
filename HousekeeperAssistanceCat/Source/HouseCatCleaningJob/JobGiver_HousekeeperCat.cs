@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HousekeeperCat;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,11 @@ namespace RimWorld
     // copy-paste of JobGiver_Work with a single exception allowing non-colonists to do the job.
     class JobGiver_HousekeeperCat : JobGiver_Work
     {
+        public override float GetPriority(Pawn pawn)
+        {
+            return 5.5f; // Basically they have "anything" all the time in their time table
+        }
+
         public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
         {
             if (pawn.workSettings == null) // legacy cats
@@ -23,14 +29,19 @@ namespace RimWorld
                 for (int i = 0; i < workGiversByPriority.Count; i++)
                 {
                     WorkGiver worker = workGiversByPriority[i].Worker;
-                    if (WorkGiversRelated(pawn.mindState.priorityWork.WorkGiver, worker.def))
+                    if (!WorkGiversRelated(pawn.mindState.priorityWork.WorkGiver, worker.def))
                     {
-                        Job job = GiverTryGiveJobPrioritized(pawn, worker, pawn.mindState.priorityWork.Cell);
-                        if (job != null)
+                        continue;
+                    }
+                    Job job = GiverTryGiveJobPrioritized(pawn, worker, pawn.mindState.priorityWork.Cell);
+                    if (job != null)
+                    {
+                        job.playerForced = true;
+                        if (pawn.jobs.debugLog)
                         {
-                            job.playerForced = true;
-                            return new ThinkResult(job, this, workGiversByPriority[i].tagToGive);
+                            pawn.jobs.DebugLogEvent($"JobGiver_Work produced emergency Job {job.ToStringSafe()} from {worker}");
                         }
+                        return new ThinkResult(job, this, workGiversByPriority[i].tagToGive);
                     }
                 }
                 pawn.mindState.priorityWork.Clear();
@@ -62,6 +73,10 @@ namespace RimWorld
                     Job job2 = workGiver.NonScanJob(pawn);
                     if (job2 != null)
                     {
+                        if (pawn.jobs.debugLog)
+                        {
+                            pawn.jobs.DebugLogEvent($"JobGiver_Work produced non-scan Job {job2.ToStringSafe()} from {workGiver}");
+                        }
                         return new ThinkResult(job2, this, list[j].def.tagToGive);
                     }
                     scanner = workGiver as WorkGiver_Scanner;
@@ -109,8 +124,7 @@ namespace RimWorld
                             allowUnreachable = scanner.AllowUnreachable;
                             maxPathDanger = scanner.MaxPathDanger(pawn);
                             IEnumerable<IntVec3> enumerable4 = scanner.PotentialWorkCellsGlobal(pawn);
-                            IList<IntVec3> list2;
-                            if ((list2 = enumerable4 as IList<IntVec3>) != null)
+                            if (enumerable4 is IList<IntVec3> list2)
                             {
                                 for (int k = 0; k < list2.Count; k++)
                                 {
@@ -176,6 +190,10 @@ namespace RimWorld
                     if (job3 != null)
                     {
                         job3.workGiverDef = scannerWhoProvidedTarget.def;
+                        if (pawn.jobs.debugLog)
+                        {
+                            pawn.jobs.DebugLogEvent($"JobGiver_Work produced scan Job {job3.ToStringSafe()} from {scannerWhoProvidedTarget}");
+                        }
                         return new ThinkResult(job3, this, list[j].def.tagToGive);
                     }
                     Log.ErrorOnce(string.Concat(scannerWhoProvidedTarget, " provided target ", bestTargetOfLastPriority, " but yielded no actual job for pawn ", pawn, ". The CanGiveJob and JobOnX methods may not be synchronized."), 6112651);
@@ -187,19 +205,28 @@ namespace RimWorld
 
         private bool PawnCanUseWorkGiver(Pawn pawn, WorkGiver giver)
         {
-            if (!(giver.def.nonColonistsCanDo || (bool)pawn.Faction?.IsPlayer))
+            Pawn_HousekeeperCat cat = (Pawn_HousekeeperCat)pawn;
+            if (!(giver.def.nonColonistsCanDo || (bool)cat.Faction?.IsPlayer))
             {
                 return false;
             }
-            if (pawn.WorkTagIsDisabled(giver.def.workTags))
+            if (cat.WorkTagIsDisabled(giver.def.workTags))
             {
                 return false;
             }
-            if (giver.ShouldSkip(pawn))
+            if (giver.def.workType != null && cat.WorkTypeIsDisabled(giver.def.workType))
             {
                 return false;
             }
-            if (giver.MissingRequiredCapacity(pawn) != null)
+            if (giver.ShouldSkip(cat))
+            {
+                return false;
+            }
+            if (giver.MissingRequiredCapacity(cat) != null)
+            {
+                return false;
+            }
+            if (cat.RaceProps.IsMechanoid && !giver.def.canBeDoneByMechs)
             {
                 return false;
             }

@@ -1,0 +1,23 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Pawnmorpher</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<!-- Makes them able to do stuff when full animals -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThingDef[defName="HousekeeperCat"]</xpath>
+					<value>
+						<li Class="Pawnmorph.DefExtensions.FormerHumanSettings">
+							<backstory>PM_HousekeeperCatBackstory</backstory>
+							<!-- change to PM_HousekeeperCatBackstory to enable everything -->
+							<!-- change to PM_FormerHumanSkilled to use most allowing original backstory -->
+						</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

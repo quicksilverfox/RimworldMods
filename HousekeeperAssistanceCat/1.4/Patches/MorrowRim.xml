@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>MorrowRim</li>
+		</mods> 
+				
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThingDef[defName="HousekeeperCat"]</xpath>
+					<value>
+						<li Class="MorrowRim.ExtendedRaceProperties">
+							<ashResistant>Resistant</ashResistant>
+						</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs/ThingDef[defName="HousekeeperCat"]/race/wildBiomes</xpath>
+					<value>
+						<!-- they are rather indiscriminate in where to live so they are more or less evenly distributed between biomes; so it is normalized with biome animal density -->
+						<MorrowRim_Ashlands>0.02</MorrowRim_Ashlands><!-- animalDensity 2.4 rel 0.025-->
+						<MorrowRim_BlightedAshlands>0.062</MorrowRim_BlightedAshlands><!-- animalDensity 0.8 rel 0.025-->
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+	
+</Patch>
+

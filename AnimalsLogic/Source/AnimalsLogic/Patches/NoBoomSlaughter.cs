@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System;
 using Verse;
 
 namespace AnimalsLogic
@@ -13,6 +14,7 @@ namespace AnimalsLogic
         {
             ApplyPatch(typeof(DeathActionWorker_BigExplosion)); // vanilla boomalope
             ApplyPatch(typeof(DeathActionWorker_SmallExplosion)); // vanilla boombat
+            ApplyPatch(typeof(DeathActionWorker_ToxCloud)); // biotech toxalope
 
             // Save Our Ship 2
             ApplyPatch(AccessTools.TypeByName("RimWorld.DeathActionWorker_AntigrainExplosion")); // Archolope
@@ -47,18 +49,25 @@ namespace AnimalsLogic
 
         static void ApplyPatch(System.Type type)
         {
-            if (type != null)
+            if (type == null)
+                return;
+
+            if (!typeof(DeathActionWorker).IsAssignableFrom(type))
             {
-                if (!typeof(DeathActionWorker).IsAssignableFrom(type))
-                {
-                    Log.Error("Animal Logic: " + type + " is not DeathActionWorker.");
-                    return;
-                }
-                AnimalsLogic.harmony.Patch(
-                        type.GetMethod("PawnDied"),
-                        prefix: new HarmonyMethod(typeof(NoBoomSlaughter).GetMethod(nameof(Explosion_Prefix)))
-                    );
+                Log.Error("Animals Logic: " + type + " is not DeathActionWorker.");
+                return;
             }
+
+            if (type.GetMethod("PawnDied") == null)
+            {
+                Log.Error("Animals Logic: " + type + " is DeathActionWorker but can't find PawnDied method.");
+                return;
+            }
+
+            AnimalsLogic.harmony.Patch(
+                    type.GetMethod("PawnDied"),
+                    prefix: new HarmonyMethod(typeof(NoBoomSlaughter).GetMethod(nameof(Explosion_Prefix)))
+                );
         }
 
         [HarmonyPrefix]

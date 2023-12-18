@@ -13,6 +13,9 @@
 	<ALConfigMeatConversionLabel>Convert any generic animal meat into chicken meat upon butchering</ALConfigMeatConversionLabel>
 	<ALConfigMeatConversionTooltip>This does not affect already butchered meat.</ALConfigMeatConversionTooltip>
 	
+	<ALConfigShearCorpsesLabel>Harvest wool when butchering</ALConfigShearCorpsesLabel>
+	<ALConfigShearCorpsesTooltip>Only works with vanilla "shearable", not exotic resource used by some mods.</ALConfigShearCorpsesTooltip>
+	
 	<ALConfigMedicalAlertsLabel>Medical alerts for animals</ALConfigMedicalAlertsLabel>
 	<ALConfigMedicalAlertsTooltip>Shows right-hand alerts for when colony animals are injured, need rescuing or in critical medical condition.</ALConfigMedicalAlertsTooltip>
 	
@@ -37,11 +40,11 @@
 	<ALConfigAlwaysShowRelationsLabel>Always show animal relations</ALConfigAlwaysShowRelationsLabel>
 	<ALConfigAlwaysShowRelationsTooltip>By default, only relations with named animals are displayed. This allows to see all of them.</ALConfigAlwaysShowRelationsTooltip>
 	
-	<ALConfigToxicBuildupRotLabel>Toxic buildup rot chance modifier</ALConfigToxicBuildupRotLabel>
-	<ALConfigToxicBuildupRotTooltip>By default, animals killed while having major toxic buildup have a chance to rot immediately. It is intended to make toxic fallout more difficult, but has a side effect of cobras being unable to eat their prey, so they tend to kill every small animal on map and die from starvation. Set to 0 to entirely remove rot chance.</ALConfigToxicBuildupRotTooltip>
+	<ALConfigToxicBuildupRotLabel>Toxic buildup rot chance multiplier: {0}%</ALConfigToxicBuildupRotLabel>
+	<ALConfigToxicBuildupRotTooltip>By default, animals killed while having major toxic buildup have a chance to rot immediately. It is intended to make toxic fallout more difficult, but has a side effect of cobras being unable to eat their prey, so they tend to kill every small animal on map and die from starvation. Set to 0% to entirely remove rot chance, set to 100% for vanilla formula.</ALConfigToxicBuildupRotTooltip>
 	
 	<ALConfigTamingAgeFactorLabel>Young animals are easier to handle</ALConfigTamingAgeFactorLabel>
-	<ALConfigTamingAgeFactorTooltip>Makes non-adult animals easier to tame and train, effectively reducing their wildness. Proportinal to their relative age - newborn are much easier, while almost adult are barely efected.</ALConfigTamingAgeFactorTooltip>
+	<ALConfigTamingAgeFactorTooltip>Makes non-adult animals easier to tame and train, effectively reducing their wildness. Proportinal to their relative age - newborn are much easier, while almost adult are barely affected.</ALConfigTamingAgeFactorTooltip>
 
 	<!-- Extra stats -->
 	

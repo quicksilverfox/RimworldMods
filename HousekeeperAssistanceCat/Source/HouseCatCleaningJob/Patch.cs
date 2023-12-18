@@ -33,8 +33,7 @@ namespace HousekeeperCat
             Thing SelThing = Find.Selector.SingleSelectedThing;
 
             if (__result && SelThing != null && SelThing is Pawn_HousekeeperCat cat &&
-                    (!cat.IsFormerHuman() // this is for Pawnmorpher former humans
-                    || DebugSettings.godMode)
+                    !cat.IsFormerHuman() // this is for Pawnmorpher former humans
                 )
                 __result = false;
         }

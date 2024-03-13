@@ -73,13 +73,13 @@ namespace WorldGenRules
                         int offset = 2; // instruction used as injection point marker is not exactly in a right place
                         codes.InsertRange(i + offset, new List<CodeInstruction>(){
                             // this increments vertical offset variable
-                            new CodeInstruction(OpCodes.Ldloc_S, 6),
+                            new CodeInstruction(OpCodes.Ldloc_S, 7),
                             new CodeInstruction(OpCodes.Ldc_R4, 40f), // if you use 40 instead of 40f it would push 0 instead...
                             new CodeInstruction(OpCodes.Add),
-                            new CodeInstruction(OpCodes.Stloc_S, 6),
+                            new CodeInstruction(OpCodes.Stloc_S, 7),
                             // loading vertical offset variable and passing it to custom function that draws slider
-                            new CodeInstruction(OpCodes.Ldloc_S, 6),
                             new CodeInstruction(OpCodes.Ldloc_S, 7),
+                            new CodeInstruction(OpCodes.Ldloc_S, 8),
                             new CodeInstruction(OpCodes.Call, typeof(Page_CreateWorldParams_DoWindowContents_Patch).GetMethod(nameof(DrawPlanetSizeSlider)))
                         });
                         break;

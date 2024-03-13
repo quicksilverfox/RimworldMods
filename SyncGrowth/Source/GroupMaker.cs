@@ -90,18 +90,36 @@ namespace SyncGrowth
             var ingestible = plant.def.ingestible;
             var plantprops = plant.def.plant;
 
-            if (ingestible == null || ingestible.foodType == FoodTypeFlags.Tree)
+            IPlantToGrowSettable host = plant.Map.zoneManager.ZoneAt(plant.Position) as IPlantToGrowSettable;
+            if(host == null)
+            {
+                host = plant.Map.thingGrid.ThingsListAt(plant.Position).FirstOrFallback(t => t is IPlantToGrowSettable, null) as IPlantToGrowSettable;
+            }
+
+            if (host == null)
                 return false;
-            if (plantprops == null || !plantprops.Sowable /*|| plantprops.IsTree*/)
+
+            if(host.GetPlantDefToGrow() != plant.def)
                 return false;
-            if (plant.LifeStage != PlantLifeStage.Growing)
-                return false;
-            if (defsBlacklist.Contains(plant.def))
-                return false;
+
             if (!flashcells && GroupsUtils.HasGroup(plant))
                 return false;
 
             return true;
+
+            //if (ingestible == null || ingestible.foodType == FoodTypeFlags.Tree)
+            //    return false;
+
+            //if (plantprops == null || !plantprops.Sowable /*|| plantprops.IsTree*/)
+            //    return false;
+            //if (plant.LifeStage != PlantLifeStage.Growing)
+            //    return false;
+            //if (defsBlacklist.Contains(plant.def))
+            //    return false;
+            //if (!flashcells && GroupsUtils.HasGroup(plant))
+            //    return false;
+
+            //return true;
         }
 
         static bool CanGroupTogether(Plant alpha, Plant beta)

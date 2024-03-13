@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!-- Balanced to have the same efficiency as other food. Hay yields 37% more than corn or rice on normal soil and 22% more on rich soil, so it is a bit more profitable to use hay on normal soil but corn gives a bit more on rich. -->
+	<RecipeDef>
+		<defName>Carbon_MakeChemfuelFromHaygrass</defName>
+		<label>make chemfuel from hay</label>
+		<description>Make a batch of chemfuel by extracting biofuel from hay.</description>
+		<jobString>Refining chemfuel from hay.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>2000</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Hay</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Hay</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Chemfuel>30</Chemfuel>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>Carbon_MakeCarbonWeave</defName>
+		<label>make carbon weave</label>
+		<description>Make carbon weave from chemfuel.</description>
+		<jobString>Making carbon weave.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>2000</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<researchPrerequisite>CarbonResearch</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<CarbonWeave>50</CarbonWeave>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>Carbon_MakeCarbonFiber</defName>
+		<label>make carbon composite</label>
+		<description>Make carbon fiber reinforced polymer from chemfuel.</description>
+		<jobString>Making carbon composite.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>2000</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<researchPrerequisite>CarbonResearch</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<CarbonFiber>50</CarbonFiber>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>Carbon_MakeDiamond</defName>
+		<label>make synthdiamond</label>
+		<description>Make synthdiamond from chemfuel.</description>
+		<jobString>Making synthdiamond.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>3500</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<researchPrerequisite>CarbonResearch</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<CarbonDiamond>10</CarbonDiamond>
+		</products>
+	</RecipeDef>
+
+</Defs>

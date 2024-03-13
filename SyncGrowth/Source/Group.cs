@@ -57,16 +57,21 @@ namespace SyncGrowth
 		void CalculateRateFor(Plant plant, float averageGrowth)
 		{
 			float mult = 1;
-			//float avgticksUntilFullyGrown = Mathf.FloorToInt(averageGrowth / plant.GrowthRate);
-			//int avgLongTicksUntilFullyGrown = Mathf.CeilToInt(avgticksUntilFullyGrown / 2000f);
-			int longTicksUntilFullyGrown = Mathf.CeilToInt(plant.TicksUntilFullyGrown() / 2000f);
+            //float avgticksUntilFullyGrown = Mathf.FloorToInt(averageGrowth / plant.GrowthRate);
+            //int avgLongTicksUntilFullyGrown = Mathf.CeilToInt(avgticksUntilFullyGrown / 2000f);
+            //float longTicksUntilFullyGrown = plant.TicksUntilFullyGrown() / 2000f;
 
-			if (plant.GrowthRate > 0 && longTicksUntilFullyGrown > 0)
+            //if (plant.GrowthRate > 0 && longTicksUntilFullyGrown > 0)
+            //{
+            //	mult += ((averageGrowth - plant.Growth) / longTicksUntilFullyGrown) * 200;
+            //}
+
+            if (plant.GrowthRate > 0 && plant.LifeStage == PlantLifeStage.Growing)
 			{
-				mult += ((averageGrowth - plant.Growth) / longTicksUntilFullyGrown) * 100;
-			}
+				mult = (1 - plant.Growth) / (1 - averageGrowth);
+            }
 
-			plant.SetGrowthMultiplier(mult);
+            plant.SetGrowthMultiplier(mult);
 		}
 
 		internal float GetGrowthMultiplierFor(Plant plant)
@@ -90,10 +95,11 @@ namespace SyncGrowth
 			GenDraw.DrawFieldEdges(cells, color);
 		}
 	}
+
+	// Basically this thing simulated adding a new field to Plant things to store group info
+	// This thing is quite slow, probably an array tat mimics the map grid would be WAY faster, but it does not seem to be a bottleneck so meh
 	public static class PlantExtension
 	{
-		//ConditionalWeakTable is available in .NET 4.0+
-		//if you use an older .NET, you have to create your own CWT implementation (good luck with that!)
 		static readonly ConditionalWeakTable<Plant, GrowthDataEntry> GrowthData = new ConditionalWeakTable<Plant, GrowthDataEntry>();
 
 		public static float GetGrowthMultiplier(this Plant plant) {
@@ -109,10 +115,11 @@ namespace SyncGrowth
 			growthDataEntry.lastUpdate = Find.TickManager.TicksGame;
 		}
 
-		class GrowthDataEntry
+		public class GrowthDataEntry
 		{
-			public float Multiplier = 1f;
-			//public Group Group = null;
+			//public WeakReference<Plant> Plant = null;
+            //public WeakReference<Group> Group = null;
+            public float Multiplier = 1f;
 			public int lastUpdate = -1;
 		}
 	}

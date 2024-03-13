@@ -16,7 +16,7 @@
 						<AB_GallatrossGraveyard>0.084</AB_GallatrossGraveyard> <!-- animalDensity 1.8 rel 0.075 -->
 						<AB_GelatinousSuperorganism>0.075</AB_GelatinousSuperorganism> <!-- animalDensity 2.0 rel 0.075 -->
 						<AB_IdyllicMeadows>0.018</AB_IdyllicMeadows> <!-- animalDensity 3.7 rel 0.075 -->
-						<AB_MechanoidIntrusion>1.5</AB_MechanoidIntrusion> <!-- animalDensity 0.1 rel 0.075 -->
+						<AB_MechanoidIntrusion>0.5</AB_MechanoidIntrusion> <!-- animalDensity 0.1 rel 0.075 -->
 						<AB_MiasmicMangrove>0.01</AB_MiasmicMangrove> <!-- animalDensity 6.5 rel 0.075 -->
 						<AB_MycoticJungle>0.036</AB_MycoticJungle> <!-- animalDensity 1.9 rel 0.035 -->
 						<AB_OcularForest>0.05</AB_OcularForest> <!-- animalDensity 3.0 rel 0.075 -->

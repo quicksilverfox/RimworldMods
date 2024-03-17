@@ -13,7 +13,6 @@ namespace HousekeeperCat
      */
     public class Pawn_HousekeeperCat : Pawn
     {
-
         //public new bool IsColonyMech => base.Faction == Faction.OfPlayer && MentalStateDef == null;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -123,5 +122,16 @@ namespace HousekeeperCat
         {
             return story != null && (story.Childhood != null || story.Adulthood != null);
         }
+    }
+
+    [DefOf]
+    public class DefOfCousekeeperCatThingDef
+    {
+        public static ThingDef HousekeeperCat;
+    }
+    [DefOf]
+    public class DefOfCousekeeperCatPawnDef
+    {
+        public static PawnKindDef HousekeeperCat;
     }
 }

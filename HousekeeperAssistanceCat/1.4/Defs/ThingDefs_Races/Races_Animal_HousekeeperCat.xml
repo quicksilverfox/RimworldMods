@@ -115,33 +115,7 @@
 			<trainability>Advanced</trainability>
 			<wildness>0</wildness>
 			<wildBiomes>
-				<!-- they are rather indiscriminate in where to live so they are more or less evenly distributed between biomes; so it is normalized with biome animal density in mind to be 0.05 at 1 density -->
-				<!-- Maybe should just make them event-based -->
-				<BorealForest>0.025</BorealForest><!-- animalDensity 2.8 rel 0.035-->
-				<Tundra>0.064</Tundra><!-- animalDensity 1.1 rel 0.035-->
-				<ColdBog>0.02</ColdBog><!-- animalDensity 3.3 rel 0.035-->
-				<IceSheet>0.5</IceSheet><!-- animalDensity 0.2 rel 0.05-->
-				<SeaIce>0.25</SeaIce><!-- animalDensity 0.1 rel 0.05-->
-				<TemperateForest>0.018</TemperateForest><!-- animalDensity 3.7 rel 0.035-->
-				<TemperateSwamp>0.016</TemperateSwamp><!-- animalDensity 4.3 rel 0.035-->
-				<TropicalRainforest>0.018</TropicalRainforest><!-- animalDensity 5.4 rel 0.05-->
-				<TropicalSwamp>0.016</TropicalSwamp><!-- animalDensity 6.5 rel 0.05-->
-				<AridShrubland>0.084</AridShrubland><!-- animalDensity 1.8 rel 0.075-->
-				<Desert>0.176</Desert><!-- animalDensity 0.4 rel 0.035-->
-				<ExtremeDesert>1.0</ExtremeDesert> <!-- animalDensity 0.1 rel 0.05-->
-				
-				
-				<Mashed_Ashlands_BlightedAshlands MayRequire="SirMashedPotato.Ashlands">0.062</Mashed_Ashlands_BlightedAshlands> <!-- animalDensity 0.4 -->
-				<Mashed_Ashlands_BlightedBogAshlands MayRequire="SirMashedPotato.Ashlands">0.062</Mashed_Ashlands_BlightedBogAshlands> <!-- animalDensity 0.4 -->
-				<Mashed_Ashlands_Ashlands MayRequire="SirMashedPotato.Ashlands">0.009</Mashed_Ashlands_Ashlands> <!-- animalDensity 2.8 -->
-				<Mashed_Ashlands_GrazelandAshlands MayRequire="SirMashedPotato.Ashlands">0.0083</Mashed_Ashlands_GrazelandAshlands> <!-- animalDensity 3 -->
-				<Mashed_Ashlands_SwampAshlands MayRequire="SirMashedPotato.Ashlands">0.0096</Mashed_Ashlands_SwampAshlands> <!-- animalDensity 2.6 -->
-				<Mashed_Ashlands_ForestAshlands MayRequire="SirMashedPotato.Ashlands">0.0068</Mashed_Ashlands_ForestAshlands> <!-- animalDensity 3.7 -->
-				<Mashed_Ashlands_MarshAshlands MayRequire="SirMashedPotato.Ashlands">0.0083</Mashed_Ashlands_MarshAshlands> <!-- animalDensity 3 -->
-				<Mashed_Ashlands_MeadowAshlands MayRequire="SirMashedPotato.Ashlands">0.0071</Mashed_Ashlands_MeadowAshlands> <!-- animalDensity 3.5 -->
-				<Mashed_Ashlands_VolcanicAshlands MayRequire="SirMashedPotato.Ashlands">0.025</Mashed_Ashlands_VolcanicAshlands> <!-- animalDensity 1 -->
-				<Mashed_Ashlands_VolcanicBadlandAshlands MayRequire="SirMashedPotato.Ashlands">0.062</Mashed_Ashlands_VolcanicBadlandAshlands> <!-- animalDensity 0.4 -->
-				<Mashed_Ashlands_VolcanicSulphurPitsAshlands MayRequire="SirMashedPotato.Ashlands">0.021</Mashed_Ashlands_VolcanicSulphurPitsAshlands> <!-- animalDensity 1.2 -->
+				<!-- event only -->
 			</wildBiomes>
 			<nuzzleMtbHours>12</nuzzleMtbHours>
 			<manhunterOnDamageChance>0.35</manhunterOnDamageChance>

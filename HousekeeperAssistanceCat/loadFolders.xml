@@ -23,4 +23,9 @@
 		<l1>1.4</l1>
 		<li IfModActive="tachyonite.pawnmorpherpublic">Pawnmorpher/1.4</li>
 	</v1.4>
+	<v1.5>
+		<li>/</li>
+		<l1>1.5</l1>
+		<li IfModActive="tachyonite.pawnmorpherpublic">Pawnmorpher/1.5</li>
+	</v1.5>
 </loadFolders>

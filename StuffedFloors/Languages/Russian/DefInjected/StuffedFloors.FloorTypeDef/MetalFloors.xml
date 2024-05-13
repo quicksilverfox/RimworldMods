@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Pravus' Floors and Fences -->
+
+  <StuffedFloorsMetalGrate.label>металлическая сетка</StuffedFloorsMetalGrate.label>
+  <StuffedFloorsMetalGrate.description>Металлическая сетка. Пропускает грязь, что помогает содержать помещение в чистоте.</StuffedFloorsMetalGrate.description>
+
+
+  <!-- Vanilla -->
+
+  <StuffedFloorsMetalPlate.label>металлическое покрытие</StuffedFloorsMetalPlate.label>
+  <StuffedFloorsMetalPlate.description>Нормальный металлический пол.</StuffedFloorsMetalPlate.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedFloorsMetalSmallPlate.label>металлическая плитка</StuffedFloorsMetalSmallPlate.label>
+  <StuffedFloorsMetalSmallPlate.description>Небольшие металлические пластины, закрепленные на полу.</StuffedFloorsMetalSmallPlate.description>
+
+
+  <!-- Pravus' Floors and Fences -->
+
+  <StuffedFloorsMetalShapedPlate.label>металлические пластины</StuffedFloorsMetalShapedPlate.label>
+  <StuffedFloorsMetalShapedPlate.description>Фасонные металлические пластины, вдохновленные популярными конструкциями космических кораблей.</StuffedFloorsMetalShapedPlate.description>
+
+
+</LanguageData>

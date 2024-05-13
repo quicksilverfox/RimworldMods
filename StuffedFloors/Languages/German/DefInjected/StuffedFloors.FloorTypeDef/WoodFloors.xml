@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Floors and Fences -->
+
+  <StuffedPlywoodFloor.label>Sperrholzplatten</StuffedPlywoodFloor.label>
+  <StuffedPlywoodFloor.description>Raue Sperrholzplatten, billig und schnell zu bauen, aber ziemlich hässlich.</StuffedPlywoodFloor.description>
+
+
+  <!-- [T] More Floors -->
+
+  <StuffedWoodFloorRough.label>Raue vertikale Dielen</StuffedWoodFloorRough.label>
+  <StuffedWoodFloorRough.description>Ein rauer Dielenboden.</StuffedWoodFloorRough.description>
+
+  <StuffedWoodFloorBasic.label>Vertikale Dielen</StuffedWoodFloorBasic.label>
+  <StuffedWoodFloorBasic.description>Ein einfacher Dielenboden.</StuffedWoodFloorBasic.description>
+
+  <StuffedWoodFloorRoughHorizontal.label>Raue horizontale Dielen</StuffedWoodFloorRoughHorizontal.label>
+  <StuffedWoodFloorRoughHorizontal.description>Ein rauer Dielenboden.</StuffedWoodFloorRoughHorizontal.description>
+
+  <StuffedWoodFloorHorizontal.label>Horizontale Dielen</StuffedWoodFloorHorizontal.label>
+  <StuffedWoodFloorHorizontal.description>Ein einfacher Dielenboden.</StuffedWoodFloorHorizontal.description>
+
+  <StuffedWoodFloorRustic.label>Rustikale Dielen</StuffedWoodFloorRustic.label>
+  <StuffedWoodFloorRustic.description>Ein rustikaler, schöner Dielenboden.</StuffedWoodFloorRustic.description>
+
+  <StuffedWoodFloorParquetHorizontal.label>Parkett</StuffedWoodFloorParquetHorizontal.label>
+  <StuffedWoodFloorParquetHorizontal.description>Ein hübsch verwobenes Parkett.</StuffedWoodFloorParquetHorizontal.description>
+
+  <StuffedWoodFloorParquetMosaic.label>Parkettmosaik</StuffedWoodFloorParquetMosaic.label>
+  <StuffedWoodFloorParquetMosaic.description>Ein kompliziertes Mosaikparkett.</StuffedWoodFloorParquetMosaic.description>
+
+
+</LanguageData>

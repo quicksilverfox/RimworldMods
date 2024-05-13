@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneSlabs.label>losas</StuffedStoneSlabs.label>
+  <StuffedStoneSlabs.description>Losas, para cuando se busca esa sensación neolítica.</StuffedStoneSlabs.description>
+
+
+  <!-- TODO: If A18 hasn't fixed the buildable hash collision, rename this def in an attempt to bandage the situation -->
+
+  <StuffedStoneRoughTiles.label>baldosas en bruto</StuffedStoneRoughTiles.label>
+  <StuffedStoneRoughTiles.description>Baldosas de piedra en bruto.</StuffedStoneRoughTiles.description>
+
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneTiles.label>baldosas</StuffedStoneTiles.label>
+  <StuffedStoneTiles.description>Baldosas lisas y bien colocadas.</StuffedStoneTiles.description>
+
+  <StuffedStoneMosaic.label>baldosas de mosaico</StuffedStoneMosaic.label>
+  <StuffedStoneMosaic.description>Baldosas lisas colocadas en un diseño de mosaico.</StuffedStoneMosaic.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedStoneCircle.label>baldosas circulares</StuffedStoneCircle.label>
+  <StuffedStoneCircle.description>Baldosas lisas colocadas en un patrón circular entrelazado</StuffedStoneCircle.description>
+
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneHex.label>baldosas hexagonales</StuffedStoneHex.label>
+  <StuffedStoneHex.description>Pequeñas baldosas colocadas en un complejo diseño hexagonal.</StuffedStoneHex.description>
+
+  <StuffedStoneRoughCobblestones.label>adoquines en bruto</StuffedStoneRoughCobblestones.label>
+  <StuffedStoneRoughCobblestones.description>adoquines ásperos y descuidadamente colocados</StuffedStoneRoughCobblestones.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedStoneCobblestone.label>adoquines</StuffedStoneCobblestone.label>
+  <StuffedStoneCobblestone.description>Suelo de adoquines unidos entre sí por medio de piedras más pequeñas.</StuffedStoneCobblestone.description>
+
+  <StuffedStoneBricks.label>ladrillos</StuffedStoneBricks.label>
+  <StuffedStoneBricks.description>Ladrillos simples, usados en todo el mundo de RimWorld</StuffedStoneBricks.description>
+
+  <StuffedStoneBricksHerringBone.label>ladrillos en espiga</StuffedStoneBricksHerringBone.label>
+  <StuffedStoneBricksHerringBone.description>Ladrillos en forma de espiga</StuffedStoneBricksHerringBone.description>
+
+  <StuffedStoneBricksUneven.label>ladrillos irregulares</StuffedStoneBricksUneven.label>
+  <StuffedStoneBricksUneven.description>Ladrillos colocados de forma irregular</StuffedStoneBricksUneven.description>
+
+  <StuffedStoneSmallBricks.label>ladrillos pequeños</StuffedStoneSmallBricks.label>
+  <StuffedStoneSmallBricks.description>Pequeños ladrillos, colocados artesanalmente</StuffedStoneSmallBricks.description>
+
+
+  <!-- Vanilla -->
+
+  <StuffedFlagstones.label>losas rústicas</StuffedFlagstones.label>
+  <StuffedFlagstones.description>Losas de piedra toscamente cortadas. No son muy bonitas, pero son buenas superficies para carreteras y paseos al aire libre. La deconstrucción de la losa no produce recursos.</StuffedFlagstones.description>
+
+  <StuffedSmoothTiles.label>baldosas lisas</StuffedSmoothTiles.label>
+  <StuffedSmoothTiles.description>Baldosas de piedra refinadas y cuidadosamente cortadas para dar una apariencia de castillo. Son bonitas de ver, pero tardan mucho tiempo en colocarse.</StuffedSmoothTiles.description>
+
+
+</LanguageData>

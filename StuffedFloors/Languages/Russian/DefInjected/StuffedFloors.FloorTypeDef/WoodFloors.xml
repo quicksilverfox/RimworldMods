@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Floors and Fences -->
+
+  <StuffedPlywoodFloor.label>фанерные плиты</StuffedPlywoodFloor.label>
+  <StuffedPlywoodFloor.description>Прочное, дешевое и быстрое в изготовлении покрытие из фанерных щитов. Довольно некрасиво.</StuffedPlywoodFloor.description>
+
+
+  <!-- [T] More Floors -->
+
+  <StuffedWoodFloorRough.label>грубый пол (вертикальный)</StuffedWoodFloorRough.label>
+  <StuffedWoodFloorRough.description>Покрытие из необработанных досок.</StuffedWoodFloorRough.description>
+
+  <StuffedWoodFloorBasic.label>досчатый пол (вертикальный)</StuffedWoodFloorBasic.label>
+  <StuffedWoodFloorBasic.description>Базовое досчатое покрытие.</StuffedWoodFloorBasic.description>
+
+  <StuffedWoodFloorRoughHorizontal.label>грубый пол (гоизонтальный)</StuffedWoodFloorRoughHorizontal.label>
+  <StuffedWoodFloorRoughHorizontal.description>Покрытие из необработанных досок.</StuffedWoodFloorRoughHorizontal.description>
+
+  <StuffedWoodFloorHorizontal.label>досчатый пол (гоизонтальный)</StuffedWoodFloorHorizontal.label>
+  <StuffedWoodFloorHorizontal.description>Базовое досчатое покрытие.</StuffedWoodFloorHorizontal.description>
+
+  <StuffedWoodFloorRustic.label>сельский древесный пол</StuffedWoodFloorRustic.label>
+  <StuffedWoodFloorRustic.description>Простое достчатое покрытие в деревенском стиле.</StuffedWoodFloorRustic.description>
+
+  <StuffedWoodFloorParquetHorizontal.label>горизонтальный паркет</StuffedWoodFloorParquetHorizontal.label>
+  <StuffedWoodFloorParquetHorizontal.description>Простое паркетное покрытие.</StuffedWoodFloorParquetHorizontal.description>
+
+  <StuffedWoodFloorParquetMosaic.label>мозаичный паркет</StuffedWoodFloorParquetMosaic.label>
+  <StuffedWoodFloorParquetMosaic.description>Сложная мозайка из деревянных дощечек разного размера.</StuffedWoodFloorParquetMosaic.description>
+
+
+</LanguageData>

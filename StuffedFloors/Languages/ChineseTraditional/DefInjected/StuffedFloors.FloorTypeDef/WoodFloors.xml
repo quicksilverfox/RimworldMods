@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Floors and Fences -->
+
+  <StuffedPlywoodFloor.label>膠合板</StuffedPlywoodFloor.label>
+  <StuffedPlywoodFloor.description>粗糙的膠合板，廉價並且建造迅速，但真的很醜。</StuffedPlywoodFloor.description>
+
+
+  <!-- [T] More Floors -->
+
+  <StuffedWoodFloor6.label>粗糙縱向木地板</StuffedWoodFloor6.label>
+  <StuffedWoodFloor6.description>粗糙的木板地面。</StuffedWoodFloor6.description>
+
+  <StuffedWoodFloor1.label>縱向木地板</StuffedWoodFloor1.label>
+  <StuffedWoodFloor1.description>基礎的木板地面</StuffedWoodFloor1.description>
+
+  <StuffedWoodFloor2.label>粗糙的橫向木地板</StuffedWoodFloor2.label>
+  <StuffedWoodFloor2.description>粗糙的木板地面。</StuffedWoodFloor2.description>
+
+  <StuffedWoodFloor3.label>橫向木地板</StuffedWoodFloor3.label>
+  <StuffedWoodFloor3.description>基礎的木板地面</StuffedWoodFloor3.description>
+
+  <StuffedWoodFloor7.label>鄉村木地板</StuffedWoodFloor7.label>
+  <StuffedWoodFloor7.description>鄉村特色的、漂亮的木板地面。</StuffedWoodFloor7.description>
+
+  <StuffedWoodFloor4.label>橫向鑲木地板</StuffedWoodFloor4.label>
+  <StuffedWoodFloor4.description>漂亮交織的鑲木地板。</StuffedWoodFloor4.description>
+
+  <StuffedWoodFloor5.label>馬賽克鑲木地板</StuffedWoodFloor5.label>
+  <StuffedWoodFloor5.description>錯綜複雜的馬賽克鑲木地板。</StuffedWoodFloor5.description>
+
+
+</LanguageData>

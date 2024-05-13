@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Since I don't want to actually add stuffs for cloth, let's use Architect Sense subcategories to clean up these floors -->
+
+  <SubCategory_Carpets.label>Teppich</SubCategory_Carpets.label>
+  <SubCategory_Carpets.description>Teppich. Weich, flauschig und schwer zu reinigen. Fast überall kein Unterschied.</SubCategory_Carpets.description>
+
+
+  <!-- [T] More Floors -->
+
+  <SubCategory_CheckCarpets.label>Karierter Teppich</SubCategory_CheckCarpets.label>
+  <SubCategory_CheckCarpets.description>Karierte Teppiche unterscheiden sich von gewöhnlichen Teppichen mit einem Muster.</SubCategory_CheckCarpets.description>
+
+  <SubCategory_WoolCarpets.label>Wollteppich</SubCategory_WoolCarpets.label>
+  <SubCategory_WoolCarpets.description>Wollteppich, extra warmes Plüschgefühl.</SubCategory_WoolCarpets.description>
+
+  <SubCategory_StoneFloorChequered.label>Gitterschiefer</SubCategory_StoneFloorChequered.label>
+  <SubCategory_StoneFloorChequered.description>Schieferboden im Gitterstil aus verschiedenen Steinsorten. Er ist perfekt zum Spielen von "People Chess"!</SubCategory_StoneFloorChequered.description>
+
+  <SubCategory_HighTechFloors.label>Hightech-Boden</SubCategory_HighTechFloors.label>
+  <SubCategory_HighTechFloors.description>Hightech-Boden für Hardcore-Technikbegeisterte. Aber ist das wirklich eine gute Idee, um dir einen Eindruck vom Boden zu vermitteln?</SubCategory_HighTechFloors.description>
+
+
+</LanguageData>

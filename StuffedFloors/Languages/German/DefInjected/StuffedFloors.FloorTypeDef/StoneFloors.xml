@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneSlabs.label>Platten</StuffedStoneSlabs.label>
+  <StuffedStoneSlabs.description>Platten sind dafür da, wenn du nach dieser neolithischen Atmosphäre suchst.</StuffedStoneSlabs.description>
+
+
+  <!-- TODO: If A18 hasn't fixed the buildable hash collision, rename this def in an attempt to bandage the situation -->
+
+  <StuffedStoneRoughTiles.label>Grobe Fliesen</StuffedStoneRoughTiles.label>
+  <StuffedStoneRoughTiles.description>Grobe Fliesen.</StuffedStoneRoughTiles.description>
+
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneTiles.label>Fliesen</StuffedStoneTiles.label>
+  <StuffedStoneTiles.description>Ordentlich platzierte glatte Fliesen.</StuffedStoneTiles.description>
+
+  <StuffedStoneMosaic.label>Mosaikfliesen</StuffedStoneMosaic.label>
+  <StuffedStoneMosaic.description>Glatte Fliesen in einem Mosaikmuster platziert.</StuffedStoneMosaic.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedStoneCircle.label>Runde Fliesen</StuffedStoneCircle.label>
+  <StuffedStoneCircle.description>Glatte Fliesen in einem ineinandergreifenden kreisförmigen Muster verlegt.</StuffedStoneCircle.description>
+
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneHex.label>Sechseckige Fliesen</StuffedStoneHex.label>
+  <StuffedStoneHex.description>Kleine Fliesen in einem komplizierten sechseckigen Design.</StuffedStoneHex.description>
+
+  <StuffedStoneRoughCobblestones.label>Raues Kopfsteinpflaster</StuffedStoneRoughCobblestones.label>
+  <StuffedStoneRoughCobblestones.description>Raues, schlampig platziertes Kopfsteinpflaster.</StuffedStoneRoughCobblestones.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedStoneCobblestone.label>Kopfsteinpflaster</StuffedStoneCobblestone.label>
+  <StuffedStoneCobblestone.description>Kopfsteinpflaster nahtlos aus kleineren Steinen zusammengesetzt.</StuffedStoneCobblestone.description>
+
+  <StuffedStoneBricks.label>Ziegel</StuffedStoneBricks.label>
+  <StuffedStoneBricks.description>Einfache Steine, die überall in den Randwelten verwendet werden.</StuffedStoneBricks.description>
+
+  <StuffedStoneBricksHerringBone.label>Fischgrätenziegel</StuffedStoneBricksHerringBone.label>
+  <StuffedStoneBricksHerringBone.description>Ziegel in einem Fischgrätenmuster.</StuffedStoneBricksHerringBone.description>
+
+  <StuffedStoneBricksUneven.label>Unebene Ziegel</StuffedStoneBricksUneven.label>
+  <StuffedStoneBricksUneven.description>Ziegel in einem ungleichmäßigen Muster.</StuffedStoneBricksUneven.description>
+
+  <StuffedStoneSmallBricks.label>Kleine Ziegel</StuffedStoneSmallBricks.label>
+  <StuffedStoneSmallBricks.description>Kleine Ziegel die von Hand mit Präzision platziert werden.</StuffedStoneSmallBricks.description>
+
+
+  <!-- Vanilla -->
+
+  <StuffedFlagstones.label>Steinplatten</StuffedFlagstones.label>
+  <StuffedFlagstones.description>Grob geschnittene Steinfliesen. Nicht super hübsch, aber sie eignen sich gut für Straßen und Gehwege im Freien. Die Dekonstruktion von Steinplatten bringt keine Ressourcen hervor.</StuffedFlagstones.description>
+
+  <StuffedSmoothTiles.label>Glatte Fliesen</StuffedSmoothTiles.label>
+  <StuffedSmoothTiles.description>Raffinierte, sorgfältig geschnittene Steinfliesen für ein Schlossgefühl. Schön anzusehen, aber es dauert lange, sie zu verlegen.</StuffedSmoothTiles.description>
+
+
+</LanguageData>

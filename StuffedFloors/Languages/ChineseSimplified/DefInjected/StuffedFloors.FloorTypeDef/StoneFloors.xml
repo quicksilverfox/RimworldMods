@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneSlabs.label>石板</StuffedStoneSlabs.label>
+  <StuffedStoneSlabs.description>石板，看起来充满了石器时代的风格。</StuffedStoneSlabs.description>
+
+  <StuffedStoneRoughTiles.label>粗糙地砖</StuffedStoneRoughTiles.label>
+  <StuffedStoneRoughTiles.description>粗糙的岩石地砖。</StuffedStoneRoughTiles.description>
+
+  <StuffedStoneTiles.label>地砖</StuffedStoneTiles.label>
+  <StuffedStoneTiles.description>整齐铺设的平整的地砖。</StuffedStoneTiles.description>
+
+  <StuffedStoneMosaic.label>马赛克地砖</StuffedStoneMosaic.label>
+  <StuffedStoneMosaic.description>以马赛克风格铺设的平整的地砖。</StuffedStoneMosaic.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedStoneCircle.label>环形地砖</StuffedStoneCircle.label>
+  <StuffedStoneCircle.description>以交错式的环形样式铺设的平整的地砖。</StuffedStoneCircle.description>
+
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneHex.label>六边形地砖</StuffedStoneHex.label>
+  <StuffedStoneHex.description>以交错式的六边形样式铺设的平整的地砖。</StuffedStoneHex.description>
+
+  <StuffedStoneRoughCobblestones.label>粗糙鹅卵石</StuffedStoneRoughCobblestones.label>
+  <StuffedStoneRoughCobblestones.description>粗糙的、随意铺设的鹅卵石地面。</StuffedStoneRoughCobblestones.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedStoneCobblestone.label>鹅卵石</StuffedStoneCobblestone.label>
+  <StuffedStoneCobblestone.description>用更小的石块紧密铺设的鹅卵石地面。</StuffedStoneCobblestone.description>
+
+  <StuffedStoneBricks.label>砖块</StuffedStoneBricks.label>
+  <StuffedStoneBricks.description>简单的砖块，在边缘世界普遍使用。</StuffedStoneBricks.description>
+
+  <StuffedStoneBricksHerringBone.label>人字形砖块</StuffedStoneBricksHerringBone.label>
+  <StuffedStoneBricksHerringBone.description>人字形样式的砖块。</StuffedStoneBricksHerringBone.description>
+
+  <StuffedStoneBricksUneven.label>不规则砖块</StuffedStoneBricksUneven.label>
+  <StuffedStoneBricksUneven.description>不规则样式的砖块。</StuffedStoneBricksUneven.description>
+
+  <StuffedStoneSmallBricks.label>小砖块</StuffedStoneSmallBricks.label>
+  <StuffedStoneSmallBricks.description>小的砖块，由工艺师铺设。</StuffedStoneSmallBricks.description>
+
+
+</LanguageData>

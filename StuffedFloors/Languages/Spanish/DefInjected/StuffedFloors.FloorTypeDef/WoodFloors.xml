@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Floors and Fences -->
+
+  <StuffedPlywoodFloor.label>tableros contrachapados</StuffedPlywoodFloor.label>
+  <StuffedPlywoodFloor.description>Tableros contrachapados rugosos, baratos y rápidos de construir; pero bastante feos.</StuffedPlywoodFloor.description>
+
+
+  <!-- [T] More Floors -->
+
+  <StuffedWoodFloorRough.label>tablas verticales rugosas</StuffedWoodFloorRough.label>
+  <StuffedWoodFloorRough.description>Un suelo de tablas rugosas.</StuffedWoodFloorRough.description>
+
+  <StuffedWoodFloorBasic.label>tablas verticales</StuffedWoodFloorBasic.label>
+  <StuffedWoodFloorBasic.description>Un suelo básico de tablas.</StuffedWoodFloorBasic.description>
+
+  <StuffedWoodFloorRoughHorizontal.label>tablas horizontales rugosas</StuffedWoodFloorRoughHorizontal.label>
+  <StuffedWoodFloorRoughHorizontal.description>Un suelo de tablas rugosas.</StuffedWoodFloorRoughHorizontal.description>
+
+  <StuffedWoodFloorHorizontal.label>tablas horizontales</StuffedWoodFloorHorizontal.label>
+  <StuffedWoodFloorHorizontal.description>Un suelo básico de tablas.</StuffedWoodFloorHorizontal.description>
+
+  <StuffedWoodFloorRustic.label>tablas rústicas</StuffedWoodFloorRustic.label>
+  <StuffedWoodFloorRustic.description>Un suelo de tablas rústico y hermoso.</StuffedWoodFloorRustic.description>
+
+  <StuffedWoodFloorParquetHorizontal.label>parqué horizontal</StuffedWoodFloorParquetHorizontal.label>
+  <StuffedWoodFloorParquetHorizontal.description>Un bonito parqué entrelazado.</StuffedWoodFloorParquetHorizontal.description>
+
+  <StuffedWoodFloorParquetMosaic.label>parqué de mosaico</StuffedWoodFloorParquetMosaic.label>
+  <StuffedWoodFloorParquetMosaic.description>Un complejo parqué de mosaico.</StuffedWoodFloorParquetMosaic.description>
+
+
+</LanguageData>

@@ -77,7 +77,7 @@
 			<li>CarbonResearch</li>
 		</researchPrerequisites>
 		<costList>
-			<CarbonFiber>4</CarbonFiber>
+			<CarbonFiber>2</CarbonFiber>
 		</costList>
 	</ThingDef>
 	

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Since I don't want to actually add stuffs for cloth, let's use Architect Sense subcategories to clean up these floors -->
+
+  <SubCategory_Carpets.label>地毯</SubCategory_Carpets.label>
+  <SubCategory_Carpets.description>地毯。柔軟的、毛絨絨的、很難清潔。幾乎隨處可見，沒什麼區別。</SubCategory_Carpets.description>
+
+
+  <!-- [T] More Floors -->
+
+  <SubCategory_CheckCarpets.label>格子地毯</SubCategory_CheckCarpets.label>
+  <SubCategory_CheckCarpets.description>格子樣式的地毯，和普通的地毯不同。</SubCategory_CheckCarpets.description>
+
+  <SubCategory_WoolCarpets.label>毛織地毯</SubCategory_WoolCarpets.label>
+  <SubCategory_WoolCarpets.description>毛織地毯，格外溫暖的毛絨絨的感覺。</SubCategory_WoolCarpets.description>
+
+  <SubCategory_StoneFloorChequered.label>格子石板</SubCategory_StoneFloorChequered.label>
+  <SubCategory_StoneFloorChequered.description>多種類型的石塊製成的格子樣式的石板地面。用來玩「人象棋」簡直完美！</SubCategory_StoneFloorChequered.description>
+
+  <SubCategory_HighTechFloors.label>高科技地板</SubCategory_HighTechFloors.label>
+  <SubCategory_HighTechFloors.description>高科技地板，為硬核科技狂熱者準備。但這真的是個能給你地板方面認知的好主意嗎？</SubCategory_HighTechFloors.description>
+
+
+</LanguageData>

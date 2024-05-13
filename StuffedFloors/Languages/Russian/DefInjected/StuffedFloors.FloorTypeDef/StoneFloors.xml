@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneSlabs.label>плиты</StuffedStoneSlabs.label>
+  <StuffedStoneSlabs.description>Покрытие из каменных плит, совсем как в неолите.</StuffedStoneSlabs.description>
+
+
+  <!-- TODO: If A18 hasn't fixed the buildable hash collision, rename this def in an attempt to bandage the situation -->
+
+  <StuffedStoneRoughTiles.label>грубая плитка</StuffedStoneRoughTiles.label>
+  <StuffedStoneRoughTiles.description>Грубая каменная плитка.</StuffedStoneRoughTiles.description>
+
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneTiles.label>плитка</StuffedStoneTiles.label>
+  <StuffedStoneTiles.description>Гладкие и хорошо подогнанные плитки.</StuffedStoneTiles.description>
+
+  <StuffedStoneMosaic.label>мозаичная плитка</StuffedStoneMosaic.label>
+  <StuffedStoneMosaic.description>Гладкие плитки, уложенные мозаикой.</StuffedStoneMosaic.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedStoneCircle.label>круглые плитки</StuffedStoneCircle.label>
+  <StuffedStoneCircle.description>Гладкие плитки круглой формы.</StuffedStoneCircle.description>
+
+
+  <!-- Telkir's [T] More Floors -->
+
+  <StuffedStoneHex.label>шестигранные плитки</StuffedStoneHex.label>
+  <StuffedStoneHex.description>Гладкие плитки гестигранной формы, хорошо подогнанные между собой.</StuffedStoneHex.description>
+
+  <StuffedStoneRoughCobblestones.label>грубые булыжники</StuffedStoneRoughCobblestones.label>
+  <StuffedStoneRoughCobblestones.description>Грубое каменное покрытие.</StuffedStoneRoughCobblestones.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedStoneCobblestone.label>булыжник</StuffedStoneCobblestone.label>
+  <StuffedStoneCobblestone.description>Крупные плиты соединенные между собой более мелкими камнями.</StuffedStoneCobblestone.description>
+
+  <StuffedStoneBricks.label>блоки</StuffedStoneBricks.label>
+  <StuffedStoneBricks.description>Простые блоки, используемые во всем мире RimWorld.</StuffedStoneBricks.description>
+
+  <StuffedStoneBricksHerringBone.label>елочка</StuffedStoneBricksHerringBone.label>
+  <StuffedStoneBricksHerringBone.description>Простые блоки, уложенные формой елочки.</StuffedStoneBricksHerringBone.description>
+
+  <StuffedStoneBricksUneven.label>неправильные блоки</StuffedStoneBricksUneven.label>
+  <StuffedStoneBricksUneven.description>Неправильно размещенные блоки.</StuffedStoneBricksUneven.description>
+
+  <StuffedStoneSmallBricks.label>малые блоки</StuffedStoneSmallBricks.label>
+  <StuffedStoneSmallBricks.description>Маленькие кирпичи ручной работы.</StuffedStoneSmallBricks.description>
+
+
+  <!-- Vanilla -->
+
+  <StuffedFlagstones.label>грубые плиты</StuffedFlagstones.label>
+  <StuffedFlagstones.description>Грубо порезанные каменные плиты. Они не очень красивые, но они являются хорошим покрытием для дорог и прогулок на свежем воздухе. Разборка плиты не дает ресурсов.</StuffedFlagstones.description>
+
+  <StuffedSmoothTiles.label>гладкая плитка</StuffedSmoothTiles.label>
+  <StuffedSmoothTiles.description>Каменные плитки очищены и тщательно вырезаны, чтобы придать вид средневекового замка. Хорошо выглядят, но укладка требует значительного времени.</StuffedSmoothTiles.description>
+
+
+</LanguageData>

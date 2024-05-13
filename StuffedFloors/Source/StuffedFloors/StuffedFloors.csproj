@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net481</TargetFramework>
+        <AssemblyTitle>StuffedFloors</AssemblyTitle>
+        <Product>StuffedFloors</Product>
+        <Copyright>Copyright © 2016-2021</Copyright>
+        <OutputPath>..\..\Assemblies\</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <DebugType>portable</DebugType>
+        <LangVersion>9</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+      <DefineConstants>$(DefineConstants);TRACE;DEBUG;</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <DebugType>portable</DebugType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <DebugType>portable</DebugType>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4085" />
+        <PackageReference Include="Lib.Harmony" Version="2.3.3" ExcludeAssets="runtime" />
+    </ItemGroup>
+</Project>

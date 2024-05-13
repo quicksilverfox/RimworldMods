@@ -10,9 +10,10 @@
 		<renderPrecedence>230</renderPrecedence>
 		<statBases>
 			<Cleanliness>0.2</Cleanliness>
-			<WorkToBuild>50</WorkToBuild>
+			<WorkToBuild>100</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Beauty>3</Beauty>
+			<CleaningTimeFactor>0.6</CleaningTimeFactor>
 		</statBases>
 		<costList>
 			<CarbonFiber>4</CarbonFiber>

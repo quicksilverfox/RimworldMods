@@ -1,0 +1,280 @@
+{
+    "name": "Stuffed Floors",
+    "sourceDir": ".",
+    "targetDir": "StuffedFloors",
+    "url": "https://github.com/fluffy-mods/StuffedFloors",
+    "version": {
+        "major": 3,
+        "minor": 7,
+        "build": 126
+    },
+    "author": {
+        "name": "Fluffy",
+        "url": "https://github.com/fluffy-mods/",
+        "email": "fluffy.l2032@gmail.com"
+    },
+    "git": {
+        "owner": "fluffy-mods",
+        "repo": "StuffedFloors",
+        "url": "https://github.com/fluffy-mods/StuffedFloors"
+    },
+    "dependencies": [
+        {
+            "type": "required",
+            "id": "brrainz.harmony",
+            "name": "Harmony",
+            "steamId": 2009463077,
+            "download": "https://github.com/pardeike/HarmonyRimWorld/releases/latest"
+        }
+    ],
+    "changelog": [
+        {
+            "date": "2022-10-23T20:47:32.000Z",
+            "message": "patches for VFE and Ideology (Biotech is coming)",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "cbd428f3e2e8e8e4ae90d1a2cc20e1a66a014c29"
+        },
+        {
+            "date": "2022-10-23T20:31:06.000Z",
+            "message": "Merge pull request #37 from Kyoutaigo/1.3",
+            "author": {
+                "name": "Fluffy",
+                "email": "karel.kroeze@gmail.com"
+            },
+            "hash": "85d654c6f768607ab88226fba6a1f4c15b890852"
+        },
+        {
+            "date": "2022-10-23T19:05:51.000Z",
+            "message": "Ideology patch and VFE Architect patches",
+            "author": {
+                "name": "Kyoutaigo",
+                "email": "116508465+Kyoutaigo@users.noreply.github.com"
+            },
+            "hash": "6d10b5416471ffee107ac3ec0c035cf57e8d8d0d"
+        },
+        {
+            "date": "2022-10-23T19:04:50.000Z",
+            "message": "Add Royal Base and Filth multiplier for grate",
+            "author": {
+                "name": "Kyoutaigo",
+                "email": "116508465+Kyoutaigo@users.noreply.github.com"
+            },
+            "hash": "4f287d90c465f267d89cfefd6bc042c83892456a"
+        },
+        {
+            "date": "2022-10-23T19:02:55.000Z",
+            "message": "Add Royal base, and vanilla planks",
+            "author": {
+                "name": "Kyoutaigo",
+                "email": "116508465+Kyoutaigo@users.noreply.github.com"
+            },
+            "hash": "6eab06f3d34b8d621b7d9e4983599003f0883628"
+        },
+        {
+            "date": "2022-02-26T16:17:38.000Z",
+            "message": "drastically reduce cost of stone floors",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "eeea18a547b50e7873441467041a4c5548b4eaef"
+        },
+        {
+            "date": "2021-09-15T19:12:48.000Z",
+            "message": "release v3.4.121",
+            "author": {
+                "name": "Fluffy",
+                "email": "karel.kroeze@gmail.com"
+            },
+            "hash": "fd0d3acce31f8ad19fd89c43d2800c4504528ed9"
+        },
+        {
+            "date": "2021-09-13T22:16:57.000Z",
+            "message": "Fixed floor wealth patch",
+            "author": {
+                "name": "Doug Benham",
+                "email": "dougbenham@cox.net"
+            },
+            "hash": "6be24b2d82a3038de4ba3752c9daaea33af3e354"
+        },
+        {
+            "date": "2021-08-13T20:48:55.000Z",
+            "message": "cut down description to fit on the workshop",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "15365ead4fa76f0d46b06e5e049673e259ce227a"
+        },
+        {
+            "date": "2021-08-13T20:16:10.000Z",
+            "message": "floors without additional non-stuff costs are no longer free",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "da5d40c1c3c79907d82414fdaff0e56fb413886a"
+        },
+        {
+            "date": "2021-08-13T16:13:36.000Z",
+            "message": "release v3.1.105",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "5a588e83bc1ca97807c0b1c259f03f43cbb11c4a"
+        },
+        {
+            "date": "2021-08-13T16:11:42.000Z",
+            "message": "update preview image",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "d0fe5048a7a21162c9896a17b1549947ea3043e6"
+        },
+        {
+            "date": "2021-08-13T15:37:44.000Z",
+            "message": "copy over some new terrain data from source terrains",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "b6c35108d96b2fa6fec0922935e0e19bfeaa44b4"
+        },
+        {
+            "date": "2021-08-13T10:15:53.000Z",
+            "message": "add specified contributions for floor textures",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "58deb53a06157c7af99d684bff933f2d53537b03"
+        },
+        {
+            "date": "2021-08-13T09:53:25.000Z",
+            "message": "1.3 update and project modernization",
+            "author": {
+                "name": "Fluffy",
+                "email": "fluffy.l2032@gmail.com"
+            },
+            "hash": "f2b0037639cad6d989edc8d962ba67e56ea5de12"
+        }
+    ],
+    "contributions": [
+        {
+            "hash": "03ecd689760f4d092f063934788b1cee6bd98a56",
+            "author": "InsanityPrelude",
+            "description": "Extensive cost balancing and 3rd party mod integration updates"
+        },
+        {
+            "hash": "bd64c0c6e8a1efe2eda80b223faee4e09de362a2",
+            "author": "InsanityPrelude",
+            "description": "Adds MoreFloors identically textured wooden floors to the obsoletes for the Stuffed Floors which use the matching textures.  More Floors instances of the floors are differently colored, but \"coloring the floors\" is a completely different issue from \"making the floors out of any stuff\" and doesn't seem like sufficient reason to leave them there.  With these obsoletes, there are no more duplicate entries between More Floors and Stuffed Floors, leaving just Plasteel Floor, Straw, Check Carpet, and Wool Carpet pretty much. (#28)",
+            "suppressed": true
+        },
+        {
+            "hash": "087363f4f0c187b74c06a132bf7060c971982e67",
+            "author": "InsanityPrelude",
+            "description": "More Floors Stone Floors Update (#26)",
+            "suppressed": true
+        },
+        {
+            "hash": "9fd8dc2b0e4f8ec11296884c6e801dafe2d8f9b3",
+            "author": "Jorge Martínez",
+            "description": "Spanish translations"
+        },
+        {
+            "hash": "4d02013c086ff5c31f6d834f3c96af87b2357ff8",
+            "author": "cucumpear",
+            "description": "Fix for hard floor edge rendering"
+        },
+        {
+            "hash": "11f6e64035b3e22ff76cbd79ec48bd6afe378951",
+            "author": "DoctorVanGogh",
+            "description": "Extended Woodworking and Vegetable Garden integrations"
+        },
+        {
+            "hash": "fbb0c202d3a954c0725556add9e5817c18bd9083",
+            "author": "duduluu",
+            "description": "Chinese translation"
+        },
+        {
+            "hash": "6be24b2d82a3038de4ba3752c9daaea33af3e354",
+            "author": "Doug Benham",
+            "description": "fix terrain wealth overestimation"
+        },
+        {
+            "hash": "6d10b5416471ffee107ac3ec0c035cf57e8d8d0d",
+            "author": "Kyoutaigo",
+            "description": "Ideology and VFE patches"
+        },
+        {
+            "hash": "4f287d90c465f267d89cfefd6bc042c83892456a",
+            "author": "Kyoutaigo",
+            "description": "Add Royal Base and Filth multiplier for grate",
+            "suppressed": true
+        },
+        {
+            "hash": "6eab06f3d34b8d621b7d9e4983599003f0883628",
+            "author": "Kyoutaigo",
+            "description": "Add Royal base, and vanilla planks",
+            "suppressed": true
+        }
+    ],
+    "contributors": {
+        "InsanityPrelude": [
+            {
+                "hash": "03ecd68",
+                "author": "InsanityPrelude",
+                "description": "Extensive cost balancing and 3rd party mod integration updates"
+            }
+        ],
+        "Jorge Martínez": [
+            {
+                "hash": "9fd8dc2",
+                "author": "Jorge Martínez",
+                "description": "Spanish translations"
+            }
+        ],
+        "cucumpear": [
+            {
+                "hash": "4d02013",
+                "author": "cucumpear",
+                "description": "Fix for hard floor edge rendering"
+            }
+        ],
+        "DoctorVanGogh": [
+            {
+                "hash": "11f6e64",
+                "author": "DoctorVanGogh",
+                "description": "Extended Woodworking and Vegetable Garden integrations"
+            }
+        ],
+        "duduluu": [
+            {
+                "hash": "fbb0c20",
+                "author": "duduluu",
+                "description": "Chinese translation"
+            }
+        ],
+        "Doug Benham": [
+            {
+                "hash": "6be24b2",
+                "author": "Doug Benham",
+                "description": "fix terrain wealth overestimation"
+            }
+        ],
+        "Kyoutaigo": [
+            {
+                "hash": "6d10b54",
+                "author": "Kyoutaigo",
+                "description": "Ideology and VFE patches"
+            }
+        ]
+    },
+    "attributions": []
+}

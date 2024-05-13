@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Pravus' Floors and Fences -->
+
+  <StuffedFloorsMetalGrate.label>Metallgitter</StuffedFloorsMetalGrate.label>
+  <StuffedFloorsMetalGrate.description>Metallgitter lassen Schmutz durch - was dazu beiträgt, den Platz sauber zu halten.</StuffedFloorsMetalGrate.description>
+
+
+  <!-- Vanilla -->
+
+  <StuffedFloorsMetalPlate.label>Metallplatten</StuffedFloorsMetalPlate.label>
+  <StuffedFloorsMetalPlate.description>Ein generischer Metallboden.</StuffedFloorsMetalPlate.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedFloorsMetalSmallPlate.label>Kleine Metallplatten</StuffedFloorsMetalSmallPlate.label>
+  <StuffedFloorsMetalSmallPlate.description>Kleine Metallplatten, am Boden angenietet.</StuffedFloorsMetalSmallPlate.description>
+
+
+  <!-- Pravus' Floors and Fences -->
+
+  <StuffedFloorsMetalShapedPlate.label>Geformte Metallplatten</StuffedFloorsMetalShapedPlate.label>
+  <StuffedFloorsMetalShapedPlate.description>Geformte Metallplatten, inspiriert von beliebten Raumschiffdesigns.</StuffedFloorsMetalShapedPlate.description>
+
+
+</LanguageData>

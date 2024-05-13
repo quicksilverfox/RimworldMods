@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Pravus' Floors and Fences -->
+
+  <StuffedFloorsMetalGrate.label>rejilla metálica</StuffedFloorsMetalGrate.label>
+  <StuffedFloorsMetalGrate.description>La rejilla metálica permite el paso de la suciedad, lo que ayuda a mantener limpio el lugar.</StuffedFloorsMetalGrate.description>
+
+
+  <!-- Vanilla -->
+
+  <StuffedFloorsMetalPlate.label>placas de metal</StuffedFloorsMetalPlate.label>
+  <StuffedFloorsMetalPlate.description>Un suelo de metal normal y corriente.</StuffedFloorsMetalPlate.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedFloorsMetalSmallPlate.label>placas de metal pequeñas</StuffedFloorsMetalSmallPlate.label>
+  <StuffedFloorsMetalSmallPlate.description>Pequeñas placas de metal, fijadas al suelo.</StuffedFloorsMetalSmallPlate.description>
+
+
+  <!-- Pravus' Floors and Fences -->
+
+  <StuffedFloorsMetalShapedPlate.label>placas de metal con formas</StuffedFloorsMetalShapedPlate.label>
+  <StuffedFloorsMetalShapedPlate.description>Placas de metal con formas, inspiradas en diseños populares de naves espaciales.</StuffedFloorsMetalShapedPlate.description>
+
+
+</LanguageData>

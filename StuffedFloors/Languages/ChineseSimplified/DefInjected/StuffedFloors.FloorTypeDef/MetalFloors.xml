@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Pravus' Floors and Fences -->
+
+  <StuffedFloorsMetalGrate.label>金属栅板</StuffedFloorsMetalGrate.label>
+  <StuffedFloorsMetalGrate.description>金属栅板，可以漏下尘土——有助于保持区域清洁。</StuffedFloorsMetalGrate.description>
+
+
+  <!-- Vanilla -->
+
+  <StuffedFloorsMetalPlate.label>金属板</StuffedFloorsMetalPlate.label>
+  <StuffedFloorsMetalPlate.description>普通的金属地板。</StuffedFloorsMetalPlate.description>
+
+
+  <!-- CuproPanda's Extra Floors -->
+
+  <StuffedFloorsMetalSmallPlate.label>小金属板</StuffedFloorsMetalSmallPlate.label>
+  <StuffedFloorsMetalSmallPlate.description>小金属板，用铆钉钉在地板上。</StuffedFloorsMetalSmallPlate.description>
+
+
+  <!-- Pravus' Floors and Fences -->
+
+  <StuffedFloorsMetalShapedPlate.label>形状金属板</StuffedFloorsMetalShapedPlate.label>
+  <StuffedFloorsMetalShapedPlate.description>带有形状的金属板，灵感来自流行的飞船射击。</StuffedFloorsMetalShapedPlate.description>
+
+
+</LanguageData>

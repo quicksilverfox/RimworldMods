@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodPrettyBase">
+	<StuffedFloors.FloorTypeDef MayRequire="VanillaExpanded.VFEArchitect" ParentName="StuffedFloorsWoodPrettyBase">
 		<defName>StuffedWoodFloorVEHerringbone</defName>
 		<label>fine herringbone parquet</label>		
 		<description>Beautifully laid down wooden flooring for that posh, fancy feeling.</description>
@@ -17,7 +17,7 @@
 			<li>VFEArch_WoodenParquetMahogany</li>
 		</obsoletes>
 	</StuffedFloors.FloorTypeDef>
-	<StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodRoyalBase">
+	<StuffedFloors.FloorTypeDef MayRequire="VanillaExpanded.VFEArchitect" ParentName="StuffedFloorsWoodRoyalBase">
 		<defName>StuffedWoodFloorVEVersailles</defName>
 		<label>versailles parquet</label>		
 		<description>Beautiful wooden parquet, made with no compromises, for expressing economic status. Slow to construct.</description>
@@ -29,7 +29,7 @@
 			<li>VFEArch_FineWoodenFloorMahogany</li>
 		</obsoletes>
 	</StuffedFloors.FloorTypeDef>
-	<StuffedFloors.FloorTypeDef ParentName="StuffedFloorsStoneBasicBase">
+	<StuffedFloors.FloorTypeDef MayRequire="VanillaExpanded.VFEArchitect" ParentName="StuffedFloorsStoneBasicBase">
 		<defName>StuffedStoneVECobblestone</defName>
 		<label>cobblestone floor</label>		
 		<description>Random-size stone tiles for a rustical, castle feeling. Take less time to construct than ordinary stone tiles and don’t require stone cutting expertise, but lack the beauty of the polished design.</description>
@@ -42,7 +42,7 @@
 			<li>VFEArch_CobblestoneFloorMarble</li>
 		</obsoletes>
 	</StuffedFloors.FloorTypeDef>
-	<StuffedFloors.FloorTypeDef ParentName="StuffedFloorsStonePrettyBase">
+	<StuffedFloors.FloorTypeDef MayRequire="VanillaExpanded.VFEArchitect" ParentName="StuffedFloorsStonePrettyBase">
 		<defName>StuffedStoneVETempleSlabs</defName>
 		<label>temple slabs</label>		
 		<description>Large slabs of stone laid at random for that temple-like look. Beautiful to look at.</description>
@@ -60,7 +60,7 @@
 			<li>VFEArch_SlabsMarble</li>
 		</obsoletes>
 	</StuffedFloors.FloorTypeDef>
-	<StuffedFloors.FloorTypeDef ParentName="StuffedFloorsStoneRoyalBase">
+	<StuffedFloors.FloorTypeDef MayRequire="VanillaExpanded.VFEArchitect" ParentName="StuffedFloorsStoneRoyalBase">
 		<defName>StuffedStoneVEPolishedFloor</defName>
 		<label>polished stone floor</label>		
 		<description>Fancy, polished stone tiles for an elegant, mansion-like look. Don’t take nearly as long to lay down as the finer stone floors, but require a lot of resources. They are incredibly beautiful to look at.</description>
@@ -73,7 +73,7 @@
 			<li>VFEArch_PolishedStoneFloorMarble</li>
 		</obsoletes>
 	</StuffedFloors.FloorTypeDef>	
-	<StuffedFloors.FloorTypeDef MayRequire="Ludeon.Rimworld.Royalty" ParentName="StuffedFloorsMetalRoyalBase">
+	<StuffedFloors.FloorTypeDef MayRequire="VanillaExpanded.VFEArchitect,Ludeon.Rimworld.Royalty" ParentName="StuffedFloorsMetalRoyalBase">
 		<defName>StuffedMetalVERoyalTile</defName>
 		<label>exquisite tile</label>		
 		<description>Exquisite metal tiles, made with no compromises, for expressing economic status. Slow to construct.</description>

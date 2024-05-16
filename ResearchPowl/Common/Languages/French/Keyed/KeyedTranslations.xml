@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LanguageData>
+
+	<ResearchPal>ResearchPowl</ResearchPal>
+
+	<ResearchPal.AllowsBuildingX>Permet la construction {0}</ResearchPal.AllowsBuildingX>
+	<ResearchPal.AllowsCraftingX>Active la recette {0}</ResearchPal.AllowsCraftingX>
+	<ResearchPal.AllowsSowingXinY>Permet la plantation {0} dans {1}</ResearchPal.AllowsSowingXinY>
+	<ResearchPal.AllowsPlantingX>Permet la croissance de {0}</ResearchPal.AllowsPlantingX>
+
+	<ResearchPal.LClickReplaceQueue>Clic-gauche pour remplacer la file d'attente</ResearchPal.LClickReplaceQueue>
+	<ResearchPal.LClickRemoveFromQueue>Clic-gauche pour retirer de la file d'attente</ResearchPal.LClickRemoveFromQueue>
+	<ResearchPal.SLClickAddToQueue>Shift-Clic-gauche ajouter à la file d'attente</ResearchPal.SLClickAddToQueue>
+	<ResearchPal.ALClickAddToQueue>Alt-Clic-gauche pour à ajouter à la file d'attente</ResearchPal.ALClickAddToQueue>
+	<ResearchPal.CLClickDebugInstant>(DEBUG) Ctrl-Clic-gauche pour terminer instantanément</ResearchPal.CLClickDebugInstant>
+
+	<ResearchPal.Requires>A besoin</ResearchPal.Requires>
+	<ResearchPal.LeadsTo>Mène à</ResearchPal.LeadsTo>
+	<ResearchPal.None>non</ResearchPal.None>
+
+	<ResearchPal.QueuedNode>Noeud déjà mis en file d'attente</ResearchPal.QueuedNode>
+	<ResearchPal.MissingFacilities>Manque {0}</ResearchPal.MissingFacilities>
+	<ResearchPal.MissingTechprints>Empreintes techniques insuffisantes {0}/{1}</ResearchPal.MissingTechprints>
+
+	<ResearchPal.NoResearchFound>aucune recherche trouvée</ResearchPal.NoResearchFound>
+	<ResearchPal.NothingQueued>aucune recherche en attente</ResearchPal.NothingQueued>
+	<ResearchPal.NextInQueue>Suivant dans la file d'attente: {0}</ResearchPal.NextInQueue>
+
+	<ResearchPal.BuildingResearchTree>Construire un arbre de recherche</ResearchPal.BuildingResearchTree>
+	<ResearchPal.BuildingResearchTreeAsync>Commencez à créer un arbre de recherche en arrière-plan</ResearchPal.BuildingResearchTreeAsync>
+
+	<ResearchPal.ResetLayout>Régénérer la disposition de l'arbre de recherche</ResearchPal.ResetLayout>
+	<ResearchPal.LayoutRegenerated>Disposition de l'arbre de recherche régénérée</ResearchPal.LayoutRegenerated>
+
+	<ResearchPal.ShowNotificationPopup>Afficher la fenêtre contextuelle de notification</ResearchPal.ShowNotificationPopup>
+	<ResearchPal.ShowNotificationPopupTip>Chaque fois que vous avez terminé la recherche, mettez en pause et affichez la notification par défaut.</ResearchPal.ShowNotificationPopupTip>
+	<ResearchPal.ShouldSeparateByTechLevels>Recherches de groupe par niveau technologique</ResearchPal.ShouldSeparateByTechLevels>
+	<ResearchPal.ShouldSeparateByTechLevelsTip>Sinon, utilisez une mise en page plus dense (cliquez sur "Régénérer la mise en page de l'arbre de recherche" pour appliquer)</ResearchPal.ShouldSeparateByTechLevelsTip>
+	<ResearchPal.ShouldPauseOnOpen>Pause sur l'affichage</ResearchPal.ShouldPauseOnOpen>
+	<ResearchPal.ShouldPauseOnOpenTip>Chaque fois que le jeu doit s'arrêter lorsque l'onglet de recherche est affiché.</ResearchPal.ShouldPauseOnOpenTip>
+	<ResearchPal.ShouldResetOnOpen>Réinitialiser sur l'écran</ResearchPal.ShouldResetOnOpen>
+	<ResearchPal.ShouldResetOnOpenTip>Effacer le filtrage et réinitialiser la position de défilement.</ResearchPal.ShouldResetOnOpenTip>
+	<ResearchPal.AlignCloserToAncestors>Aligner plus près des prérequis</ResearchPal.AlignCloserToAncestors>
+	<ResearchPal.AlignCloserToAncestorsTip>De manière heuristique, rapprochez les nœuds de recherche de leurs prérequis plutôt que des enfants. (Cliquez sur "Régénérer la disposition de l'arbre de recherche" pour appliquer)</ResearchPal.AlignCloserToAncestorsTip>
+	<ResearchPal.MinimumSeparateModTech>Nombre minimal de recherches de modules séparés</ResearchPal.MinimumSeparateModTech>
+	<ResearchPal.MinimumSeparateModTechTip>Nombre minimum de technologies ajoutées pour qu'un mod soit placé séparément de l'arbre technologique principal (Cliquez sur "Régénérer la disposition de l'arbre de recherche" pour appliquer)</ResearchPal.MinimumSeparateModTechTip>
+	<ResearchPal.GroupModTechs>Recherches de groupe à partir des mêmes mods</ResearchPal.GroupModTechs>
+	<ResearchPal.GroupModTechsTip>Placez les recherches du même mod ensemble en ignorant les heuristiques. (Cliquez sur "Régénérer la disposition de l'arbre de recherche" pour appliquer)</ResearchPal.GroupModTechsTip>
+	<ResearchPal.SearchByDescription>Recherche par descriptions</ResearchPal.SearchByDescription>
+	<ResearchPal.SearchByDescriptionTip>Les recherches feront correspondre le mot-clé avec les descriptions des recherches (peut aggraver les performances de recherche)</ResearchPal.SearchByDescriptionTip>
+	<ResearchPal.DelayLayoutGeneration>Delay Layout Generation</ResearchPal.DelayLayoutGeneration>
+	<ResearchPal.DelayLayoutGenerationTip>Générer la mise en page lors de la première utilisation de l'arbre de recherche, plutôt que lors du chargement du jeu</ResearchPal.DelayLayoutGenerationTip>
+	<ResearchPal.AsyncLoadingOnStartup>Génération de mise en page d'arrière-plan</ResearchPal.AsyncLoadingOnStartup>
+	<ResearchPal.AsyncLoadingOnStartupTip>Générer une mise en page en arrière-plan lors du chargement du jeu</ResearchPal.AsyncLoadingOnStartupTip>
+	<ResearchPal.ProgressTooltip>Info-bulle sur les progrès de la recherche</ResearchPal.ProgressTooltip>
+	<ResearchPal.ProgressTooltipTip>Afficher la progression de la recherche dans une info-bulle pour un projet en cours (Attention: actuellement peut ne pas fonctionner correctement)</ResearchPal.ProgressTooltipTip>
+	<ResearchPal.AlwaysDisplayProgress>Toujours afficher la progression</ResearchPal.AlwaysDisplayProgress>
+	<ResearchPal.AlwaysDisplayProgressTip>Toujours afficher le reste des points nécessaires pour terminer un projet, n'affecte pas l'affichage lors du zoom arrière</ResearchPal.AlwaysDisplayProgressTip>
+	<ResearchPal.ShowQueueIndexOnQueue>Afficher les indices sur la file d'attente de recherche</ResearchPal.ShowQueueIndexOnQueue>
+	<ResearchPal.ShowQueueIndexOnQueueTip>Afficher les icônes d'index sur les recherches dans la file d'attente de recherche.</ResearchPal.ShowQueueIndexOnQueueTip>
+	<ResearchPal.DontIgnoreHiddenPrerequisites>NE PAS IGNORER LES PRÉREQUIS CACHÉS</ResearchPal.DontIgnoreHiddenPrerequisites>
+    <ResearchPal.DontIgnoreHiddenPrerequisitesTip>Correction d'un ancien bogue du ResearchPal original qui ignore les prérequis cachés.
+Vous devez toujours activer cette option pour un gameplay plus équilibré. Le fait de pouvoir désactiver cette option est pour la compatibilité des stratégies de sauvegarde existantes. (redémarrez le jeu pour appliquer)</ResearchPal.DontIgnoreHiddenPrerequisitesTip>
+	<ResearchPal.NeedsRestart>Paramètres de recherche modifiés, redémarrez RimWorld pour appliquer le changement.</ResearchPal.NeedsRestart>
+
+	<ResearchPal.ScrollSpeedMultiplier>Multiplicateur de la vitesse de défilement</ResearchPal.ScrollSpeedMultiplier>
+	<ResearchPal.ScrollSpeedMultiplierTip>Contrôlez la vitesse de défilement horizontal et vertical de l'arbre de recherche principal</ResearchPal.ScrollSpeedMultiplierTip>
+	<ResearchPal.ZoomingSpeedMultiplier>Multiplicateur de vitesse de zoom</ResearchPal.ZoomingSpeedMultiplier>
+	<ResearchPal.ZoomingSpeedMultiplierTip>Contrôlez la sensibilité de zoom de l'arbre de recherche principal</ResearchPal.ZoomingSpeedMultiplierTip>
+	<ResearchPal.DraggingDisplayDelay>Déplacement du délai d'affichage</ResearchPal.DraggingDisplayDelay>
+	<ResearchPal.DraggingDisplayDelayTip>Le délai de seconde d'un noeud de recherche glissé dans l'arbre de recherche s'affiche comme déplacé. (n'affecte pas le glissement des noeuds dans la file d'attente et le déclencheur réel du glissement)</ResearchPal.DraggingDisplayDelayTip>
+
+	<ResearchPal.VerboseLogging>Journalisation détaillée (WIP)</ResearchPal.VerboseLogging>
+	<ResearchPal.VerboseLoggingTip>Produire des journaux de débogage détaillés dans des messages en mode développement (WIP).</ResearchPal.VerboseLoggingTip>
+
+	<ResearchPal.ResearchFinished>Recherche terminée: {0}</ResearchPal.ResearchFinished>
+</LanguageData>

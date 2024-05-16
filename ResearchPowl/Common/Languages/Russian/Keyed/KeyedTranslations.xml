@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LanguageData>
+	<ResearchPal.AllowsBuildingX>Позволяет строить {0}</ResearchPal.AllowsBuildingX>
+	<ResearchPal.AllowsCraftingX>Позволяет {0}</ResearchPal.AllowsCraftingX>
+	<ResearchPal.AllowsSowingXinY>Позволяет высаживать {0} in {1}</ResearchPal.AllowsSowingXinY>
+	<ResearchPal.AllowsPlantingX>Позволяет выращивать {0}</ResearchPal.AllowsPlantingX>
+
+	<ResearchPal.LClickReplaceQueue>ЛКМ для замены в очереди</ResearchPal.LClickReplaceQueue>
+	<ResearchPal.LClickRemoveFromQueue>ЛКМ для удаления из очереди</ResearchPal.LClickRemoveFromQueue>
+	<ResearchPal.SLClickAddToQueue>Shift+ЛКМ для добавления в очередь</ResearchPal.SLClickAddToQueue>
+	<ResearchPal.RClickInstaFinish>(DEBUG) ПКМ для мгновенного изучения</ResearchPal.RClickInstaFinish>
+
+	<ResearchPal.Requires>Требует</ResearchPal.Requires>
+	<ResearchPal.LeadsTo>Ведет к</ResearchPal.LeadsTo>
+
+	<ResearchPal.QueuedNode>Уже в очереди</ResearchPal.QueuedNode>
+	<ResearchPal.MissingFacilities>Отсутствует {0}</ResearchPal.MissingFacilities>
+	<ResearchPal.MissingTechprints>Недостаточно технологических отпечатков {0}/{1}</ResearchPal.MissingTechprints>
+
+	<ResearchPal.NoResearchFound>нечего исследовать</ResearchPal.NoResearchFound>
+	<ResearchPal.NothingQueued>исследований не назначено</ResearchPal.NothingQueued>
+	<ResearchPal.NextInQueue>Следующее на очереди: {0}</ResearchPal.NextInQueue>
+
+	<ResearchPal.PreparingTree.Setup>Подготовка списка исследований</ResearchPal.PreparingTree.Setup>
+	<ResearchPal.PreparingTree.CrossingReduction>Уменьшение пересечений</ResearchPal.PreparingTree.CrossingReduction>
+	<ResearchPal.PreparingTree.Layout>Окончательная обработка слоев</ResearchPal.PreparingTree.Layout>
+	<ResearchPal.PreparingTree.RestoreQueue>Восстановление очереди</ResearchPal.PreparingTree.RestoreQueue>
+</LanguageData>

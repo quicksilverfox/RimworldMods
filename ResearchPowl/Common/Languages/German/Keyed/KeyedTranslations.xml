@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LanguageData>
+	<ResearchPal.AllowsBuildingX>Ermöglicht die Konstruktion {0}</ResearchPal.AllowsBuildingX>
+	<ResearchPal.AllowsCraftingX>Aktiviert das Rezept {0}</ResearchPal.AllowsCraftingX>
+	<ResearchPal.AllowsSowingXinY>Ermöglicht das Anpflanzen von {0} in {1}</ResearchPal.AllowsSowingXinY>
+	<ResearchPal.AllowsPlantingX>Ermöglicht das Wachsen von {0}</ResearchPal.AllowsPlantingX>
+	
+	<ResearchPal.LClickReplaceQueue>Linksklick, um die Warteschlange zu ersetzen</ResearchPal.LClickReplaceQueue>
+	<ResearchPal.LClickRemoveFromQueue>Linksklick, um es von der Warteschlange zu entfernen</ResearchPal.LClickRemoveFromQueue>
+	<ResearchPal.SLClickAddToQueue>Shift-Linksklick, um es zur Warteschlange hinzuzufügen</ResearchPal.SLClickAddToQueue>
+	<ResearchPal.RClickInstaFinish>(DEBUG) Rechtsklick, um direkt abzuschließen</ResearchPal.RClickInstaFinish>
+	
+	<ResearchPal.Requires>Benötigt</ResearchPal.Requires>
+	<ResearchPal.LeadsTo>Führt zu</ResearchPal.LeadsTo>
+	
+	<ResearchPal.QueuedNode>Bereits in Warteschlange enthalten</ResearchPal.QueuedNode>
+	<ResearchPal.MissingFacilities>Fehlt {0}</ResearchPal.MissingFacilities>
+	<ResearchPal.MissingTechprints>Techprints benötigt {0}/{1}</ResearchPal.MissingTechprints>
+	
+	<ResearchPal.NoResearchFound>kein aktives Forschungsprojekt gefunden</ResearchPal.NoResearchFound>
+	<ResearchPal.NothingQueued>keine Warteschlange für Forschungsprojekte vorhanden</ResearchPal.NothingQueued>
+	<ResearchPal.NextInQueue>Nächstes in der Warteschlange: {0}</ResearchPal.NextInQueue>
+	
+	<ResearchPal.PreparingTree.Setup>Vorbereitung der Forschungsknoten</ResearchPal.PreparingTree.Setup>
+	<ResearchPal.PreparingTree.CrossingReduction>Reduziere Überschneidungen</ResearchPal.PreparingTree.CrossingReduction>
+	<ResearchPal.PreparingTree.Layout>Finalisiere Layout</ResearchPal.PreparingTree.Layout>
+	<ResearchPal.PreparingTree.RestoreQueue>Stelle Warteschlange wieder her</ResearchPal.PreparingTree.RestoreQueue>
+</LanguageData>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<ResearchPal>ResearchPowl</ResearchPal>
+	
+	<ResearchPal.AllowsBuildingX>Permite la construcción {0}</ResearchPal.AllowsBuildingX>
+	<ResearchPal.AllowsCraftingX>Permite la receta {0}</ResearchPal.AllowsCraftingX>
+	<ResearchPal.AllowsSowingXinY>Permite plantar {0} in {1}</ResearchPal.AllowsSowingXinY>
+	<ResearchPal.AllowsPlantingX>Permite el cultivo {0}</ResearchPal.AllowsPlantingX>
+	
+	<ResearchPal.LClickReplaceQueue>Haga clic con el botón izquierdo del ratón para reemplazar la cola</ResearchPal.LClickReplaceQueue>
+	<ResearchPal.LClickRemoveFromQueue>Haga clic con el botón izquierdo del ratón para quitar de la cola</ResearchPal.LClickRemoveFromQueue>
+	<ResearchPal.SLClickAddToQueue>Shift+botón izquierdo del ratón para añadir a la cola</ResearchPal.SLClickAddToQueue>
+	<ResearchPal.CLClickDebugInstant>(DEBUG) Ctrl-Left-Click para completar instantáneamente</ResearchPal.CLClickDebugInstant>
+	<ResearchPal.RClickForDetails>Haga clic con el botón derecho del ratón para más detalles</ResearchPal.RClickForDetails>
+	
+	<ResearchPal.Requires>Requiere</ResearchPal.Requires>
+	<ResearchPal.LeadsTo>Lleva a</ResearchPal.LeadsTo>
+	
+	<ResearchPal.QueuedNode>Nodo ya en cola</ResearchPal.QueuedNode>
+	<ResearchPal.MissingFacilities>Falta {0}</ResearchPal.MissingFacilities>
+	<ResearchPal.MissingTechprints>Planos tecnológicos insuficientes {0}/{1}</ResearchPal.MissingTechprints>
+	
+	<ResearchPal.NoResearchFound>no se encontró ninguna investigación</ResearchPal.NoResearchFound>
+	<ResearchPal.NothingQueued>no hay cola de investigación</ResearchPal.NothingQueued>
+	<ResearchPal.NextInQueue>Siguiente en la cola: {0}</ResearchPal.NextInQueue>
+	
+	<ResearchPal.BuildingResearchTree>Construir un árbol de investigación</ResearchPal.BuildingResearchTree>
+	<ResearchPal.PreparingTree.Setup>Preparación de los nodos de investigación</ResearchPal.PreparingTree.Setup>
+	<ResearchPal.PreparingTree.CrossingReduction>Reducción de cruces</ResearchPal.PreparingTree.CrossingReduction>
+	<ResearchPal.PreparingTree.Layout>Finalización de la disposición</ResearchPal.PreparingTree.Layout>
+	<ResearchPal.PreparingTree.RestoreQueue>Restauración de la cola</ResearchPal.PreparingTree.RestoreQueue>
+	
+	<ResearchPal.ShowNotificationPopup>Mostrar ventana emergente de notificación</ResearchPal.ShowNotificationPopup>
+	<ResearchPal.ShowNotificationPopupTip>Cuando termine la investigación, haga una pausa y muestre la notificación predeterminada.</ResearchPal.ShowNotificationPopupTip>
+	<ResearchPal.ShouldSeparateByTechLevels>Investigaciones en grupo por nivel técnico</ResearchPal.ShouldSeparateByTechLevels>
+	<ResearchPal.ShouldSeparateByTechLevelsTip>De lo contrario, utilice un diseño más denso (REQUIERE REINICIAR)</ResearchPal.ShouldSeparateByTechLevelsTip>
+	<ResearchPal.ShouldPauseOnOpen>Pausa en la pantalla</ResearchPal.ShouldPauseOnOpen>
+	<ResearchPal.ShouldPauseOnOpenTip>Cada vez que el juego debe hacer una pausa cuando se muestra la pestaña de investigación.</ResearchPal.ShouldPauseOnOpenTip>
+	<ResearchPal.ShouldResetOnOpen>Reinicio en la pantalla</ResearchPal.ShouldResetOnOpen>
+	<ResearchPal.ShouldResetOnOpenTip>Borrar el filtrado y restablecer la posición de desplazamiento.</ResearchPal.ShouldResetOnOpenTip>
+	
+	<ResearchPal.NeedsRestart>Los ajustes de investigación cambiaron, reinicie RimWorld para aplicar el cambio.</ResearchPal.NeedsRestart>
+	<ResearchPal.ResearchFinished>Investigación finalizada: {0}</ResearchPal.ResearchFinished>
+</LanguageData>

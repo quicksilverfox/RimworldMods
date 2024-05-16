@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LanguageData>
+	<ResearchPal.AllowsBuildingX>{0} 건설 사용 가능</ResearchPal.AllowsBuildingX>
+	<ResearchPal.AllowsCraftingX>{0} 레시피 사용 가능</ResearchPal.AllowsCraftingX>
+	<ResearchPal.AllowsSowingXinY>{0}을/를 {1}에 심기 가능</ResearchPal.AllowsSowingXinY>
+	<ResearchPal.AllowsPlantingX>{0} 재배 가능</ResearchPal.AllowsPlantingX>
+
+	<ResearchPal.LClickReplaceQueue>왼쪽 클릭으로 대기열을 변경합니다.</ResearchPal.LClickReplaceQueue>
+	<ResearchPal.LClickRemoveFromQueue>왼쪽 클릭으로 대기열에서 제거합니다.</ResearchPal.LClickRemoveFromQueue>
+	<ResearchPal.SLClickAddToQueue>Shift-왼쪽 클릭으로 대기열에 추가합니다.</ResearchPal.SLClickAddToQueue>
+	<ResearchPal.RClickInstaFinish>(디버그) 오른쪽 클릭으로 즉시 완료</ResearchPal.RClickInstaFinish>
+
+	<ResearchPal.Requires>요구 사항</ResearchPal.Requires>
+	<ResearchPal.LeadsTo>선행 기술</ResearchPal.LeadsTo>
+
+	<ResearchPal.QueuedNode>이미 대기열에 있는 노드입니다.</ResearchPal.QueuedNode>
+	<ResearchPal.MissingFacilities>{0} 필요</ResearchPal.MissingFacilities>
+	<ResearchPal.MissingTechprints>불충분 한 기술 인쇄 {0}/{1}</ResearchPal.MissingTechprints>
+
+	<ResearchPal.NoResearchFound>검색 결과 없음</ResearchPal.NoResearchFound>
+	<ResearchPal.NothingQueued>대기열에 연구 없음</ResearchPal.NothingQueued>
+	<ResearchPal.NextInQueue>대기열에 있는 다음 연구: {0}</ResearchPal.NextInQueue>
+
+	<ResearchPal.PreparingTree.Setup>연구 노드 준비</ResearchPal.PreparingTree.Setup>
+	<ResearchPal.PreparingTree.CrossingReduction>겹침 줄이기</ResearchPal.PreparingTree.CrossingReduction>
+	<ResearchPal.PreparingTree.Layout>레이아웃 다듬기</ResearchPal.PreparingTree.Layout>
+	<ResearchPal.PreparingTree.RestoreQueue>대기열 복원</ResearchPal.PreparingTree.RestoreQueue>
+</LanguageData>

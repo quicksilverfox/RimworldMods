@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LanguageData>
+	<ResearchPal>ResearchPowl</ResearchPal>
+
+	<ResearchPal.AllowsBuildingX>Unlock construction {0}</ResearchPal.AllowsBuildingX>
+	<ResearchPal.AllowsCraftingX>Unlock recipe {0}</ResearchPal.AllowsCraftingX>
+	<ResearchPal.AllowsSowingXinY>Unlock planting {0} in {1}</ResearchPal.AllowsSowingXinY>
+	<ResearchPal.AllowsPlantingX>Unlock growing {0}</ResearchPal.AllowsPlantingX>
+	<ResearchPal.AllowGeneralX>Unlock {0}</ResearchPal.AllowGeneralX>
+	<ResearchPal.OtherPrerequisites>Other prerequisites: {0}</ResearchPal.OtherPrerequisites>
+
+	<ResearchPal.LClickReplaceQueue>Left-click to replace queue.</ResearchPal.LClickReplaceQueue>
+	<ResearchPal.LClickRemoveFromQueue>Left-click to remove from queue.</ResearchPal.LClickRemoveFromQueue>
+	<ResearchPal.SLClickAddToQueue>Shift + Left-click to append to queue.</ResearchPal.SLClickAddToQueue>
+	<ResearchPal.ALClickAddToQueue>Alt + Left-click to prepend to queue.</ResearchPal.ALClickAddToQueue>
+	<ResearchPal.CLClickDebugInstant>(DEBUG) Ctrl + Left-click to instantly complete.</ResearchPal.CLClickDebugInstant>
+	<ResearchPal.RightClickNode>Right-click for continuous highlight.</ResearchPal.RightClickNode>
+	<ResearchPal.RightClickIcon>Right-click item icon (or dots icon) to show detail information.</ResearchPal.RightClickIcon>
+	<ResearchPal.Drag>Drag to interact with research queue.</ResearchPal.Drag>
+	<ResearchPal.ShortcutManual>Press shift to display shortcut manual.</ResearchPal.ShortcutManual>
+
+	<ResearchPal.TechLevel>Tech Level: </ResearchPal.TechLevel>
+	<ResearchPal.Requires>Requires</ResearchPal.Requires>
+	<ResearchPal.LeadsTo>Leads to</ResearchPal.LeadsTo>
+	<ResearchPal.None>none</ResearchPal.None>
+	<ResearchPal.TechLevelTooLow>Because your faction tech level is too low ({0}), research cost is multiplied by {1} (from {2}).</ResearchPal.TechLevelTooLow>
+
+	<ResearchPal.QueuedNode>Already queued node</ResearchPal.QueuedNode>
+	<ResearchPal.MissingFacilities>Missing {0}</ResearchPal.MissingFacilities>
+	<ResearchPal.MissingTechprints>Insufficient techprints {0}/{1}</ResearchPal.MissingTechprints>
+
+	<ResearchPal.NoResearchFound>no research found</ResearchPal.NoResearchFound>
+	<ResearchPal.NothingQueued>no research queued</ResearchPal.NothingQueued>
+	<ResearchPal.NextInQueue>Next in queue: {0}</ResearchPal.NextInQueue>
+
+	<ResearchPal.BuildingResearchTree>Building research tree</ResearchPal.BuildingResearchTree>
+	<ResearchPal.BuildingResearchTreeAsync>Start building research tree on background</ResearchPal.BuildingResearchTreeAsync>
+
+	<ResearchPal.ResetLayout>Regenerate research tree layout</ResearchPal.ResetLayout>
+	<ResearchPal.LayoutRegenerated>Research tree layout regenerated</ResearchPal.LayoutRegenerated>
+
+	<ResearchPal.ShowNotificationPopup>Show notification popup</ResearchPal.ShowNotificationPopup>
+	<ResearchPal.ShowNotificationPopupTip>Whenever you finish research, pause and show the default notification.</ResearchPal.ShowNotificationPopupTip>
+	
+	<ResearchPal.ShouldSeparateByTechLevels>Organize by tech level</ResearchPal.ShouldSeparateByTechLevels>
+	<ResearchPal.ShouldSeparateByTechLevelsTip>Divide the tree up into tech levels. Turn this off for a denser layout.</ResearchPal.ShouldSeparateByTechLevelsTip>
+	
+	<ResearchPal.ShouldPauseOnOpen>Pause on display</ResearchPal.ShouldPauseOnOpen>
+	<ResearchPal.ShouldPauseOnOpenTip>Pause the game when the research tab is displayed.</ResearchPal.ShouldPauseOnOpenTip>
+	
+	<ResearchPal.ShouldResetOnOpen>Reset on display</ResearchPal.ShouldResetOnOpen>
+	<ResearchPal.ShouldResetOnOpenTip>Clear filtering and reset scroll position.</ResearchPal.ShouldResetOnOpenTip>
+	
+	<ResearchPal.AlignCloserToAncestors>Align closer to prerequisites</ResearchPal.AlignCloserToAncestors>
+	<ResearchPal.AlignCloserToAncestorsTip>Heuristically put research nodes closer to their prerequisites instead of children.</ResearchPal.AlignCloserToAncestorsTip>
+	
+	<ResearchPal.MinimumSeparateModTech>Minimum projects per mod</ResearchPal.MinimumSeparateModTech>
+	<ResearchPal.MinimumSeparateModTechTip>If a mod adds more than this number of research projects, they will be grouped together in the tree.</ResearchPal.MinimumSeparateModTechTip>
+	
+	<ResearchPal.GroupBy>Group by...</ResearchPal.GroupBy>
+	<ResearchPal.GroupNothing>...nothing</ResearchPal.GroupNothing>
+	<ResearchPal.GroupTabs>...the same tab</ResearchPal.GroupTabs>
+	<ResearchPal.GroupModTechs>...the same mod</ResearchPal.GroupModTechs>
+	<ResearchPal.PlaceSeparatelyTip>Place research projects together ignoring heuristics.</ResearchPal.PlaceSeparatelyTip>
+	
+	<ResearchPal.SearchByDescription>Search by descriptions</ResearchPal.SearchByDescription>
+	<ResearchPal.SearchByDescriptionTip>Searches will match the keyword against descriptions of the researches (may worsen search performance).</ResearchPal.SearchByDescriptionTip>
+	
+	<ResearchPal.DelayLayoutGeneration>Delay layout generation</ResearchPal.DelayLayoutGeneration>
+	<ResearchPal.DelayLayoutGenerationTip>Generate layout at the first time the research tree is used, instead of when loading the game.</ResearchPal.DelayLayoutGenerationTip>
+	
+	<ResearchPal.AsyncLoadingOnStartup>Background layout generation</ResearchPal.AsyncLoadingOnStartup>
+	<ResearchPal.AsyncLoadingOnStartupTip>Generate layout in background when game loads.</ResearchPal.AsyncLoadingOnStartupTip>
+	
+	<ResearchPal.ProgressTooltip>Research progress tooltip</ResearchPal.ProgressTooltip>
+	<ResearchPal.ProgressTooltipTip>Display research progress in a tooltip for in-progress project.</ResearchPal.ProgressTooltipTip>
+	
+	<ResearchPal.AlwaysDisplayProgress>Always display progress</ResearchPal.AlwaysDisplayProgress>
+	<ResearchPal.AlwaysDisplayProgressTip>Always display the rest of the points needed to complete a project.</ResearchPal.AlwaysDisplayProgressTip>
+	
+	<ResearchPal.ShowQueueIndexOnQueue>Display indices on research queue</ResearchPal.ShowQueueIndexOnQueue>
+	<ResearchPal.ShowQueueIndexOnQueueTip>Display index icons on researches in the research queue.</ResearchPal.ShowQueueIndexOnQueueTip>
+	
+	<ResearchPal.DontIgnoreHiddenPrerequisites>Respect hidden prerequisites</ResearchPal.DontIgnoreHiddenPrerequisites>
+    <ResearchPal.DontIgnoreHiddenPrerequisitesTip>Leave enabled for balanced gameplay. Being able to turning off this option is for existing save game compatibility.\n\nRestart the game to apply.</ResearchPal.DontIgnoreHiddenPrerequisitesTip>
+	
+	<ResearchPal.NeedsRestart>Research settings changed, restart RimWorld to apply the change.</ResearchPal.NeedsRestart>
+	<ResearchPal.DisableShortcutManual>Disable shortcut manual</ResearchPal.DisableShortcutManual>
+	
+	<ResearchPal.SwapZoomMode>Swap the scroll wheel behavior</ResearchPal.SwapZoomMode>
+	<ResearchPal.SwapZoomModeTip>If enabled, shift+scroll wheel will vertical-scroll instead of zoom.</ResearchPal.SwapZoomModeTip>
+
+	<ResearchPal.ScrollSpeedMultiplier>Scrolling speed multiplier</ResearchPal.ScrollSpeedMultiplier>
+	<ResearchPal.ScrollSpeedMultiplierTip>Control horizontal and vertical scrolling speed of the main research tree</ResearchPal.ScrollSpeedMultiplierTip>
+	
+	<ResearchPal.ZoomingSpeedMultiplier>Zooming speed multiplier</ResearchPal.ZoomingSpeedMultiplier>
+	<ResearchPal.ZoomingSpeedMultiplierTip>Control the zooming sensitivity of the main research tree</ResearchPal.ZoomingSpeedMultiplierTip>
+	
+	<ResearchPal.DraggingDisplayDelay>Dragging display delay</ResearchPal.DraggingDisplayDelay>
+	<ResearchPal.DraggingDisplayDelayTip>The delay in second a dragged research node in research tree display as dragged. (doesn't affect dragging nodes in queue and the actual trigger of dragging)</ResearchPal.DraggingDisplayDelayTip>
+
+	<ResearchPal.VerboseLogging>Verbose logging</ResearchPal.VerboseLogging>
+	<ResearchPal.VerboseLoggingTip>Produce verbose debug logs in dev mode messages.</ResearchPal.VerboseLoggingTip>
+
+	<ResearchPal.ShowVanillaResearchFinishedMessage>Use vanilla "Research Finished" message</ResearchPal.ShowVanillaResearchFinishedMessage>
+	<ResearchPal.ShowVanillaResearchFinishedMessageTip>This mod may send its own letter when research is finished, or the normal vanilla behavior may be used instead.</ResearchPal.ShowVanillaResearchFinishedMessageTip>
+
+	<ResearchPal.ResearchFinished>Finished research: {0}</ResearchPal.ResearchFinished>
+	
+	<ResearchPal.MaxAllowedTechLvl>Max tech tier override: {0}</ResearchPal.MaxAllowedTechLvl>
+	<ResearchPal.MaxAllowedTechLvlTip>If you are using a mod that caps the research, and the cap is not working correctly, you can override it here manually.</ResearchPal.MaxAllowedTechLvlTip>
+	
+	<ResearchPal.DontShowUnallowedTech>Do not show disallowed tech</ResearchPal.DontShowUnallowedTech>
+	<ResearchPal.ReadOnlyMode>Read only mode</ResearchPal.ReadOnlyMode>
+	<ResearchPal.ReadOnlyModeTip>When enabled, the tech tree may only be viewed as a reference, but not as an interface to start projects. This mode is meant to be used with mods that remove player agency, such as Random Research.</ResearchPal.ReadOnlyModeTip>
+
+	<ResearchPal.AllPacks>All content packs</ResearchPal.AllPacks>
+	
+	<ResearchPal.StorytellerDoesNotAllow>Storyteller does not allow this tech</ResearchPal.StorytellerDoesNotAllow>
+	<ResearchPal.RimedievalDoesNotAllow>Rimedieval settings does not allow this tech</ResearchPal.RimedievalDoesNotAllow>
+</LanguageData>

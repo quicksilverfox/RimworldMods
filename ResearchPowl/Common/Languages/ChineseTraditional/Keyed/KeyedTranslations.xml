@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ResearchPal>ResearchPowl</ResearchPal>
+
+  <ResearchPal.AllowsBuildingX>解鎖建築：{0}</ResearchPal.AllowsBuildingX>
+  <ResearchPal.AllowsCraftingX>解鎖配方：{0}</ResearchPal.AllowsCraftingX>
+  <ResearchPal.AllowsSowingXinY>{1}可種植新農作物：{0}</ResearchPal.AllowsSowingXinY>
+  <ResearchPal.AllowsPlantingX>解鎖作物：{0}</ResearchPal.AllowsPlantingX>
+
+  <ResearchPal.LClickReplaceQueue>左鍵：變更排程</ResearchPal.LClickReplaceQueue>
+  <ResearchPal.LClickRemoveFromQueue>左鍵：從排程清單中移除該項研究</ResearchPal.LClickRemoveFromQueue>
+  <ResearchPal.SLClickAddToQueue> Shift+滑鼠左鍵將項目添加到隊列後</ResearchPal.SLClickAddToQueue>
+  <ResearchPal.CLClickDebugInstant>(DEBUG) 按住Ctrl鍵單擊可立即完成</ResearchPal.CLClickDebugInstant>
+  <ResearchPal.RClickForDetails>右鍵單擊以獲取詳細信息</ResearchPal.RClickForDetails>
+
+  <ResearchPal.Requires>需要</ResearchPal.Requires>
+  <ResearchPal.LeadsTo>導致</ResearchPal.LeadsTo>
+  <ResearchPal.None>無</ResearchPal.None>
+
+  <ResearchPal.QueuedNode>已排隊的研究點</ResearchPal.QueuedNode>
+  <ResearchPal.MissingFacilities>缺少 {0}</ResearchPal.MissingFacilities>
+  <ResearchPal.MissingTechprints>科技藍圖要求 {0}/{1}</ResearchPal.MissingTechprints>
+
+  <ResearchPal.NoResearchFound>找不到相關研究項目</ResearchPal.NoResearchFound>
+  <ResearchPal.NothingQueued>未安排任何研究排程</ResearchPal.NothingQueued>
+  <ResearchPal.NextInQueue>下個項目: {0}</ResearchPal.NextInQueue>
+
+  <ResearchPal.BuildingResearchTree>建立科技樹</ResearchPal.BuildingResearchTree>
+  <ResearchPal.PreparingTree.Setup>研究節點準備中</ResearchPal.PreparingTree.Setup>
+  <ResearchPal.PreparingTree.CrossingReduction>減少交叉</ResearchPal.PreparingTree.CrossingReduction>
+  <ResearchPal.PreparingTree.Layout>完成佈局</ResearchPal.PreparingTree.Layout>
+  <ResearchPal.PreparingTree.RestoreQueue>回復隊列</ResearchPal.PreparingTree.RestoreQueue>
+
+  <ResearchPal.ShowNotificationPopup>顯示通知彈出窗口</ResearchPal.ShowNotificationPopup>
+  <ResearchPal.ShowNotificationPopupTip>完成研究後，請暫停並顯示默認通知。</ResearchPal.ShowNotificationPopupTip>
+  <ResearchPal.ShouldSeparateByTechLevels>按技術研究級別分組</ResearchPal.ShouldSeparateByTechLevels>
+  <ResearchPal.ShouldSeparateByTechLevelsTip>否則，請使用更密集的佈局（需要重新啟動）</ResearchPal.ShouldSeparateByTechLevelsTip>
+  <ResearchPal.ShouldPauseOnOpen>暫停顯示</ResearchPal.ShouldPauseOnOpen>
+  <ResearchPal.ShouldPauseOnOpenTip>每當開啟研究選項時，遊戲應暫停。</ResearchPal.ShouldPauseOnOpenTip>
+  <ResearchPal.ShouldResetOnOpen>重置顯示</ResearchPal.ShouldResetOnOpen>
+  <ResearchPal.ShouldResetOnOpenTip>清除篩選並重置滾動位置。</ResearchPal.ShouldResetOnOpenTip>
+
+  <ResearchPal.NeedsRestart>研究設置已更改，請重新啟動RimWorld以應用更改。</ResearchPal.NeedsRestart>
+  <ResearchPal.ResearchFinished>研究完成: {0}</ResearchPal.ResearchFinished>
+
+</LanguageData>

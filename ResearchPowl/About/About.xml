@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModMetaData>
+	<packageId>Owlchemist.ResearchPowl</packageId>
+	<name>ResearchPowl</name>
+	<author>VinaLx, Owlchemist</author>
+	<supportedVersions>
+		<li>1.4</li>
+		<li>1.5</li>
+	</supportedVersions>
+	<modVersion IgnoreIfNoMatchingField="True">1.10.0</modVersion>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>mlie.RemoveIndustrialStuff</li>
+	</loadAfter>
+	<description>A fork of "ResearchPal - Forked". Double-forked, you might say? This started out as a simple 1.4 update but has evolved into a number of changes, such as optimizations, minor bug fixes and tweaks.
+	</description>
+</ModMetaData>

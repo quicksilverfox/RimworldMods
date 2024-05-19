@@ -28,6 +28,9 @@ namespace SyncGrowth.Patches
 
                 // Mushrooms
                 "Caveworld_Flora_Unleashed.FruitingBody", // it won't show inspect string for them but should work
+
+                // Pawnmorpher - Glowvine
+                "Pawnmorph.Things.ExpandedPlant"
             };
 
             // Applying patches to get_GrowthRate and/or GetInspectString
@@ -38,10 +41,10 @@ namespace SyncGrowth.Patches
                 {
                     MethodInfo method = AccessTools.DeclaredMethod(plants, "get_GrowthRate");
                     if (method != null && method.DeclaringType == plants)
-                    SyncGrowth.harmony.Patch(
-                        method,
-                        postfix: new HarmonyMethod(typeof(Plant_GrowthRate_Patch).GetMethod(nameof(Plant_GrowthRate_Patch.Postfix)))
-                        );
+                        SyncGrowth.harmony.Patch(
+                            method,
+                            postfix: new HarmonyMethod(typeof(Plant_GrowthRate_Patch).GetMethod(nameof(Plant_GrowthRate_Patch.Postfix)))
+                            );
 
                     method = AccessTools.DeclaredMethod(plants, "GetInspectString");
                     if (method != null)

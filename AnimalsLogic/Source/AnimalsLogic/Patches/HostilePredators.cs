@@ -83,6 +83,11 @@ namespace AnimalsLogic.Patches
 
             Pawn agressor = who as Pawn;
 
+            if (!agressor.Spawned || !(agressor.RaceProps?.predator ?? false) || !to.Spawned)
+            {
+                return false;
+            }
+
             if (to.Faction.HasPredatorRecentlyAttackedAnyone(agressor) || GetPreyOfMyFaction(agressor, to.Faction) != null)
             {
                 return true;

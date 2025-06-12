@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Save Our Ship 2 - Earthbound</name>
+	<packageId>Oblitus.SOS2Earthbound</packageId>
+	<author>Oblitus</author>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<description>For those who want to use spacer technologies without going to space.</description>
+</ModMetaData>

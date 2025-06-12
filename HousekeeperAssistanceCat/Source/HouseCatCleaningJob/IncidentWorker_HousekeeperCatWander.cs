@@ -25,7 +25,6 @@ namespace HousekeeperCat
 				return false;
 			}
 			PawnKindDef cat = DefOfCousekeeperCatPawnDef.HousekeeperCat;
-			int value = 1;
 			IntVec3 result = IntVec3.Invalid;
 			if (!RCellFinder.TryFindRandomCellOutsideColonyNearTheCenterOfTheMap(cell, map, 10f, out result))
 			{

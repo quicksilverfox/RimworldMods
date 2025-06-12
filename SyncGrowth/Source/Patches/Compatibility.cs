@@ -28,6 +28,9 @@ namespace SyncGrowth.Patches
 
                 // Mushrooms
                 "Caveworld_Flora_Unleashed.FruitingBody", // it won't show inspect string for them but should work
+                
+                 // Biomes! Core and submods
+                "BMT.BiomesPlant",
 
                 // Pawnmorpher - Glowvine
                 "Pawnmorph.Things.ExpandedPlant"

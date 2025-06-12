@@ -27,7 +27,7 @@ namespace WorldGenRules
         public RulesOverrider(Game game)
         { }
 
-        [HarmonyPatch(typeof(StorytellerUI), "DrawStorytellerSelectionInterface")]
+/*        [HarmonyPatch(typeof(StorytellerUI), "DrawStorytellerSelectionInterface")]
         static class StorytellerUI_DrawStorytellerSelectionInterface_Patch
         {
             static bool Prefix(Rect rect, ref StorytellerDef chosenStoryteller, ref DifficultyDef difficulty, ref Difficulty difficultyValues, Listing_Standard infoListing)
@@ -44,14 +44,14 @@ namespace WorldGenRules
                 }
                 return true;
             }
-        }
+        }*/
 
-        [HarmonyPatch(typeof(PlanetShapeGenerator), "DoGenerate", new Type[] { })]
-        static class PlanetShapeGenerator_DoGenerate_Patch
+        [HarmonyPatch(typeof(WorldGrid), "DoGenerate", new Type[] { })]
+        static class WorldGrid_DoGenerate_Patch
         {
             static bool Prefix()
             {
-                FieldInfo subdivisionsCount = typeof(PlanetShapeGenerator).GetField("subdivisionsCount", AccessTools.all);
+                FieldInfo subdivisionsCount = typeof(WorldGrid).GetField("subdivisionsCount", AccessTools.all);
                 subdivisionsCount.SetValue(null, subcount);
                 return true;
             }

@@ -33,15 +33,18 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Linked/WaterproofConduit_MenuIcon</uiIconPath>
 		<uiIconColor>(75,75,100,150)</uiIconColor>
+		<costList>
+			<CarbonFiber>3</CarbonFiber>
+		</costList>
+		<constructEffect>ConstructDirt</constructEffect>
 		<building>
 			<ai_neverTrashThis>true</ai_neverTrashThis>
 			<isTargetable>false</isTargetable>
 			<expandHomeArea>false</expandHomeArea>
 			<canBeDamagedByAttacks>false</canBeDamagedByAttacks>
-			<ai_chillDestination>false</ai_chillDestination>
 		</building>
 		<statBases>
-			<MaxHitPoints>500</MaxHitPoints>
+			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>70</WorkToBuild>
 			<Flammability>0.0</Flammability>
 			<Beauty>0</Beauty>
@@ -50,42 +53,38 @@
 		<researchPrerequisites>
 			<li>CarbonResearch</li>
 		</researchPrerequisites>
-		<costList>
-			<CarbonFiber>3</CarbonFiber>
-		</costList>
 	</ThingDef>
 
 	<ThingDef ParentName="PowerConduit">
 		<defName>CarbonPowerConduitUnderground</defName>
 		<label>underground carbon conduit</label>
-		<description>A set of electrical cables for moving power around. Extra heavy duty - and buried for extra measure. Enemies usually won't notice it.</description>
+		<description>Hidden electrical cables for moving power around. Extra heavy duty. Enemies usually won't notice it.</description>
 		<graphicData>
 			<texPath>Things/Building/Linked/CarbonPowerConduit_Atlas</texPath>
 			<color>(0,0,0,0)</color>
 		</graphicData>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>280</WorkToBuild>
+			<Flammability>0.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
 		<uiIconPath>Things/Building/Linked/WaterproofConduit_MenuIcon</uiIconPath>
 		<uiIconColor>(75,75,100,100)</uiIconColor>
+		<costList>
+			<CarbonFiber>1</CarbonFiber>
+		</costList>
+		<constructEffect>ConstructDirt</constructEffect>
 		<building>
 			<ai_neverTrashThis>true</ai_neverTrashThis>
 			<isTargetable>false</isTargetable>
 			<expandHomeArea>false</expandHomeArea>
 			<canBeDamagedByAttacks>false</canBeDamagedByAttacks>
-			<ai_chillDestination>false</ai_chillDestination>
 		</building>
 		<passability>Standable</passability>
-		<statBases>
-			<MaxHitPoints>280</MaxHitPoints>
-			<WorkToBuild>150</WorkToBuild>
-			<Flammability>0.0</Flammability>
-			<Beauty>0</Beauty>
-		</statBases>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<researchPrerequisites>
 			<li>CarbonResearch</li>
 		</researchPrerequisites>
-		<costList>
-			<CarbonFiber>1</CarbonFiber>
-		</costList>
 	</ThingDef>
 	
 </Defs>

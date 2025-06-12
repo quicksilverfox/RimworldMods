@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -8,11 +9,11 @@ namespace AnimalsLogic
     /*
      * Transforms any ruined egg into unfertilized chicken egg.
      */
-
+    /*
     class RuinedEggs
     {
-        [HarmonyPatch(typeof(CompTemperatureRuinable), "DoTicks", new Type[] { typeof(int) })]
-        static class CompTemperatureRuinable_DoTicks_Patch
+        [HarmonyPatch(typeof(CompTemperatureRuinable), "CompTick", new Type[] {})]
+        static class CompTemperatureRuinable_CompTick_Patch
         {
             static bool Prefix(ref bool __state, ref CompTemperatureRuinable __instance)
             {
@@ -26,20 +27,17 @@ namespace AnimalsLogic
                 {
                     ThingWithComps thing = __instance.parent;
                     Map map = thing.Map;
-                    foreach (var item in thing.AllComps)
+                    if(thing.AllComps.Any(x => x.props.GetType() == typeof(CompProperties_Hatcher)))
                     {
-                        if (item.props.GetType() == typeof(CompProperties_Hatcher))
-                        {
-                            thing.DeSpawn();
-                            thing.def = DefDatabase<ThingDef>.GetNamed("EggChickenUnfertilized");
-                            thing.AllComps.Remove(__instance);
-                            thing.AllComps.Remove(item);
-                            thing.SpawnSetup(map, true);
-                            break;
-                        }
+                        thing.DeSpawn();
+                        thing.def = DefDatabase<ThingDef>.GetNamed("EggChickenUnfertilized");
+                        thing.AllComps.Remove(__instance);
+                        thing.AllComps.RemoveWhere(x => x.props.GetType() == typeof(CompProperties_Hatcher));
+                        thing.SpawnSetup(map, true);
                     }
                 }
             }
         }
     }
+    */
 }

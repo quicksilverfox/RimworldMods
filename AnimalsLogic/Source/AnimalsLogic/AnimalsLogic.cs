@@ -23,7 +23,6 @@ namespace AnimalsLogic
             AnimalsUseDispenser.Patch();
             NoBoomSlaughter.Patch();
 
-            AnimalProductionInfo.Patch();
             ShowAnimalRelations.Patch();
 
             NoToxicRot.Patch();

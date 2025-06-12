@@ -15,7 +15,6 @@ namespace AnimalsLogic
         public static bool medical_alerts = true;
         public static bool trade_tags = true;
         public static bool use_dispenser = true;
-        public static bool extra_display_stats = true;
         public static bool always_show_relations = false;
         public static bool taming_age_factor = true;
 
@@ -31,13 +30,12 @@ namespace AnimalsLogic
 
             listing_Standard.CheckboxLabeled("ALConfigCuriosityEatingLabel".Translate(), ref prevent_eating_stuff, "ALConfigCuriosityEatingTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigHostilePredatorsLabel".Translate(), ref hostile_predators, "ALConfigHostilePredatorsTooltip".Translate());
-            listing_Standard.CheckboxLabeled("ALConfigEggConversionLabel".Translate(), ref convert_ruined_eggs, "ALConfigEggConversionTooltip".Translate());
+            //listing_Standard.CheckboxLabeled("ALConfigEggConversionLabel".Translate(), ref convert_ruined_eggs, "ALConfigEggConversionTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigMeatConversionLabel".Translate(), ref tastes_like_chicken, "ALConfigMeatConversionTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigShearCorpsesLabel".Translate(), ref shear_corpses, "ALConfigShearCorpsesTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigMedicalAlertsLabel".Translate(), ref medical_alerts, "ALConfigMedicalAlertsTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigTradeHintsLabel".Translate(), ref trade_tags, "ALConfigTradeHintsTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigAnimalsCanUseFoodDispenserLabel".Translate(), ref use_dispenser, "ALConfigAnimalsCanUseFoodDispenserTooltip".Translate());
-            listing_Standard.CheckboxLabeled("ALConfigShowExtraDisplayStatsLabel".Translate(), ref extra_display_stats, "ALConfigShowExtraDisplayStatsTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigAlwaysShowRelationsLabel".Translate(), ref always_show_relations, "ALConfigAlwaysShowRelationsTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigTamingAgeFactorLabel".Translate(), ref taming_age_factor, "ALConfigTamingAgeFactorTooltip".Translate());
 
@@ -67,7 +65,6 @@ namespace AnimalsLogic
             Scribe_Values.Look<bool>(ref medical_alerts, "medical_alerts", true, false);
             Scribe_Values.Look<bool>(ref trade_tags, "trade_tags", true, false);
             Scribe_Values.Look<bool>(ref use_dispenser, "use_dispenser", true, false);
-            Scribe_Values.Look<bool>(ref extra_display_stats, "extra_display_stats", true, false);
             Scribe_Values.Look<bool>(ref always_show_relations, "always_show_relations", false, false);
             Scribe_Values.Look<bool>(ref taming_age_factor, "taming_age_factor", true, false);
 

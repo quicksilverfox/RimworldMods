@@ -37,10 +37,10 @@ namespace AnimalsLogic.Patches
             {
                 // ldfld float32 Verse.RaceProperties::wildness
 #pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
-                if (codes[i].opcode == OpCodes.Ldfld && codes[i].operand == typeof(RaceProperties).GetField("wildness"))
+                if (codes[i].opcode == OpCodes.Ldfld && codes[i].operand == StatDefOf.Wildness)
 #pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
                 {
-                    codes.InsertRange(i + 1,
+                    codes.InsertRange(i + 4,
                         new List<CodeInstruction>() {
                                 new CodeInstruction(OpCodes.Ldarg_2), // put recipient Pawn on stack
                                 new CodeInstruction(OpCodes.Call, typeof(GetThemYoung).GetMethod(nameof(WildnessFactor)))

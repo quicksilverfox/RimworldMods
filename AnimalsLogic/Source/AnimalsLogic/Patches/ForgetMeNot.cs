@@ -40,8 +40,8 @@ namespace AnimalsLogic
                 return PatchTamenessDecay(instructions);
             }
         }
-        [HarmonyPatch(typeof(TrainableUtility), "GetWildnessExplanation")]
-        static class TrainableUtility_GetWildnessExplanation_Patch
+        [HarmonyPatch(typeof(StatWorker_Wildness), "GetExplanationFinalizePart")]
+        static class StatWorker_Wildness_GetExplanationFinalizePart_Patch
         {
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
@@ -73,7 +73,7 @@ namespace AnimalsLogic
             {
                 return false;
             }
-            return def.race.wildness > Settings.wildness_threshold_for_tameness_decay;
+            return def.GetStatValueAbstract(StatDefOf.Wildness) > Settings.wildness_threshold_for_tameness_decay;
         }
 
         [HarmonyPatch(typeof(TrainableUtility), "DegradationPeriodTicks", new Type[] { typeof(ThingDef) })]

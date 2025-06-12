@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <StuffedFloors.FloorTypeDef Name="StuffedFloorsMetalBase" ParentName="StuffedFloorsBase" Abstract="True">
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+    </StuffedFloors.FloorTypeDef>
+
+    <StuffedFloors.FloorTypeDef Name="StuffedFloorsMetalBasicBase" ParentName="StuffedFloorsMetalBase" Abstract="True">
+        <statBases>
+            <Beauty>0</Beauty>
+            <WorkToBuild>800</WorkToBuild>
+            <Cleanliness>0.2</Cleanliness>
+        </statBases>
+        <stuffCost>7</stuffCost>
+        <tags>
+            <li>Floor</li>
+        </tags>
+    </StuffedFloors.FloorTypeDef>
+
+    <StuffedFloors.FloorTypeDef Name="StuffedFloorsMetalPrettyBase" ParentName="StuffedFloorsMetalBase" Abstract="True">
+        <statBases>
+            <Beauty>2</Beauty>
+            <WorkToBuild>1500</WorkToBuild>
+        </statBases>
+        <stuffCost>7</stuffCost>
+        <tags>
+            <li>Floor</li>
+            <li>FineFloor</li>
+        </tags>
+    </StuffedFloors.FloorTypeDef>
+	
+	<StuffedFloors.FloorTypeDef Name="StuffedFloorsMetalRoyalBase" ParentName="StuffedFloorsMetalBase" Abstract="True">
+		<statBases>
+			<Beauty>4</Beauty>
+			<WorkToBuild>1800</WorkToBuild>
+			<Cleanliness>0.2</Cleanliness>
+		</statBases>
+		<stuffCost>14</stuffCost>
+		<researchPrerequisites>
+			<li>Machining</li>
+		</researchPrerequisites>
+		<tags>
+			<li>Floor</li>
+			<li>FineFloor</li>
+		</tags>					
+	</StuffedFloors.FloorTypeDef>
+
+    <!-- Pravus' Floors and Fences -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsMetalBasicBase">
+      <defName>StuffedFloorsMetalGrate</defName>
+      <label>metal grating</label>
+      <description>Metal grating, allows dirt to pass through - which helps in keeping the place clean.</description>
+        <texturePath>Floors/Metal/FloorGrate</texturePath>
+		<statBases>
+			<Beauty>-2</Beauty>
+			<Cleanliness>0.4</Cleanliness>
+			<FilthMultiplier>0.05</FilthMultiplier>
+		</statBases>
+        <obsoletes>
+            <li>FAFMetalTileA</li>
+        </obsoletes>
+		<researchPrerequisites>
+			<li>Machining</li>
+		</researchPrerequisites>
+    </StuffedFloors.FloorTypeDef>
+
+    <!-- Vanilla -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsMetalBasicBase">
+      <defName>StuffedFloorsMetalPlate</defName>
+      <label>metal plates</label>
+      <description>A generic metal flooring.  Somewhat easy to keep clean.</description>
+        <texturePath>Terrain/Surfaces/GenericFloorTile</texturePath>
+        <!-- this is the vanilla tile texture, quie a few obsoletions -->
+        <obsoletes>
+            <!-- vanilla -->
+            <li>MetalTile</li>
+            <li>SilverTile</li>
+            <li>GoldTile</li>
+            <!-- <li>SterileTile</li> -->
+
+            <!-- Floored -->
+            <li>PlasteelTile</li>
+
+            <!-- Glitter Tech -->
+            <li>TitatiumTile</li>
+            <li>AlphaTile</li>
+            <li>BetaTile</li>
+
+            <!-- oddly, Minerals & Materials doesn't define terrains for the metals it adds. -->
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>
+
+    <!-- CuproPanda's Extra Floors -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsMetalBasicBase">
+      <defName>StuffedFloorsMetalSmallPlate</defName>
+      <label>small metal plates</label>
+      <description>Small metal plates, riveted to the floor.  Somewhat easy to keep clean.</description>
+        <texturePath>Floors/Metal/MetalPlate</texturePath>
+        <obsoletes>
+            <li>EXF_PlateSilver</li>
+            <li>EXF_PlateGold</li>
+            <li>EXF_PlateSteel</li>
+            <li>EXF_PlatePlasteel</li>
+            <li>EXF_PlateUranium</li>
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>
+
+    <!-- Pravus' Floors and Fences -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsMetalPrettyBase">
+      <defName>StuffedFloorsMetalShapedPlate</defName>
+      <label>shaped metal plates</label>
+      <description>Shaped metal plates, inspired by popular spaceship designs.</description>
+        <texturePath>Floors/Metal/FloorPlate</texturePath>
+        <obsoletes>
+            <li>FAFMetalTileB</li>
+        </obsoletes>
+		<researchPrerequisites>
+			<li>Machining</li>
+		</researchPrerequisites>
+    </StuffedFloors.FloorTypeDef>
+</Defs>

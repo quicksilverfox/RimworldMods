@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Architect</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>*/StuffedFloors.FloorTypeDef[defName = "StuffedWoodFloorVanilla"]/obsoletes</xpath>
+					<value>
+						<li>VFEArch_WoodPlankFloorWalnut</li>
+						<li>VFEArch_WoodPlankFloorBirch</li>
+						<li>VFEArch_WoodPlankFloorMahogany</li>
+					</value>						
+				</li>
+			</operations>				
+		</match>
+	</Operation>
+
+</Patch>

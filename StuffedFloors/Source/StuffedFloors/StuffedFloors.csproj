@@ -4,10 +4,11 @@
         <AssemblyTitle>StuffedFloors</AssemblyTitle>
         <Product>StuffedFloors</Product>
         <Copyright>Copyright © 2016-2021</Copyright>
-        <OutputPath>..\..\Assemblies\</OutputPath>
+        <OutputPath>..\..\1.6\Assemblies\</OutputPath>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <DebugType>portable</DebugType>
         <LangVersion>9</LangVersion>
+        <BaseOutputPath>..\..\1.6\Assemblies\</BaseOutputPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)'=='Debug'">
       <DefineConstants>$(DefineConstants);TRACE;DEBUG;</DefineConstants>
@@ -19,7 +20,21 @@
       <DebugType>portable</DebugType>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4085" />
-        <PackageReference Include="Lib.Harmony" Version="2.3.3" ExcludeAssets="runtime" />
+      <Reference Include="0Harmony">
+        <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\workshop\content\294100\2009463077\1.5\Assemblies\0Harmony.dll</HintPath>
+		<Private>false</Private>
+      </Reference>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+		<Private>false</Private>
+      </Reference>
+      <Reference Include="UnityEngine">
+        <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+		<Private>false</Private>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+		<Private>false</Private>
+      </Reference>
     </ItemGroup>
 </Project>

@@ -28,7 +28,7 @@ namespace AnimalsLogic
                     return;
                 }
 
-                List<Thing> resultTemp = new List<Thing>(__result);
+                var resultTemp = __result.ToList();
 
                 if (Settings.tastes_like_chicken)
                     foreach (Thing meat in resultTemp.FindAll(x => x.def.ingestible?.foodType == FoodTypeFlags.Meat))

@@ -40,20 +40,25 @@ namespace AnimalsLogic
         {
             var codes = new List<CodeInstruction>(instructions);
 
-            MethodInfo target = typeof(RaceProperties).GetMethod("get_ToolUser");
+            var target = AccessTools.PropertyGetter(typeof(RaceProperties), "ToolUser");
+            var replacement = AccessTools.Method(typeof(AnimalsUseDispenser), nameof(ToolUser));
 
+            bool patched = false;
             for (int i = 0; i < codes.Count; i++)
             {
-#pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
-                if (codes[i].opcode == OpCodes.Callvirt && codes[i].operand == target)
-#pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
+                if (codes[i].opcode == OpCodes.Callvirt && codes[i].operand != null && codes[i].operand.Equals(target))
                 {
-                    codes[i].operand = typeof(AnimalsUseDispenser).GetMethod(nameof(ToolUser)); // substitutes original function with mine
-                    return codes;
+                    codes[i].operand = replacement;
+                    patched = true;
+                    break;
                 }
             }
 
-            Log.Error("Animal Logic is unable to patch FoodUtility method.");
+            if (!patched)
+            {
+                Log.Error("[AnimalsLogic] Unable to patch FoodUtility: could not find call to RaceProperties.ToolUser.");
+            }
+
             return codes;
         }
 
@@ -88,7 +93,7 @@ namespace AnimalsLogic
         }
 
         /**
-         * Move few stepf srom dispenser to avoid clustering in a single cell
+         * Move few steps srom dispenser to avoid clustering in a single cell
          */
         public static Toil CarryIngestibleToChewSpot(Pawn pawn, TargetIndex ingestibleInd)
         {

@@ -72,7 +72,6 @@
     <Compile Include="MedicalAlerts\AnimalAlertsUtility.cs" />
     <Compile Include="Patches\NoBoomSlaughter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Patches\RuinedEggs.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Patches\TastesLikeChicken.cs" />
   </ItemGroup>

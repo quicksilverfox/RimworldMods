@@ -1,10 +1,11 @@
-﻿using System;
+﻿using HarmonyLib;
+using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using HarmonyLib;
-using RimWorld;
-using Verse;
+using System.Reflection;
 using System.Reflection.Emit;
+using Verse;
 
 namespace AnimalsLogic.Patches
 {
@@ -22,34 +23,86 @@ namespace AnimalsLogic.Patches
                 transpiler: new HarmonyMethod(typeof(GetThemYoung).GetMethod(nameof(Interacted_Transpiler)))
                 );
 
-            // TODO: the same but method takes TargetIndex as target and needs a bit different code for that
-            //AnimalsLogic.harmony.Patch(
-            //    typeof(Toils_Interpersonal).GetMethod("TryTrain"),
-            //    transpiler: new HarmonyMethod(typeof(GetThemYoung).GetMethod(nameof(TryTrain_Transpiler)))
-            //    );
+            AnimalsLogic.harmony.Patch(
+                typeof(Toils_Interpersonal) // I really should make a method to automatically go through nested classes
+                                            // instead of manually fixing it every time compiler changes its mind
+                    .GetNestedType("<>c__DisplayClass10_0", BindingFlags.NonPublic | BindingFlags.Instance)
+                    .GetMethod("<TryTrain>b__0", BindingFlags.NonPublic | BindingFlags.Instance),
+                transpiler: new HarmonyMethod(typeof(GetThemYoung).GetMethod(nameof(TryTrain_Transpiler)))
+                );
         }
 
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Interacted_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var codes = new List<CodeInstruction>(instructions);
-            for (int i = 0; i < codes.Count; i++)
+            var codes = instructions.ToList();
+            var wildnessField = typeof(StatDefOf).GetField(nameof(StatDefOf.Wildness));
+            var getStatMethod = typeof(StatExtension).GetMethod(nameof(StatExtension.GetStatValue));
+            bool patched = false;
+
+            for (int i = 4; i < codes.Count; i++)
             {
-                // ldfld float32 Verse.RaceProperties::wildness
-#pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
-                if (codes[i].opcode == OpCodes.Ldfld && codes[i].operand == StatDefOf.Wildness)
+                if (
+#pragma warning disable CS0252 // If it is != we got our answer anyway
+                    codes[i - 3].opcode == OpCodes.Ldsfld && codes[i - 3].operand == wildnessField &&
+                    codes[i].opcode == OpCodes.Call && codes[i].operand == getStatMethod
 #pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
+                )
                 {
-                    codes.InsertRange(i + 4,
-                        new List<CodeInstruction>() {
-                                new CodeInstruction(OpCodes.Ldarg_2), // put recipient Pawn on stack
-                                new CodeInstruction(OpCodes.Call, typeof(GetThemYoung).GetMethod(nameof(WildnessFactor)))
-                        });
+                    // Inject immediately after the GetStatValue call at index i, before the result is written into variable
+                    codes.InsertRange(i + 1, new[]
+                    {
+                        new CodeInstruction(OpCodes.Ldarg_2),
+                        new CodeInstruction(OpCodes.Call, typeof(GetThemYoung).GetMethod(nameof(WildnessFactor)))
+                    });
+                    patched = true;
                     break;
                 }
             }
 
-            return codes.AsEnumerable();
+            if(!patched)
+            {
+                Log.Error("AnimalsLogic: Failed to patch InteractionWorker_RecruitAttempt.Interacted method for WildnessFactor. Probably the game got an update that broke things.");
+            }   
+
+            return codes;
+        }
+
+        // currently both transpilers are the same, not always the case with different game versions
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> TryTrain_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var codes = instructions.ToList();
+            var wildnessField = typeof(StatDefOf).GetField(nameof(StatDefOf.Wildness));
+            var getStatMethod = typeof(StatExtension).GetMethod(nameof(StatExtension.GetStatValue));
+            bool patched = false;
+
+            for (int i = 4; i < codes.Count; i++)
+            {
+                if (
+#pragma warning disable CS0252 // If it is != we got our answer anyway
+                    codes[i - 3].opcode == OpCodes.Ldsfld && codes[i - 3].operand == wildnessField &&
+                    codes[i].opcode == OpCodes.Call && codes[i].operand == getStatMethod
+#pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
+                )
+                {
+                    codes.InsertRange(i + 1, new[]
+                    {
+                        new CodeInstruction(OpCodes.Ldloc_1), // push pawn
+                        new CodeInstruction(OpCodes.Call, typeof(GetThemYoung).GetMethod(nameof(WildnessFactor)))
+                    });
+
+                    patched = true;
+                    break;
+                }
+            }
+
+            if (!patched)
+            {
+                Log.Error("AnimalsLogic: Failed to patch Toils_Interpersonal.TryTrain method for WildnessFactor. Probably the game got an update that broke things.");
+            }
+
+            return codes;
         }
 
         public static float WildnessFactor(float wildness, Pawn recipient)
@@ -57,16 +110,20 @@ namespace AnimalsLogic.Patches
             if (!Settings.taming_age_factor)
                 return wildness;
 
-            LifeStageAge matureAge = recipient?.def?.race?.lifeStageAges?.FirstOrFallback(
+            if (recipient?.def?.race?.lifeStageAges == null || recipient.def.race.lifeStageAges.Empty() || recipient.ageTracker == null)
+                return wildness;
+
+            LifeStageAge matureAge = recipient.def.race.lifeStageAges
+                .FirstOrFallback(
                     p => p.def.reproductive || p.def.milkable || p.def.shearable,
                     recipient.def.race.lifeStageAges.Last()
-                    );
+                );
 
-            if (matureAge == null)
+            if (matureAge == null || matureAge.minAge <= 0f)
                 return wildness;
 
             float ageFactor = Math.Min(recipient.ageTracker.AgeBiologicalYearsFloat / matureAge.minAge, 1);
-            ageFactor *= (float) Math.Pow(ageFactor, 0.33f);
+            ageFactor *= (float)Math.Pow(ageFactor, 0.33f);
             return wildness * ageFactor;
         }
     }

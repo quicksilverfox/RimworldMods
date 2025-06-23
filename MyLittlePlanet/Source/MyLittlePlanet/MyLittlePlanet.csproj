@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" ExcludeAssets="runtime">
-      <Version>1.5.4409</Version>
+      <Version>1.6.4498-beta</Version>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Lib.Harmony" ExcludeAssets="runtime">

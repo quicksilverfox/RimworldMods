@@ -11,14 +11,14 @@
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<OutputPath>..\..\ResearchPowl\1.5\Assemblies</OutputPath>
+		<OutputPath>..\..\ResearchPowl\1.6\Assemblies</OutputPath>
 		<DefineConstants>TRACE;NDEBUG</DefineConstants>
 		<WarningLevel>4</WarningLevel>
 		<DebugSymbols>false</DebugSymbols>
 		<DebugType>None</DebugType>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<OutputPath>..\..\ResearchPowl\1.5\Assemblies</OutputPath>
+		<OutputPath>..\..\ResearchPowl\1.6\Assemblies</OutputPath>
 		<DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET48;</DefineConstants>
 	</PropertyGroup>
 	<ItemGroup>
@@ -31,7 +31,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4062" />
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4498-beta" />
 	</ItemGroup>
 	<ItemGroup>
 		<Publicize Include="Assembly-CSharp;UnityEngine.IMGUIModule;UnityEngine.CoreModule" />

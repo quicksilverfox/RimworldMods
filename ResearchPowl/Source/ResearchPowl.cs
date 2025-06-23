@@ -53,7 +53,7 @@ namespace ResearchPowl
 			listLeft.CheckboxLabeled(ShouldSeparateByTechLevels, ref shouldSeparateByTechLevels, ShouldSeparateByTechLevelsTip);
 			listLeft.CheckboxLabeled(AlignCloserToAncestors, ref alignToAncestors, AlignCloserToAncestorsTip);
 
-			listLeft.Label(GroupBy, -1f, null);
+			listLeft.Label(GroupBy, -1f, (TipSignal?)(TipSignal)null);
 			if (listLeft.RadioButton(PlaceNothingSeparately, !placeTabsSeparately && !placeModTechSeparately, 0f, PlaceSeparatelyTip, null))
 			{
 				placeModTechSeparately = placeTabsSeparately = false;
@@ -71,7 +71,7 @@ namespace ResearchPowl
 
 			if (placeModTechSeparately)
 			{
-				listLeft.Label(MinimumSeparateModTech, -1, MinimumSeparateModTechTip);
+				listLeft.Label(MinimumSeparateModTech, -1, (TipSignal?)(TipSignal)MinimumSeparateModTechTip);
 				string buffer = largeModTechCount.ToString();
 				listLeft.IntEntry(ref largeModTechCount, ref buffer);
 			}

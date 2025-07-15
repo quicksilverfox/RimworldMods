@@ -32,6 +32,7 @@
 			</categories>
 			<commonality>0.15</commonality>
 			<color>(35,35,35)</color>
+			<isAirtight>true</isAirtight>
 			<statFactors>
 				<MaxHitPoints>2.5</MaxHitPoints>
 				<WorkToMake>1.3</WorkToMake>
@@ -93,6 +94,7 @@
 			<commonality>0.3</commonality>
 			<constructEffect>ConstructWood</constructEffect>
 			<color>(75,75,75)</color>
+			<isAirtight>true</isAirtight>
 			<soundImpactBullet>BulletImpact_Wood</soundImpactBullet>
 			<soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
 			<soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
@@ -148,6 +150,7 @@
 			</categories>
 			<commonality>0.05</commonality>
 			<color>(193,230,255)</color>
+			<isAirtight>true</isAirtight>
 			<constructEffect>ConstructMetal</constructEffect>
 			<soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
 			<soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>

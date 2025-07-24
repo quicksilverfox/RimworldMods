@@ -1,34 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using AnimalsLogic.Patches;
 using HarmonyLib;
 using RimWorld;
-using Verse;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
+using Verse;
 
 namespace AnimalsLogic
 {
     class ForgetMeNot
     {
-        // This function is actually inlined and this patch is not working
-        [HarmonyPatch(typeof(TrainableUtility), "TamenessCanDecay", new Type[] { typeof(ThingDef) })]
-        static class TrainableUtility_TamenessCanDecay_Patch
-        {
-            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-            {
-                var codes = new List<CodeInstruction>(instructions);
-                for (int i = 0; i < codes.Count; i++)
-                {
-                    //ldc.r4 0.101
-                    if (codes[i].opcode == OpCodes.Ldc_R4) // not checking operand since method is very short
-                    {
-                        codes[i] = new CodeInstruction(OpCodes.Ldsfld, typeof(Settings).GetField(nameof(Settings.wildness_threshold_for_tameness_decay)));
-                        break;
-                    }
-                }
+        static readonly MethodInfo TamenessCanDecay_Def
+            = AccessTools.Method(typeof(TrainableUtility),
+                                 "TamenessCanDecay",
+                                 new[] { typeof(ThingDef) });
 
-                return codes.AsEnumerable();
+        static readonly MethodInfo TamenessCanDecay_Pawn
+            = AccessTools.Method(typeof(TrainableUtility),
+                                 "TamenessCanDecay",
+                                 new[] { typeof(Pawn) });
+
+        public static void Patch()
+        {
+            // There are two methods with the same name
+            AnimalsLogic.harmony.Patch(
+                TamenessCanDecay_Def,
+                transpiler: new HarmonyMethod(typeof(ForgetMeNot).GetMethod(nameof(TrainableUtility_TamenessCanDecay_Patch)))
+                );
+            AnimalsLogic.harmony.Patch(
+                TamenessCanDecay_Pawn,
+                transpiler: new HarmonyMethod(typeof(ForgetMeNot).GetMethod(nameof(TrainableUtility_TamenessCanDecay_Patch)))
+                );
+
+            foreach (var item in typeof(TrainableUtility).GetMethods())
+            {
+                if (item.Name.Equals("DegradationPeriodTicks"))
+                    AnimalsLogic.harmony.Patch(
+                        item,
+                        transpiler: new HarmonyMethod(typeof(ForgetMeNot).GetMethod(nameof(TrainableUtility_DegradationPeriodTicks_Patch)))
+                        );
             }
+        }
+
+        // This function is actually inlined and this patch is not working
+        [HarmonyTranspiler]
+        static IEnumerable<CodeInstruction> TrainableUtility_TamenessCanDecay_Patch(IEnumerable<CodeInstruction> instructions)
+        {
+            var codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count; i++)
+            {
+                //ldc.r4 0.101
+                if (codes[i].opcode == OpCodes.Ldc_R4) // not checking operand since method is very short
+                {
+                    codes[i] = new CodeInstruction(OpCodes.Ldsfld, typeof(Settings).GetField(nameof(Settings.wildness_threshold_for_tameness_decay)));
+                    break;
+                }
+            }
+
+            return codes.AsEnumerable();
         }
 
         // this is workaround
@@ -51,12 +82,13 @@ namespace AnimalsLogic
 
         static IEnumerable<CodeInstruction> PatchTamenessDecay(IEnumerable<CodeInstruction> instructions)
         {
+
             var codes = new List<CodeInstruction>(instructions);
             for (int i = 0; i < codes.Count; i++)
             {
                 //ldc.r4 0.101
 #pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
-                if (codes[i].opcode == OpCodes.Call && codes[i].operand == typeof(TrainableUtility).GetMethod(nameof(TrainableUtility.TamenessCanDecay)))
+                if (codes[i].opcode == OpCodes.Call && (codes[i].operand == TamenessCanDecay_Def || codes[i].operand == TamenessCanDecay_Pawn))
 #pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
                 {
                     codes[i].operand = typeof(ForgetMeNot).GetMethod(nameof(TamenessCanDecay));
@@ -76,28 +108,25 @@ namespace AnimalsLogic
             return def.GetStatValueAbstract(StatDefOf.Wildness) > Settings.wildness_threshold_for_tameness_decay;
         }
 
-        [HarmonyPatch(typeof(TrainableUtility), "DegradationPeriodTicks", new Type[] { typeof(ThingDef) })]
-        static class TrainableUtility_DegradationPeriodTicks_Patch
+        [HarmonyTranspiler]
+        static IEnumerable<CodeInstruction> TrainableUtility_DegradationPeriodTicks_Patch(IEnumerable<CodeInstruction> instructions)
         {
-            static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            var codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count; i++)
             {
-                var codes = new List<CodeInstruction>(instructions);
-                for (int i = 0; i < codes.Count; i++)
+                //	IL_001b: mul
+                if (codes[i].opcode == OpCodes.Mul) // not checking operand since method is very short
                 {
-                    //	IL_001b: mul
-                    if (codes[i].opcode == OpCodes.Mul) // not checking operand since method is very short
-                    {
-                        codes.InsertRange(i,
-                            new List<CodeInstruction>() {
+                    codes.InsertRange(i,
+                        new List<CodeInstruction>() {
                                 new CodeInstruction(OpCodes.Ldsfld, typeof(Settings).GetField(nameof(Settings.training_decay_factor))),
                                 new CodeInstruction(OpCodes.Div)
-                            });
-                        break;
-                    }
+                        });
+                    break;
                 }
-
-                return codes.AsEnumerable();
             }
+
+            return codes.AsEnumerable();
         }
     }
 }

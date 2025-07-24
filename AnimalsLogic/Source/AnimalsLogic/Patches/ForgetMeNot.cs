@@ -88,24 +88,38 @@ namespace AnimalsLogic
             {
                 //ldc.r4 0.101
 #pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
-                if (codes[i].opcode == OpCodes.Call && (codes[i].operand == TamenessCanDecay_Def || codes[i].operand == TamenessCanDecay_Pawn))
-#pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
+                if (codes[i].opcode == OpCodes.Call && codes[i].operand == TamenessCanDecay_Pawn)
                 {
-                    codes[i].operand = typeof(ForgetMeNot).GetMethod(nameof(TamenessCanDecay));
+                    codes[i].operand = typeof(ForgetMeNot).GetMethod(nameof(TamenessCanDecay_Pawn_Detour));
                     break;
                 }
+                if (codes[i].opcode == OpCodes.Call && codes[i].operand == TamenessCanDecay_Def)
+                {
+                    codes[i].operand = typeof(ForgetMeNot).GetMethod(nameof(TamenessCanDecay_Thing_Detour));
+                    break;
+                }
+#pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
             }
 
             return codes.AsEnumerable();
         }
 
-        public static bool TamenessCanDecay(ThingDef def)
+        public static bool TamenessCanDecay_Thing_Detour(ThingDef def)
         {
             if (def.race.FenceBlocked)
             {
                 return false;
             }
             return def.GetStatValueAbstract(StatDefOf.Wildness) > Settings.wildness_threshold_for_tameness_decay;
+        }
+
+        public static bool TamenessCanDecay_Pawn_Detour(Pawn pawn)
+        {
+            if (pawn.RaceProps.FenceBlocked)
+            {
+                return false;
+            }
+            return pawn.GetStatValue(StatDefOf.Wildness, applyPostProcess: true, 1) > Settings.wildness_threshold_for_tameness_decay;
         }
 
         [HarmonyTranspiler]

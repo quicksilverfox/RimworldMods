@@ -25,12 +25,12 @@ namespace WorldGenRules
                 {
                     // Insert before:
                     // IL_0541: call bool RimWorld.TutorSystem::get_TutorialMode()
-                    MethodInfo searchTarget = AccessTools.Method(typeof(TutorSystem), "get_TutorialMode");
+                    //FieldInfo searchTarget = AccessTools.Field(typeof(Page_CreateWorldParams), "seedString");
 #pragma warning disable CS0252 // Comparation works as intended
-                    if (codes[i].opcode == OpCodes.Call && codes[i].operand == searchTarget)
+                    if (codes[i].opcode == OpCodes.Ldstr && codes[i].operand == "PlanetCoverageTip")
 #pragma warning restore CS0252 // 
                     {
-                        codes.InsertRange(i - 1, new List<CodeInstruction>(){
+                        codes.InsertRange(i + 2, new List<CodeInstruction>(){
                             // this increments vertical offset variable
                             new CodeInstruction(OpCodes.Ldloc_S, 7),
                             new CodeInstruction(OpCodes.Ldc_R4, 40f), // if you use 40 instead of 40f it would push 0 instead...

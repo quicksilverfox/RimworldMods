@@ -30,6 +30,7 @@ namespace AnimalsLogic
 
             HostilePredators.Patch();
             GetThemYoung.Patch();
+            ForgetMeNot.Patch();
 
             base.GetSettings<Settings>();
             //Log.Message("Animal Logic is loaded.");

@@ -27,21 +27,26 @@ namespace AnimalsLogic
             // There are two methods with the same name
             AnimalsLogic.harmony.Patch(
                 TamenessCanDecay_Def,
-                transpiler: new HarmonyMethod(typeof(ForgetMeNot).GetMethod(nameof(TrainableUtility_TamenessCanDecay_Patch)))
+                transpiler: new HarmonyMethod(typeof(ForgetMeNot), nameof(TrainableUtility_TamenessCanDecay_Patch))
                 );
             AnimalsLogic.harmony.Patch(
                 TamenessCanDecay_Pawn,
-                transpiler: new HarmonyMethod(typeof(ForgetMeNot).GetMethod(nameof(TrainableUtility_TamenessCanDecay_Patch)))
+                transpiler: new HarmonyMethod(typeof(ForgetMeNot), nameof(TrainableUtility_TamenessCanDecay_Patch))
                 );
 
-            foreach (var item in typeof(TrainableUtility).GetMethods())
-            {
-                if (item.Name.Equals("DegradationPeriodTicks"))
-                    AnimalsLogic.harmony.Patch(
-                        item,
-                        transpiler: new HarmonyMethod(typeof(ForgetMeNot).GetMethod(nameof(TrainableUtility_DegradationPeriodTicks_Patch)))
-                        );
-            }
+
+            AnimalsLogic.harmony.Patch(
+                AccessTools.Method(typeof(TrainableUtility),
+                                 "DegradationPeriodTicks",
+                                 new[] { typeof(ThingDef) }),
+                transpiler: new HarmonyMethod(typeof(ForgetMeNot), nameof(TrainableUtility_DegradationPeriodTicks_Patch))
+                );
+            AnimalsLogic.harmony.Patch(
+                AccessTools.Method(typeof(TrainableUtility),
+                                 "DegradationPeriodTicks",
+                                 new[] { typeof(Pawn) }),
+                transpiler: new HarmonyMethod(typeof(ForgetMeNot), nameof(TrainableUtility_DegradationPeriodTicks_Patch))
+                );
         }
 
         // This function is actually inlined and this patch is not working
@@ -126,19 +131,25 @@ namespace AnimalsLogic
         static IEnumerable<CodeInstruction> TrainableUtility_DegradationPeriodTicks_Patch(IEnumerable<CodeInstruction> instructions)
         {
             var codes = new List<CodeInstruction>(instructions);
+            var fi = AccessTools.Field(typeof(Settings), nameof(Settings.training_decay_factor));
+
+            var found = false;
             for (int i = 0; i < codes.Count; i++)
             {
-                //	IL_001b: mul
-                if (codes[i].opcode == OpCodes.Mul) // not checking operand since method is very short
+                //	Insert before the result is casted to int
+                if (codes[i].Calls(AccessTools.Method(typeof(UnityEngine.Mathf), nameof(UnityEngine.Mathf.RoundToInt))))
                 {
                     codes.InsertRange(i,
                         new List<CodeInstruction>() {
                                 new CodeInstruction(OpCodes.Ldsfld, typeof(Settings).GetField(nameof(Settings.training_decay_factor))),
                                 new CodeInstruction(OpCodes.Div)
                         });
+                    found = true;
                     break;
                 }
             }
+
+            if(!found) Log.Error("[AnimalsLogic] Unable to patch TrainableUtility: could not find call to RoundToInt.");
 
             return codes.AsEnumerable();
         }

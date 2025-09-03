@@ -10,14 +10,14 @@ namespace ResearchPowl
 {
     public static class Def_Extensions
     {
-        static readonly Dictionary<int, Texture2D> _cachedDefIcons = new Dictionary<int, Texture2D>();
-        static readonly Dictionary<int, Color> _cachedIconColors = new Dictionary<int, Color>();
+        static readonly Dictionary<string, Texture2D> _cachedDefIcons = new Dictionary<string, Texture2D>();
+        static readonly Dictionary<string, Color> _cachedIconColors = new Dictionary<string, Color>();
 
         public static Color IconColor( this Def def )
         {
             // garbage in, garbage out
             if ( def == null ) return Color.cyan;
-            var index = def.index;
+            var index = def.defName;
 
             // check cache
             if (_cachedIconColors.TryGetValue(index, out Color color)) return color;
@@ -79,7 +79,7 @@ namespace ResearchPowl
             // garbage in, garbage out
             if (def == null ) return null;
 
-            var index = def.index;
+            var index = def.defName;
 
             // check cache
             if (_cachedDefIcons.TryGetValue(index, out Texture2D texture2D)) return texture2D;

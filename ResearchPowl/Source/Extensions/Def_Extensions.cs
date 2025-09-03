@@ -10,21 +10,22 @@ namespace ResearchPowl
 {
     public static class Def_Extensions
     {
-        static readonly Dictionary<string, Texture2D> _cachedDefIcons = new Dictionary<string, Texture2D>();
-        static readonly Dictionary<string, Color> _cachedIconColors = new Dictionary<string, Color>();
+        static readonly Dictionary<ulong, Texture2D> _cachedDefIcons = new Dictionary<ulong, Texture2D>();
+        static readonly Dictionary<ulong, Color> _cachedIconColors = new Dictionary<ulong, Color>();
 
-        public static Color IconColor( this Def def )
+        public static Color IconColor(this Def def)
         {
             // garbage in, garbage out
-            if ( def == null ) return Color.cyan;
-            var index = def.defName;
+            if (def == null) return Color.cyan;
+
+            var index = (((ulong)def.GetType().GetHashCode()) << 32) | ((uint)def.defNameHash);
 
             // check cache
             if (_cachedIconColors.TryGetValue(index, out Color color)) return color;
 
             // get product color for recipes
             else if (def is RecipeDef rdef && !rdef.products.NullOrEmpty())
-            {    
+            {
                 color = rdef.products[0].thingDef.IconColor();
                 _cachedIconColors.Add(index, color);
             }
@@ -77,9 +78,9 @@ namespace ResearchPowl
         public static Texture2D IconTexture(this Def def)
         {
             // garbage in, garbage out
-            if (def == null ) return null;
+            if (def == null) return null;
 
-            var index = def.defName;
+            var index = (((ulong)def.GetType().GetHashCode()) << 32) | ((uint)def.defNameHash);
 
             // check cache
             if (_cachedDefIcons.TryGetValue(index, out Texture2D texture2D)) return texture2D;
@@ -105,7 +106,7 @@ namespace ResearchPowl
             else if (def is BuildableDef buildableDef)
             {
                 // if def built != def listed.
-                if (def is ThingDef thingDef && thingDef.entityDefToBuild != null )
+                if (def is ThingDef thingDef && thingDef.entityDefToBuild != null)
                 {
                     texture2D = thingDef.entityDefToBuild.IconTexture();
                 }
@@ -113,12 +114,12 @@ namespace ResearchPowl
 
                 _cachedDefIcons.Add(index, texture2D);
             }
-            else 
+            else
             {
                 texture2D = null;
                 _cachedDefIcons.Add(index, null);
             }
-            
+
             return texture2D;
         }
     }

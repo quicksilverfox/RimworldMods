@@ -350,7 +350,7 @@ namespace ResearchPowl
 				for (int i = projects.Count; i-- > 0;)
 				{
 					var project = projects[i];
-					if (hidden.Contains(project) || locked.Contains(project)) continue;
+					if (project?.modContentPack == null || hidden.Contains(project) || locked.Contains(project)) continue;
 
 					if (usingFilter)
 					{

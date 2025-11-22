@@ -87,8 +87,8 @@ namespace SyncGrowth
 
         public static bool CanHaveGroup(Plant plant, bool flashcells)
         {
-            var ingestible = plant.def.ingestible;
-            var plantprops = plant.def.plant;
+            //var ingestible = plant.def.ingestible;
+            //var plantprops = plant.def.plant;
 
             IPlantToGrowSettable host = plant.Map.zoneManager.ZoneAt(plant.Position) as IPlantToGrowSettable;
             if(host == null)

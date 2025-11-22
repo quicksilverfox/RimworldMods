@@ -11,7 +11,7 @@ namespace AnimalsLogic
     class AnimalsLogic : Mod
     {
 #pragma warning disable 0649
-        public static Settings Settings;
+        public static Settings settings;
 #pragma warning restore 0649
         public static Harmony harmony;
 
@@ -32,7 +32,7 @@ namespace AnimalsLogic
             GetThemYoung.Patch();
             ForgetMeNot.Patch();
 
-            base.GetSettings<Settings>();
+            settings = base.GetSettings<Settings>();
             //Log.Message("Animal Logic is loaded.");
         }
 

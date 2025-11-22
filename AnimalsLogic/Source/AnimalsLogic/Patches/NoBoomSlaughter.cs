@@ -55,7 +55,7 @@ namespace AnimalsLogic
 
             // 2. Dynamically patch any DeathActionWorker using GenExplosion in PawnDied
             var deathWorkerTypes = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(a => a.GetTypes())
+                .SelectMany(a => GetLoadableTypes(a))
                 .Where(t => typeof(DeathActionWorker).IsAssignableFrom(t) && !t.IsAbstract);
 
             foreach (var type in deathWorkerTypes)
@@ -114,6 +114,18 @@ namespace AnimalsLogic
             if (corpse.InnerPawn.health.hediffSet.HasHediff(HediffDefOf.Anesthetic))
                 return false;
             return true;
+        }
+        static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
+        {
+            try
+            {
+                return assembly.GetTypes();
+            }
+            catch (ReflectionTypeLoadException ex)
+            {
+                // Return only the types that loaded successfully
+                return ex.Types.Where(t => t != null);
+            }
         }
     }
 }

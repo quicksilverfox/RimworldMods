@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+	<ResearchProjectDef>
+		<defName>LeeaniBrewing</defName>
+		<label>Cider Brewing</label>
+		<description>One of the oldest alcohols of all time. Unlocks juniper cultivation, wine press and cider keg.\n\nRequires Leeani researcher.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<tags>
+			<li>LeeaniStart</li>
+			<!-- ta-ignore tag is for tech advancing mod to ignore this research in regards of faction tech level -->
+			<li>ta-ignore</li>
+		</tags>
+		<tab>LeeaniResearchTab</tab>
+		<prerequisites>
+			<li>Brewing</li>
+		</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>LeeaniWineBrewing</defName>
+		<label>Wine Brewing</label>
+		<description>A craft wine, the secrets to a perfect blend lie in this research that only a Leeani could truly understand. Unlocks grapes cultivation and wine keg.\n\nRequires Leeani researcher.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tags>
+			<li>ta-ignore</li>
+		</tags>
+		<tab>LeeaniResearchTab</tab>
+		<prerequisites>
+			<li>LeeaniBrewing</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>LeeaniAutovats</defName>
+		<label>Autovats</label>
+		<description>True efficiency means automated kegs could take over the careful production of our ciders and wines. Unlocks autovats.\n\nRequires Leeani researcher.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tags>
+			<li>ta-ignore</li>
+		</tags>
+		<tab>LeeaniResearchTab</tab>
+		<prerequisites>
+			<li>LeeaniWineBrewing</li>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

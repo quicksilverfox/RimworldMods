@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<FactionDef ParentName="PlayerFactionBase">
+		<defName>LeeaniPlayerColony</defName>
+		<label>Leeani Hold</label>
+		<description>Your own community.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>LeeaniColonist</basicMemberKind>
+		<pawnsPlural>colonists</pawnsPlural>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<techLevel>Medieval</techLevel>
+		<allowedCultures><li>Rustican</li></allowedCultures>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
+		<settlementTexturePath>World/LeeaniBaseIcon</settlementTexturePath>
+		<factionIconPath>World/LeeaniBaseIcon</factionIconPath>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+			<li>LeeaniStart</li>
+		</startingResearchTags>
+		<forageabilityFactor>1.5</forageabilityFactor>		
+		<apparelStuffFilter>
+			<thingDefs>
+				<li>Cloth</li>
+				<li>WoolMuffalo</li>
+				<li>WoolAlpaca</li>
+			</thingDefs>
+		</apparelStuffFilter>
+
+	</FactionDef>
+
+	<FactionDef ParentName="PlayerFactionBase">
+		<defName>LeeaniPlayerColonyTribal</defName>
+		<label>Leeani Hold (No Research)</label>
+		<description>Leeani semi-tribal start. Only tribal researches done, but medieval tech level.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>LeeaniColonist</basicMemberKind>
+		<pawnsPlural>colonists</pawnsPlural>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<allowedCultures><li>Corunan</li></allowedCultures>
+		<techLevel>Medieval</techLevel>
+		<backstoryCategories>
+			<li>LeeaniBackstory</li>
+		</backstoryCategories>
+		<settlementTexturePath>World/LeeaniBaseIcon</settlementTexturePath>
+		<factionIconPath>World/LeeaniBaseIcon</factionIconPath>
+		<startingResearchTags>
+			<li>TribalStart</li>
+			<li>LeeaniStart</li>
+		</startingResearchTags>
+		<forageabilityFactor>2.0</forageabilityFactor>		
+		<apparelStuffFilter>
+			<thingDefs>
+				<li>Cloth</li>
+				<li>WoolMuffalo</li>
+				<li>WoolAlpaca</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+
+</Defs>

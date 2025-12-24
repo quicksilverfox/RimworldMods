@@ -5,43 +5,22 @@
 	<author>MikeRobe</author>
 	<url>https://github.com/quicksilverfox/RimworldMods/releases/latest</url>
 	<supportedVersions>
-		<li>0.19</li>
-		<li>1.0</li>
-		<li>1.1</li>
-		<li>1.2</li>
-		<li>1.3</li>
+		<li>1.5</li>
+		<li>1.6</li>
 	</supportedVersions>
-	<modDependenciesByVersion>
-		<v1.1>
-			<li>
-				<packageId>erdelf.HumanoidAlienRaces</packageId>
-				<displayName>Humanoid Alien Races 2.0</displayName>
-				<steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
-			</li>
-		</v1.1>
-		<v1.2>
-			<li>
-				<packageId>erdelf.HumanoidAlienRaces</packageId>
-				<displayName>Humanoid Alien Races 2.0</displayName>
-				<steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
-			</li>
-		</v1.2>
-		<v1.3>
-			<li>
-				<packageId>erdelf.HumanoidAlienRaces</packageId>
-				<displayName>Humanoid Alien Races 2.0</displayName>
-				<steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
-			</li>
-		</v1.3>
-	</modDependenciesByVersion>
-    <loadAfter>
-        <li>erdelf.HumanoidAlienRaces</li>
-    </loadAfter>
-	<description>A nice happy race of people-foxes. Alien Race Framework required, load after it. Built-in support for EPOE.
+	<modDependencies>
+		<li>
+			<packageId>ludeon.rimworld.biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
+	</modDependencies>
+	<description>A nice happy race of people-foxes. Now uses Biotech xenotypes instead of Humanoid Alien Races! Built-in support for EPOE.
 
-	Adds Faction, starting Scenario, playable Race, and some signature stuff.
+	Adds Faction, starting Scenario, playable Xenotype, and some signature stuff.
 
 	Plenty of backstories, as well as names. Suggestions? Find @MikeRobe on the Rimworld Discord.
+
+	Note: This version requires the Biotech DLC and is incompatible with the old Humanoid Alien Races versions.
 
 	</description>
 </ModMetaData>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============ Leeani Tail Gene ============ -->
+	<GeneDef>
+		<defName>LeeaniTail</defName>
+		<label>leeani tail</label>
+		<labelShortAdj>tailed</labelShortAdj>
+		<description>Carriers of this gene have a fluffy fox-like tail that provides balance and expressive body language.</description>
+		<iconPath>UI/Icons/Genes/Gene_LeeaniTail</iconPath>
+		<displayCategory>BodyType</displayCategory>
+		<displayOrderInCategory>500</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<symbolPack>
+			<prefixSymbols>
+				<li><symbol>tail</symbol></li>
+				<li><symbol>fox</symbol></li>
+			</prefixSymbols>
+		</symbolPack>
+		<graphicData>
+			<fur>Things/Leeani/Tails/TailL</fur>
+			<drawLoc>Tailbone</drawLoc>
+			<colorType>Skin</colorType>
+			<tattoosVisible>false</tattoosVisible>
+		</graphicData>
+		<bodyPartGroupDefs>
+			<li>Tail</li>
+		</bodyPartGroupDefs>
+	</GeneDef>
+
+	<!-- ============ Fox Head Gene ============ -->
+	<GeneDef>
+		<defName>LeeaniHead</defName>
+		<label>leeani head</label>
+		<description>Carriers have a fox-like head with large pointed ears and an elongated snout.</description>
+		<iconPath>UI/Icons/Genes/Gene_FoxHead</iconPath>
+		<displayCategory>Headbone</displayCategory>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<graphicData>
+			<headTypeMale>LMAverage_Normal</headTypeMale>
+			<headTypeFemale>LFAverage_Normal</headTypeFemale>
+		</graphicData>
+		<renderNodeProperties>
+			<li Class="PawnRenderNodeProperties_Head">
+				<texPaths>
+					<li>Things/Leeani/Head</li>
+				</texPaths>
+			</li>
+		</renderNodeProperties>
+		<forcedHairTag>Bald</forcedHairTag>
+		<hairTagFilter>
+			<whitelist>false</whitelist>
+		</hairTagFilter>
+		<beardTagFilter>
+			<whitelist>false</whitelist>
+		</beardTagFilter>
+	</GeneDef>
+
+	<!-- ============ Signature Orange Fur Color ============ -->
+	<GeneDef>
+		<defName>Skin_LeeaniFurOrange</defName>
+		<label>orange fur</label>
+		<labelShortAdj>orange-furred</labelShortAdj>
+		<description>Carriers of this gene have vibrant orange fur, the signature color of Leeani.</description>
+		<skinColorBase>(206, 124, 0)</skinColorBase>
+		<skinColorOverride>(206, 124, 0)</skinColorOverride>
+		<displayCategory>Fur</displayCategory>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<iconPath>UI/Icons/Genes/Gene_SkinColorOverride</iconPath>
+		<biostatCpx>0</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<exclusionTags>
+			<li>SkinColorOverride</li>
+			<li>Fur</li>
+		</exclusionTags>
+	</GeneDef>
+
+	<!-- ============ Leeani Physical Traits ============ -->
+	<GeneDef>
+		<defName>Leeani_QuickAndAgile</defName>
+		<label>quick and agile</label>
+		<description>Carriers have a lean, fox-like build with enhanced movement speed but reduced physical labor capacity.</description>
+		<iconPath>UI/Icons/Genes/Gene_MoveSpeed</iconPath>
+		<displayCategory>Miscellaneous</displayCategory>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>1</biostatMet>
+		<statOffsets>
+			<MoveSpeed>0.4</MoveSpeed>
+		</statOffsets>
+		<statFactors>
+			<MiningSpeed>0.8</MiningSpeed>
+		</statFactors>
+	</GeneDef>
+
+	<GeneDef>
+		<defName>LeeaniPsychicSensitivity</defName>
+		<label>heightened psychic sensitivity</label>
+		<description>Carriers are more attuned to psychic phenomena than baseline humans.</description>
+		<iconPath>UI/Icons/Genes/Gene_PsychicAbility</iconPath>
+		<displayCategory>Ability</displayCategory>
+		<displayOrderInCategory>100</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<statFactors>
+			<PsychicSensitivity>1.25</PsychicSensitivity>
+		</statFactors>
+	</GeneDef>
+
+	<!-- ============ Leeani Mental Traits ============ -->
+	<GeneDef>
+		<defName>Leeani_CheerfulNature</defName>
+		<label>cheerful nature</label>
+		<description>Carriers of this gene are naturally cheerful and kind, with a tendency toward beauty and optimism.</description>
+		<iconPath>UI/Icons/Genes/Gene_Mood</iconPath>
+		<displayCategory>Miscellaneous</displayCategory>
+		<displayOrderInCategory>200</displayOrderInCategory>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<statOffsets>
+			<MentalBreakThreshold>-0.02</MentalBreakThreshold>
+		</statOffsets>
+		<suppressedTraits>
+			<li>
+				<def>NaturalMood</def>
+				<degree>-2</degree>
+			</li>
+			<li>
+				<def>NaturalMood</def>
+				<degree>-1</degree>
+			</li>
+		</suppressedTraits>
+		<forcedTraits>
+			<li>
+				<def>NaturalMood</def>
+				<degree>2</degree>
+				<chance>0.5</chance>
+			</li>
+			<li>
+				<def>Kind</def>
+				<chance>0.5</chance>
+			</li>
+			<li>
+				<def>Beauty</def>
+				<degree>1</degree>
+				<chance>0.3</chance>
+			</li>
+			<li>
+				<def>Beauty</def>
+				<degree>2</degree>
+				<chance>0.3</chance>
+			</li>
+		</forcedTraits>
+	</GeneDef>
+
+	<GeneDef>
+		<defName>Leeani_Pacifist</defName>
+		<label>peaceful nature</label>
+		<description>Carriers have a strong cultural aversion to violence, though they can fight when necessary.</description>
+		<iconPath>UI/Icons/Genes/Gene_Kind</iconPath>
+		<displayCategory>Violence</displayCategory>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>1</biostatMet>
+		<forcedTraits>
+			<li>
+				<def>LeeaniPacifist</def>
+				<chance>0.7</chance>
+			</li>
+		</forcedTraits>
+	</GeneDef>
+
+	<!-- ============ Leeani Leather Gene ============ -->
+	<GeneDef>
+		<defName>Leeani_FurLeather</defName>
+		<label>leeani fur</label>
+		<description>Carriers produce leeani leather when butchered.</description>
+		<iconPath>UI/Icons/Genes/Gene_Fur</iconPath>
+		<displayCategory>Miscellaneous</displayCategory>
+		<displayOrderInCategory>300</displayOrderInCategory>
+		<biostatCpx>0</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<leatherDef>Leather_Leeani</leatherDef>
+	</GeneDef>
+
+</Defs>

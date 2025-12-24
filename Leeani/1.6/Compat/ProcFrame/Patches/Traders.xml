@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/TraderKindDef[defName="Base_Leeani_Standard"]/stockGenerators</xpath>
+  <value>
+    <li Class="StockGenerator_SingleDef">
+				<thingDef>LeeaniCider</thingDef>
+				<countRange>
+					<min>100</min>
+					<max>500</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>LeeaniWine</thingDef>
+				<countRange>
+					<min>100</min>
+					<max>500</max>
+				</countRange>
+			</li>
+  </value>
+</Operation>
+
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/TraderKindDef[defName="Caravan_Leeani_BulkGoods"]/stockGenerators</xpath>
+  <value>
+    <li Class="StockGenerator_SingleDef">
+				<thingDef>LeeaniCider</thingDef>
+				<countRange>
+					<min>50</min>
+					<max>200</max>
+				</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>LeeaniWine</thingDef>
+				<countRange>
+					<min>50</min>
+					<max>200</max>
+				</countRange>
+			</li>
+  </value>
+</Operation>
+
+</Patch>

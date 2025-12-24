@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ <HeadTypeDef ParentName="AverageBase">
+    <defName>LMAverage_Normal</defName>
+    <graphicPath>Things/Leeani/Head/LMAverage_Normal</graphicPath>       
+    <gender>Male</gender>
+  </HeadTypeDef> 
+
+ <HeadTypeDef ParentName="AverageBase">
+    <defName>LFAverage_Normal</defName>
+    <graphicPath>Things/Leeani/Head/LFAverage_Normal</graphicPath>       
+    <gender>Female</gender>
+  </HeadTypeDef> 
+
+</Defs>

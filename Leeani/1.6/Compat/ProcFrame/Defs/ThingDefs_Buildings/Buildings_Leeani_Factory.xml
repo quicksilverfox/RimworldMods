@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>IndustrialCiderKeg</defName>
+		<label>industrial cider keg</label>
+		<thingClass>Building_WorkTable</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Production/AutoKeg</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<rect>(0.15,0.3,2.7,2.7)</rect>
+			</damageData>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,2)</interactionCellOffset>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<passability>Impassable</passability>
+		<disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+		<fillPercent>0.45</fillPercent>
+		<pathCost>60</pathCost>
+		<size>(3,3)</size>
+		<statBases>
+			<WorkToBuild>5000</WorkToBuild>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A barrel for fermenting even more berries into famed Leeani cider.</description>
+		<costList>
+			<Steel>50</Steel>
+		</costList>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costStuffCount>200</costStuffCount>
+		<comps>			
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>50</basePowerConsumption>
+			</li>
+		 <li Class="ProcessorFramework.CompProperties_Processor">
+    <capacity>50</capacity>
+    <independentProcesses>true</independentProcesses>
+    <parallelProcesses>true</parallelProcesses>
+    <dropIngredients>false</dropIngredients>
+    <showProductIcon>true</showProductIcon>
+    <barOffset>(0.0, 0.25)</barOffset>
+    <barScale>(1.0, 1.0)</barScale>
+    <colorCoded>false</colorCoded>
+    <processes>     
+	<li>LeeaniCiderProcFast</li>	
+    </processes>
+  </li>
+		</comps>		
+		<tickerType>Normal</tickerType>
+		<rotatable>true</rotatable>
+		<designationCategory>Production</designationCategory>
+		<researchPrerequisites>
+			<li>LeeaniAutovats</li>
+		</researchPrerequisites>		
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>IndustrialWineVat</defName>
+		<label>industrial wine vat</label>
+		<thingClass>Building_WorkTable</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>		
+		<graphicData>
+			<texPath>Things/Building/Production/AutoKeg</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<rect>(0.15,0.3,2.7,2.7)</rect>
+			</damageData>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,2)</interactionCellOffset>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<passability>Impassable</passability>
+		<disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+		<fillPercent>0.45</fillPercent>
+		<pathCost>60</pathCost>
+		<size>(3,3)</size>
+		<statBases>
+			<WorkToBuild>1000</WorkToBuild>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A barrel for fermenting even more grapes into Leeani wine.</description>
+		<costList>
+			<Steel>50</Steel>
+		</costList>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costStuffCount>200</costStuffCount>
+		<comps>			
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>50</basePowerConsumption>
+			</li>
+			 <li Class="ProcessorFramework.CompProperties_Processor">
+    <capacity>50</capacity>
+    <independentProcesses>true</independentProcesses>
+    <parallelProcesses>true</parallelProcesses>
+    <dropIngredients>false</dropIngredients>
+    <showProductIcon>true</showProductIcon>
+    <barOffset>(0.0, 0.25)</barOffset>
+    <barScale>(1.0, 1.0)</barScale>
+    <colorCoded>false</colorCoded>
+    <processes>     
+	<li>LeeaniWineProcFast</li>	
+    </processes>
+  </li>
+</comps>		
+		<tickerType>Normal</tickerType>
+		<rotatable>true</rotatable>
+		<designationCategory>Production</designationCategory>
+		<researchPrerequisites>
+			<li>LeeaniAutovats</li>
+		</researchPrerequisites>		
+	</ThingDef>
+</Defs>

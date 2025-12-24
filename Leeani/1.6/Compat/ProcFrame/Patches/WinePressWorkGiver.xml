@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+<!-- Adds wine press to brewery work giver to reduce work tab clutter -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/WorkGiverDef[defName='DoBillsBrew']/fixedBillGiverDefs</xpath>
+		<order>Append</order>
+		<value>
+			<li>LeeaniWinePress</li>
+		</value>
+	</Operation>
+
+</Patch>

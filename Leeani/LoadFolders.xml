@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loadFolders> 
+	<v1.4>
+	<li>/</li>
+    <li>1.4</li>	
+    <li IfModActive="syrchalis.processor.framework">1.4/Compat/ProcFrame</li>    
+</v1.4>
+<v1.5>
+	<li>/</li>
+    <li>1.5</li>	
+    <li IfModActive="syrchalis.processor.framework">1.5/Compat/ProcFrame</li>
+	<li IfModActive="zal.processorframework">1.5/Compat/ProcFrame</li>    
+</v1.5>
+<v1.6>
+	<li>/</li>
+    <li>1.6</li>	
+    <li IfModActive="syrchalis.processor.framework">1.6/Compat/ProcFrame</li>
+	<li IfModActive="zal.processorframework">1.6/Compat/ProcFrame</li>    
+</v1.6>
+</loadFolders>

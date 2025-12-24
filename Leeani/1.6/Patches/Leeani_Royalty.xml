@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Royalty</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/FactionDef[defName = "Empire"]/permanentEnemyToEveryoneExcept</xpath>
+          <value>
+            <li>LeeaniPlayerColony</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+    </Operation>
+</Patch>

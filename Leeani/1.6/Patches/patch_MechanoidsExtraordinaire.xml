@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Mechanoids Extraordinaire</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Leeani are now Human xenotypes, so surgeries apply to Human race by default -->
+				<!-- Just need to ensure the tail bodypart is supported -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="InstallMechaTentacleME"]/appliedOnFixedBodyParts</xpath>
+					<value>
+						<li>LeeaniTail</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

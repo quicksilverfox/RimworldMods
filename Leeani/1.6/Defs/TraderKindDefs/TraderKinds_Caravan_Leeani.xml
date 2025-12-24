@@ -48,6 +48,41 @@
 					<max>400</max>
 				</countRange>
 			</li>
+			<!-- Stone blocks in bulk - traditionalist specialty -->
+			<li Class="StockGenerator_Category">
+				<categoryDef>StoneBlocks</categoryDef>
+				<thingDefCountRange>
+					<min>2</min>
+					<max>3</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>400</min>
+					<max>800</max>
+				</totalPriceRange>
+			</li>
+			<!-- Leather and wool in bulk - agrarian products -->
+			<li Class="StockGenerator_Category">
+				<categoryDef>Leathers</categoryDef>
+				<thingDefCountRange>
+					<min>2</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>300</min>
+					<max>600</max>
+				</totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Fabric</tradeTag>
+				<thingDefCountRange>
+					<min>2</min>
+					<max>3</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>200</min>
+					<max>500</max>
+				</totalPriceRange>
+			</li>
 			<li Class="StockGenerator_SingleDef">
 				<thingDef>Neutroamine</thingDef>
 				<countRange>
@@ -160,6 +195,10 @@
 			<li Class="StockGenerator_BuyTradeTag">
 				<tag>ExoticBuilding</tag>
 			</li>
+			<!-- Leeani value knowledge highly -->
+			<li Class="StockGenerator_BuyCategory" MayRequire="Ludeon.RimWorld.Ideology">
+				<category>Books</category>
+			</li>
 		</stockGenerators>
 	</TraderKindDef>
 
@@ -228,6 +267,10 @@
 			</li>
 			<li Class="StockGenerator_BuyTradeTag">
 				<tag>ExoticBuilding</tag>
+			</li>
+			<!-- Leeani value knowledge highly -->
+			<li Class="StockGenerator_BuyCategory" MayRequire="Ludeon.RimWorld.Ideology">
+				<category>Books</category>
 			</li>
 		</stockGenerators>
 	</TraderKindDef>
@@ -385,6 +428,10 @@
 			</li>
 			<li Class="StockGenerator_BuyTradeTag">
 				<tag>ExoticBuilding</tag>
+			</li>
+			<!-- Leeani value knowledge highly -->
+			<li Class="StockGenerator_BuyCategory" MayRequire="Ludeon.RimWorld.Ideology">
+				<category>Books</category>
 			</li>
 		</stockGenerators>
 	</TraderKindDef>

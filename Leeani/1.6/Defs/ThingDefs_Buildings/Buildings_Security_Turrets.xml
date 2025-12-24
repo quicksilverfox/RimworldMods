@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Smart Turret - Starwalkers advanced defense turret -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>Turret_LeeaniSmart</defName>
+		<label>smart turret</label>
+		<description>An advanced autonomous defense turret designed by the Starwalkers. Using sophisticated AI and targeting systems, this mechanoid-like turret can accurately engage multiple targets. Requires a basic subcore to operate and consumes significant power. May explode when damaged.</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<drawHighlight>true</drawHighlight>
+		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+		<graphicData>
+			<texPath>Things/Building/Security/TurretHeavy_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+			<drawOffset>(0,0,-0.1)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(1.5,0.35,1.4)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Security/TurretAutocannon_MenuIcon</uiIconPath>
+		<uiIconScale>0.95</uiIconScale>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<size>(2,2)</size>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<WorkToBuild>20000</WorkToBuild>
+			<Mass>120</Mass>
+			<Beauty>-15</Beauty>
+			<ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>5.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>Stun</li>
+					<li>EMP</li>
+				</affectedDamageDefs>
+				<adaptableDamageDefs>
+					<li>EMP</li>
+				</adaptableDamageDefs>
+			</li>
+			<li Class="CompProperties_AmbientSound">
+				<sound>MechTurretBig_Call</sound>
+			</li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.5</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Steel>300</Steel>
+			<Plasteel>80</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+			<SubcoreRegular MayRequire="Ludeon.RimWorld.Biotech">1</SubcoreRegular>
+		</costList>
+		<killedLeavings>
+			<ChunkSlagSteel>1</ChunkSlagSteel>
+		</killedLeavings>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<building>
+			<combatPower>170</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_LeeaniSmartTurret</turretGunDef>
+			<turretBurstCooldownTime>2.8</turretBurstCooldownTime>
+			<turretTopDrawSize>2.7</turretTopDrawSize>
+			<turretTopOffset>(0, 0.05)</turretTopOffset>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+		</placeWorkers>
+		<designationHotKey>Misc3</designationHotKey>
+		<researchPrerequisites>
+			<li>LeeaniSpacerTech</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<!-- Smart Turret projectile -->
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_LeeaniSmartTurret</defName>
+		<label>smart turret round</label>
+		<graphicData>
+			<texPath>Things/Projectile/Charge_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>22</damageAmountBase>
+			<speed>95</speed>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+	<!-- Smart Turret gun -->
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>Gun_LeeaniSmartTurret</defName>
+		<label>smart targeting system</label>
+		<description>An advanced AI-guided weapon system with exceptional accuracy and fire rate.</description>
+		<graphicData>
+			<texPath>Things/Building/Security/TurretAutocannon_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.78</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>40</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_LeeaniSmartTurret</defaultProjectile>
+				<warmupTime>0</warmupTime>
+				<range>38.9</range>
+				<minRange>2.9</minRange>
+				<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+				<burstShotCount>5</burstShotCount>
+				<soundCast>Shot_ChargeRifle</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>10</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+
+</Defs>

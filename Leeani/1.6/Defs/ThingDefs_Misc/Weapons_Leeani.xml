@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+	<!--=========================== Basic Staff Weapons ==============================-->
+
 	<ThingDef ParentName="BaseMeleeWeapon_Blunt">
 		<defName>MeleeWeapon_Quarterstaff</defName>
 		<label>quarterstaff</label>
-		<description>A long, shaped stick suitable for beating an enemy with quick, fast strikes. A dangerous weapon in the hands of someone capable.</description>
+		<description>A long, shaped stick suitable for beating an enemy with quick, fast strikes. A dangerous weapon in the hands of someone capable. Traditional Leeani weapon favored by travelers and shepherds.</description>
 		<graphicData>
 			<texPath>Gear/Quarterstaff</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -14,6 +16,7 @@
 			<li>NonNeolithicOnlyMelee</li>
 			<li>NonNeolithicOnlySimpleMelee</li>
 			<li>NeolithicMeleeBasic</li>
+			<li>LeeaniStaff</li>
 		</weaponTags>
 		<tradeability>Sellable</tradeability>
 		<costStuffCount>70</costStuffCount>
@@ -45,6 +48,498 @@
 				<cooldownTime>1.5</cooldownTime>
 			</li>
 		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+		<defName>MeleeWeapon_ShepherdStaff</defName>
+		<label>shepherd's staff</label>
+		<description>A tall, elegant staff with a curved head, traditionally carried by Leeani shepherds and wanderers. The hooked end can be used to guide animals or trip opponents, while the weighted base provides devastating striking power. Often decorated with carved symbols representing the bearer's journey.</description>
+		<graphicData>
+			<texPath>Gear/ShepherdStaff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Neolithic</techLevel>
+		<weaponTags>
+			<li>NeolithicMeleeBasic</li>
+			<li>LeeaniStaff</li>
+		</weaponTags>
+		<tradeability>Sellable</tradeability>
+		<costStuffCount>80</costStuffCount>
+		<statBases>
+			<WorkToMake>1200</WorkToMake>
+			<Mass>1.2</Mass>
+			<DeteriorationRate>0.4</DeteriorationRate>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>2</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<tools>
+			<li>
+				<label>hook</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.6</cooldownTime>
+			</li>
+			<li>
+				<label>shaft</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>13.5</power>
+				<cooldownTime>1.7</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<!--=========================== Bladed Staff Weapons ==============================-->
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>MeleeWeapon_Bladestaff</defName>
+		<label>bladestaff</label>
+		<description>A staff weapon with a curved blade mounted at one end. This elegant Leeani weapon combines the reach advantage of a polearm with the cutting power of a sword. The long shaft allows for powerful sweeping strikes while keeping enemies at distance.</description>
+		<graphicData>
+			<texPath>Gear/Bladestaff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<weaponTags>
+			<li>MedievalMeleeDecent</li>
+			<li>LeeaniStaff</li>
+		</weaponTags>
+		<costList>
+			<Steel>25</Steel>
+		</costList>
+		<costStuffCount>50</costStuffCount>
+		<statBases>
+			<WorkToMake>9000</WorkToMake>
+			<Mass>2.5</Mass>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<recipeMaker>
+			<researchPrerequisite>Smithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<tools>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.8</cooldownTime>
+			</li>
+			<li>
+				<label>blade</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2.0</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>2.2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<!--=========================== Advanced Industrial Staff Weapons ==============================-->
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>MeleeWeapon_Riflestaff</defName>
+		<label>riflestaff</label>
+		<description>An innovative Leeani weapon combining a rifle with a reinforced staff. The barrel extends along the length of the staff, allowing it to be used both as a powerful melee weapon and a short-range firearm. The dual-purpose design exemplifies Leeani ingenuity.</description>
+		<graphicData>
+			<texPath>Gear/Riflestaff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Industrial</techLevel>
+		<weaponTags>
+			<li>LeeaniStaff</li>
+			<li>IndustrialMeleeAdvanced</li>
+		</weaponTags>
+		<costList>
+			<Steel>70</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>15000</WorkToMake>
+			<Mass>3.5</Mass>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<recipeMaker>
+			<researchPrerequisite>BlowbackOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>1.6</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>1.8</cooldownTime>
+			</li>
+		</tools>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_BoltActionRifle</defaultProjectile>
+				<warmupTime>1.2</warmupTime>
+				<range>22</range>
+				<soundCast>Shot_BoltActionRifle</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+	</ThingDef>
+
+	<!--=========================== Energy Staff Weapons ==============================-->
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>MeleeWeapon_Shockstaff</defName>
+		<label>shockstaff</label>
+		<description>A staff weapon fitted with electrical discharge nodes. Each strike delivers a powerful shock that can stun opponents and disrupt electronic systems. Developed by Leeani engineers to non-lethally subdue dangerous targets.</description>
+		<graphicData>
+			<texPath>Gear/Shockstaff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Industrial</techLevel>
+		<weaponTags>
+			<li>LeeaniStaff</li>
+			<li>IndustrialMeleeAdvanced</li>
+		</weaponTags>
+		<costList>
+			<Steel>50</Steel>
+			<Plasteel>10</Plasteel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>18000</WorkToMake>
+			<Mass>2.8</Mass>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<recipeMaker>
+			<researchPrerequisite>Electricity</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<tools>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+			<li>
+				<label>shock node</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>17</power>
+				<cooldownTime>2.0</cooldownTime>
+				<extraMeleeDamages>
+					<li>
+						<def>EMP</def>
+						<amount>10</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseGunWithQuality">
+		<defName>Gun_Chargestaff</defName>
+		<label>chargestaff</label>
+		<description>An advanced Leeani weapon combining a charge lance with a reinforced staff design. The integrated charge capacitors deliver devastating long-range plasma bolts while the reinforced construction provides solid melee capabilities when enemies close in. A masterwork of Leeani weapons engineering balancing ranged firepower with close-combat utility.</description>
+		<graphicData>
+			<texPath>Gear/Chargestaff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.0</drawSize>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<techLevel>Spacer</techLevel>
+		<weaponTags>
+			<li>LeeaniStaff</li>
+			<li>SpacerGun</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+		</weaponClasses>
+		<tradeTags>
+			<li>WeaponRanged</li>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<Mass>3.5</Mass>
+			<AccuracyTouch>0.55</AccuracyTouch>
+			<AccuracyShort>0.70</AccuracyShort>
+			<AccuracyMedium>0.75</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>45</equippedAngleOffset>
+		<recipeMaker>
+			<researchPrerequisite>ChargedShot</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_ChargeLance</defaultProjectile>
+				<warmupTime>1.5</warmupTime>
+				<range>28</range>
+				<soundCast>Shot_ChargeLance</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>2.0</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2.2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>MeleeWeapon_Monostaff</defName>
+		<label>monostaff</label>
+		<description>The pinnacle of Leeani melee weapon technology. This staff features a monomolecular edge that can slice through nearly anything, combined with an adaptive grip system and built-in gravitic stabilizers. Each strike is guided by micro-servos for perfect precision.</description>
+		<graphicData>
+			<texPath>Gear/Monostaff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Spacer</techLevel>
+		<weaponTags>
+			<li>LeeaniStaff</li>
+			<li>SpacerMeleeAdvanced</li>
+		</weaponTags>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<costList>
+			<Plasteel>60</Plasteel>
+			<Uranium>10</Uranium>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<statBases>
+			<WorkToMake>30000</WorkToMake>
+			<Mass>1.8</Mass>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<recipeMaker>
+			<researchPrerequisite>LeeaniSpacerTech</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<tools>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>1.3</cooldownTime>
+			</li>
+			<li>
+				<label>monomolecular edge</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>35</power>
+				<cooldownTime>1.8</cooldownTime>
+				<armorPenetration>0.60</armorPenetration>
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+	</ThingDef>
+
+	<!--=========================== VPE Psycaster Staff Weapons ==============================-->
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" MayRequire="VanillaExpanded.VPsycastsE">
+		<defName>MeleeWeapon_LivingStaff</defName>
+		<label>living staff</label>
+		<description>A staff grown from a psychically-reactive tree, still partially alive. The wood pulses with faint neural energy, amplifying the wielder's psychic abilities. Traditional Leeani psycasters cultivate these staves for decades, forming a deep bond with the living weapon.</description>
+		<graphicData>
+			<texPath>Gear/LivingStaff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<weaponTags>
+			<li>LeeaniStaff</li>
+			<li>LeeaniPsyStaff</li>
+		</weaponTags>
+		<tradeability>Sellable</tradeability>
+		<costStuffCount>70</costStuffCount>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>1.5</Mass>
+			<DeteriorationRate>0.4</DeteriorationRate>
+		</statBases>
+		<equippedStatOffsets>
+			<PsychicSensitivity>0.10</PsychicSensitivity>
+			<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.05</MeditationFocusGain>
+		</equippedStatOffsets>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<recipeMaker>
+			<researchPrerequisite>Smithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<tools>
+			<li>
+				<label>head</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>1.6</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" MayRequire="VanillaExpanded.VPsycastsE">
+		<defName>MeleeWeapon_Channeler</defName>
+		<label>channeler</label>
+		<description>A magnificent staff crafted with psychically-conductive materials and embedded with focusing crystals. This weapon serves as both a formidable melee implement and a powerful psychic amplifier. Leeani archons wield these staves to channel devastating psychic powers while maintaining lethal combat prowess.</description>
+		<graphicData>
+			<texPath>Gear/Channeler</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Spacer</techLevel>
+		<weaponTags>
+			<li>LeeaniStaff</li>
+			<li>LeeaniPsyStaff</li>
+			<li>SpacerMeleeAdvanced</li>
+		</weaponTags>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<costList>
+			<Plasteel>30</Plasteel>
+			<Gold>20</Gold>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<statBases>
+			<WorkToMake>36000</WorkToMake>
+			<Mass>2.0</Mass>
+		</statBases>
+		<equippedStatOffsets>
+			<PsychicSensitivity>0.25</PsychicSensitivity>
+			<PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
+			<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.15</MeditationFocusGain>
+		</equippedStatOffsets>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<recipeMaker>
+			<researchPrerequisite>LeeaniSpacerTech</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<tools>
+			<li>
+				<label>crystal head</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>1.7</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
 	</ThingDef>
 
 </Defs>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+	<!-- Generic berry/fruit juice for future cider production -->
 	<RecipeDef>
 		<defName>MakeBerryJuice</defName>
 		<label>make berry juice</label>
-		<description>Make berry juice from, well, berries.</description>
+		<description>Make berry juice from berries and other fruits. Can be used to brew cider.</description>
 		<jobString>Making berry juice.</jobString>
 		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
@@ -21,19 +22,10 @@
 				</filter>
 				<count>25</count>
 			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>RawJuniper</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
-			</li>
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
 				<li>RawBerries</li>
-				<li>RawJuniper</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>

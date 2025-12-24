@@ -1,43 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-<ResearchProjectTagDef>
-		<defName>LeeaniStart</defName>
-	</ResearchProjectTagDef>
 	<ResearchProjectTagDef>
 		<defName>ta-ignore</defName>
-	</ResearchProjectTagDef>		
+	</ResearchProjectTagDef>
 
 	<ResearchProjectDef>
-		<defName>LeeaniTraditions</defName>
-		<label>Traditions</label>
-		<description>Our feudal heritage cannot be forgotten - we should honour it. Unlocks the throne, banquet table and chair, and brazier. Unlocks the electric lamp-post with electricity.\n\nRequires Leeani researcher.</description>
-		<baseCost>300</baseCost>
-		<techLevel>Medieval</techLevel>
-		<tags>
-			<li>LeeaniStart</li>
-			<li>ta-ignore</li>
-		</tags>
-		<tab>LeeaniResearchTab</tab>
-		<researchViewX>0</researchViewX>
-		<researchViewY>1</researchViewY>
-	</ResearchProjectDef>
-
-	<ResearchProjectDef>
-		<defName>LeeaniArkhaev</defName>
-		<label>Arkhaevists</label>
-		<description>Without books and knowledge, where would we be now? Unlocks the bookshelf, which provides a boost to research speed when near a research table and can provide some joy to read its contents.\n\nRequires Leeani researcher.</description>
-		<baseCost>800</baseCost>
-		<techLevel>Medieval</techLevel>
+		<defName>LeeaniSpacerTech</defName>
+		<label>Starwalker technology</label>
+		<description>Study the advanced spacer-level technologies developed by the Leeani Starwalkers. This orbital coalition has embraced cutting-edge AI systems, automated defenses, and sophisticated manufacturing processes far beyond traditional Leeani capabilities. Unlocks smart turrets and other Starwalker equipment.\n\nRequires Leeani researcher.</description>
+		<baseCost>3000</baseCost>
+		<techLevel>Spacer</techLevel>
 		<tags>
 			<li>ta-ignore</li>
 		</tags>
 		<tab>LeeaniResearchTab</tab>
 		<prerequisites>
-			<li>LeeaniTraditions</li>
+			<li>Fabrication</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">StandardMechtech</li>
 		</prerequisites>
-		<researchViewX>1</researchViewX>
-		<researchViewY>1</researchViewY>
+		<researchViewX>0</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 
 </Defs>

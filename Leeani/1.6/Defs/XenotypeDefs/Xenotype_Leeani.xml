@@ -4,7 +4,7 @@
 	<XenotypeDef>
 		<defName>Leeani</defName>
 		<label>leeani</label>
-		<description>After escaping a military experiment millenia ago, Leeani have made themselves a prominent presence in the galactic stage. Originally mundane foxes, their genetic modifications have allowed them many opportunities in a growing universe.\n\nLeeani are fox-like humanoids with fluffy tails, pointed ears, and vibrant orange fur. They are naturally cheerful, adaptable, and resilient, with a cultural tendency toward pacifism and harmony. Their enhanced movement speed and dark vision make them excellent scouts, while their aversion to violence encourages them toward more peaceful pursuits.\n\nLeeani are agile and quick but less suited for heavy labor like mining.</description>
+		<description>After escaping a military experiment millennia ago, Leeani have made themselves a prominent presence in the galactic stage. Originally mundane foxes, their genetic modifications have allowed them many opportunities in a growing universe.\n\nLeeani are fox-like humanoids with fluffy tails, digitigrade legs, pointed ears, and vibrant orange fur that never grays with age. They are naturally cheerful, attractive, and psychically sensitive, with a cultural tendency toward pacifism and harmony. Their enhanced movement speed (especially when unencumbered by heavy clothing) and dark vision make them excellent scouts, while their aversion to violence encourages them toward more peaceful pursuits.\n\nAs products of early biotech experimentation, Leeani carry both blessings and curses: they're resistant to alcohol and robust enough to eat raw food, but suffer from heat intolerance, minor UV sensitivity, vulnerability to toxins, and a tendency toward uncleanliness. They require more sleep than baseline humans and have reduced fertility with slower gestation periods.\n\nDespite their experimental origins as potential supersoldiers, Leeani are gentle souls who prefer knowledge and psycasting to violence.</description>
 		<descriptionShort>Fox-like humanoids with fluffy tails and cheerful dispositions.</descriptionShort>
 		<iconPath>UI/Icons/Xenotypes/Leeani</iconPath>
 		<inheritable>true</inheritable>
@@ -21,12 +21,31 @@
 			<li>Leeani_CheerfulNature</li>
 			<li>Leeani_Pacifist</li>
 
-			<!-- Vanilla Genes -->
+			<!-- Vanilla Genes - Positive -->
 			<li>Body_Thin</li>
-			<li>Eyes_Red</li>           <!-- Red/green/yellow eye options via gene variants -->
-			<li>DarkVision</li>          <!-- Vanilla dark vision gene -->
-			<li>Robust</li>              <!-- Vanilla gene - immune to raw food, sleeping rough -->
-			<li>MinTemp_SmallDecrease</li>  <!-- Vanilla cold tolerance gene -->
+			<li>Eyes_Red</li>              <!-- Red/green/yellow eye options via gene variants -->
+			<li>DarkVision</li>            <!-- Vanilla dark vision gene -->
+			<li>Robust</li>                <!-- Immune to raw food, sleeping rough -->
+			<li>MinTemp_SmallDecrease</li> <!-- Cold tolerance -->
+			<li>Beauty_Pretty</li>         <!-- Attractive appearance -->
+			<li>AddictionResistant_Alcohol</li>  <!-- Alcohol resistant -->
+			<li>NakedSpeed</li>            <!-- Move faster when naked/lightly clothed -->
+			<li>Libido_High</li>           <!-- High libido -->
+			<li>Hair_Grayless</li>         <!-- Hair never grays with age -->
+
+			<!-- Vanilla Genes - Negative -->
+			<li>Sleepy</li>                <!-- Need more sleep -->
+
+			<!-- Alpha Genes - Positive -->
+			<li>AG_Digitigrade</li>        <!-- Digitigrade legs - enhanced movement, reduced carrying -->
+
+			<!-- Alpha Genes - Negative -->
+			<li>AG_ReducedFertile</li>     <!-- Reduced fertility -->
+			<li>AG_SlowGestation</li>      <!-- Slower pregnancy -->
+			<li>AG_Filthy</li>             <!-- Naturally filthy (foxes...) -->
+			<li>AG_HeatSlowness</li>       <!-- Heat weakness - slower in heat -->
+			<li>AG_ToxResist_Vulnerability</li>  <!-- Tox vulnerability -->
+			<li>AG_UVSensitivity_Minor</li>      <!-- Minor UV sensitivity -->
 		</genes>
 	</XenotypeDef>
 

@@ -97,7 +97,7 @@
 			<MaxHitPoints>100</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
-		<description>A barrel for fermenting even more grapes into Leeani wine.</description>
+		<description>An industrial vat for fermenting large quantities of grapes into Leeani wine and soul wine. Automated temperature control ensures optimal fermentation.</description>
 		<costList>
 			<Steel>50</Steel>
 		</costList>
@@ -108,7 +108,7 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costStuffCount>200</costStuffCount>
-		<comps>			
+		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>50</basePowerConsumption>
@@ -122,8 +122,9 @@
     <barOffset>(0.0, 0.25)</barOffset>
     <barScale>(1.0, 1.0)</barScale>
     <colorCoded>false</colorCoded>
-    <processes>     
-	<li>LeeaniWineProcFast</li>	
+    <processes>
+	<li>LeeaniWineProcFast</li>
+	<li>LeeaniSoulWineProcFast</li>
     </processes>
   </li>
 </comps>		

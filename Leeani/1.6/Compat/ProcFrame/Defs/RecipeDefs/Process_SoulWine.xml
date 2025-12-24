@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Soul Wine fermentation process for ProcFrame -->
+	<ProcessorFramework.ProcessDef>
+		<defName>LeeaniSoulWineProc</defName>
+		<thingDef>LeeaniSoulWine</thingDef>
+		<ingredientFilter>
+			<thingDefs>
+				<li>GrapeJuice</li>
+				<li>RawGrapes</li>
+			</thingDefs>
+		</ingredientFilter>
+		<processDays>7</processDays> <!-- Longer fermentation for psychic properties -->
+		<capacityFactor>1.0</capacityFactor>
+		<efficiency>1.0</efficiency>
+		<usesTemperature>true</usesTemperature>
+		<temperatureSafe>-1.0~30.0</temperatureSafe>
+		<temperatureIdeal>10.0~25.0</temperatureIdeal>
+		<ruinedPerDegreePerHour>2.0</ruinedPerDegreePerHour>
+		<speedBelowSafe>0.15</speedBelowSafe>
+		<speedAboveSafe>1.0</speedAboveSafe>
+		<sunFactor>1.0~1.0</sunFactor>
+		<rainFactor>1.0~1.0</rainFactor>
+		<snowFactor>1.0~1.0</snowFactor>
+		<windFactor>1.0~1.0</windFactor>
+		<unpoweredFactor>1.0</unpoweredFactor>
+		<unfueledFactor>1.0</unfueledFactor>
+		<powerUseFactor>1.0</powerUseFactor>
+		<fuelUseFactor>1.0</fuelUseFactor>
+		<filledGraphicSuffix></filledGraphicSuffix>
+		<usesQuality>false</usesQuality>
+		<qualityDays>(1, 2, 3, 4, 5, 6, 7)</qualityDays>
+		<color>(180, 120, 160)</color> <!-- Purple-ish for psychic wine -->
+		<customLabel>soul wine</customLabel>
+		<destroyChance>0.0</destroyChance>
+		<bonusOutputs>
+		</bonusOutputs>
+	</ProcessorFramework.ProcessDef>
+
+	<!-- Fast soul wine process for autovats -->
+	<ProcessorFramework.ProcessDef>
+		<defName>LeeaniSoulWineProcFast</defName>
+		<thingDef>LeeaniSoulWine</thingDef>
+		<ingredientFilter>
+			<thingDefs>
+				<li>GrapeJuice</li>
+				<li>RawGrapes</li>
+			</thingDefs>
+		</ingredientFilter>
+		<processDays>3.5</processDays>
+		<capacityFactor>1.0</capacityFactor>
+		<efficiency>1.0</efficiency>
+		<usesTemperature>true</usesTemperature>
+		<temperatureSafe>-1.0~32.0</temperatureSafe>
+		<temperatureIdeal>10.0~25.0</temperatureIdeal>
+		<ruinedPerDegreePerHour>2.0</ruinedPerDegreePerHour>
+		<speedBelowSafe>0.15</speedBelowSafe>
+		<speedAboveSafe>1.0</speedAboveSafe>
+		<sunFactor>1.0~1.0</sunFactor>
+		<rainFactor>1.0~1.0</rainFactor>
+		<snowFactor>1.0~1.0</snowFactor>
+		<windFactor>1.0~1.0</windFactor>
+		<unpoweredFactor>0.0</unpoweredFactor>
+		<unfueledFactor>0.0</unfueledFactor>
+		<powerUseFactor>1.0</powerUseFactor>
+		<fuelUseFactor>1.0</fuelUseFactor>
+		<filledGraphicSuffix></filledGraphicSuffix>
+		<usesQuality>false</usesQuality>
+		<qualityDays>(1, 2, 3, 4, 5, 6, 7)</qualityDays>
+		<color>(180, 120, 160)</color>
+		<customLabel>soul wine</customLabel>
+		<destroyChance>0.0</destroyChance>
+		<bonusOutputs>
+		</bonusOutputs>
+	</ProcessorFramework.ProcessDef>
+
+</Defs>

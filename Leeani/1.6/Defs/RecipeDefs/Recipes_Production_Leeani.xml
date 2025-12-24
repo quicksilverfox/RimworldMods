@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Distill soul spirit from grapes - dangerous high-proof variant -->
+	<RecipeDef>
+		<defName>Make_SoulSpirit</defName>
+		<label>distill soul spirit</label>
+		<description>Distill highly concentrated soul spirit from grapes. This potent psychically-attuned liquor has dangerously high alcohol content. Safe for Leeani with their alcohol resistance genes, but can cause severe intoxication in others.\n\nLike the difference between flake and psychite tea, this is a more intense and dangerous alternative to traditional fermented soul wine.</description>
+		<jobString>Distilling soul spirit.</jobString>
+		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>3000</workAmount>
+		<targetCountAdjustment>1</targetCountAdjustment>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RawGrapes</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RawGrapes</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<LeeaniSoulSpirit>5</LeeaniSoulSpirit>
+		</products>
+		<skillRequirements>
+			<Cooking>6</Cooking>
+		</skillRequirements>
+		<researchPrerequisite>DrugProduction</researchPrerequisite>
+	</RecipeDef>
+
+</Defs>

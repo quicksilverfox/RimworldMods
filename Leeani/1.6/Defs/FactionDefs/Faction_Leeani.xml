@@ -20,6 +20,57 @@
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Medieval</techLevel>
 		<allowedCultures><li>Rustican</li><li>Corunan</li></allowedCultures>
+
+		<!-- Ideology preferences -->
+		<styles MayRequire="Ludeon.RimWorld.Ideology">
+			<li>Rustic</li>
+			<li>Morbid</li>
+		</styles>
+
+		<!-- Structure meme weights - never theistic, prefer spiritual/archist -->
+		<structureMemeWeights MayRequire="Ludeon.RimWorld.Ideology">
+			<Structure_TheistEmbodied>0</Structure_TheistEmbodied>
+			<Structure_TheistAbstract>0</Structure_TheistAbstract>
+			<Structure_Ideological>1</Structure_Ideological>
+			<Structure_Archist>3</Structure_Archist>
+		</structureMemeWeights>
+
+		<!-- Disallowed memes - never body purists, never certain extremes -->
+		<disallowedMemes MayRequire="Ludeon.RimWorld.Ideology">
+			<li>BodyPurist</li>
+			<li>Blindsight</li>
+			<li>Tunneler</li>
+			<li>Darkness</li>
+			<li>TreeConnection</li>
+			<li>Raider</li>
+			<li>Nudism</li>
+			<li>PainIsVirtue</li>
+			<li>Guilt</li>
+		</disallowedMemes>
+
+		<!-- All Traditionalists are Leeani xenotype -->
+		<xenotypeSet>
+			<xenotypeChances>
+				<Leeani>1</Leeani>
+			</xenotypeChances>
+		</xenotypeSet>
+
+		<!-- VPE Psycaster paths - prefer peaceful/defensive paths -->
+		<psychicPathsWeights MayRequire="VanillaExpanded.VPsycastsE">
+			<VPE_Wildspeaker>3</VPE_Wildspeaker>
+			<VPE_Empath>3</VPE_Empath>
+			<VPE_Harmonist>3</VPE_Harmonist>
+			<VPE_Protector>3</VPE_Protector>
+			<VPE_Necropath>2</VPE_Necropath>
+			<VPE_Frostshaper>2</VPE_Frostshaper>
+			<!-- Less likely but possible -->
+			<VPE_Skipmaster>1</VPE_Skipmaster>
+			<VPE_Chronopath>1</VPE_Chronopath>
+			<!-- Avoid aggressive paths -->
+			<VPE_Warlord>0</VPE_Warlord>
+			<VPE_Conflagrator>0</VPE_Conflagrator>
+		</psychicPathsWeights>
+
 	 <backstoryFilters>
       <li>
         <categories>
@@ -130,8 +181,17 @@
 		<settlementTexturePath>World/LeeaniBaseIcon</settlementTexturePath>
 		<colorSpectrum>
 			<li>(172, 104, 0)</li>
-			<li>(69, 51, 0)</li>				
+			<li>(69, 51, 0)</li>
 		</colorSpectrum>
+
+		<!-- Shared goodwill with Starwalkers - cultural bonds -->
+		<goodwillDynamic>
+			<li>
+				<otherFactionDef>LeeaniStarwalkers</otherFactionDef>
+				<naturalGoodwillRange>70~100</naturalGoodwillRange>
+				<canBecomeHostile>false</canBecomeHostile>
+			</li>
+		</goodwillDynamic>
 	</FactionDef>
 
 </Defs>

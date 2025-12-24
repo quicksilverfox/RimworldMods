@@ -47,19 +47,23 @@
 	</PawnKindDef>
 
  <PawnKindDef Name="LeeaniBase" Abstract="True">
-    <race>Alien_Leeani</race>
+    <race>Human</race>
+	<xenotypeSet>
+		<xenotypeChances>
+			<Leeani>1</Leeani>
+		</xenotypeChances>
+	</xenotypeSet>
 	<defaultFactionType>LeeaniHold</defaultFactionType>
     <chemicalAddictionChance>0.01</chemicalAddictionChance>
-   <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+   <apparelAllowHeadgearChance>0.3</apparelAllowHeadgearChance>
 		<backstoryCryptosleepCommonality>0.01</backstoryCryptosleepCommonality>
     <invNutrition>2.00</invNutrition>
     <apparelTags>
-      <li>IndustrialBasic</li>
-      <li>IndustrialAdvanced</li>
+      <li>Outlander</li>
 	<li>LeeaniPlayer</li>
     </apparelTags>
 		<initialWillRange>1~3</initialWillRange>
-		<initialResistanceRange>7~14</initialResistanceRange>	
+		<initialResistanceRange>7~14</initialResistanceRange>
   </PawnKindDef>
 
  <PawnKindDef ParentName="LeeaniBase">
@@ -113,8 +117,8 @@
     <defName>LeeaniNoble</defName>
     <label>noble</label>
 	<labelPlural>nobles</labelPlural>
-    <combatPower>70</combatPower>
-    <itemQuality>Good</itemQuality>    
+    <combatPower>65</combatPower>
+    <itemQuality>Good</itemQuality>
     <gearHealthRange>0.7~1.5</gearHealthRange>
 	<backstoryCategories>
 			<li>LeeaniBackstory</li>
@@ -122,16 +126,15 @@
 	<minGenerationAge>20</minGenerationAge>
 		<maxGenerationAge>60</maxGenerationAge>
     <weaponTags>
-      <li>Gun</li>      
+      <li>MedievalMeleeAdvanced</li>
+      <li>MedievalMeleeDecent</li>
     </weaponTags>
-    <weaponMoney>200~1300</weaponMoney>
-    <apparelMoney>700~800</apparelMoney>    
-    <techHediffsChance>0.06</techHediffsChance>
-    <techHediffsMoney>300~600</techHediffsMoney>
+    <weaponMoney>150~350</weaponMoney>
+    <apparelMoney>500~900</apparelMoney>
+    <techHediffsChance>0.03</techHediffsChance>
+    <techHediffsMoney>200~400</techHediffsMoney>
     <techHediffsTags>
-      <li>Normal</li>
       <li>Simple</li>
-      <li>ImplantEmpireCommon</li>
     </techHediffsTags>
     <inventoryOptions>
 			<skipChance>0.75</skipChance>
@@ -153,26 +156,25 @@
 					</countRange>
 				</li>
 			</subOptionsChooseOne>
-		</inventoryOptions>	
+		</inventoryOptions>
   </PawnKindDef>
 
 <PawnKindDef ParentName="LeeaniBase">
     <defName>LeeaniTrader</defName>
     <label>trader</label>
     <trader>true</trader>
-    <combatPower>50</combatPower>
+    <combatPower>45</combatPower>
     <isFighter>false</isFighter>
     <gearHealthRange>1~1</gearHealthRange>
     <itemQuality>Normal</itemQuality>
     <weaponTags>
       <li>NeolithicMeleeBasic</li>
-	<li>Gun</li>
+      <li>MedievalMeleeDecent</li>
     </weaponTags>
-    <weaponMoney>200~1300</weaponMoney>
-    <apparelMoney>500~1000</apparelMoney>
+    <weaponMoney>100~300</weaponMoney>
+    <apparelMoney>400~800</apparelMoney>
     <apparelTags>
-      <li>IndustrialMilitaryBasic</li>
-      <li>IndustrialMilitaryAdvanced</li>
+      <li>Outlander</li>
       <li>BeltDefensePop</li>
     </apparelTags>
 	<backstoryCategories>
@@ -181,13 +183,10 @@
     <apparelRequired>
       <li>Apparel_BowlerHat</li>
     </apparelRequired>
-    <techHediffsChance>0.20</techHediffsChance>
-    <techHediffsMoney>1000~2000</techHediffsMoney>
+    <techHediffsChance>0.05</techHediffsChance>
+    <techHediffsMoney>300~800</techHediffsMoney>
     <techHediffsTags>
-      <li>Normal</li>
       <li>Simple</li>
-      <li>Advanced</li>
-      <li>ImplantEmpireCommon</li>
     </techHediffsTags>
     <inventoryOptions>
 			<skipChance>0.75</skipChance>
@@ -196,20 +195,20 @@
 					<choiceChance>90</choiceChance>
 					<thingDef>Silver</thingDef>
 					<countRange>
-						<min>25</min>
-						<max>70</max>
+						<min>50</min>
+						<max>150</max>
 					</countRange>
 				</li>
 				<li>
 					<choiceChance>10</choiceChance>
 					<thingDef>Silver</thingDef>
 					<countRange>
-						<min>700</min>
-						<max>1000</max>
+						<min>800</min>
+						<max>1200</max>
 					</countRange>
 				</li>
 			</subOptionsChooseOne>
-		</inventoryOptions>	
+		</inventoryOptions>
   </PawnKindDef>
 
 <PawnKindDef ParentName="LeeaniBase">

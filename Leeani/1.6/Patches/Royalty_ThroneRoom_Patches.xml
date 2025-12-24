@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- Add Leeani brazier to throneroom brazier requirements -->
+	<!-- This allows LeeaniStoneBrazier to satisfy brazier requirements for all royal titles -->
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Add to RoomRequirement_ThingAnyOfCount lists (brazier count requirements) -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/RoyalTitleDef/throneRoomRequirements/li[@Class="RoomRequirement_ThingAnyOfCount"]/things[li="Brazier"]</xpath>
+					<value>
+						<li>LeeaniStoneBrazier</li>
+					</value>
+				</li>
+
+				<!-- Add to RoomRequirement_AllThingsAnyOfAreGlowing lists (braziers must be lit) -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/RoyalTitleDef/throneRoomRequirements/li[@Class="RoomRequirement_AllThingsAnyOfAreGlowing"]/things[li="Brazier"]</xpath>
+					<value>
+						<li>LeeaniStoneBrazier</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

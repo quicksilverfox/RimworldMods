@@ -137,13 +137,13 @@
 			<MaxHitPoints>100</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
-		<description>A specially-made keg for brewing wine from grape juice.</description>
+		<description>A specially-made keg for brewing wine from grape juice. Can ferment both standard wine and the traditional Leeani soul wine.</description>
 		<costList>
 			<Steel>10</Steel>
 			<WoodLog>30</WoodLog>
 		</costList>
 		<comps>
-			<li Class="CompProperties_Forbiddable"/>			
+			<li Class="CompProperties_Forbiddable"/>
 			 <li Class="ProcessorFramework.CompProperties_Processor">
     <capacity>25</capacity>
     <independentProcesses>true</independentProcesses>
@@ -154,7 +154,8 @@
     <barScale>(1.0, 1.0)</barScale>
     <colorCoded>false</colorCoded>
     <processes>
-      <li>LeeaniWineProc</li>	
+      <li>LeeaniWineProc</li>
+      <li>LeeaniSoulWineProc</li>
     </processes>
   </li>
 		</comps>

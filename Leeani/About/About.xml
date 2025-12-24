@@ -13,14 +13,40 @@
 			<packageId>ludeon.rimworld.biotech</packageId>
 			<displayName>Biotech</displayName>
 		</li>
+		<li>
+			<packageId>sarg.alphagenes</packageId>
+			<displayName>Alpha Genes</displayName>
+		</li>
 	</modDependencies>
-	<description>A nice happy race of people-foxes. Now uses Biotech xenotypes instead of Humanoid Alien Races! Built-in support for EPOE.
+	<loadAfter>
+		<li>ludeon.rimworld</li>
+		<li>ludeon.rimworld.royalty</li>
+		<li>ludeon.rimworld.biotech</li>
+		<li>ludeon.rimworld.odyssey</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>sarg.alphagenes</li>
+		<li>vat.epoeforked</li>
+	</loadAfter>
+	<description>A nice happy race of people-foxes. Now uses Biotech xenotypes with enhanced genes from Alpha Genes!
 
-	Adds Faction, starting Scenario, playable Xenotype, and some signature stuff.
+	The Leeani are fox-like humanoids with fluffy tails and cheerful dispositions. Originally mundane foxes, their genetic modifications have allowed them many opportunities in a growing universe. They are naturally cheerful, adaptable, and resilient, with enhanced movement speed, dark vision, and psychic sensitivity.
 
-	Plenty of backstories, as well as names. Suggestions? Find @MikeRobe on the Rimworld Discord.
+	Features:
+	- Complete Leeani xenotype with custom and Alpha Genes integration
+	- TWO distinct Leeani factions:
+		* Leeani Holds - Medieval traditionalists living on planets
+		* Leeani Starwalkers - Advanced orbital traders (NEW!)
+	- Both factions maintain friendly relations despite different tech levels
+	- Starting scenarios for Leeani colonies
+	- Signature Leeani foods and brewing recipes
+	- Plenty of backstories and names
 
-	Note: This version requires the Biotech DLC and is incompatible with the old Humanoid Alien Races versions.
+	Requirements:
+	- Biotech DLC (required)
+	- Alpha Genes mod (required)
 
+	Note: This version is incompatible with the old Humanoid Alien Races versions.
+
+	Suggestions? Find @MikeRobe on the Rimworld Discord.
 	</description>
 </ModMetaData>

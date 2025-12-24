@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<FactionDef ParentName="FactionBase">
+		<defName>LeeaniStarwalkers</defName>
+		<label>Leeani starwalkers</label>
+		<description>A sophisticated orbital coalition of Leeani who have fully embraced spacefaring life. The Starwalkers maintain orbital platforms and trading stations, rarely setting foot on planetary surfaces. They serve as intermediaries between the planet-bound Leeani Holds and the wider galactic community.\n\nWhile their groundside cousins cling to medieval traditions, the Starwalkers have adopted advanced technologies and cosmopolitan ideologies. Despite their different lifestyles, both groups maintain strong cultural bonds and shared ancestry.</description>
+		<colorSpectrum>
+			<li>(0.65, 0.55, 0.35)</li>
+			<li>(0.85, 0.65, 0.25)</li>
+		</colorSpectrum>
+		<maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+		<configurationListOrderPriority>32</configurationListOrderPriority>
+		<pawnSingular>starwalker</pawnSingular>
+		<pawnsPlural>starwalkers</pawnsPlural>
+		<leaderTitle>navigator-supreme</leaderTitle>
+		<categoryTag>LeeaniStarwalkers</categoryTag>
+		<settlementGenerationWeight>1</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<canSiege>true</canSiege>
+		<canStageAttacks>true</canStageAttacks>
+
+		<!-- Orbital-only faction -->
+		<arrivalLayerWhitelist>
+			<li>Surface</li>
+			<li>Orbit</li>
+		</arrivalLayerWhitelist>
+		<neutralArrivalLayerBlacklist>
+			<li>Surface</li>
+		</neutralArrivalLayerBlacklist>
+		<layerWhitelist>
+			<li>Orbit</li>
+		</layerWhitelist>
+
+		<techLevel>Spacer</techLevel>
+		<canRequestTraders>false</canRequestTraders>
+		<canRequestMilitaryAid>false</canRequestMilitaryAid>
+		<canRequestOrbitalTrader>true</canRequestOrbitalTrader>
+		<canGenerateQuestSites>false</canGenerateQuestSites>
+
+		<factionIconPath>World/LeeaniBaseIcon</factionIconPath>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<hideGiftingInHostilityText>true</hideGiftingInHostilityText>
+
+		<!-- Fixed leader -->
+		<fixedLeaderKinds>
+			<li>LeeaniStarwalker_Navigator</li>
+		</fixedLeaderKinds>
+
+		<!-- Culture and Ideology -->
+		<allowedCultures>
+			<li>Astropolitan</li>
+		</allowedCultures>
+		<styles>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Techist</li>
+		</styles>
+		<requiredMemes>
+			<li>Shipborn</li>
+		</requiredMemes>
+		<disallowedMemes>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">AnimalPersonhood</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">TreeConnection</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Tunneler</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Darkness</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Rancher</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology,Ludeon.RimWorld.Biotech">Bloodfeeding</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Cannibal</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
+		</disallowedMemes>
+		<structureMemeWeights>
+			<Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">1</Structure_TheistEmbodied>
+			<Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistAbstract>
+			<Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+			<Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">10</Structure_Archist>
+		</structureMemeWeights>
+
+		<!-- All Starwalkers are Leeani xenotype -->
+		<xenotypeSet>
+			<xenotypeChances>
+				<Leeani>1</Leeani>
+			</xenotypeChances>
+		</xenotypeSet>
+
+		<!-- VPE Psycaster paths - prefer advanced technological paths -->
+		<psychicPathsWeights MayRequire="VanillaExpanded.VPsycastsE">
+			<VPE_Archotechist>4</VPE_Archotechist>
+			<VPE_Technomancer>3</VPE_Technomancer>
+			<VPE_Chronopath>3</VPE_Chronopath>
+			<VPE_Skipmaster>3</VPE_Skipmaster>
+			<VPE_Staticlord>3</VPE_Staticlord>
+			<VPE_Protector>2</VPE_Protector>
+			<!-- Less likely paths -->
+			<VPE_Empath>1</VPE_Empath>
+			<VPE_Harmonist>1</VPE_Harmonist>
+			<!-- Avoid nature-focused paths -->
+			<VPE_Wildspeaker>0</VPE_Wildspeaker>
+			<VPE_Frostshaper>0</VPE_Frostshaper>
+		</psychicPathsWeights>
+
+		<!-- Backstories -->
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>Offworld</li>
+				</categories>
+				<commonality>0.8</commonality>
+			</li>
+			<li>
+				<categories>
+					<li>LeeaniBackstory</li>
+				</categories>
+				<commonality>0.2</commonality>
+			</li>
+		</backstoryFilters>
+
+		<!-- Trading -->
+		<caravanTraderKinds />
+		<visitorTraderKinds />
+		<orbitalTraderKinds>
+			<li>Orbital_BulkGoods</li>
+			<li>Orbital_CombatSupplier</li>
+			<li>Orbital_Exotic</li>
+			<li>Orbital_PirateMerchant</li>
+		</orbitalTraderKinds>
+		<baseTraderKinds />
+
+		<!-- Arrival settings -->
+		<allowedArrivalTemperatureRange>-85~45</allowedArrivalTemperatureRange>
+		<arrivalModeWhitelist>
+			<li>EdgeDrop</li>
+			<li>EdgeDropGroups</li>
+			<li>CenterDrop</li>
+			<li>RandomDrop</li>
+		</arrivalModeWhitelist>
+
+		<!-- Loot -->
+		<raidLootMaker>LeeaniStarwalkersRaidLootMaker</raidLootMaker>
+
+		<!-- Combat settings -->
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0,35)</li>
+				<li>(70, 50)</li>
+				<li>(700, 100)</li>
+				<li>(1300, 150)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+
+		<!-- Pawn groups - will be defined after creating PawnKinds -->
+		<pawnGroupMakers Inherit="False">
+			<li>
+				<kindDef>Combat</kindDef>
+				<options>
+					<LeeaniStarwalker_Soldier>10</LeeaniStarwalker_Soldier>
+					<LeeaniStarwalker_Elite>7</LeeaniStarwalker_Elite>
+					<LeeaniStarwalker_Heavy>4</LeeaniStarwalker_Heavy>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<LeeaniStarwalker_Citizen>20</LeeaniStarwalker_Citizen>
+					<LeeaniStarwalker_Soldier>10</LeeaniStarwalker_Soldier>
+				</options>
+			</li>
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<LeeaniStarwalker_Citizen>10</LeeaniStarwalker_Citizen>
+					<LeeaniStarwalker_Soldier>10</LeeaniStarwalker_Soldier>
+					<LeeaniStarwalker_Elite>10</LeeaniStarwalker_Elite>
+				</options>
+			</li>
+		</pawnGroupMakers>
+
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+
+		<!-- Shared goodwill with Traditionalist Leeani - cultural bonds -->
+		<goodwillDynamic>
+			<li>
+				<otherFactionDef>LeeaniHold</otherFactionDef>
+				<naturalGoodwillRange>70~100</naturalGoodwillRange>
+				<canBecomeHostile>false</canBecomeHostile>
+			</li>
+		</goodwillDynamic>
+	</FactionDef>
+
+	<!-- Loot maker for Starwalkers -->
+	<ThingSetMakerDef>
+		<defName>LeeaniStarwalkersRaidLootMaker</defName>
+		<root Class="ThingSetMaker_MarketValue">
+			<fixedParams>
+				<filter>
+					<thingDefs>
+						<li>Silver</li>
+						<li>MedicineIndustrial</li>
+						<li>ComponentIndustrial</li>
+						<li>ComponentSpacer</li>
+						<li>MealSurvivalPack</li>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+			</fixedParams>
+		</root>
+	</ThingSetMakerDef>
+
+</Defs>

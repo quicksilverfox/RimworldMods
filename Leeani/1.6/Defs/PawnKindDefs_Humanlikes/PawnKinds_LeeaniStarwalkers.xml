@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base PawnKind for all Starwalkers -->
+	<PawnKindDef Name="LeeaniStarwalkerBase" Abstract="True">
+		<race>Human</race>
+		<xenotypeSet>
+			<xenotypeChances>
+				<Leeani>1</Leeani>
+			</xenotypeChances>
+		</xenotypeSet>
+		<defaultFactionType>LeeaniStarwalkers</defaultFactionType>
+		<chemicalAddictionChance>0.02</chemicalAddictionChance>
+		<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+		<backstoryCryptosleepCommonality>0.3</backstoryCryptosleepCommonality>
+		<invNutrition>2.55</invNutrition>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>IndustrialAdvanced</li>
+			<li>IndustrialMilitaryBasic</li>
+			<li>IndustrialMilitaryAdvanced</li>
+			<li>SpacerMilitary</li>
+		</apparelTags>
+		<initialWillRange>2~5</initialWillRange>
+		<initialResistanceRange>10~18</initialResistanceRange>
+	</PawnKindDef>
+
+	<!-- Civilian / Peaceful -->
+	<PawnKindDef ParentName="LeeaniStarwalkerBase">
+		<defName>LeeaniStarwalker_Citizen</defName>
+		<label>starwalker citizen</label>
+		<combatPower>50</combatPower>
+		<isFighter>false</isFighter>
+		<gearHealthRange>1~1</gearHealthRange>
+		<itemQuality>Normal</itemQuality>
+		<backstoryCategories>
+			<li>Offworld</li>
+		</backstoryCategories>
+		<weaponTags>
+			<li>SimpleGun</li>
+			<li>Gun</li>
+		</weaponTags>
+		<weaponMoney>300~800</weaponMoney>
+		<apparelMoney>800~1500</apparelMoney>
+		<techHediffsChance>0.15</techHediffsChance>
+		<techHediffsMoney>500~1200</techHediffsMoney>
+		<techHediffsTags>
+			<li>Normal</li>
+			<li>Simple</li>
+			<li>Advanced</li>
+			<li>ImplantEmpireCommon</li>
+		</techHediffsTags>
+		<inventoryOptions>
+			<skipChance>0.7</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<choiceChance>90</choiceChance>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>50</min>
+						<max>150</max>
+					</countRange>
+				</li>
+				<li>
+					<choiceChance>10</choiceChance>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>800</min>
+						<max>1500</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
+
+	<!-- Basic combat unit -->
+	<PawnKindDef ParentName="LeeaniStarwalkerBase">
+		<defName>LeeaniStarwalker_Soldier</defName>
+		<label>starwalker soldier</label>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<gearHealthRange>0.7~2.0</gearHealthRange>
+		<itemQuality>Normal</itemQuality>
+		<backstoryCategories>
+			<li>Offworld</li>
+		</backstoryCategories>
+		<apparelMoney>1000~2000</apparelMoney>
+		<weaponMoney>800~1800</weaponMoney>
+		<weaponTags>
+			<li>Gun</li>
+			<li>IndustrialGunAdvanced</li>
+		</weaponTags>
+		<techHediffsChance>0.20</techHediffsChance>
+		<techHediffsMoney>800~2000</techHediffsMoney>
+		<techHediffsTags>
+			<li>Normal</li>
+			<li>Simple</li>
+			<li>Advanced</li>
+			<li>ImplantEmpireCommon</li>
+		</techHediffsTags>
+		<inventoryOptions>
+			<skipChance>0.75</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>200</min>
+						<max>500</max>
+					</countRange>
+				</li>
+				<li>
+					<thingDef>MedicineIndustrial</thingDef>
+					<countRange>
+						<min>1</min>
+						<max>3</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
+
+	<!-- Elite combat unit -->
+	<PawnKindDef ParentName="LeeaniStarwalkerBase">
+		<defName>LeeaniStarwalker_Elite</defName>
+		<label>starwalker elite</label>
+		<combatPower>150</combatPower>
+		<isFighter>true</isFighter>
+		<gearHealthRange>1.0~2.5</gearHealthRange>
+		<itemQuality>Good</itemQuality>
+		<backstoryCategories>
+			<li>Offworld</li>
+		</backstoryCategories>
+		<minGenerationAge>25</minGenerationAge>
+		<maxGenerationAge>50</maxGenerationAge>
+		<apparelMoney>1500~3000</apparelMoney>
+		<weaponMoney>1500~3000</weaponMoney>
+		<weaponTags>
+			<li>Gun</li>
+			<li>IndustrialGunAdvanced</li>
+			<li>SpacerGun</li>
+		</weaponTags>
+		<techHediffsChance>0.35</techHediffsChance>
+		<techHediffsMoney>1500~4000</techHediffsMoney>
+		<techHediffsTags>
+			<li>Advanced</li>
+			<li>ImplantEmpireCommon</li>
+		</techHediffsTags>
+		<inventoryOptions>
+			<skipChance>0.7</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>300</min>
+						<max>700</max>
+					</countRange>
+				</li>
+				<li>
+					<thingDef>MedicineIndustrial</thingDef>
+					<countRange>
+						<min>2</min>
+						<max>4</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
+
+	<!-- Heavy weapons specialist -->
+	<PawnKindDef ParentName="LeeaniStarwalkerBase">
+		<defName>LeeaniStarwalker_Heavy</defName>
+		<label>starwalker heavy</label>
+		<combatPower>130</combatPower>
+		<isFighter>true</isFighter>
+		<gearHealthRange>0.8~2.2</gearHealthRange>
+		<itemQuality>Normal</itemQuality>
+		<backstoryCategories>
+			<li>Offworld</li>
+		</backstoryCategories>
+		<apparelMoney>1200~2500</apparelMoney>
+		<weaponMoney>1200~2500</weaponMoney>
+		<weaponTags>
+			<li>GunHeavy</li>
+		</weaponTags>
+		<techHediffsChance>0.25</techHediffsChance>
+		<techHediffsMoney>1000~3000</techHediffsMoney>
+		<techHediffsTags>
+			<li>Normal</li>
+			<li>Advanced</li>
+			<li>ImplantEmpireCommon</li>
+		</techHediffsTags>
+		<inventoryOptions>
+			<skipChance>0.75</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>250</min>
+						<max>600</max>
+					</countRange>
+				</li>
+				<li>
+					<thingDef>MedicineIndustrial</thingDef>
+					<countRange>
+						<min>2</min>
+						<max>3</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
+
+	<!-- Leader -->
+	<PawnKindDef ParentName="LeeaniStarwalkerBase">
+		<defName>LeeaniStarwalker_Navigator</defName>
+		<label>navigator-supreme</label>
+		<labelPlural>navigators-supreme</labelPlural>
+		<combatPower>120</combatPower>
+		<isFighter>true</isFighter>
+		<factionLeader>true</factionLeader>
+		<gearHealthRange>1.0~3.0</gearHealthRange>
+		<itemQuality>Excellent</itemQuality>
+		<backstoryCategories>
+			<li>Offworld</li>
+		</backstoryCategories>
+		<minGenerationAge>30</minGenerationAge>
+		<maxGenerationAge>65</maxGenerationAge>
+		<apparelMoney>3000~6000</apparelMoney>
+		<weaponMoney>2500~5000</weaponMoney>
+		<weaponTags>
+			<li>Gun</li>
+			<li>IndustrialGunAdvanced</li>
+			<li>SpacerGun</li>
+		</weaponTags>
+		<techHediffsChance>0.50</techHediffsChance>
+		<techHediffsMoney>3000~8000</techHediffsMoney>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<inventoryOptions>
+			<skipChance>0.6</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>500</min>
+						<max>1200</max>
+					</countRange>
+				</li>
+				<li>
+					<thingDef>MedicineUltratech</thingDef>
+					<countRange>
+						<min>1</min>
+						<max>3</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
+
+</Defs>

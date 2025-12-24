@@ -3,7 +3,8 @@
 
 	<ThingDef ParentName="ArtableFurnitureBase">
 		<defName>LoordThrone</defName>
-		<label>throne</label>
+		<label>Leeani throne</label>
+		<thingClass MayRequire="Ludeon.RimWorld.Royalty">Building_Throne</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Furniture/LoordThrone</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -23,26 +24,59 @@
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>10000</WorkToBuild>
-			<Mass>10</Mass>
-			<Flammability>1.0</Flammability>
+			<Mass>25</Mass>
 			<Beauty>20</Beauty>
 			<Comfort>1.00</Comfort>
+			<MeditationFocusStrength MayRequire="Ludeon.RimWorld.Royalty">0.15</MeditationFocusStrength>
 		</statBases>
-		<description>A throne for the laurels of a king or queen to rest upon!</description>
+		<description>An ornate throne fit for a Leeani leader. The elaborate carvings and comfortable seat demonstrate the artistry and traditions of Leeani craftsmanship. Can be used for dignified meditation by psycasters and fulfills throneroom requirements for royalty.</description>
 		<socialPropernessMatters>true</socialPropernessMatters>
+		<stuffCategories>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>120</costStuffCount>
 		<costList>
-			<Cloth>100</Cloth>
-			<WoodLog>10</WoodLog>
-			<Gold>25</Gold>
+			<Cloth>80</Cloth>
+			<Gold>15</Gold>
 		</costList>
 		<pathCost>30</pathCost>
 		<designationHotKey>Misc7</designationHotKey>
 		<fillPercent>0.35</fillPercent>
 		<building>
 			<isSittable>true</isSittable>
+			<paintable>true</paintable>
 		</building>
+		<comps>
+			<li Class="CompProperties_AssignableToPawn" MayRequire="Ludeon.RimWorld.Royalty">
+				<drawAssignmentOverlay>true</drawAssignmentOverlay>
+				<compClass>CompAssignableToPawn_Throne</compClass>
+			</li>
+			<li Class="CompProperties_MeditationFocus" MayRequire="Ludeon.RimWorld.Royalty">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes>
+					<li>Dignified</li>
+				</focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_ThroneSatisfiesRequirements">
+						<offset>0.08</offset>
+					</li>
+					<li Class="FocusStrengthOffset_RoomImpressiveness">
+						<curve>
+							<points>
+								<li>(0,   -0.05)</li>
+								<li>(30,   0.00)</li>
+								<li>(60,   0.04)</li>
+								<li>(100,  0.08)</li>
+								<li>(170,  0.10)</li>
+							</points>
+						</curve>
+					</li>
+				</offsets>
+			</li>
+		</comps>
 		<researchPrerequisites>
-			<li>LeeaniTraditions</li>
+			<li>ComplexFurniture</li>
 		</researchPrerequisites>
 		<tradeTags>
 			<li>LeeaniFurniture</li>
@@ -87,7 +121,7 @@
 			<isSittable>true</isSittable>
 		</building>
 		<researchPrerequisites>
-			<li>LeeaniTraditions</li>
+			<li>ComplexFurniture</li>
 		</researchPrerequisites>
 		<tradeTags>
 			<li>LeeaniFurniture</li>
@@ -154,7 +188,7 @@
 			<li>ITab_Art</li>
 		</inspectorTabs>
 		<researchPrerequisites>
-			<li>LeeaniTraditions</li>
+			<li>ComplexFurniture</li>
 		</researchPrerequisites>
 		<tradeTags>
 			<li>LeeaniFurniture</li>
@@ -164,179 +198,114 @@
 	<ThingDef ParentName="FurnitureBase">
 		<defName>LeeaniStoneBrazier</defName>
 		<label>brazier</label>
-		<thingClass>Building_WorkTable</thingClass>
-		<description>A decent heat source, can also provide the functions of a campfire, but does not destroy itself when out of fuel.</description>    
+		<description>A bowl-shaped stone furnishing used to hold a fire. Will light the surroundings and create heat. Appropriate for royal thronerooms and can be used for flame-focused meditation.</description>
 		<category>Building</category>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
 		<graphicData>
 			<texPath>Things/Building/Furniture/Brazier</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 			<drawRotated>false</drawRotated>
 			<allowFlip>false</allowFlip>
+			<shadowData>
+				<volume>(0.55, 0.35, 0.3)</volume>
+				<offset>(0, 0, -0.28)</offset>
+			</shadowData>
 			<damageData>
-				<rect>(0.2,0,0.6,0.1)</rect>
+				<rect>(0.2,0.3,0.6,0.6)</rect>
 			</damageData>
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
-		<useHitPoints>True</useHitPoints>
 		<passability>PassThroughOnly</passability>
-		<pathCost>50</pathCost>
-		<tickerType>Normal</tickerType>
-		<surfaceType>Item</surfaceType>
-		<drawerType>RealtimeOnly</drawerType>
-		<fillPercent>0.25</fillPercent>
+		<pathCost>42</pathCost>
+		<fillPercent>0.15</fillPercent>
 		<statBases>
-			<MaxHitPoints>100</MaxHitPoints>
-			<WorkToBuild>300</WorkToBuild>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>1000</WorkToBuild>
 			<Flammability>0</Flammability>
-			<Mass>5</Mass>
-			<WorkTableWorkSpeedFactor>0.8</WorkTableWorkSpeedFactor>
+			<Mass>15</Mass>
+			<MeditationFocusStrength MayRequire="Ludeon.RimWorld.Royalty">0.0</MeditationFocusStrength>
 		</statBases>
 		<selectable>true</selectable>
-		<costList>
-			<WoodLog>20</WoodLog>
-			<!-- just the intial wood -->
-		</costList>
+		<designationCategory>Furniture</designationCategory>
+		<uiOrder>2820</uiOrder>
+		<uiIconOffset>(0, -0.04)</uiIconOffset>
+		<minifiedDef>MinifiedThing</minifiedDef>
 		<stuffCategories>
+			<li>Metallic</li>
 			<li>Stony</li>
 		</stuffCategories>
-		<costStuffCount>30</costStuffCount>
-		<soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+		<costStuffCount>50</costStuffCount>
+		<canOverlapZones>false</canOverlapZones>
+		<rotatable>false</rotatable>
 		<placeWorkers>
 			<li>PlaceWorker_Heater</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">PlaceWorker_MeditationOffsetBuildingsNear</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">PlaceWorker_GlowRadius</li>
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
 			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>10.0</fuelConsumptionRate>
-				<fuelCapacity>20.0</fuelCapacity>
+				<fuelConsumptionRate>2.0</fuelConsumptionRate>
+				<fuelCapacity>30.0</fuelCapacity>
 				<fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
 				<fuelFilter>
 					<thingDefs>
 						<li>WoodLog</li>
 					</thingDefs>
 				</fuelFilter>
-				<destroyOnNoFuel>false</destroyOnNoFuel>
-				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
-				<initialFuelPercent>1</initialFuelPercent>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<functionsInVacuum>false</functionsInVacuum>
 			</li>
 			<li Class="CompProperties_Glower">
-				<glowRadius>15</glowRadius>
+				<glowRadius>10</glowRadius>
 				<glowColor>(252,187,113,0)</glowColor>
 			</li>
 			<li Class="CompProperties_HeatPusher">
 				<compClass>CompHeatPusherPowered</compClass>
-				<heatPerSecond>21</heatPerSecond>
-				<heatPushMaxTemperature>28</heatPushMaxTemperature>
+				<heatPerSecond>3.5</heatPerSecond>
+				<heatPushMaxTemperature>23</heatPushMaxTemperature>
 			</li>
 			<li Class="CompProperties_FireOverlay">
-				<fireSize>0.4</fireSize>
+				<fireSize>1</fireSize>
+				<offset>(0,0,0.18)</offset>
 			</li>
-			<li>
-				<compClass>CompGatherSpot</compClass>
+			<li Class="CompProperties_MeditationFocus" MayRequire="Ludeon.RimWorld.Royalty">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes>
+					<li>Flame</li>
+				</focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_Lit">
+						<offset>0.15</offset>
+					</li>
+					<li Class="FocusStrengthOffset_BuildingDefsLit">
+						<defs>
+							<li>Campfire</li>
+							<li>TorchLamp</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">Brazier</li>
+							<li>LeeaniStoneBrazier</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Ideology">DarklightBrazier</li>
+							<li MayRequire="Ludeon.RimWorld.Ideology">Darktorch</li>
+							<li MayRequire="Ludeon.RimWorld.Ideology">DarktorchFungus</li>
+						</defs>
+						<offsetPerBuilding>0.02</offsetPerBuilding>
+						<radius>9.9</radius>
+						<maxBuildings>8</maxBuildings>
+						<explanationKey>MeditationFocusPerFlame</explanationKey>
+						<explanationKeyAbstract>MeditationFocusPerFlameAbstract</explanationKeyAbstract>
+						<drawRingRadius>false</drawRingRadius>
+					</li>
+				</offsets>
 			</li>
 		</comps>
-		<designationCategory>Temperature</designationCategory>
-		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
-		<recipes>
-			<li>CookMealSimple</li>
-			<li>Make_Pemmican</li>
-			<li>BurnApparel</li>
-			<li>BurnDrugs</li>
-		</recipes>
-		<inspectorTabs>
-			<li>ITab_Bills</li>
-		</inspectorTabs>
 		<building>
-			<isMealSource>true</isMealSource>
-			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<paintable>true</paintable>
 		</building>
-		<rotatable>true</rotatable>
 		<researchPrerequisites>
-			<li>LeeaniTraditions</li>
-		</researchPrerequisites>
-		<tradeTags>
-			<li>LeeaniFurniture</li>
-		</tradeTags>
-	</ThingDef>
-
-	<ThingDef Abstract="True" Name="LeeaniLampBase" ParentName="FurnitureBase">
-		<thingClass>Building</thingClass>
-		<category>Building</category>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>PassThroughOnly</passability>
-		<selectable>true</selectable>
-		<fillPercent>0.25</fillPercent>
-		<pathCost>8</pathCost>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-		<designationCategory>Furniture</designationCategory>
-		<rotatable>false</rotatable>
-		<graphicData>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shadowData>
-				<volume>(0.3, 0.6, 0.3)</volume>
-				<offset>(0,0,-0.1)</offset>
-			</shadowData>
-			<damageData>
-				<rect>(0.2,0.2,0.6,0.6)</rect>
-			</damageData>
-		</graphicData>
-		<comps>
-			<li Class="CompProperties_Flickable"/>
-		</comps>
-		<statBases>
-			<MaxHitPoints>150</MaxHitPoints>
-			<WorkToBuild>600</WorkToBuild>
-			<Flammability>1.0</Flammability>
-		</statBases>
-		<researchPrerequisites>
-			<li>Electricity</li>
-		</researchPrerequisites>
-	</ThingDef>
-
-	<ThingDef Abstract="True" Name="LeeaniStandingLampBase" ParentName="LeeaniLampBase">
-		<graphicData>
-			<texPath>Things/Building/Furniture/LampPost</texPath>
-			<drawSize>(1.8,3.8)</drawSize>
-		</graphicData>
-		<costList>
-			<WoodLog>5</WoodLog>
-			<Steel>5</Steel>
-		</costList>
-		<stuffCategories>
-			<li>Stony</li>
-		</stuffCategories>
-		<costStuffCount>5</costStuffCount>
-		<statBases>
-			<Mass>15</Mass>
-		</statBases>
-		<comps>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>35</basePowerConsumption>
-				<shortCircuitInRain>false</shortCircuitInRain>
-			</li>
-		</comps>
-		<rotatable>false</rotatable>
-	</ThingDef>
-
-	<ThingDef ParentName="LeeaniStandingLampBase" >
-		<defName>LeeaniLampPost</defName>
-		<label>electric Lamp-post</label>
-		<description>Tall lamp that lights a big ol' area. Good for towns.</description>
-		<designationHotKey>Misc11</designationHotKey>
-		<comps>
-			<li Class="CompProperties_Glower">
-				<glowRadius>15</glowRadius>
-				<glowColor>(255,214,170,0)</glowColor>
-			</li>
-		</comps>
-		<researchPrerequisites>
-			<li>LeeaniTraditions</li>
-			<li>Electricity</li>
+			<li>ComplexFurniture</li>
 		</researchPrerequisites>
 		<tradeTags>
 			<li>LeeaniFurniture</li>
@@ -402,7 +371,7 @@
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
 		</placeWorkers>
 		<researchPrerequisites>
-			<li>LeeaniArkhaev</li>
+			<li>ComplexFurniture</li>
 		</researchPrerequisites>
 		<tradeTags>
 			<li>LeeaniFurniture</li>

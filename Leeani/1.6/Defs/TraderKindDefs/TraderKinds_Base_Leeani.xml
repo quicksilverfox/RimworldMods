@@ -121,6 +121,30 @@
 					<max>1000</max>
 				</totalPriceRange>
 			</li>
+			<!-- Stone blocks in bulk - traditionalist specialty -->
+			<li Class="StockGenerator_Category">
+				<categoryDef>StoneBlocks</categoryDef>
+				<thingDefCountRange>
+					<min>2</min>
+					<max>4</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>600</min>
+					<max>1200</max>
+				</totalPriceRange>
+			</li>
+			<!-- Leather in bulk - agrarian products -->
+			<li Class="StockGenerator_Category">
+				<categoryDef>Leathers</categoryDef>
+				<thingDefCountRange>
+					<min>3</min>
+					<max>5</max>
+				</thingDefCountRange>
+				<totalPriceRange>
+					<min>500</min>
+					<max>1000</max>
+				</totalPriceRange>
+			</li>
 			<li Class="StockGenerator_Category">
 				<categoryDef>ResourcesRaw</categoryDef>
 				<thingDefCountRange>
@@ -340,6 +364,10 @@
 			</li>
 			<li Class="StockGenerator_BuyTradeTag">
 				<tag>ImplantEmpireRoyal</tag>
+			</li>
+			<!-- Leeani value knowledge highly -->
+			<li Class="StockGenerator_BuyCategory" MayRequire="Ludeon.RimWorld.Ideology">
+				<category>Books</category>
 			</li>
 		</stockGenerators>
 	</TraderKindDef>

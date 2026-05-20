@@ -74,6 +74,14 @@ namespace HousekeeperCat
             return GetDisabledWorkTypes().Contains(w);
         }
 
+        /**
+         * Work givers explicitly enabled for this cat regardless of their (disabled) work type.
+         * Lets the cat do individual job subtypes - e.g. feeding patients without gaining the
+         * full Doctor work type. Configured via HousekeeperCatExtension on the race def.
+         * May be null when no extension is present.
+         */
+        public List<WorkGiverDef> ExtraEnabledWorkGivers => def.GetModExtension<HousekeeperCatExtension>()?.extraEnabledWorkGivers;
+
         private List<WorkTypeDef> cachedDisabledWorkTypes;
         private List<WorkTypeDef> cachedDisabledWorkTypesPermanent;
         /**
@@ -133,5 +141,16 @@ namespace HousekeeperCat
     public class DefOfCousekeeperCatPawnDef
     {
         public static PawnKindDef HousekeeperCat;
+    }
+
+    /**
+     * Race def extension. Lets a housekeeper cat run individual work givers whose parent
+     * work type is otherwise disabled (i.e. not listed in mechEnabledWorkTypes).
+     * Example: DoctorFeedHumanlikes / DoctorFeedAnimals enable feeding patients without
+     * granting the rest of the Doctor work type (tending, surgery, rescue...).
+     */
+    public class HousekeeperCatExtension : DefModExtension
+    {
+        public List<WorkGiverDef> extraEnabledWorkGivers = new List<WorkGiverDef>();
     }
 }

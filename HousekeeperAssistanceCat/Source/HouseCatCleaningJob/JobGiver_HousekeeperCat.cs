@@ -47,6 +47,7 @@ namespace RimWorld
                 pawn.mindState.priorityWork.Clear();
             }
             List<WorkGiver> list = ((!emergency) ? pawn.workSettings.WorkGiversInOrderNormal : pawn.workSettings.WorkGiversInOrderEmergency);
+            list = AppendExtraWorkGivers(pawn, list);
             int num = -999;
             TargetInfo bestTargetOfLastPriority = TargetInfo.Invalid;
             WorkGiver_Scanner scannerWhoProvidedTarget = null;
@@ -203,9 +204,45 @@ namespace RimWorld
             return ThinkResult.NoJob;
         }
 
+        /**
+         * The cached work giver order only contains work givers of enabled work types, so
+         * giver of a disabled work type (e.g. feeding patients under the Doctor work type)
+         * never appears. Append any extra-enabled work givers so the loop can consider them.
+         * Returns a fresh list when extras are added; never mutates the pawn's cached list.
+         */
+        private List<WorkGiver> AppendExtraWorkGivers(Pawn pawn, List<WorkGiver> list)
+        {
+            List<WorkGiverDef> extras = (pawn as Pawn_HousekeeperCat)?.ExtraEnabledWorkGivers;
+            if (extras == null || extras.Count == 0)
+            {
+                return list;
+            }
+            List<WorkGiver> result = null;
+            for (int i = 0; i < extras.Count; i++)
+            {
+                WorkGiverDef wgDef = extras[i];
+                if (wgDef == null || wgDef.emergency != emergency)
+                {
+                    continue; // emergency givers belong only in the emergency pass, and vice versa
+                }
+                WorkGiver worker = wgDef.Worker;
+                if (list.Contains(worker) || (result != null && result.Contains(worker)))
+                {
+                    continue;
+                }
+                if (result == null)
+                {
+                    result = new List<WorkGiver>(list);
+                }
+                result.Add(worker); // appended last - lower priority than the cat's normal work
+            }
+            return result ?? list;
+        }
+
         private bool PawnCanUseWorkGiver(Pawn pawn, WorkGiver giver)
         {
             Pawn_HousekeeperCat cat = (Pawn_HousekeeperCat)pawn;
+            bool extraEnabled = cat.ExtraEnabledWorkGivers?.Contains(giver.def) ?? false;
             if (!(giver.def.nonColonistsCanDo || (bool)cat.Faction?.IsPlayer))
             {
                 return false;
@@ -214,7 +251,7 @@ namespace RimWorld
             {
                 return false;
             }
-            if (giver.def.workType != null && cat.WorkTypeIsDisabled(giver.def.workType))
+            if (!extraEnabled && giver.def.workType != null && cat.WorkTypeIsDisabled(giver.def.workType))
             {
                 return false;
             }

@@ -31,7 +31,9 @@ namespace AnimalsLogic
                 var resultTemp = __result.ToList();
 
                 if (Settings.tastes_like_chicken)
-                    foreach (Thing meat in resultTemp.FindAll(x => x.def.ingestible?.foodType == FoodTypeFlags.Meat))
+                {
+                    var meatsToReplace = resultTemp.FindAll(x => x.def.ingestible?.foodType == FoodTypeFlags.Meat);
+                    foreach (Thing meat in meatsToReplace)
                     {
                         if (meat == null)
                         {
@@ -41,19 +43,31 @@ namespace AnimalsLogic
                         {
                             continue; // do nothing
                         }
-                        else if (__instance.RaceProps.Humanlike)
+
+                        ThingDef targetMeatDef = null;
+                        if (__instance.RaceProps.Humanlike)
                         {
-                            meat.def = DefDatabase<ThingDef>.GetNamed("Meat_Human");
+                            targetMeatDef = DefDatabase<ThingDef>.GetNamed("Meat_Human");
                         }
                         else if (__instance.RaceProps.FleshType == FleshTypeDefOf.Insectoid)
                         {
-                            meat.def = DefDatabase<ThingDef>.GetNamed("Meat_Megaspider");
+                            targetMeatDef = DefDatabase<ThingDef>.GetNamed("Meat_Megaspider");
                         }
                         else if (__instance.RaceProps.FleshType == FleshTypeDefOf.Normal)
                         {
-                            meat.def = DefDatabase<ThingDef>.GetNamed("Meat_Chicken");
+                            targetMeatDef = DefDatabase<ThingDef>.GetNamed("Meat_Chicken");
+                        }
+
+                        if (targetMeatDef != null && targetMeatDef != meat.def)
+                        {
+                            // Create new meat Thing with correct def instead of mutating existing Thing's def
+                            Thing newMeat = ThingMaker.MakeThing(targetMeatDef);
+                            newMeat.stackCount = meat.stackCount;
+                            resultTemp.Remove(meat);
+                            resultTemp.Add(newMeat);
                         }
                     }
+                }
 
                 CompShearable shareable;
                 if (Settings.shear_corpses && (shareable = __instance.GetComp<CompShearable>()) != null && __instance.ageTracker.CurLifeStage.shearable)

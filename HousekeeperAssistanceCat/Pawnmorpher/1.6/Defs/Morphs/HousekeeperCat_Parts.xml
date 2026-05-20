@@ -1,0 +1,248 @@
+<Defs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Schemas/MutationDef.xsd">
+	<Pawnmorph.Hediffs.MutationDef Name="HousekeeperCatPart" ParentName="PawnmorphPart" Abstract="true">
+		<classInfluence>HousekeeperCatMorph</classInfluence>
+	</Pawnmorph.Hediffs.MutationDef>
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="FelisJawPart">
+		<classInfluence>HousekeeperCatMorph</classInfluence>
+		<defName>EtherHousekeeperCatMuzzle</defName>
+		<label>nekomata muzzle</label>
+		<stagePatches>
+			<li function="modify">
+				<stageKey>paragon</stageKey>
+				<values>
+					<description>[PAWN_nameDef]'s face now looks like a very expressive cat muzzle, that can be unbelievably adorable or highly intimidating when [PAWN_pronoun] wants. With further adaptation, [PAWN_nameDef] has learned to speak normally.</description>
+					<partEfficiencyOffset>0.2</partEfficiencyOffset>
+					<statOffsets>
+						<NegotiationAbility>0.15</NegotiationAbility>
+						<ArrestSuccessChance>0.15</ArrestSuccessChance>
+					</statOffsets>
+					<capMods>
+						<li>
+							<capacity>Eating</capacity>
+							<offset>0.1</offset>
+						</li>
+					</capMods>
+					<verbOverrides>
+						<li>
+							<label>teeth</label>
+							<power>9.5</power>
+						</li>
+					</verbOverrides>
+				</values>
+			</li>
+		</stagePatches>
+		<graphics>
+			<Muzzle>Parts/Cat/Cat_Muzzle</Muzzle>
+		</graphics>
+	</Pawnmorph.Hediffs.MutationDef>
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="FelisEarPart">
+		<classInfluence>HousekeeperCatMorph</classInfluence>
+		<defName>EtherHousekeeperCatEar</defName>
+		<label>nekomata ear</label>
+		<graphics>
+			<LeftEar>Parts/Cat/Cat_Ear_Left</LeftEar>
+			<LeftEarBehind>Parts/Cat/Cat_Ear_Left_Behind</LeftEarBehind>
+			<RightEar>Parts/Cat/Cat_Ear_Right</RightEar>
+			<RightEarBehindHead>Parts/Cat/Cat_Ear_Right_Behind</RightEarBehindHead>
+		</graphics>
+	</Pawnmorph.Hediffs.MutationDef>
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="FelisTailPart">
+		<classInfluence>HousekeeperCatMorph</classInfluence>
+		<defName>EtherHousekeeperCatTail</defName>
+		<label>nekomata tail</label>
+		<graphics>
+			<Tail>Parts/Nekomata/Nekomata_Tail</Tail>
+		</graphics>
+		<stagePatches>
+			<li function="modify">
+				<stageKey>grown</stageKey>
+				<values>
+					<description>A long, catlike tail, forking into two near its base. It flicks back and forth whenever [PAWN_nameDef] is displeased with something.</description>
+				</values>
+			</li>
+		</stagePatches>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<key>paragon</key>
+				<label>paragon</label>
+				<minSeverity>2.5</minSeverity>
+				<description>An extremely long, catlike tail, forking into two near its base. It is quite strong and dextrous, and [PAWN_nameDef] sometimes uses it as a pair of extra limbs.</description>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>+0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</Pawnmorph.Hediffs.MutationDef>
+	
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphGenericEyePart">
+		<defName>EtherHousekeeperCatEye</defName>
+		<label>nekomata eye</label>
+		<classInfluence>HousekeeperCatMorph</classInfluence>
+		<mutationMemory>EtherFelineEye</mutationMemory>
+		<stagePatches>
+			<li function="modify">
+				<stageKey>adapting</stageKey>
+				<values>
+					<description>[PAWN_nameDef]'s iris has obtained a metallic shine, with narrow, slitted pupil in place of the previous circle. It hasn't quite adjusted to see as well as before.</description>
+					<partEfficiencyOffset>-0.2</partEfficiencyOffset>
+				</values>
+			</li>
+			<li function="modify">
+				<stageKey>adapted</stageKey>
+				<values>
+					<description>Slitted, shiny eyes are now [PAWN_nameDef]'s to keep. They are keener and rather enticing to look at.</description>
+					<partEfficiencyOffset>0.2</partEfficiencyOffset>
+					<statOffsets>
+						<SocialImpact>+0.1</SocialImpact>
+					</statOffsets>
+				</values>
+			</li>
+		</stagePatches>
+	</Pawnmorph.Hediffs.MutationDef>
+	
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphHandPart">
+		<defName>EtherHousekeeperCatHand</defName>
+		<label>nekomata paw</label>
+		<description>This hand has reshaped to become like a paw, complete with retractable claws. This gives [PAWN_objective] a combat advantage. Thankfully, this more manipulative paw allows [PAWN_nameDef] to keep [PAWN_possessive] thumbs.</description>
+		<classInfluence>HousekeeperCatMorph</classInfluence>
+		<mutationTale>HandsBecomeCatPaws</mutationTale>
+		<mutationMemory>EtherFelineClaws</mutationMemory>
+		<stagePatches>
+			<li function="modify">
+				<stageKey>readjusting</stageKey>
+				<values>
+					<label>clawed</label>
+					<description>[PAWN_nameDef]'s fingernails have become long, curved and pointed, like that of a feline.</description>
+					<verbOverrides>
+						<li>
+							<label>claws</label>
+							<chanceFactor>0.5</chanceFactor>
+							<power>6</power>
+						</li>
+					</verbOverrides>
+				</values>
+			</li>
+			<li function="modify">
+				<stageKey>unfamiliar</stageKey>
+				<values>
+					<label>padded</label>
+					<description>Fleshy pads have appeared on [PAWN_nameDef]'s palm and fingers, giving the clawed hand a more catlike appearance. [PAWN_objective] thumb has grown weaker as well, making grasping things much more difficult.</description>
+				
+					<verbOverrides>
+						<li>
+							<label>claws</label>
+							<chanceFactor>0.5</chanceFactor>
+							<power>6.5</power>
+						</li>
+					</verbOverrides>
+				</values>
+			</li>
+			<li function="modify">
+				<stageKey>adapting</stageKey>
+				<values>
+					<description>The mechanites have finished their work on [PAWN_nameDef]'s new cat-like paws, yet they still remain foreign and unfamiliar to [PAWN_objective] and will take some to get used to.</description>
+					<verbOverrides>
+						<li>
+							<label>claws</label>
+							<chanceFactor>0.5</chanceFactor>
+							<power>7</power>
+						</li>
+					</verbOverrides>
+				</values>
+			</li>
+			<li function="modify">
+				<stageKey>adapted</stageKey>
+				<values>
+					<description>[PAWN_nameDef]'s hands have reshaped to become like paws, complete with retractable claws. This gives [PAWN_objective] a combat advantage. Thankfully, housekeeper cats have handpaws complete with opposable thumbs. Despite being somewhat fat and stubby, they are surprisingly dexterious when it comes to fine manipulation.</description>
+					<labelOverride>feline handpaw</labelOverride>
+					<partEfficiencyOffset>0.1</partEfficiencyOffset>
+					<statOffsets>
+						<MeleeWeapon_CooldownMultiplier>-0.25</MeleeWeapon_CooldownMultiplier>
+					</statOffsets>
+					<verbOverrides>
+						<li>
+							<label>claws</label>
+							<chanceFactor>1</chanceFactor>
+							<power>7</power>
+						</li>
+					</verbOverrides>
+				</values>
+			</li>
+		</stagePatches>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+				<minSeverity>1.99</minSeverity>
+				<labelOverride>dextrous handpaw</labelOverride>
+				<description>Even further adaption to this handpaw have given [PAWN_nameDef] a remarkable deftness with [PAWN_possessive] fingers. Retractable claws can rend [PAWN_possessive] foes with a swipe, and yet when working on delicate tasks they're even more gentle and precise than ordinary fingers would be.</description>
+				<partEfficiencyOffset>0.3</partEfficiencyOffset>
+				<statOffsets>
+					<MeleeWeapon_CooldownMultiplier>-0.25</MeleeWeapon_CooldownMultiplier>
+				</statOffsets>
+				<verbOverrides>
+					<li>
+						<label>claws</label>
+						<chanceFactor>1</chanceFactor>
+						<power>7</power>
+					</li>
+				</verbOverrides>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>claws</label>
+						<labelUsedInLogging>False</labelUsedInLogging>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>0</power>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+				</tools>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+
+	<Pawnmorph.Hediffs.MutationDef ParentName ="PawnmorphGenericTorsoPart">
+		<description>A slim and compact but surprisingly tough torso.</description>
+		<defName>EtherHousekeeperCatTorso</defName>
+		<label>compact torso</label>
+		<classInfluences>
+			<li>HousekeeperCatMorph</li>
+		</classInfluences>
+		<stagePatches>
+			<li function="modify">
+				<stageKey>initial</stageKey>
+				<values>
+					<description>[PAWN_nameDef]'s torso is beginning to slim and shed excess weight. Eating more doesn't seem to have any effect.</description>
+				</values>
+			</li>
+			<li function="modify">
+				<stageKey>growing</stageKey>
+				<values>
+					<description>[PAWN_nameDef]'s torso is becoming slimmer than before. Strange pain pulses in [PAWN_possessive] bones.</description>
+				</values>
+			</li>
+			<li function="modify">
+				<stageKey>grown</stageKey>
+				<values>
+					<description>[PAWN_nameDef]'s body is significately smaller than before, but [PAWN_possessive] bones and muscles are unnaturaly dense.</description>
+					<globalHealthMultiplier>2</globalHealthMultiplier>
+					<hungerRateFactor>0.75</hungerRateFactor>
+					<statOffsets>
+						<PM_BodySize>-0.33</PM_BodySize>
+						<CarryingCapacity>25</CarryingCapacity>
+					</statOffsets>
+				</values>
+			</li>
+		</stagePatches>
+	</Pawnmorph.Hediffs.MutationDef>
+</Defs>

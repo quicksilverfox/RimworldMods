@@ -51,28 +51,6 @@ namespace AnimalsLogic.Patches
                 GetPreyOfMyFaction(predator, targetThing.Faction) != null;
         }
 
-        private static bool CheckHostile(Thing who, Thing to)
-        {
-            if (!(who is Pawn) || to.Faction == null)
-            {
-                return false;
-            }
-
-            Pawn agressor = who as Pawn;
-
-            if (!agressor.Spawned || !(agressor.RaceProps?.predator ?? false) || !to.Spawned)
-            {
-                return false;
-            }
-
-            if (to.Faction.HasPredatorRecentlyAttackedAnyone(agressor) || GetPreyOfMyFaction(agressor, to.Faction) != null)
-            {
-                return true;
-            }
-
-            return false;
-        }
-
         // copy-paste from GenHostility
         private static Pawn GetPreyOfMyFaction(Pawn predator, Faction myFaction)
         {

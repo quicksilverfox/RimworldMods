@@ -10,7 +10,7 @@ using Verse;
 namespace AnimalsLogic.Patches
 {
     /**
-     * Ties animal wildness toanimal age, making taming and training young animals much easier.
+     * Ties animal wildness to animal age, making taming and training young animals much easier.
      * 
      * TODO: make animals remember trainer and build up rapport with them.
      */
@@ -23,13 +23,60 @@ namespace AnimalsLogic.Patches
                 transpiler: new HarmonyMethod(typeof(GetThemYoung).GetMethod(nameof(Interacted_Transpiler)))
                 );
 
-            AnimalsLogic.harmony.Patch(
-                typeof(Toils_Interpersonal) // I really should make a method to automatically go through nested classes
-                                            // instead of manually fixing it every time compiler changes its mind
-                    .GetNestedType("<>c__DisplayClass10_0", BindingFlags.NonPublic | BindingFlags.Instance)
-                    .GetMethod("<TryTrain>b__0", BindingFlags.NonPublic | BindingFlags.Instance),
-                transpiler: new HarmonyMethod(typeof(GetThemYoung).GetMethod(nameof(TryTrain_Transpiler)))
-                );
+            // Find the TryTrain delegate method dynamically to handle compiler-generated name changes
+            var tryTrainMethod = FindTryTrainDelegateMethod();
+            if (tryTrainMethod != null)
+            {
+                AnimalsLogic.harmony.Patch(
+                    tryTrainMethod,
+                    transpiler: new HarmonyMethod(typeof(GetThemYoung).GetMethod(nameof(TryTrain_Transpiler)))
+                    );
+            }
+            else
+            {
+                Log.Warning("[AnimalsLogic] Could not find TryTrain delegate method to patch. Young animal taming bonus may not work for training.");
+            }
+        }
+
+        /// <summary>
+        /// Dynamically finds the compiler-generated delegate method used in Toils_Interpersonal.TryTrain
+        /// that contains the Wildness stat lookup we need to patch.
+        /// </summary>
+        private static MethodInfo FindTryTrainDelegateMethod()
+        {
+            var wildnessField = typeof(StatDefOf).GetField(nameof(StatDefOf.Wildness));
+            var getStatMethod = typeof(StatExtension).GetMethod(nameof(StatExtension.GetStatValue));
+
+            // Search all nested types in Toils_Interpersonal for methods that reference Wildness stat
+            foreach (var nestedType in typeof(Toils_Interpersonal).GetNestedTypes(BindingFlags.NonPublic | BindingFlags.Public))
+            {
+                foreach (var method in nestedType.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))
+                {
+                    try
+                    {
+                        var instructions = PatchProcessor.GetCurrentInstructions(method);
+                        if (instructions == null) continue;
+
+                        // Look for a method that loads StatDefOf.Wildness and calls GetStatValue
+                        bool hasWildness = false;
+                        bool hasGetStat = false;
+                        foreach (var instr in instructions)
+                        {
+                            if (instr.operand == wildnessField) hasWildness = true;
+                            if (instr.operand as MethodInfo == getStatMethod) hasGetStat = true;
+                        }
+
+                        if (hasWildness && hasGetStat)
+                            return method;
+                    }
+                    catch
+                    {
+                        // Skip methods that can't be analyzed
+                    }
+                }
+            }
+
+            return null;
         }
 
         [HarmonyTranspiler]

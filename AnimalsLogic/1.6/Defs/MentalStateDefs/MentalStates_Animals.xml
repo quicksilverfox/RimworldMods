@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <MentalStateDef>
+    <defName>AL_HuntingWildAnimal</defName>
+    <label>hunting spree</label>
+    <stateClass>AnimalsLogic.MentalBreaks.MentalState_HuntWildAnimal</stateClass>
+    <category>Aggro</category>
+    <nameColor>(0.85, 0.55, 0.15)</nameColor>
+    <blockNormalThoughts>false</blockNormalThoughts>
+    <allowBeatfire>true</allowBeatfire>
+    <recoveryMtbDays>0.5</recoveryMtbDays>
+    <minTicksBeforeRecovery>5000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>25000</maxTicksBeforeRecovery>
+    <colonistsOnly>true</colonistsOnly>
+    <prisonersCanDo>false</prisonersCanDo>
+    <beginLetter>AL_LetterHuntingSpreeBegin</beginLetter>
+    <beginLetterLabel>AL_LetterHuntingSpreeLabel</beginLetterLabel>
+    <beginLetterDef>ThreatSmall</beginLetterDef>
+    <recoveryMessage>AL_MessageHuntingSpreeRecovered</recoveryMessage>
+    <moodRecoveryThought>Catharsis</moodRecoveryThought>
+  </MentalStateDef>
+
+</Defs>

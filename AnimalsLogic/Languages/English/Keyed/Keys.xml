@@ -45,6 +45,17 @@
 	
 	<ALConfigTamingAgeFactorLabel>Young animals are easier to handle</ALConfigTamingAgeFactorLabel>
 	<ALConfigTamingAgeFactorTooltip>Makes non-adult animals easier to tame and train, effectively reducing their wildness. Proportinal to their relative age - newborn are much easier, while almost adult are barely affected.</ALConfigTamingAgeFactorTooltip>
+	
+	<ALConfigComeWhenCalledLabel>Obedient animals come when called for training</ALConfigComeWhenCalledLabel>
+	<ALConfigComeWhenCalledTooltip>Animals with Obedience training will come to the trainer instead of forcing the trainer to chase them. They will meet somewhere in between.</ALConfigComeWhenCalledTooltip>
+	
+	<ALConfigPlayWithAnimalsLabel>Allow playing with animals as recreation</ALConfigPlayWithAnimalsLabel>
+	<ALConfigPlayWithAnimalsTooltip>Pawns capable of animal handling can play with colony animals for joy. Bonded and high-petness animals are preferred. High-skill handlers may also interact with wild animals for a chance to tame them.</ALConfigPlayWithAnimalsTooltip>
+
+	<!-- Mental Break: Hunting Spree -->
+	<AL_LetterHuntingSpreeLabel>Mental break: {0}</AL_LetterHuntingSpreeLabel>
+	<AL_LetterHuntingSpreeBegin>{PAWN_nameDef} has snapped and is going on a hunting spree, seeking to kill wild animals.</AL_LetterHuntingSpreeBegin>
+	<AL_MessageHuntingSpreeRecovered>{0} has recovered from the hunting spree.</AL_MessageHuntingSpreeRecovered>
 
 	<!-- Extra stats -->
 	

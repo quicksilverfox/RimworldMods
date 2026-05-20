@@ -1,0 +1,28 @@
+<Defs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Schemas/MorphDef.xsd">
+	<!--
+		Basically it is a cat transformation, but with better pawhands and high health.
+	-->
+	<Pawnmorph.MorphDef ParentName="FelisMorph">
+		<defName>HousekeeperCatMorph</defName>
+		<label>nekomata</label>
+		<description>Housekeeper cats are designed species, and morphs based on them inherit a lot of their traits. Their resilience is almost unnatural, being able to rival much bigger morphs in toughness (although lacking any kind of natural armor), and their hands are fully capable of fine manipulation. No one knows why they have two tails, but this trait gave them their nickname.</description>
+		<race>HousekeeperCat</race>
+		<categories>
+			<li>Social</li>
+			<li>Crafter</li>
+			<li>Domestic</li>
+		</categories>
+		<fullTransformation>PawnmorphHousekeeperCatTF</fullTransformation>
+		<partialTransformation>PawnmorphHousekeeperCatTFPartial</partialTransformation>
+		<raceSettings>
+			<graphicsSettings>
+				<skinColorOverride>(80,80,80)</skinColorOverride>
+				<femaleSkinColorOverride>(255,255,255)</femaleSkinColorOverride>
+			</graphicsSettings>
+		</raceSettings>
+		<transformSettings>
+			<transformationMemory>HousekeeperCatTransformationMemory</transformationMemory>
+			<revertedMemory>HousekeeperCatRevertedMemory</revertedMemory>
+		</transformSettings>
+	</Pawnmorph.MorphDef>
+</Defs>

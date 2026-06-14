@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Lucid Dreams thought from sleeping with enhanced Sleep Accelerator -->
+	<ThoughtDef>
+		<defName>SubcoreAutomation_LucidDreams</defName>
+		<thoughtClass>Thought_Memory</thoughtClass>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>lucid dreams</label>
+				<description>I had vivid, lucid dreams last night. The subcore-enhanced sleep accelerator let me experience incredible dream adventures while I slept. I feel refreshed and entertained.</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+</Defs>

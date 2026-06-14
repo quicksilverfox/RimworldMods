@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Sleep Accelerator Automation: Lucid dreams provide recreation and mood boost -->
+	<!-- Requires Ideology DLC -->
+
+	<!-- Add subcore automation comp -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="SleepAccelerator"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="SleepAccelerator"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
+					<subcoreDef>SubcoreHigh</subcoreDef>
+					<automatedSpeedFactor>1.0</automatedSpeedFactor>
+					<automatedPowerConsumption>100</automatedPowerConsumption>
+					<installWorkAmount>2500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>

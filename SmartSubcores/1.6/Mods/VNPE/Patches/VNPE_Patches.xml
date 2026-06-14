@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Nutrient Paste Grinder Automation: Hopper refrigeration -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VNPE_NutrientPasteGrinder"]/comps</xpath>
+		<value>
+			<li Class="SubcoreAutomation.Core.CompProperties_CompatAutomation">
+				<subcoreDef>SubcoreBasic</subcoreDef>
+				<automatedSpeedFactor>1.0</automatedSpeedFactor>
+				<automatedPowerConsumption>50</automatedPowerConsumption>
+				<installWorkAmount>1500</installWorkAmount>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- Nutrient Paste Feeder Automation: Refrigeration + Smart Dispense -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="VNPE_NutrientPasteFeeder"]/comps</xpath>
+		<value>
+			<li Class="SubcoreAutomation.Core.CompProperties_CompatAutomation">
+				<subcoreDef>SubcoreBasic</subcoreDef>
+				<automatedSpeedFactor>1.0</automatedSpeedFactor>
+				<automatedPowerConsumption>50</automatedPowerConsumption>
+				<installWorkAmount>1500</installWorkAmount>
+			</li>
+		</value>
+	</Operation>
+</Patch>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Settings UI entries for Biotech for Gravship variants. -->
+
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_BfG_MechBooster</defName>
+		<label>Floor mech booster</label>
+		<targetDefName>BfG_MechBooster</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+
+</Defs>

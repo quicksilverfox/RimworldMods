@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loadFolders>
+	<v1.6>
+		<li>/</li>
+		<li>1.6</li>
+		<li IfModActive="tachyonite.pawnmorpherpublic">1.6/Mods/Pawnmorpher</li>
+		<li IfModActive="VanillaExpanded.VNutrientE">1.6/Mods/VNPE</li>
+		<li IfModActive="als.biotechgravship">1.6/Mods/BiotechGravship</li>
+	</v1.6>
+</loadFolders>

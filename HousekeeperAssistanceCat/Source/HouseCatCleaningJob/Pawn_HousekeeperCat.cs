@@ -92,23 +92,23 @@ namespace HousekeeperCat
             if (IsFormerHuman())
                     return base.GetDisabledWorkTypes(permanentOnly);
 
+            // mechEnabledWorkTypes is fixed per race, so the disabled list never changes -
+            // compute it once and keep it cached.
             if (permanentOnly)
             {
                 if (cachedDisabledWorkTypesPermanent == null)
                 {
                     cachedDisabledWorkTypesPermanent = new List<WorkTypeDef>();
+                    FillList(cachedDisabledWorkTypesPermanent);
                 }
-
-                FillList(cachedDisabledWorkTypesPermanent);
                 return cachedDisabledWorkTypesPermanent;
             }
 
             if (cachedDisabledWorkTypes == null)
             {
                 cachedDisabledWorkTypes = new List<WorkTypeDef>();
+                FillList(cachedDisabledWorkTypes);
             }
-
-            FillList(cachedDisabledWorkTypes);
             return cachedDisabledWorkTypes;
             void FillList(List<WorkTypeDef> list)
             {
@@ -133,12 +133,12 @@ namespace HousekeeperCat
     }
 
     [DefOf]
-    public class DefOfCousekeeperCatThingDef
+    public class DefOfHousekeeperCatThingDef
     {
         public static ThingDef HousekeeperCat;
     }
     [DefOf]
-    public class DefOfCousekeeperCatPawnDef
+    public class DefOfHousekeeperCatPawnDef
     {
         public static PawnKindDef HousekeeperCat;
     }

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- 
+		AutomatableMachineDef defines machines that can have subcores installed.
+		To add mod support, create a new XML file with additional defs.
+		The machine will only appear in settings if its targetDefName exists in the game.
+	-->
+	<!-- ==================== WORK BUILDINGS ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_GroundPenetratingScanner</defName>
+		<label>Ground-penetrating scanner</label>
+		<targetDefName>GroundPenetratingScanner</targetDefName>
+		<defaultEfficiency>0.5</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_LongRangeMineralScanner</defName>
+		<label>Long-range mineral scanner</label>
+		<targetDefName>LongRangeMineralScanner</targetDefName>
+		<defaultEfficiency>0.5</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_DeepDrill</defName>
+		<label>Deep drill</label>
+		<targetDefName>DeepDrill</targetDefName>
+		<defaultEfficiency>0.4</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_HiTechResearchBench</defName>
+		<label>Hi-tech research bench</label>
+		<targetDefName>HiTechResearchBench</targetDefName>
+		<defaultEfficiency>0.55</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_MultiAnalyzer</defName>
+		<label>Multi-analyzer</label>
+		<targetDefName>MultiAnalyzer</targetDefName>
+		<defaultEfficiency>0.10</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_NutrientPasteDispenser</defName>
+		<label>Nutrient paste dispenser</label>
+		<targetDefName>NutrientPasteDispenser</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== CLIMATE CONTROL ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_Cooler</defName>
+		<label>Cooler</label>
+		<targetDefName>Cooler</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_Heater</defName>
+		<label>Heater</label>
+		<targetDefName>Heater</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_MoisturePump</defName>
+		<label>Moisture pump</label>
+		<targetDefName>MoisturePump</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== TURRETS ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_MiniTurret</defName>
+		<label>Mini-turret</label>
+		<targetDefName>Turret_MiniTurret</targetDefName>
+		<category>Turret</category>
+		<defaultAccuracyBonus>0.10</defaultAccuracyBonus>
+		<defaultWarmupReduction>0.10</defaultWarmupReduction>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_Autocannon</defName>
+		<label>Autocannon turret</label>
+		<targetDefName>Turret_Autocannon</targetDefName>
+		<category>Turret</category>
+		<defaultAccuracyBonus>0.15</defaultAccuracyBonus>
+		<defaultWarmupReduction>0.10</defaultWarmupReduction>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_UraniumSlug</defName>
+		<label>Uranium slug turret</label>
+		<targetDefName>Turret_Sniper</targetDefName>
+		<category>Turret</category>
+		<defaultAccuracyBonus>0.20</defaultAccuracyBonus>
+		<defaultWarmupReduction>0.15</defaultWarmupReduction>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_Rocketswarm</defName>
+		<label>Rocketswarm launcher</label>
+		<targetDefName>Turret_RocketswarmLauncher</targetDefName>
+		<category>Turret</category>
+		<defaultAccuracyBonus>0.25</defaultAccuracyBonus>
+		<defaultWarmupReduction>0.20</defaultWarmupReduction>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== BIOTECH MACHINES ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_GrowthVat</defName>
+		<label>Growth vat</label>
+		<targetDefName>GrowthVat</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_BandNode</defName>
+		<label>Band node</label>
+		<targetDefName>BandNode</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_GeneExtractor</defName>
+		<label>Gene extractor</label>
+		<targetDefName>GeneExtractor</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_SubcoreSoftscanner</defName>
+		<label>Subcore softscanner</label>
+		<targetDefName>SubcoreSoftscanner</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreRegular</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_SubcoreRipscanner</defName>
+		<label>Subcore ripscanner</label>
+		<targetDefName>SubcoreRipscanner</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_BasicRecharger</defName>
+		<label>Mech recharger</label>
+		<targetDefName>BasicRecharger</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreRegular</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_StandardRecharger</defName>
+		<label>Large mech recharger</label>
+		<targetDefName>StandardRecharger</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_MechBooster</defName>
+		<label>Mech booster</label>
+		<targetDefName>MechBooster</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== HYDROPONICS ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_HydroponicsBasin</defName>
+		<label>Hydroponics basin</label>
+		<targetDefName>HydroponicsBasin</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== ANOMALY MACHINES ==================== -->
+	<!-- Requires Anomaly DLC - only appears if ProximityDetector exists -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_ProximityDetector</defName>
+		<label>Proximity detector</label>
+		<targetDefName>ProximityDetector</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreRegular</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== MEDICAL ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_BiosculpterPod</defName>
+		<label>Biosculpter pod</label>
+		<targetDefName>BiosculpterPod</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_VitalsMonitor</defName>
+		<label>Vitals monitor</label>
+		<targetDefName>VitalsMonitor</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== DOORS ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_Autodoor</defName>
+		<label>Autodoor</label>
+		<targetDefName>Autodoor</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreBasic</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_SecurityDoor</defName>
+		<label>Security door</label>
+		<targetDefName>SecurityDoor</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreRegular</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== POWER ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_PowerSwitch</defName>
+		<label>Power switch</label>
+		<targetDefName>PowerSwitch</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreBasic</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_WoodFiredGenerator</defName>
+		<label>Wood-fired generator</label>
+		<targetDefName>WoodFiredGenerator</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreBasic</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_ChemfuelPoweredGenerator</defName>
+		<label>Chemfuel powered generator</label>
+		<targetDefName>ChemfuelPoweredGenerator</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreBasic</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_ToxifierGenerator</defName>
+		<label>Toxifier generator</label>
+		<targetDefName>ToxifierGenerator</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreBasic</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== COMMUNICATION ==================== -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_CommsConsole</defName>
+		<label>Comms console</label>
+		<targetDefName>CommsConsole</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreRegular</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_OrbitalTradeBeacon</defName>
+		<label>Orbital trade beacon</label>
+		<targetDefName>OrbitalTradeBeacon</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreBasic</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== IDEOLOGY MACHINES ==================== -->
+	<!-- Requires Ideology DLC - only appears if SleepAccelerator exists -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_SleepAccelerator</defName>
+		<label>Sleep accelerator</label>
+		<targetDefName>SleepAccelerator</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== ODYSSEY MACHINES ==================== -->
+	<!-- Requires Odyssey DLC - only appears if PilotConsole exists -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_PilotConsole</defName>
+		<label>Pilot console</label>
+		<targetDefName>PilotConsole</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreHigh</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<!-- ==================== MOD MACHINES ==================== -->
+	<!-- These only appear if the target ThingDef exists (mod is loaded) -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_Rimefeller_ResourceConsole</defName>
+		<label>Resource console (Rimefeller)</label>
+		<targetDefName>ResourceConsole</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_Rimefeller_FuelPowerplant</defName>
+		<label>Fuel powerplant (Rimefeller)</label>
+		<targetDefName>FuelPowerplant</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreBasic</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_Rimefeller_LargeFuelPowerplant</defName>
+		<label>Large fuel powerplant (Rimefeller)</label>
+		<targetDefName>LargeFuelPowerplant</targetDefName>
+		<defaultEfficiency>0</defaultEfficiency>
+		<subcoreDef>SubcoreBasic</subcoreDef>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+</Defs>

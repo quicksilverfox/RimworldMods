@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--
+		Raise WorkGiver_HaulMechToCharger above all other hauling jobs.
+		Vanilla priorityInType is 90. Top vanilla hauling priorities sit around 150.
+		Setting to 200 ensures damaged/downed mechs get carried to chargers for
+		repair before colonists do anything else in their hauling queue.
+	-->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/WorkGiverDef[defName="HaulMechsToCharger"]/priorityInType</xpath>
+		<match Class="PatchOperationReplace">
+			<xpath>/Defs/WorkGiverDef[defName="HaulMechsToCharger"]/priorityInType</xpath>
+			<value>
+				<priorityInType>200</priorityInType>
+			</value>
+		</match>
+	</Operation>
+</Patch>

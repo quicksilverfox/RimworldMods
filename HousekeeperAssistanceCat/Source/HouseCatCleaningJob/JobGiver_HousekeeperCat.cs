@@ -47,7 +47,7 @@ namespace RimWorld
                 pawn.mindState.priorityWork.Clear();
             }
             List<WorkGiver> list = ((!emergency) ? pawn.workSettings.WorkGiversInOrderNormal : pawn.workSettings.WorkGiversInOrderEmergency);
-            list = AppendExtraWorkGivers(pawn, list);
+            list = MergeExtraWorkGivers(pawn, list);
             int num = -999;
             TargetInfo bestTargetOfLastPriority = TargetInfo.Invalid;
             WorkGiver_Scanner scannerWhoProvidedTarget = null;
@@ -205,19 +205,25 @@ namespace RimWorld
         }
 
         /**
-         * The cached work giver order only contains work givers of enabled work types, so
+         * The cached work giver order only contains work givers of enabled work types, so a
          * giver of a disabled work type (e.g. feeding patients under the Doctor work type)
-         * never appears. Append any extra-enabled work givers so the loop can consider them.
-         * Returns a fresh list when extras are added; never mutates the pawn's cached list.
+         * never appears. Merge any extra-enabled work givers into the list so the loop can
+         * consider them.
+         *
+         * The extras are care / management work (Doctor, Warden, Handling, Childcare); those
+         * work types all naturally outrank the cat's chores (cleaning, hauling, plant-cutting),
+         * so they go ahead of the normal list, sorted by work-type natural priority then
+         * priorityInType - the order RimWorld's work tab would give them. Never mutates the
+         * pawn's cached list.
          */
-        private List<WorkGiver> AppendExtraWorkGivers(Pawn pawn, List<WorkGiver> list)
+        private List<WorkGiver> MergeExtraWorkGivers(Pawn pawn, List<WorkGiver> list)
         {
             List<WorkGiverDef> extras = (pawn as Pawn_HousekeeperCat)?.ExtraEnabledWorkGivers;
             if (extras == null || extras.Count == 0)
             {
                 return list;
             }
-            List<WorkGiver> result = null;
+            List<WorkGiver> extraWorkers = null;
             for (int i = 0; i < extras.Count; i++)
             {
                 WorkGiverDef wgDef = extras[i];
@@ -226,17 +232,34 @@ namespace RimWorld
                     continue; // emergency givers belong only in the emergency pass, and vice versa
                 }
                 WorkGiver worker = wgDef.Worker;
-                if (list.Contains(worker) || (result != null && result.Contains(worker)))
+                if (list.Contains(worker) || (extraWorkers != null && extraWorkers.Contains(worker)))
                 {
                     continue;
                 }
-                if (result == null)
+                if (extraWorkers == null)
                 {
-                    result = new List<WorkGiver>(list);
+                    extraWorkers = new List<WorkGiver>();
                 }
-                result.Add(worker); // appended last - lower priority than the cat's normal work
+                extraWorkers.Add(worker);
             }
-            return result ?? list;
+            if (extraWorkers == null)
+            {
+                return list;
+            }
+            extraWorkers.Sort(delegate (WorkGiver a, WorkGiver b)
+            {
+                int aPrio = a.def.workType?.naturalPriority ?? 0;
+                int bPrio = b.def.workType?.naturalPriority ?? 0;
+                if (aPrio != bPrio)
+                {
+                    return bPrio.CompareTo(aPrio); // higher work-type natural priority first
+                }
+                return b.def.priorityInType.CompareTo(a.def.priorityInType); // then priorityInType
+            });
+            List<WorkGiver> result = new List<WorkGiver>(extraWorkers.Count + list.Count);
+            result.AddRange(extraWorkers); // care work ahead of the cat's chores
+            result.AddRange(list);
+            return result;
         }
 
         private bool PawnCanUseWorkGiver(Pawn pawn, WorkGiver giver)

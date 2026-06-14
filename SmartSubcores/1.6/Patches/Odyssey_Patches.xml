@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Piloting Console Automation: Autopilot and 150% piloting quality -->
+	<!-- Requires Odyssey DLC -->
+
+	<!-- Use PatchOperationConditional to check if PilotConsole exists (safer than mod name detection) -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="PilotConsole"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="PilotConsole"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
+					<subcoreDef>SubcoreHigh</subcoreDef>
+					<automatedSpeedFactor>1.5</automatedSpeedFactor>
+					<automatedPowerConsumption>200</automatedPowerConsumption>
+					<installWorkAmount>3000</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>

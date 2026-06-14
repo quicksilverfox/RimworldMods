@@ -74,6 +74,7 @@
     <Compile Include="JobGiver_HousekeeperCat.cs" />
     <Compile Include="Patch.cs" />
     <Compile Include="Pawn_HousekeeperCat.cs" />
+    <Compile Include="SentienceConversion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

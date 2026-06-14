@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--=============== Small swappable turret (mini-turret base) ===============-->
+	<ThingDef ParentName="BuildingBase">
+		<defName>SubcoreAutomation_TurretMountSmall</defName>
+		<label>mount mini turret</label>
+		<description>A subcore-operated turret mount. It can be outfitted with any handheld ranged weapon. Will not accept biocoded or persona weapons.</description>
+		<thingClass>SubcoreAutomation.Buildings.Building_SwappableTurret</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<drawHighlight>true</drawHighlight>
+		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+		<graphicData>
+			<texPath>Things/Building/Security/TurretMini_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Security/TurretMini_MenuIcon</uiIconPath>
+		<uiIconScale>0.90</uiIconScale>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>120</MaxHitPoints>
+			<Flammability>0.7</Flammability>
+			<WorkToBuild>2400</WorkToBuild>
+			<Mass>10</Mass>
+			<Beauty>-20</Beauty>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>Stun</li>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>40</costStuffCount>
+		<costList>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<SubcoreBasic>1</SubcoreBasic>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<building>
+			<combatPower>50</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_MiniTurret</turretGunDef>
+			<turretBurstCooldownTime>4.8</turretBurstCooldownTime>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>BasicMechtech</li>
+			<li>GunTurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<!--=============== Medium swappable turret (autocannon base) ===============-->
+	<ThingDef ParentName="BuildingBase">
+		<defName>SubcoreAutomation_TurretMountLarge</defName>
+		<label>mount heavy turret</label>
+		<description>A heavy subcore-operated turret mount. It can be outfitted with any handheld ranged weapon. The reinforced chassis is mode durable and can host larger armaments than the small mount. Will not accept biocoded or persona weapons.</description>
+		<thingClass>SubcoreAutomation.Buildings.Building_SwappableTurret</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<drawHighlight>true</drawHighlight>
+		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+		<graphicData>
+			<texPath>Things/Building/Security/TurretHeavy_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+			<drawOffset>(0,0,-0.1)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(1.5,0.35,1.4)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Security/TurretAutocannon_MenuIcon</uiIconPath>
+		<uiIconScale>0.95</uiIconScale>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<size>(2,2)</size>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<Flammability>0.7</Flammability>
+			<WorkToBuild>16000</WorkToBuild>
+			<Mass>110</Mass>
+			<Beauty>-20</Beauty>
+			<ShootingAccuracyTurret>0.97</ShootingAccuracyTurret>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>180</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>Stun</li>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.5</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Steel>250</Steel>
+			<Plasteel>30</Plasteel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<SubcoreRegular>1</SubcoreRegular>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+		<building>
+			<combatPower>120</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<!-- Placeholder gun for empty mount. Top draw is suppressed in code
+			     (TurretTopMaterial=ClearMat) so visuals don't matter, but using a
+			     no-min-range gun avoids the autocannon's inherited 8.9-cell dead zone. -->
+			<turretGunDef>Gun_MiniTurretGun</turretGunDef>
+			<turretBurstCooldownTime>3.5</turretBurstCooldownTime>
+			<turretTopDrawSize>2.7</turretTopDrawSize>
+			<turretTopOffset>(0, 0.05)</turretTopOffset>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>StandardMechtech</li>
+			<li>HeavyTurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+</Defs>

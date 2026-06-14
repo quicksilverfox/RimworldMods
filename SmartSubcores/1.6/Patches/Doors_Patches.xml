@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- 
+		Door Automation
+		Adds subcore automation to doors for remote control and lockdown functionality.
+	-->
+
+	<!-- Autodoor (Core) -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="Autodoor"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="Autodoor"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_UtilityAutomation">
+					<subcoreDef>SubcoreBasic</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>0</automatedPowerConsumption>
+					<installWorkAmount>1000</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+	<!-- Security Door (Anomaly DLC) -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="SecurityDoor"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="SecurityDoor"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_UtilityAutomation">
+					<subcoreDef>SubcoreRegular</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>0</automatedPowerConsumption>
+					<installWorkAmount>1500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

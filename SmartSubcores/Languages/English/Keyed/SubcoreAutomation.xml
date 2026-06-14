@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<!-- 	Gizmo text can be long and be artistic, containing full sentences
+			Inspect lines should be short, on point and without trailing period -->
+	
+	<!-- Gizmos -->
+	<SubcoreAutomation_RequestInstallation>Request subcore installation</SubcoreAutomation_RequestInstallation>
+	<SubcoreAutomation_RequestInstallationDesc>Request a colonist to bring and install a {0} to enhance this building.</SubcoreAutomation_RequestInstallationDesc>
+	<SubcoreAutomation_CancelInstallation>Cancel installation</SubcoreAutomation_CancelInstallation>
+	<SubcoreAutomation_CancelInstallationDesc>Cancel the pending subcore installation request.</SubcoreAutomation_CancelInstallationDesc>
+	<SubcoreAutomation_RemoveSubcore>Remove subcore</SubcoreAutomation_RemoveSubcore>
+	<SubcoreAutomation_RemoveSubcoreDesc>Request a colonist to remove the installed subcore.</SubcoreAutomation_RemoveSubcoreDesc>
+	<SubcoreAutomation_CancelRemoval>Cancel removal</SubcoreAutomation_CancelRemoval>
+	<SubcoreAutomation_CancelRemovalDesc>Cancel the pending subcore removal request.</SubcoreAutomation_CancelRemovalDesc>
+
+	<!-- Installation benefit descriptions (for gizmo tooltips) -->
+	<SubcoreAutomation_TurretBenefits>Improves targeting systems. Accuracy: +{0} Aim speed: +{1}</SubcoreAutomation_TurretBenefits>
+	<SubcoreAutomation_ChargerBenefits>Implements maintenance protocols. Increased charging speed. Damaged mechs will autonomously seek this charger for repairs.</SubcoreAutomation_ChargerBenefits>
+	<SubcoreAutomation_DrillBenefits>Automatic operation at {0} efficiency.</SubcoreAutomation_DrillBenefits>
+	<SubcoreAutomation_NPDBenefits>Controls meal dispensing and hopper temperature, preventing spoilage. Allows auto-dispensing.</SubcoreAutomation_NPDBenefits>
+	<SubcoreAutomation_CoolerBenefits>Implements inverter mode, heating the room when necessary.</SubcoreAutomation_CoolerBenefits>
+	<SubcoreAutomation_HeaterBenefits>Implements remote overload protocol, allowing to use the device as a remote detonator.</SubcoreAutomation_HeaterBenefits>
+
+	<!-- Inspector strings -->
+	<SubcoreAutomation_AutomatedSimple>Automated</SubcoreAutomation_AutomatedSimple>
+	<SubcoreAutomation_AutomationDisabled>Subcore installed (automation disabled)</SubcoreAutomation_AutomationDisabled>
+	<SubcoreAutomation_AwaitingSubcore>Awaiting subcore installation</SubcoreAutomation_AwaitingSubcore>
+	<SubcoreAutomation_AwaitingRemoval>Awaiting subcore removal</SubcoreAutomation_AwaitingRemoval>
+	<SubcoreAutomation_NoSubcoreAvailable>No {0} available on map</SubcoreAutomation_NoSubcoreAvailable>
+	<SubcoreAutomation_NoFallbackMaterials>Insufficient materials: {0}</SubcoreAutomation_NoFallbackMaterials>
+	<SubcoreAutomation_TierBasic>Basic Components</SubcoreAutomation_TierBasic>
+	<SubcoreAutomation_TierRegular>Standard Components</SubcoreAutomation_TierRegular>
+	<SubcoreAutomation_TierHigh>Advanced Components</SubcoreAutomation_TierHigh>
+	<SubcoreAutomation_DrillProgress>Progress to next portion: {0}</SubcoreAutomation_DrillProgress>
+	<SubcoreAutomation_DrillDepositExhausted>{0} has exhausted its deep deposit and shut down.</SubcoreAutomation_DrillDepositExhausted>
+
+	<!-- Job strings -->
+	<SubcoreAutomation_InstallingSubcore>Installing subcore in {0}</SubcoreAutomation_InstallingSubcore>
+	<SubcoreAutomation_RemovingSubcore>Removing subcore from {0}</SubcoreAutomation_RemovingSubcore>
+
+	<!-- Messages -->
+	<SubcoreAutomation_SubcoreInstalledMessage>A subcore has been installed in {0}.</SubcoreAutomation_SubcoreInstalledMessage>
+	<SubcoreAutomation_SubcoreRemovedMessage>Subcore removed from {0}.</SubcoreAutomation_SubcoreRemovedMessage>
+
+	<!-- Turret gizmos -->
+	<SubcoreAutomation_ActivateTurret>Fire</SubcoreAutomation_ActivateTurret>
+	<SubcoreAutomation_ActivateTurretDesc>Select a target location to immediately launch a rocket salvo.</SubcoreAutomation_ActivateTurretDesc>
+
+	<!-- Turret inspector strings -->
+	<SubcoreAutomation_SubcoreInstalled>Subcore installed</SubcoreAutomation_SubcoreInstalled>
+	<SubcoreAutomation_TurretAccuracyBonus>Accuracy: +{0}</SubcoreAutomation_TurretAccuracyBonus>
+	<SubcoreAutomation_TurretWarmupReduction>Aim speed: +{0}</SubcoreAutomation_TurretWarmupReduction>
+	<SubcoreAutomation_TurretBonuses>Accuracy +{0}, aim speed +{1}</SubcoreAutomation_TurretBonuses>
+	<SubcoreAutomation_FriendlyFirePrevention>Friendly fire prevention: {0}</SubcoreAutomation_FriendlyFirePrevention>
+	<SubcoreAutomation_FriendlyFirePreventionShort>Friendly fire prevention</SubcoreAutomation_FriendlyFirePreventionShort>
+	<SubcoreAutomation_Active>Active</SubcoreAutomation_Active>
+	<SubcoreAutomation_Disabled>Disabled</SubcoreAutomation_Disabled>
+	<SubcoreAutomation_CEDetected>Enhancements disabled: CE detected</SubcoreAutomation_CEDetected>
+
+	<!-- NPD gizmos -->
+	<SubcoreAutomation_DispenseMeal>Dispense meal</SubcoreAutomation_DispenseMeal>
+	<SubcoreAutomation_DispenseMealDesc>Immediately dispense a nutrient paste meal and place it at the interaction spot.</SubcoreAutomation_DispenseMealDesc>
+	<SubcoreAutomation_ContinuousDispense>Continuous dispense</SubcoreAutomation_ContinuousDispense>
+	<SubcoreAutomation_ContinuousDispenseDesc>Automatically dispense meals whenever the interaction spot is empty. Animals and pawns unable of manipulation can eat from the dispensed meals.</SubcoreAutomation_ContinuousDispenseDesc>
+	<SubcoreAutomation_CannotDispense>Cannot dispense (insufficient ingredients or power)</SubcoreAutomation_CannotDispense>
+
+	<!-- NPD inspector strings -->
+	<SubcoreAutomation_HopperRefrigeration>Hopper refrigeration active</SubcoreAutomation_HopperRefrigeration>
+	<SubcoreAutomation_ContinuousDispenseActive>Continuous dispense active</SubcoreAutomation_ContinuousDispenseActive>
+	<SubcoreAutomation_AdvancedFiltering>Advanced filtering</SubcoreAutomation_AdvancedFiltering>
+	<SubcoreAutomation_AdvancedFilteringDesc>Strips ingredient records from dispensed meals.\n\nPawns will not get mood penalties tied to specific ingredients (e.g. carnivores eating vegetables, ate-raw-meal triggers from raw inputs).\n\nMeals stack with each other regardless of which ingredients went into them.</SubcoreAutomation_AdvancedFilteringDesc>
+	<SubcoreAutomation_AdvancedFilteringActive>Advanced filtering active</SubcoreAutomation_AdvancedFilteringActive>
+
+	<!-- Cooler inspector strings -->
+	<SubcoreAutomation_InverterModeHeating>Inverter mode: heating</SubcoreAutomation_InverterModeHeating>
+	<SubcoreAutomation_InverterModeCooling>Inverter mode: cooling</SubcoreAutomation_InverterModeCooling>
+
+	<!-- Heater gizmos and inspector strings -->
+	<SubcoreAutomation_DetonatorMode>Detonator mode available</SubcoreAutomation_DetonatorMode>
+	<SubcoreAutomation_Detonate>Detonate</SubcoreAutomation_Detonate>
+	<SubcoreAutomation_DetonateDesc>Overload the heater to scatter flames and detonate nearby explosives. The heater will be destroyed.</SubcoreAutomation_DetonateDesc>
+	<SubcoreAutomation_DetonateConfirm>Are you sure you want to detonate this heater? It will scatter flames, trigger nearby explosives, and be destroyed.</SubcoreAutomation_DetonateConfirm>
+
+	<!-- Moisture pump messages and inspector strings -->
+	<SubcoreAutomation_PumpFinishedUninstall>{0} has finished pumping. Marked for uninstallation.</SubcoreAutomation_PumpFinishedUninstall>
+	<SubcoreAutomation_PumpFinishedDeconstruct>{0} has finished pumping. Marked for deconstruction.</SubcoreAutomation_PumpFinishedDeconstruct>
+	<SubcoreAutomation_SmartPumping>Smart pumping (targets wet cells directly)</SubcoreAutomation_SmartPumping>
+	<SubcoreAutomation_PumpProgress>{0} wet cells remaining (~{1})</SubcoreAutomation_PumpProgress>
+
+	<!-- Swappable turret -->
+	<SubcoreAutomation_SwapTurret_SelectWeapon>Select weapon to install</SubcoreAutomation_SwapTurret_SelectWeapon>
+	<SubcoreAutomation_SwapTurret_SelectWeaponDesc>Choose a ranged weapon from the map to mount on this turret. A colonist will haul it here and install it. Biocoded and persona weapons are not accepted.</SubcoreAutomation_SwapTurret_SelectWeaponDesc>
+	<SubcoreAutomation_SwapTurret_CancelInstall>Cancel weapon installation</SubcoreAutomation_SwapTurret_CancelInstall>
+	<SubcoreAutomation_SwapTurret_CancelInstallDesc>Cancel the pending weapon installation request.</SubcoreAutomation_SwapTurret_CancelInstallDesc>
+	<SubcoreAutomation_SwapTurret_RemoveWeapon>Eject weapon</SubcoreAutomation_SwapTurret_RemoveWeapon>
+	<SubcoreAutomation_SwapTurret_RemoveWeaponDesc>Eject {0} from the turret. The weapon will be dropped on the ground.</SubcoreAutomation_SwapTurret_RemoveWeaponDesc>
+	<SubcoreAutomation_SwapTurret_NoWeapon>Turret has no weapon installed.</SubcoreAutomation_SwapTurret_NoWeapon>
+	<SubcoreAutomation_SwapTurret_NoWeaponInstalled>No weapon installed</SubcoreAutomation_SwapTurret_NoWeaponInstalled>
+	<SubcoreAutomation_SwapTurret_WeaponInstalled>Weapon: {0}</SubcoreAutomation_SwapTurret_WeaponInstalled>
+	<SubcoreAutomation_SwapTurret_AwaitingInstall>Awaiting installation of {0}</SubcoreAutomation_SwapTurret_AwaitingInstall>
+	<SubcoreAutomation_SwapTurret_NoWeaponsAvailable>No valid ranged weapons available on map.</SubcoreAutomation_SwapTurret_NoWeaponsAvailable>
+
+	<!-- Growth vat inspector strings -->
+	<SubcoreAutomation_GrowthVatEmbryoEnhanced>Enhanced birth quality (85%)</SubcoreAutomation_GrowthVatEmbryoEnhanced>
+	<SubcoreAutomation_GrowthVatChildEnhanced>Accelerated learning, passion focus</SubcoreAutomation_GrowthVatChildEnhanced>
+
+	<!-- Band node inspector strings -->
+	<SubcoreAutomation_BandNodeEnhanced>Enhanced signal amplification</SubcoreAutomation_BandNodeEnhanced>
+	<SubcoreAutomation_BandNodeBandwidth>Bandwidth provided: {0}</SubcoreAutomation_BandNodeBandwidth>
+
+	<!-- Mech charger inspector strings -->
+	<SubcoreAutomation_MechChargerEnhanced>Fast charging (2x), auto-repair</SubcoreAutomation_MechChargerEnhanced>
+
+	<!-- Toxifier generator inspector strings -->
+	<SubcoreAutomation_ToxifierWasteMode>Producing wastepacks instead of pollution (-100W)</SubcoreAutomation_ToxifierWasteMode>
+
+	<!-- Backup Power feature (based on Fluffy's BackupPower mod) -->
+	<SubcoreAutomation_BackupPower_CommandLabel>Power Control</SubcoreAutomation_BackupPower_CommandLabel>
+	<SubcoreAutomation_BackupPower_Status>Current status: {0}</SubcoreAutomation_BackupPower_Status>
+	<SubcoreAutomation_BackupPower_Storage>Power stored: {0}</SubcoreAutomation_BackupPower_Storage>
+	<SubcoreAutomation_BackupPower_TurnsOnBelow>Turns on below: {0}</SubcoreAutomation_BackupPower_TurnsOnBelow>
+	<SubcoreAutomation_BackupPower_TurnsOffAbove>Turns off above: {0}</SubcoreAutomation_BackupPower_TurnsOffAbove>
+	<SubcoreAutomation_BackupPower_RunOnBatteries>Run on batteries</SubcoreAutomation_BackupPower_RunOnBatteries>
+	<SubcoreAutomation_BackupPower_RunOnBatteriesDesc>If enabled, the generator will turn off when batteries are sufficiently full.\nIf disabled, it will only turn off when batteries are full AND current power production exceeds demand.</SubcoreAutomation_BackupPower_RunOnBatteriesDesc>
+	<SubcoreAutomation_BackupPower_CopyTo>Copy settings to:</SubcoreAutomation_BackupPower_CopyTo>
+	<SubcoreAutomation_BackupPower_CopyTo_Room>Room</SubcoreAutomation_BackupPower_CopyTo_Room>
+	<SubcoreAutomation_BackupPower_CopyTo_Connected>Connected</SubcoreAutomation_BackupPower_CopyTo_Connected>
+	<SubcoreAutomation_BackupPower_CopyTo_All>All</SubcoreAutomation_BackupPower_CopyTo_All>
+
+	<!-- Backup Power inspector strings -->
+	<SubcoreAutomation_BackupPowerStatus>Status: {0}</SubcoreAutomation_BackupPowerStatus>
+	<SubcoreAutomation_BackupPowerThresholds>On &lt;{0}, off &gt;{1}</SubcoreAutomation_BackupPowerThresholds>
+	<SubcoreAutomation_StatusRunning>Running</SubcoreAutomation_StatusRunning>
+	<SubcoreAutomation_StatusStandby>Standby</SubcoreAutomation_StatusStandby>
+	<SubcoreAutomation_StatusNoFuel>No fuel</SubcoreAutomation_StatusNoFuel>
+	<SubcoreAutomation_StatusError>Error</SubcoreAutomation_StatusError>
+
+	<!-- Generator gizmo tooltip benefits -->
+	<SubcoreAutomation_GeneratorBenefits>Benefits:
+• Automatic on/off based on battery levels
+• Configurable battery thresholds
+• Prevents fuel waste when not needed</SubcoreAutomation_GeneratorBenefits>
+
+	<!-- Toxifier generator gizmo tooltip benefits -->
+	<SubcoreAutomation_ToxifierBenefits>Benefits:
+• Produces wastepacks instead of polluting terrain
+• 1 wastepack per day (dropped on ground, equivalent to 6 cells of vanilla pollution)
+• Haulers automatically collect wastepacks
+• Power output reduced by 100W (1400W → 1300W)</SubcoreAutomation_ToxifierBenefits>
+
+	<!-- Gene extractor strings -->
+	<SubcoreAutomation_GeneExtractorEnhanced>Enhanced extraction (stasis, min recovery, targeted)</SubcoreAutomation_GeneExtractorEnhanced>
+	<SubcoreAutomation_GeneExtractorBenefits>Benefits:
+• Pawns hibernate during extraction (no need degradation)
+• Recovery time reduced to minimum (12 days)
+• Targeted extraction prioritizes new genes</SubcoreAutomation_GeneExtractorBenefits>
+	<SubcoreAutomation_GeneExtractorTargeted>Targeted extraction: Obtained new gene ({0})</SubcoreAutomation_GeneExtractorTargeted>
+
+	<!-- Subcore softscanner strings -->
+	<SubcoreAutomation_SoftscannerBenefits>Benefits:
+• Scanning sickness reduced by 1 day
+• Normal: 4 days → 3 days
+• Mechanitor: 2 days → 1 day</SubcoreAutomation_SoftscannerBenefits>
+	<SubcoreAutomation_SoftscannerReducedSickness>Reduced scanning sickness (-1 day)</SubcoreAutomation_SoftscannerReducedSickness>
+
+	<!-- Subcore ripscanner strings -->
+	<SubcoreAutomation_RipscannerBenefits>Benefits:
+• Harvests healthy organs before death
+• Organ count configurable in mod settings
+• Deathless subjects provide all organs</SubcoreAutomation_RipscannerBenefits>
+	<SubcoreAutomation_RipscannerOrganHarvest>Precision organ harvesting</SubcoreAutomation_RipscannerOrganHarvest>
+	<SubcoreAutomation_RipscannerHarvested>Subcore ripscanner harvested {1} organ(s) from {0}: {2}</SubcoreAutomation_RipscannerHarvested>
+	<SubcoreAutomation_RipscannerHarvestedDeathless>Subcore ripscanner harvested all {1} organs from {0} (deathless): {2}</SubcoreAutomation_RipscannerHarvestedDeathless>
+
+	<!-- Mech booster strings -->
+	<SubcoreAutomation_MechBoosterBenefits>Acts as a command relay: extends mechanitor range and applies a tactical relay hediff to friendly mechs in range (+10 shooting accuracy, -15% aim delay, +5 melee hit/dodge). Lets the mechanitor keep commanding mechs while incapacitated (deathrest, biosculpter, transport pod, caravan).</SubcoreAutomation_MechBoosterBenefits>
+	<SubcoreAutomation_MechBoosterCommandRelay>Command relay</SubcoreAutomation_MechBoosterCommandRelay>
+	<SubcoreAutomation_MechBoosterTacticalRelay>Tactical relay broadcasting</SubcoreAutomation_MechBoosterTacticalRelay>
+	<SubcoreAutomation_MechBoosterRemoteShort>remote control active</SubcoreAutomation_MechBoosterRemoteShort>
+
+	<!-- Hydroponics basin strings -->
+	<SubcoreAutomation_HydroponicsBenefits>Benefits:
+• Automatic sowing when cells are empty
+• Automatic harvesting when crops are ready
+• Built-in sun lamp (toggleable, +120W when active)</SubcoreAutomation_HydroponicsBenefits>
+	<SubcoreAutomation_SunLamp>Sun lamp</SubcoreAutomation_SunLamp>
+	<SubcoreAutomation_SunLampDesc>Toggle the built-in sun lamp. When enabled, the hydroponics basin provides light for plant growth during daylight hours (6 AM to midnight).\n\nPower: +120W when active.</SubcoreAutomation_SunLampDesc>
+	<SubcoreAutomation_HydroponicsAutoFarm>Auto-farming active</SubcoreAutomation_HydroponicsAutoFarm>
+	<SubcoreAutomation_HydroponicsSunLamp>Sun lamp: {0}</SubcoreAutomation_HydroponicsSunLamp>
+	<SubcoreAutomation_HydroponicsSunLampActive>Sun lamp: Active (+{0}W)</SubcoreAutomation_HydroponicsSunLampActive>
+	<SubcoreAutomation_HydroponicsSunLampNight>Sun lamp: Standby (night)</SubcoreAutomation_HydroponicsSunLampNight>
+
+	<!-- Proximity detector strings (Anomaly DLC) -->
+	<SubcoreAutomation_ProximityDetectorBenefits>Benefits:
+• Precise tracking of invisible creatures
+• Visual markers at creature locations
+• Tracked creatures become targetable (with -70% shooter accuracy)
+• Emergency reveal mode (causes breakdown)</SubcoreAutomation_ProximityDetectorBenefits>
+	<SubcoreAutomation_EmergencyReveal>Emergency reveal</SubcoreAutomation_EmergencyReveal>
+	<SubcoreAutomation_EmergencyRevealDesc>Overload the detector to reveal all tracked invisible creatures. This will cause the detector to break down and require repairs.</SubcoreAutomation_EmergencyRevealDesc>
+	<SubcoreAutomation_EmergencyRevealConfirm>Are you sure you want to overload the proximity detector? All tracked invisible creatures will be revealed, but the detector will break down and require repairs.</SubcoreAutomation_EmergencyRevealConfirm>
+	<SubcoreAutomation_NoCreaturesTracked>No invisible creatures currently tracked</SubcoreAutomation_NoCreaturesTracked>
+	<SubcoreAutomation_DetectorOverloaded>Proximity detector overloaded - {0} creature(s) revealed!</SubcoreAutomation_DetectorOverloaded>
+	<SubcoreAutomation_TrackingCreatures>Tracking {0} invisible creature(s)</SubcoreAutomation_TrackingCreatures>
+	<SubcoreAutomation_NoCreaturesDetected>No invisible creatures detected</SubcoreAutomation_NoCreaturesDetected>
+
+	<!-- Biosculpter pod strings -->
+	<SubcoreAutomation_BiosculpterBenefits>Benefits:
+• No tuning required - accepts any pawn
+• Cycle speed as if tuned to occupant
+• Shared pod for entire colony</SubcoreAutomation_BiosculpterBenefits>
+	<SubcoreAutomation_BiosculpterUniversal>Universal biosculpting (no tuning required)</SubcoreAutomation_BiosculpterUniversal>
+
+	<!-- Vitals monitor strings -->
+	<SubcoreAutomation_VitalsMonitorBenefits>Advanced vitals scanning makes dangerous surgeries more predictable. A skilled surgeon can use it to avoid catastrophic failures.</SubcoreAutomation_VitalsMonitorBenefits>
+	<SubcoreAutomation_VitalsMonitorEnhanced>Enhanced monitoring active</SubcoreAutomation_VitalsMonitorEnhanced>
+
+	<!-- Multi-analyzer strings -->
+	<SubcoreAutomation_MultiAnalyzerBenefits>Benefits:
+• Enables automated research bench to research multi-analyzer projects
+• +10% research speed bonus for linked automated bench
+• No colonist supervision required</SubcoreAutomation_MultiAnalyzerBenefits>
+
+	<!-- Power switch strings -->
+	<SubcoreAutomation_PowerSwitchBenefits>Benefits:
+• Remote on/off control without pawn interaction
+• Toggle power to connected devices instantly</SubcoreAutomation_PowerSwitchBenefits>
+
+	<!-- Growth vat tooltip -->
+	<SubcoreAutomation_GrowthVatBenefits>Benefits:
+• Enhanced embryo development quality
+• Accelerated vat learning
+• Passion-focused training for better skill retention</SubcoreAutomation_GrowthVatBenefits>
+
+	<!-- Band node tooltip -->
+	<SubcoreAutomation_BandNodeBenefits>Benefits:
+• Enhanced signal amplification
+• Increased bandwidth capacity</SubcoreAutomation_BandNodeBenefits>
+
+	<!-- Moisture pump tooltip -->
+	<SubcoreAutomation_MoisturePumpBenefits>Benefits:
+• Smart pumping (targets wet cells directly)
+• Auto-uninstall/deconstruct when finished
+• Displays estimated completion time</SubcoreAutomation_MoisturePumpBenefits>
+
+	<!-- Fallback automation tooltip (for generic flickable buildings) -->
+	<SubcoreAutomation_FallbackBenefits>Benefits:
+• Remote on/off control without pawn interaction
+• Toggle power state from anywhere on the map</SubcoreAutomation_FallbackBenefits>
+
+	<!-- Door automation strings -->
+	<SubcoreAutomation_DoorBenefits>Benefits:
+• Automatic door control via vanilla "Hold Open" gizmo
+• Lockdown mode for guests and prisoners
+• No pawn interaction required</SubcoreAutomation_DoorBenefits>
+	<SubcoreAutomation_DoorLockdown>Lockdown</SubcoreAutomation_DoorLockdown>
+	<SubcoreAutomation_DoorLockdownDesc>When enabled, guests and prisoners cannot open this door. Colony members can still use it normally.</SubcoreAutomation_DoorLockdownDesc>
+	<SubcoreAutomation_DoorLockdownActive>Lockdown active (guests/prisoners blocked)</SubcoreAutomation_DoorLockdownActive>
+
+	<!-- Ground Penetrating Scanner mode strings -->
+	<SubcoreAutomation_ScannerModeDeep>Deep scan</SubcoreAutomation_ScannerModeDeep>
+	<SubcoreAutomation_ScannerModeMountain>Mountain scan</SubcoreAutomation_ScannerModeMountain>
+	<SubcoreAutomation_ScannerModeDeepDesc>Scanning for deep mineral deposits. Click to switch to mountain scanning mode.</SubcoreAutomation_ScannerModeDeepDesc>
+	<SubcoreAutomation_ScannerModeMountainDesc>Revealing fogged mountain cells. Click to switch to deep resource scanning mode.</SubcoreAutomation_ScannerModeMountainDesc>
+	<SubcoreAutomation_ScannerTargetDesc>Choose which mineral to scan for. Currently targeting: {0}</SubcoreAutomation_ScannerTargetDesc>
+	<SubcoreAutomation_ScannerTargetAny>Any mineral</SubcoreAutomation_ScannerTargetAny>
+	<SubcoreAutomation_ScannerTargetAnyDesc>Choose which mineral to scan for. Currently scanning for any mineral (random weighted selection).</SubcoreAutomation_ScannerTargetAnyDesc>
+	<SubcoreAutomation_MountainScanProgress>Mountain scan: {0} tiles revealed</SubcoreAutomation_MountainScanProgress>
+	<SubcoreAutomation_MountainScanComplete>Mountain scan complete. {0} tiles revealed. Switching to deep resource scanning.</SubcoreAutomation_MountainScanComplete>
+	<SubcoreAutomation_MountainScanStatus>Mountain scan: {0} revealed, ~{1} remaining</SubcoreAutomation_MountainScanStatus>
+	<SubcoreAutomation_MountainScanDone>Mountain scan complete: {0} tiles revealed</SubcoreAutomation_MountainScanDone>
+	<SubcoreAutomation_ScannerStatusFull>Scanning {0}: {1} (~{2})</SubcoreAutomation_ScannerStatusFull>
+	<SubcoreAutomation_ScannerStatusProgress>Scanning {0}: {1}</SubcoreAutomation_ScannerStatusProgress>
+	<SubcoreAutomation_ScannerStatusBasic>Scanning {0}</SubcoreAutomation_ScannerStatusBasic>
+
+	<!-- Comms Console strings -->
+	<SubcoreAutomation_CommsConsoleBenefits>Provides compatibility with encrypted protocols, allowing to communicate with more orbital ships.</SubcoreAutomation_CommsConsoleBenefits>
+	<SubcoreAutomation_CommsConsoleEnhanced>Trade protocols decryption</SubcoreAutomation_CommsConsoleEnhanced>
+
+	<!-- Orbital Trade Beacon strings -->
+	<SubcoreAutomation_OrbitalTradeBeaconBenefits>Doubles trade range (7.9 → 15.8 tiles) and ignores walls, allowing incoming transfers from anywhere in the extended radius.</SubcoreAutomation_OrbitalTradeBeaconBenefits>
+	<SubcoreAutomation_TradeBeaconEnhanced>Signal stabilization</SubcoreAutomation_TradeBeaconEnhanced>
+
+	<!-- Sleep Accelerator strings -->
+	<SubcoreAutomation_SleepAcceleratorBenefits>Induces vivid dreams, ensuring a good mood at morning.</SubcoreAutomation_SleepAcceleratorBenefits>
+	<SubcoreAutomation_SleepAcceleratorEnhanced>Dream weaver</SubcoreAutomation_SleepAcceleratorEnhanced>
+
+	<!-- Piloting Console strings (Odyssey DLC) -->
+	<SubcoreAutomation_PilotConsoleBenefits>Implements flight assistance, allowing emergency takeoff and automated landing safety protocols.</SubcoreAutomation_PilotConsoleBenefits>
+	<SubcoreAutomation_AutopilotLaunch>Autopilot launch</SubcoreAutomation_AutopilotLaunch>
+	<SubcoreAutomation_AutopilotLaunchDesc>Launch gravship using autopilot with 150% piloting ability. No pilot or copilot required.</SubcoreAutomation_AutopilotLaunchDesc>
+	<SubcoreAutomation_AutopilotIntervention>The subcore AI detected an imminent landing mishap and made emergency corrections. Crisis averted!</SubcoreAutomation_AutopilotIntervention>
+	<SubcoreAutomation_AutopilotNoEngine>No gravship engine connected</SubcoreAutomation_AutopilotNoEngine>
+	<SubcoreAutomation_AutopilotNotReady>Gravship engine not ready for launch</SubcoreAutomation_AutopilotNotReady>
+	<SubcoreAutomation_AutopilotFailed>Autopilot launch failed</SubcoreAutomation_AutopilotFailed>
+	<SubcoreAutomation_AutopilotConfirm>The gravship will launch immediately after you select a destination.\n\nOnly colonists already on board will travel. There is no ritual phase to add more pawns.\n\nProceed with autopilot launch?</SubcoreAutomation_AutopilotConfirm>
+
+	<!-- VNPE Nutrient Paste Grinder strings -->
+	<SubcoreAutomation_GrinderHopperRefrigeration>Hopper refrigeration active ({0} hoppers)</SubcoreAutomation_GrinderHopperRefrigeration>
+
+	<!-- VNPE Nutrient Paste Feeder strings -->
+	<SubcoreAutomation_FeederRefrigeration>Output refrigeration active</SubcoreAutomation_FeederRefrigeration>
+	<SubcoreAutomation_FeederBlocked>Dispense paused (incompatible ingredients)</SubcoreAutomation_FeederBlocked>
+
+	<!-- Polux Tree Wastepack Consumption strings -->
+	<SubcoreAutomation_PoluxBoundWastepacks>Bound wastepacks: {0}</SubcoreAutomation_PoluxBoundWastepacks>
+	<SubcoreAutomation_PoluxConsumptionProgress>Consumption progress: {0}</SubcoreAutomation_PoluxConsumptionProgress>
+	<SubcoreAutomation_PoluxCleaningGround>Cleaning ground pollution first</SubcoreAutomation_PoluxCleaningGround>
+	<SubcoreAutomation_CreateWastepackStockpile>Create wastepack zone</SubcoreAutomation_CreateWastepackStockpile>
+	<SubcoreAutomation_CreateWastepackStockpileDesc>Create a stockpile zone around this tree that accepts only wastepacks. Wastepacks here won't dissolve or deteriorate - the tree preserves and slowly consumes them.</SubcoreAutomation_CreateWastepackStockpileDesc>
+	<SubcoreAutomation_WastepackStockpileCreated>Wastepack stockpile zone created.</SubcoreAutomation_WastepackStockpileCreated>
+	<SubcoreAutomation_NoSpaceForStockpile>No space available for stockpile.</SubcoreAutomation_NoSpaceForStockpile>
+	<SubcoreAutomation_StockpileExpanded>Stockpile expanded by {0} cells.</SubcoreAutomation_StockpileExpanded>
+
+	<!-- Enhanced status strings -->
+	<SubcoreAutomation_PilotConsoleEnhanced>Pilot console enhanced</SubcoreAutomation_PilotConsoleEnhanced>
+	<SubcoreAutomation_VNPEGrinderEnhanced>Nutrient grinder enhanced</SubcoreAutomation_VNPEGrinderEnhanced>
+	<SubcoreAutomation_VNPEFeederEnhanced>Nutrient feeder enhanced</SubcoreAutomation_VNPEFeederEnhanced>
+	<SubcoreAutomation_AutomatedDrill>Automated drilling</SubcoreAutomation_AutomatedDrill>
+
+	<!-- Benefits strings -->
+	<SubcoreAutomation_TurretBenefitsGeneric>Improves targeting systems.</SubcoreAutomation_TurretBenefitsGeneric>
+	<SubcoreAutomation_ClimateBenefits>Benefits:
+• Automatic climate control
+• Remote operation</SubcoreAutomation_ClimateBenefits>
+	<SubcoreAutomation_ScannerBenefits>Automatic scanning without supervision. Advanced signal processing allows targeted scanning.</SubcoreAutomation_ScannerBenefits>
+	<SubcoreAutomation_VNPEGrinderBenefits>Controls temperature in the dispenser, preventing meals spoilage.</SubcoreAutomation_VNPEGrinderBenefits>
+	<SubcoreAutomation_VNPEFeederBenefits>Controls temperature in the dispenser, preventing meals spoilage.</SubcoreAutomation_VNPEFeederBenefits>
+
+	<!-- Farskip beacon targeting -->
+	<SubcoreAutomation_FarskipToBeacon>Skip to {0} (beacon)</SubcoreAutomation_FarskipToBeacon>
+
+</LanguageData>

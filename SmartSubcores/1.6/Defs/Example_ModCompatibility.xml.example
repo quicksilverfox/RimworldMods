@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	EXAMPLE: How to add subcore automation support for modded machines/turrets.
+	
+	This file is NOT loaded by the game (it has .example extension).
+	Copy and modify this to create your own compatibility patch.
+	
+	TWO STEPS REQUIRED:
+	1. Define an AutomatableMachineDef (this file) - adds to settings UI
+	2. Patch the ThingDef to add CompSubcoreAutomation (Patches folder)
+-->
+<Defs>
+
+	<!-- ==================== STEP 1: Define the machine ==================== -->
+	<!-- This makes it appear in the mod settings UI -->
+	
+	<!-- Example: Work building from a hypothetical mod -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_MyMod_AdvancedDrill</defName>
+		<label>Advanced drill (My Mod)</label>
+		<!-- targetDefName must match the ThingDef's defName exactly -->
+		<targetDefName>MyMod_AdvancedDrill</targetDefName>
+		<isTurret>false</isTurret>
+		<defaultEfficiency>0.6</defaultEfficiency>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+
+	<!-- Example: Turret from a hypothetical mod -->
+	<SubcoreAutomation.Core.AutomatableMachineDef>
+		<defName>AutomatableMachine_MyMod_PlasmaTurret</defName>
+		<label>Plasma turret (My Mod)</label>
+		<targetDefName>MyMod_PlasmaTurret</targetDefName>
+		<isTurret>true</isTurret>
+		<defaultAccuracyBonus>0.20</defaultAccuracyBonus>
+		<defaultWarmupReduction>0.15</defaultWarmupReduction>
+	</SubcoreAutomation.Core.AutomatableMachineDef>
+
+</Defs>
+
+<!-- 
+	==================== STEP 2: Patch the ThingDef ====================
+	Create a separate file in the Patches folder (e.g., MyMod_Patches.xml):
+	
+	<?xml version="1.0" encoding="utf-8"?>
+	<Patch>
+		<Operation Class="PatchOperationFindMod">
+			<mods><li>My Mod Name</li></mods>
+			<match Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					
+					<li Class="PatchOperationConditional">
+						<xpath>/Defs/ThingDef[defName="MyMod_AdvancedDrill"]/tickerType</xpath>
+						<nomatch Class="PatchOperationAdd">
+							<xpath>/Defs/ThingDef[defName="MyMod_AdvancedDrill"]</xpath>
+							<value>
+								<tickerType>Normal</tickerType>
+							</value>
+						</nomatch>
+					</li>
+					
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="MyMod_AdvancedDrill"]/comps</xpath>
+						<value>
+							<li Class="SubcoreAutomation.Core.CompProperties_SubcoreAutomation">
+								<subcoreDef>SubcoreRegular</subcoreDef>
+								<automatedSpeedFactor>0.6</automatedSpeedFactor>
+								<automatedPowerConsumption>200</automatedPowerConsumption>
+								<installWorkAmount>3000</installWorkAmount>
+							</li>
+						</value>
+					</li>
+					
+				</operations>
+			</match>
+		</Operation>
+	</Patch>
+-->

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Orbital Trade Beacon Automation: Doubles range and ignores walls when subcore installed -->
+
+	<!-- Add subcore automation comp -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="OrbitalTradeBeacon"]/comps</xpath>
+		<value>
+			<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
+				<subcoreDef>SubcoreBasic</subcoreDef>
+				<automatedSpeedFactor>2.0</automatedSpeedFactor>
+				<automatedPowerConsumption>50</automatedPowerConsumption>
+				<installWorkAmount>1500</installWorkAmount>
+			</li>
+		</value>
+	</Operation>
+</Patch>

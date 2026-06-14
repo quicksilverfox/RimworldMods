@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- 
+		Anomaly DLC Integration
+		Adds subcore automation to Proximity Detector for enhanced tracking capabilities.
+	-->
+
+	<!-- Proximity Detector - Enhanced invisible creature tracking -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="ProximityDetector"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="ProximityDetector"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_DefenseAutomation">
+					<subcoreDef>SubcoreRegular</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>50</automatedPowerConsumption>
+					<installWorkAmount>2500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

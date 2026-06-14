@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- 
+		Pawnmorpher Integration: Mutation Sequencer Automation
+		Adds subcore automation support to the Mutation Sequencer.
+		Uses the standard CompSubcoreAutomation with Harmony patches to integrate
+		with MutationSequencerComp's behavior.
+	-->
+
+	<!-- Add tickerType for automated operation -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="PM_MutationScanner"]/tickerType</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="PM_MutationScanner"]</xpath>
+			<value>
+				<tickerType>Normal</tickerType>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- Add standard subcore automation comp to the MutationSequencer -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="PM_MutationScanner"]/comps</xpath>
+		<value>
+			<li Class="SubcoreAutomation.Core.CompProperties_SubcoreAutomation">
+				<subcoreDef>SubcoreHigh</subcoreDef>
+				<automatedSpeedFactor>0.5</automatedSpeedFactor>
+				<automatedPowerConsumption>200</automatedPowerConsumption>
+				<installWorkAmount>2000</installWorkAmount>
+			</li>
+		</value>
+	</Operation>
+</Patch>

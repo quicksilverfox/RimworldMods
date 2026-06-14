@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    The nekomata xenotype - what an awakened housekeeper cat becomes when a sentience
+    catalyst is used on it (see SentienceConversion.cs). Endogene-based (inheritable), so it
+    breeds true. Both hair-colour genes (Hair_InkBlack, Hair_SnowWhite) are listed; RimWorld's
+    random-chosen mechanic keeps exactly one active per pawn, and the conversion code forces
+    that pick deterministically at awakening. Net metabolism: -1 (slight hunger increase).
+  -->
+  <XenotypeDef>
+    <defName>HKCat_Nekomata</defName>
+    <label>nekomata</label>
+    <description>An awakened housekeeper cat. Engineered as the perfect companion and then pushed past the threshold of sapience by a sentience catalyst, a nekomata mostly keeps the body of its designed origin. Gentle by instinct and at ease without clothing, it was never made for violence, and fine arts remain an alient concept to them.</description>
+    <inheritable>true</inheritable>
+    <!-- TODO: revisit. 0 = nekomata only ever come from the catalyst conversion + inheritance,
+         never from random factionless pawn generation. Decide later whether a small chance of
+         wild nekomata is wanted. -->
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+    <!-- Texture of the vanilla "Ears" XenotypeIconDef - fits the cat-eared nekomata. -->
+    <iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon3</iconPath>
+    <genes>
+      <!-- Form -->
+      <li>Ears_Cat</li>
+      <li>HKCat_TailNekomata</li>
+      <li>Furskin</li>
+      <li>Skin_InkBlack</li>
+      <li>Body_Thin</li>
+      <li>Hair_LongOnly</li>
+      <li>Beard_NoBeardOnly</li>
+      <!-- Hair colour: random-chosen group; the conversion code forces one active per pawn. -->
+      <li>Hair_InkBlack</li>
+      <li>Hair_SnowWhite</li>
+      <!-- Senses -->
+      <li>DarkVision</li>
+      <!-- Resilience -->
+      <li>Robust</li>
+      <li>ToxResist_Partial</li>
+      <li>Immunity_Strong</li>
+      <li>StrongStomach</li>
+      <li>MinTemp_SmallDecrease</li>
+      <li>MaxTemp_SmallIncrease</li>
+      <!-- Temperament -->
+      <li>KindInstinct</li>
+      <li>NakedSpeed</li>
+      <!-- Downsides / metabolic balance -->
+      <li>PsychicAbility_Deaf</li>
+      <li>Nearsighted</li>
+      <li>AptitudeTerrible_Shooting</li>
+      <li>AptitudeTerrible_Artistic</li>
+      <li>WoundHealing_Slow</li>
+    </genes>
+  </XenotypeDef>
+
+</Defs>

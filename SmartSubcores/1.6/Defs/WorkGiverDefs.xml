@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<WorkGiverDef>
+		<defName>SubcoreAutomation_InstallSubcore</defName>
+		<label>install subcore</label>
+		<giverClass>SubcoreAutomation.Jobs.WorkGiver_InstallSubcore</giverClass>
+		<workType>Construction</workType>
+		<verb>install subcore into</verb>
+		<gerund>installing subcore into</gerund>
+		<priorityInType>80</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>SubcoreAutomation_RemoveSubcore</defName>
+		<label>remove subcore</label>
+		<giverClass>SubcoreAutomation.Jobs.WorkGiver_RemoveSubcore</giverClass>
+		<workType>Construction</workType>
+		<verb>remove subcore from</verb>
+		<gerund>removing subcore from</gerund>
+		<priorityInType>79</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>SubcoreAutomation_InstallTurretWeapon</defName>
+		<label>install turret weapon</label>
+		<giverClass>SubcoreAutomation.Jobs.WorkGiver_InstallTurretWeapon</giverClass>
+		<workType>Hauling</workType>
+		<verb>install weapon into</verb>
+		<gerund>installing weapon into</gerund>
+		<priorityInType>90</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+</Defs>

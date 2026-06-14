@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    Childhood backstory for awakened housekeeper cats, assigned by SentienceConversion.cs.
+    Its spawnCategory (HKCat_Awakened) is referenced by no PawnKindDef, so ordinary pawn
+    generation never rolls it - only the conversion code ever assigns it.
+  -->
+  <BackstoryDef>
+    <defName>HKCat_AwakenedChildhood</defName>
+    <slot>Childhood</slot>
+    <title>awakened pet</title>
+    <titleShort>awakened</titleShort>
+    <baseDesc>[PAWN_nameDef] was born a housekeeper cat - a designed companion species created for dextrous hands, uncanny resilience and a gentle temperament. [PAWN_nameDef] spent those years padding through colony halls, cleaning and hauling, far cleverer than any pet should be, yet not quite a person.</baseDesc>
+    <spawnCategories>
+      <li>HKCat_Awakened</li>
+    </spawnCategories>
+    <workDisables>None</workDisables>
+  </BackstoryDef>
+
+</Defs>

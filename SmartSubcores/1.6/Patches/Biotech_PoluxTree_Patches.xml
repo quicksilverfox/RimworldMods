@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--
+		Biotech DLC Integration - Polux Tree Enhancement
+		Adds wastepack consumption capability to Polux Trees.
+
+		Behavior:
+		- Wastepacks placed near the tree won't dissolve or deteriorate
+		- Tree prioritizes cleaning ground pollution first (vanilla behavior)
+		- Only consumes preserved wastepacks when no ground pollution remains
+		- Consumption rate: 1 wastepack per 2.5 days (slower than atomizer)
+
+		Natural capacity limit: ground space only (buildings disable the tree).
+	-->
+
+	<!-- Polux Tree - Wastepack preservation and consumption -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="Plant_TreePolux"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="Plant_TreePolux"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Compat.CompProperties_PoluxWastepackConsumer">
+					<!-- Same radius as the pollution pump comp -->
+					<consumeRadius>7.9</consumeRadius>
+					<!-- 2.5 days = 150000 ticks (slower than atomizer's 12 hours) -->
+					<consumeIntervalTicks>150000</consumeIntervalTicks>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

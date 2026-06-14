@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--
+		Biotech for Gravship compatibility.
+		Adds subcore automation to the gravship-variant rechargers.
+		Scanners (BfG_SubcoreSoftscanner / BfG_SubcoreRipscanner) inherit from
+		the concrete vanilla scanner defs and pick up the automation comp via
+		inheritance — do NOT patch them here or the comp will be added twice.
+		Rechargers parent the abstract BaseMechCharger so they need explicit patches.
+	-->
+
+	<!-- Basic Gravship Recharger -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="BfG_BasicRecharger"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="BfG_BasicRecharger"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="BfG_BasicRecharger"]/comps</xpath>
+				<value>
+					<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
+						<subcoreDef>SubcoreRegular</subcoreDef>
+						<automatedSpeedFactor>1.0</automatedSpeedFactor>
+						<automatedPowerConsumption>50</automatedPowerConsumption>
+						<installWorkAmount>2000</installWorkAmount>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- Large Gravship Recharger -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="BfG_StandardRecharger"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="BfG_StandardRecharger"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="BfG_StandardRecharger"]/comps</xpath>
+				<value>
+					<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
+						<subcoreDef>SubcoreHigh</subcoreDef>
+						<automatedSpeedFactor>1.0</automatedSpeedFactor>
+						<automatedPowerConsumption>100</automatedPowerConsumption>
+						<installWorkAmount>3000</installWorkAmount>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- Floor Mech Booster (BfG variant) -->
+	<!-- Same role as vanilla MechBooster: relay command range, combat stat boost on friendly mechs. -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="BfG_MechBooster"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="BfG_MechBooster"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="BfG_MechBooster"]/comps</xpath>
+				<value>
+					<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
+						<subcoreDef>SubcoreHigh</subcoreDef>
+						<automatedSpeedFactor>1.0</automatedSpeedFactor>
+						<automatedPowerConsumption>100</automatedPowerConsumption>
+						<installWorkAmount>4000</installWorkAmount>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

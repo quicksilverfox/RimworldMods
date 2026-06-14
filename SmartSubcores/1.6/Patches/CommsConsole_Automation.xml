@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Comms Console Automation: Boosts orbital trader frequency by 50% when subcore installed -->
+
+	<!-- Ensure tickerType exists for comp ticking -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="CommsConsole"]/tickerType</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="CommsConsole"]</xpath>
+			<value>
+				<tickerType>Normal</tickerType>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- Add subcore automation comp -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="CommsConsole"]/comps</xpath>
+		<value>
+			<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
+				<subcoreDef>SubcoreRegular</subcoreDef>
+				<automatedSpeedFactor>0</automatedSpeedFactor>
+				<automatedPowerConsumption>100</automatedPowerConsumption>
+				<installWorkAmount>2000</installWorkAmount>
+			</li>
+		</value>
+	</Operation>
+</Patch>

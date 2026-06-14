@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- 
+		Backup Power Integration
+		Adds subcore automation to fuel-powered generators for automatic on/off control.
+		Based on Fluffy's BackupPower mod (MIT license).
+	-->
+
+	<!-- Wood-fired generator -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="WoodFiredGenerator"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="WoodFiredGenerator"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
+					<subcoreDef>SubcoreBasic</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>0</automatedPowerConsumption>
+					<installWorkAmount>1500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+	<!-- Chemfuel powered generator -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="ChemfuelPoweredGenerator"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="ChemfuelPoweredGenerator"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
+					<subcoreDef>SubcoreBasic</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>0</automatedPowerConsumption>
+					<installWorkAmount>1500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+	<!-- 
+		Note: Vanometric power cell is NOT included because it has no fuel to save.
+		Backup power automation is only useful for fuel-based generators.
+	-->
+
+	<!-- 
+		Toxifier Generator - Special Case
+		With subcore installed:
+		- Reduces power output by 100W (1400W -> 1300W)
+		- Produces wastepacks instead of polluting terrain
+		- 1 wastepack per 3 days (equivalent to 6 tiles of pollution)
+		- Wastepacks dropped on ground for haulers to collect
+	-->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="ToxifierGenerator"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="ToxifierGenerator"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_ProductionAutomation">
+					<subcoreDef>SubcoreBasic</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>0</automatedPowerConsumption>
+					<installWorkAmount>1500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

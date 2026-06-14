@@ -9,7 +9,7 @@ namespace HousekeeperCat
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            if (!map.mapTemperature.SeasonAndOutdoorTemperatureAcceptableFor(DefOfCousekeeperCatThingDef.HousekeeperCat))
+            if (!map.mapTemperature.SeasonAndOutdoorTemperatureAcceptableFor(DefOfHousekeeperCatThingDef.HousekeeperCat))
             {
                 return false;
             }
@@ -28,7 +28,7 @@ namespace HousekeeperCat
             {
                 return false;
             }
-            PawnKindDef cat = DefOfCousekeeperCatPawnDef.HousekeeperCat;
+            PawnKindDef cat = DefOfHousekeeperCatPawnDef.HousekeeperCat;
             IntVec3 result = IntVec3.Invalid;
             if (!RCellFinder.TryFindRandomCellOutsideColonyNearTheCenterOfTheMap(cell, map, 10f, out result))
             {

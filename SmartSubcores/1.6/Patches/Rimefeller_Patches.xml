@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Rimefeller Resource Console: Add automation comp -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="ResourceConsole"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="ResourceConsole"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_CompatAutomation">
+					<subcoreDef>SubcoreHigh</subcoreDef>
+					<automatedSpeedFactor>1.0</automatedSpeedFactor>
+					<automatedPowerConsumption>150</automatedPowerConsumption>
+					<installWorkAmount>2500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+	<!-- Rimefeller Fuel Powerplant: Add automation comp for backup power -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="FuelPowerplant"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="FuelPowerplant"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
+					<subcoreDef>SubcoreBasic</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>0</automatedPowerConsumption>
+					<installWorkAmount>1500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+	<!-- Rimefeller Large Fuel Powerplant: Add automation comp for backup power -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="LargeFuelPowerplant"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="LargeFuelPowerplant"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
+					<subcoreDef>SubcoreBasic</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>0</automatedPowerConsumption>
+					<installWorkAmount>1500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>

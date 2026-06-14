@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- 
+		Biosculpter Pod Integration
+		Adds subcore automation to Biosculpter Pod.
+		With High subcore installed:
+		- Pod accepts any pawn (no tuning required)
+		- Cycle speed is as if pod is tuned to the occupant
+	-->
+
+	<!-- Biosculpter Pod -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="BiosculpterPod"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="BiosculpterPod"]/comps</xpath>
+			<value>
+				<li Class="SubcoreAutomation.Core.CompProperties_BiotechAutomation">
+					<subcoreDef>SubcoreHigh</subcoreDef>
+					<automatedSpeedFactor>0</automatedSpeedFactor>
+					<automatedPowerConsumption>0</automatedPowerConsumption>
+					<installWorkAmount>2500</installWorkAmount>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

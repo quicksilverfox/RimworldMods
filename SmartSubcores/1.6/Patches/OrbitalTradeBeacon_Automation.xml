@@ -7,7 +7,7 @@
 		<xpath>/Defs/ThingDef[defName="OrbitalTradeBeacon"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>2.0</automatedSpeedFactor>
 				<automatedPowerConsumption>50</automatedPowerConsumption>
 				<installWorkAmount>1500</installWorkAmount>

@@ -10,7 +10,7 @@
 			<xpath>/Defs/ThingDef[defName="PilotConsole"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
-					<subcoreDef>SubcoreHigh</subcoreDef>
+					<tier>High</tier>
 					<automatedSpeedFactor>1.5</automatedSpeedFactor>
 					<automatedPowerConsumption>200</automatedPowerConsumption>
 					<installWorkAmount>3000</installWorkAmount>

@@ -15,7 +15,7 @@
 			<xpath>/Defs/ThingDef[defName="BiosculpterPod"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_BiotechAutomation">
-					<subcoreDef>SubcoreHigh</subcoreDef>
+					<tier>High</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>2500</installWorkAmount>

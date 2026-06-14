@@ -7,7 +7,7 @@
 			<xpath>/Defs/ThingDef[defName="ResourceConsole"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_CompatAutomation">
-					<subcoreDef>SubcoreHigh</subcoreDef>
+					<tier>High</tier>
 					<automatedSpeedFactor>1.0</automatedSpeedFactor>
 					<automatedPowerConsumption>150</automatedPowerConsumption>
 					<installWorkAmount>2500</installWorkAmount>
@@ -23,7 +23,7 @@
 			<xpath>/Defs/ThingDef[defName="FuelPowerplant"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
-					<subcoreDef>SubcoreBasic</subcoreDef>
+					<tier>Basic</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>1500</installWorkAmount>
@@ -39,7 +39,7 @@
 			<xpath>/Defs/ThingDef[defName="LargeFuelPowerplant"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
-					<subcoreDef>SubcoreBasic</subcoreDef>
+					<tier>Basic</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>1500</installWorkAmount>

@@ -18,7 +18,7 @@
 		<xpath>/Defs/ThingDef[defName="CommsConsole"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
-				<subcoreDef>SubcoreRegular</subcoreDef>
+				<tier>Regular</tier>
 				<automatedSpeedFactor>0</automatedSpeedFactor>
 				<automatedPowerConsumption>100</automatedPowerConsumption>
 				<installWorkAmount>2000</installWorkAmount>

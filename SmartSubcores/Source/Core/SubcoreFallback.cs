@@ -61,23 +61,38 @@ namespace SubcoreAutomation.Core
 		/// Regular: 2 components + 1 advanced component + 50 steel
 		/// High: 2 advanced components + 50 plasteel
 		/// </summary>
-		public static List<ThingDefCountClass> GetFallbackMaterials(ThingDef subcoreDef)
+		public static List<ThingDefCountClass> GetFallbackMaterials(SubcoreTier tier)
 		{
 			Initialize();
-			
-			if (subcoreDef == null)
-				return GetBasicMaterials();
 
-			switch (subcoreDef.defName)
+			switch (tier)
 			{
-				case "SubcoreBasic":
-					return GetBasicMaterials();
-				case "SubcoreRegular":
+				case SubcoreTier.Regular:
 					return GetRegularMaterials();
-				case "SubcoreHigh":
+				case SubcoreTier.High:
 					return GetHighMaterials();
 				default:
 					return GetBasicMaterials();
+			}
+		}
+
+		/// <summary>
+		/// Gets the component-type defs (industrial/spacer) a tier consumes, in display order.
+		/// Raw materials (steel/plasteel) are excluded - these are just the "component" icons.
+		/// Basic: industrial. Regular: industrial + spacer. High: spacer.
+		/// </summary>
+		public static List<ThingDef> GetFallbackComponents(SubcoreTier tier)
+		{
+			Initialize();
+
+			switch (tier)
+			{
+				case SubcoreTier.Regular:
+					return new List<ThingDef> { _component, _advancedComponent };
+				case SubcoreTier.High:
+					return new List<ThingDef> { _advancedComponent };
+				default:
+					return new List<ThingDef> { _component };
 			}
 		}
 
@@ -139,9 +154,9 @@ namespace SubcoreAutomation.Core
 		/// <summary>
 		/// Gets a human-readable description of the fallback materials.
 		/// </summary>
-		public static string GetMaterialsDescription(ThingDef subcoreDef)
+		public static string GetMaterialsDescription(SubcoreTier tier)
 		{
-			var materials = GetFallbackMaterials(subcoreDef);
+			var materials = GetFallbackMaterials(tier);
 			var parts = new List<string>();
 			
 			foreach (var mat in materials)
@@ -155,9 +170,9 @@ namespace SubcoreAutomation.Core
 		/// <summary>
 		/// Checks if the map has enough materials for the fallback installation.
 		/// </summary>
-		public static bool HasEnoughMaterials(Map map, ThingDef subcoreDef)
+		public static bool HasEnoughMaterials(Map map, SubcoreTier tier)
 		{
-			var materials = GetFallbackMaterials(subcoreDef);
+			var materials = GetFallbackMaterials(tier);
 			
 			foreach (var mat in materials)
 			{
@@ -173,9 +188,9 @@ namespace SubcoreAutomation.Core
 		/// Finds reservable material Things on the map for the fallback installation.
 		/// Returns a list of (Thing, count) tuples representing what to haul.
 		/// </summary>
-		public static List<(Thing thing, int count)> FindMaterialsOnMap(Map map, ThingDef subcoreDef, Pawn pawn)
+		public static List<(Thing thing, int count)> FindMaterialsOnMap(Map map, SubcoreTier tier, Pawn pawn)
 		{
-			var requirements = GetFallbackMaterials(subcoreDef);
+			var requirements = GetFallbackMaterials(tier);
 			var result = new List<(Thing, int)>();
 
 			foreach (var req in requirements)

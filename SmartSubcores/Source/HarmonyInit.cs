@@ -76,12 +76,12 @@ namespace SubcoreAutomation
 					var powerProps = def.comps.FirstOrDefault(c => 
 						c.compClass != null && typeof(CompPowerPlant).IsAssignableFrom(c.compClass)) as CompProperties_Power;
 					
-					ThingDef subcoreDef = GetSubcoreForPowerOutput(powerProps?.PowerConsumption ?? 0f);
+					SubcoreTier tier = GetSubcoreForPowerOutput(powerProps?.PowerConsumption ?? 0f);
 					float workAmount = GetInstallWorkForPowerOutput(powerProps?.PowerConsumption ?? 0f);
 
 					var props = new CompProperties_PowerAutomation
 					{
-						subcoreDef = subcoreDef,
+						tier = tier,
 						automatedSpeedFactor = 0f, // Generators don't use speed factor
 						automatedPowerConsumption = 0, // No additional power draw
 						installWorkAmount = workAmount
@@ -102,9 +102,9 @@ namespace SubcoreAutomation
 		/// Returns Basic subcore for all generators.
 		/// Backup power is a simple on/off job that doesn't warrant higher tier subcores.
 		/// </summary>
-		private static ThingDef GetSubcoreForPowerOutput(float powerOutput)
+		private static SubcoreTier GetSubcoreForPowerOutput(float powerOutput)
 		{
-			return DefDatabase<ThingDef>.GetNamed("SubcoreBasic", false);
+			return SubcoreTier.Basic;
 		}
 
 		/// <summary>
@@ -123,9 +123,6 @@ namespace SubcoreAutomation
 		private static void AddFallbackAutomationToFlickables()
 		{
 			int added = 0;
-			var basicSubcore = DefDatabase<ThingDef>.GetNamed("SubcoreBasic", false);
-			if (basicSubcore == null)
-				return;
 
 			foreach (var def in DefDatabase<ThingDef>.AllDefs)
 			{
@@ -161,7 +158,7 @@ namespace SubcoreAutomation
 				// Add basic automation comp
 				var props = new CompProperties_SubcoreAutomation
 				{
-					subcoreDef = basicSubcore,
+					tier = SubcoreTier.Basic,
 					automatedSpeedFactor = 0f, // Binary on/off - no efficiency shown
 					automatedPowerConsumption = 0, // No additional power draw
 					installWorkAmount = 500f // Quick installation for simple remote control
@@ -188,12 +185,6 @@ namespace SubcoreAutomation
 		private static void AddFallbackAutomationToTurrets()
 		{
 			int added = 0;
-			var basicSubcore = DefDatabase<ThingDef>.GetNamed("SubcoreBasic", false);
-			var regularSubcore = DefDatabase<ThingDef>.GetNamed("SubcoreRegular", false);
-			var highSubcore = DefDatabase<ThingDef>.GetNamed("SubcoreHigh", false);
-			
-			if (basicSubcore == null && regularSubcore == null)
-				return;
 
 			foreach (var def in DefDatabase<ThingDef>.AllDefs)
 			{
@@ -227,13 +218,13 @@ namespace SubcoreAutomation
 					def.comps = new List<CompProperties>();
 
 				// Determine subcore tier based on size and tech level
-				ThingDef subcoreDef = GetSubcoreForTurret(def, basicSubcore, regularSubcore, highSubcore);
+				SubcoreTier tier = GetSubcoreForTurret(def);
 				float workAmount = GetInstallWorkForTurret(def);
 
 				// Add turret automation comp
 				var props = new CompProperties_DefenseAutomation
 				{
-					subcoreDef = subcoreDef,
+					tier = tier,
 					automatedSpeedFactor = 0f, // Turrets don't use speed factor
 					automatedPowerConsumption = 0,
 					installWorkAmount = workAmount
@@ -253,31 +244,25 @@ namespace SubcoreAutomation
 		/// Determines appropriate subcore tier for a turret based on size and build cost.
 		/// Turrets requiring ComponentSpacer are considered advanced tech.
 		/// </summary>
-		private static ThingDef GetSubcoreForTurret(ThingDef turretDef, ThingDef basic, ThingDef regular, ThingDef high)
+		private static SubcoreTier GetSubcoreForTurret(ThingDef turretDef)
 		{
 			// Calculate turret size (area)
 			int area = turretDef.size.x * turretDef.size.z;
 			bool isLarge = area >= 4; // 2x2 or larger
-			
+
 			// Check if turret requires spacer components (reliable indicator of advanced tech)
 			bool isAdvancedTech = RequiresSpacerComponents(turretDef);
-			
+
 			// Base tier: Basic for small (1x1), Regular for large (2x2+)
 			// Bump up one tier for advanced tech (uses ComponentSpacer)
 			if (isLarge)
 			{
 				// Large turret: Regular, or High if advanced
-				if (isAdvancedTech && high != null)
-					return high;
-				return regular ?? basic;
+				return isAdvancedTech ? SubcoreTier.High : SubcoreTier.Regular;
 			}
-			else
-			{
-				// Small turret: Basic, or Regular if advanced
-				if (isAdvancedTech && regular != null)
-					return regular;
-				return basic ?? regular;
-			}
+
+			// Small turret: Basic, or Regular if advanced
+			return isAdvancedTech ? SubcoreTier.Regular : SubcoreTier.Basic;
 		}
 
 		/// <summary>

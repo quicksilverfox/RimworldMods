@@ -12,7 +12,7 @@
 			<xpath>/Defs/ThingDef[defName="Autodoor"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_UtilityAutomation">
-					<subcoreDef>SubcoreBasic</subcoreDef>
+					<tier>Basic</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>1000</installWorkAmount>
@@ -28,7 +28,7 @@
 			<xpath>/Defs/ThingDef[defName="SecurityDoor"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_UtilityAutomation">
-					<subcoreDef>SubcoreRegular</subcoreDef>
+					<tier>Regular</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>1500</installWorkAmount>

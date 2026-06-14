@@ -5,7 +5,7 @@
 		<xpath>/Defs/ThingDef[defName="VNPE_NutrientPasteGrinder"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_CompatAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>1.0</automatedSpeedFactor>
 				<automatedPowerConsumption>50</automatedPowerConsumption>
 				<installWorkAmount>1500</installWorkAmount>
@@ -18,7 +18,7 @@
 		<xpath>/Defs/ThingDef[defName="VNPE_NutrientPasteFeeder"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_CompatAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>1.0</automatedSpeedFactor>
 				<automatedPowerConsumption>50</automatedPowerConsumption>
 				<installWorkAmount>1500</installWorkAmount>

@@ -177,9 +177,9 @@ namespace SubcoreAutomation.Patches
 		{
 			float bonus;
 			// Use tier-based settings
-			if (comp?.Props?.subcoreDef != null && SubcoreAutomationMod.Settings != null)
+			if (comp?.Props != null && SubcoreAutomationMod.Settings != null)
 			{
-				bonus = SubcoreAutomationMod.Settings.GetTurretAccuracyByTier(comp.Props.subcoreDef.defName);
+				bonus = SubcoreAutomationMod.Settings.GetTurretAccuracyByTier(comp.Props.SubcoreDefName);
 			}
 			else
 			{
@@ -197,9 +197,9 @@ namespace SubcoreAutomation.Patches
 		{
 			float reduction;
 			// Use tier-based settings
-			if (comp?.Props?.subcoreDef != null && SubcoreAutomationMod.Settings != null)
+			if (comp?.Props != null && SubcoreAutomationMod.Settings != null)
 			{
-				reduction = SubcoreAutomationMod.Settings.GetTurretWarmupByTier(comp.Props.subcoreDef.defName);
+				reduction = SubcoreAutomationMod.Settings.GetTurretWarmupByTier(comp.Props.SubcoreDefName);
 			}
 			else
 			{

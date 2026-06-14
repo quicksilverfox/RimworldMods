@@ -13,7 +13,7 @@
 			<xpath>/Defs/ThingDef[defName="WoodFiredGenerator"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
-					<subcoreDef>SubcoreBasic</subcoreDef>
+					<tier>Basic</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>1500</installWorkAmount>
@@ -29,7 +29,7 @@
 			<xpath>/Defs/ThingDef[defName="ChemfuelPoweredGenerator"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
-					<subcoreDef>SubcoreBasic</subcoreDef>
+					<tier>Basic</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>1500</installWorkAmount>
@@ -57,7 +57,7 @@
 			<xpath>/Defs/ThingDef[defName="ToxifierGenerator"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_ProductionAutomation">
-					<subcoreDef>SubcoreBasic</subcoreDef>
+					<tier>Basic</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>1500</installWorkAmount>

@@ -10,7 +10,7 @@
 			<xpath>/Defs/ThingDef[defName="SleepAccelerator"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
-					<subcoreDef>SubcoreHigh</subcoreDef>
+					<tier>High</tier>
 					<automatedSpeedFactor>1.0</automatedSpeedFactor>
 					<automatedPowerConsumption>100</automatedPowerConsumption>
 					<installWorkAmount>2500</installWorkAmount>

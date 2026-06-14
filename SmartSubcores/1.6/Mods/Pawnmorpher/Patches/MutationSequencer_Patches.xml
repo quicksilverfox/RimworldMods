@@ -23,7 +23,7 @@
 		<xpath>/Defs/ThingDef[defName="PM_MutationScanner"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_SubcoreAutomation">
-				<subcoreDef>SubcoreHigh</subcoreDef>
+				<tier>High</tier>
 				<automatedSpeedFactor>0.5</automatedSpeedFactor>
 				<automatedPowerConsumption>200</automatedPowerConsumption>
 				<installWorkAmount>2000</installWorkAmount>

@@ -257,12 +257,10 @@ namespace SubcoreAutomation.Core
 			// matching the behavior of the removal gizmo. Damage-destroyed builds lose it.
 			if (_subcoreInstalled
 				&& mode == DestroyMode.Deconstruct
-				&& Props.subcoreDef != null
 				&& previousMap != null
 				&& (SubcoreAutomationMod.Settings == null || !SubcoreAutomationMod.Settings.permanentSubcoreInstallation))
 			{
-				Thing subcore = ThingMaker.MakeThing(Props.subcoreDef);
-				GenPlace.TryPlaceThing(subcore, parent.Position, previousMap, ThingPlaceMode.Near);
+				MakeRemovalYield(previousMap, parent.Position, placeOnGround: true);
 			}
 
 			// Clean up machine-specific state
@@ -543,11 +541,10 @@ namespace SubcoreAutomation.Core
 			// Machine-specific cleanup
 			OnSubcoreRemovedRegistrations();
 
-			// Spawn the subcore if requested
-			if (spawnSubcore && Props.subcoreDef != null && parent.Map != null)
+			// Spawn the subcore (or refund fallback materials) if requested
+			if (spawnSubcore)
 			{
-				Thing subcore = ThingMaker.MakeThing(Props.subcoreDef);
-				GenPlace.TryPlaceThing(subcore, parent.Position, parent.Map, ThingPlaceMode.Near);
+				MakeRemovalYield(parent.Map, parent.Position, placeOnGround: true);
 			}
 
 			if (!silent)
@@ -575,18 +572,54 @@ namespace SubcoreAutomation.Core
 			// Machine-specific cleanup
 			OnSubcoreRemovedRegistrations();
 
-			// Create and return the subcore for the pawn to carry
-			Thing subcore = null;
-			if (Props.subcoreDef != null)
-			{
-				subcore = ThingMaker.MakeThing(Props.subcoreDef);
-			}
+			// Create and return the subcore for the pawn to carry.
+			// In fallback mode this refunds materials on the ground and returns null.
+			Thing subcore = MakeRemovalYield(parent.Map, parent.Position, placeOnGround: false);
 
 			Messages.Message(
 				"SubcoreAutomation_SubcoreRemovedMessage".Translate(parent.LabelCapNoCount),
 				parent,
 				MessageTypeDefOf.NeutralEvent);
 
+			return subcore;
+		}
+
+		/// <summary>
+		/// Produces what subcore removal yields.
+		/// In fallback mode (no Biotech), refunds the crafted-component materials onto the
+		/// ground and returns null. Otherwise creates the subcore item; if placeOnGround is
+		/// true it is placed near the building and null is returned, otherwise it is returned
+		/// for the pawn to carry.
+		/// </summary>
+		private Thing MakeRemovalYield(Map map, IntVec3 pos, bool placeOnGround)
+		{
+			if (map == null)
+				return null;
+
+			// Fallback mode: refund crafted-component materials instead of a subcore item.
+			if (SubcoreFallback.IsActive)
+			{
+				foreach (var mat in SubcoreFallback.GetFallbackMaterials(Props.tier))
+				{
+					if (mat?.thingDef == null || mat.count <= 0)
+						continue;
+					Thing stack = ThingMaker.MakeThing(mat.thingDef);
+					stack.stackCount = mat.count;
+					GenPlace.TryPlaceThing(stack, pos, map, ThingPlaceMode.Near);
+				}
+				return null;
+			}
+
+			ThingDef subcoreDef = Props.SubcoreDef;
+			if (subcoreDef == null)
+				return null;
+
+			Thing subcore = ThingMaker.MakeThing(subcoreDef);
+			if (placeOnGround)
+			{
+				GenPlace.TryPlaceThing(subcore, pos, map, ThingPlaceMode.Near);
+				return null;
+			}
 			return subcore;
 		}
 
@@ -630,14 +663,20 @@ namespace SubcoreAutomation.Core
 			if (!_installationRequested)
 			{
 				string costDescription = SubcoreFallback.IsActive
-					? SubcoreFallback.GetMaterialsDescription(Props.subcoreDef)
-					: (Props.subcoreDef?.label ?? "subcore");
+					? SubcoreFallback.GetMaterialsDescription(Props.tier)
+					: (Props.SubcoreDef?.label ?? "subcore");
 
-				yield return new Command_Action
+				Texture2D primaryIcon = GetSubcoreIcon();
+				Texture2D secondaryIcon = GetSubcoreSecondaryIcon();
+				yield return new Command_ActionOverlay
 				{
 					defaultLabel = "SubcoreAutomation_RequestInstallation".Translate(),
 					defaultDesc = "SubcoreAutomation_RequestInstallationDesc".Translate(costDescription) + GetMachineSpecificBenefitsDescription(),
-					icon = GetSubcoreIcon(),
+					icon = primaryIcon,
+					// When the tier costs two component types, show both at equal size.
+					tiledIcons = secondaryIcon != null
+						? new List<Texture2D> { primaryIcon, secondaryIcon }
+						: null,
 					action = TryRequestInstallation
 				};
 			}
@@ -706,17 +745,14 @@ namespace SubcoreAutomation.Core
 		/// </summary>
 		private void TryRequestInstallation()
 		{
-			ThingDef subcoreDef = Props.subcoreDef;
-			if (subcoreDef == null)
-				return;
-
-			// In fallback mode, check for materials instead of subcore
+			// In fallback mode, check for materials instead of subcore. The concrete subcore
+			// def is null when Biotech is absent; the tier still selects the right materials.
 			if (SubcoreFallback.IsActive)
 			{
-				if (!SubcoreFallback.HasEnoughMaterials(parent.Map, subcoreDef))
+				if (!SubcoreFallback.HasEnoughMaterials(parent.Map, Props.tier))
 				{
 					Messages.Message(
-						"SubcoreAutomation_NoFallbackMaterials".Translate(SubcoreFallback.GetMaterialsDescription(subcoreDef)),
+						"SubcoreAutomation_NoFallbackMaterials".Translate(SubcoreFallback.GetMaterialsDescription(Props.tier)),
 						parent,
 						MessageTypeDefOf.RejectInput,
 						false);
@@ -726,6 +762,10 @@ namespace SubcoreAutomation.Core
 			}
 			else
 			{
+				ThingDef subcoreDef = Props.SubcoreDef;
+				if (subcoreDef == null)
+					return;
+
 				Thing subcore = FindSubcoreOnMap(subcoreDef);
 				if (subcore == null)
 				{
@@ -769,13 +809,29 @@ namespace SubcoreAutomation.Core
 		/// </summary>
 		protected Texture2D GetSubcoreIcon()
 		{
-			// In fallback mode, show component icon
+			// In fallback mode, show the primary component icon for the tier.
 			if (SubcoreFallback.IsActive)
-				return ContentFinder<Texture2D>.Get("Things/Item/Resource/ComponentIndustrial", true);
+			{
+				var components = SubcoreFallback.GetFallbackComponents(Props.tier);
+				return (components.Count > 0 ? components[0] : ThingDefOf.ComponentIndustrial).uiIcon;
+			}
 
-			if (Props.subcoreDef != null)
-				return Props.subcoreDef.uiIcon;
-			return ContentFinder<Texture2D>.Get("Things/Item/Special/SubcoreRegular", true);
+			if (Props.SubcoreDef != null)
+				return Props.SubcoreDef.uiIcon;
+			return ThingDefOf.ComponentIndustrial.uiIcon;
+		}
+
+		/// <summary>
+		/// In fallback mode, returns the secondary component icon when a tier uses two
+		/// component types (e.g. Regular = industrial + spacer), otherwise null.
+		/// </summary>
+		protected Texture2D GetSubcoreSecondaryIcon()
+		{
+			if (!SubcoreFallback.IsActive)
+				return null;
+
+			var components = SubcoreFallback.GetFallbackComponents(Props.tier);
+			return components.Count > 1 ? components[1].uiIcon : null;
 		}
 
 		/// <summary>

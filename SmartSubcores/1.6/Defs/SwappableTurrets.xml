@@ -2,7 +2,7 @@
 <Defs>
 
 	<!--=============== Small swappable turret (mini-turret base) ===============-->
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase" MayRequire="Ludeon.RimWorld.Biotech">
 		<defName>SubcoreAutomation_TurretMountSmall</defName>
 		<label>mount mini turret</label>
 		<description>A subcore-operated turret mount. It can be outfitted with any handheld ranged weapon. Will not accept biocoded or persona weapons.</description>
@@ -87,7 +87,7 @@
 	</ThingDef>
 
 	<!--=============== Medium swappable turret (autocannon base) ===============-->
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase" MayRequire="Ludeon.RimWorld.Biotech">
 		<defName>SubcoreAutomation_TurretMountLarge</defName>
 		<label>mount heavy turret</label>
 		<description>A heavy subcore-operated turret mount. It can be outfitted with any handheld ranged weapon. The reinforced chassis is mode durable and can host larger armaments than the small mount. Will not accept biocoded or persona weapons.</description>
@@ -161,7 +161,7 @@
 			<!-- Placeholder gun for empty mount. Top draw is suppressed in code
 			     (TurretTopMaterial=ClearMat) so visuals don't matter, but using a
 			     no-min-range gun avoids the autocannon's inherited 8.9-cell dead zone. -->
-			<turretGunDef>Gun_MiniTurretGun</turretGunDef>
+			<turretGunDef>Gun_MiniTurret</turretGunDef>
 			<turretBurstCooldownTime>3.5</turretBurstCooldownTime>
 			<turretTopDrawSize>2.7</turretTopDrawSize>
 			<turretTopOffset>(0, 0.05)</turretTopOffset>

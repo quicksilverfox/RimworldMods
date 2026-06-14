@@ -17,7 +17,7 @@
 		<xpath>/Defs/ThingDef[defName="HiTechResearchBench"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
-				<subcoreDef>SubcoreHigh</subcoreDef>
+				<tier>High</tier>
 				<automatedSpeedFactor>0.55</automatedSpeedFactor>
 				<automatedPowerConsumption>500</automatedPowerConsumption>
 				<installWorkAmount>4000</installWorkAmount>
@@ -31,7 +31,7 @@
 		<xpath>/Defs/ThingDef[defName="MultiAnalyzer"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_MiscAutomation">
-				<subcoreDef>SubcoreHigh</subcoreDef>
+				<tier>High</tier>
 				<automatedSpeedFactor>0.10</automatedSpeedFactor>
 				<automatedPowerConsumption>300</automatedPowerConsumption>
 				<installWorkAmount>3500</installWorkAmount>
@@ -55,7 +55,7 @@
 		<xpath>/Defs/ThingDef[defName="GroundPenetratingScanner"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_ScannerAutomation">
-				<subcoreDef>SubcoreHigh</subcoreDef>
+				<tier>High</tier>
 				<automatedSpeedFactor>0.5</automatedSpeedFactor>
 				<automatedPowerConsumption>300</automatedPowerConsumption>
 				<installWorkAmount>3000</installWorkAmount>
@@ -86,7 +86,7 @@
 		<xpath>/Defs/ThingDef[defName="LongRangeMineralScanner"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_ScannerAutomation">
-				<subcoreDef>SubcoreHigh</subcoreDef>
+				<tier>High</tier>
 				<automatedSpeedFactor>0.5</automatedSpeedFactor>
 				<automatedPowerConsumption>300</automatedPowerConsumption>
 				<installWorkAmount>3000</installWorkAmount>
@@ -110,7 +110,7 @@
 		<xpath>/Defs/ThingDef[defName="DeepDrill"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_ProductionAutomation">
-				<subcoreDef>SubcoreRegular</subcoreDef>
+				<tier>Regular</tier>
 				<automatedSpeedFactor>0.4</automatedSpeedFactor>
 				<automatedPowerConsumption>100</automatedPowerConsumption>
 				<installWorkAmount>2000</installWorkAmount>
@@ -134,7 +134,7 @@
 		<xpath>/Defs/ThingDef[defName="NutrientPasteDispenser"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_UtilityAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>1.0</automatedSpeedFactor>
 				<automatedPowerConsumption>100</automatedPowerConsumption>
 				<installWorkAmount>2500</installWorkAmount>
@@ -151,7 +151,7 @@
 		<xpath>/Defs/ThingDef[defName="Cooler"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_ClimateAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>1.0</automatedSpeedFactor>
 				<automatedPowerConsumption>25</automatedPowerConsumption>
 				<installWorkAmount>1000</installWorkAmount>
@@ -164,7 +164,7 @@
 		<xpath>/Defs/ThingDef[defName="Heater"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_ClimateAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>1.0</automatedSpeedFactor>
 				<automatedPowerConsumption>25</automatedPowerConsumption>
 				<installWorkAmount>1000</installWorkAmount>
@@ -177,7 +177,7 @@
 		<xpath>/Defs/ThingDef[defName="MoisturePump"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_ProductionAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>1.0</automatedSpeedFactor>
 				<automatedPowerConsumption>50</automatedPowerConsumption>
 				<installWorkAmount>1500</installWorkAmount>
@@ -194,7 +194,7 @@
 		<xpath>/Defs/ThingDef[defName="Turret_MiniTurret"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_DefenseAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>0</automatedSpeedFactor>
 				<automatedPowerConsumption>50</automatedPowerConsumption>
 				<installWorkAmount>1500</installWorkAmount>
@@ -207,7 +207,7 @@
 		<xpath>/Defs/ThingDef[defName="Turret_Autocannon"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_DefenseAutomation">
-				<subcoreDef>SubcoreRegular</subcoreDef>
+				<tier>Regular</tier>
 				<automatedSpeedFactor>0</automatedSpeedFactor>
 				<automatedPowerConsumption>100</automatedPowerConsumption>
 				<installWorkAmount>3000</installWorkAmount>
@@ -220,7 +220,7 @@
 		<xpath>/Defs/ThingDef[defName="Turret_Sniper"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_DefenseAutomation">
-				<subcoreDef>SubcoreRegular</subcoreDef>
+				<tier>Regular</tier>
 				<automatedSpeedFactor>0</automatedSpeedFactor>
 				<automatedPowerConsumption>100</automatedPowerConsumption>
 				<installWorkAmount>3000</installWorkAmount>
@@ -246,7 +246,7 @@
 				<xpath>/Defs/ThingDef[defName="Turret_RocketswarmLauncher"]/comps</xpath>
 				<value>
 					<li Class="SubcoreAutomation.Core.CompProperties_DefenseAutomation">
-						<subcoreDef>SubcoreHigh</subcoreDef>
+						<tier>High</tier>
 						<automatedSpeedFactor>0</automatedSpeedFactor>
 						<automatedPowerConsumption>150</automatedPowerConsumption>
 						<installWorkAmount>4000</installWorkAmount>
@@ -266,7 +266,7 @@
 		<xpath>/Defs/ThingDef[defName="PowerSwitch"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_PowerAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>0</automatedSpeedFactor>
 				<automatedPowerConsumption>0</automatedPowerConsumption>
 				<installWorkAmount>500</installWorkAmount>
@@ -295,7 +295,7 @@
 				<xpath>/Defs/ThingDef[defName="GrowthVat"]/comps</xpath>
 				<value>
 					<li Class="SubcoreAutomation.Core.CompProperties_BiotechAutomation">
-						<subcoreDef>SubcoreHigh</subcoreDef>
+						<tier>High</tier>
 						<automatedSpeedFactor>1.0</automatedSpeedFactor>
 						<automatedPowerConsumption>200</automatedPowerConsumption>
 						<installWorkAmount>5000</installWorkAmount>
@@ -322,7 +322,7 @@
 				<xpath>/Defs/ThingDef[defName="BandNode"]/comps</xpath>
 				<value>
 					<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
-						<subcoreDef>SubcoreRegular</subcoreDef>
+						<tier>Regular</tier>
 						<automatedSpeedFactor>1.0</automatedSpeedFactor>
 						<automatedPowerConsumption>50</automatedPowerConsumption>
 						<installWorkAmount>2000</installWorkAmount>
@@ -350,7 +350,7 @@
 				<xpath>/Defs/ThingDef[defName="GeneExtractor"]/comps</xpath>
 				<value>
 					<li Class="SubcoreAutomation.Core.CompProperties_BiotechAutomation">
-						<subcoreDef>SubcoreHigh</subcoreDef>
+						<tier>High</tier>
 						<automatedSpeedFactor>1.0</automatedSpeedFactor>
 						<automatedPowerConsumption>150</automatedPowerConsumption>
 						<installWorkAmount>4000</installWorkAmount>
@@ -378,7 +378,7 @@
 				<xpath>/Defs/ThingDef[defName="SubcoreSoftscanner"]/comps</xpath>
 				<value>
 					<li Class="SubcoreAutomation.Core.CompProperties_BiotechAutomation">
-						<subcoreDef>SubcoreRegular</subcoreDef>
+						<tier>Regular</tier>
 						<automatedSpeedFactor>1.0</automatedSpeedFactor>
 						<automatedPowerConsumption>50</automatedPowerConsumption>
 						<installWorkAmount>2500</installWorkAmount>
@@ -390,30 +390,60 @@
 
 	<!-- Basic Mech Recharger: Add automation comp -->
 	<!-- With subcore: faster recharge, reduced wastepack production -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[defName="BasicRecharger"]/comps</xpath>
-		<value>
-			<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
-				<subcoreDef>SubcoreRegular</subcoreDef>
-				<automatedSpeedFactor>1.0</automatedSpeedFactor>
-				<automatedPowerConsumption>50</automatedPowerConsumption>
-				<installWorkAmount>2000</installWorkAmount>
+	<!-- Biotech-only building; sequence + success=Always so it silently no-ops without Biotech. -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="BasicRecharger"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="BasicRecharger"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
 			</li>
-		</value>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="BasicRecharger"]/comps</xpath>
+				<value>
+					<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
+						<tier>Regular</tier>
+						<automatedSpeedFactor>1.0</automatedSpeedFactor>
+						<automatedPowerConsumption>50</automatedPowerConsumption>
+						<installWorkAmount>2000</installWorkAmount>
+					</li>
+				</value>
+			</li>
+		</operations>
 	</Operation>
 
 	<!-- Large Mech Recharger: Add automation comp -->
 	<!-- With subcore: faster recharge, reduced wastepack production -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[defName="StandardRecharger"]/comps</xpath>
-		<value>
-			<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
-				<subcoreDef>SubcoreHigh</subcoreDef>
-				<automatedSpeedFactor>1.0</automatedSpeedFactor>
-				<automatedPowerConsumption>100</automatedPowerConsumption>
-				<installWorkAmount>3000</installWorkAmount>
+	<!-- Biotech-only building; sequence + success=Always so it silently no-ops without Biotech. -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="StandardRecharger"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="StandardRecharger"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
 			</li>
-		</value>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="StandardRecharger"]/comps</xpath>
+				<value>
+					<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
+						<tier>High</tier>
+						<automatedSpeedFactor>1.0</automatedSpeedFactor>
+						<automatedPowerConsumption>100</automatedPowerConsumption>
+						<installWorkAmount>3000</installWorkAmount>
+					</li>
+				</value>
+			</li>
+		</operations>
 	</Operation>
 
 	<!-- Subcore Ripscanner: Add automation comp -->
@@ -434,7 +464,7 @@
 				<xpath>/Defs/ThingDef[defName="SubcoreRipscanner"]/comps</xpath>
 				<value>
 					<li Class="SubcoreAutomation.Core.CompProperties_BiotechAutomation">
-						<subcoreDef>SubcoreHigh</subcoreDef>
+						<tier>High</tier>
 						<automatedSpeedFactor>1.0</automatedSpeedFactor>
 						<automatedPowerConsumption>100</automatedPowerConsumption>
 						<installWorkAmount>4000</installWorkAmount>
@@ -446,16 +476,31 @@
 
 	<!-- Mech Booster: Add automation comp -->
 	<!-- With subcore: extends command range, boosts combat mech stats -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[defName="MechBooster"]/comps</xpath>
-		<value>
-			<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
-				<subcoreDef>SubcoreHigh</subcoreDef>
-				<automatedSpeedFactor>1.0</automatedSpeedFactor>
-				<automatedPowerConsumption>100</automatedPowerConsumption>
-				<installWorkAmount>4000</installWorkAmount>
+	<!-- Biotech-only building; sequence + success=Always so it silently no-ops without Biotech. -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="MechBooster"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="MechBooster"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
 			</li>
-		</value>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="MechBooster"]/comps</xpath>
+				<value>
+					<li Class="SubcoreAutomation.Core.CompProperties_MechAutomation">
+						<tier>High</tier>
+						<automatedSpeedFactor>1.0</automatedSpeedFactor>
+						<automatedPowerConsumption>100</automatedPowerConsumption>
+						<installWorkAmount>4000</installWorkAmount>
+					</li>
+				</value>
+			</li>
+		</operations>
 	</Operation>
 
 	<!-- Hydroponics Basin: Add automation comp -->
@@ -465,7 +510,7 @@
 		<xpath>/Defs/ThingDef[defName="HydroponicsBasin"]/comps</xpath>
 		<value>
 			<li Class="SubcoreAutomation.Core.CompProperties_ProductionAutomation">
-				<subcoreDef>SubcoreBasic</subcoreDef>
+				<tier>Basic</tier>
 				<automatedSpeedFactor>1.0</automatedSpeedFactor>
 				<automatedPowerConsumption>30</automatedPowerConsumption>
 				<installWorkAmount>2000</installWorkAmount>

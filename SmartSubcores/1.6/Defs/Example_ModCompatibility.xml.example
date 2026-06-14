@@ -62,7 +62,7 @@
 						<xpath>/Defs/ThingDef[defName="MyMod_AdvancedDrill"]/comps</xpath>
 						<value>
 							<li Class="SubcoreAutomation.Core.CompProperties_SubcoreAutomation">
-								<subcoreDef>SubcoreRegular</subcoreDef>
+								<tier>Regular</tier>
 								<automatedSpeedFactor>0.6</automatedSpeedFactor>
 								<automatedPowerConsumption>200</automatedPowerConsumption>
 								<installWorkAmount>3000</installWorkAmount>

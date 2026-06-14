@@ -14,7 +14,7 @@
 			<xpath>/Defs/ThingDef[defName="VitalsMonitor"]/comps</xpath>
 			<value>
 				<li Class="SubcoreAutomation.Core.CompProperties_UtilityAutomation">
-					<subcoreDef>SubcoreHigh</subcoreDef>
+					<tier>High</tier>
 					<automatedSpeedFactor>0</automatedSpeedFactor>
 					<automatedPowerConsumption>0</automatedPowerConsumption>
 					<installWorkAmount>2500</installWorkAmount>

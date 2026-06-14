@@ -49,11 +49,11 @@ namespace SubcoreAutomation.Jobs
 			// Fallback mode: check if materials are available
 			if (SubcoreFallback.IsActive)
 			{
-				return SubcoreFallback.HasEnoughMaterials(t.Map, comp.Props.subcoreDef);
+				return SubcoreFallback.HasEnoughMaterials(t.Map, comp.Props.tier);
 			}
 
 			// Normal mode: check if there's a subcore available
-			Thing subcore = comp.FindSubcoreOnMap(comp.Props.subcoreDef);
+			Thing subcore = comp.FindSubcoreOnMap(comp.Props.SubcoreDef);
 			if (subcore == null)
 				return false;
 
@@ -72,7 +72,7 @@ namespace SubcoreAutomation.Jobs
 			// Fallback mode: find materials and create job with hauling
 			if (SubcoreFallback.IsActive)
 			{
-				var materials = SubcoreFallback.FindMaterialsOnMap(t.Map, comp.Props.subcoreDef, pawn);
+				var materials = SubcoreFallback.FindMaterialsOnMap(t.Map, comp.Props.tier, pawn);
 				if (materials == null || materials.Count == 0)
 					return null;
 
@@ -90,7 +90,7 @@ namespace SubcoreAutomation.Jobs
 			}
 
 			// Normal mode: haul subcore to building
-			Thing subcore = comp.FindSubcoreOnMap(comp.Props.subcoreDef);
+			Thing subcore = comp.FindSubcoreOnMap(comp.Props.SubcoreDef);
 			if (subcore == null)
 				return null;
 

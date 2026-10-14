@@ -41,9 +41,9 @@ namespace SyncGrowth.Patches
 					}
 				}
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 	}

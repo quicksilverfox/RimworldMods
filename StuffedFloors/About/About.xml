@@ -36,6 +36,7 @@ While this mod will happily generate more floors for any mods that add materials
     <supportedVersions>
         <li>1.5</li>
         <li>1.6</li>
+        <li>1.7</li>
     </supportedVersions>
     <modDependencies>
         <li>

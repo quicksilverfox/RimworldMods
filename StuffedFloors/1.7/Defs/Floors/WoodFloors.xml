@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <StuffedFloors.FloorTypeDef Name="StuffedFloorsWoodBase" ParentName="StuffedFloorsBase" Abstract="True">
+        <stuffCategories>
+            <li>Woody</li>
+        </stuffCategories>
+		<burnedDef>BurnedWoodPlankFloor</burnedDef>
+    </StuffedFloors.FloorTypeDef>
+
+    <StuffedFloors.FloorTypeDef Name="StuffedFloorsWoodBasicBase" ParentName="StuffedFloorsWoodBase" Abstract="True">
+        <statBases>
+            <Beauty>0</Beauty>
+            <WorkToBuild>250</WorkToBuild>
+			<Flammability>0.25</Flammability>
+        </statBases>
+        <stuffCost>3</stuffCost>
+        <tags>
+            <li>Floor</li>
+        </tags>
+    </StuffedFloors.FloorTypeDef>
+
+    <StuffedFloors.FloorTypeDef Name="StuffedFloorsWoodPrettyBase" ParentName="StuffedFloorsWoodBase" Abstract="True">
+        <statBases>
+            <Beauty>2</Beauty>
+            <WorkToBuild>400</WorkToBuild>
+			<Flammability>0.20</Flammability>
+        </statBases>
+        <stuffCost>5</stuffCost>
+        <tags>
+            <li>Floor</li>
+            <li>FineFloor</li>
+        </tags>
+    </StuffedFloors.FloorTypeDef>
+	
+	<StuffedFloors.FloorTypeDef Name="StuffedFloorsWoodRoyalBase" ParentName="StuffedFloorsWoodBase" Abstract="True">
+		<statBases>
+			<Beauty>5</Beauty>
+			<WorkToBuild>800</WorkToBuild> <!-- was 1000 -->
+			<Flammability>0.15</Flammability>
+		</statBases>
+		<stuffCost>10</stuffCost>
+		<tags>
+			<li>Floor</li>
+			<li>FineFloor</li>
+		</tags>
+	</StuffedFloors.FloorTypeDef>
+	
+	<!-- Vanilla -->
+	<StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodBasicBase">
+    	<defName>StuffedWoodFloorVanilla</defName>
+    	<label>basic planks</label>
+    	<description>Wood plank flooring for that warm, homey feeling. While it is quick to lay, it is also very flammable.</description>
+        <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+        <!-- this is the vanilla floor texture, lots of obsoletions -->
+        <obsoletes>
+             <!-- vanilla wood plank -->
+            <li>WoodPlankFloor</li>                     
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>
+
+    <!-- Floors and Fences -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodBasicBase">
+    	<defName>StuffedPlywoodFloor</defName>
+    	<label>plywood boards</label>
+    	<description>Rough plywood boards, cheap and quick to build, but quite ugly.</description>
+        <texturePath>Floors/Wood/FloorPlywood</texturePath>
+        <obsoletes>
+            <li>FAFWoodTile</li>
+        </obsoletes>
+        <statBases>
+            <Beauty>-1</Beauty>
+            <WorkToBuild>75</WorkToBuild>
+        </statBases>
+        <stuffCost>2</stuffCost>
+    </StuffedFloors.FloorTypeDef>   
+    
+    <!-- [T] More Floors -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodBasicBase">
+    	<defName>StuffedWoodFloorRough</defName>
+    	<label>rough vertical planks</label>
+    	<description>A rough plank flooring.</description>
+        <texturePath>Floors/Wood/WoodFloor6</texturePath>
+        <obsoletes>
+            <li>FloorWood5</li>
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>   
+
+    <!-- [T] More Floors -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodBasicBase">
+    	<defName>StuffedWoodFloorBasic</defName>
+    	<label>vertical planks</label>
+    	<description>A basic plank flooring.</description>
+        <texturePath>Floors/Wood/WoodFloor1</texturePath>
+        <!-- this is the vanilla floor texture, lots of obsoletions -->
+        <obsoletes>
+            <!-- extended woodworking -->
+            <li>WoodPlankFloor_Oak</li>
+            <li>WoodPlankFloor_Poplar</li>
+            <li>WoodPlankFloor_Pine</li>
+            <li>WoodPlankFloor_Birch</li>
+            <li>WoodPlankFloor_Cecropia</li>
+            <li>WoodPlankFloor_Teak</li>
+            <li>WoodPlankFloor_Red</li>
+            <li>WoodPlankFloor_Green</li>
+            <li>WoodPlankFloor_Blue</li>
+            <li>WoodPlankFloor_Yellow</li>
+            <li>WoodPlankFloor_White</li>
+            <li>WoodPlankFloor_Black</li>
+
+            <!-- Minerals and Materials -->
+            <li>WoodPlankDark</li>
+            <li>WoodPlankLight</li>
+            <li>WoodPlankRose</li>
+            <li>WoodPlankWalnut</li>
+
+            <!-- Vegetable Garden -->
+            <li>IronwoodFloor</li>
+
+            <!-- extended woodworking + Veg Garden -->
+            <li>WoodPlankFloor_WeepingWillow</li>
+			<li>WoodPlankFloor_JapaneseMaple</li>
+			<li>WoodPlankFloor_CherryBlossom</li>
+			<li>WoodPlankFloor_Camellia</li>
+			<li>WoodPlankFloor_Acacia</li>
+			<li>WoodPlankFloor_Palm</li>
+			<li>WoodPlankFloor_RedMaple</li>                      
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>
+	
+    <!-- [T] More Floors -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodBasicBase">
+    	<defName>StuffedWoodFloorRoughHorizontal</defName>
+    	<label>rough horizontal planks</label>
+    	<description>A rough plank flooring.</description>
+        <texturePath>Floors/Wood/WoodFloor2</texturePath>
+        <obsoletes>
+            <li>FloorWood1</li>
+            <li>FloorWoodRustic</li>
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>
+    
+    <!-- [T] More Floors -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodBasicBase">
+    	<defName>StuffedWoodFloorHorizontal</defName>
+    	<label>horizontal planks</label>
+    	<description>A basic plank flooring.</description>
+        <texturePath>Floors/Wood/WoodFloor3</texturePath>
+        <obsoletes>
+            <li>FloorWood2</li>
+            <li>FloorWoodWide</li>
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>
+    
+    <!-- [T] More Floors -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodPrettyBase">
+    	<defName>StuffedWoodFloorRustic</defName>
+    	<label>rustic planks</label>
+    	<description>A rustic, beautiful plank flooring.</description>
+        <texturePath>Floors/Wood/WoodFloor7</texturePath>
+        <obsoletes>
+            <li>FloorWood6</li>
+            <li>FloorWoodBarn</li>
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>
+    
+    <!-- [T] More Floors -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodPrettyBase">
+    	<defName>StuffedWoodFloorParquetHorizontal</defName>
+    	<label>horizontal parquet</label>
+    	<description>A pretty interwoven parquet.</description>
+        <texturePath>Floors/Wood/WoodFloor4</texturePath>
+        <obsoletes>
+            <li>FloorWood3</li>
+            <li>FloorWoodLight</li>
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef>
+    
+    <!-- [T] More Floors -->
+    <StuffedFloors.FloorTypeDef ParentName="StuffedFloorsWoodPrettyBase">
+    	<defName>StuffedWoodFloorParquetMosaic</defName>
+    	<label>mosaic parquet</label>
+    	<description>An intricate mosaic parquet.</description>
+        <texturePath>Floors/Wood/WoodFloor5</texturePath>
+        <obsoletes>
+            <li>FloorWood4</li>
+            <li>FloorWoodMosaic</li>
+        </obsoletes>
+    </StuffedFloors.FloorTypeDef> 
+</Defs>

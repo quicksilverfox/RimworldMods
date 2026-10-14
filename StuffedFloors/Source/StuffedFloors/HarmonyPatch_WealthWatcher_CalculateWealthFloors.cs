@@ -19,12 +19,17 @@ namespace StuffedFloors {
      * map isn't _that_ expensive, so the below approach is simplified.
      *
      *      - Fluffy.
+     *
+     * Since 1.6 vanilla also counts the foundation layer (gravship substructure etc.), and the
+     * top grid may contain nulls; mirror that here.
      */
     [HarmonyPatch(typeof(WealthWatcher), "CalculateWealthFloors")]
     public class HarmonyPatch_WealthWatcher_CalculateWealthFloors {
         public static bool Prefix(Map ___map, ref float __result) {
-            TerrainDef[] terrainGrid = ___map.terrainGrid.topGrid;
-            int n = terrainGrid.Length;
+            TerrainDef[] topGrid = ___map.terrainGrid.topGrid;
+            TerrainDef[] foundationGrid = ___map.terrainGrid.foundationGrid;
+            FogGrid fogGrid = ___map.fogGrid;
+            int n = topGrid.Length;
 
             Dictionary<TerrainDef, int> counts = new();
             float total = 0f;
@@ -32,9 +37,13 @@ namespace StuffedFloors {
             // note that an argument for checking for ownership could be made, but that doesn't
             // exist for floors, so it's a moot point.
             for (int i = 0; i < n; i++) {
-                if (!___map.fogGrid.IsFogged(i)) {
-                    TerrainDef terrainDef = terrainGrid[i];
-                    counts[terrainDef] = counts.GetValueSafe(terrainDef) + 1;
+                TerrainDef top = topGrid[i];
+                if (top != null && !fogGrid.IsFogged(i)) {
+                    counts[top] = counts.GetValueSafe(top) + 1;
+                }
+                TerrainDef foundation = foundationGrid?[i];
+                if (foundation != null) {
+                    counts[foundation] = counts.GetValueSafe(foundation) + 1;
                 }
             }
 

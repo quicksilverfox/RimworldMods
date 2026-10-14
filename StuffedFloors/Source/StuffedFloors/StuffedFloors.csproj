@@ -1,40 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net481</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <RootNamespace>StuffedFloors</RootNamespace>
+        <AssemblyName>StuffedFloors</AssemblyName>
         <AssemblyTitle>StuffedFloors</AssemblyTitle>
         <Product>StuffedFloors</Product>
         <Copyright>Copyright © 2016-2021</Copyright>
-        <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+
+        <!-- Output straight into the mod's versioned Assemblies folder, nothing but the mod DLL -->
+        <OutputPath>..\..\1.7\Assemblies\</OutputPath>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+        <GenerateDependencyFile>false</GenerateDependencyFile>
+        <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
         <DebugType>portable</DebugType>
-        <LangVersion>9</LangVersion>
-        <BaseOutputPath>..\..\1.6\Assemblies\</BaseOutputPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-      <DefineConstants>$(DefineConstants);TRACE;DEBUG;</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-      <DebugType>portable</DebugType>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-      <DebugType>portable</DebugType>
+        <DefineConstants>$(DefineConstants);TRACE;DEBUG;</DefineConstants>
     </PropertyGroup>
     <ItemGroup>
-      <Reference Include="0Harmony">
-        <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\workshop\content\294100\2009463077\1.5\Assemblies\0Harmony.dll</HintPath>
-		<Private>false</Private>
-      </Reference>
-      <Reference Include="Assembly-CSharp">
-        <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-		<Private>false</Private>
-      </Reference>
-      <Reference Include="UnityEngine">
-        <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
-		<Private>false</Private>
-      </Reference>
-      <Reference Include="UnityEngine.CoreModule">
-        <HintPath>..\..\..\..\..\..\Games\SteamLibrary\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-		<Private>false</Private>
-      </Reference>
+        <!-- Reference-only packages: the game and the Harmony mod provide these assemblies at runtime -->
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4977-alpha.1" ExcludeAssets="runtime" />
+        <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime" />
     </ItemGroup>
 </Project>

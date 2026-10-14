@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Ideology</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/MemeDef[defName="Transhumanist"]/addDesignators/li[text()="Tile_Transhumanist"]</xpath>
+					<match Class="PatchOperationRemove">
+						<xpath>Defs/MemeDef[defName="Transhumanist"]/addDesignators/li[text()="Tile_Transhumanist"]</xpath>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/StyleCategoryDef[defName="Spikecore"]/addDesignators/li[text()="Plates_Spikecore"]</xpath>
+					<match Class="PatchOperationRemove">
+						<xpath>Defs/StyleCategoryDef[defName="Spikecore"]/addDesignators/li[text()="Plates_Spikecore"]</xpath>
+					</match>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/StyleCategoryDef[defName="Totemic"]/addDesignators/li[text()="Boards_Totemic"]</xpath>
+					<match Class="PatchOperationRemove">
+						<xpath>Defs/StyleCategoryDef[defName="Totemic"]/addDesignators/li[text()="Boards_Totemic"]</xpath>
+					</match>
+				</li>
+
+				<!-- Defs themselves are in defs -->		
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/MemeDef[defName="Transhumanist"]/addDesignatorGroups</xpath>
+					<value>
+						<li>StuffedTechistMetalTile</li>
+					</value>		
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/StyleCategoryDef[defName="Spikecore"]/addDesignatorGroups</xpath>
+					<value>
+						<li>StuffedSpikecoreMetalPlates</li>
+					</value>		
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/StyleCategoryDef[defName="Totemic"]/addDesignatorGroups</xpath>
+					<value>
+						<li>StuffedTotemicWoodBoards</li>
+					</value>		
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StyleCategoryDef[defName="Morbid"]/addDesignatorGroups/li[text()="Floor_Morbid_Stone"]</xpath>
+					<value>
+						<li>StuffedMorbidStoneTile</li>
+					</value>		
+				</li>		
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StyleCategoryDef[defName="Spikecore"]/addDesignatorGroups/li[text()="Floor_Spikecore_Tile"]</xpath>
+					<value>
+						<li>StuffedSpikecoreStoneTile</li>
+					</value>		
+				</li>		
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StyleCategoryDef[defName="Totemic"]/addDesignatorGroups/li[text()="Floor_Totemic_Tile"]</xpath>
+					<value>
+						<li>StuffedTotemicStoneTiles</li>
+					</value>		
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>

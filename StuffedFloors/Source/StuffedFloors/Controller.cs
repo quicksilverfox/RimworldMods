@@ -57,6 +57,9 @@ namespace StuffedFloors {
             }
         }
 
+        // every terrain generated from a FloorTypeDef (see TerrainShortHashes)
+        public static readonly HashSet<TerrainDef> GeneratedTerrains = new();
+
         private static readonly Dictionary<StuffCategoryDef, List<ThingDef>> _stuffCache = new Dictionary<StuffCategoryDef, List<ThingDef>>();
 
         public static List<ThingDef> GetStuffDefsFor(List<StuffCategoryDef> stuffCategoryDefs) {

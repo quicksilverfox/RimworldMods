@@ -149,7 +149,42 @@ namespace StuffedFloors {
                 traversedThought = traversedThought,
                 waterDepthMaterial = waterDepthMaterial,
                 waterDepthShader = waterDepthShader,
-                waterDepthShaderParameters = waterDepthShaderParameters.NullOrEmpty() ? new () : new (waterDepthShaderParameters)
+                waterDepthShaderParameters = waterDepthShaderParameters.NullOrEmpty() ? new () : new (waterDepthShaderParameters),
+
+                // fields added in RimWorld 1.5 - 1.7 (Biotech pollution, Odyssey terraforming/vacuum/gravships, floor painting)
+                canBePolluted = canBePolluted,
+                canEverTerraform = canEverTerraform,
+                canFreeze = canFreeze,
+                categoryType = categoryType,
+                colorDef = colorDef,
+                cropIcon = cropIcon,
+                customShader = customShader,
+                customShaderParameters = customShaderParameters.NullOrEmpty() ? null : new(customShaderParameters),
+                dangerous = dangerous,
+                discoveryPrerequisites = discoveryPrerequisites.DeepCopy(),
+                dontRender = dontRender,
+                drawStyleCategory = drawStyleCategory,
+                exposesToVacuum = exposesToVacuum,
+                forceMoveItemsBeforeConstruction = forceMoveItemsBeforeConstruction,
+                forcePassableByFlyingPawns = forcePassableByFlyingPawns,
+                gravshipReplacementTerrain = gravshipReplacementTerrain,
+                ideoBuilding = ideoBuilding,
+                isPaintable = isPaintable,
+                minMonolithLevel = minMonolithLevel,
+                natural = natural,
+                pollutedTexturePath = pollutedTexturePath,
+                pollutionCloudColor = pollutionCloudColor,
+                pollutionColor = pollutionColor,
+                pollutionOverlayScale = pollutionOverlayScale,
+                pollutionOverlayScrollSpeed = pollutionOverlayScrollSpeed,
+                pollutionOverlayTexturePath = pollutionOverlayTexturePath,
+                pollutionShaderType = pollutionShaderType,
+                pollutionTintColor = pollutionTintColor,
+                requireInspectedGravEngine = requireInspectedGravEngine,
+                supportsRock = supportsRock,
+                toxicBuildupFactor = toxicBuildupFactor,
+                uiIconPath = uiIconPath,
+                uiOrder = uiOrder
             };
 
             if (stuffCost > 0) {

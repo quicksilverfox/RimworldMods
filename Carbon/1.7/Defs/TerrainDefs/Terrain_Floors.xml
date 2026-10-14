@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<TerrainDef ParentName="FloorBase">
+		<defName>CarbonTile</defName>
+		<label>carbon tile</label>
+		<description>Carbon fiber composite tiles for that stylish urbworld look. Very easy to assemble and to keep clean.</description>
+		<texturePath>Terrain/Surfaces/CarbonTileGrained</texturePath>
+		<edgeType>Hard</edgeType>
+		<renderPrecedence>230</renderPrecedence>
+		<statBases>
+			<Cleanliness>0.2</Cleanliness>
+			<WorkToBuild>100</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>3</Beauty>
+			<CleaningTimeFactor>0.6</CleaningTimeFactor>
+		</statBases>
+		<costList>
+			<CarbonFiber>4</CarbonFiber>
+		</costList>
+		<researchPrerequisites>
+			<li>CarbonResearch</li>
+		</researchPrerequisites>
+		<constructEffect>ConstructWood</constructEffect>
+		<tags>
+			<li>FineFloor</li>
+		</tags>
+		<uiOrder>2045</uiOrder>
+	</TerrainDef>
+
+	<!-- C-weave carpets. Built like the Orassans exclusive carpets: standalone TerrainDefs reusing vanilla textures with a fixed tint. They are separate buttons placed right after the matching carpet palette (uiOrder), because the game appends generated color carpets after all XML defs, so an XML def can never be last inside a palette grid. Not paintable: the inert weave takes no dye. -->
+	<TerrainDef ParentName="FloorBase" Name="CarbonCarpetBase" Abstract="True">
+		<color>(50,50,50)</color>
+		<statBases>
+			<Beauty>2</Beauty>
+			<Flammability>0</Flammability>
+			<WorkToBuild>800</WorkToBuild>
+			<CleaningTimeFactor>1</CleaningTimeFactor>
+		</statBases>
+		<costList>
+			<CarbonWeave>7</CarbonWeave>
+		</costList>
+		<researchPrerequisites>
+			<li>CarpetMaking</li>
+			<li>CarbonResearch</li>
+		</researchPrerequisites>
+	</TerrainDef>
+
+	<!-- Available to everyone; button right after the vanilla carpet palette (2100). -->
+	<TerrainDef ParentName="CarbonCarpetBase">
+		<defName>CarbonCarpet</defName>
+		<label>c-weave carpet</label>
+		<description>An unconventional carpet: a sheet of silky-smooth carbon weave over a layer of soft padding. It comes only in solid dark grey, since the chemically inert weave takes neither dye nor paint. It never burns, nothing soaks into it, and it wipes clean far more easily than a fiber carpet.</description>
+		<texturePath>Terrain/Surfaces/Carpet</texturePath>
+		<renderPrecedence>190</renderPrecedence>
+		<uiOrder>2101</uiOrder>
+	</TerrainDef>
+
+	<!-- Ideology only: hex-patterned variant shown only to ideoligions with the Techist style (same gating as the vanilla hex tile). Added to the Techist style's addDesignators by Patches/Ideology/StyleCategory_Techist.xml; button right after the hex carpet palette (2115). -->
+	<TerrainDef ParentName="CarbonCarpetBase" MayRequire="Ludeon.RimWorld.Ideology">
+		<defName>CarbonCarpetHex</defName>
+		<label>c-weave hex carpet</label>
+		<description>An unconventional carpet: a sheet of silky-smooth carbon weave embossed with a hexagonal pattern, over a layer of soft padding. It comes only in solid dark grey, since the chemically inert weave takes neither dye nor paint. It never burns, nothing soaks into it, and it wipes clean far more easily than a fiber carpet.</description>
+		<texturePath>Terrain/Surfaces/HexCarpet</texturePath>
+		<renderPrecedence>189</renderPrecedence>
+		<canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+		<dominantStyleCategory>Techist</dominantStyleCategory>
+		<statBases>
+			<StyleDominance>1</StyleDominance>
+		</statBases>
+		<uiOrder>2116</uiOrder>
+	</TerrainDef>
+
+</Defs>

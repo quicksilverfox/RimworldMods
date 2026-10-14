@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="ApparelMakeableBase" or @Name="ArmorSmithableBase" or @Name="ArmorMachineableBase"]/recipeMaker/defaultIngredientFilter/disallowedThingDefs</xpath>
+		<value>
+			<li>CarbonDiamond</li>
+		</value>
+	</Operation>
+
+</Patch>

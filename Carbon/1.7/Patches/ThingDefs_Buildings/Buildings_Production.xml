@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="BiofuelRefinery"]/recipes</xpath>
+		<value>
+			<li>Carbon_MakeChemfuelFromHaygrass</li>
+			<li>Carbon_MakeCarbonWeave</li>
+			<li>Carbon_MakeCarbonFiber</li>
+			<li>Carbon_MakeDiamond</li>
+		</value>
+	</Operation>
+
+</Patch>

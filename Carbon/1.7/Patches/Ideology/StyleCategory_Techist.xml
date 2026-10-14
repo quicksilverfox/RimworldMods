@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<!-- Show the Techist-gated c-weave hex carpet alongside the other Techist floors (same mechanism as the vanilla hex tile). -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Ideology</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/StyleCategoryDef[defName="Techist"]/addDesignators</xpath>
+			<value>
+				<li>CarbonCarpetHex</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

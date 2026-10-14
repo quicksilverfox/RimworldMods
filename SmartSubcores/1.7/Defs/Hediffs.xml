@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Applied to friendly mechs in range of a subcore-enhanced Mech Booster. -->
+	<!-- Severity = combat bonus (0.05 - 0.50, slider-driven). Stages step every 5%. -->
+	<!-- Auto-decays after 180 ticks (3s) without a refresh. -->
+	<HediffDef>
+		<defName>SubcoreAutomation_MechBoosterBoost</defName>
+		<label>tactical relay</label>
+		<labelNoun>a tactical relay link</labelNoun>
+		<description>The subcore-enhanced mech booster is feeding this mech high-bandwidth tactical data, sharply improving aim, reaction time, and combat coordination.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.4, 0.9, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>180</disappearsAfterTicks>
+				<showRemainingTime>false</showRemainingTime>
+			</li>
+		</comps>
+		<!-- Single fixed-strength stage. Severity unused for stat scaling. -->
+		<!-- Numbers tuned for vanilla mechs (base shooting ~5-8, no dodge). -->
+		<stages>
+			<li>
+				<statOffsets>
+					<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+					<AimingDelayFactor>-0.15</AimingDelayFactor>
+					<MeleeHitChance>5</MeleeHitChance>
+					<MeleeDodgeChance>5</MeleeDodgeChance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

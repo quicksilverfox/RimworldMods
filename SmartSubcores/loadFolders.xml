@@ -7,4 +7,11 @@
 		<li IfModActive="VanillaExpanded.VNutrientE">1.6/Mods/VNPE</li>
 		<li IfModActive="als.biotechgravship">1.6/Mods/BiotechGravship</li>
 	</v1.6>
+	<v1.7>
+		<li>/</li>
+		<li>1.7</li>
+		<li IfModActive="tachyonite.pawnmorpherpublic">1.7/Mods/Pawnmorpher</li>
+		<li IfModActive="VanillaExpanded.VNutrientE">1.7/Mods/VNPE</li>
+		<li IfModActive="als.biotechgravship">1.7/Mods/BiotechGravship</li>
+	</v1.7>
 </loadFolders>

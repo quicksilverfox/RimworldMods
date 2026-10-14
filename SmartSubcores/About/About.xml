@@ -5,6 +5,7 @@
 	<packageId>Oblitus.SubcoreAutomation</packageId>
 	<supportedVersions>
 		<li>1.6</li>
+		<li>1.7</li>
 	</supportedVersions>
 	<description>Install mechanoid subcores into buildings for verious improvements.
 

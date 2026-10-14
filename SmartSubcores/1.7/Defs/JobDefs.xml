@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<JobDef>
+		<defName>SubcoreAutomation_InstallSubcore</defName>
+		<driverClass>SubcoreAutomation.Jobs.JobDriver_InstallSubcore</driverClass>
+		<reportString>SubcoreAutomation_InstallingSubcore</reportString>
+		<playerInterruptible>true</playerInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>SubcoreAutomation_InstallFallback</defName>
+		<driverClass>SubcoreAutomation.Jobs.JobDriver_InstallFallback</driverClass>
+		<reportString>SubcoreAutomation_InstallingSubcore</reportString>
+		<playerInterruptible>true</playerInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>SubcoreAutomation_RemoveSubcore</defName>
+		<driverClass>SubcoreAutomation.Jobs.JobDriver_RemoveSubcore</driverClass>
+		<reportString>SubcoreAutomation_RemovingSubcore</reportString>
+		<playerInterruptible>true</playerInterruptible>
+	</JobDef>
+</Defs>

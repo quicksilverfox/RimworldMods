@@ -26,7 +26,6 @@ namespace SubcoreAutomation.Patches
 
 		// Repair every 60 ticks (1 second in-game)
 		private const int RepairIntervalTicks = 60;
-		private const int RepairDelta = 1;
 
 		// Check for downed mechs at interaction cell every 120 ticks
 		private const int DownedMechCheckInterval = 120;
@@ -323,7 +322,7 @@ namespace SubcoreAutomation.Patches
 			{
 				if (MechRepairUtility.CanRepair(mech))
 				{
-					MechRepairUtility.RepairTick(mech, RepairDelta);
+					MechRepairUtility.RepairTick(mech);
 				}
 			}
 
@@ -645,7 +644,7 @@ namespace SubcoreAutomation.Patches
 				{
 					if (MechRepairUtility.CanRepair(chargingMech))
 					{
-						MechRepairUtility.RepairTick(chargingMech, RepairDelta);
+						MechRepairUtility.RepairTick(chargingMech);
 					}
 				}
 			}

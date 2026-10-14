@@ -22,6 +22,10 @@ namespace RimWorld
             {
                 return ThinkResult.NoJob;
             }
+            if (pawn.RaceProps.Humanlike && pawn.health.hediffSet.InLabor()) // 1.7 vanilla check; only relevant for Pawnmorpher former humans
+            {
+                return ThinkResult.NoJob;
+            }
 
             if (emergency && pawn.mindState.priorityWork.IsPrioritized)
             {
@@ -87,6 +91,9 @@ namespace RimWorld
                         {
                             Predicate<Thing> validator = (Thing t) => !t.IsForbidden(pawn) && scanner.HasJobOnThing(pawn, t);
                             IEnumerable<Thing> enumerable = scanner.PotentialWorkThingsGlobal(pawn);
+                            // 1.7: a thing the pawn is already carrying is a valid (and preferred) target
+                            Thing carried = pawn.carryTracker?.CarriedThing;
+                            bool carriedIsTarget = carried != null && scanner.PotentialWorkThingRequest.Accepts(carried) && validator(carried);
                             Thing thing;
                             if (scanner.Prioritized)
                             {
@@ -96,6 +103,14 @@ namespace RimWorld
                                     enumerable2 = pawn.Map.listerThings.ThingsMatching(scanner.PotentialWorkThingRequest);
                                 }
                                 thing = ((!scanner.AllowUnreachable) ? GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, enumerable2, scanner.PathEndMode, TraverseParms.For(pawn, scanner.MaxPathDanger(pawn)), 9999f, validator, (Thing x) => scanner.GetPriority(pawn, x)) : GenClosest.ClosestThing_Global(pawn.Position, enumerable2, 99999f, validator, (Thing x) => scanner.GetPriority(pawn, x)));
+                                if (carriedIsTarget && (thing == null || scanner.GetPriority(pawn, carried) >= scanner.GetPriority(pawn, thing)))
+                                {
+                                    thing = carried;
+                                }
+                            }
+                            else if (carriedIsTarget)
+                            {
+                                thing = carried;
                             }
                             else if (scanner.AllowUnreachable)
                             {

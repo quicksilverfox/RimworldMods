@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    Custom tail gene for the nekomata xenotype: the housekeeper cat's signature twin tails.
+    Reuses the mod's own art (Textures/Parts/Nekomata/Nekomata_Tail_*), so no Pawnmorpher
+    dependency. Structure copied from vanilla Tail_Furry; the cold-resistance stat offset is
+    replaced with +1 Beauty.
+  -->
+  <GeneDef ParentName="GeneTailBase">
+    <defName>HKCat_TailNekomata</defName>
+    <label>twin tails</label>
+    <description>Carriers of this gene grow a pair of long, fluffy tails - the unmistakable mark of a nekomata.</description>
+    <iconPath>UI/Icons/Genes/Gene_TailFurry</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <displayOrderInCategory>1000</displayOrderInCategory>
+    <statOffsets>
+      <Beauty>1</Beauty>
+    </statOffsets>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <renderNodeProperties>
+      <li>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPath>Parts/Nekomata/Nekomata_Tail_Biotech</texPath>
+        <colorType>Hair</colorType>
+        <overrideMeshSize>(1, 1)</overrideMeshSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+          <defaultData>
+            <layer>-2</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0.1, 0.2, -0.25)</offset>
+            <layer>90</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(-0.1, -0.1, -0.25)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(-0.5, -0.1, -0.15)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(0.5, -0.1, -0.15)</offset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+</Defs>

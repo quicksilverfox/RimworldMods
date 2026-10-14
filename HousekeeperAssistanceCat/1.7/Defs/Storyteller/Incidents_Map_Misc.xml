@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IncidentDef>
+		<defName>HousekeeperCatWanderIn</defName>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<label>Housekeeper cat wanders in</label>
+		<category>Misc</category>
+		<workerClass>HousekeeperCat.IncidentWorker_HousekeeperCatWander</workerClass>
+		<baseChance>0.4</baseChance>
+		<minRefireDays>30</minRefireDays>
+	</IncidentDef>
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>A Dog Said... Animal Prosthetics</li>
+		</mods>
+
+		<match Class="PatchOperationAdd">
+			<success>Always</success>
+			<xpath>Defs/RecipeDef[@Name="OldWoundsAnimal" or @ParentName="LegBaseAnimal" or @ParentName="SimpleLegBaseAnimal" or @ParentName="BionicLegBaseAnimal" or @ParentName="SurgeryFleshAnimal"]/recipeUsers</xpath>
+			<value>
+				<li>HousekeeperCat</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThinkTreeDef>
+		<defName>HousekeeperCat</defName>
+		<insertTag>Animal_PreWander</insertTag>
+		<insertPriority>1</insertPriority>
+		
+		<thinkRoot Class="ThinkNode_ConditionalHasFaction">
+			<subNodes>
+				<li Class="ThinkNode_ConditionalPawnKind">
+					<pawnKind>HousekeeperCat</pawnKind>
+					<subNodes>
+						<li Class="ThinkNode_ConditionalTrainableCompleted">
+							<trainable>Obedience</trainable>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="JobGiver_HousekeeperCat" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+
+</Defs>

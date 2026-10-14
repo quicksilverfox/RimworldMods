@@ -34,4 +34,10 @@
 		<li IfModActive="tachyonite.pawnmorpherpublic">Pawnmorpher/1.6</li>
 		<li IfModActive="Ludeon.RimWorld.Biotech">Biotech/1.6</li>
 	</v1.6>
+	<v1.7>
+		<li>/</li>
+		<li>1.7</li>
+		<li IfModActive="tachyonite.pawnmorpherpublic">Pawnmorpher/1.7</li>
+		<li IfModActive="Ludeon.RimWorld.Biotech">Biotech/1.7</li>
+	</v1.7>
 </loadFolders>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    Carries an awakened housekeeper cat's animal bond over into its humanlike life. Applied by
+    SentienceConversion.cs to whoever the cat was bonded to. reflexive + opinionOffset 50 =>
+    permanent mutual +50 opinion, the same magnitude as the vanilla animal Bond relation.
+  -->
+  <PawnRelationDef>
+    <defName>HKCat_Bonded</defName>
+    <label>bonded</label>
+    <importance>85</importance>
+    <opinionOffset>50</opinionOffset>
+    <implied>false</implied>
+    <reflexive>true</reflexive>
+  </PawnRelationDef>
+
+</Defs>

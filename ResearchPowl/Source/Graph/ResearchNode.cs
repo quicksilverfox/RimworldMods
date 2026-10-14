@@ -691,7 +691,7 @@ namespace ResearchPowl
 			if (!MainTabWindow_ResearchTree.Instance.IsDraggingNode())
 			{
 				MouseoverSounds.DoRegion(_rect, SoundDefOf.Mouseover_Standard);
-				if (GUI.Button(_rect, GUIContent.Temp(""), Widgets.EmptyStyle))
+				if (GUI.Button(_rect, "", Widgets.EmptyStyle))
 				{
 					if (Event.current.button == 0) LeftClick();
 					else if (Event.current.button == 1) RightClick();

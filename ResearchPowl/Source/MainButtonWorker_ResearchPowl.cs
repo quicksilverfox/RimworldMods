@@ -15,7 +15,7 @@ namespace ResearchPowl
             var numQueued = Queue._instance._queue.Count - 1;
             if ( numQueued > 0 )
             {
-                var queueRect = new Rect(rect.xMax - Constants.SmallQueueLabelSize - Constants.Margin, rect.m_YMin + (rect.m_Height - Constants.SmallQueueLabelSize) / 2f, Constants.SmallQueueLabelSize, Constants.SmallQueueLabelSize);
+                var queueRect = new Rect(rect.xMax - Constants.SmallQueueLabelSize - Constants.Margin, rect.yMin + (rect.height - Constants.SmallQueueLabelSize) / 2f, Constants.SmallQueueLabelSize, Constants.SmallQueueLabelSize);
                 Queue.DrawLabel( queueRect, Assets.colorWhite, Assets.colorGrey, numQueued);
             }
         }

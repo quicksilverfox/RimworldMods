@@ -1,39 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Product>ResearchPowl</Product>
+		<AssemblyName>ResearchPowl</AssemblyName>
+		<RootNamespace>ResearchPowl</RootNamespace>
 		<AssemblyVersion>1.9</AssemblyVersion>
-		<Version>1.5</Version>
+		<Version>1.7</Version>
 		<Copyright>$([System.DateTime]::Now.ToString('yyyy'))</Copyright>
 		<Company>Owlchemist</Company>
-		<TargetFramework>net48</TargetFramework>
-		<LangVersion>preview</LangVersion>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<OutputPath>..\..\ResearchPowl\1.6\Assemblies</OutputPath>
-		<DefineConstants>TRACE;NDEBUG</DefineConstants>
+		<!-- RimWorld 1.7 runs on .NET 10 (CoreCLR) -->
+		<TargetFramework>net10.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
 		<WarningLevel>4</WarningLevel>
+		<Deterministic>false</Deterministic>
+		<!-- Output straight into the mod's versioned Assemblies folder, nothing but the mod DLL -->
+		<OutputPath>..\1.7\Assemblies\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
 		<DebugSymbols>false</DebugSymbols>
-		<DebugType>None</DebugType>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<OutputPath>..\..\ResearchPowl\1.6\Assemblies</OutputPath>
-		<DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET48;</DefineConstants>
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<DefineConstants>TRACE;NDEBUG</DefineConstants>
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<DefineConstants>TRACE;DEBUG</DefineConstants>
+		<Optimize>false</Optimize>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Krafs.Publicizer" Version="2.*">
+		<PackageReference Include="Krafs.Publicizer" Version="2.3.0">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="Lib.Harmony" Version="2.*" ExcludeAssets="runtime" />
-		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3">
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-			<PrivateAssets>all</PrivateAssets>
-		</PackageReference>
-		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4566" />
+		<!-- Reference-only packages: the game and the Harmony mod provide these assemblies at runtime -->
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4977-alpha.1" ExcludeAssets="runtime" />
+		<PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime" />
 	</ItemGroup>
 	<ItemGroup>
-		<Publicize Include="Assembly-CSharp;UnityEngine.IMGUIModule;UnityEngine.CoreModule" />
+		<Publicize Include="Assembly-CSharp" />
 	</ItemGroup>
 </Project>

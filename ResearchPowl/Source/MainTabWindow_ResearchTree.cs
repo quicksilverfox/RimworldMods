@@ -126,8 +126,8 @@ namespace ResearchPowl
 		}
 		public override void DoWindowContents( Rect canvas )
 		{
-			GUIClip.Internal_Pop();
-			GUIClip.Internal_Pop();
+			GUI.EndClip();
+			GUI.EndClip();
 
 			var cEvent = Event.current;
 			var cEventType = cEvent.type;
@@ -234,10 +234,8 @@ namespace ResearchPowl
 
 			//Reset zoom level
 			UI.ApplyUIScale();
-			GUIClip.Internal_Push(windowRect, Vector2.zero, Vector2.zero, false);
-			//GUI.BeginClip( windowRect );
-			GUIClip.Internal_Push(new Rect( 0f, 0f, UI.screenWidth, UI.screenHeight ), Vector2.zero, Vector2.zero, false);
-			//GUI.BeginClip( new Rect( 0f, 0f, UI.screenWidth, UI.screenHeight ) );
+			GUI.BeginClip(windowRect);
+			GUI.BeginClip(new Rect( 0f, 0f, UI.screenWidth, UI.screenHeight ));
 
 			//Cleanup
 			GUI.color   = Assets.colorWhite;

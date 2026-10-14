@@ -303,10 +303,10 @@ namespace ResearchPowl
         {
             var nodeRect = Rect;
             return !(
-            nodeRect.m_YMin > visibleRect.yMin + visibleRect.m_Height || 
-            visibleRect.yMin + visibleRect.m_Height < visibleRect.m_YMin ||
-            nodeRect.m_XMin > visibleRect.xMin + visibleRect.m_Width || 
-            visibleRect.xMin + visibleRect.m_Width < visibleRect.m_XMin);
+            nodeRect.yMin > visibleRect.yMin + visibleRect.height || 
+            visibleRect.yMin + visibleRect.height < visibleRect.yMin ||
+            nodeRect.xMin > visibleRect.xMin + visibleRect.width || 
+            visibleRect.xMin + visibleRect.width < visibleRect.xMin);
         }
 
         public virtual void Draw(Rect visibleRect, Painter painter)

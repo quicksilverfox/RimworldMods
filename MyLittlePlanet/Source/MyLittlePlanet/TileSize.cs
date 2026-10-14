@@ -21,28 +21,33 @@ namespace WorldGenRules
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var codes = new List<CodeInstruction>(instructions);
+                bool patched = false;
                 for (int i = 0; i < codes.Count; i++)
                 {
-                    // Insert before:
-                    // IL_0541: call bool RimWorld.TutorSystem::get_TutorialMode()
-                    //FieldInfo searchTarget = AccessTools.Field(typeof(Page_CreateWorldParams), "seedString");
-#pragma warning disable CS0252 // Comparation works as intended
-                    if (codes[i].opcode == OpCodes.Ldstr && codes[i].operand == "PlanetCoverageTip")
-#pragma warning restore CS0252 // 
+                    // Anchor: ldstr "PlanetCoverageTip"; call TooltipHandler.TipRegionByKey(...)
+                    // Insert right after the call, before the vanilla "num += 40f".
+                    // Compare by value: on Harmony 3 / CoreCLR the operand is not the interned literal,
+                    // so a reference comparison never matches.
+                    if (codes[i].Is(OpCodes.Ldstr, "PlanetCoverageTip"))
                     {
                         codes.InsertRange(i + 2, new List<CodeInstruction>(){
-                            // this increments vertical offset variable
-                            new CodeInstruction(OpCodes.Ldloc_S, 7),
+                            // this increments vertical offset variable (local 7)
+                            CodeInstruction.LoadLocal(7),
                             new CodeInstruction(OpCodes.Ldc_R4, 40f), // if you use 40 instead of 40f it would push 0 instead...
                             new CodeInstruction(OpCodes.Add),
-                            new CodeInstruction(OpCodes.Stloc_S, 7),
-                            // loading vertical offset variable and passing it to custom function that draws slider
-                            new CodeInstruction(OpCodes.Ldloc_S, 7),
-                            new CodeInstruction(OpCodes.Ldloc_S, 8),
-                            new CodeInstruction(OpCodes.Call, typeof(Page_CreateWorldParams_DoWindowContents_Patch).GetMethod(nameof(DrawPlanetSizeSlider)))
+                            CodeInstruction.StoreLocal(7),
+                            // loading vertical offset (local 7) and width (local 8) and passing them to custom function that draws slider
+                            CodeInstruction.LoadLocal(7),
+                            CodeInstruction.LoadLocal(8),
+                            CodeInstruction.Call(typeof(Page_CreateWorldParams_DoWindowContents_Patch), nameof(DrawPlanetSizeSlider))
                         });
+                        patched = true;
                         break;
                     }
+                }
+                if (!patched)
+                {
+                    Log.Error("[My Little Planet] Could not find the PlanetCoverageTip anchor in Page_CreateWorldParams.DoWindowContents; the planet size slider will not be shown.");
                 }
                 return codes.AsEnumerable();
             }

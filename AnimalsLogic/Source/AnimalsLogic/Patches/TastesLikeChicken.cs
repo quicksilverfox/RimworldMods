@@ -118,10 +118,9 @@ namespace AnimalsLogic
 
             for (int i = 0; i < codes.Count; i++)
             {
-#pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
-                if (codes[i].opcode == OpCodes.Callvirt && codes[i].operand == target)
-#pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
+                if (codes[i].Calls(target)) // value comparison; reference equality of operands is not reliable on Harmony 3 / CoreCLR
                 {
+                    codes[i].opcode = OpCodes.Call; // replacement is static; callvirt on a static method is invalid IL
                     codes[i].operand = typeof(NoToxicRot).GetMethod(nameof(RotChance)); // substitutes original function with mine; it takes Verse.Hediff from stack and instead of calling get_Severity() calls wrapper that returns severity * modifier
                     return codes;
                 }

@@ -1,83 +1,47 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{674B538C-8A9D-4D0C-BE86-D3F5F79CCDCE}</ProjectGuid>
+    <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AnimalsLogic</RootNamespace>
     <AssemblyName>AnimalsLogic</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+
+    <!-- Keep the hand-written Properties\AssemblyInfo.cs instead of the SDK-generated one -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+
+    <!-- Output straight into the mod's versioned Assemblies folder, nothing but the mod DLL -->
+    <OutputPath>..\..\1.7\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <!-- Reference-only packages: the game and the Harmony mod provide these assemblies at runtime -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4977-alpha.1" ExcludeAssets="runtime" />
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ALDefOf.cs" />
-    <Compile Include="Patches\AnimalsAreDifferent.cs" />
-    <Compile Include="AnimalsLogic.cs" />
-    <Compile Include="Patches\AnimalsUseDispenser.cs" />
-    <Compile Include="Patches\ComeWhenCalled.cs" />
-    <Compile Include="Patches\DoNotEatRandomly.cs" />
-    <Compile Include="Patches\FetchIt.cs" />
-    <Compile Include="Patches\ForgetMeNot.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Patches\GetThemYoung.cs" />
-    <Compile Include="Patches\HostilePredators.cs" />
-    <Compile Include="MedicalAlerts\Alert_AnimalNeedsRescuing.cs" />
-    <Compile Include="MedicalAlerts\Alert_AnimalNeedsTend.cs" />
-    <Compile Include="MedicalAlerts\Alert_LifeThreateningHediffAnimal.cs" />
-    <Compile Include="MedicalAlerts\AnimalAlertsUtility.cs" />
-    <Compile Include="MentalBreaks\MentalState_HuntWildAnimal.cs" />
-    <Compile Include="Patches\NoBoomSlaughter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recreation\JobDriver_PlayWithAnimal.cs" />
-    <Compile Include="Recreation\JoyGiver_PlayWithAnimal.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Patches\TastesLikeChicken.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.6.4633</Version>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-    <PackageReference Include="Lib.Harmony">
-      <Version>2.3.1.1</Version>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

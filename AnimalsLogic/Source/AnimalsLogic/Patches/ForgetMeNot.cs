@@ -89,22 +89,25 @@ namespace AnimalsLogic
         {
 
             var codes = new List<CodeInstruction>(instructions);
+            bool found = false;
             for (int i = 0; i < codes.Count; i++)
             {
-                //ldc.r4 0.101
-#pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
-                if (codes[i].opcode == OpCodes.Call && codes[i].operand == TamenessCanDecay_Pawn)
+                // Compare by value (Calls), not by reference: on Harmony 3 / CoreCLR operands are not guaranteed
+                // to be the same MethodInfo instance. A method may call both overloads (StatWorker_Wildness does),
+                // so every call is redirected instead of stopping at the first one.
+                if (codes[i].Calls(TamenessCanDecay_Pawn))
                 {
                     codes[i].operand = typeof(ForgetMeNot).GetMethod(nameof(TamenessCanDecay_Pawn_Detour));
-                    break;
+                    found = true;
                 }
-                if (codes[i].opcode == OpCodes.Call && codes[i].operand == TamenessCanDecay_Def)
+                else if (codes[i].Calls(TamenessCanDecay_Def))
                 {
                     codes[i].operand = typeof(ForgetMeNot).GetMethod(nameof(TamenessCanDecay_Thing_Detour));
-                    break;
+                    found = true;
                 }
-#pragma warning restore CS0252 // Possible unintended reference comparison; left hand side needs cast
             }
+
+            if (!found) Log.Error("[AnimalsLogic] Unable to patch tameness decay: could not find call to TrainableUtility.TamenessCanDecay.");
 
             return codes.AsEnumerable();
         }
@@ -120,7 +123,7 @@ namespace AnimalsLogic
 
         public static bool TamenessCanDecay_Pawn_Detour(Pawn pawn)
         {
-            if (pawn.RaceProps.FenceBlocked)
+            if (pawn.FenceBlocked) // 1.7 vanilla checks the pawn (roamer + current job), not just the race
             {
                 return false;
             }

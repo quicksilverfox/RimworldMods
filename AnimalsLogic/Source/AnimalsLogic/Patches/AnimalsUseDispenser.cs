@@ -46,8 +46,9 @@ namespace AnimalsLogic
             bool patched = false;
             for (int i = 0; i < codes.Count; i++)
             {
-                if (codes[i].opcode == OpCodes.Callvirt && codes[i].operand != null && codes[i].operand.Equals(target))
+                if (codes[i].Calls(target))
                 {
+                    codes[i].opcode = OpCodes.Call; // replacement is static; callvirt on a static method is invalid IL
                     codes[i].operand = replacement;
                     patched = true;
                     break;

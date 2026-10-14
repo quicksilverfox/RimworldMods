@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>AL_PlayWithAnimal</defName>
+    <driverClass>AnimalsLogic.Recreation.JobDriver_PlayWithAnimal</driverClass>
+    <reportString>playing with TargetA.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+    <joyKind>AL_AnimalInteraction</joyKind>
+    <joyGainRate>1</joyGainRate>
+    <joyMaxParticipants>1</joyMaxParticipants>
+  </JobDef>
+
+</Defs>

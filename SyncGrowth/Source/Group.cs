@@ -1,82 +1,60 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace SyncGrowth
 {
+	/// <summary>
+	/// A set of plants that are grown towards a common harvest time. Immutable once built: the
+	/// per-plant multipliers are computed in the constructor and the map component rebuilds groups
+	/// from scratch on a fixed interval.
+	/// </summary>
 	public class Group
 	{
 		readonly List<Plant> plants;
+		readonly List<IntVec3> cells;
+		readonly Dictionary<Plant, float> multipliers;
 
-		public Group(IEnumerable<Plant> plants)
+		public Group(List<Plant> plants)
 		{
-			this.plants = plants.ToList();
-			//this.plants.SortBy((arg) => arg.Plant.Growth);
-			this.RefreshRates();
-		}
+			this.plants = plants;
+			cells = plants.Select(p => p.Position).ToList();
+			multipliers = new Dictionary<Plant, float>(plants.Count);
 
-		public int Count
-		{
-			get
+			float averageGrowth = plants.Average(p => p.Growth);
+			foreach (var plant in plants)
 			{
-				return (plants.Count);
+				multipliers[plant] = CalculateMultiplier(plant, averageGrowth);
 			}
 		}
 
-		public IEnumerable<Plant> Plants
+		public int Count => plants.Count;
+
+		public IReadOnlyList<Plant> Plants => plants;
+
+		public ThingDef PlantDef => plants.Count > 0 ? plants[0].def : null;
+
+		public float MultiplierOf(Plant plant)
 		{
-			get
-			{
-				return plants.AsEnumerable();
-			}
+			return multipliers.TryGetValue(plant, out float multiplier) ? multiplier : 1f;
 		}
 
-		public ThingDef PlantDef
+		/// <summary>
+		/// Scales growth so that every growing plant in the group needs the same number of ticks to
+		/// finish as a plant sitting at the group average would: rate ratio = remaining / average remaining.
+		/// </summary>
+		static float CalculateMultiplier(Plant plant, float averageGrowth)
 		{
-			get
-			{
-				if (!plants.Any())
-					return (null);
-				return (plants.First().def);
-			}
-		}
+			if (plant.LifeStage != PlantLifeStage.Growing)
+				return 1f;
 
-		public void RefreshRates()
-		{
-			var averageGrowth = Plants.Average((Plant arg) => arg.Growth);
+			float averageRemaining = 1f - averageGrowth;
+			if (averageRemaining <= 0f)
+				return 1f;
 
-			foreach (var item in this.plants)
-			{
-				CalculateRateFor(item, averageGrowth);
-			}
-		}
-
-		void CalculateRateFor(Plant plant, float averageGrowth)
-		{
-			float mult = 1;
-            //float avgticksUntilFullyGrown = Mathf.FloorToInt(averageGrowth / plant.GrowthRate);
-            //int avgLongTicksUntilFullyGrown = Mathf.CeilToInt(avgticksUntilFullyGrown / 2000f);
-            //float longTicksUntilFullyGrown = plant.TicksUntilFullyGrown() / 2000f;
-
-            //if (plant.GrowthRate > 0 && longTicksUntilFullyGrown > 0)
-            //{
-            //	mult += ((averageGrowth - plant.Growth) / longTicksUntilFullyGrown) * 200;
-            //}
-
-            if (plant.GrowthRate > 0 && plant.LifeStage == PlantLifeStage.Growing)
-			{
-				mult = (1 - plant.Growth) / (1 - averageGrowth);
-            }
-
-            plant.SetGrowthMultiplier(mult);
-		}
-
-		internal float GetGrowthMultiplierFor(Plant plant)
-		{
-			return plant.GetGrowthMultiplier();
+			return (1f - plant.Growth) / averageRemaining;
 		}
 
 		static readonly Color[] colors =
@@ -89,38 +67,7 @@ namespace SyncGrowth
 
 		public void Draw(int colorSeed)
 		{
-			Color color = colors[(colorSeed % colors.Length)];
-			var cells = this.Plants.Select((Plant arg) => arg.Position).ToList();
-
-			GenDraw.DrawFieldEdges(cells, color);
-		}
-	}
-
-	// Basically this thing simulated adding a new field to Plant things to store group info
-	// This thing is quite slow, probably an array tat mimics the map grid would be WAY faster, but it does not seem to be a bottleneck so meh
-	public static class PlantExtension
-	{
-		static readonly ConditionalWeakTable<Plant, GrowthDataEntry> GrowthData = new ConditionalWeakTable<Plant, GrowthDataEntry>();
-
-		public static float GetGrowthMultiplier(this Plant plant) {
-            GrowthDataEntry growthDataEntry = GrowthData.GetOrCreateValue(plant);
-			if (growthDataEntry.lastUpdate < Find.TickManager.TicksGame - 4000) // never was in group or lost its group
-				return 1f;
-            return growthDataEntry.Multiplier; 
-		}
-
-		public static void SetGrowthMultiplier(this Plant plant, float newValue) {
-            GrowthDataEntry growthDataEntry = GrowthData.GetOrCreateValue(plant);
-            growthDataEntry.Multiplier = newValue;
-			growthDataEntry.lastUpdate = Find.TickManager.TicksGame;
-		}
-
-		public class GrowthDataEntry
-		{
-			//public WeakReference<Plant> Plant = null;
-            //public WeakReference<Group> Group = null;
-            public float Multiplier = 1f;
-			public int lastUpdate = -1;
+			GenDraw.DrawFieldEdges(cells, colors[colorSeed % colors.Length]);
 		}
 	}
 }

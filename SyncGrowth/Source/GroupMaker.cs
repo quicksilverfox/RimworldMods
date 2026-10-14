@@ -1,182 +1,177 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace SyncGrowth
 {
-    internal static class GroupMaker
-    {
-        static List<ThingDef> defsBlacklist = new List<ThingDef>
-        {
-            ThingDefOf.Plant_Grass,
-            ThingDef.Named("Plant_Berry")
-        };
+	internal static class GroupMaker
+	{
+		/// <summary>
+		/// Default mode: flood-fills groups of adjacent plants of the same kind, starting from every
+		/// plant that sits in a growing zone or a plant grower building. Wild plants are never visited.
+		/// </summary>
+		public static void AdjacencyMode(MapCompGrowthSync comp)
+		{
+			foreach (var seed in CandidatePlants(comp.map))
+			{
+				if (comp.HasGroup(seed))
+					continue;
 
-        internal static Group TryCreateGroup(MapCompGrowthSync mapComp, Plant crop, bool flashcells = false)
-        {
-            if (!flashcells && GroupsUtils.HasGroup(crop))
-                return (null);
+				var plants = Collect(comp, seed, ignoreExisting: false, flash: false);
+				if (plants.Count > 0)
+					comp.AddGroup(new Group(plants));
+			}
+		}
 
-            var list = new HashSet<Plant>();
+		/// <summary>
+		/// Zone mode: every growing zone is one group, limited to plants within max gap of the most grown one.
+		/// </summary>
+		public static void ZoneMode(MapCompGrowthSync comp)
+		{
+			var map = comp.map;
+			foreach (var zone in map.zoneManager.AllZones)
+			{
+				if (!(zone is Zone_Growing growingZone))
+					continue;
 
-            try
-            {
-                if (!GroupsUtils.HasGroup(crop))
-                    Iterate(mapComp, crop, list, crop.Growth, crop.Growth, flashcells, IntVec3.Invalid);
-            }
-            catch (Exception ex)
-            {
-                Log.Warning("failed to create group from crop " + crop + " at " + crop.Position + " : " + ex.Message + ". " + ex.StackTrace);
-                return (null);
-            }
+				ThingDef plantDef = growingZone.GetPlantDefToGrow();
+				var plants = new List<Plant>();
+				float maxGrowth = 0f;
 
-            if (flashcells || list.Count <= 0)
-                return (null);
+				foreach (var cell in growingZone.Cells)
+				{
+					Plant plant = cell.GetPlant(map);
+					if (plant == null || plant.def != plantDef || plant.LifeStage != PlantLifeStage.Growing)
+						continue;
+					plants.Add(plant);
+					maxGrowth = Math.Max(maxGrowth, plant.Growth);
+				}
 
-            return (new Group(list));
-        }
+				if (plants.Count == 0)
+					continue;
 
-        static void Iterate(MapCompGrowthSync mapComp, Plant crop, ICollection<Plant> list, float minGrowth, float maxGrowth, bool flashcells, IntVec3 previous)
-        {
-            if (!CanHaveGroup(crop, flashcells) || list.Contains(crop))
-                return;
+				if (Settings.max_gap < 1f)
+					plants.RemoveAll(p => p.Growth < maxGrowth - Settings.max_gap);
 
-            if (Settings.draw_overlay && flashcells)
-            {
-                var count = crop.Map.GetComponent<MapCompGrowthSync>().Count;
-                crop.Map.debugDrawer.FlashCell(crop.Position, list.Count * 10000000, "#" + list.Count, 300);
-            }
+				if (plants.Count > 0)
+					comp.AddGroup(new Group(plants));
+			}
+		}
 
-            list.Add(crop);
-            mapComp.allPlantsInGroup.Add(crop);
+		/// <summary>Dev-mode visualisation: flood-fills from the plant and flashes the cells it would group.</summary>
+		public static void FlashGroup(MapCompGrowthSync comp, Plant seed)
+		{
+			Collect(comp, seed, ignoreExisting: true, flash: true);
+		}
 
-            foreach (IntVec3 cell in CellsAdjacent4Way(crop.Position))
-            {
-                if (cell == previous || !cell.InBounds(crop.Map))
-                    continue;
-                Plant plantAtCell = cell.GetPlant(crop.Map);
+		static IEnumerable<Plant> CandidatePlants(Map map)
+		{
+			foreach (var zone in map.zoneManager.AllZones)
+			{
+				if (!(zone is Zone_Growing growingZone))
+					continue;
+				foreach (var cell in growingZone.Cells)
+				{
+					Plant plant = cell.GetPlant(map);
+					if (plant != null)
+						yield return plant;
+				}
+			}
 
-                if (plantAtCell != null && CanGroupTogether(crop, plantAtCell))
-                {
-                    if (Math.Max(plantAtCell.Growth, maxGrowth) - Math.Min(plantAtCell.Growth, minGrowth) > Settings.max_gap)
-                    {
-                        if (Settings.draw_overlay && flashcells)
-                        {
-                            crop.Map.debugDrawer.FlashCell(crop.Position, float.MinValue, "max gap", 300);
-                        }
+			foreach (var building in map.listerBuildings.allBuildingsColonist)
+			{
+				if (!(building is IPlantToGrowSettable))
+					continue;
+				foreach (var cell in building.OccupiedRect())
+				{
+					Plant plant = cell.GetPlant(map);
+					if (plant != null)
+						yield return plant;
+				}
+			}
+		}
 
-                        continue;
-                    }
+		/// <summary>
+		/// Breadth-first flood fill over 4-way adjacent cells. The growth range of the whole group is
+		/// tracked, so no group ever spans more than max gap regardless of traversal order.
+		/// </summary>
+		static List<Plant> Collect(MapCompGrowthSync comp, Plant seed, bool ignoreExisting, bool flash)
+		{
+			var map = comp.map;
+			var result = new List<Plant>();
 
-                    maxGrowth = Math.Max(plantAtCell.Growth, maxGrowth);
-                    minGrowth = Math.Min(plantAtCell.Growth, minGrowth);
-                    Iterate(mapComp, plantAtCell, list, minGrowth, maxGrowth, flashcells, crop.Position);
-                }
-            }
-        }
+			if (!CanHaveGroup(comp, seed, ignoreExisting))
+				return result;
 
-        public static IEnumerable<IntVec3> CellsAdjacent4Way(IntVec3 seed)
-        {
-            yield return (seed + IntVec3.North);
-            yield return (seed + IntVec3.East);
-            yield return (seed + IntVec3.South);
-            yield return (seed + IntVec3.West);
-        }
+			var visited = new HashSet<Plant> { seed };
+			var queue = new Queue<Plant>();
+			queue.Enqueue(seed);
+			float minGrowth = seed.Growth;
+			float maxGrowth = seed.Growth;
 
-        public static bool CanHaveGroup(Plant plant, bool flashcells)
-        {
-            //var ingestible = plant.def.ingestible;
-            //var plantprops = plant.def.plant;
+			while (queue.Count > 0)
+			{
+				Plant plant = queue.Dequeue();
+				result.Add(plant);
 
-            IPlantToGrowSettable host = plant.Map.zoneManager.ZoneAt(plant.Position) as IPlantToGrowSettable;
-            if(host == null)
-            {
-                host = plant.Map.thingGrid.ThingsListAt(plant.Position).FirstOrFallback(t => t is IPlantToGrowSettable, null) as IPlantToGrowSettable;
-            }
+				if (flash)
+					map.debugDrawer.FlashCell(plant.Position, (result.Count % 10) / 10f, "#" + result.Count, 300);
 
-            if (host == null)
-                return false;
+				foreach (var cell in CellsAdjacent4Way(plant.Position))
+				{
+					if (!cell.InBounds(map))
+						continue;
 
-            if(host.GetPlantDefToGrow() != plant.def)
-                return false;
+					Plant neighbour = cell.GetPlant(map);
+					if (neighbour == null || visited.Contains(neighbour))
+						continue;
+					if (!CanGroupTogether(plant, neighbour) || !CanHaveGroup(comp, neighbour, ignoreExisting))
+						continue;
 
-            if (!flashcells && GroupsUtils.HasGroup(plant))
-                return false;
+					float newMin = Math.Min(minGrowth, neighbour.Growth);
+					float newMax = Math.Max(maxGrowth, neighbour.Growth);
+					if (newMax - newMin > Settings.max_gap)
+					{
+						if (flash)
+							map.debugDrawer.FlashCell(neighbour.Position, 0f, "max gap", 300);
+						continue;
+					}
 
-            return true;
+					minGrowth = newMin;
+					maxGrowth = newMax;
+					visited.Add(neighbour);
+					queue.Enqueue(neighbour);
+				}
+			}
 
-            //if (ingestible == null || ingestible.foodType == FoodTypeFlags.Tree)
-            //    return false;
+			return result;
+		}
 
-            //if (plantprops == null || !plantprops.Sowable /*|| plantprops.IsTree*/)
-            //    return false;
-            //if (plant.LifeStage != PlantLifeStage.Growing)
-            //    return false;
-            //if (defsBlacklist.Contains(plant.def))
-            //    return false;
-            //if (!flashcells && GroupsUtils.HasGroup(plant))
-            //    return false;
+		static IEnumerable<IntVec3> CellsAdjacent4Way(IntVec3 seed)
+		{
+			yield return seed + IntVec3.North;
+			yield return seed + IntVec3.East;
+			yield return seed + IntVec3.South;
+			yield return seed + IntVec3.West;
+		}
 
-            //return true;
-        }
+		/// <summary>A plant can be synced when it is the crop its growing zone or grower building is set to.</summary>
+		static bool CanHaveGroup(MapCompGrowthSync comp, Plant plant, bool ignoreExisting)
+		{
+			if (!ignoreExisting && comp.HasGroup(plant))
+				return false;
 
-        static bool CanGroupTogether(Plant alpha, Plant beta)
-        {
-            return (alpha.def == beta.def &&
-                    //(alpha.GrowthRateFactor_Light == beta.GrowthRateFactor_Light) &&
-                    //(alpha.GrowthRateFactor_Fertility == beta.GrowthRateFactor_Fertility));
-                    Math.Abs(alpha.GrowthRateFactor_Light - beta.GrowthRateFactor_Light) < float.Epsilon &&
-                    Math.Abs(alpha.GrowthRateFactor_Fertility - beta.GrowthRateFactor_Fertility) < float.Epsilon);
-        }
+			IPlantToGrowSettable host = plant.Position.GetPlantToGrowSettable(plant.Map);
+			return host != null && host.GetPlantDefToGrow() == plant.def;
+		}
 
-        public static void ZoneMode(MapCompGrowthSync mapComp)
-        {
-            foreach (Zone zone in mapComp.map.zoneManager.AllZones)
-            {
-                if (zone is Zone_Growing zoneGrowing)
-                {
-                    ThingDef plantDef = zoneGrowing.GetPlantDefToGrow();
-
-                    IEnumerable<Thing> allContainedThings = zoneGrowing.AllContainedThings;
-                    List<Plant> plantList = new List<Plant>();
-
-                    float max_grown = 0;
-                    foreach (Thing thing in allContainedThings)
-                    {
-                        if (thing is Plant plant)
-                        {
-                            if (/*plant.IsCrop && */plant.def == plantDef && plant.LifeStage == PlantLifeStage.Growing)
-                            {
-                                plantList.Add(plant);
-                                max_grown = Math.Max(plant.Growth, max_grown);
-                            }
-                        }
-                    }
-
-                    if (plantList.NullOrEmpty())
-                        break;
-
-                    if (Settings.max_gap < 1)
-                        plantList.RemoveAll(p => p.Growth < max_grown - Settings.max_gap);
-
-                    mapComp.allPlantsInGroup.AddRange(plantList);
-                    var group = new Group(plantList);
-
-                    mapComp.groups.Add(group);
-                }
-            }
-
-            // TODO: find all plantable edifices and run old handler on them? Or just recommend HydroponicsGrowthSync?
-        }
-
-        public static IEnumerable<T> FastReverse<T>(this IList<T> items)
-        {
-            for (int i = items.Count - 1; i >= 0; i--)
-            {
-                yield return items[i];
-            }
-        }
-    }
+		static bool CanGroupTogether(Plant alpha, Plant beta)
+		{
+			return alpha.def == beta.def
+				&& Mathf.Approximately(alpha.GrowthRateFactor_Light, beta.GrowthRateFactor_Light)
+				&& Mathf.Approximately(alpha.GrowthRateFactor_Fertility, beta.GrowthRateFactor_Fertility);
+		}
+	}
 }

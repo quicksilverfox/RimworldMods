@@ -1,62 +1,54 @@
-﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Reflection;
+using HarmonyLib;
 
 namespace SyncGrowth.Patches
 {
-    /**
-     * Patches for other mods. Probably should instead go over all assembly and patch all extending Plant type.
-     */
-    class Compatibility
-    {
-        public static void Patch()
-        {
-            // List of qualified names of classes that extend RimWorld.Plant and should be patched
-            string[] Overrides = new string[]
-            {
-                // Orassans - their plants that grow at negative temperatures use extension class
-                "Orassans.FrostPlant",
+	/// <summary>
+	/// Growth itself needs no per-mod patches: Plant.GrowthPerTick is non-virtual, so the growth patch
+	/// already applies to every Plant subclass. Only the inspect string is virtual, and a subclass that
+	/// overrides it without calling the base method would not show the sync adjustment, so those
+	/// overrides are patched here. Types that are not loaded are skipped.
+	/// </summary>
+	class Compatibility
+	{
+		static readonly string[] PlantSubclasses =
+		{
+			// Orassans - plants that grow at negative temperatures
+			"Orassans.FrostPlant",
 
-                // VanillaPlantsExpanded has a lot of dirty overrides
-                "VanillaPlantsExpanded.Plant_ChecksRiver",
-                "VanillaPlantsExpanded.Plant_HighTempAffected",
-                "VanillaPlantsExpanded.Plant_RainAffected",
-                "VanillaPlantsExpanded.Plant_StopsGrowingInToxins",
-                "VanillaPlantsExpanded.Plant_WinterBlooming", // does not actually have any overrides to patch but whatever
-                "VanillaPlantsExpanded.Plant_WinterResistant",
+			// Vanilla Plants Expanded
+			"VanillaPlantsExpanded.Plant_ChecksRiver",
+			"VanillaPlantsExpanded.Plant_HighTempAffected",
+			"VanillaPlantsExpanded.Plant_RainAffected",
+			"VanillaPlantsExpanded.Plant_StopsGrowingInToxins",
+			"VanillaPlantsExpanded.Plant_WinterBlooming",
+			"VanillaPlantsExpanded.Plant_WinterResistant",
 
-                // Mushrooms
-                "Caveworld_Flora_Unleashed.FruitingBody", // it won't show inspect string for them but should work
-                
-                 // Biomes! Core and submods
-                "BMT.BiomesPlant",
+			// Caveworld Flora Unleashed mushrooms
+			"Caveworld_Flora_Unleashed.FruitingBody",
 
-                // Pawnmorpher - Glowvine
-                "Pawnmorph.Things.ExpandedPlant"
-            };
+			// Biomes! Core and submods
+			"BMT.BiomesPlant",
 
-            // Applying patches to get_GrowthRate and/or GetInspectString
-            foreach (String ovr in Overrides)
-            {
-                Type plants = AccessTools.TypeByName(ovr);
-                if (plants != null)
-                {
-                    MethodInfo method = AccessTools.DeclaredMethod(plants, "get_GrowthRate");
-                    if (method != null && method.DeclaringType == plants)
-                        SyncGrowth.harmony.Patch(
-                            method,
-                            postfix: new HarmonyMethod(typeof(Plant_GrowthRate_Patch).GetMethod(nameof(Plant_GrowthRate_Patch.Postfix)))
-                            );
+			// Pawnmorpher - Glowvine
+			"Pawnmorph.Things.ExpandedPlant"
+		};
 
-                    method = AccessTools.DeclaredMethod(plants, "GetInspectString");
-                    if (method != null)
-                        SyncGrowth.harmony.Patch(
-                            method,
-                            postfix: new HarmonyMethod(typeof(Plant_GetInspectString_Patch).GetMethod(nameof(Plant_GetInspectString_Patch.Postfix)))
-                            );
-                }
-            }
-        }
-    }
+		public static void Patch()
+		{
+			var postfix = new HarmonyMethod(typeof(Plant_GetInspectString_Patch), nameof(Plant_GetInspectString_Patch.Postfix));
+
+			foreach (string typeName in PlantSubclasses)
+			{
+				Type type = AccessTools.TypeByName(typeName);
+				if (type == null)
+					continue;
+
+				MethodInfo method = AccessTools.DeclaredMethod(type, "GetInspectString");
+				if (method != null)
+					SyncGrowth.harmony.Patch(method, postfix: postfix);
+			}
+		}
+	}
 }

@@ -7,8 +7,10 @@ using Verse.AI;
 namespace AnimalsLogic.MentalBreaks
 {
     /// <summary>
-    /// Mental state where a pawn goes to hunt a random wild animal on the map.
-    /// This is a violent mental break that ends when the animal is killed or escapes.
+    /// Mental state where a pawn goes to hunt wild animals on the map.
+    /// The state only tracks the current target; the job itself is handed out by
+    /// <see cref="JobGiver_HuntWildAnimal"/> through the MentalStateNonCritical think subtree
+    /// (see 1.7/Patches/ThinkTree_MentalState.xml), the same way vanilla aggro states work.
     /// </summary>
     public class MentalState_HuntWildAnimal : MentalState
     {
@@ -35,7 +37,7 @@ namespace AnimalsLogic.MentalBreaks
         {
             base.MentalStateTick(delta);
 
-            if (targetAnimal == null || targetAnimal.Dead || !targetAnimal.Spawned)
+            if (!IsValidHuntTarget(pawn, targetAnimal))
             {
                 ticksUntilRetarget -= delta;
                 if (ticksUntilRetarget <= 0)
@@ -48,11 +50,16 @@ namespace AnimalsLogic.MentalBreaks
                     ticksUntilRetarget = RetargetIntervalTicks;
                 }
             }
+        }
 
-            if (pawn.IsHashIntervalTick(120, delta))
-            {
-                TryGiveHuntJob();
-            }
+        /// <summary>
+        /// Current target if it is still huntable, otherwise picks a new one. Null when nothing is left to hunt.
+        /// </summary>
+        public Pawn GetOrFindTarget()
+        {
+            if (!IsValidHuntTarget(pawn, targetAnimal))
+                TryFindNewTarget();
+            return targetAnimal;
         }
 
         private bool TryFindNewTarget()
@@ -105,33 +112,14 @@ namespace AnimalsLogic.MentalBreaks
             if (animal.InMentalState && animal.MentalState.def == MentalStateDefOf.Manhunter)
                 return false;
 
+            if (animal.IsForbidden(hunter))
+                return false;
+
             // Must be reachable
-            if (!hunter.CanReach(animal, PathEndMode.Touch, Danger.Deadly))
+            if (hunter.Map != animal.Map || !hunter.CanReach(animal, PathEndMode.Touch, Danger.Deadly))
                 return false;
 
             return true;
-        }
-
-        private void TryGiveHuntJob()
-        {
-            if (targetAnimal == null || targetAnimal.Dead || !targetAnimal.Spawned)
-                return;
-
-            // If already hunting this target, don't interrupt
-            if (pawn.CurJob?.def == JobDefOf.Hunt && pawn.CurJob?.targetA.Thing == targetAnimal)
-                return;
-
-            // If target is not reachable, find new target
-            if (!pawn.CanReach(targetAnimal, PathEndMode.Touch, Danger.Deadly))
-            {
-                TryFindNewTarget();
-                return;
-            }
-
-            // Create and assign hunt job
-            Job huntJob = JobMaker.MakeJob(JobDefOf.Hunt, targetAnimal);
-            huntJob.killIncappedTarget = true;
-            pawn.jobs.StartJob(huntJob, JobCondition.InterruptForced);
         }
 
         public override bool ForceHostileTo(Thing t)

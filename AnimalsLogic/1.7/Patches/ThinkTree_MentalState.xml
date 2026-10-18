@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Give the hunting spree a behaviour branch, like every vanilla non-critical mental state.
+       Without a node here the pawn falls through to normal work while being uncontrollable. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot/subNodes</xpath>
+    <value>
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>AL_HuntingWildAnimal</state>
+        <subNodes>
+          <li Class="AnimalsLogic.MentalBreaks.JobGiver_HuntWildAnimal" />
+          <li Class="ThinkNode_PrioritySorter">
+            <subNodes>
+              <li Class="JobGiver_GetFood">
+                <maxLevelPercentage>0.05</maxLevelPercentage>
+              </li>
+              <li Class="JobGiver_GetRest">
+                <maxLevelPercentage>0.15</maxLevelPercentage>
+              </li>
+            </subNodes>
+          </li>
+          <li Class="JobGiver_WanderColony" />
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

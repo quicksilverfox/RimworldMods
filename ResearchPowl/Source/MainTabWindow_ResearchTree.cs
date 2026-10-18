@@ -15,6 +15,10 @@ namespace ResearchPowl
 	{
 		internal static Vector2 _scrollPosition = Vector2.zero, _mousePosition = -Vector2.zero, absoluteMousePos;
 		public Vector2 draggedPosition;
+		// Offset of the grab point inside the dragged node, in node units (the node is NodeSize big in every painter).
+		Vector2 dragGrabOffset, dragStartMouse;
+		// A tree drag shows its ghost once the cursor moved this far (UI units) or once the display delay has passed.
+		const float DragShowDistance = 4f;
 		bool _dragging, _viewRect_InnerDirty = true, _viewRectDirty = true;
 		public bool _searchActive;
 		float startDragging, lastSearchChangeTime = 0;
@@ -255,7 +259,12 @@ namespace ResearchPowl
 			Log.Debug("Start dragging node: {0}", node.Research.label);
 			draggedNode = node;
 			draggingSource = painter;
-			draggedPosition = UI.GUIToScreenPoint(node.Rect.position);
+			// Mouse and node rect are in the same (painter-local) space here, so this offset is independent of
+			// UI scale, zoom level and clip groups. The ghost is drawn in root UI units, which is the space of
+			// absoluteMousePos, so we never need GUIToScreenPoint or Event.delta (whose units changed in 1.7).
+			dragGrabOffset = Event.current.mousePosition - node.Rect.position;
+			dragStartMouse = absoluteMousePos;
+			draggedPosition = absoluteMousePos - dragGrabOffset;
 			startDragging = Time.time;
 		}
 		public void StopDragging()
@@ -269,18 +278,16 @@ namespace ResearchPowl
 			var evt = Event.current;
 			if (evt.type == EventType.MouseDrag && evt.button == 0)
 			{
-				draggedPosition += evt.delta;
 				Queue.NotifyNodeDraggedS();
 				evt.Use();
 			}
-			if (draggingSource == Painter.Tree && DraggingTime() > Settings.draggingDisplayDelay)
-			{
-				var pos = absoluteMousePos;
-				pos.x -= NodeSize.x * 0.5f;
-				pos.y -= NodeSize.y * 0.5f;
-				draggedNode.DrawAt(pos, windowRect, Painter.Drag);
-			}
-			else draggedNode.DrawAt(draggedPosition, windowRect, Painter.Drag);
+			// Keep the node under the exact point it was grabbed at for the whole drag, regardless of source painter.
+			draggedPosition = absoluteMousePos - dragGrabOffset;
+			// Tree drags only show the ghost once this is clearly a drag and not a click: the cursor moved away from
+			// the grab point, or the configured display delay has passed.
+			if (draggingSource == Painter.Tree && DraggingTime() <= Settings.draggingDisplayDelay
+				&& (absoluteMousePos - dragStartMouse).sqrMagnitude < DragShowDistance * DragShowDistance) return;
+			draggedNode.DrawAt(draggedPosition, windowRect, Painter.Drag);
 		}
 		public float DraggingTime()
 		{

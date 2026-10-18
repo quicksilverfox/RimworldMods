@@ -52,11 +52,6 @@
 	<ALConfigPlayWithAnimalsLabel>Allow playing with animals as recreation</ALConfigPlayWithAnimalsLabel>
 	<ALConfigPlayWithAnimalsTooltip>Pawns capable of animal handling can play with colony animals for joy. Bonded and high-petness animals are preferred. High-skill handlers may also interact with wild animals for a chance to tame them.</ALConfigPlayWithAnimalsTooltip>
 
-	<!-- Mental Break: Hunting Spree -->
-	<AL_LetterHuntingSpreeLabel>Mental break: {0}</AL_LetterHuntingSpreeLabel>
-	<AL_LetterHuntingSpreeBegin>{PAWN_nameDef} has snapped and is going on a hunting spree, seeking to kill wild animals.</AL_LetterHuntingSpreeBegin>
-	<AL_MessageHuntingSpreeRecovered>{0} has recovered from the hunting spree.</AL_MessageHuntingSpreeRecovered>
-
 	<!-- Extra stats -->
 	
 	<WoolType>Wool type</WoolType>

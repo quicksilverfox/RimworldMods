@@ -71,7 +71,7 @@ namespace AnimalsLogic.MentalBreaks
 
             foreach (Pawn animal in map.mapPawns.AllPawnsSpawned)
             {
-                if (!IsValidHuntTarget(animal))
+                if (!IsValidHuntTarget(pawn, animal))
                     continue;
 
                 validAnimals.Add(animal);
@@ -86,9 +86,12 @@ namespace AnimalsLogic.MentalBreaks
                 .FirstOrDefault();
         }
 
-        private bool IsValidHuntTarget(Pawn animal)
+        /// <summary>
+        /// Shared with <see cref="MentalStateWorker_HuntWildAnimal"/> so the break is only offered when a target exists.
+        /// </summary>
+        public static bool IsValidHuntTarget(Pawn hunter, Pawn animal)
         {
-            if (animal == null || animal.Dead || !animal.Spawned)
+            if (animal == null || animal.Dead || !animal.Spawned || animal == hunter)
                 return false;
 
             if (!animal.RaceProps.Animal)
@@ -103,7 +106,7 @@ namespace AnimalsLogic.MentalBreaks
                 return false;
 
             // Must be reachable
-            if (!pawn.CanReach(animal, PathEndMode.Touch, Danger.Deadly))
+            if (!hunter.CanReach(animal, PathEndMode.Touch, Danger.Deadly))
                 return false;
 
             return true;

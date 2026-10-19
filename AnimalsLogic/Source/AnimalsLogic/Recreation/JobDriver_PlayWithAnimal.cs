@@ -29,6 +29,8 @@ namespace AnimalsLogic.Recreation
             this.FailOnDowned(TargetIndex.A);
             this.FailOnMentalState(TargetIndex.A);
 
+            // Call the animal over (same rules as training: obedient colony animals only, and never out of combat,
+            // fleeing or other uninterruptible jobs). Repeated while walking because the follow job expires.
             Toil summon = ToilMaker.MakeToil("SummonAnimal");
             summon.initAction = delegate
             {
@@ -38,7 +40,13 @@ namespace AnimalsLogic.Recreation
             summon.defaultCompleteMode = ToilCompleteMode.Instant;
             yield return summon;
 
-            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
+            Toil gotoAnimal = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
+            gotoAnimal.tickIntervalAction = delegate (int delta)
+            {
+                if (!IsWildAnimal && pawn.IsHashIntervalTick(ComeWhenCalled.ExpiryInterval, delta))
+                    ComeWhenCalled.TrySummonAnimal(Animal, pawn);
+            };
+            yield return gotoAnimal;
 
             Toil playToil = ToilMaker.MakeToil("PlayWithAnimal");
             playToil.initAction = delegate

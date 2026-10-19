@@ -31,7 +31,6 @@
 [*] (Optional) Configurable tameness decay threshold.
 [*] (Optional) Configurable training decay speed.
 [*] (Optional) Configurable rot chance for toxic buildup deaths.
-[*] (Optional) Converts any ruined eggs into unfertilized chicken eggs.
 [*] (Optional, default off) Converts any generic meat into chicken meat upon butchering.
 [*] (Optional) Allows animals to use food paste dispensers.
 [*] (Optional) Predators hunting your pawns (human-like or animals) will be considered hostile by all your pawns and turrets.

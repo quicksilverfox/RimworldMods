@@ -7,9 +7,6 @@
 	<ALConfigHostilePredatorsLabel>Los depredadores que cazan a los peones son considerados hostiles por toda su facción</ALConfigHostilePredatorsLabel>
 	<ALConfigHostilePredatorsTooltip>Esto no cambia la respuesta a una amenaza de los peones, sólo los hace capaces de reconocer una amenaza. </ALConfigHostilePredatorsTooltip>
 	
-	<ALConfigEggConversionLabel>Convertir los huevos estropeados por la temperatura en huevos de gallina sin fertilizar</ALConfigEggConversionLabel>
-	<ALConfigEggConversionTooltip>Esto no afecta a los huevos ya estropeados.</ALConfigEggConversionTooltip>
-	
 	<ALConfigMeatConversionLabel>Convertir cualquier carne de animal genérica en carne de pollo después de su despiece</ALConfigMeatConversionLabel>
 	<ALConfigMeatConversionTooltip>Esto no afecta a la carne ya despiezada.</ALConfigMeatConversionTooltip>
 	

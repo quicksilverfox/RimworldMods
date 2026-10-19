@@ -7,9 +7,6 @@
 	<ALConfigHostilePredatorsLabel>Raubtiere, die deine Charaktere jagen, werden von deiner gesamten Fraktion als feindlich angesehen</ALConfigHostilePredatorsLabel>
 	<ALConfigHostilePredatorsTooltip>Dies ändert nicht die Reaktion auf Bedrohungen deiner Charaktere, sondern versetzt sie nur in die Lage, eine Bedrohung zu erkennen.</ALConfigHostilePredatorsTooltip>
 	
-	<ALConfigEggConversionLabel>Verwandelt durch Temperatur zerstörte Eier in unbefruchtete Hühnereier</ALConfigEggConversionLabel>
-	<ALConfigEggConversionTooltip>Bereits verdorbene Eier sind davon nicht betroffen.</ALConfigEggConversionTooltip>
-	
 	<ALConfigMeatConversionLabel>Verwandelt generisches Tierfleisch beim Schlachten in Hühnerfleisch</ALConfigMeatConversionLabel>
 	<ALConfigMeatConversionTooltip>Dies betrifft nicht bereits geschlachtetes Fleisch.</ALConfigMeatConversionTooltip>
 	

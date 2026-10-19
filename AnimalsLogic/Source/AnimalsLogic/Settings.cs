@@ -17,6 +17,7 @@ namespace AnimalsLogic
         public static bool taming_age_factor = true;
         public static bool come_when_called = true;
         public static bool play_with_animals = true;
+        public static bool extra_display_stats = true;
 
         public static float wildness_threshold_for_tameness_decay = 0.101f;
         public static float training_decay_factor = 1.0f;
@@ -39,6 +40,7 @@ namespace AnimalsLogic
             listing_Standard.CheckboxLabeled("ALConfigTamingAgeFactorLabel".Translate(), ref taming_age_factor, "ALConfigTamingAgeFactorTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigComeWhenCalledLabel".Translate(), ref come_when_called, "ALConfigComeWhenCalledTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigPlayWithAnimalsLabel".Translate(), ref play_with_animals, "ALConfigPlayWithAnimalsTooltip".Translate());
+            listing_Standard.CheckboxLabeled("ALConfigShowExtraDisplayStatsLabel".Translate(), ref extra_display_stats, "ALConfigShowExtraDisplayStatsTooltip".Translate());
 
             listing_Standard.Label("ALConfigTamenessDecayThresholdLabel".Translate(((float)Math.Round(wildness_threshold_for_tameness_decay, 3) * 100).ToString()), tooltip: "ALConfigTamenessDecayThresholdTooltip".Translate());
             wildness_threshold_for_tameness_decay = listing_Standard.Slider(wildness_threshold_for_tameness_decay, 0f, 1f);
@@ -69,6 +71,7 @@ namespace AnimalsLogic
             Scribe_Values.Look<bool>(ref taming_age_factor, "taming_age_factor", true, false);
             Scribe_Values.Look<bool>(ref come_when_called, "come_when_called", true, false);
             Scribe_Values.Look<bool>(ref play_with_animals, "play_with_animals", true, false);
+            Scribe_Values.Look<bool>(ref extra_display_stats, "extra_display_stats", true, false);
 
             Scribe_Values.Look<float>(ref wildness_threshold_for_tameness_decay, "wildness_threshold_for_tameness_decay", 0.101f, false);
             Scribe_Values.Look<float>(ref training_decay_factor, "training_decay_factor", 1.0f, false);

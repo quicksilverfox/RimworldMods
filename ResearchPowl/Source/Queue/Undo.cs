@@ -16,6 +16,11 @@ namespace ResearchPowl {
             if (currentStateIndex == undoMemory.Count - 1) return default(S);
             return undoMemory[++currentStateIndex];
         }
+        // Rewrite every stored state in place (used when the objects referenced by the states are recreated).
+        public void Remap(System.Func<S, S> f)
+        {
+            for (int i = 0; i < undoMemory.Count; i++) undoMemory[i] = f(undoMemory[i]);
+        }
         public void Clear()
         {
             undoMemory.Clear();

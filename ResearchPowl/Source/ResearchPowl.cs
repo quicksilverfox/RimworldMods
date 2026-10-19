@@ -95,6 +95,7 @@ namespace ResearchPowl
 			listLeft.Gap();
 
 			listLeft.CheckboxLabeled( ResourceBank.String.useVanillaResearchFinishedMessage, ref ModSettings_ResearchPowl.useVanillaResearchFinishedMessage, useVanillaResearchFinishedMessageTip);
+			if (ModsConfig.AnomalyActive) listLeft.CheckboxLabeled(AutoAssignAnomalyResearch, ref autoAssignAnomalyResearch, AutoAssignAnomalyResearchTip);
 
 			listLeft.End();
 
@@ -167,6 +168,7 @@ namespace ResearchPowl
 			Scribe_Values.Look(ref useVanillaResearchFinishedMessage, "useVanillaResearchFinishedMessage", true);
 			Scribe_Values.Look(ref readOnlyMode, "readOnlyMode");
 			Scribe_Values.Look(ref readOnlyModeSkip, "readOnlyModeSkip");
+			Scribe_Values.Look(ref autoAssignAnomalyResearch, "autoAssignAnomalyResearch", true);
 		}
 
 		public static bool shouldPause,
@@ -186,7 +188,8 @@ namespace ResearchPowl
 			placeModTechSeparately,
 			placeTabsSeparately = true,
 			readOnlyMode,
-			readOnlyModeSkip = false;
+			readOnlyModeSkip = false,
+			autoAssignAnomalyResearch = true;
 		public static float scrollingSpeedMultiplier = 1f,
 			zoomingSpeedMultiplier = 1f,
 			draggingDisplayDelay = 0.25f;

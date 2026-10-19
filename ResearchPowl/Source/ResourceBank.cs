@@ -18,6 +18,8 @@ namespace ResearchPowl
 			public static string MissingFacilities(string list) => TL("MissingFacilities", list);
 			public static string FinishedResearch(string label) => TL("ResearchFinished", label);
 			public static string NextInQueue(string label) => TL("NextInQueue", label);
+			public static string RandomResearchTarget(string label, string progress) => TL("RandomResearchTarget", label, progress);
+public static string RandomResearchScope(string pack) => TL("RandomResearchScope", pack);
 			public static string TechLevelTooLow(TechLevel techlevel, float multiplier, int baseCost)
 			{
 				return "ResearchPal.TechLevelTooLow".Translate(techlevel.ToStringHuman(), multiplier.ToString(), baseCost.ToString());
@@ -59,6 +61,8 @@ namespace ResearchPowl
 				DontIgnoreHiddenPrerequisitesTip = TL("DontIgnoreHiddenPrerequisitesTip"),
 				useVanillaResearchFinishedMessage = TL("ShowVanillaResearchFinishedMessage"),
 				useVanillaResearchFinishedMessageTip = TL("ShowVanillaResearchFinishedMessageTip"),
+				AutoAssignAnomalyResearch = TL("AutoAssignAnomalyResearch"),
+				AutoAssignAnomalyResearchTip = TL("AutoAssignAnomalyResearchTip"),
 				LClickReplaceQueue = TL("LClickReplaceQueue"),
 				LClickRemoveFromQueue = TL("LClickRemoveFromQueue"),
 				SLClickAddToQueue = TL("SLClickAddToQueue"),
@@ -71,7 +75,11 @@ namespace ResearchPowl
 				TechLevelOfResearch = TL("TechLevel"),
 				NoResearchFound = TL("NoResearchFound"),
 				NothingQueued = TL("NothingQueued"),
-				AllPacks = TL("AllPacks");
+				AllPacks = TL("AllPacks"),
+				RandomResearch = TL("RandomResearch"),
+				RandomResearchTip = TL("RandomResearchTip"),
+RandomResearchNoTarget = TL("RandomResearchNoTarget"),
+				RandomResearchWaiting = TL("RandomResearchWaiting");
 		}
 	}
 }

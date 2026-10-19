@@ -19,22 +19,56 @@ namespace ResearchPowl
         public static Queue _instance;
         public readonly List<ResearchNode> _queue = new List<ResearchNode>();
         List<ResearchProjectDef> _saveableQueue;
+        // State of the "random research" wildcard (see WildcardNode): the project it currently stands for, and its
+        // queue position for saving (the wildcard has no def, so it cannot go into _saveableQueue).
+        ResearchProjectDef _wildcardTarget;
+        int _wildcardIndex = -1;
+        // Content pack the wildcard is restricted to (captured from the pack filter when it was queued), or null for all.
+        string _wildcardPack;
+        public ResearchProjectDef WildcardTarget => _wildcardTarget;
+        public string WildcardPack => _wildcardPack;
+        void Notify_WildcardQueued()
+        {
+            _wildcardPack = MainTabWindow_ResearchTree.FilterPack;
+            _wildcardTarget = null;
+        }
         static UndoStateHandler<ResearchNode[]> undoState = new UndoStateHandler<ResearchNode[]>();
 
         public Queue(World world) : base(world) {
             _instance = this;
         }
 
+        // Called whenever the tree recreates its nodes (layout reset, settings change, content pack filter).
+        // Re-point queued entries at the new node objects; research that is no longer part of the tree stays
+        // queued but is flagged detached so no labels get drawn at stale positions.
+        public static void Notify_TreeRebuilt(List<ResearchNode> nodes)
+        {
+            if (_instance == null) return;
+            var byDef = new Dictionary<ResearchProjectDef, ResearchNode>(nodes.Count);
+            foreach (var n in nodes) if (n.Research != null) byDef[n.Research] = n;
+            var wildcard = nodes.OfType<WildcardNode>().FirstOrDefault();
+            ResearchNode Remap(ResearchNode old)
+            {
+                if (old == null) return null;
+                if (old is WildcardNode) return wildcard ?? old;
+                if (byDef.TryGetValue(old.Research, out var fresh)) return fresh;
+                old.detached = true;
+                return old;
+            }
+            var queue = _instance._queue;
+            for (int i = 0; i < queue.Count; i++) queue[i] = Remap(queue[i]);
+            undoState.Remap(state => { for (int i = 0; i < state.Length; i++) state[i] = Remap(state[i]); return state; });
+        }
         public static void DrawLabels( Rect visibleRect )
         {
             var list = _instance._queue;
             for (int j = list.Count, i = 1; j-- > 0; i++)
             {
                 var node = list[j];
-                if (node.IsVisible(visibleRect))
+                if (!node.detached && node.IsVisible(visibleRect))
                 {
-                    ColorCompleted.TryGetValue(node.Research.techLevel, out Color main);
-                    var background = i > 1 ? ColorUnavailable.TryGetValue(node.Research.techLevel) : main;
+                    ColorCompleted.TryGetValue(node.TechLevel, out Color main);
+                    var background = i > 1 ? ColorUnavailable.TryGetValue(node.TechLevel) : main;
                     DrawLabel(node.QueueRect, main, background, i);
                 }
             }
@@ -55,7 +89,12 @@ namespace ResearchPowl
         // Require the input to be topologically ordered
         void UnsafeConcat(IEnumerable<ResearchNode> nodes)
         {
-            foreach (var n in nodes) if (!_queue.Contains(n)) _queue.Add(n);
+            foreach (var n in nodes)
+            {
+                if (_queue.Contains(n)) continue;
+                _queue.Add(n);
+                if (n is WildcardNode) Notify_WildcardQueued();
+            }
         }
         // Require the input to be topologically ordered
         void UnsafeConcatFront(IEnumerable<ResearchNode> nodes)
@@ -68,8 +107,9 @@ namespace ResearchPowl
             foreach (var n in nodes)
             {
                 if (_queue.IndexOf(n, 0, pos) != -1) continue;
-                _queue.Remove(n);
+                bool wasQueued = _queue.Remove(n);
                 _queue.Insert(i++, n);
+                if (!wasQueued && n is WildcardNode) Notify_WildcardQueued();
             }
         }
         static public bool CantResearch(ResearchNode node)
@@ -107,7 +147,59 @@ namespace ResearchPowl
         }
         ResearchProjectDef CurrentResearch()
         {
-            return _queue.FirstOrDefault()?.Research;
+            // Target resolves the wildcard to a concrete project (picking one if needed).
+            return _queue.FirstOrDefault()?.Target;
+        }
+        // Project the wildcard currently stands for; picks a new one when there is none or it got finished.
+        public ResearchProjectDef ResolveWildcardTarget()
+        {
+            if (_wildcardTarget != null && !_wildcardTarget.IsFinished) return _wildcardTarget;
+            _wildcardTarget = PickRandomResearch();
+            Log.Debug("Wildcard picked: {0}", _wildcardTarget?.label ?? "NONE");
+            return _wildcardTarget;
+        }
+        // Candidates: projects the game would let you start right now (prerequisites, bench, techprints...), that the
+        // mod's settings and compatibility hooks allow, and that belong to the wildcard's content pack if it has one.
+        // Works on defs rather than tree nodes so the current pack filter of the view does not matter.
+        // Preference order: already started > player's tech level (highest without cost penalty) > prerequisite of an
+        // unfinished project at that level > lower tech level > higher (penalized) tech level. Random within the best group.
+        ResearchProjectDef PickRandomResearch()
+        {
+            var available = new List<ResearchProjectDef>();
+            foreach (var def in DefDatabase<ResearchProjectDef>.AllDefsListForReading)
+            {
+                if (def.knowledgeCategory != null || !def.CanStartNow || !ResearchNode.DefAllowed(def)) continue;
+                if (_wildcardPack != null && def.modContentPack?.Name != _wildcardPack) continue;
+                available.Add(def);
+            }
+            if (available.Count == 0) return null;
+
+            // Prefer projects the player has not planned already; fall back to queued ones if that is all there is.
+            var queued = new HashSet<ResearchProjectDef>();
+            foreach (var n in _queue) if (n.Research != null) queued.Add(n.Research);
+            var pool = available.Where(r => !queued.Contains(r)).ToList();
+            if (pool.Count == 0) pool = available;
+
+            var optimal = Faction.OfPlayer.def.techLevel;
+            var unlockers = new HashSet<ResearchProjectDef>();
+            foreach (var def in DefDatabase<ResearchProjectDef>.AllDefsListForReading)
+            {
+                if (def.techLevel == optimal && def.knowledgeCategory == null && !def.IsFinished) unlockers.AddRange(def.Ancestors());
+            }
+            int Rank(ResearchProjectDef r)
+            {
+                int tier = r.techLevel == optimal ? 0 : unlockers.Contains(r) ? 1 : r.techLevel < optimal ? 2 : 3;
+                return (r.ProgressReal > 0 ? 0 : 10) + tier;
+            }
+            int best = pool.Min(Rank);
+            return pool.Where(r => Rank(r) == best).RandomElement();
+}
+        public override void WorldComponentTick()
+        {
+            base.WorldComponentTick();
+            // A wildcard at the head may have found nothing to research earlier (e.g. no bench yet); retry about hourly.
+            if (Find.TickManager.TicksGame % 2500 != 0 || _queue.Count == 0 || !(_queue[0] is WildcardNode)) return;
+            if (_wildcardTarget == null || _wildcardTarget.IsFinished) UpdateCurrentResearch();
         }
         void UpdateCurrentResearch()
         {
@@ -120,19 +212,27 @@ namespace ResearchPowl
 
             foreach (var n in _queue)
             {
-                if (n.Research.IsFinished) finished.Add(n);
-                else if (!n.GetAvailable()) unavailable.Add(n);
+                if (n.IsFinished) finished.Add(n);
+                // Only drop research that can never be done in this game, not research merely blocked right now
+                // (unpowered bench, missing techprint...): the player queued it on purpose.
+                else if (!n.GetAvailable(ignoreColonyState: true)) unavailable.Add(n);
             }
             foreach (var n in finished) _queue.Remove(n);
             foreach (var n in unavailable) Remove(n);
             
             var cur = Find.ResearchManager.currentProj;
-            if (cur != null && cur != CurrentResearch()) Replace(Find.ResearchManager.currentProj.ResearchNode());
+            if (cur != null && cur != CurrentResearch())
+            {
+                // The current project may not be part of the (filtered) tree; never queue a null node.
+                var curNode = cur.ResearchNode();
+                if (curNode != null) Replace(curNode);
+            }
             UpdateCurrentResearch();
         }
         bool Remove(ResearchNode node)
         {
-            if (node.Research.IsFinished) return _queue.Remove(node);
+            if (node is WildcardNode) _wildcardTarget = null;
+            if (node.IsFinished) return _queue.Remove(node);
 
             List<ResearchNode> shouldRemove = new List<ResearchNode>();
             var idx = _queue.IndexOf(node);
@@ -174,7 +274,7 @@ namespace ResearchPowl
         }
         public static String DebugQueueSerialize(IEnumerable<ResearchNode> nodes)
         {
-            if (Settings.verboseDebug) return string.Join(", ", nodes.Select(n => n.Research.label));
+            if (Settings.verboseDebug) return string.Join(", ", nodes.Select(n => n.Label));
             return "";
         }
         static public void NewUndoState()
@@ -193,20 +293,35 @@ namespace ResearchPowl
         }
         public static void TryStartNext( ResearchProjectDef finished )
         {
-            var current = CurrentS();
+            var q = _instance;
+            var queue = q._queue;
+            var current = q.Current();
+            bool wildcardHit = q._wildcardTarget == finished;
 
-            var finishedNode = _instance._queue.Find(n => n.Research == finished);
-            if (finishedNode == null) return;
-            RemoveS(finishedNode);
-            if (finishedNode != current) return;
-            var next = CurrentS()?.Research;
+            var finishedNode = queue.Find(n => n.Research == finished);
+            if (finishedNode == null && !wildcardHit) return;
+            bool wasCurrent = (finishedNode != null && finishedNode == current) || (wildcardHit && current is WildcardNode);
+            if (finishedNode != null) RemoveS(finishedNode);
+            if (wildcardHit)
+            {
+                // The wildcard's pick is done: let anything queued behind it have its turn, then it picks again.
+                q._wildcardTarget = null;
+                var wildcard = queue.OfType<WildcardNode>().FirstOrDefault();
+                if (wildcard != null && queue.Count > 1 && queue[0] == wildcard)
+                {
+                    queue.RemoveAt(0);
+                    queue.Add(wildcard);
+                }
+            }
+            if (!wasCurrent) return;
+            var next = q.CurrentResearch();
             Find.ResearchManager.currentProj = next;
             if (! Settings.useVanillaResearchFinishedMessage)
             {
-                Log.Debug("Send completion letter for {0}, next is {1}", current.Research.label, next?.label ?? "NONE");
+                Log.Debug("Send completion letter for {0}, next is {1}", finished.label, next?.label ?? "NONE");
                 //was DoCompletionLetter()
-                string label = "ResearchFinished".Translate( current.Research.LabelCap );
-                string text  = current.Research.LabelCap + "\n\n" + current.Research.description;
+                string label = "ResearchFinished".Translate( finished.LabelCap );
+                string text  = finished.LabelCap + "\n\n" + finished.description;
 
                 if ( next != null )
                 {
@@ -225,17 +340,28 @@ namespace ResearchPowl
             base.ExposeData();
 
             // store research defs as these are the defining elements
-            if ( Scribe.mode == LoadSaveMode.Saving ) _saveableQueue = new List<ResearchProjectDef>(_queue.Select( node => node.Research));
+            if ( Scribe.mode == LoadSaveMode.Saving )
+            {
+                _saveableQueue = new List<ResearchProjectDef>(_queue.Where(node => node.Research != null).Select(node => node.Research));
+                _wildcardIndex = _queue.FindIndex(node => node is WildcardNode);
+            }
 
             Scribe_Collections.Look( ref _saveableQueue, "Queue", LookMode.Def );
+            Scribe_Values.Look( ref _wildcardIndex, "wildcardIndex", -1 );
+            Scribe_Defs.Look( ref _wildcardTarget, "wildcardTarget" );
+            Scribe_Values.Look( ref _wildcardPack, "wildcardPack" );
 
             if ( Scribe.mode == LoadSaveMode.PostLoadInit )
             {
-                foreach (var research in _saveableQueue)
+                foreach (var research in _saveableQueue ?? new List<ResearchProjectDef>())
                 {
                     // find a node that matches the research - or null if none found
-                    var node = research.ResearchNode();
+                    var node = research?.ResearchNode();
                     if (node != null) UnsafeAppend(node);
+                }
+                if (_wildcardIndex >= 0 && Tree.Wildcard != null && !_queue.Contains(Tree.Wildcard))
+                {
+                    _queue.Insert(Math.Min(_wildcardIndex, _queue.Count), Tree.Wildcard);
                 }
                 undoState.Clear();
                 NewUndoState();
@@ -536,10 +662,10 @@ namespace ResearchPowl
         {
             foreach (var node in new List<ResearchNode>(_instance._queue))
             {
-                if (node.Research.IsFinished) _instance._queue.Remove(node);
+                if (node.IsFinished) _instance._queue.Remove(node);
             }
 
-            Find.ResearchManager.currentProj = _instance._queue.FirstOrDefault()?.Research;
+            _instance.UpdateCurrentResearch();
         }
     }
 }

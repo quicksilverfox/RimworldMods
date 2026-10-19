@@ -1,6 +1,6 @@
 // ResearchNode.cs
 // Copyright Karel Kroeze, 2020-2020
-
+		
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -21,10 +21,13 @@ namespace ResearchPowl
 		static readonly Dictionary<ResearchProjectDef, bool> _buildingPresentCache = new Dictionary<ResearchProjectDef, bool>();
 		static Dictionary<ResearchProjectDef, string[]> _missingFacilitiesCache = new Dictionary<ResearchProjectDef, string[]>();
 		public bool isMatched, _available;
+		// True once the tree was rebuilt without this research (e.g. content pack filter): the node is still queued
+		// but has no position in the current tree, so nothing tree-related must be drawn for it.
+		public bool detached;
 		public static bool availableDirty;
 		public ResearchProjectDef Research;
 		List<Def> _unlocks;
-		Painter _currentPainter;
+		protected Painter _currentPainter;
 		HighlightReasonSet _highlightReasons = new HighlightReasonSet();
 		public static readonly Dictionary<Def, List<Def>> _unlocksCache = new Dictionary<Def, List<Def>>();
 
@@ -33,8 +36,14 @@ namespace ResearchPowl
 			Research = research;
 
 			// initialize position at vanilla y position, leave x at zero - we'll determine this ourselves
-			_pos = new Vector2( 0, research.researchViewY + 1 );
+			// research is null for pseudo nodes (WildcardNode); they position themselves.
+			_pos = new Vector2( 0, (research?.researchViewY ?? 0) + 1 );
 		}
+		// Hooks that let pseudo nodes without a ResearchProjectDef (see WildcardNode) take part in the queue.
+		public virtual bool IsFinished => Research.IsFinished;
+		public virtual TechLevel TechLevel => Research.techLevel;
+		// The project the game should actually work on while this node heads the queue.
+		public virtual ResearchProjectDef Target => Research;
 		public bool PainterIs(Painter p)
 		{
 			return p == _currentPainter;
@@ -184,7 +193,7 @@ namespace ResearchPowl
 			_buildingPresentCache.Clear();
 			_missingFacilitiesCache.Clear();
 		}
-		public int Matches(string query)
+		public virtual int Matches(string query)
 		{
 			var culture = CultureInfo.CurrentUICulture;
 			query = query.ToLower(culture);
@@ -379,7 +388,7 @@ namespace ResearchPowl
 				TooltipHandler.TipRegion(_rect, string.Format("Progress: {0}", ProgressString()));
 			}
 		}
-		string ShortcutManualTooltip()
+		protected string ShortcutManualTooltip()
 		{
 			if (Event.current.shift)
 			{
@@ -603,7 +612,7 @@ namespace ResearchPowl
 		{
 			return !( (Research.IsFinished || _available) && (Highlighted() || !IsUnmatchedInSearch()));
 		}
-		void DrawNode(bool detailedMode, bool mouseOver)
+		protected virtual void DrawNode(bool detailedMode, bool mouseOver)
 		{
 			HandleTooltips();
 
@@ -635,7 +644,7 @@ namespace ResearchPowl
 		{
 			return Rect.Contains(mousePos);
 		}
-		void HandleDragging(bool mouseOver)
+		protected void HandleDragging(bool mouseOver)
 		{
 			var evt = Event.current;
 			if (! mouseOver || Event.current.shift || Event.current.alt) return;
@@ -657,7 +666,7 @@ namespace ResearchPowl
 				}
 			}
 		}
-		bool DetailMode()
+		protected bool DetailMode()
 		{
 			return PainterIs(Painter.Queue) || PainterIs(Painter.Drag) || MainTabWindow_ResearchTree.Instance._zoomLevel < DetailedModeZoomLevelCutoff;
 		}
@@ -684,7 +693,7 @@ namespace ResearchPowl
 			}
 
 			if (PainterIs(Painter.Drag)) return;
-			if (DetailMode()) IconActions(false);
+			if (DetailMode()) HandleIconClicks();
 			HandleDragging(mouseOver);
 
 			// if clicked and not yet finished, queue up this research and all prereqs.
@@ -698,7 +707,11 @@ namespace ResearchPowl
 				}
 			}
 		}
-		public bool LeftClick() {
+		protected virtual void HandleIconClicks()
+		{
+			IconActions(false);
+		}
+		public virtual bool LeftClick() {
 			if (Research.IsFinished || !_available) return false;
 
 			if (DebugSettings.godMode && Event.current.control)
@@ -725,7 +738,7 @@ namespace ResearchPowl
 
 			return true;
 		}
-		bool RightClick()
+		protected virtual bool RightClick()
 		{
 			SoundDefOf.Click.PlayOneShotOnCamera();
 			Tree.HandleFixedHighlight(this);
@@ -734,13 +747,13 @@ namespace ResearchPowl
 			return true;
 		}
 		// inc means "inclusive"
-		public List<ResearchNode> MissingPrerequisitesInc()
+		public virtual List<ResearchNode> MissingPrerequisitesInc()
 		{
 			List<ResearchNode> result = new List<ResearchNode>();
 			MissingPrerequitesRec(result);
 			return result;
 		}
-		public List<ResearchNode> MissingPrerequisites()
+		public virtual List<ResearchNode> MissingPrerequisites()
 		{
 			List<ResearchNode> result = new List<ResearchNode>();
 			if (!Research.PrerequisitesCompleted)
@@ -763,11 +776,30 @@ namespace ResearchPowl
 			}
 			acc.Add(this);
 		}
-		public bool GetAvailable()
+		// ignoreColonyState: skip requirements that only reflect the colony's current situation (research bench and its
+		// facilities, techprints, mechanitor, analyzed things, unstudied wrecks). Those can come and go, e.g. a multi-analyzer
+		// losing power, and must not cause already queued research to be thrown away.
+		public virtual bool GetAvailable(bool ignoreColonyState = false)
 		{
-			if (ModCompatibility.UsingVanillaVehiclesExpanded)
+			if (!DefAllowed(Research, ignoreColonyState)) return false;
+
+			var prerec = MissingPrerequisites();
+
+			foreach (var n in prerec) if (!n.Research.IsFinished && !n.GetAvailable(ignoreColonyState)) return false;
+
+			return !Research.IsFinished && (DebugSettings.godMode || ignoreColonyState || (
+				(Research.requiredResearchBuilding == null || Research.PlayerHasAnyAppropriateResearchBench) &&
+				Research.TechprintRequirementMet &&
+				Research.PlayerMechanitorRequirementMet &&
+				Research.AnalyzedThingsRequirementsMet));
+		}
+		// The def-level rules (mod settings and compatibility hooks) that decide whether a project may be researched at
+		// all, independent of prerequisites and bench. Shared by GetAvailable and the random research picker.
+		public static bool DefAllowed(ResearchProjectDef research, bool ignoreColonyState = false)
+		{
+			if (ModCompatibility.UsingVanillaVehiclesExpanded && !ignoreColonyState)
 			{
-				var valueArray = new object[] { Research, null };
+				var valueArray = new object[] { research, null };
 				if ((bool)ModCompatibility.IsDisabledMethod.Invoke(null, valueArray))
 				{
 					var wreck = (ThingDef)valueArray[1];
@@ -778,32 +810,23 @@ namespace ResearchPowl
 
 			if (ModCompatibility.UsingVanillaExpanded)
 			{
-				var boolResult = (bool)ModCompatibility.TechLevelAllowedMethod.Invoke(null, new object[] { Research.techLevel });
+				var boolResult = (bool)ModCompatibility.TechLevelAllowedMethod.Invoke(null, new object[] { research.techLevel });
 				if (!boolResult)
 					return false; // Storyteller does not allow
 			}
 
-			if (ModCompatibility.UsingRimedieval && !ModCompatibility.AllowedResearchDefs.Contains(Research))
+			if (ModCompatibility.UsingRimedieval && !ModCompatibility.AllowedResearchDefs.Contains(research))
 			{
 				return false; // Rimedieval does not allow
 			}
 
-			var prerec = MissingPrerequisites();
-
-			foreach (var n in prerec) if (!n.Research.IsFinished && !n.GetAvailable()) return false;
-
-			return !Research.IsFinished && (DebugSettings.godMode || (
+			return DebugSettings.godMode || (
 				!Settings.readOnlyMode &&
-				(Research.requiredResearchBuilding == null || Research.PlayerHasAnyAppropriateResearchBench) && 
-				Research.TechprintRequirementMet && 
-				Research.PlayerMechanitorRequirementMet && 
-				Research.AnalyzedThingsRequirementsMet && 
-				AllowedTechlevel(Research.techLevel) && 
-				CompatibilityHooks.PassCustomUnlockRequirements(Research)
-			));
+				AllowedTechlevel(research.techLevel) &&
+				CompatibilityHooks.PassCustomUnlockRequirements(research));
 
 			// special rules for tech-level availability
-			bool AllowedTechlevel(TechLevel level)
+			static bool AllowedTechlevel(TechLevel level)
 			{
 				if ((int)level > Settings.maxAllowedTechLvl) return false;
 				//Hard-coded mod hooks. TODO: Get rid of this
@@ -811,7 +834,7 @@ namespace ResearchPowl
 				return true;
 			}
 		}
-		
+
 		/// <summary>
 		///     Creates text version of research description and additional unlocks/prereqs/etc sections.
 		/// </summary>

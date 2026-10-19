@@ -103,6 +103,8 @@
 	<ResearchPal.VerboseLoggingTip>Produce verbose debug logs in dev mode messages.</ResearchPal.VerboseLoggingTip>
 
 	<ResearchPal.ShowVanillaResearchFinishedMessage>Use vanilla "Research Finished" message</ResearchPal.ShowVanillaResearchFinishedMessage>
+	<ResearchPal.AutoAssignAnomalyResearch>Auto-select anomaly research</ResearchPal.AutoAssignAnomalyResearch>
+	<ResearchPal.AutoAssignAnomalyResearchTip>Anomaly knowledge (basic and advanced) only counts towards the project selected for its category. When a category has no project selected and knowledge comes in, pick one automatically so the points are not wasted. Projects that already hold some knowledge are preferred.</ResearchPal.AutoAssignAnomalyResearchTip>
 	<ResearchPal.ShowVanillaResearchFinishedMessageTip>This mod may send its own letter when research is finished, or the normal vanilla behavior may be used instead.</ResearchPal.ShowVanillaResearchFinishedMessageTip>
 
 	<ResearchPal.ResearchFinished>Finished research: {0}</ResearchPal.ResearchFinished>
@@ -115,6 +117,13 @@
 	<ResearchPal.ReadOnlyModeTip>When enabled, the tech tree may only be viewed as a reference, but not as an interface to start projects. This mode is meant to be used with mods that remove player agency, such as Random Research.</ResearchPal.ReadOnlyModeTip>
 
 	<ResearchPal.AllPacks>All content packs</ResearchPal.AllPacks>
+
+	<ResearchPal.RandomResearch>Random research</ResearchPal.RandomResearch>
+	<ResearchPal.RandomResearchTip>A wildcard entry for the research queue. While it heads the queue, colonists work on a randomly chosen project that can be researched right now. Projects that were already started are preferred, then projects of your faction's tech level (the highest level without a cost penalty), then projects leading to one, then lower tech levels, and penalized higher tech levels last.\n\nOnce the chosen project is finished, the entry moves to the end of the queue and picks another, so research queued after it still gets its turn. Remove it from the queue to stop.\n\nWith a content pack filter active, this entry is specific to that pack: queue it there and it only picks projects of that pack.</ResearchPal.RandomResearchTip>
+	<ResearchPal.RandomResearchWaiting>Waiting in queue</ResearchPal.RandomResearchWaiting>
+	<ResearchPal.RandomResearchScope>Only picks projects from {0}.</ResearchPal.RandomResearchScope>
+<ResearchPal.RandomResearchNoTarget>Nothing available right now</ResearchPal.RandomResearchNoTarget>
+	<ResearchPal.RandomResearchTarget>Now: {0} ({1})</ResearchPal.RandomResearchTarget>
 	
 	<ResearchPal.StorytellerDoesNotAllow>Storyteller does not allow this tech</ResearchPal.StorytellerDoesNotAllow>
 	<ResearchPal.RimedievalDoesNotAllow>Rimedieval settings does not allow this tech</ResearchPal.RimedievalDoesNotAllow>

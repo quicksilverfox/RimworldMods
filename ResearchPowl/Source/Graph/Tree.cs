@@ -24,6 +24,7 @@ namespace ResearchPowl
 		static bool prerequisitesFixed;
 		static List<List<Node>> _layers;
 		static List<ResearchNode> _researchNodes;
+		static WildcardNode _wildcard;
 		public static HashSet<ushort> filteredOut = new HashSet<ushort>();
 		static float mainGraphUpperbound = 1;
 		static RelatedNodeHighlightSet hoverHighlightSet;
@@ -55,6 +56,11 @@ namespace ResearchPowl
 		{
 			if (_researchNodes == null) InitializeNodesStructures();
 			return _researchNodes;
+		}
+		// The "random research" pseudo node, pinned to the top-left corner of the tree.
+		public static WildcardNode Wildcard
+		{
+			get { ResearchNodes(); return _wildcard; }
 		}
 		public static List<ResearchNode> WaitForResearchNodes()
 		{
@@ -88,6 +94,7 @@ namespace ResearchPowl
 
 			LegacyPreprocessing();
 			MainAlgorithm(_layers);
+			PlaceWildcard();
 			RemoveEmptyRows();
 			
 			//Determine tree size
@@ -112,6 +119,22 @@ namespace ResearchPowl
 			if (Prefs.DevMode) Log.Message("Processed in " + timeTaken.ToString(@"ss\.fffff"));
 
 			//Embedded methods
+			void PlaceWildcard()
+			{
+				if (_wildcard == null) return;
+				var list = Nodes();
+				list.Remove(_wildcard);
+				// Reserve the top-left cell: if the layout put a node there, push the whole tree down by one row.
+				bool occupied = false;
+				for (int i = list.Count; i-- > 0;)
+				{
+					var n = list[i];
+					if (n.X == 1 && n._pos.y < 2f) { occupied = true; break; }
+				}
+				if (occupied) for (int i = list.Count; i-- > 0;) list[i].Yf = list[i]._pos.y + 1;
+				_wildcard._pos = new Vector2(1, 1);
+				list.Add(_wildcard);
+			}
 			void RemoveEmptyRows()
 			{
 				//was var z = Nodes().Max(n => n.Yf);
@@ -281,6 +304,11 @@ namespace ResearchPowl
 
 			_nodes = allNodes;
 			_researchNodes = nodes;
+			// Queue entries point at node objects; swap them for the freshly created ones.
+			// The wildcard takes no part in the layout (no edges, no def); it is positioned by InitializeLayout.
+			_wildcard = new WildcardNode();
+			nodes.Add(_wildcard);
+			Queue.Notify_TreeRebuilt(nodes);
 			_edges = edges;
 
 			//Inlined methods
@@ -356,7 +384,8 @@ namespace ResearchPowl
 					{
 						if (filteredMod != project.modContentPack.Name) continue;
 						var tmp = AllAncestors(project).ToHashSet();
-						filteredOut.AddRange(tmp.Where(x => x.modContentPack.Name != filteredMod).Select(x => x.index));
+						// Ancestors may lack a modContentPack (runtime-generated defs); treat those as not belonging to the filtered mod.
+						filteredOut.AddRange(tmp.Where(x => x.modContentPack?.Name != filteredMod).Select(x => x.index));
 						workingList.AddRange(tmp);
 					}
 

@@ -256,7 +256,7 @@ namespace ResearchPowl
 		}
 		public void StartDragging(ResearchNode node, Painter painter)
 		{
-			Log.Debug("Start dragging node: {0}", node.Research.label);
+			Log.Debug("Start dragging node: {0}", node.Label);
 			draggedNode = node;
 			draggingSource = painter;
 			// Mouse and node rect are in the same (painter-local) space here, so this offset is independent of
@@ -312,6 +312,8 @@ namespace ResearchPowl
 			Queue.Draw(queueRect, !_dragging);
 		}
 		public static string filteredMod = ResourceBank.String.AllPacks;
+		// Name of the content pack the tree is filtered to, or null when showing everything.
+		public static string FilterPack => filteredMod == ResourceBank.String.AllPacks ? null : filteredMod;
 		void DrawModFilter(Rect rect)
 		{
 			var beforeFont = Text.Font;

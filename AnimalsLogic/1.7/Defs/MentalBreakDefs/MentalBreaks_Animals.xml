@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <!-- Weight among major breaks. Vanilla: psychotic wandering 1, each tantrum 0.333, drug binge 1 (if drugs present).
+       Trait-locked breaks (sadistic rage 1, corpse obsession 0.4) are not a reference: only trait holders roll them.
+       Scaled at runtime by the frequency setting, toggled off entirely by the hunting spree setting. -->
   <MentalBreakDef>
     <defName>AL_HuntingSpree</defName>
+    <workerClass>AnimalsLogic.MentalBreaks.MentalBreakWorker_HuntingSpree</workerClass>
     <mentalState>AL_HuntingWildAnimal</mentalState>
-    <baseCommonality>0.4</baseCommonality>
+    <baseCommonality>0.2</baseCommonality>
     <intensity>Major</intensity>
     <label>hunting spree</label>
   </MentalBreakDef>

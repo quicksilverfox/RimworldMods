@@ -41,13 +41,18 @@
 	<ALConfigTamingAgeFactorTooltip>Makes non-adult animals easier to tame and train, effectively reducing their wildness. Proportinal to their relative age - newborn are much easier, while almost adult are barely affected.</ALConfigTamingAgeFactorTooltip>
 
 	<ALConfigComeWhenCalledLabel>Obedient animals come when called for training or play</ALConfigComeWhenCalledLabel>
-	<ALConfigComeWhenCalledTooltip>Animals with Obedience training will come to the handler instead of forcing the handler to chase them, dropping whatever they were doing. They will not be called while fighting, fleeing, drafted or otherwise unavailable for interaction by the game's own rules.</ALConfigComeWhenCalledTooltip>
+	<ALConfigComeWhenCalledTooltip>Animals with Obedience training will come to the handler instead of forcing the handler to chase them, dropping whatever they were doing. Any animal being handled also stays put while the handler talks to it, like the game already does while feeding it. Animals will not be called or held while fighting, fleeing, drafted or otherwise unavailable for interaction by the game's own rules.</ALConfigComeWhenCalledTooltip>
 
 	<ALConfigPlayWithAnimalsLabel>Allow playing with animals as recreation</ALConfigPlayWithAnimalsLabel>
 	<ALConfigPlayWithAnimalsTooltip>Pawns capable of animal handling can play with colony animals for joy. Bonded and high-petness animals are preferred. High-skill handlers may also interact with wild animals for a chance to tame them.</ALConfigPlayWithAnimalsTooltip>
 
 	<ALConfigShowExtraDisplayStatsLabel>Show production stats for modded animal resources</ALConfigShowExtraDisplayStatsLabel>
 	<ALConfigShowExtraDisplayStatsTooltip>Vanilla info cards only list milk and wool. This adds the same rows for custom gatherable resources used by other mods.</ALConfigShowExtraDisplayStatsTooltip>
+
+	<ALConfigHuntingSpreeLabel>Hunting spree mental break</ALConfigHuntingSpreeLabel>
+	<ALConfigHuntingSpreeTooltip>A major mental break where the colonist goes off to kill wild animals. Only picked when the colonist can fight and there is a wild animal on the map that is not too dangerous for the colonist's current weapon: an unarmed colonist only goes after small game, a melee weapon allows medium animals, a ranged weapon allows most non-predators and small predators, and nothing picks fights with bears, wolves, big cats, thrumbos or animals that explode when killed in melee. Turning this off removes it from the pool of possible breaks.</ALConfigHuntingSpreeTooltip>
+	<ALConfigHuntingSpreeFrequencyLabel>Hunting spree frequency: {0}</ALConfigHuntingSpreeFrequencyLabel>
+	<ALConfigHuntingSpreeFrequencyTooltip>How likely the hunting spree is compared to the game's other major breaks. At 100% it has a bit over half the weight of a tantrum. Lower it if it comes up too often, or raise it to see it more.</ALConfigHuntingSpreeFrequencyTooltip>
 
 	<!-- Info card: modded gatherable body resources ({0} is the resource name) -->
 	<AL_ResourceType>Product type</AL_ResourceType>

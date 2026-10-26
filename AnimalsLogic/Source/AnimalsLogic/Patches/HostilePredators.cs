@@ -8,12 +8,17 @@ namespace AnimalsLogic.Patches
 {
     /*
      * Adds more awareness about predators. Predator hunting one of your pawns (humanlike or animal) is considered hostile to whole your faction, like manhunter would be.
+     *
+     * Vanilla already does this between two pawns (within 12 cells of the prey) and for the Thing-vs-Faction overload, which is
+     * what puts the predator into AttackTargetsCache for the player faction. The Thing-vs-Thing overload, however, only runs its
+     * predator check when both sides are pawns, so a turret filtering those cached targets (AttackTargetsCache.GetPotentialTargetsFor,
+     * AttackTargetFinder) never sees the predator as hostile. This postfix covers any faction-owned thing, not just pawns, and
+     * drops the distance limit.
      */
     class HostilePredators
     {
         public static void Patch()
         {
-            // fixes turrets vs predators - vanilla method only works for pawns because it has an explicit check if both actors are pawns
             AnimalsLogic.harmony.Patch(
                 AccessTools.Method(typeof(GenHostility), "HostileTo", new Type[] { typeof(Thing), typeof(Thing) }),
                 postfix: new HarmonyMethod(typeof(HostilePredators).GetMethod(nameof(HostileToThing_Postfix)))
@@ -40,10 +45,11 @@ namespace AnimalsLogic.Patches
         }
         private static bool IsPredatorTargetingFaction(Pawn predator, Thing targetThing)
         {
-            if (!predator.Spawned || !predator.RaceProps.predator)
+            if (!predator.Spawned)
                 return false;
 
-            if (!(targetThing is Pawn) || !targetThing.Spawned || targetThing.Faction == null)
+            // targetThing is deliberately not restricted to pawns: turrets are the whole point of this patch
+            if (!targetThing.Spawned || targetThing.Faction == null)
                 return false;
 
             return

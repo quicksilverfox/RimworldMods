@@ -1,20 +1,28 @@
 using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
 namespace AnimalsLogic.Patches
 {
     /// <summary>
-    /// Makes obedient animals come to the handler when called, instead of the handler having to chase them.
-    /// Used when a handler starts training (StartJob postfix below) and by <see cref="Recreation.JobDriver_PlayWithAnimal"/>.
-    /// The animal drops whatever it is doing unless that is something that must not be interrupted (see <see cref="CanInterruptCurrentJob"/>).
+    /// Makes obedient animals come to the handler when called, instead of the handler having to chase them, and keeps
+    /// the animal in place while the handler is actually talking to it.
+    ///
+    /// Vanilla's <see cref="JobDriver_InteractAnimal"/> is a chain of "walk to the animal, talk for 270 ticks" steps and
+    /// only force-waits the animal while feeding it, so between talks the animal wanders off and the handler has to chase
+    /// it again. The <see cref="JobDriver_InteractAnimal_MakeNewToils_Patch"/> below hooks every toil of that driver:
+    /// at each toil start (and periodically while walking) the animal is summoned if it is away, and for each talk toil
+    /// it is held with the same forced wait vanilla uses for feeding. Also used by <see cref="Recreation.JobDriver_PlayWithAnimal"/>.
+    /// The animal never drops something that must not be interrupted (see <see cref="CanInterruptCurrentJob"/>).
     /// </summary>
     public static class ComeWhenCalled
     {
         public const float FollowRadius = 3f;
         public const int ExpiryInterval = 200;
 
+        /// <summary>Calls an obedient animal that is away from the handler over to them.</summary>
         public static bool TrySummonAnimal(Pawn animal, Pawn handler)
         {
             if (!Settings.come_when_called)
@@ -23,7 +31,7 @@ namespace AnimalsLogic.Patches
             if (animal?.training == null || !animal.training.HasLearned(TrainableDefOf.Obedience))
                 return false;
 
-            if (handler == null || !animal.Spawned || !handler.Spawned || animal.Map != handler.Map)
+            if (!SameMap(animal, handler))
                 return false;
 
             if (animal.Position.DistanceTo(handler.Position) < FollowRadius)
@@ -53,6 +61,32 @@ namespace AnimalsLogic.Patches
                 return false;
 
             MakeAnimalComeToHandler(animal, handler);
+            return true;
+        }
+
+        /// <summary>
+        /// Keeps an animal that is already next to the handler in place for <paramref name="ticks"/>, facing the handler.
+        /// This is what vanilla does while feeding the animal; obedience is not required because the handler is already
+        /// interacting with it (and Obedience is the first thing that gets trained).
+        /// </summary>
+        public static bool TryHoldAnimal(Pawn animal, Pawn handler, int ticks)
+        {
+            if (!Settings.come_when_called || ticks <= 0)
+                return false;
+
+            if (animal == null || !SameMap(animal, handler))
+                return false;
+
+            if (animal.Position.DistanceTo(handler.Position) >= FollowRadius)
+                return false;
+
+            if (!RestUtility.Awake(animal))
+                return false;
+
+            if (!CanInterruptCurrentJob(animal))
+                return false;
+
+            PawnUtility.ForceWait(animal, ticks, handler);
             return true;
         }
 
@@ -89,6 +123,11 @@ namespace AnimalsLogic.Patches
             return job.def != JobDefOf.Flee && job.def != JobDefOf.FleeAndCower;
         }
 
+        static bool SameMap(Pawn animal, Pawn handler)
+        {
+            return handler != null && animal.Spawned && handler.Spawned && animal.Map == handler.Map;
+        }
+
         /// <summary>Already coming to, or being held by, this handler: do not restart the job.</summary>
         static bool IsAlreadyAttendingTo(Pawn animal, Pawn handler)
         {
@@ -97,32 +136,6 @@ namespace AnimalsLogic.Patches
                 return false;
 
             return job.def == JobDefOf.FollowClose || job.def == JobDefOf.Wait || job.def == JobDefOf.Wait_MaintainPosture;
-        }
-
-        [HarmonyPatch(typeof(Pawn_JobTracker), nameof(Pawn_JobTracker.StartJob))]
-        public static class Pawn_JobTracker_StartJob_Patch
-        {
-            static readonly AccessTools.FieldRef<Pawn_JobTracker, Pawn> PawnField = AccessTools.FieldRefAccess<Pawn_JobTracker, Pawn>("pawn");
-
-            [HarmonyPostfix]
-            public static void Postfix(Pawn_JobTracker __instance, Job newJob)
-            {
-                if (!Settings.come_when_called)
-                    return;
-
-                if (newJob?.def != JobDefOf.Train)
-                    return;
-
-                Pawn handler = PawnField(__instance);
-                if (handler == null || !handler.RaceProps.Humanlike || handler.Faction != Faction.OfPlayer)
-                    return;
-
-                Pawn animal = newJob.targetA.Pawn;
-                if (animal == null || !animal.RaceProps.Animal)
-                    return;
-
-                TrySummonAnimal(animal, handler);
-            }
         }
 
         private static void MakeAnimalComeToHandler(Pawn animal, Pawn handler)
@@ -134,6 +147,67 @@ namespace AnimalsLogic.Patches
             comeJob.locomotionUrgency = LocomotionUrgency.Jog;
 
             animal.jobs.StartJob(comeJob, JobCondition.InterruptForced);
+        }
+
+        /// <summary>
+        /// Wraps the toils of every animal interaction driver (training, taming) so the animal is called over at each step
+        /// and held in place during each talk. Subclasses such as <see cref="JobDriver_Train"/> go through the base method,
+        /// so their toils get wrapped as well.
+        /// </summary>
+        [HarmonyPatch(typeof(JobDriver_InteractAnimal), "MakeNewToils")]
+        public static class JobDriver_InteractAnimal_MakeNewToils_Patch
+        {
+            const string TalkToilName = "TalkToAnimal";
+
+            [HarmonyPostfix]
+            public static void Postfix(JobDriver_InteractAnimal __instance, ref IEnumerable<Toil> __result)
+            {
+                __result = KeepAnimalClose(__instance, __result);
+            }
+
+            static IEnumerable<Toil> KeepAnimalClose(JobDriver driver, IEnumerable<Toil> toils)
+            {
+                foreach (Toil toil in toils)
+                {
+                    Toil current = toil;
+                    current.AddPreInitAction(() => OnToilStarted(driver, current));
+                    current.AddPreTickIntervalAction(delta =>
+                    {
+                        if (driver.pawn.IsHashIntervalTick(ExpiryInterval, delta))
+                            TrySummonAnimal(HandledAnimal(driver), driver.pawn);
+                    });
+                    yield return current;
+                }
+            }
+
+            static void OnToilStarted(JobDriver driver, Toil toil)
+            {
+                Pawn animal = HandledAnimal(driver);
+                if (animal == null)
+                    return;
+
+                if (toil.debugName == TalkToilName && TryHoldAnimal(animal, driver.pawn, toil.defaultDuration))
+                    return;
+
+                TrySummonAnimal(animal, driver.pawn);
+            }
+
+            /// <summary>The animal being handled, or null when this driver is not a player handler working on an animal.</summary>
+            static Pawn HandledAnimal(JobDriver driver)
+            {
+                if (!Settings.come_when_called)
+                    return null;
+
+                Pawn handler = driver.pawn;
+                if (handler == null || !handler.RaceProps.Humanlike || handler.Faction != Faction.OfPlayer)
+                    return null;
+
+                Pawn animal = driver.job?.targetA.Pawn;
+                if (animal == null || !animal.RaceProps.Animal)
+                    return null;
+
+                return animal;
+            }
         }
     }
 }

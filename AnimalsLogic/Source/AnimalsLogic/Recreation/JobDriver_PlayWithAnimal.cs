@@ -59,26 +59,31 @@ namespace AnimalsLogic.Recreation
             playToil.FailOn(() => !pawn.Position.AdjacentTo8WayOrInside(Animal.Position));
             playToil.tickIntervalAction = delegate (int delta)
             {
-                pawn.rotationTracker.FaceTarget(Animal);
+                // Read the target once: JoyTickCheckEnd below may end the job, which returns it to the pool and clears
+                // its targets, so Animal becomes null for the rest of this tick. Nothing may touch the job after that call.
+                Pawn animal = Animal;
+                bool wild = animal.Faction == null;
+
+                pawn.rotationTracker.FaceTarget(animal);
 
                 float xpGain = CalculateXPGain() * delta;
                 pawn.skills?.GetSkill(SkillDefOf.Animals)?.Learn(xpGain, false);
 
-                JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.EndJob, JoyFactor());
-
                 if (pawn.IsHashIntervalTick(240, delta))
                 {
-                    if (pawn.interactions?.TryInteractWith(Animal, InteractionDefOf.AnimalChat) == true
-                        && !IsWildAnimal)
+                    if (pawn.interactions?.TryInteractWith(animal, InteractionDefOf.AnimalChat) == true && !wild)
                     {
-                        RelationsUtility.TryDevelopBondRelation(pawn, Animal, BondChancePerChat);
+                        RelationsUtility.TryDevelopBondRelation(pawn, animal, BondChancePerChat);
                     }
                 }
 
                 if (pawn.IsHashIntervalTick(300, delta))
                 {
-                    FleckMaker.ThrowMetaIcon(Animal.Position, Animal.Map, FleckDefOf.Heart);
+                    FleckMaker.ThrowMetaIcon(animal.Position, animal.Map, FleckDefOf.Heart);
                 }
+
+                // must stay last in this delegate (see above)
+                JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.EndJob, JoyFactor());
             };
             playToil.AddFinishAction(delegate
             {

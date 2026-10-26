@@ -18,6 +18,10 @@ namespace AnimalsLogic
         public static bool come_when_called = true;
         public static bool play_with_animals = true;
         public static bool extra_display_stats = true;
+        public static bool hunting_spree = true;
+
+        /// <summary>Multiplier on the hunting spree break's commonality; 1 = the def's value.</summary>
+        public static float hunting_spree_frequency = 1.0f;
 
         public static float wildness_threshold_for_tameness_decay = 0.101f;
         public static float training_decay_factor = 1.0f;
@@ -41,6 +45,13 @@ namespace AnimalsLogic
             listing_Standard.CheckboxLabeled("ALConfigComeWhenCalledLabel".Translate(), ref come_when_called, "ALConfigComeWhenCalledTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigPlayWithAnimalsLabel".Translate(), ref play_with_animals, "ALConfigPlayWithAnimalsTooltip".Translate());
             listing_Standard.CheckboxLabeled("ALConfigShowExtraDisplayStatsLabel".Translate(), ref extra_display_stats, "ALConfigShowExtraDisplayStatsTooltip".Translate());
+            listing_Standard.CheckboxLabeled("ALConfigHuntingSpreeLabel".Translate(), ref hunting_spree, "ALConfigHuntingSpreeTooltip".Translate());
+
+            if (hunting_spree)
+            {
+                listing_Standard.Label("ALConfigHuntingSpreeFrequencyLabel".Translate(((float)Math.Round(hunting_spree_frequency, 2)).ToStringPercent()), tooltip: "ALConfigHuntingSpreeFrequencyTooltip".Translate());
+                hunting_spree_frequency = listing_Standard.Slider(hunting_spree_frequency, 0.1f, 3f);
+            }
 
             listing_Standard.Label("ALConfigTamenessDecayThresholdLabel".Translate(((float)Math.Round(wildness_threshold_for_tameness_decay, 3) * 100).ToString()), tooltip: "ALConfigTamenessDecayThresholdTooltip".Translate());
             wildness_threshold_for_tameness_decay = listing_Standard.Slider(wildness_threshold_for_tameness_decay, 0f, 1f);
@@ -72,6 +83,8 @@ namespace AnimalsLogic
             Scribe_Values.Look<bool>(ref come_when_called, "come_when_called", true, false);
             Scribe_Values.Look<bool>(ref play_with_animals, "play_with_animals", true, false);
             Scribe_Values.Look<bool>(ref extra_display_stats, "extra_display_stats", true, false);
+            Scribe_Values.Look<bool>(ref hunting_spree, "hunting_spree", true, false);
+            Scribe_Values.Look<float>(ref hunting_spree_frequency, "hunting_spree_frequency", 1.0f, false);
 
             Scribe_Values.Look<float>(ref wildness_threshold_for_tameness_decay, "wildness_threshold_for_tameness_decay", 0.101f, false);
             Scribe_Values.Look<float>(ref training_decay_factor, "training_decay_factor", 1.0f, false);

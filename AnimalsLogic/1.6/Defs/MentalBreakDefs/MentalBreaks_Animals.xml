@@ -4,7 +4,7 @@
   <MentalBreakDef>
     <defName>AL_HuntingSpree</defName>
     <mentalState>AL_HuntingWildAnimal</mentalState>
-    <baseCommonality>0.4</baseCommonality>
+    <baseCommonality>0.2</baseCommonality>
     <intensity>Major</intensity>
     <label>hunting spree</label>
   </MentalBreakDef>
